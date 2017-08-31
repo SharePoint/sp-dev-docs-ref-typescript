@@ -1,0 +1,41 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-core-library.ServiceScope
+    name: ServiceScope
+    package: sp-core-library
+    summary: ServiceScope provides a formalized way for components to register and consume dependencies ("services"), and to enable different implementations to be registered in different scopes. This improves modularity by decoupling components from their dependencies in an extensible way
+    source:
+      path: lib\services\advisorManagement\lib\operations\operations.js
+      startLine: 276
+      remote:
+        branch: jsdoc
+        path: lib\services\advisorManagement\lib\operations\operations.js
+        repo: 'https://github.com/Azure/azure-sdk-for-node.git'
+    type: class
+    langs:
+      - typeScript
+    remarks: After @sp-core-library.ServiceScope.finish() is called, consume() is allowed and provide() is now forbidden. These semantics ensure that ServiceScope.consume() always returns the same result for the same key, and does not depend on order of initialization. It also allows us to support circular dependencies without worrying about infinite loops, even when working with external components that were implemented by third parties. To avoid mistakes, it's best to always call consume() inside a callback from serviceScope.whenFinished().
+    children:
+      - sp-core-library.ServiceScope.consume(serviceKey)
+      - sp-core-library.ServiceScope.finish()
+  - uid: sp-core-library.ServiceScope.consume(serviceKey)
+    fullName: sp-core-library.ServiceScope.consume(serviceKey)
+    name: consume(serviceKey)
+    summary: Components should call this function to "consume" a dependency, i.e. look up the serviceKey and return the registered service instance. If the instance cannot be found, then a default instance will be autocreated and registered with the root ServiceScope.
+    type: method
+    syntax:
+      content: 'public consume <T>(serviceKey: ServiceKey): T'
+      parameters:
+      - id: serviceKey
+        type:
+          - sp-core-library.ServiceKey
+        description: the key that was used when provide() was called to register the service
+      return:
+        type:
+          - T
+        description: the service instance
+  - uid: sp-core-library.ServiceScope.finish()
+    fullName: sp-core-library.ServiceScope.finish()
+    name: finish()
+    summary: 'When a ServiceScope is first started, it is in an "unfinished" state where provide() is allowed but consume() is not allowed. After calling finish(), then consume() is allowed but provide() is not allowed. This formalism completely eliminates a number of tricky bugs such as: Scope2 is a child of Scope1, and Scope1 provides instance A1 of interface A; if someone consumes A1 from Scope2 (via inheritance) before Scope2.provide() is called with A2, then a subsequent call to Scope2.consume() might return a different result than the previous call, which would be very confusing for developers.'
+    type: method

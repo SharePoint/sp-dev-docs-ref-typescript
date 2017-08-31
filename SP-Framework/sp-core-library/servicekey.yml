@@ -1,0 +1,90 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-core-library.ServiceKey
+    fullName: sp-core-library.ServiceKey
+    name: ServiceKey
+    package: sp-core-library
+    summary: The ServiceKey is a lookup key that is used when calling ServiceScope.consume() to fetch a dependency. The key also defines a default implementation of the dependency, which will be autocreated by the root scope if the dependency is not found. Providing a default implementation ensures that new dependencies can be safely introduced without inadvertently breaking components that are loaded by an older host (that does not provide the new dependency).
+    source:
+      path: lib\services\advisorManagement\lib\operations\operations.js
+      startLine: 276
+      remote:
+        branch: jsdoc
+        path: lib\services\advisorManagement\lib\operations\operations.js
+        repo: 'https://github.com/Azure/azure-sdk-for-node.git'
+    type: class
+    langs:
+      - typeScript
+    children:
+      - sp-core-library.ServiceKey.defaultCreator
+      - sp-core-library.ServiceKey.id
+      - sp-core-library.ServiceKey.name
+      - sp-core-library.ServiceKey.create(name,serviceClass)
+      - sp-core-library.ServiceKey.createCustom(name,defaultCreator)
+  - uid: sp-core-library.ServiceKey.defaultCreator
+    fullName: sp-core-library.ServiceKey.defaultCreator
+    name: defaultCreator
+    type: property
+    syntax:
+      content: public ServiceCreator<T> defaultCreator { get; }
+      return:
+        type:
+          - ServiceCreator<T>
+  - uid: sp-core-library.ServiceKey.id
+    fullName: sp-core-library.ServiceKey.id
+    name: id
+    type: property
+    syntax:
+      content: public string id { get; }
+      return:
+        type:
+          - string
+  - uid: sp-core-library.ServiceKey.name
+    fullName: sp-core-library.ServiceKey.name
+    name: name
+    type: property
+    syntax:
+      content: public string name { get; }
+      return:
+        type:
+          - string
+  - uid: sp-core-library.ServiceKey.create(name,serviceClass)
+    fullName: sp-core-library.ServiceKey.create(name, serviceClass)
+    name: create(name, serviceClass)
+    summary: Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that accepts the standard constructor parameter. If you want to specify custom constructor parameters, use createCustom() instead.
+    type: method
+    syntax:
+      content: 'public static create <T>(name: string, serviceClass: { new (serviceScope: ServiceScope); }):ServiceKey'
+      parameters:
+      - id: name
+        type:
+          - string
+        description: A name such as "MyApplication.IMyService" which should be unique within your application.
+      - id: serviceClass
+        type:
+          - '{ new (serviceScope: @sp-core-library.ServiceScope); }'
+        description: the TypeScript class that implements the service.
+      return:
+        type:
+          - sp-core-library.ServiceKey
+        description: the newly created ServiceKey
+  - uid: sp-core-library.ServiceKey.createCustom(name,defaultCreator)
+    fullName: sp-core-library.ServiceKey.createCustom(name, defaultCreator)
+    name: createCustom(name, defaultCreator)
+    summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
+    type: method
+    syntax:
+      content: 'public static createCustom <T>(name: string, defaultCreator: ServiceCreator): ServiceKey'
+      parameters:
+      - id: name
+        type:
+          - string
+        description: A name such as "MyApplication.IMyService" which should be unique within your application.
+      - id: defaultCreator
+        type:
+          - ServiceCreator<T>
+        description: A callback that returns an object that implements the T interface
+      return:
+        type:
+          - sp-core-library.ServiceKey
+        description: the newly created ServiceKey
