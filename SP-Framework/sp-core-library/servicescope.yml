@@ -14,7 +14,7 @@ items:
     type: class
     langs:
       - typeScript
-    remarks: After @sp-core-library.ServiceScope.finish() is called, consume() is allowed and provide() is now forbidden. These semantics ensure that ServiceScope.consume() always returns the same result for the same key, and does not depend on order of initialization. It also allows us to support circular dependencies without worrying about infinite loops, even when working with external components that were implemented by third parties. To avoid mistakes, it's best to always call consume() inside a callback from serviceScope.whenFinished().
+    remarks: After @sp-core-library.ServiceScope.finish() is called, consume() is allowed and provide() is now forbidden. These semantics ensure that ServiceScope.consume() always returns the same result for the same key, and does not depend on order of initialization. It also allows us to support circular dependencies without worrying about infinite loops, even when working with external components that were implemented by third parties. To avoid mistakes, it's best to always call consume() inside a callback from serviceScope.whenFinished().  Test **some** [markdown](@sp-core-library.ServiceScope.finish()) for you.
     children:
       - sp-core-library.ServiceScope.consume(serviceKey)
       - sp-core-library.ServiceScope.finish()
