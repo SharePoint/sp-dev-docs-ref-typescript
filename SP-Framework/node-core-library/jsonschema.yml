@@ -1,0 +1,82 @@
+### YamlMime:UniversalReference
+items:
+  - uid: node-core-library.JsonSchema
+    summary: |
+      Represents a JSON schema that can be used to validate JSON data files loaded by the JsonFile class.
+    remarks: >
+      The schema itself is normally loaded and compiled later, only if it is actually required to validate an input. To
+      avoid schema errors at runtime, it's recommended to create a unit test that calls JsonSchema.ensureCompiled() for
+      each of your schema objects.
+    name: JsonSchema
+    fullName: JsonSchema
+    langs:
+      - typeScript
+    type: class
+    children:
+      - node-core-library.JsonSchema.ensureCompiled
+      - node-core-library.JsonSchema.fromFile
+      - node-core-library.JsonSchema.fromLoadedObject
+      - node-core-library.JsonSchema.shortName
+      - node-core-library.JsonSchema.validateObject
+      - node-core-library.JsonSchema.validateObjectWithCallback
+  - uid: node-core-library.JsonSchema.ensureCompiled
+    summary: |
+      If not already done, this loads the schema from disk and compiles it.
+    remarks: |
+      Any dependencies will be compiled as well.
+    name: ensureCompiled
+    fullName: ensureCompiled
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.JsonSchema.fromFile
+    summary: |
+      Registers a JsonSchema that will be loaded from a file on disk.
+    remarks: >
+      NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
+      schema is actually used.
+    name: fromFile
+    fullName: fromFile
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.JsonSchema.fromLoadedObject
+    summary: |
+      Registers a JsonSchema that will be loaded from a file on disk.
+    remarks: >
+      NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
+      schema is actually used.
+    name: fromLoadedObject
+    fullName: fromLoadedObject
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.JsonSchema.shortName
+    summary: |
+      Returns a short name for this schema, for use in error messages.
+    remarks: >
+      If the schema was loaded from a file, then the base filename is used. Otherwise, the "id" field is used if
+      available.
+    name: shortName
+    fullName: shortName
+    langs:
+      - typeScript
+    type: property
+  - uid: node-core-library.JsonSchema.validateObject
+    summary: >
+      Validates the specified JSON object against this JSON schema. If the validation fails, an exception will be
+      thrown.
+    name: validateObject
+    fullName: validateObject
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.JsonSchema.validateObjectWithCallback
+    summary: >
+      Validates the specified JSON object against this JSON schema. If the validation fails, a callback is called for
+      each validation error.
+    name: validateObjectWithCallback
+    fullName: validateObjectWithCallback
+    langs:
+      - typeScript
+    type: method

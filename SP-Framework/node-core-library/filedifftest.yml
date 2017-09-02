@@ -1,0 +1,44 @@
+### YamlMime:UniversalReference
+items:
+  - uid: node-core-library.FileDiffTest
+    summary: >
+      Implements a unit testing strategy that generates output files, and then compares them against the expected input.
+      If the files are different, then the test fails.
+    name: FileDiffTest
+    fullName: FileDiffTest
+    langs:
+      - typeScript
+    type: class
+    children:
+      - node-core-library.FileDiffTest.assertEqual
+      - node-core-library.FileDiffTest.clearCache
+      - node-core-library.FileDiffTest.prepareFolder
+  - uid: node-core-library.FileDiffTest.assertEqual
+    summary: >
+      Compares the contents of two files, and returns true if they are equivalent. Note that these files are not
+      normally edited by a human; the "equivalence" comparison here is intended to ignore spurious changes that might be
+      introduced by a tool, e.g. Git newline normalization or an editor that strips whitespace when saving.
+    name: assertEqual
+    fullName: assertEqual
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.FileDiffTest.clearCache
+    summary: |
+      Clears the internal file cache.
+    remarks: |
+      Call this method if changes have been made to the package.json files on disk.
+    name: clearCache
+    fullName: clearCache
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.FileDiffTest.prepareFolder
+    summary: >
+      Sets up a folder in the temp directory where the unit test should write its output files to be diffed. Any
+      previous contents of the folder will be deleted.
+    name: prepareFolder
+    fullName: prepareFolder
+    langs:
+      - typeScript
+    type: method

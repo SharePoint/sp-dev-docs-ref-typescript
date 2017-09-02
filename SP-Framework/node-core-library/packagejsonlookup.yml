@@ -1,0 +1,51 @@
+### YamlMime:UniversalReference
+items:
+  - uid: node-core-library.PackageJsonLookup
+    summary: >
+      This class provides methods for finding the nearest "package.json" for a folder and retrieving the name of the
+      package. The results are cached.
+    name: PackageJsonLookup
+    fullName: PackageJsonLookup
+    langs:
+      - typeScript
+    type: class
+    children:
+      - node-core-library.PackageJsonLookup.__constructor
+      - node-core-library.PackageJsonLookup.clearCache
+      - node-core-library.PackageJsonLookup.getPackageName
+      - node-core-library.PackageJsonLookup.tryGetPackageFolder
+  - uid: node-core-library.PackageJsonLookup.__constructor
+    summary: |
+      Constructs a new instance of the PackageJsonLookup class
+    name: __constructor
+    fullName: __constructor
+    langs:
+      - typeScript
+    type: constructor
+  - uid: node-core-library.PackageJsonLookup.clearCache
+    summary: |
+      Clears the internal file cache.
+    remarks: |
+      Call this method if changes have been made to the package.json files on disk.
+    name: clearCache
+    fullName: clearCache
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.PackageJsonLookup.getPackageName
+    summary: |
+      Loads the package.json file and returns the name of the package.
+    name: getPackageName
+    fullName: getPackageName
+    langs:
+      - typeScript
+    type: method
+  - uid: node-core-library.PackageJsonLookup.tryGetPackageFolder
+    summary: >
+      Finds the path to the package folder of a given currentPath, by probing upwards from the currentPath until a
+      package.json file is found. If no package.json can be found, undefined is returned.
+    name: tryGetPackageFolder
+    fullName: tryGetPackageFolder
+    langs:
+      - typeScript
+    type: method
