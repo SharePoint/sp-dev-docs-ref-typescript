@@ -28,25 +28,58 @@ items:
       Clears the internal file cache.
     remarks: |
       Call this method if changes have been made to the package.json files on disk.
-    name: clearCache
+    name: clearCache()
     fullName: clearCache
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public clearCache(): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: node-core-library.PackageJsonLookup.getPackageName
     summary: |
       Loads the package.json file and returns the name of the package.
-    name: getPackageName
+    name: getPackageName(packageJsonPath)
     fullName: getPackageName
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public getPackageName(packageJsonPath: string): string;'
+      return:
+        type:
+          - string
+        description: |
+          the name of the package (E.g. @microsoft/api-extractor)
+      parameters:
+        - id: packageJsonPath
+          description: >
+            an absolute path to the folder containing the package.json file, it does not include the 'package.json'
+            suffix.
+          type:
+            - string
   - uid: node-core-library.PackageJsonLookup.tryGetPackageFolder
     summary: >
       Finds the path to the package folder of a given currentPath, by probing upwards from the currentPath until a
       package.json file is found. If no package.json can be found, undefined is returned.
-    name: tryGetPackageFolder
+    name: tryGetPackageFolder(currentPath)
     fullName: tryGetPackageFolder
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public tryGetPackageFolder(sourceFilePath: string): string | undefined;'
+      return:
+        type:
+          - string | undefined
+        description: |
+          a relative path to the package folder
+      parameters:
+        - id: currentPath
+          description: |
+            a path (relative or absolute) of the current location
+          type:
+            - ''

@@ -18,36 +18,60 @@ items:
   - uid: sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
     summary: |
       Returns true if the PropertyPane is open.
-    name: isPropertyPaneOpen
+    name: isPropertyPaneOpen()
     fullName: isPropertyPaneOpen
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'isPropertyPaneOpen(): boolean;'
+      return:
+        type:
+          - boolean
+        description: ''
   - uid: sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
     summary: >
       Indicates whether the PropertyPane was initially opened by the web part. For example, if the web part calls
       this.context.propertyPane.open() then the property would be true, whereas if the property pane was opened by the
       host, then the value will be false.
-    name: isRenderedByWebPart
+    name: isRenderedByWebPart()
     fullName: isRenderedByWebPart
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'isRenderedByWebPart(): boolean;'
+      return:
+        type:
+          - boolean
+        description: ''
   - uid: sp-webpart-base.IPropertyPaneAccessor.open
     summary: |
       This API should be used to open the PropertyPane to help configure the web part.
-    name: open
+    name: open()
     fullName: open
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'open(): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: sp-webpart-base.IPropertyPaneAccessor.refresh
     summary: >
       This API should be used to invoke the PropertyPane to help configure the web part. This operation only works when
       the PropertyPane is already open for the currently active web part. If the PropertyPane is opened for another web
       part, calling the refresh API will have no impact.
-    name: refresh
+    name: refresh()
     fullName: refresh
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'refresh(): void;'
+      return:
+        type:
+          - void
+        description: ''

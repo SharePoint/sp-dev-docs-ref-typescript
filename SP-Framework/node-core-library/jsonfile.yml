@@ -19,50 +19,115 @@ items:
   - uid: node-core-library.JsonFile.load
     summary: |
       Loads a JSON file.
-    name: load
+    name: load()
     fullName: load
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static load(jsonFilename: string): any;'
+      return:
+        type:
+          - any
+        description: ''
   - uid: node-core-library.JsonFile.loadAndValidate
     summary: |
       Loads a JSON file and validate its schema.
-    name: loadAndValidate
+    name: loadAndValidate()
     fullName: loadAndValidate
     langs:
       - typeScript
     type: method
+    syntax:
+      content: "public static loadAndValidate(jsonFilename: string, jsonSchema: JsonSchema,\r\n    options?: IJsonSchemaValidateOptions): any;"
+      return:
+        type:
+          - any
+        description: ''
   - uid: node-core-library.JsonFile.loadAndValidateWithCallback
     summary: |
       Loads a JSON file and validate its schema, reporting errors using a callback
     remarks: |
       See JsonSchema.validateObjectWithCallback() for more info.
-    name: loadAndValidateWithCallback
+    name: loadAndValidateWithCallback()
     fullName: loadAndValidateWithCallback
     langs:
       - typeScript
     type: method
+    syntax:
+      content: "public static loadAndValidateWithCallback(jsonFilename: string, jsonSchema: JsonSchema,\r\n    errorCallback: (errorInfo: IJsonSchemaErrorInfo) => void): any;"
+      return:
+        type:
+          - any
+        description: ''
   - uid: node-core-library.JsonFile.save
     summary: |
       Saves the file to disk. Returns false if nothing was written due to options.onlyIfChanged.
-    name: save
+    name: 'save(jsonObject, jsonFilename, options)'
     fullName: save
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static save(jsonObject: Object, jsonFilename: string, options: IJsonFileSaveOptions = {}): boolean;'
+      return:
+        type:
+          - boolean
+        description: |
+          false if ISaveJsonFileOptions.onlyIfChanged didn't save anything; true otherwise
+      parameters:
+        - id: jsonObject
+          description: |
+            the object to be saved
+          type:
+            - Object
+        - id: jsonFilename
+          description: |
+            the file path to write
+          type:
+            - string
+        - id: options
+          description: |
+            other settings that control how the file is saved
+          type:
+            - IJsonFileSaveOptions
   - uid: node-core-library.JsonFile.stringify
     summary: |
       Serializes the specified JSON object to a string buffer.
-    name: stringify
+    name: 'stringify(jsonObject, options)'
     fullName: stringify
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static stringify(jsonObject: Object, options?: IJsonFileStringifyOptions): string;'
+      return:
+        type:
+          - string
+        description: |
+          a JSON string, with newlines, and indented with two spaces
+      parameters:
+        - id: jsonObject
+          description: |
+            the object to be serialized
+          type:
+            - Object
+        - id: options
+          description: |
+            other settings that control serialization
+          type:
+            - IJsonFileStringifyOptions
   - uid: node-core-library.JsonFile.validateNoUndefinedMembers
     summary: |
       Used to validate a data structure before writing. Reports an error if there are any undefined members.
-    name: validateNoUndefinedMembers
+    name: validateNoUndefinedMembers()
     fullName: validateNoUndefinedMembers
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static validateNoUndefinedMembers(jsonObject: Object): void;'
+      return:
+        type:
+          - void
+        description: ''

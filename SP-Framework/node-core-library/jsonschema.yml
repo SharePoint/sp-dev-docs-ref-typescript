@@ -25,33 +25,51 @@ items:
       If not already done, this loads the schema from disk and compiles it.
     remarks: |
       Any dependencies will be compiled as well.
-    name: ensureCompiled
+    name: ensureCompiled()
     fullName: ensureCompiled
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public ensureCompiled(): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: node-core-library.JsonSchema.fromFile
     summary: |
       Registers a JsonSchema that will be loaded from a file on disk.
     remarks: >
       NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
       schema is actually used.
-    name: fromFile
+    name: fromFile()
     fullName: fromFile
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static fromFile(filename: string, options?: IJsonSchemaFromFileOptions): JsonSchema;'
+      return:
+        type:
+          - JsonSchema
+        description: ''
   - uid: node-core-library.JsonSchema.fromLoadedObject
     summary: |
       Registers a JsonSchema that will be loaded from a file on disk.
     remarks: >
       NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
       schema is actually used.
-    name: fromLoadedObject
+    name: fromLoadedObject()
     fullName: fromLoadedObject
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static fromLoadedObject(schemaObject: Object): JsonSchema;'
+      return:
+        type:
+          - JsonSchema
+        description: ''
   - uid: node-core-library.JsonSchema.shortName
     summary: |
       Returns a short name for this schema, for use in error messages.
@@ -67,17 +85,47 @@ items:
     summary: >
       Validates the specified JSON object against this JSON schema. If the validation fails, an exception will be
       thrown.
-    name: validateObject
+    name: 'validateObject(jsonObject, filenameForErrors, options)'
     fullName: validateObject
     langs:
       - typeScript
     type: method
+    syntax:
+      content: >-
+        public validateObject(jsonObject: Object, filenameForErrors: string, options?: IJsonSchemaValidateOptions):
+        void;
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: jsonObject
+          description: |
+            The JSON data to be validated
+          type:
+            - Object
+        - id: filenameForErrors
+          description: |
+            The filename that the JSON data was available, or an empty string if not applicable
+          type:
+            - string
+        - id: options
+          description: |
+            Other options that control the validation
+          type:
+            - IJsonSchemaValidateOptions
   - uid: node-core-library.JsonSchema.validateObjectWithCallback
     summary: >
       Validates the specified JSON object against this JSON schema. If the validation fails, a callback is called for
       each validation error.
-    name: validateObjectWithCallback
+    name: validateObjectWithCallback()
     fullName: validateObjectWithCallback
     langs:
       - typeScript
     type: method
+    syntax:
+      content: "public validateObjectWithCallback(jsonObject: Object,\r\n    errorCallback: (errorInfo: IJsonSchemaErrorInfo) => void): void;"
+      return:
+        type:
+          - void
+        description: ''

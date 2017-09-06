@@ -19,27 +19,57 @@ items:
       Compares the contents of two files, and returns true if they are equivalent. Note that these files are not
       normally edited by a human; the "equivalence" comparison here is intended to ignore spurious changes that might be
       introduced by a tool, e.g. Git newline normalization or an editor that strips whitespace when saving.
-    name: assertEqual
+    name: assertEqual()
     fullName: assertEqual
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static assertEqual(actualFilePath: string, expectedFilePath: string): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: node-core-library.FileDiffTest.clearCache
     summary: |
       Clears the internal file cache.
     remarks: |
       Call this method if changes have been made to the package.json files on disk.
-    name: clearCache
+    name: clearCache()
     fullName: clearCache
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static clearCache(): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: node-core-library.FileDiffTest.prepareFolder
     summary: >
       Sets up a folder in the temp directory where the unit test should write its output files to be diffed. Any
       previous contents of the folder will be deleted.
-    name: prepareFolder
+    name: 'prepareFolder(unitTestDirName, testModule)'
     fullName: prepareFolder
     langs:
       - typeScript
     type: method
+    syntax:
+      content: 'public static prepareFolder(unitTestDirName: string, testModule: string): string;'
+      return:
+        type:
+          - string
+        description: |
+          A fully qualified path of the folder where the unit test should write its output
+      parameters:
+        - id: unitTestDirName
+          description: |
+            the "\_\_dirname" variable, evaluated in the context of the unit test
+          type:
+            - string
+        - id: testModule
+          description: |
+            the name of the class being unit tested; must contain only letters, numbers, and underscores.
+          type:
+            - string
