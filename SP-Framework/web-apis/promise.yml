@@ -1,0 +1,102 @@
+### YamlMime:UniversalReference
+items:
+  - uid: web-apis.Promise
+    name: Promise
+    fullName: Promise
+    langs:
+      - typeScript
+    type: class
+    package: web-apis
+    children:
+      - web-apis.Promise.__constructor
+      - web-apis.Promise.all
+      - web-apis.Promise.catch
+      - web-apis.Promise.race
+      - web-apis.Promise.reject
+      - web-apis.Promise.resolve
+      - web-apis.Promise.then
+  - uid: web-apis.Promise.__constructor
+    summary: |
+      Constructs a new instance of the Promise class
+    name: __constructor
+    fullName: __constructor
+    langs:
+      - typeScript
+    type: constructor
+  - uid: web-apis.Promise.all
+    name: all()
+    fullName: all
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: >-
+        public static all < T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 >(values: [T1 | Thenable<T1>, T2 | Thenable<T2>, T3
+        | Thenable<T3>, T4 | Thenable <T4>, T5 | Thenable<T5>, T6 | Thenable<T6>, T7 | Thenable<T7>, T8 | Thenable<T8>,
+        T9 | Thenable<T9>, T10 | Thenable<T10>]): Promise<[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]>;
+      return:
+        type:
+          - 'Promise<[T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]>'
+        description: ''
+  - uid: web-apis.Promise.catch
+    name: catch()
+    fullName: catch
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'catch < U >(onRejected?: (error: any) => U | Thenable<U>): Promise<U>;'
+      return:
+        type:
+          - Promise<U>
+        description: ''
+  - uid: web-apis.Promise.race
+    name: race()
+    fullName: race
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static race < T >(promises: (T | Thenable<T>)[]): Promise<T>;'
+      return:
+        type:
+          - Promise<T>
+        description: ''
+  - uid: web-apis.Promise.reject
+    name: reject()
+    fullName: reject
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static reject(error: any): Promise<any>;'
+      return:
+        type:
+          - Promise<any>
+        description: ''
+  - uid: web-apis.Promise.resolve
+    name: resolve()
+    fullName: resolve
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static resolve < T >(value?: T | Thenable<T>): Promise<T>;'
+      return:
+        type:
+          - Promise<T>
+        description: ''
+  - uid: web-apis.Promise.then
+    name: then()
+    fullName: then
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: >-
+        then < U >(onFulfilled?: (value: T) => U | Thenable<U>, onRejected?: (error: any) => U | Thenable<U>):
+        Promise<U>;
+      return:
+        type:
+          - Promise<U>
+        description: ''

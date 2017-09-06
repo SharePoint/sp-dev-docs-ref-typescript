@@ -1,0 +1,73 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-core-library.UrlQueryParameterCollection
+    summary: >
+      Class for storing and retrieving query parameters. The URL can be server-relative and it will parse empty/null
+      strings. The query parameters must start with ? to indicate the first query parameter and use &amp; for all
+      subsequent parameters. The class also supports fragments. Edge cases behavior: Empty value
+      (www.example.com/?test=) stores key and empty value No equals in queryParam (www.example.com/?test) stores key and
+      undefined value Empty queryParam (www.example.com/?&debug=on) stores undefined key and value Query param with only
+      equals (www.example.com/?=&debug=on stores empty string key and value
+    name: UrlQueryParameterCollection
+    fullName: UrlQueryParameterCollection
+    langs:
+      - typeScript
+    type: class
+    package: sp-core-library
+    children:
+      - sp-core-library.UrlQueryParameterCollection.__constructor
+      - sp-core-library.UrlQueryParameterCollection.getValue
+      - sp-core-library.UrlQueryParameterCollection.getValues
+  - uid: sp-core-library.UrlQueryParameterCollection.__constructor
+    summary: |
+      Constructs a new instance of the [UrlQueryParameterCollection](./urlqueryparametercollection) class
+    name: __constructor
+    fullName: __constructor
+    langs:
+      - typeScript
+    type: constructor
+  - uid: sp-core-library.UrlQueryParameterCollection.getValue
+    summary: >
+      Returns the value of the first matching query parameter or undefined if the key doesn't exist. Examples:
+      this.\_queryParameterList = \[ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}\]
+      getValue('TEST') ---&gt; 'done' getValue('debug') ---> 'false' getValue('lost') ---> undefined
+    name: getValue(param)
+    fullName: getValue
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public getValue(param: string): string | undefined;'
+      return:
+        type:
+          - string | undefined
+        description: ''
+      parameters:
+        - id: param
+          description: |
+            the case insensitive key for the desired query parameter value.
+          type:
+            - string
+  - uid: sp-core-library.UrlQueryParameterCollection.getValues
+    summary: >
+      Returns the values of all of the matching query parameters or undefined if the key doesn't exist. Examples:
+      this.\_queryParameterList = \[ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}\]
+      getValues('TEST') ---&gt; \['done', 'notdone'\] getValues('debug') ---> \['false'\] getValues('lost') --->
+      undefined
+    name: getValues(param)
+    fullName: getValues
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public getValues(param: string): (string | undefined)[] | undefined;'
+      return:
+        type:
+          - '(string | undefined)[] | undefined'
+        description: ''
+      parameters:
+        - id: param
+          description: |
+            the case insensitive key for the desired query parameter value.
+          type:
+            - string

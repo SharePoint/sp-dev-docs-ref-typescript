@@ -1,0 +1,241 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-core-library.Version
+    summary: >
+      This class represents versions that follow the string format of MAJOR.MINOR\[.PATCH\[.REVISION\]\] where MAJOR,
+      MINOR, PATCH and REVISION are integers. PATCH and REVISION are optional. Leading zeros are allowed, but have no
+      meaning in comparisons. Examples: 1.0, 1.0.0, 1.0.0.0, 1.01, 01.02.03, 001.002.003.004
+    name: Version
+    fullName: Version
+    langs:
+      - typeScript
+    type: class
+    package: sp-core-library
+    children:
+      - sp-core-library.Version.compare
+      - sp-core-library.Version.equals
+      - sp-core-library.Version.greaterThan
+      - sp-core-library.Version.isValid
+      - sp-core-library.Version.lessThan
+      - sp-core-library.Version.major
+      - sp-core-library.Version.minor
+      - sp-core-library.Version.parse
+      - sp-core-library.Version.patch
+      - sp-core-library.Version.revision
+      - sp-core-library.Version.satisfies
+      - sp-core-library.Version.tryParse
+  - uid: sp-core-library.Version.compare
+    summary: |
+      Compares two Version classes
+    name: 'compare(v1, v2)'
+    fullName: compare
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static compare(v1: Version, v2: Version): number;'
+      return:
+        type:
+          - number
+        description: >
+          -1 if the first input is less than the second input, 0 if the first input is equal to the second input, 1 if
+          the first input is greater than the second input.
+      parameters:
+        - id: v1
+          description: |
+            The first version class for comparison
+          type:
+            - Version
+        - id: v2
+          description: |
+            The second version class for comparison
+          type:
+            - Version
+  - uid: sp-core-library.Version.equals
+    summary: >
+      Checks if this version is equal to the input parameter. Missing patch number is treated as zero. Examples: 1.0.0
+      equals 1.0.0 -&gt; true 2.0.1 equals 2.0.0 -> false 3.0 equals 3.0.0 -> true 04.01 equals 4.1 -> true
+    name: equals(compareWith)
+    fullName: equals
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public equals(compareWith: Version): boolean;'
+      return:
+        type:
+          - boolean
+        description: |
+          A boolean indicating if this version is equal to the input parameter
+      parameters:
+        - id: compareWith
+          description: |
+            The version to compare with
+          type:
+            - Version
+  - uid: sp-core-library.Version.greaterThan
+    summary: >
+      Checks if this version is greater (i.e. newer) than the input parameter. Missing patch number is treated as zero
+      Examples: 1.0.0 greaterThan 0.0.9 -&gt; true 2.0 greaterThan 2.0.0 -> false 3.0.1 greaterThan 3.0 -> true
+    name: greaterThan(compareWith)
+    fullName: greaterThan
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public greaterThan(compareWith: Version): boolean;'
+      return:
+        type:
+          - boolean
+        description: |
+          A boolean indicating if this version is greater than the input parameter
+      parameters:
+        - id: compareWith
+          description: |
+            The version to compare with
+          type:
+            - Version
+  - uid: sp-core-library.Version.isValid
+    summary: |
+      Indicates whether a version string is valid
+    name: isValid(versionString)
+    fullName: isValid
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static isValid(versionString: string | undefined | null): boolean;'
+      return:
+        type:
+          - boolean
+        description: |
+          Value indicating whether the version is valid.
+      parameters:
+        - id: versionString
+          description: |
+            The version string
+          type:
+            - string | undefined | null
+  - uid: sp-core-library.Version.lessThan
+    summary: >
+      Checks if this version is less (i.e. older) than the input parameter. Missing patch number is treated as zero
+      Examples: 0.9.9 lessThan 1.0.0 -&gt; true 2.0 lessThan 2.0.0 -> false 3.0 lessThan 3.0.1 -> true 04.01 lessThan
+      4.1 -> false
+    name: lessThan(compareWith)
+    fullName: lessThan
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public lessThan(compareWith: Version): boolean;'
+      return:
+        type:
+          - boolean
+        description: |
+          A boolean indicating if this version is less than the input parameter
+      parameters:
+        - id: compareWith
+          description: |
+            The version to compare with
+          type:
+            - Version
+  - uid: sp-core-library.Version.major
+    summary: |
+      The first number in the version string indicating the major version
+    name: major
+    fullName: major
+    langs:
+      - typeScript
+    type: property
+  - uid: sp-core-library.Version.minor
+    summary: |
+      The second number in the version string indicating the minor version
+    name: minor
+    fullName: minor
+    langs:
+      - typeScript
+    type: property
+  - uid: sp-core-library.Version.parse
+    summary: >
+      Constructs a new Version instance using the version string. tryParse validates the input version string and throws
+      error if it is invalid
+    name: parse(versionString)
+    fullName: parse
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static parse(versionString: string | undefined | null): Version;'
+      return:
+        type:
+          - Version
+        description: |
+          If valid, a new Version instace
+      parameters:
+        - id: versionString
+          description: |
+            A version string
+          type:
+            - string | undefined | null
+  - uid: sp-core-library.Version.patch
+    summary: >
+      The thrid number in the version string indicating the patch number in a semantic version or the build number in a
+      .NET System.Version class Set to undefined if the third number does not exist
+    name: patch
+    fullName: patch
+    langs:
+      - typeScript
+    type: property
+  - uid: sp-core-library.Version.revision
+    summary: >
+      The fourth number in the version string indicating the revision number Set to undefined if the fourth number does
+      not exist
+    name: revision
+    fullName: revision
+    langs:
+      - typeScript
+    type: property
+  - uid: sp-core-library.Version.satisfies
+    summary: >
+      Checks if this version satisfies the input parameter, therefore it's backwards compatible. They have to share the
+      same major version, and the input parameter must be an equal or more recent version. Examples: 1.0.0 satisfies
+      1.0.0 -&gt; true 1.1.0 satisfies 1.0.0 -> true 2.0.0 satisfies 1.0.0 -> false 1.0.0 satisfies 1.1.0 -> false
+    name: satisfies(compareWith)
+    fullName: satisfies
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public satisfies(compareWith: Version): boolean;'
+      return:
+        type:
+          - boolean
+        description: |
+          A boolean indicating if this version is compatible with the input parameter
+      parameters:
+        - id: compareWith
+          description: |
+            The version to compare with
+          type:
+            - Version
+  - uid: sp-core-library.Version.tryParse
+    summary: |
+      Tries to construct a new Version instance using the version string. Returns undefined if not successful.
+    name: tryParse(versionString)
+    fullName: tryParse
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static tryParse(versionString: string | undefined | null): Version | undefined;'
+      return:
+        type:
+          - Version | undefined
+        description: |
+          If valid, a new Version instace. Otherwise, undefined.
+      parameters:
+        - id: versionString
+          description: |
+            A version string
+          type:
+            - string | undefined | null
