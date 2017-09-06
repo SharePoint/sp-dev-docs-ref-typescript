@@ -147,6 +147,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'major: number;'
+      return:
+        type:
+          - number
   - uid: sp-core-library.Version.minor
     summary: |
       The second number in the version string indicating the minor version
@@ -155,6 +160,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'minor: number;'
+      return:
+        type:
+          - number
   - uid: sp-core-library.Version.parse
     summary: >
       Constructs a new Version instance using the version string. tryParse validates the input version string and throws
@@ -186,6 +196,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'patch: number | undefined;'
+      return:
+        type:
+          - number | undefined
   - uid: sp-core-library.Version.revision
     summary: >
       The fourth number in the version string indicating the revision number Set to undefined if the fourth number does
@@ -195,6 +210,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'revision: number | undefined;'
+      return:
+        type:
+          - number | undefined
   - uid: sp-core-library.Version.satisfies
     summary: >
       Checks if this version satisfies the input parameter, therefore it's backwards compatible. They have to share the

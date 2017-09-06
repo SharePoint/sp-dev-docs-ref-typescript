@@ -26,6 +26,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'dataVersion: Version;'
+      return:
+        type:
+          - Version
   - uid: sp-webpart-base.ISerializedWebPartData.properties
     summary: >
       Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage:
@@ -37,6 +42,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'properties: any;'
+      return:
+        type:
+          - any
   - uid: sp-webpart-base.ISerializedWebPartData.serverProcessedContent
     summary: >
       Definition: The collections of data that can be processed by server side services like search index and link fixup
@@ -46,3 +56,8 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'serverProcessedContent: ISerializedServerProcessedData;'
+      return:
+        type:
+          - ISerializedServerProcessedData

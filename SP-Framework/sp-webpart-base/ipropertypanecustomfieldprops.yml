@@ -23,6 +23,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'context: any;'
+      return:
+        type:
+          - any
   - uid: sp-webpart-base.IPropertyPaneCustomFieldProps.key
     summary: >
       An UNIQUE key indicates the identity of this contorl. The PropertyPane uses ReactJS to render its components.
@@ -34,6 +39,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'key: string;'
+      return:
+        type:
+          - string
   - uid: sp-webpart-base.IPropertyPaneCustomFieldProps.onDispose
     summary: |
       This API is called when the component is unmounted from the host element.
@@ -42,6 +52,11 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: 'onDispose: (domElement: HTMLElement, context?: any) => void;'
+      return:
+        type:
+          - '(domElement: HTMLElement, context?: any) => void'
   - uid: sp-webpart-base.IPropertyPaneCustomFieldProps.onRender
     summary: |
       This API will be called once the custom field is mounted on the host element.
@@ -50,3 +65,8 @@ items:
     langs:
       - typeScript
     type: property
+    syntax:
+      content: "onRender: (\r\n    domElement: HTMLElement,\r\n    context?: any,\r\n    changeCallback?: (targetProperty?: string, newValue?: any) => void) => void;"
+      return:
+        type:
+          - "(\r\n    domElement: HTMLElement,\r\n    context?: any,\r\n    changeCallback?: (targetProperty?: string, newValue?: any) => void) => void"
