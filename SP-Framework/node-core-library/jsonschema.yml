@@ -23,6 +23,11 @@ items:
   - uid: node-core-library.JsonSchema.ensureCompiled
     summary: |
       If not already done, this loads the schema from disk and compiles it.
+
+
+      ### Remarks
+
+      Any dependencies will be compiled as well.
     remarks: |
       Any dependencies will be compiled as well.
     name: ensureCompiled()
@@ -37,8 +42,16 @@ items:
           - void
         description: ''
   - uid: node-core-library.JsonSchema.fromFile
-    summary: |
+    summary: >
       Registers a JsonSchema that will be loaded from a file on disk.
+
+
+
+      ### Remarks
+
+
+      NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
+      schema is actually used.
     remarks: >
       NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
       schema is actually used.
@@ -54,8 +67,16 @@ items:
           - JsonSchema
         description: ''
   - uid: node-core-library.JsonSchema.fromLoadedObject
-    summary: |
+    summary: >
       Registers a JsonSchema that will be loaded from a file on disk.
+
+
+
+      ### Remarks
+
+
+      NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
+      schema is actually used.
     remarks: >
       NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
       schema is actually used.
@@ -71,8 +92,16 @@ items:
           - JsonSchema
         description: ''
   - uid: node-core-library.JsonSchema.shortName
-    summary: |
+    summary: >
       Returns a short name for this schema, for use in error messages.
+
+
+
+      ### Remarks
+
+
+      If the schema was loaded from a file, then the base filename is used. Otherwise, the "id" field is used if
+      available.
     remarks: >
       If the schema was loaded from a file, then the base filename is used. Otherwise, the "id" field is used if
       available.
