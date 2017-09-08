@@ -112,18 +112,31 @@ items:
           - void
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.context
-    summary: |
-      This property is a pointer to the web part context.see IWebPartContext for more details.
+    summary: >
+      Use the context object to access common services and state associated with the component.
+
+
+
+      ### Remarks
+
+
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    remarks: >
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
     name: context
     fullName: sp-webpart-base.BaseClientSideWebPart.context
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'context: IWebPartContext;'
+      content: 'context: WebPartContext;'
       return:
         type:
-          - IWebPartContext
+          - WebPartContext
   - uid: sp-webpart-base.BaseClientSideWebPart.dataVersion
     summary: >
       The value of this property is stored in the serialized data of the web part to allow developers to manage
