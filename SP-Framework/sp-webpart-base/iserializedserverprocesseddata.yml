@@ -4,7 +4,7 @@ items:
     summary: |
       Contains collections of data that can be processed by server side services like search index and link fixup
     name: ISerializedServerProcessedData
-    fullName: ISerializedServerProcessedData
+    fullName: sp-webpart-base.ISerializedServerProcessedData
     langs:
       - typeScript
     type: interface
@@ -21,7 +21,7 @@ items:
       Example: { 'myRichDescription': '&lt;div&gt;Some standard <b>HTML content</b><a href='http://somelink'>A
       Link</a></div>' 'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div> }
     name: htmlStrings
-    fullName: htmlStrings
+    fullName: sp-webpart-base.ISerializedServerProcessedData.htmlStrings
     langs:
       - typeScript
     type: property
@@ -36,7 +36,7 @@ items:
       values as image sources and run services like search index and link fixup on them. Example: { 'myImage1':
       'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }
     name: imageSources
-    fullName: imageSources
+    fullName: sp-webpart-base.ISerializedServerProcessedData.imageSources
     langs:
       - typeScript
     type: property
@@ -51,7 +51,7 @@ items:
       links and run services like link fixup on them. Example: { 'myWebURL': 'http://contoso.com' 'myFileLink':
       'https://res.contoso.com/file.docx' }
     name: links
-    fullName: links
+    fullName: sp-webpart-base.ISerializedServerProcessedData.links
     langs:
       - typeScript
     type: property
@@ -67,7 +67,7 @@ items:
       not treated as valid html. So, other services such as link fixup will not run on them. Example: { 'justSomeText':
       'This is some plain text', 'anotherText': 'Can have &lt;any&gt; characters here: "<>&amp;\\'' }
     name: searchablePlainTexts
-    fullName: searchablePlainTexts
+    fullName: sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
     langs:
       - typeScript
     type: property

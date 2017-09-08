@@ -5,7 +5,7 @@ items:
       Implements a unit testing strategy that generates output files, and then compares them against the expected input.
       If the files are different, then the test fails.
     name: FileDiffTest
-    fullName: FileDiffTest
+    fullName: node-core-library.FileDiffTest
     langs:
       - typeScript
     type: class
@@ -20,7 +20,7 @@ items:
       normally edited by a human; the "equivalence" comparison here is intended to ignore spurious changes that might be
       introduced by a tool, e.g. Git newline normalization or an editor that strips whitespace when saving.
     name: assertEqual()
-    fullName: assertEqual
+    fullName: node-core-library.FileDiffTest.assertEqual
     langs:
       - typeScript
     type: method
@@ -41,7 +41,7 @@ items:
     remarks: |
       Call this method if changes have been made to the package.json files on disk.
     name: clearCache()
-    fullName: clearCache
+    fullName: node-core-library.FileDiffTest.clearCache
     langs:
       - typeScript
     type: method
@@ -56,7 +56,7 @@ items:
       Sets up a folder in the temp directory where the unit test should write its output files to be diffed. Any
       previous contents of the folder will be deleted.
     name: 'prepareFolder(unitTestDirName, testModule)'
-    fullName: prepareFolder
+    fullName: node-core-library.FileDiffTest.prepareFolder
     langs:
       - typeScript
     type: method

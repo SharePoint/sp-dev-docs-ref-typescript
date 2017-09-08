@@ -4,27 +4,29 @@ items:
     summary: |
       This is the default implementation of ITimeProvider that simply calls the real browser APIs.
     name: TimeProvider
-    fullName: TimeProvider
+    fullName: sp-core-library.TimeProvider
     langs:
       - typeScript
     type: class
     package: sp-core-library
     children:
-      - sp-core-library.TimeProvider.__constructor
+      - sp-core-library.TimeProvider.constructor
       - sp-core-library.TimeProvider.getDate
       - sp-core-library.TimeProvider.getTimestamp
       - sp-core-library.TimeProvider.serviceKey
-  - uid: sp-core-library.TimeProvider.__constructor
+  - uid: sp-core-library.TimeProvider.constructor
     summary: |
       Constructs a new instance of the [TimeProvider](xref:sp-core-library.TimeProvider) class
-    name: __constructor
-    fullName: __constructor
+    name: constructor()
+    fullName: sp-core-library.TimeProvider.constructor
     langs:
       - typeScript
     type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope);'
   - uid: sp-core-library.TimeProvider.getDate
     name: getDate()
-    fullName: getDate
+    fullName: sp-core-library.TimeProvider.getDate
     langs:
       - typeScript
     type: method
@@ -36,7 +38,7 @@ items:
         description: ''
   - uid: sp-core-library.TimeProvider.getTimestamp
     name: getTimestamp()
-    fullName: getTimestamp
+    fullName: sp-core-library.TimeProvider.getTimestamp
     langs:
       - typeScript
     type: method
@@ -50,7 +52,7 @@ items:
     summary: |
       The service key for ITimeProvider.
     name: serviceKey
-    fullName: serviceKey
+    fullName: sp-core-library.TimeProvider.serviceKey
     langs:
       - typeScript
     type: property

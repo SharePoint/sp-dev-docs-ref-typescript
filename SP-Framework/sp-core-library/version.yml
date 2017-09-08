@@ -6,7 +6,7 @@ items:
       MINOR, PATCH and REVISION are integers. PATCH and REVISION are optional. Leading zeros are allowed, but have no
       meaning in comparisons. Examples: 1.0, 1.0.0, 1.0.0.0, 1.01, 01.02.03, 001.002.003.004
     name: Version
-    fullName: Version
+    fullName: sp-core-library.Version
     langs:
       - typeScript
     type: class
@@ -28,7 +28,7 @@ items:
     summary: |
       Compares two Version classes
     name: 'compare(v1, v2)'
-    fullName: compare
+    fullName: sp-core-library.Version.compare
     langs:
       - typeScript
     type: method
@@ -56,7 +56,7 @@ items:
       Checks if this version is equal to the input parameter. Missing patch number is treated as zero. Examples: 1.0.0
       equals 1.0.0 -&gt; true 2.0.1 equals 2.0.0 -> false 3.0 equals 3.0.0 -> true 04.01 equals 4.1 -> true
     name: equals(compareWith)
-    fullName: equals
+    fullName: sp-core-library.Version.equals
     langs:
       - typeScript
     type: method
@@ -78,7 +78,7 @@ items:
       Checks if this version is greater (i.e. newer) than the input parameter. Missing patch number is treated as zero
       Examples: 1.0.0 greaterThan 0.0.9 -&gt; true 2.0 greaterThan 2.0.0 -> false 3.0.1 greaterThan 3.0 -> true
     name: greaterThan(compareWith)
-    fullName: greaterThan
+    fullName: sp-core-library.Version.greaterThan
     langs:
       - typeScript
     type: method
@@ -99,7 +99,7 @@ items:
     summary: |
       Indicates whether a version string is valid
     name: isValid(versionString)
-    fullName: isValid
+    fullName: sp-core-library.Version.isValid
     langs:
       - typeScript
     type: method
@@ -122,7 +122,7 @@ items:
       Examples: 0.9.9 lessThan 1.0.0 -&gt; true 2.0 lessThan 2.0.0 -> false 3.0 lessThan 3.0.1 -> true 04.01 lessThan
       4.1 -> false
     name: lessThan(compareWith)
-    fullName: lessThan
+    fullName: sp-core-library.Version.lessThan
     langs:
       - typeScript
     type: method
@@ -143,7 +143,7 @@ items:
     summary: |
       The first number in the version string indicating the major version
     name: major
-    fullName: major
+    fullName: sp-core-library.Version.major
     langs:
       - typeScript
     type: property
@@ -156,7 +156,7 @@ items:
     summary: |
       The second number in the version string indicating the minor version
     name: minor
-    fullName: minor
+    fullName: sp-core-library.Version.minor
     langs:
       - typeScript
     type: property
@@ -170,7 +170,7 @@ items:
       Constructs a new Version instance using the version string. tryParse validates the input version string and throws
       error if it is invalid
     name: parse(versionString)
-    fullName: parse
+    fullName: sp-core-library.Version.parse
     langs:
       - typeScript
     type: method
@@ -192,7 +192,7 @@ items:
       The thrid number in the version string indicating the patch number in a semantic version or the build number in a
       .NET System.Version class Set to undefined if the third number does not exist
     name: patch
-    fullName: patch
+    fullName: sp-core-library.Version.patch
     langs:
       - typeScript
     type: property
@@ -206,7 +206,7 @@ items:
       The fourth number in the version string indicating the revision number Set to undefined if the fourth number does
       not exist
     name: revision
-    fullName: revision
+    fullName: sp-core-library.Version.revision
     langs:
       - typeScript
     type: property
@@ -221,7 +221,7 @@ items:
       same major version, and the input parameter must be an equal or more recent version. Examples: 1.0.0 satisfies
       1.0.0 -&gt; true 1.1.0 satisfies 1.0.0 -> true 2.0.0 satisfies 1.0.0 -> false 1.0.0 satisfies 1.1.0 -> false
     name: satisfies(compareWith)
-    fullName: satisfies
+    fullName: sp-core-library.Version.satisfies
     langs:
       - typeScript
     type: method
@@ -242,7 +242,7 @@ items:
     summary: |
       Tries to construct a new Version instance using the version string. Returns undefined if not successful.
     name: tryParse(versionString)
-    fullName: tryParse
+    fullName: sp-core-library.Version.tryParse
     langs:
       - typeScript
     type: method

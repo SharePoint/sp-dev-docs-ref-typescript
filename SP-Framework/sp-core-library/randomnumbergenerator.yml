@@ -4,26 +4,28 @@ items:
     summary: |
       This is the default implementation of IRandomNumberGenerator that simply calls Math.random().
     name: RandomNumberGenerator
-    fullName: RandomNumberGenerator
+    fullName: sp-core-library.RandomNumberGenerator
     langs:
       - typeScript
     type: class
     package: sp-core-library
     children:
-      - sp-core-library.RandomNumberGenerator.__constructor
+      - sp-core-library.RandomNumberGenerator.constructor
       - sp-core-library.RandomNumberGenerator.generate
       - sp-core-library.RandomNumberGenerator.serviceKey
-  - uid: sp-core-library.RandomNumberGenerator.__constructor
+  - uid: sp-core-library.RandomNumberGenerator.constructor
     summary: |
       Constructs a new instance of the [RandomNumberGenerator](xref:sp-core-library.RandomNumberGenerator) class
-    name: __constructor
-    fullName: __constructor
+    name: constructor()
+    fullName: sp-core-library.RandomNumberGenerator.constructor
     langs:
       - typeScript
     type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope);'
   - uid: sp-core-library.RandomNumberGenerator.generate
     name: generate()
-    fullName: generate
+    fullName: sp-core-library.RandomNumberGenerator.generate
     langs:
       - typeScript
     type: method
@@ -37,7 +39,7 @@ items:
     summary: |
       The service key for IRandomNumberGenerator.
     name: serviceKey
-    fullName: serviceKey
+    fullName: sp-core-library.RandomNumberGenerator.serviceKey
     langs:
       - typeScript
     type: property

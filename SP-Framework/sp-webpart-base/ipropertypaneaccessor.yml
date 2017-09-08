@@ -5,7 +5,7 @@ items:
       Web part context property pane accessor interface. Provides some most commonly used utilities to access the
       property pane.
     name: IPropertyPaneAccessor
-    fullName: IPropertyPaneAccessor
+    fullName: sp-webpart-base.IPropertyPaneAccessor
     langs:
       - typeScript
     type: interface
@@ -19,7 +19,7 @@ items:
     summary: |
       Returns true if the PropertyPane is open.
     name: isPropertyPaneOpen()
-    fullName: isPropertyPaneOpen
+    fullName: sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
     langs:
       - typeScript
     type: method
@@ -35,7 +35,7 @@ items:
       this.context.propertyPane.open() then the property would be true, whereas if the property pane was opened by the
       host, then the value will be false.
     name: isRenderedByWebPart()
-    fullName: isRenderedByWebPart
+    fullName: sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
     langs:
       - typeScript
     type: method
@@ -49,7 +49,7 @@ items:
     summary: |
       This API should be used to open the PropertyPane to help configure the web part.
     name: open()
-    fullName: open
+    fullName: sp-webpart-base.IPropertyPaneAccessor.open
     langs:
       - typeScript
     type: method
@@ -65,7 +65,7 @@ items:
       the PropertyPane is already open for the currently active web part. If the PropertyPane is opened for another web
       part, calling the refresh API will have no impact.
     name: refresh()
-    fullName: refresh
+    fullName: sp-webpart-base.IPropertyPaneAccessor.refresh
     langs:
       - typeScript
     type: method

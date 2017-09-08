@@ -9,31 +9,33 @@ items:
       undefined value Empty queryParam (www.example.com/?&debug=on) stores undefined key and value Query param with only
       equals (www.example.com/?=&debug=on stores empty string key and value
     name: UrlQueryParameterCollection
-    fullName: UrlQueryParameterCollection
+    fullName: sp-core-library.UrlQueryParameterCollection
     langs:
       - typeScript
     type: class
     package: sp-core-library
     children:
-      - sp-core-library.UrlQueryParameterCollection.__constructor
+      - sp-core-library.UrlQueryParameterCollection.constructor
       - sp-core-library.UrlQueryParameterCollection.getValue
       - sp-core-library.UrlQueryParameterCollection.getValues
-  - uid: sp-core-library.UrlQueryParameterCollection.__constructor
+  - uid: sp-core-library.UrlQueryParameterCollection.constructor
     summary: >
       Constructs a new instance of the [UrlQueryParameterCollection](xref:sp-core-library.UrlQueryParameterCollection)
       class
-    name: __constructor
-    fullName: __constructor
+    name: constructor()
+    fullName: sp-core-library.UrlQueryParameterCollection.constructor
     langs:
       - typeScript
     type: constructor
+    syntax:
+      content: 'constructor(url: string);'
   - uid: sp-core-library.UrlQueryParameterCollection.getValue
     summary: >
       Returns the value of the first matching query parameter or undefined if the key doesn't exist. Examples:
       this.\_queryParameterList = \[ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}\]
       getValue('TEST') ---&gt; 'done' getValue('debug') ---> 'false' getValue('lost') ---> undefined
     name: getValue(param)
-    fullName: getValue
+    fullName: sp-core-library.UrlQueryParameterCollection.getValue
     langs:
       - typeScript
     type: method
@@ -56,7 +58,7 @@ items:
       getValues('TEST') ---&gt; \['done', 'notdone'\] getValues('debug') ---> \['false'\] getValues('lost') --->
       undefined
     name: getValues(param)
-    fullName: getValues
+    fullName: sp-core-library.UrlQueryParameterCollection.getValues
     langs:
       - typeScript
     type: method

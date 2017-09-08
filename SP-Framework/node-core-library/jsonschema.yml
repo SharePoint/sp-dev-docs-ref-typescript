@@ -8,7 +8,7 @@ items:
       avoid schema errors at runtime, it's recommended to create a unit test that calls JsonSchema.ensureCompiled() for
       each of your schema objects.
     name: JsonSchema
-    fullName: JsonSchema
+    fullName: node-core-library.JsonSchema
     langs:
       - typeScript
     type: class
@@ -31,7 +31,7 @@ items:
     remarks: |
       Any dependencies will be compiled as well.
     name: ensureCompiled()
-    fullName: ensureCompiled
+    fullName: node-core-library.JsonSchema.ensureCompiled
     langs:
       - typeScript
     type: method
@@ -56,7 +56,7 @@ items:
       NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
       schema is actually used.
     name: fromFile()
-    fullName: fromFile
+    fullName: node-core-library.JsonSchema.fromFile
     langs:
       - typeScript
     type: method
@@ -81,7 +81,7 @@ items:
       NOTE: An error occurs if the file does not exist; however, the file itself is not loaded or validated until it the
       schema is actually used.
     name: fromLoadedObject()
-    fullName: fromLoadedObject
+    fullName: node-core-library.JsonSchema.fromLoadedObject
     langs:
       - typeScript
     type: method
@@ -106,7 +106,7 @@ items:
       If the schema was loaded from a file, then the base filename is used. Otherwise, the "id" field is used if
       available.
     name: shortName
-    fullName: shortName
+    fullName: node-core-library.JsonSchema.shortName
     langs:
       - typeScript
     type: property
@@ -120,7 +120,7 @@ items:
       Validates the specified JSON object against this JSON schema. If the validation fails, an exception will be
       thrown.
     name: 'validateObject(jsonObject, filenameForErrors, options)'
-    fullName: validateObject
+    fullName: node-core-library.JsonSchema.validateObject
     langs:
       - typeScript
     type: method
@@ -153,7 +153,7 @@ items:
       Validates the specified JSON object against this JSON schema. If the validation fails, a callback is called for
       each validation error.
     name: validateObjectWithCallback()
-    fullName: validateObjectWithCallback
+    fullName: node-core-library.JsonSchema.validateObjectWithCallback
     langs:
       - typeScript
     type: method

@@ -6,7 +6,7 @@ items:
       the output should be this structure. The structure of the 'properties' field is owned by the web part and is
       specific to the web part. Each web part can decide the set of properties it wants to serialialize.
     name: IWebPartData
-    fullName: IWebPartData
+    fullName: sp-webpart-base.IWebPartData
     langs:
       - typeScript
     type: interface
@@ -27,7 +27,7 @@ items:
       information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: string
       Supported values: MAJOR.MINOR Example: "1.0"
     name: dataVersion
-    fullName: dataVersion
+    fullName: sp-webpart-base.IWebPartData.dataVersion
     langs:
       - typeScript
     type: property
@@ -41,7 +41,7 @@ items:
       Definition: web part description. Usage: display the description of the web part. Required: no Type: string
       Supported values: string with the description. Example: "Text"
     name: description
-    fullName: description
+    fullName: sp-webpart-base.IWebPartData.description
     langs:
       - typeScript
     type: property
@@ -55,7 +55,7 @@ items:
       Definition: universally unique web part Type id. Usage: uniquely identify a web part. Required: yes Type: GUID
       Supported values: any GUID Example: "dbef608d-3ad5-4f8f-b139-d916f2f0a294"
     name: id
-    fullName: id
+    fullName: sp-webpart-base.IWebPartData.id
     langs:
       - typeScript
     type: property
@@ -72,7 +72,7 @@ items:
       be GUID or other uniquely identifiable formats. example: \["dbef608d-3ad5-4f8f-b139-d916f2f0a294"\] experimental:
       yes
     name: instanceId
-    fullName: instanceId
+    fullName: sp-webpart-base.IWebPartData.instanceId
     langs:
       - typeScript
     type: property
@@ -88,7 +88,7 @@ items:
       properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value':
       'text value' }
     name: properties
-    fullName: properties
+    fullName: sp-webpart-base.IWebPartData.properties
     langs:
       - typeScript
     type: property
@@ -102,7 +102,7 @@ items:
       Definition: The collections of data that can be processed by server side services like search index and link fixup
       Required: no
     name: serverProcessedContent
-    fullName: serverProcessedContent
+    fullName: sp-webpart-base.IWebPartData.serverProcessedContent
     langs:
       - typeScript
     type: property
@@ -116,7 +116,7 @@ items:
       Definition: web part title. Usage: display the name of the web part in the toolbox, web part gallery and the page.
       Required: yes Type: string Supported values: string less than 100 characters Example: "Text"
     name: title
-    fullName: title
+    fullName: sp-webpart-base.IWebPartData.title
     langs:
       - typeScript
     type: property
