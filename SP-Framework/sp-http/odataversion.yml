@@ -1,0 +1,56 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.ODataVersion
+    summary: |
+      Represents supported version of the 'OData-Version' header, which is part of the Open Data Protocol standard.
+    name: ODataVersion
+    fullName: sp-http.ODataVersion
+    langs:
+      - typeScript
+    type: class
+    package: sp-http
+    children:
+      - sp-http.ODataVersion.tryParseFromHeaders
+      - sp-http.ODataVersion.v3
+      - sp-http.ODataVersion.v4
+  - uid: sp-http.ODataVersion.tryParseFromHeaders
+    summary: >
+      If the 'OData-Version' header is present, this returns the corresponding ODataVersion constant. An error is thrown
+      if the version number is not supported. If the header is missing, then undefined is returned.
+    name: tryParseFromHeaders()
+    fullName: sp-http.ODataVersion.tryParseFromHeaders
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static tryParseFromHeaders(headers: Headers): ODataVersion | undefined;'
+      return:
+        type:
+          - ODataVersion | undefined
+        description: ''
+  - uid: sp-http.ODataVersion.v3
+    summary: |
+      Represents version 3.0 for the 'OData-Version' header
+    name: v3
+    fullName: sp-http.ODataVersion.v3
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'v3: ODataVersion;'
+      return:
+        type:
+          - ODataVersion
+  - uid: sp-http.ODataVersion.v4
+    summary: |
+      Represents version 4.0 for the 'OData-Version' header
+    name: v4
+    fullName: sp-http.ODataVersion.v4
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'v4: ODataVersion;'
+      return:
+        type:
+          - ODataVersion
