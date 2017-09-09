@@ -1,0 +1,107 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-application-base.PlaceholderContent
+    summary: |-
+      > [!NOTE]
+      > _This API is provided as a preview for developers and may change based on feedback_
+      > _that we receive. Do not use this API in a production environment._
+
+      Represents custom content that is rendered inside a placeholder on a SharePoint page.
+    remarks: >-
+      This object is returned by
+      [PlaceholderProvider.tryCreateContent](xref:sp-application-base.PlaceholderProvider.tryCreateContent) . It
+      provides access to a Document Object Model (DOM) element where the caller can render its custom content.
+    name: PlaceholderContent
+    fullName: sp-application-base.PlaceholderContent
+    langs:
+      - typeScript
+    type: class
+    package: sp-application-base
+    children:
+      - sp-application-base.PlaceholderContent.dispose
+      - sp-application-base.PlaceholderContent.domElement
+      - sp-application-base.PlaceholderContent.name
+  - uid: sp-application-base.PlaceholderContent.dispose
+    summary: >-
+      > [!NOTE]
+
+      > _This API is provided as a preview for developers and may change based on feedback_
+
+      > _that we receive. Do not use this API in a production environment._
+
+
+      Disposes the PlaceholderContent object and removes its attached DOM element from the page.
+
+
+      ### Remarks
+
+
+      This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the
+      application when the containing placeholder is disposed. Calling dispose() invokes the
+      [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
+      callback and removes the attached DOM element from the page, and disposes the PlaceholderContent object.
+    remarks: >-
+      This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the
+      application when the containing placeholder is disposed. Calling dispose() invokes the
+      [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
+      callback and removes the attached DOM element from the page, and disposes the PlaceholderContent object.
+    name: dispose()
+    fullName: sp-application-base.PlaceholderContent.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-application-base.PlaceholderContent.domElement
+    summary: >-
+      > [!NOTE]
+
+      > _This API is provided as a preview for developers and may change based on feedback_
+
+      > _that we receive. Do not use this API in a production environment._
+
+
+      The Document Object Model (DOM) element where the owner should render its custom content.
+
+
+      ### Remarks
+
+
+      If the caller needs to be notified when the DOM element is disposed, use the
+      [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
+      callback.
+    remarks: >-
+      If the caller needs to be notified when the DOM element is disposed, use the
+      [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
+      callback.
+    name: domElement
+    fullName: sp-application-base.PlaceholderContent.domElement
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly domElement: HTMLDivElement;'
+      return:
+        type:
+          - HTMLDivElement
+  - uid: sp-application-base.PlaceholderContent.name
+    summary: |-
+      > [!NOTE]
+      > _This API is provided as a preview for developers and may change based on feedback_
+      > _that we receive. Do not use this API in a production environment._
+
+      Identifies the placeholder that this content was added to. Example: PlaceholderName.Top
+    name: name
+    fullName: sp-application-base.PlaceholderContent.name
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly name: PlaceholderName;'
+      return:
+        type:
+          - PlaceholderName

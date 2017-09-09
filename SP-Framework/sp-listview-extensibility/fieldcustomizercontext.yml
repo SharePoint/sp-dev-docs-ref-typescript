@@ -1,0 +1,53 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.FieldCustomizerContext
+    summary: This object provides contextual information for BaseFieldCustomizer.
+    name: FieldCustomizerContext
+    fullName: sp-listview-extensibility.FieldCustomizerContext
+    langs:
+      - typeScript
+    type: class
+    remarks: |+
+      **Extends:** `ExtensionContext`
+
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.FieldCustomizerContext.field
+      - sp-listview-extensibility.FieldCustomizerContext.tryGetListView
+  - uid: sp-listview-extensibility.FieldCustomizerContext.field
+    summary: Provides access to the SharePoint field that the customizer will operate on.
+    name: field
+    fullName: sp-listview-extensibility.FieldCustomizerContext.field
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly field: SPField;'
+      return:
+        type:
+          - SPField
+  - uid: sp-listview-extensibility.FieldCustomizerContext.tryGetListView
+    summary: >-
+      If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific
+      functionality; otherwise the value is undefined.
+
+
+      ### Remarks
+
+
+      Although the SharePoint list view is the main usage scenario, field customizers can be used by other user
+      interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.
+    remarks: >-
+      Although the SharePoint list view is the main usage scenario, field customizers can be used by other user
+      interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.
+    name: tryGetListView()
+    fullName: sp-listview-extensibility.FieldCustomizerContext.tryGetListView
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public tryGetListView(): ListViewAccessor | undefined;'
+      return:
+        type:
+          - ListViewAccessor | undefined
+        description: 'the SharePoint list view, or undefined if there is none.'

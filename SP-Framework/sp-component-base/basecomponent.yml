@@ -1,0 +1,190 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-component-base.BaseComponent
+    summary: |-
+      > [!NOTE]
+      > _This API is provided as a preview for developers and may change based on feedback_
+      > _that we receive. Do not use this API in a production environment._
+
+      Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.
+    remarks: >-
+      **Implements:** `IEventObserver`
+
+
+      The constructor for this class is marked as internal; third party code should not inherit directly from this base
+      class.
+    name: BaseComponent
+    fullName: sp-component-base.BaseComponent
+    langs:
+      - typeScript
+    type: class
+    package: sp-component-base
+    children:
+      - sp-component-base.BaseComponent.componentId
+      - sp-component-base.BaseComponent.context
+      - sp-component-base.BaseComponent.dispose
+      - sp-component-base.BaseComponent.instanceId
+      - sp-component-base.BaseComponent.isDisposed
+      - sp-component-base.BaseComponent.manifest
+      - sp-component-base.BaseComponent.onDispose
+  - uid: sp-component-base.BaseComponent.componentId
+    summary: >-
+      > [!NOTE]
+
+      > _This API is provided as a preview for developers and may change based on feedback_
+
+      > _that we receive. Do not use this API in a production environment._
+
+
+      Returns the component identifier as defined in the component’s associated manifest.
+
+
+      ### Remarks
+
+
+      Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which
+      may include additional metadata about the component. Manifests are tracked using a unique identifier, which is a
+      text string containing a lower case GUID value
+    remarks: >-
+      Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which
+      may include additional metadata about the component. Manifests are tracked using a unique identifier, which is a
+      text string containing a lower case GUID value
+    name: componentId
+    fullName: sp-component-base.BaseComponent.componentId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly componentId: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.BaseComponent.context
+    summary: >-
+      > [!NOTE]
+
+      > _This API is provided as a preview for developers and may change based on feedback_
+
+      > _that we receive. Do not use this API in a production environment._
+
+
+      Use the context object to access common services and state associated with the component.
+
+
+      ### Remarks
+
+
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    name: context
+    fullName: sp-component-base.BaseComponent.context
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected context: BaseComponentContext;'
+      return:
+        type:
+          - BaseComponentContext
+  - uid: sp-component-base.BaseComponent.dispose
+    summary: |-
+      > [!NOTE]
+      > _This API is provided as a preview for developers and may change based on feedback_
+      > _that we receive. Do not use this API in a production environment._
+
+      Disposes the component. In order to write component-specific dispose mechanism, use onDispose instead. 
+
+       The onDispose event should only be raised once - if this.\_disposed was false when the function was called. (Put another way, dispose() should be a no-op if this.\_disposed is true.)
+    name: dispose()
+    fullName: sp-component-base.BaseComponent.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-component-base.BaseComponent.instanceId
+    summary: >-
+      > [!NOTE]
+
+      > _This API is provided as a preview for developers and may change based on feedback_
+
+      > _that we receive. Do not use this API in a production environment._
+
+
+      Unique identifier for the instance of the component. The same component can be instantiated several times, and
+      each instance will have a different id.
+    name: instanceId
+    fullName: sp-component-base.BaseComponent.instanceId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly instanceId: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.BaseComponent.isDisposed
+    summary: |-
+      > [!NOTE]
+      > _This API is provided as a preview for developers and may change based on feedback_
+      > _that we receive. Do not use this API in a production environment._
+
+      Returns true if the component has been already disposed.
+    name: isDisposed
+    fullName: sp-component-base.BaseComponent.isDisposed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-component-base.BaseComponent.manifest
+    summary: |-
+      > [!NOTE]
+      > _This API is provided as a preview for developers and may change based on feedback_
+      > _that we receive. Do not use this API in a production environment._
+
+      Returns the manifest for the component.
+    name: manifest
+    fullName: sp-component-base.BaseComponent.manifest
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly manifest: IClientSideComponentManifest;'
+      return:
+        type:
+          - IClientSideComponentManifest
+  - uid: sp-component-base.BaseComponent.onDispose
+    summary: >-
+      > [!NOTE]
+
+      > _This API is provided as a preview for developers and may change based on feedback_
+
+      > _that we receive. Do not use this API in a production environment._
+
+
+      This event hook is called immediately before the component stops being used. It provides an opportunity to release
+      any associated resources, cancel any outstanding requests, etc.
+    name: onDispose()
+    fullName: sp-component-base.BaseComponent.onDispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onDispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
