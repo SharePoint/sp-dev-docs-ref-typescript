@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-dialog.SecondaryDialogProvider
-    summary: >
+    summary: >-
       > [!NOTE]
 
       > _This API is provided as a preview for developers and may change based on feedback_
@@ -11,12 +11,12 @@ items:
 
       This class handles calls to show a secondary dialog. It's only available by calling this.secondaryManagerProvider
       inside a dialog.
-    remarks: >
+    remarks: >-
       Secondary dialogs do not need to request permission from dialog manager, because the primary dialog already has
       permission. Therefore, the secondary dialog will be immediately shown. This causes the primary dialog to hide
       until the secondary dialog is closed. There can be only one secondary dialog at a time. Additional requests to
-      show more secondary dialogs are rejected.see
-      [BaseDialog.secondaryDialogProvider](xref:sp-dialog.BaseDialog.secondaryDialogProvider)<!-- -->for how to use this
+      show more secondary dialogs are rejected. see
+      [BaseDialog.secondaryDialogProvider](xref:sp-dialog.BaseDialog.secondaryDialogProvider) for how to use this
     name: SecondaryDialogProvider
     fullName: sp-dialog.SecondaryDialogProvider
     langs:
@@ -28,7 +28,7 @@ items:
       - sp-dialog.SecondaryDialogProvider.prompt
       - sp-dialog.SecondaryDialogProvider.show
   - uid: sp-dialog.SecondaryDialogProvider.alert
-    summary: >
+    summary: >-
       > [!NOTE]
 
       > _This API is provided as a preview for developers and may change based on feedback_
@@ -36,8 +36,8 @@ items:
       > _that we receive. Do not use this API in a production environment._
 
 
-      Similar to[Dialog.alert](xref:sp-dialog.Dialog.alert)<!-- -->. The only difference is that the dialog is
-      immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
+      Similar to [Dialog.alert](xref:sp-dialog.Dialog.alert) . The only difference is that the dialog is immediately
+      shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     name: 'alert(message, options)'
     fullName: sp-dialog.SecondaryDialogProvider.alert
     langs:
@@ -55,12 +55,11 @@ items:
           type:
             - string
         - id: options
-          description: |
-            Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)
+          description: 'Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)'
           type:
             - IAlertOptions
   - uid: sp-dialog.SecondaryDialogProvider.prompt
-    summary: >
+    summary: >-
       > [!NOTE]
 
       > _This API is provided as a preview for developers and may change based on feedback_
@@ -68,8 +67,8 @@ items:
       > _that we receive. Do not use this API in a production environment._
 
 
-      Similar to[Dialog.prompt](xref:sp-dialog.Dialog.prompt)<!-- -->. The only difference is that the dialog is
-      immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
+      Similar to [Dialog.prompt](xref:sp-dialog.Dialog.prompt) . The only difference is that the dialog is immediately
+      shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     name: 'prompt(message, options)'
     fullName: sp-dialog.SecondaryDialogProvider.prompt
     langs:
@@ -87,13 +86,13 @@ items:
           type:
             - string
         - id: options
-          description: >
-            Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)<!-- -->.The confirmOpen
-            option will be ignored.
+          description: >-
+            Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) .The confirmOpen option
+            will be ignored.
           type:
             - IPromptOptions
   - uid: sp-dialog.SecondaryDialogProvider.show
-    summary: >
+    summary: >-
       > [!NOTE]
 
       > _This API is provided as a preview for developers and may change based on feedback_
@@ -101,8 +100,8 @@ items:
       > _that we receive. Do not use this API in a production environment._
 
 
-      Similar to[BaseDialog.show](xref:sp-dialog.BaseDialog.show)<!-- -->. The dialog to show is passed in as parameter
-      and the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
+      Similar to [BaseDialog.show](xref:sp-dialog.BaseDialog.show) . The dialog to show is passed in as parameter and
+      the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     name: 'show(dialog, options)'
     fullName: sp-dialog.SecondaryDialogProvider.show
     langs:
@@ -120,8 +119,8 @@ items:
           type:
             - BaseDialog
         - id: options
-          description: >
-            Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)<!-- -->.The confirmOpen
-            option will be ignored.
+          description: >-
+            Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) .The confirmOpen option
+            will be ignored.
           type:
             - IDialogShowOptions

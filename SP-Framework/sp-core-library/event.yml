@@ -1,13 +1,13 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.Event
-    summary: |
+    summary: |-
       > [!NOTE]
       > _This API is provided as a preview for developers and may change based on feedback_
       > _that we receive. Do not use this API in a production environment._
 
       Representation of an event. It exposes an event that third parties can attach handlers to.
-    remarks: >
+    remarks: >-
       When an event is raised, its handlers are executed synchronously. An event handler should not throw errors,
       although the system can recover from an error in a handler. Event handlers should be fast. If they need to do
       expensive operations, they should use Promises for that.
@@ -21,7 +21,7 @@ items:
       - sp-core-library.Event.add
       - sp-core-library.Event.remove
   - uid: sp-core-library.Event.add
-    summary: >
+    summary: >-
       > [!NOTE]
 
       > _This API is provided as a preview for developers and may change based on feedback_
@@ -33,14 +33,13 @@ items:
       multiple event handlers to the same event.
 
 
-
       ### Remarks
 
 
       Since BaseComponent implements the IEventObserver interface, a web part or extension can pass itself as the
       observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is
       disposed.
-    remarks: >
+    remarks: >-
       Since BaseComponent implements the IEventObserver interface, a web part or extension can pass itself as the
       observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is
       disposed.
@@ -57,28 +56,25 @@ items:
         description: ''
       parameters:
         - id: observer
-          description: >
+          description: >-
             Indicates the object that is subscribing to the event: When the object is disposed, the event handler will
             be automatically removed. This object is also used for diagnostic purposes, e.g. if its event handler fails
             to trap an exception
           type:
             - IEventObserver
         - id: eventHandler
-          description: |
-            A callback function that will be invoked whenever the event occurs.
+          description: A callback function that will be invoked whenever the event occurs.
           type:
             - '(eventArgs: TEventArgs) => void'
   - uid: sp-core-library.Event.remove
-    summary: >
+    summary: |-
       > [!NOTE]
-
       > _This API is provided as a preview for developers and may change based on feedback_
-
       > _that we receive. Do not use this API in a production environment._
 
+      Removes an event handler to the event. Only removes the event handler passed as input. 
 
-      Removes an event handler to the event. Only removes the event handler passed as input. If the event handler has
-      already been removed, or it was never added, this operation does nothing.
+       If the event handler has already been removed, or it was never added, this operation does nothing.
     name: 'remove(observer, eventHandler)'
     fullName: sp-core-library.Event.remove
     langs:
@@ -92,12 +88,10 @@ items:
         description: ''
       parameters:
         - id: observer
-          description: |
-            Object that it's removing the event handler from the event
+          description: Object that it's removing the event handler from the event
           type:
             - IEventObserver
         - id: eventHandler
-          description: |
-            Event handler to remove. It must be the same object instance that was used in add.
+          description: Event handler to remove. It must be the same object instance that was used in add.
           type:
             - '(eventArgs: TEventArgs) => void'

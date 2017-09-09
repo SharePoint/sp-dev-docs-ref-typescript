@@ -1,8 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-webpart-base.ISerializedServerProcessedData
-    summary: |
-      Contains collections of data that can be processed by server side services like search index and link fixup
+    summary: Contains collections of data that can be processed by server side services like search index and link fixup
     name: ISerializedServerProcessedData
     fullName: sp-webpart-base.ISerializedServerProcessedData
     langs:
@@ -15,11 +14,11 @@ items:
       - sp-webpart-base.ISerializedServerProcessedData.links
       - sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
   - uid: sp-webpart-base.ISerializedServerProcessedData.htmlStrings
-    summary: >
+    summary: >-
       A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers
-      treat the values as HTML content and run services like safety checks, search index and link fixup on them.
-      Example: { 'myRichDescription': '&lt;div&gt;Some standard <b>HTML content</b><a href='http://somelink'>A
-      Link</a></div>' 'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div> }
+      treat the values as HTML content and run services like safety checks, search index and link fixup on them. 
+
+       Example: { 'myRichDescription': '&lt;div&gt;Some standard <b>HTML content</b><a href='http://somelink'>A Link</a></div>' 'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div> }
     name: htmlStrings
     fullName: sp-webpart-base.ISerializedServerProcessedData.htmlStrings
     langs:
@@ -31,10 +30,11 @@ items:
         type:
           - '{ [key: string]: string }'
   - uid: sp-webpart-base.ISerializedServerProcessedData.imageSources
-    summary: >
+    summary: >-
       A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the
-      values as image sources and run services like search index and link fixup on them. Example: { 'myImage1':
-      'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }
+      values as image sources and run services like search index and link fixup on them. 
+
+       Example: { 'myImage1': 'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }
     name: imageSources
     fullName: sp-webpart-base.ISerializedServerProcessedData.imageSources
     langs:
@@ -46,10 +46,11 @@ items:
         type:
           - '{ [key: string]: string }'
   - uid: sp-webpart-base.ISerializedServerProcessedData.links
-    summary: >
+    summary: >-
       A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as
-      links and run services like link fixup on them. Example: { 'myWebURL': 'http://contoso.com' 'myFileLink':
-      'https://res.contoso.com/file.docx' }
+      links and run services like link fixup on them. 
+
+       Example: { 'myWebURL': 'http://contoso.com' 'myFileLink': 'https://res.contoso.com/file.docx' }
     name: links
     fullName: sp-webpart-base.ISerializedServerProcessedData.links
     langs:
@@ -61,11 +62,12 @@ items:
         type:
           - '{ [key: string]: string }'
   - uid: sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
-    summary: >
+    summary: >-
       A key-value map where keys are string identifiers and values are strings that should be search indexed. The values
       are html-encoded before being sent to the server. The encoded values are visible to the search indexer, but are
-      not treated as valid html. So, other services such as link fixup will not run on them. Example: { 'justSomeText':
-      'This is some plain text', 'anotherText': 'Can have &lt;any&gt; characters here: "<>&amp;\\'' }
+      not treated as valid html. So, other services such as link fixup will not run on them. 
+
+       Example: { 'justSomeText': 'This is some plain text', 'anotherText': 'Can have &lt;any&gt; characters here: "<>&amp;\\'' }
     name: searchablePlainTexts
     fullName: sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
     langs:

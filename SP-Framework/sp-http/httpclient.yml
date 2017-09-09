@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-http.HttpClient
-    summary: >
+    summary: >-
       HttpClient implements a basic set of features for performing REST operations. The subclass SPHttpClient extends
       this basic functionality with SharePoint-specific enhancements.
     name: HttpClient
@@ -18,8 +18,7 @@ items:
       - sp-http.HttpClient.post
       - sp-http.HttpClient.serviceKey
   - uid: sp-http.HttpClient.constructor
-    summary: |
-      Constructs a new instance of the [HttpClient](xref:sp-http.HttpClient) class
+    summary: 'Constructs a new instance of the [HttpClient](xref:sp-http.HttpClient) class'
     name: constructor(serviceScope)
     fullName: sp-http.HttpClient.constructor
     langs:
@@ -33,8 +32,7 @@ items:
           type:
             - ServiceScope
   - uid: sp-http.HttpClient.configurations
-    summary: |
-      The standard predefined HttpClientConfiguration objects for use with the HttpClient class.
+    summary: The standard predefined HttpClientConfiguration objects for use with the HttpClient class.
     name: configurations
     fullName: sp-http.HttpClient.configurations
     langs:
@@ -46,7 +44,7 @@ items:
         type:
           - IHttpClientConfigurations
   - uid: sp-http.HttpClient.fetch
-    summary: >
+    summary: >-
       Performs a REST service call. Although the SPHttpClient subclass adds additional enhancements, the parameters and
       semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
       https://fetch.spec.whatwg.org/
@@ -60,28 +58,24 @@ items:
       return:
         type:
           - Promise<HttpClientResponse>
-        description: |
-          a promise that will return the result
+        description: a promise that will return the result
       parameters:
         - id: url
-          description: |
-            the URL to fetch
+          description: the URL to fetch
           type:
             - string
         - id: configuration
-          description: >
+          description: >-
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
             - HttpClientConfiguration
         - id: options
-          description: |
-            additional options that affect the request
+          description: additional options that affect the request
           type:
             - IHttpClientOptions
   - uid: sp-http.HttpClient.get
-    summary: |
-      Calls fetch(), but sets the method to 'GET'.
+    summary: 'Calls fetch(), but sets the method to ''GET''.'
     name: 'get(url, configuration, options)'
     fullName: sp-http.HttpClient.get
     langs:
@@ -92,28 +86,24 @@ items:
       return:
         type:
           - Promise<HttpClientResponse>
-        description: |
-          a promise that will return the result
+        description: a promise that will return the result
       parameters:
         - id: url
-          description: |
-            the URL to fetch
+          description: the URL to fetch
           type:
             - string
         - id: configuration
-          description: >
+          description: >-
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
             - HttpClientConfiguration
         - id: options
-          description: |
-            additional options that affect the request
+          description: additional options that affect the request
           type:
             - IHttpClientOptions
   - uid: sp-http.HttpClient.post
-    summary: |
-      Calls fetch(), but sets the method to 'POST'.
+    summary: 'Calls fetch(), but sets the method to ''POST''.'
     name: 'post(url, configuration, options)'
     fullName: sp-http.HttpClient.post
     langs:
@@ -124,28 +114,24 @@ items:
       return:
         type:
           - Promise<HttpClientResponse>
-        description: |
-          a promise that will return the result
+        description: a promise that will return the result
       parameters:
         - id: url
-          description: |
-            the URL to fetch
+          description: the URL to fetch
           type:
             - string
         - id: configuration
-          description: >
+          description: >-
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
             - HttpClientConfiguration
         - id: options
-          description: |
-            additional options that affect the request
+          description: additional options that affect the request
           type:
             - IHttpClientOptions
   - uid: sp-http.HttpClient.serviceKey
-    summary: |
-      The service key for HttpClient.
+    summary: The service key for HttpClient.
     name: serviceKey
     fullName: sp-http.HttpClient.serviceKey
     langs:

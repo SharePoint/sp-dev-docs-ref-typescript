@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-webpart-base.IClientSideWebPartStatusRenderer
-    summary: >
+    summary: >-
       Interface to be implemented by a component that should display the loading indicator and error messages for a
       webpart.
     name: IClientSideWebPartStatusRenderer
@@ -16,8 +16,7 @@ items:
       - sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
       - sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
   - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
-    summary: |
-      Clear the webpart error message.
+    summary: Clear the webpart error message.
     name: clearError(domElement)
     fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
     langs:
@@ -31,13 +30,11 @@ items:
         description: ''
       parameters:
         - id: domElement
-          description: |
-            the webpart container div.
+          description: the webpart container div.
           type:
             - HTMLElement
   - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
-    summary: |
-      Clear the loading indicator.
+    summary: Clear the loading indicator.
     name: clearLoadingIndicator(domElement)
     fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
     langs:
@@ -51,13 +48,11 @@ items:
         description: ''
       parameters:
         - id: domElement
-          description: |
-            the webpart container div.
+          description: the webpart container div.
           type:
             - Element
   - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
-    summary: |
-      Display a loading spinner.
+    summary: Display a loading spinner.
     name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
     fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
     langs:
@@ -71,23 +66,19 @@ items:
         description: ''
       parameters:
         - id: domElement
-          description: |
-            the webpart container div.
+          description: the webpart container div.
           type:
             - Element
         - id: loadingMessage
-          description: |
-            the message to be displayed when the loading spinner id displayed.
+          description: the message to be displayed when the loading spinner id displayed.
           type:
             - string
         - id: timeout
-          description: |
-            timeout to render the loading indicator. Default is 900ms.
+          description: timeout to render the loading indicator. Default is 900ms.
           type:
             - number
   - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
-    summary: |
-      Render the provided error message in the webpart container div.
+    summary: Render the provided error message in the webpart container div.
     name: 'renderError(domElement, error)'
     fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
     langs:
@@ -101,12 +92,10 @@ items:
         description: ''
       parameters:
         - id: domElement
-          description: |
-            the webpart container div.
+          description: the webpart container div.
           type:
             - HTMLElement
         - id: error
-          description: |
-            the error message.
+          description: the error message.
           type:
             - Error | string

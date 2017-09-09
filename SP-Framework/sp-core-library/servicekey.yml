@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.ServiceKey
-    summary: >
+    summary: >-
       The ServiceKey is a lookup key that is used when calling ServiceScope.consume() to fetch a dependency. The key
       also defines a default implementation of the dependency, which will be autocreated by the root scope if the
       dependency is not found. Providing a default implementation ensures that new dependencies can be safely introduced
@@ -20,7 +20,7 @@ items:
       - sp-core-library.ServiceKey.id
       - sp-core-library.ServiceKey.name
   - uid: sp-core-library.ServiceKey.create
-    summary: >
+    summary: >-
       Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that accepts
       the standard constructor parameter. If you want to specify custom constructor parameters, use createCustom()
       instead.
@@ -34,22 +34,18 @@ items:
       return:
         type:
           - ServiceKey<TKey>
-        description: |
-          - the newly created ServiceKey
+        description: '- the newly created ServiceKey'
       parameters:
         - id: name
-          description: |
-            A name such as "MyApplication.IMyService" which should be unique within your application.
+          description: A name such as "MyApplication.IMyService" which should be unique within your application.
           type:
             - string
         - id: serviceClass
-          description: |
-            the TypeScript class that implements the service.
+          description: the TypeScript class that implements the service.
           type:
             - '{ new (serviceScope: ServiceScope); }'
   - uid: sp-core-library.ServiceKey.createCustom
-    summary: |
-      Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
+    summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
     name: 'createCustom(name, defaultCreator)'
     fullName: sp-core-library.ServiceKey.createCustom
     langs:
@@ -60,17 +56,14 @@ items:
       return:
         type:
           - ServiceKey<TKey>
-        description: |
-          - the newly created ServiceKey
+        description: '- the newly created ServiceKey'
       parameters:
         - id: name
-          description: |
-            A name such as "MyApplication.IMyService" which should be unique within your application.
+          description: A name such as "MyApplication.IMyService" which should be unique within your application.
           type:
             - string
         - id: defaultCreator
-          description: |
-            A callback that returns an object that implements the T interface
+          description: A callback that returns an object that implements the T interface
           type:
             - ServiceCreator<TKey>
   - uid: sp-core-library.ServiceKey.defaultCreator
