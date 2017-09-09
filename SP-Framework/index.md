@@ -1,11 +1,3 @@
-# Welcome to SP-Framework!
+# SharePoint Framework Reference
 
-* [node-core-library](https://review.docs.microsoft.com/en-us/typescript/SharePoint-Framework/node-core-library)
-* [sp-core-library](https://review.docs.microsoft.com/en-us/typescript/SharePoint-Framework/sp-core-library)
-* [sp-webpart-base](https://review.docs.microsoft.com/en-us/typescript/SharePoint-Framework/sp-webpart-base)
-
-
-External Packages
-
-* [es6-collections](https://review.docs.microsoft.com/en-us/typescript/SharePoint-Framework/es6-collections)
-* [web-apis](https://review.docs.microsoft.com/en-us/typescript/SharePoint-Framework/web-apis)
+The SharePoint Framework object model is built in TypeScript. Use this section to learn more about the classes, methods, and other types available for building your SharePoint Framework solutions.
