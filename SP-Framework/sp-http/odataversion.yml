@@ -17,7 +17,7 @@ items:
     summary: >
       If the 'OData-Version' header is present, this returns the corresponding ODataVersion constant. An error is thrown
       if the version number is not supported. If the header is missing, then undefined is returned.
-    name: tryParseFromHeaders()
+    name: tryParseFromHeaders(headers)
     fullName: sp-http.ODataVersion.tryParseFromHeaders
     langs:
       - typeScript
@@ -28,6 +28,11 @@ items:
         type:
           - ODataVersion | undefined
         description: ''
+      parameters:
+        - id: headers
+          description: ''
+          type:
+            - Headers
   - uid: sp-http.ODataVersion.v3
     summary: |
       Represents version 3.0 for the 'OData-Version' header

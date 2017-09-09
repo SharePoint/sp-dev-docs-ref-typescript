@@ -29,13 +29,22 @@ items:
     summary: >
       Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used
       for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: constructor()
+    name: 'constructor(flags, overrideFlags)'
     fullName: sp-http.SPHttpClientConfiguration.constructor
     langs:
       - typeScript
     type: constructor
     syntax:
       content: 'constructor(flags: ISPHttpClientConfiguration, overrideFlags?: ISPHttpClientConfiguration);'
+      parameters:
+        - id: flags
+          description: ''
+          type:
+            - ISPHttpClientConfiguration
+        - id: overrideFlags
+          description: ''
+          type:
+            - ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.defaultODataVersion
     summary: >
       When this switch is specified (i.e. not undefined): If the 'OData-Version' header was not explictly added for the
@@ -91,7 +100,7 @@ items:
           - void
         description: ''
   - uid: sp-http.SPHttpClientConfiguration.overrideWith
-    name: overrideWith()
+    name: overrideWith(sourceFlags)
     fullName: sp-http.SPHttpClientConfiguration.overrideWith
     langs:
       - typeScript
@@ -102,6 +111,11 @@ items:
         type:
           - SPHttpClientConfiguration
         description: ''
+      parameters:
+        - id: sourceFlags
+          description: ''
+          type:
+            - ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.requestDigest
     summary: >
       When this switch is true: If the 'X-RequestDigest' header was not explicitly added for the request, then

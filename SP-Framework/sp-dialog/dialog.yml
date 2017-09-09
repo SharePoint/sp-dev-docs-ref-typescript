@@ -40,7 +40,7 @@ items:
       There might be a delay until the dialog is approved and shown by the application, for example, if there is another
       dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
       promise rejects if the application rejects the request for any reason.
-    name: alert(message)
+    name: 'alert(message, options)'
     fullName: sp-dialog.Dialog.alert
     langs:
       - typeScript
@@ -57,6 +57,10 @@ items:
             The message to alert
           type:
             - string
+        - id: options
+          description: ''
+          type:
+            - IAlertOptions
   - uid: sp-dialog.Dialog.prompt
     summary: >
       > [!NOTE]
@@ -81,7 +85,7 @@ items:
       There might be a delay until the dialog is approved and shown by the application, for example, if there is another
       dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
       promise rejects if the application rejects the request for any reason.
-    name: 'prompt(message, defaultValue)'
+    name: 'prompt(message, options)'
     fullName: sp-dialog.Dialog.prompt
     langs:
       - typeScript
@@ -99,8 +103,7 @@ items:
             The message for prompt dialog
           type:
             - string
-        - id: defaultValue
-          description: |
-            The default value for the input text field
+        - id: options
+          description: ''
           type:
-            - ''
+            - IPromptOptions

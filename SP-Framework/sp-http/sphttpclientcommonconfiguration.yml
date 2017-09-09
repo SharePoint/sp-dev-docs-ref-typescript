@@ -25,13 +25,22 @@ items:
     summary: >
       Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags. The default values will be
       used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: constructor()
+    name: 'constructor(flags, overrideFlags)'
     fullName: sp-http.SPHttpClientCommonConfiguration.constructor
     langs:
       - typeScript
     type: constructor
     syntax:
       content: 'constructor(flags: ISPHttpClientCommonConfiguration, overrideFlags?: ISPHttpClientCommonConfiguration);'
+      parameters:
+        - id: flags
+          description: ''
+          type:
+            - ISPHttpClientCommonConfiguration
+        - id: overrideFlags
+          description: ''
+          type:
+            - ISPHttpClientCommonConfiguration
   - uid: sp-http.SPHttpClientCommonConfiguration.flags
     name: flags
     fullName: sp-http.SPHttpClientCommonConfiguration.flags
@@ -87,7 +96,7 @@ items:
         type:
           - boolean
   - uid: sp-http.SPHttpClientCommonConfiguration.overrideWith
-    name: overrideWith()
+    name: overrideWith(sourceFlags)
     fullName: sp-http.SPHttpClientCommonConfiguration.overrideWith
     langs:
       - typeScript
@@ -98,3 +107,8 @@ items:
         type:
           - SPHttpClientCommonConfiguration
         description: ''
+      parameters:
+        - id: sourceFlags
+          description: ''
+          type:
+            - ISPHttpClientCommonConfiguration

@@ -38,7 +38,7 @@ items:
 
       Similar to[Dialog.alert](xref:sp-dialog.Dialog.alert)<!-- -->. The only difference is that the dialog is
       immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
-    name: alert(options)
+    name: 'alert(message, options)'
     fullName: sp-dialog.SecondaryDialogProvider.alert
     langs:
       - typeScript
@@ -50,6 +50,10 @@ items:
           - Promise<void>
         description: ''
       parameters:
+        - id: message
+          description: ''
+          type:
+            - string
         - id: options
           description: |
             Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)
@@ -66,7 +70,7 @@ items:
 
       Similar to[Dialog.prompt](xref:sp-dialog.Dialog.prompt)<!-- -->. The only difference is that the dialog is
       immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
-    name: prompt(options)
+    name: 'prompt(message, options)'
     fullName: sp-dialog.SecondaryDialogProvider.prompt
     langs:
       - typeScript
@@ -78,6 +82,10 @@ items:
           - Promise<string>
         description: ''
       parameters:
+        - id: message
+          description: ''
+          type:
+            - string
         - id: options
           description: >
             Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)<!-- -->.The confirmOpen
@@ -95,7 +103,7 @@ items:
 
       Similar to[BaseDialog.show](xref:sp-dialog.BaseDialog.show)<!-- -->. The dialog to show is passed in as parameter
       and the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
-    name: show(options)
+    name: 'show(dialog, options)'
     fullName: sp-dialog.SecondaryDialogProvider.show
     langs:
       - typeScript
@@ -107,6 +115,10 @@ items:
           - Promise<void>
         description: ''
       parameters:
+        - id: dialog
+          description: ''
+          type:
+            - BaseDialog
         - id: options
           description: >
             Dialog showing optionssee [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions)<!-- -->.The confirmOpen

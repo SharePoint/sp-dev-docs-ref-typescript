@@ -36,7 +36,7 @@ items:
   - uid: sp-core-library.Guid.equals
     summary: |
       Compare this instance to another Guid instance
-    name: equals()
+    name: equals(guid)
     fullName: sp-core-library.Guid.equals
     langs:
       - typeScript
@@ -48,6 +48,11 @@ items:
           - boolean
         description: |
           True if this instance and the specified Guid object represent the same value.
+      parameters:
+        - id: guid
+          description: ''
+          type:
+            - Guid
   - uid: sp-core-library.Guid.isValid
     summary: >
       Indicates whether a guid is valid, i.e. whether it would be successfully parsed by Guid.tryParse(). This function
@@ -74,7 +79,7 @@ items:
     summary: >
       Returns a new Guid instance with a pseudo-randomly generated Guid, according to the version 4 UUID algorithm from
       RFC 4122.
-    name: newGuid()
+    name: newGuid(randomNumberGenerator)
     fullName: sp-core-library.Guid.newGuid
     langs:
       - typeScript
@@ -86,6 +91,11 @@ items:
           - Guid
         description: |
           A new unique Guid object
+      parameters:
+        - id: randomNumberGenerator
+          description: ''
+          type:
+            - IRandomNumberGenerator
   - uid: sp-core-library.Guid.parse
     summary: >
       Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.
@@ -100,7 +110,7 @@ items:
     remarks: >
       Example syntaxes accepted by this function: 'd5369f3b-bd7a-412a-9c0f-7f0650bb5489'
       '{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}' '/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)'
-    name: parse(guid)
+    name: parse(guidString)
     fullName: sp-core-library.Guid.parse
     langs:
       - typeScript
@@ -113,11 +123,10 @@ items:
         description: |
           A valid Guid object
       parameters:
-        - id: guid
-          description: |
-            The input string.
+        - id: guidString
+          description: ''
           type:
-            - ''
+            - string | undefined | null
   - uid: sp-core-library.Guid.tryParse
     summary: >
       Attempts to parse the input string to construct a new Guid object. If the string cannot be parsed, then undefined

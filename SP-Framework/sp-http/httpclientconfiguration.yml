@@ -24,13 +24,22 @@ items:
     summary: >
       Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
       any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: constructor()
+    name: 'constructor(flags, overrideFlags)'
     fullName: sp-http.HttpClientConfiguration.constructor
     langs:
       - typeScript
     type: constructor
     syntax:
       content: 'constructor(flags: IHttpClientConfiguration, overrideFlags?: IHttpClientConfiguration);'
+      parameters:
+        - id: flags
+          description: ''
+          type:
+            - IHttpClientConfiguration
+        - id: overrideFlags
+          description: ''
+          type:
+            - IHttpClientConfiguration
   - uid: sp-http.HttpClientConfiguration.flags
     name: flags
     fullName: sp-http.HttpClientConfiguration.flags
@@ -59,7 +68,7 @@ items:
   - uid: sp-http.HttpClientConfiguration.overrideWith
     summary: |
       Child classes should override this method to construct the child class type, rather than the base class type.
-    name: overrideWith()
+    name: overrideWith(sourceFlags)
     fullName: sp-http.HttpClientConfiguration.overrideWith
     langs:
       - typeScript
@@ -70,3 +79,8 @@ items:
         type:
           - HttpClientConfiguration
         description: ''
+      parameters:
+        - id: sourceFlags
+          description: ''
+          type:
+            - IHttpClientConfiguration

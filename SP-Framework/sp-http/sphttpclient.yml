@@ -23,17 +23,22 @@ items:
   - uid: sp-http.SPHttpClient.constructor
     summary: |
       Constructs a new instance of the [SPHttpClient](xref:sp-http.SPHttpClient) class
-    name: constructor()
+    name: constructor(serviceScope)
     fullName: sp-http.SPHttpClient.constructor
     langs:
       - typeScript
     type: constructor
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
+      parameters:
+        - id: serviceScope
+          description: ''
+          type:
+            - ServiceScope
   - uid: sp-http.SPHttpClient.beginBatch
     summary: |
       Begins an ODATA batch, which allows multiple REST queries to be bundled into a single web request.
-    name: beginBatch()
+    name: beginBatch(batchCreationOptions)
     fullName: sp-http.SPHttpClient.beginBatch
     langs:
       - typeScript
@@ -45,6 +50,11 @@ items:
           - SPHttpClientBatch
         description: |
           a promise that will return the result
+      parameters:
+        - id: batchCreationOptions
+          description: ''
+          type:
+            - ISPHttpClientBatchCreationOptions
   - uid: sp-http.SPHttpClient.configurations
     summary: |
       The standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class.
