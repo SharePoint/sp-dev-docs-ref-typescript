@@ -42,7 +42,7 @@ items:
       return:
         type:
           - T
-        description: '- the service instance'
+        description: the service instance
       parameters:
         - id: serviceKey
           description: the key that was used when provide() was called to register the service
@@ -62,7 +62,7 @@ items:
       return:
         type:
           - T
-        description: '- a newly constructed instance of simpleServiceClass'
+        description: a newly constructed instance of simpleServiceClass
       parameters:
         - id: serviceKey
           description: the key that can be used later to consume the service
@@ -86,7 +86,7 @@ items:
       return:
         type:
           - T
-        description: '- a service instance that was constructed using ServiceKey.defaultCreator'
+        description: a service instance that was constructed using ServiceKey.defaultCreator
       parameters:
         - id: serviceKey
           description: the key that can be used later to consume the service
@@ -123,7 +123,7 @@ items:
       return:
         type:
           - ServiceScope | undefined
-        description: '- the parent service scope'
+        description: the parent service scope
   - uid: sp-core-library.ServiceScope.provide
     summary: >-
       ServiceScope.provide() is used to register an implemententation of the given serviceKey for the current scope. It
@@ -138,7 +138,7 @@ items:
       return:
         type:
           - T
-        description: '- the same object that was passed as the "service" parameter'
+        description: the same object that was passed as the "service" parameter
       parameters:
         - id: serviceKey
           description: the key that will later be used to consume the service
@@ -162,7 +162,7 @@ items:
       return:
         type:
           - ServiceScope
-        description: '- the newly created root ServiceScope'
+        description: the newly created root ServiceScope
   - uid: sp-core-library.ServiceScope.startNewRoot
     summary: >-
       Create a new root-level ServiceScope. Only root-level scopes have the ability to autocreate default
@@ -177,7 +177,7 @@ items:
       return:
         type:
           - ServiceScope
-        description: '- the newly created root ServiceScope'
+        description: the newly created root ServiceScope
   - uid: sp-core-library.ServiceScope.whenFinished
     summary: >-
       It is an error to call ServiceScope.consume() before finish() has been called. The most reliable way to protect
