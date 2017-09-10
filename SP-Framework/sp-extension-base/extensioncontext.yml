@@ -3,9 +3,6 @@ items:
   - uid: sp-extension-base.ExtensionContext
     summary: The base class for context objects for client-side extensions.
     remarks: >-
-      **Extends:** `BaseComponentContext`
-
-
       The constructor for this class is marked as internal; third party code should not inherit directly from this base
       class.
     name: ExtensionContext
@@ -13,6 +10,8 @@ items:
     langs:
       - typeScript
     type: class
+    extends:
+      - BaseComponentContext
     package: sp-extension-base
     children:
       - sp-extension-base.ExtensionContext.graphHttpClient

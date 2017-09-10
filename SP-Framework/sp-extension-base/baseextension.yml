@@ -3,9 +3,6 @@ items:
   - uid: sp-extension-base.BaseExtension
     summary: The base class for all client-side extensions.
     remarks: >-
-      **Extends:** `BaseComponent`
-
-
       The constructor for this class is marked as internal; third party code should not inherit directly from this base
       class.
     name: BaseExtension
@@ -13,6 +10,8 @@ items:
     langs:
       - typeScript
     type: class
+    extends:
+      - BaseComponent
     package: sp-extension-base
     children:
       - sp-extension-base.BaseExtension.context

@@ -4,9 +4,6 @@ items:
     isPreview: true
     summary: 'Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.'
     remarks: >-
-      **Implements:** `IEventObserver`
-
-
       The constructor for this class is marked as internal; third party code should not inherit directly from this base
       class.
     name: BaseComponent
@@ -14,6 +11,8 @@ items:
     langs:
       - typeScript
     type: class
+    implements:
+      - IEventObserver
     package: sp-component-base
     children:
       - sp-component-base.BaseComponent.componentId
