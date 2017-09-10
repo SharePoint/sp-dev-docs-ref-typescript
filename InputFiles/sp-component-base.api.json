@@ -1,0 +1,281 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-component-base",
+  "summary": [
+    {
+      "kind": "textDocElement",
+      "value": "SharePoint Framework support for building client-side components"
+    }
+  ],
+  "remarks": [
+    {
+      "kind": "textDocElement",
+      "value": "This package supports development of client-side components (e.g. web parts, client-side extensions, and applications) built using the SharePoint Framework. It defines the base classes/interfaces that represent the functionality that is common across all client-side component types."
+    }
+  ],
+  "exports": {
+    "BaseComponent": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IEventObserver",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The constructor for this class is marked as internal; third party code should not inherit directly from this base class."
+        }
+      ],
+      "isBeta": true,
+      "members": {
+        "componentId": {
+          "kind": "property",
+          "signature": "public readonly componentId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the component identifier as defined in the component’s associated manifest."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which may include additional metadata about the component. Manifests are tracked using a unique identifier, which is a text string containing a lower case GUID value"
+            }
+          ],
+          "isBeta": true
+        },
+        "context": {
+          "kind": "property",
+          "signature": "protected context: BaseComponentContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "BaseComponentContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": true
+        },
+        "dispose": {
+          "kind": "method",
+          "signature": "public dispose(): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Disposes the component. In order to write component-specific dispose mechanism, use onDispose instead. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " The onDispose event should only be raised once - if this._disposed was false when the function was called. (Put another way, dispose() should be a no-op if this._disposed is true.)"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "instanceId": {
+          "kind": "property",
+          "signature": "public readonly instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Unique identifier for the instance of the component. The same component can be instantiated several times, and each instance will have a different id."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "public readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns true if the component has been already disposed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "public readonly manifest: IClientSideComponentManifest;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IClientSideComponentManifest",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the manifest for the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "onDispose": {
+          "kind": "method",
+          "signature": "@virtual protected onDispose(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This event hook is called immediately before the component stops being used. It provides an opportunity to release any associated resources, cancel any outstanding requests, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    },
+    "BaseComponentContext": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "The base class for context objects for client-side components."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "A \"context\" object is a collection of well-known services and other objects that are likely to be needed by any business logic working with the associated component. Each component type has its own specialized subclass ofClientSideComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, etc. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " The constructor for this class is marked as internal; third party code should not inherit directly from this base class."
+        }
+      ],
+      "isBeta": true,
+      "members": {
+        "instanceId": {
+          "kind": "property",
+          "signature": "public readonly instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Instance id for the client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "public manifest: IClientSideComponentManifest;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IClientSideComponentManifest",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Manifest for the client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "pageContext": {
+          "kind": "property",
+          "signature": "public readonly pageContext: PageContext;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "PageContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The page context provides standard definitions for common SharePoint objects that need to be shared between the client-side application, web parts, and other components."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "serviceScope": {
+          "kind": "property",
+          "signature": "public readonly serviceScope: ServiceScope;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ServiceScope",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Service scope instance that is scoped to this particular web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    }
+  }
+}

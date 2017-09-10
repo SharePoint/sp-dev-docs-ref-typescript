@@ -1,0 +1,974 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-listview-extensibility",
+  "summary": [
+    {
+      "kind": "textDocElement",
+      "value": "SharePoint Framework support for customizing the list view."
+    }
+  ],
+  "remarks": [],
+  "exports": {
+    "BaseFieldCustomizer": {
+      "kind": "class",
+      "extends": "BaseExtension",
+      "implements": "",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This is the base class that third parties should extend when implementing a client-side extension that customizes the appearance of fields in a SharePoint ListView. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " In the component manifest, the \"extensionType\" should be set to \"FieldCustomizer\"."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "context": {
+          "kind": "property",
+          "signature": "protected context: FieldCustomizerContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "FieldCustomizerContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false
+        },
+        "onDisposeCell": {
+          "kind": "method",
+          "signature": "@virtual public onDisposeCell(event: IFieldCustomizerCellEventParameters): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "event": {
+              "name": "event",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IFieldCustomizerCellEventParameters"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onRenderCell": {
+          "kind": "method",
+          "signature": "@virtual public onRenderCell(event: IFieldCustomizerCellEventParameters): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "event": {
+              "name": "event",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IFieldCustomizerCellEventParameters"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "BaseListViewCommandSet": {
+      "kind": "class",
+      "extends": "BaseExtension",
+      "implements": "",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This is the base class that third parties should extend when implementing a client-side extension that provides a command set for a SharePoint list view. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " In the component manifest, the \"extensionType\" should be set to \"ListViewCommandSet\"."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "context": {
+          "kind": "property",
+          "signature": "public context: ListViewCommandSetContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ListViewCommandSetContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false
+        },
+        "onExecute": {
+          "kind": "method",
+          "signature": "@virtual public onExecute(event: IListViewCommandSetExecuteEventParameters): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "event": {
+              "name": "event",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IListViewCommandSetExecuteEventParameters"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This event occurs when the command is invoked, e.g. because the user clicked on the toolbar button or menu item."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onListViewUpdated": {
+          "kind": "method",
+          "signature": "@virtual public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "event": {
+              "name": "event",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IListViewCommandSetListViewUpdatedParameters"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This event occurs whenever the ListView state changes. It allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "tryGetCommand": {
+          "kind": "method",
+          "signature": "public tryGetCommand(id: string): Command;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Command",
+            "description": []
+          },
+          "parameters": {
+            "id": {
+              "name": "id",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "Id of the command"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the command with the given id. Returns undefined if there is not command with the given id."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ColumnAccessor": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Provides access to a ListView column, which is the visual presentation of a field."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "A SharePoint \"field\" (SPField) defines the data storage for a property of a list item. (If the list item represents a document, then the field is sometimes called a \"property\".) "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " A \"column\" is the visual presentation of a field, when displayed by the ListView."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "field": {
+          "kind": "property",
+          "signature": "public readonly field: SPField;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPField",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The server-side definition of the field. This property is read-only."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "visible": {
+          "kind": "property",
+          "signature": "public readonly visible: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether to show this column in the list view. This property is read-only."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "Command": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents a command belonging to a command set."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons, context menu items, etc. These commands are initially defined in the extension’s manifest file. At runtime, the corresponding Command object can be obtained by calling "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-listview-extensibility",
+          "exportName": "BaseListViewCommandSet",
+          "memberName": "tryGetCommand",
+          "value": "BaseListViewCommandSet.tryGetCommand"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " . The command’s appearance can be customized by assigning its properties, for example to hide a command that is not contextually relevant, or to pluralize the title based on the number of selected items."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "ariaLabel": {
+          "kind": "property",
+          "signature": "public ariaLabel: string | undefined;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Custom accessibility text for the browser's \"aria-label\" attribute. If omitted, the title property will be used by default. Example: \"Show information. Press ENTER to select.\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "iconImageUrl": {
+          "kind": "property",
+          "signature": "public iconImageUrl: string | undefined;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "An optional URL for an image to be displayed next to the command. The requirements for this image are defined by the type of extension; some extension types may not display the image at all."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This must be a absolute URL."
+            }
+          ],
+          "isBeta": false
+        },
+        "id": {
+          "kind": "property",
+          "signature": "public id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Id of the command."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "public title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A short label to be displayed by the associated button, menu item, etc. Example: \"Show information\""
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension."
+            }
+          ],
+          "isBeta": false
+        },
+        "visible": {
+          "kind": "property",
+          "signature": "public visible: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "True if the command is visible."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "FieldCustomizerContext": {
+      "kind": "class",
+      "extends": "ExtensionContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This object provides contextual information for BaseFieldCustomizer."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "field": {
+          "kind": "property",
+          "signature": "public readonly field: SPField;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPField",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Provides access to the SharePoint field that the customizer will operate on."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "tryGetListView": {
+          "kind": "method",
+          "signature": "public tryGetListView(): ListViewAccessor | undefined;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ListViewAccessor | undefined",
+            "description": [
+              {
+                "kind": "textDocElement",
+                "value": "the SharePoint list view, or undefined if there is none."
+              }
+            ]
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific functionality; otherwise the value is undefined."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Although the SharePoint list view is the main usage scenario, field customizers can be used by other user interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "IFieldCustomizerCellEventParameters": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Event parmeters for BaseFieldCustomizer.onRenderCell()"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "domElement": {
+          "kind": "property",
+          "signature": "domElement: HTMLDivElement;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "HTMLDivElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The HTML \"div\" element that the extension will take ownership of. This ownership will end when onDisposeCell() is called."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "fieldValue": {
+          "kind": "property",
+          "signature": "fieldValue: any;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The value of the field being rendered."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "listItem": {
+          "kind": "property",
+          "signature": "listItem: ListItemAccessor;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ListItemAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The list item being edited."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "userData": {
+          "kind": "property",
+          "signature": "userData: any;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "An implementor-defined storage property."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this property, and then onDisposeCell() can use this key to find the resource to be freed."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "IListViewCommandSetExecuteEventParameters": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "itemId": {
+          "kind": "property",
+          "signature": "itemId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The unique identifier for the command. This is specified as ICommandDefinition.commandId in the component manifest."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "selectedRows": {
+          "kind": "property",
+          "signature": "selectedRows: ReadonlyArray<RowAccessor>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ReadonlyArray<RowAccessor>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The currently selected ListView rows, at the time when the event occurred."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IListViewCommandSetListViewUpdatedParameters": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "selectedRows": {
+          "kind": "property",
+          "signature": "selectedRows: ReadonlyArray<RowAccessor>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ReadonlyArray<RowAccessor>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The currently selected ListView rows, at the time when the event occurred."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ListItemAccessor": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "When a field customizer extension is rendering a field, the ListItemAccessor provides access to the associated SharePoint list item."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "ListItemAccessor allows a field customizer extension to determine which fields are available in the editor and retrieve the current values for those fields. In the future, it may also support validation and editing operations. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether the associated table row is selected or not."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "fields": {
+          "kind": "property",
+          "signature": "public readonly fields: ReadonlyArray<SPField>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ReadonlyArray<SPField>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The SharePoint fields that are currently available in the editor for this list item."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The set of available fields depends on the editing context. For example, if a list view column is hidden, the corresponding field definition may not be loaded. Field customizers should not assume that a given field will be available, even if it is defined in the content type."
+            }
+          ],
+          "isBeta": false
+        },
+        "getValue": {
+          "kind": "method",
+          "signature": "public abstract getValue(field: SPField): any;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "any",
+            "description": []
+          },
+          "parameters": {
+            "field": {
+              "name": "field",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SPField"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Retrieves the current data value for the specified field. The value will be a primitive JavaScript object such as a string, number, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getValueByName": {
+          "kind": "method",
+          "signature": "public abstract getValueByName(internalName: string): any;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "any",
+            "description": []
+          },
+          "parameters": {
+            "internalName": {
+              "name": "internalName",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Retrieves the current data value for the field with the specified internal name. The value will be a primitive JavaScript object such as a string, number, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ListViewAccessor": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Provides access to a SharePoint ListView control."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "columns": {
+          "kind": "property",
+          "signature": "public readonly columns: ReadonlyArray<ColumnAccessor>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ReadonlyArray<ColumnAccessor>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The columns in associated with this view, including hidden columns."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "selectedRowsChangedEvent": {
+          "kind": "property",
+          "signature": "public readonly selectedRowsChangedEvent: Event<SelectedRowsChangedEventArgs>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Event<SelectedRowsChangedEventArgs>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Event that gets raised every time the selected items in the list view change."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "tryGetColumnByName": {
+          "kind": "method",
+          "signature": "public abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ColumnAccessor | undefined",
+            "description": []
+          },
+          "parameters": {
+            "internalName": {
+              "name": "internalName",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the list view column corresponding to the field with the specified internal name, or undefined if none is found."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ListViewCommandSetContext": {
+      "kind": "class",
+      "extends": "ExtensionContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This object provides contextual information for BaseListViewCommandSet."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "listView": {
+          "kind": "property",
+          "signature": "public readonly listView: ListViewAccessor;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ListViewAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Provides access to the ListView control that the customizer will operate on."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "public manifest: ICommandSetExtensionManifest;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ICommandSetExtensionManifest",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Manifest for the client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "RowAccessor": {
+      "kind": "class",
+      "extends": "ListItemAccessor",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Provides access to a ListView row, which is the visual presentation of a SharePoint list item."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "A SharePoint \"list item\" (SPListItem) is a data storage record in the content management system; it stores an array of values for the associated fields. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " A \"row\" is the visual presentation of a list item, when displayed by the ListView; it stores an array of cell values for the associated columns."
+        }
+      ],
+      "isBeta": false,
+      "members": {}
+    },
+    "SelectedRowsChangedEventArgs": {
+      "kind": "class",
+      "extends": "EventArgs",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Arguments for the selected rows changed event."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "selectedRows": {
+          "kind": "property",
+          "signature": "public selectedRows: ReadonlyArray<RowAccessor>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ReadonlyArray<RowAccessor>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The list of rows that were selected in the list view at the time when the event was fired."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

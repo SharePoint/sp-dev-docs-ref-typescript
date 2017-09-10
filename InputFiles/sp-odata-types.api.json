@@ -1,0 +1,1543 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-odata-types",
+  "summary": [
+    {
+      "kind": "textDocElement",
+      "value": "TypeScript interfaces for working with SharePoint REST APIs"
+    }
+  ],
+  "remarks": [
+    {
+      "kind": "textDocElement",
+      "value": "This package defines TypeScript interfaces that describe various ODATA objects returned by SharePoint REST APIs. It is useful when implementing data layers that interpret these types. This package has no performance cost because it does not contain any runtime code; it consists only of type definitions."
+    }
+  ],
+  "exports": {
+    "IODataBasePermission": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Data used for creating a SPPermission object."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "High": {
+          "kind": "property",
+          "signature": "High: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Low": {
+          "kind": "property",
+          "signature": "Low: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataChangeToken": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.ChangeToken object. For more information about this object "
+        },
+        {
+          "kind": "seeDocElement",
+          "seeElements": [
+            {
+              "kind": "linkDocElement",
+              "referenceType": "href",
+              "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx",
+              "value": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
+            }
+          ]
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "StringValue": {
+          "kind": "property",
+          "signature": "StringValue: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: { StringValue: \"1;3;9fb9199b-65f2-4a4a-b597-11d1a44422c1;635892156279130000;10721\" }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataContextWebInformation": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.ContextWebInformation object. For more information about this object "
+        },
+        {
+          "kind": "seeDocElement",
+          "seeElements": [
+            {
+              "kind": "linkDocElement",
+              "referenceType": "href",
+              "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx",
+              "value": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
+            }
+          ]
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "FormDigestTimeoutSeconds": {
+          "kind": "property",
+          "signature": "FormDigestTimeoutSeconds: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: 1800"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "FormDigestValue": {
+          "kind": "property",
+          "signature": "FormDigestValue: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"0x61B31CBF4C76C...B0,20 Jan 2016 02:24:43 -0000\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "LibraryVersion": {
+          "kind": "property",
+          "signature": "LibraryVersion: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"16.0.4919.3000\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "SiteFullUrl": {
+          "kind": "property",
+          "signature": "SiteFullUrl: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"http:\\u002f\\u002fexample.com\\u002fsites\\u002fPubSite\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "SupportedSchemaVersions": {
+          "kind": "property",
+          "signature": "SupportedSchemaVersions: string[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: [ \"14.0.0.0\", \"15.0.0.0\" ]"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "WebFullUrl": {
+          "kind": "property",
+          "signature": "WebFullUrl: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"http:\\u002f\\u002fexample.com\\u002fsites\\u002fPubSite\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataList": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.List object. For more information about this object see the MSDN documentation here: https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "BaseTemplate": {
+          "kind": "property",
+          "signature": "BaseTemplate: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The list definition type on which the list is based."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Created": {
+          "kind": "property",
+          "signature": "Created: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/Date(1453294804000)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "CurrentChangeToken": {
+          "kind": "property",
+          "signature": "CurrentChangeToken: IODataChangeToken;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataChangeToken",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The change token that will be used in logging the next change to the list."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Description": {
+          "kind": "property",
+          "signature": "Description: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A description of the List."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "EntityTypeName": {
+          "kind": "property",
+          "signature": "EntityTypeName: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"MyListTitleList\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Hidden": {
+          "kind": "property",
+          "signature": "Hidden: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A hidden list does not appear on the Documents and Lists page, Quick Launch bar, the Modify Site Content page, or the Add Column page as an option for lookup fields."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Id": {
+          "kind": "property",
+          "signature": "Id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/Guid(9fb9199b-65f2-4a4a-b597-11d1a44422c1)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "LastItemDeletedDate": {
+          "kind": "property",
+          "signature": "LastItemDeletedDate: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/Date(1453294809000)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "LastItemModifiedDate": {
+          "kind": "property",
+          "signature": "LastItemModifiedDate: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/Date(1453294809000)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ListItemEntityTypeFullName": {
+          "kind": "property",
+          "signature": "ListItemEntityTypeFullName: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"SP.Data.MyListTitleListItem\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ParentWebUrl": {
+          "kind": "property",
+          "signature": "ParentWebUrl: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/sites/PubSite\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "TemplateFeatureId": {
+          "kind": "property",
+          "signature": "TemplateFeatureId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/Guid(22a9ef51-737b-4ff2-9346-694633fe4416)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Title": {
+          "kind": "property",
+          "signature": "Title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"Pages\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataListItem": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.ListItem object. For more information about this object see the MSDN documentation here: https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "ContentTypeId": {
+          "kind": "property",
+          "signature": "ContentTypeId:",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{ StringValue: string }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: { StrinValue: \"0x010100C5...\" }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ID": {
+          "kind": "property",
+          "signature": "ID: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Title": {
+          "kind": "property",
+          "signature": "Title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Title of the List Item"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "UniqueId": {
+          "kind": "property",
+          "signature": "UniqueId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataNavigationNode": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.NavigationNode object. https://msdn.microsoft.com/en-us/library/office/jj246311.aspx"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "Children": {
+          "kind": "property",
+          "signature": "Children?: IODataNavigationNode[];",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataNavigationNode[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets an array of Navigation Nodes that are children to the current node."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Id": {
+          "kind": "property",
+          "signature": "Id?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies the identifier for the navigation node."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "IsDocLib": {
+          "kind": "property",
+          "signature": "IsDocLib?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "IsExternal": {
+          "kind": "property",
+          "signature": "IsExternal?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies whether the navigation node URL potentially corresponds to pages outside of the site collection."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "IsVisible": {
+          "kind": "property",
+          "signature": "IsVisible?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies if the node navigation link should be visible."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Title": {
+          "kind": "property",
+          "signature": "Title?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies the anchor text for the node navigation link."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Url": {
+          "kind": "property",
+          "signature": "Url?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies the URL to be stored with the navigation node. It must be a URL of relative form if IsExternal is false. It must be a URL of relative or absolute form."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataNavigationNodeCollection": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData Microsoft.SharePoint.Navigation.SPNavigation object. https://msdn.microsoft.com/en-us/library/office/ee557907.aspx"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "quickLaunch": {
+          "kind": "property",
+          "signature": "quickLaunch: IODataNavigationNode[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataNavigationNode[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets an SPNavigationNode object that contains the nodes in the Quick Launch area of the site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "topNav": {
+          "kind": "property",
+          "signature": "topNav: IODataNavigationNode[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataNavigationNode[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets an SPNavigationNode object that contains the nodes in the top link bar for the website."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataUser": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.User object. For more information about this object see the MSDN documentation here: https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "Email": {
+          "kind": "property",
+          "signature": "Email: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"someone@example.com\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Id": {
+          "kind": "property",
+          "signature": "Id: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        },
+        "IsSiteAdmin": {
+          "kind": "property",
+          "signature": "IsSiteAdmin: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Boolean value that specifies whether the user is a site collection administrator."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "LoginName": {
+          "kind": "property",
+          "signature": "LoginName: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"i:0#.w|domain\\user\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "PrincipalType": {
+          "kind": "property",
+          "signature": "PrincipalType: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values. None: 0 User: 1 DistributionList: 2 SecurityGroup: 4 SharePointGroup: 8 All: 15"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Title": {
+          "kind": "property",
+          "signature": "Title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"DOMAIN\\user\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "UserId": {
+          "kind": "property",
+          "signature": "UserId: IODataUserId;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataUserId",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets the information of the user that contains the user's name identifier and the issuer of the user's name identifier."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataUserCustomAction": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.UserCustomAction object. For more information about this object see the MSDN documentation here: https://msdn.microsoft.com/en-us/library/office/dn531432.aspx#bk_UserCustomAction"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "ClientSideComponentId": {
+          "kind": "property",
+          "signature": "ClientSideComponentId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The unique identifier of the client-side component defined with SharePoint Framework"
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"359af2a7-b73c-4aac-874c-60a865da0be7\""
+            }
+          ],
+          "isBeta": true
+        },
+        "ClientSideComponentProperties": {
+          "kind": "property",
+          "signature": "ClientSideComponentProperties: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Custom initialization properties for the client-side component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning are defined by the client-side component. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: \"{ \\\"maxItemsToShow\\\": 123 }\""
+            }
+          ],
+          "isBeta": true
+        },
+        "CommandUIExtension": {
+          "kind": "property",
+          "signature": "CommandUIExtension: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies an implementation specific XML fragment that determines user interface properties of the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Description": {
+          "kind": "property",
+          "signature": "Description: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the description of the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Group": {
+          "kind": "property",
+          "signature": "Group: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies an implementation-specific value that determines the position of the custom action in the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Id": {
+          "kind": "property",
+          "signature": "Id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies the identifier (GUID) of the custom action. Example: \"48309f28-53aa-43ed-b113-625120e5af6f\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ImageUrl": {
+          "kind": "property",
+          "signature": "ImageUrl: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the URL of the image associated with the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Location": {
+          "kind": "property",
+          "signature": "Location: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the location of the custom action."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"ClientSide.Application\""
+            }
+          ],
+          "isBeta": false
+        },
+        "RegistrationId": {
+          "kind": "property",
+          "signature": "RegistrationId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the value that specifies the identifier of the object associated with the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "RegistrationType": {
+          "kind": "property",
+          "signature": "RegistrationType: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the value that specifies the type of object associated with the custom action."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Represents an SP.UserCustomActionRegistrationType value: None = 0; List = 1; ContentType = 2; ProgId = 3; FileType = 4."
+            }
+          ],
+          "isBeta": false
+        },
+        "Rights": {
+          "kind": "property",
+          "signature": "Rights: IODataBasePermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataBasePermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the value that specifies the permissions needed for the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Scope": {
+          "kind": "property",
+          "signature": "Scope: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies the scope of the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ScriptBlock": {
+          "kind": "property",
+          "signature": "ScriptBlock: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the value that specifies the ECMAScript to be executed when the custom action is performed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ScriptSrc": {
+          "kind": "property",
+          "signature": "ScriptSrc: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies the URI of a file which contains the ECMAScript to execute on the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Sequence": {
+          "kind": "property",
+          "signature": "Sequence: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the value that specifies an implementation-specific value that determines the order of the custom action that appears on the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Title": {
+          "kind": "property",
+          "signature": "Title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the display title of the custom action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Url": {
+          "kind": "property",
+          "signature": "Url: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the URL, URI, or ECMAScript (JScript, JavaScript) function associated with the action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "VersionOfUserCustomAction": {
+          "kind": "property",
+          "signature": "VersionOfUserCustomAction: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies an implementation specific version identifier."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"16.0.1.0\""
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "IODataWeb": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Represents an OData SP.Web object. For more information about this object see the MSDN documentation here: https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "Created": {
+          "kind": "property",
+          "signature": "Created?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies when the site was created. Example: \"/Date(2016,0,20,12,58,7,0)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "CurrentChangeToken": {
+          "kind": "property",
+          "signature": "CurrentChangeToken?: IODataChangeToken;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IODataChangeToken",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Represents the unique sequential location of a change within the change log."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "CustomMasterUrl": {
+          "kind": "property",
+          "signature": "CustomMasterUrl?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the URL for a custom master page file to apply to the website. Example: \"/sites/PubSite/_catalogs/masterpage/seattle.master\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Description": {
+          "kind": "property",
+          "signature": "Description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the description for the site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Id": {
+          "kind": "property",
+          "signature": "Id?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies the site identifier for the site. Example: \"/Guid(92ea328e-9f50-49a6-9da5-2f2dd5577041)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "IsMultilingual": {
+          "kind": "property",
+          "signature": "IsMultilingual?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Value that represents if the web was"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Language": {
+          "kind": "property",
+          "signature": "Language?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies the LCID for the language that is used on the site. Example: 1033"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "LastItemModifiedDate": {
+          "kind": "property",
+          "signature": "LastItemModifiedDate?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets a value that specifies when an item was last modified in the site. Example: \"/Date(1453618828000)/\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "MasterUrl": {
+          "kind": "property",
+          "signature": "MasterUrl?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the URL of the master page that is used for the website. Example: \"/sites/PubSite/_catalogs/masterpage/seattle.master\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "NoCrawl": {
+          "kind": "property",
+          "signature": "NoCrawl?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Determines if a particular web will be crawled by search or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "QuickLaunchEnabled": {
+          "kind": "property",
+          "signature": "QuickLaunchEnabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that specifies whether the Quick Launch area is enabled on the site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "RecycleBinEnabled": {
+          "kind": "property",
+          "signature": "RecycleBinEnabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets a value that determines whether the recycle bin is enabled for the website."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ServerRelativeUrl": {
+          "kind": "property",
+          "signature": "ServerRelativeUrl?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the server-relative URL for the Web site. Example: \"/sites/PubSite\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "SiteLogoUrl": {
+          "kind": "property",
+          "signature": "SiteLogoUrl?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets the url for the logo of this particular site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Title": {
+          "kind": "property",
+          "signature": "Title?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The title of the web."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "UIVersion": {
+          "kind": "property",
+          "signature": "UIVersion?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets or sets the user interface (UI) version of the Web site. Example: 15"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Url": {
+          "kind": "property",
+          "signature": "Url?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets the absolute URL for the website. Example: \"http://example.com/sites/PubSite\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "WebTemplate": {
+          "kind": "property",
+          "signature": "WebTemplate?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Gets the name of the site definition or site template that was used to create the site. Example: \"BLANKINTERNET\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4625 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-webpart-base",
+  "summary": [
+    {
+      "kind": "textDocElement",
+      "value": "SharePoint Framework support for building web parts"
+    }
+  ],
+  "remarks": [
+    {
+      "kind": "textDocElement",
+      "value": "A web part is a reusable visual object that a page author can add to their content, and customize using a property pane. Examples of web parts include an embedded video player, a map, a group calendar, a chart, etc. The sp-webpart-base package defines the APIs used by developers to create a custom web part."
+    }
+  ],
+  "exports": {
+    "BaseClientSideWebPart": {
+      "kind": "class",
+      "extends": "BaseComponent",
+      "implements": "",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This abstract class implements the the base functionality for a client side web part. Every client side web part needs to inherit from this class. Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall in two catagories. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " The first category of APIs provide data and functionality. Example, the web part context (i.e. this.context). This API should be used to access contextual data relevant to this web part instance. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " The second category of APIs provide a base implementation for the web part lifecycle and can be overridden for an updated implementation. The render() API is the only API that is mandatory to be implemented/overridden by a web part. All other life cycle APIs have a base implementation and can be overridden based on the needs of the web part. Please refer to the documentation of the individual APIs to make the right decision."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor();",
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Constructor for the BaseClientSideWebPart class. If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " e.g. constructor() { super(); . . class specific constructor code .. }"
+            }
+          ],
+          "remarks": []
+        },
+        "accessibleTitle": {
+          "kind": "property",
+          "signature": "protected accessibleTitle: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property points to the accessible title of web part made available to screen readers. The base implementation returns that default title in the manifest. Web parts that want to provide more descriptive title containing contextual information need to override this API."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "canOpenPopupOnRender": {
+          "kind": "property",
+          "signature": "protected readonly canOpenPopupOnRender: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property indicates whether a web part can open a popup on initial render. In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it should use this API before opening the popup. If this API returns false, the web part should not open popup on initial render. Some web parts that open popups during render are the document embed web part that pops up the file picker on initial render, embedded video web part that pops up the PropertyPane on initial render."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "clearError": {
+          "kind": "method",
+          "signature": "protected clearError(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be used to clear the error message from the web part display area."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "context": {
+          "kind": "property",
+          "signature": "protected context: WebPartContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "WebPartContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false
+        },
+        "dataVersion": {
+          "kind": "property",
+          "signature": "protected readonly dataVersion: Version;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Version",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The value of this property is stored in the serialized data of the web part to allow developers to manage versioning of their web part. The default version is 1.0"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "description": {
+          "kind": "property",
+          "signature": "protected readonly description: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Description of the WebPart"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disableReactivePropertyChanges": {
+          "kind": "property",
+          "signature": "protected readonly disableReactivePropertyChanges: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive. The default behaviour is Reactive. Where, Reactive implies that changes made in the PropertyPane are transmitted to the web part instantly and the user can see instant updates. This helps the page creator get instant feedback and decide if they should keep the new configuration changes or not. NonReactive implies that the configuraiton changes are transmitted to the web part only after 'Apply' PropertyPane button is clicked."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "displayMode": {
+          "kind": "property",
+          "signature": "protected readonly displayMode: DisplayMode;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "DisplayMode",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is the current display mode of the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "domElement": {
+          "kind": "property",
+          "signature": "protected readonly domElement: HTMLElement;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HTMLElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole DOM subtree of the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "getPropertyPaneConfiguration": {
+          "kind": "method",
+          "signature": "@virtual protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IPropertyPaneConfiguration",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is used to ger the configuration to build the property pane for the web part. If the web part wants to use the PropertyPane for configuration, this API needs to be overridden and the web part needs to return the configuration for the PropertyPane. "
+            },
+            {
+              "kind": "seeDocElement",
+              "seeElements": [
+                {
+                  "kind": "textDocElement",
+                  "value": " IPropertyPane and other PropertyPane integration wiki documentation for more details. "
+                }
+              ]
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isRenderAsync": {
+          "kind": "property",
+          "signature": "protected readonly isRenderAsync: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Indicates whether the web part is rendering in Async mode. Default value is false. If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part rendering is complete."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onAfterDeserialize": {
+          "kind": "method",
+          "signature": "@virtual protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "TProperties",
+            "description": [
+              {
+                "kind": "textDocElement",
+                "value": "The property bag of the web part"
+              }
+            ]
+          },
+          "parameters": {
+            "deserializedObject": {
+              "name": "deserializedObject",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "The object deserialized from the stored data. Note that the schema of this object is not necessarily consistent with the current property bag, because the serialization could have been done by an older version of the web part"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "dataVersion": {
+              "name": "dataVersion",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "The data version of the stored data being deserialized. You can use this value to determine if the data was serialized by an older web part. Web parts can define their data version by overriding the dataVersion property."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Version"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is called after the web part is deserialized to an object, right before the property bag is populated. The default implementation is a no-op. A web part developer can override this API if the deserialized object does not fully reflect the initial state of the property bag. This gives the web part developer a chance to populate the property bag right after the data is deserialized to an object."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized by an older version of the web part that supported a different schema of the property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The developer can use onAfterDeserialize to check the dataVersion and fix the property bag."
+            }
+          ],
+          "isBeta": false
+        },
+        "onAfterPropertyPaneChangesApplied": {
+          "kind": "method",
+          "signature": "@virtual protected onAfterPropertyPaneChangesApplied(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is invoked after the changes made on the PropertyPane are applied when the PropertyPane is used in Non-Reactive mode. This API is not invoked when the PropertyPane is used in Reactive mode."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onBeforeSerialize": {
+          "kind": "method",
+          "signature": "@virtual protected onBeforeSerialize(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is called before the web part is serialized. The default implementation is a no-op. The serialization process serializes the web part property bag i.e. this.properties. This API gives the web part a chance to update it's property bag before the serialization happens. Some web part's may keep their state other objects or even in the DOM. If a web part needs to persist some of that state, it needs to override this API and update the web part property bag to the latest state. If a web part updates the property bag with invalid property values, those will get persisted. So that should be avoided. The web part property bag should always contain valid property values."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onDisplayModeChanged": {
+          "kind": "method",
+          "signature": "@virtual protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "oldDisplayMode": {
+              "name": "oldDisplayMode",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "The old display mode."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DisplayMode"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is called when the display mode of a web part is changed. The default implementation of this API calls the web part render method to re-render the web part with the new display mode. If a web part developer does not want a full re-render to happen on display mode change, they can override this API and perform specific updates to the web part DOM to switch its display mode."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onDispose": {
+          "kind": "method",
+          "signature": "@virtual protected onDispose(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be used to refresh the contents of the PropertyPane. This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being transitioned out."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onInit": {
+          "kind": "method",
+          "signature": "@virtual protected onInit(): Promise<void>;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<void>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be overridden to perform long running operations e.g. data fetching from a remote service before the initial rendering of the web part. The loading indicator is displayed during the lifetime of this method. This API is called only once during the lifecycle of a web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onPropertyPaneConfigurationComplete": {
+          "kind": "method",
+          "signature": "@virtual protected onPropertyPaneConfigurationComplete(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is invoked when the configuration is completed on the PropertyPane. It's invoked in the following cases: - When the CONFIGURATION_COMPLETE_TIMEOUT((currently the value is 5 secs) elapses after the last change. - When user clicks 'x'(close) button before the CONFIGURATION_COMPLETE_TIMEOUT elapses. - When user clciks 'Apply' button before the CONFIGURATION_COMPLETE_TIMEOUT elapses. - When the user switches web parts then the current web part gets this event."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onPropertyPaneConfigurationStart": {
+          "kind": "method",
+          "signature": "@virtual protected onPropertyPaneConfigurationStart(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is invoked when the configuration starts on the PropertyPane. It's invoked in the following cases: - When the PropertyPane is opened. - When the user switches web parts then the new web part gets this event."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onPropertyPaneFieldChanged": {
+          "kind": "method",
+          "signature": "@virtual protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "propertyPath": {
+              "name": "propertyPath",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "JSON path of the property in the property bag. In the case of custom field, if no target property is provided then a custom value is assigned, which will be in the form of '__CustomField_<key provided when the custom field is created>'."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "oldValue": {
+              "name": "oldValue",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "Old value of the property. This value could be undefined/empty in the case of custom field."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "newValue": {
+              "name": "newValue",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "New value of the property. This value could be undefined/empty in the case of custom field."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is invoked after updating the new value of the property in the property bag when the PropertyPane is being used in Reactive mode."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onPropertyPaneRendered": {
+          "kind": "method",
+          "signature": "@virtual protected onPropertyPaneRendered(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is invoked when the PropertyPane is rendered. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " From framework standpoint, we do not want to allow this event handler to be passed in, and trigger it. This api should be deprecated and then removed as part of refactoring."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "previewImageUrl": {
+          "kind": "property",
+          "signature": "protected previewImageUrl: string | undefined;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property points to the preview image for the web part. The base implementation returns undefined. Web parts that want to provide a valid preview image url need to override this API. The preview image url can be used to create a preview of the web part or of the page on which the web part is present."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "properties": {
+          "kind": "property",
+          "signature": "protected readonly properties: TProperties;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "TProperties",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is the pointer to the custom property bag of the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "propertiesMetadata": {
+          "kind": "property",
+          "signature": "protected readonly propertiesMetadata: IWebPartPropertiesMetadata | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IWebPartPropertiesMetadata | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property defines metadata for the web part property bag. The metadata can help SharePoint understand the content of the properties better and perform relevant services on the data. "
+            },
+            {
+              "kind": "seeDocElement",
+              "seeElements": [
+                {
+                  "kind": "textDocElement",
+                  "value": " IWebPartPropertiesMetadata for more information about how to define metadata "
+                }
+              ]
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "render": {
+          "kind": "method",
+          "signature": "protected abstract render(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is called to render the web part. There is no base implementation of this API and the web part is required to override this API."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderCompleted": {
+          "kind": "method",
+          "signature": "protected renderCompleted(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be called by web parts that perform Async rendering. Those web part are required to override the isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part initiates the IFrame rendering in the render() API but the actual rendering is complete only after the iframe loading completes."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderedFromPersistedData": {
+          "kind": "property",
+          "signature": "protected readonly renderedFromPersistedData: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not. Example: When web part is added for the first time using toolbox then the value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderedOnce": {
+          "kind": "property",
+          "signature": "protected readonly renderedOnce: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property indicates whether the web part has been rendered once or not. After the first time rendering, the value of this property is always true. Till a full re-render of the web part happens."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderError": {
+          "kind": "method",
+          "signature": "protected renderError(error: Error): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "error": {
+              "name": "error",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "An error object containing the error message to render."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Error"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be used to render an error message in the web part display area. Also logs the error message using the trace logger."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "protected readonly title: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Title of the WebPart"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IClientSideWebPartStatusRenderer": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Interface to be implemented by a component that should display the loading indicator and error messages for a webpart."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "clearError": {
+          "kind": "method",
+          "signature": "clearError(domElement: HTMLElement): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "domElement": {
+              "name": "domElement",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "the webpart container div."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "HTMLElement"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Clear the webpart error message."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "clearLoadingIndicator": {
+          "kind": "method",
+          "signature": "clearLoadingIndicator(domElement: Element): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "domElement": {
+              "name": "domElement",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "the webpart container div."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Element"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Clear the loading indicator."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "displayLoadingIndicator": {
+          "kind": "method",
+          "signature": "displayLoadingIndicator(domElement: Element, loadingMessage: string, timeout?: number): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "domElement": {
+              "name": "domElement",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "the webpart container div."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Element"
+            },
+            "loadingMessage": {
+              "name": "loadingMessage",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "the message to be displayed when the loading spinner id displayed."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "timeout": {
+              "name": "timeout",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "timeout to render the loading indicator. Default is 900ms."
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "number"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Display a loading spinner."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "renderError": {
+          "kind": "method",
+          "signature": "renderError(domElement: HTMLElement, error: Error | string): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "domElement": {
+              "name": "domElement",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "the webpart container div."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "HTMLElement"
+            },
+            "error": {
+              "name": "error",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "the error message."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Error | string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Render the provided error message in the webpart container div."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPlaceholderSpinnerProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Interface for properties used to display the loading spinner in the web part display area."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "hideSpinner": {
+          "kind": "property",
+          "signature": "hideSpinner?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Hide spinner at start if set to true. In such case, use state showSpinner to true when to show the spinner"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Label associated with the spinner."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneAccessor": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Web part context property pane accessor interface. Provides some most commonly used utilities to access the property pane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "isPropertyPaneOpen": {
+          "kind": "method",
+          "signature": "isPropertyPaneOpen(): boolean;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns true if the PropertyPane is open."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isRenderedByWebPart": {
+          "kind": "method",
+          "signature": "isRenderedByWebPart(): boolean;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Indicates whether the PropertyPane was initially opened by the web part. For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if the property pane was opened by the host, then the value will be false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "open": {
+          "kind": "method",
+          "signature": "open(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be used to open the PropertyPane to help configure the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "refresh": {
+          "kind": "method",
+          "signature": "refresh(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API should be used to invoke the PropertyPane to help configure the web part. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " This operation only works when the PropertyPane is already open for the currently active web part. If the PropertyPane is opened for another web part, calling the refresh API will have no impact."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneButtonProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane button props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "ariaDescription": {
+          "kind": "property",
+          "signature": "ariaDescription?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Detailed description of the button for the benefit of screen readers. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Besides the compound button, other button types will need more information provided to screen reader."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ariaLabel": {
+          "kind": "property",
+          "signature": "ariaLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The aria label of the button for the benefit of screen readers."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "buttonType": {
+          "kind": "property",
+          "signature": "buttonType?: PropertyPaneButtonType;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "PropertyPaneButtonType",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The type of button to render. Default value is ButtonType.normal."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Description of the action this button takes. Only used for compound buttons."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the button is disabled."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "icon": {
+          "kind": "property",
+          "signature": "icon?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The button icon shown in command or hero type."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onClick": {
+          "kind": "property",
+          "signature": "onClick: (value: any) => any;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "(value: any) => any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A callback which is invoked on the button click, which takes in the existing value for the bound property and returns the new value and which is then used to update the properties bag. This update will result in the re-render of the PropertyPane with the new props."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "text": {
+          "kind": "property",
+          "signature": "text: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Display text of the element."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneCheckboxProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane CheckBox component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "checked": {
+          "kind": "property",
+          "signature": "checked?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane checkbox is checked or not. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Default value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane checkbox is disabled or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "text": {
+          "kind": "property",
+          "signature": "text?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Label to display next to the checkbox."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneChoiceGroupOption": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane ChoiceGroup option props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "checked": {
+          "kind": "property",
+          "signature": "checked?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane choicegroup option is checked or not. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Default value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane choice group option is disabled or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "iconProps": {
+          "kind": "property",
+          "signature": "iconProps?: IPropertyPaneChoiceGroupOptionIconProps;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneChoiceGroupOptionIconProps",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The Icon component props for choice field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "imageSize": {
+          "kind": "property",
+          "signature": "imageSize?:",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{ width: number, height: number }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The width and height of the image in px for choice field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "imageSrc": {
+          "kind": "property",
+          "signature": "imageSrc?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The src of image for choice field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "key": {
+          "kind": "property",
+          "signature": "key: string | number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A required key to uniquely identify the option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "selectedImageSrc": {
+          "kind": "property",
+          "signature": "selectedImageSrc?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The src of image for choice field which is selected."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "text": {
+          "kind": "property",
+          "signature": "text: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The text string for the option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneChoiceGroupOptionIconProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane ChoiceGroup icon props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "officeFabricIconFontName": {
+          "kind": "property",
+          "signature": "officeFabricIconFontName?: string | null;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | null",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The name of the icon to use from th office fabric icon set."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneChoiceGroupProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane ChoiceGroup props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "label": {
+          "kind": "property",
+          "signature": "label?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Descriptive label for the choice group."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "options": {
+          "kind": "property",
+          "signature": "options: IPropertyPaneChoiceGroupOption[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneChoiceGroupOption[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The options for the choice group."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneConfiguration": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Web part configuration settings"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "currentPage": {
+          "kind": "property",
+          "signature": "currentPage?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Page to be displayed on the PropertyPane."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "loadingIndicatorDelayTime": {
+          "kind": "property",
+          "signature": "loadingIndicatorDelayTime?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Number of milli seconds to be delayed before the loading indicator is shown on the property pane. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " default is 500."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "pages": {
+          "kind": "property",
+          "signature": "pages: IPropertyPanePage[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPanePage[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Total number of pages on the PropertyPane."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "showLoadingIndicator": {
+          "kind": "property",
+          "signature": "showLoadingIndicator?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Indicates whether the loading indicator should be displayed on top of the property pane or not. This feature is intended to be used when the user is waiting on a promise to resolve. If set to true, overlay loading indicator appears after 500ms (web part author can override this behavior by using overlayLoadingIndicator property). "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " The reason why we are not showing it immediately is that our intent is to never show the loading indicator. But in real life async requests could take long and it becomes necessary to display a loading indicator to the end user."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneCustomFieldProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane CustomPropertyField props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "context": {
+          "kind": "property",
+          "signature": "context?: any;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Instance specific context. This context is passed back to the web part in the onRender and onDispose APIs. The web part can use this context to manage state information."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "key": {
+          "kind": "property",
+          "signature": "key: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "An UNIQUE key indicates the identity of this contorl. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " The PropertyPane uses ReactJS to render its components. ReactJS uses keys to identify a component and if it should be re-rendered or not. This is a performance feature in ReactJS. Please read the following link to understand how to pick the value of the key. "
+            },
+            {
+              "kind": "seeDocElement",
+              "seeElements": [
+                {
+                  "kind": "textDocElement",
+                  "value": " https://facebook.github.io/react/docs/lists-and-keys.html#keys "
+                }
+              ]
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onDispose": {
+          "kind": "property",
+          "signature": "onDispose?: (domElement: HTMLElement, context?: any) => void;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "(domElement: HTMLElement, context?: any) => void",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is called when the component is unmounted from the host element."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onRender": {
+          "kind": "property",
+          "signature": "onRender: (\r\n    domElement: HTMLElement,\r\n    context?: any,\r\n    changeCallback?: (targetProperty?: string, newValue?: any) => void) => void;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "(\r\n    domElement: HTMLElement,\r\n    context?: any,\r\n    changeCallback?: (targetProperty?: string, newValue?: any) => void) => void",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This API will be called once the custom field is mounted on the host element."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneDropdownOption": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane drop down options."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "index": {
+          "kind": "property",
+          "signature": "index?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Index for this option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "key": {
+          "kind": "property",
+          "signature": "key: string | number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A key to uniquely identify this option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "text": {
+          "kind": "property",
+          "signature": "text: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Text to render for this option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "type": {
+          "kind": "property",
+          "signature": "type?: PropertyPaneDropdownOptionType;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "PropertyPaneDropdownOptionType",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The type of option. If omitted, the default is PropertyPaneDropdownMenuItemType.Normal"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneDropdownProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane drop down component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "ariaLabel": {
+          "kind": "property",
+          "signature": "ariaLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A description of the dropdown for the benefit of screen reader users."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane dropdown option is disabled or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Descriptive label for the Dropdown."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "options": {
+          "kind": "property",
+          "signature": "options?: IPropertyPaneDropdownOption[];",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneDropdownOption[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Collection of options for this Dropdown."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "selectedKey": {
+          "kind": "property",
+          "signature": "selectedKey?: string | number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The key of the initially selected option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneField": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane field."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "properties": {
+          "kind": "property",
+          "signature": "properties: TProperties;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "TProperties",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed properties object. Specific to each field type. Example: Checkbox has ICheckboxProps, TextField has ITextField props."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "shouldFocus": {
+          "kind": "property",
+          "signature": "shouldFocus?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether this control should be focused. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " default value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "targetProperty": {
+          "kind": "property",
+          "signature": "targetProperty: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property from the web part's property bag."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "type": {
+          "kind": "property",
+          "signature": "type: PropertyPaneFieldType;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "PropertyPaneFieldType",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Type of the PropertyPane field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneGroup": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane group. Group is part of the PropertyPanePage."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "groupFields": {
+          "kind": "property",
+          "signature": "groupFields: IPropertyPaneField<any>[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneField<any>[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "List of PropertyPane fields."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "groupName": {
+          "kind": "property",
+          "signature": "groupName?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Display name for the group. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " For performance reasons, it's highly recommended to keep this name unique within the property pane page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isCollapsed": {
+          "kind": "property",
+          "signature": "isCollapsed?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Indicates whether the PropertyPane group is collapsed or not. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Defaullt: false"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneLabelProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPaneLabel component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "required": {
+          "kind": "property",
+          "signature": "required?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the associated form field is required or not. If true, a red asterisk is displayed to the right of the label. Default value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "text": {
+          "kind": "property",
+          "signature": "text: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Display text fot the label."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneLinkProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPaneLink component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane link is disabled or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "href": {
+          "kind": "property",
+          "signature": "href: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Location to which the link is targetted to."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "popupWindowProps": {
+          "kind": "property",
+          "signature": "popupWindowProps?: IPopupWindowProps;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPopupWindowProps",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The props of pop up window."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "target": {
+          "kind": "property",
+          "signature": "target?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This attribute specifies where to display the linked resource. Following values can be used: _self - (default) Load the response in the current page. _blank - Load the response into a new unnamed tab. _parent - Load the response in the parent of the current page. If no parent exists, then this option behaves same as '_self' _top - Load the response into the original window."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "text": {
+          "kind": "property",
+          "signature": "text: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Display text for the link."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPanePage": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPanePage interface."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "displayGroupsAsAccordion": {
+          "kind": "property",
+          "signature": "displayGroupsAsAccordion?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Indicates whether the groups on the PropertyPanePage are displayed as accordion or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "groups": {
+          "kind": "property",
+          "signature": "groups: IPropertyPaneGroup[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneGroup[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "List of groups to be displayed on the PropertyPane page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "header": {
+          "kind": "property",
+          "signature": "header?: IPropertyPanePageHeader;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPanePageHeader",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "PropertyPane page header."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPanePageHeader": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPane header. This header remains same for all the pages."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "description": {
+          "kind": "property",
+          "signature": "description: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Header to display."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "image": {
+          "kind": "property",
+          "signature": "image?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Image url for the background image."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneSliderProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPaneSliderProps component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "ariaLabel": {
+          "kind": "property",
+          "signature": "ariaLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A description of the Slider for the benefit of screen readers."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether or not the Slider is disabled."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Description label of the Slider."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "max": {
+          "kind": "property",
+          "signature": "max: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The max value of the Slider."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "min": {
+          "kind": "property",
+          "signature": "min: number;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The min value of the Slider."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "showValue": {
+          "kind": "property",
+          "signature": "showValue?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether to show the value on the right of the Slider. If you want to show the value by yourself, you may want to set this value to false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "step": {
+          "kind": "property",
+          "signature": "step?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The difference between the two adjacent values of the Slider. Defaults to 1."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "value": {
+          "kind": "property",
+          "signature": "value?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Defaults to min."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneTextFieldProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPaneTextField component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "ariaLabel": {
+          "kind": "property",
+          "signature": "ariaLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Aria Label for textfield, if any."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "deferredValidationTime": {
+          "kind": "property",
+          "signature": "deferredValidationTime?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds. Default value is 200."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The textfield input description."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the property pane textfield is enabled or not."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "errorMessage": {
+          "kind": "property",
+          "signature": "errorMessage?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "If set, this will be displayed as an error message. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the error message. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " So, make sure to set this only if you want to see an error message dispalyed for the text field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Label for the textfield."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "maxLength": {
+          "kind": "property",
+          "signature": "maxLength?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Maximum number of characters that the PropertyPaneTextField can have. (If the value is set to a negative number, an exception will be thrown.)"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "multiline": {
+          "kind": "property",
+          "signature": "multiline?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether or not the textfield is a multiline textfield. Default value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onGetErrorMessage": {
+          "kind": "property",
+          "signature": "onGetErrorMessage?: (value: string) => string | Promise<string>;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "(value: string) => string | Promise<string>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The method is used to get the validation error message and determine whether the input value is valid or not. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " When it returns string: - If valid, it returns empty string. - If invalid, it returns the error message string and an error message is displayed below the text field. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " When it returns Promise<string>: - The resolved value is display as error message. - The rejected, the value is thrown away."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "placeholder": {
+          "kind": "property",
+          "signature": "placeholder?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "placeholder text to be displayed in the Textfield."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "resizable": {
+          "kind": "property",
+          "signature": "resizable?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether or not the multiline textfield is resizable. Default value is true."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "rows": {
+          "kind": "property",
+          "signature": "rows?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Specifies the visible height of a text area(multiline text TextField), in lines. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " This prop is used only when the multiline prop is set to true."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "underlined": {
+          "kind": "property",
+          "signature": "underlined?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether or not the textfield is underlined. Default value is false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "validateOnFocusIn": {
+          "kind": "property",
+          "signature": "validateOnFocusIn?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Run validation when the PropertyPaneTextField is focused. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " default value is false"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "validateOnFocusOut": {
+          "kind": "property",
+          "signature": "validateOnFocusOut?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Run validation when the PropertyPaneTextField is out of focus or on blur. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " default value is false"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "value": {
+          "kind": "property",
+          "signature": "value?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Value to be displayed in the textfield when the value of the targetProperty in the manifest's property bag is empty or contains null value."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IPropertyPaneToggleProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "PropertyPaneToggle component props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "checked": {
+          "kind": "property",
+          "signature": "checked?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Checked state of the toggle. If you are maintaining state yourself, use this property."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "disabled": {
+          "kind": "property",
+          "signature": "disabled?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Optional disabled flag."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "key": {
+          "kind": "property",
+          "signature": "key?: string | number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string | number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A key to uniquely identify the field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A label for the toggle."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "offAriaLabel": {
+          "kind": "property",
+          "signature": "offAriaLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Optional offAriaLabel flag. Text for screen-reader to announce when toggle is OFF."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "offText": {
+          "kind": "property",
+          "signature": "offText?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Test display when toggle is OFF."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onAriaLabel": {
+          "kind": "property",
+          "signature": "onAriaLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Optional onAriaLabel flag. Text for screen-reader to announce when toggle is ON."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "onText": {
+          "kind": "property",
+          "signature": "onText?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Text to display when toggle is ON."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ISerializedServerProcessedData": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Contains collections of data that can be processed by server side services like search index and link fixup"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "htmlStrings": {
+          "kind": "property",
+          "signature": "htmlStrings?:",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{ [key: string]: string }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: { 'myRichDescription': '<div>Some standard <b>HTML content</b><a href='http://somelink'>A Link</a></div>' 'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div> }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "imageSources": {
+          "kind": "property",
+          "signature": "imageSources?:",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{ [key: string]: string }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: { 'myImage1': 'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "links": {
+          "kind": "property",
+          "signature": "links?:",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{ [key: string]: string }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: { 'myWebURL': 'http://contoso.com' 'myFileLink': 'https://res.contoso.com/file.docx' }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "searchablePlainTexts": {
+          "kind": "property",
+          "signature": "searchablePlainTexts?:",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{ [key: string]: string }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "A key-value map where keys are string identifiers and values are strings that should be search indexed. The values are html-encoded before being sent to the server. The encoded values are visible to the search indexer, but are not treated as valid html. So, other services such as link fixup will not run on them. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: { 'justSomeText': 'This is some plain text', 'anotherText': 'Can have <any> characters here: \"<>&\\'' }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "ISerializedWebPartData": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This structure represents the part of the serialized state of a web part which is controlled by the web part. It is extended by IWebPartData which contains additional data added by the framework to the serialized data."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "dataVersion": {
+          "kind": "property",
+          "signature": "dataVersion: Version;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Version",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: Web part data version. Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version Supported values: MAJOR.MINOR Example: \"1.0\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "properties": {
+          "kind": "property",
+          "signature": "properties?: any;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serverProcessedContent": {
+          "kind": "property",
+          "signature": "serverProcessedContent?: ISerializedServerProcessedData;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ISerializedServerProcessedData",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: The collections of data that can be processed by server side services like search index and link fixup Required: no"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IWebPartContext": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "The base context interface for client-side web parts."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "A \"context\" object is a collection of well-known services and other objects that are likely to be needed by any business logic working with a component. Each component type has its own specialized extension of this interface, e.g. IWebPartContext for web parts, IExtensionContext for client-side extensions, etc."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "domElement": {
+          "kind": "property",
+          "signature": "domElement: HTMLElement;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "HTMLElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Reference to the DOM element that hosts this client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "graphHttpClient": {
+          "kind": "property",
+          "signature": "graphHttpClient: GraphHttpClient;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "GraphHttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "GraphHttpClient instance scoped to this web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "httpClient": {
+          "kind": "property",
+          "signature": "httpClient: HttpClient;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "HttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "HttpClient instance scoped to this web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "instanceId": {
+          "kind": "property",
+          "signature": "instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Web part instance id. This is a globally unique value."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "manifest: IClientSideWebPartManifestInstance<any>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IClientSideWebPartManifestInstance<any>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Manifest for the client side web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "pageContext": {
+          "kind": "property",
+          "signature": "pageContext: PageContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "PageContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "SharePoint page context."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "propertyPane": {
+          "kind": "property",
+          "signature": "propertyPane: IPropertyPaneAccessor;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Accessor for common web part property pane operations."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "spHttpClient": {
+          "kind": "property",
+          "signature": "spHttpClient: SPHttpClient;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "SPHttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "SPHttpClient instance scoped to this web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "statusRenderer": {
+          "kind": "property",
+          "signature": "statusRenderer: IClientSideWebPartStatusRenderer;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IClientSideWebPartStatusRenderer",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Web part status renderer."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "webPartTag": {
+          "kind": "property",
+          "signature": "webPartTag: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Web part tag to be used for logging and telemetry."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IWebPartData": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This structure represents the serialized state of a web part. When the serialize() API is called on a web part, the output should be this structure. The structure of the 'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of properties it wants to serialialize."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "dataVersion": {
+          "kind": "property",
+          "signature": "dataVersion: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: Web part data version. Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: string Supported values: MAJOR.MINOR Example: \"1.0\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: web part description. Usage: display the description of the web part. Required: no Type: string Supported values: string with the description. Example: \"Text\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "id": {
+          "kind": "property",
+          "signature": "id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: universally unique web part Type id. Usage: uniquely identify a web part. Required: yes Type: GUID Supported values: any GUID Example: \"dbef608d-3ad5-4f8f-b139-d916f2f0a294\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "instanceId": {
+          "kind": "property",
+          "signature": "instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: universally unique instance id of the web part. A web part can have multiple instances on a page. This id is expected to be universally unique accross time and page boundaries. how used: used by the framework to uniquely identify an instance of a web part. mandatory: yes type: string supported values: a unique string. Could be GUID or other uniquely identifiable formats. example: [\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"] experimental: yes"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "properties": {
+          "kind": "property",
+          "signature": "properties?: any;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serverProcessedContent": {
+          "kind": "property",
+          "signature": "serverProcessedContent?: ISerializedServerProcessedData;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ISerializedServerProcessedData",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: The collections of data that can be processed by server side services like search index and link fixup Required: no"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Definition: web part title. Usage: display the name of the web part in the toolbox, web part gallery and the page. Required: yes Type: string Supported values: string less than 100 characters Example: \"Text\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "IWebPartPropertiesMetadata": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This structure is used to define metadata for web part propeties as a map of string to IWebPartPropertyMetadata The key should be a json path to the property in web part propeties. The json path supports the following operators: - Dot . for selecting object members e.g. person.name - Brackets [] for selecting array items e.g. person.photoURLs[0] - Bracketed asterisk [*] for array elements wildcard e.g. person.websites[*]. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " You can make combinations of these operators e.g. person.websites[*].url Important Note: Only one wildcard per path is supported. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " Example: Let's assume we have a web part with properties that have the following schema: { title: string; person: { name: string; bio: string; photoURLs: string[]; websites: { title: string; url: string; }[] } } "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " We can define the metadata for the desired properties as following: { 'person.bio': { isRichContent: true }, 'person.photoURLs[*]': { isImageSource: true }, 'person.websites[*].url': { isLink: true } } "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " This will make SharePoint servers aware of the content of your properties and run services such as search indexing, link fix-up, etc on the data. In case any of the values needs to update by these services, e.g link fix-up, the web part property bag is automatically updated."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__index": {
+          "kind": "method",
+          "signature": "[ key: string ]: IWebPartPropertyMetadata;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IWebPartPropertyMetadata",
+            "description": []
+          },
+          "parameters": {
+            "key": {
+              "name": "key",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "PropertyPaneButton": {
+      "kind": "function",
+      "signature": "export function PropertyPaneButton(targetProperty: string,\r\n  properties: IPropertyPaneButtonProps): IPropertyPaneField<IPropertyPaneButtonProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneButtonProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the Button is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Button properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneButtonProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Button on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneButtonType": {
+      "kind": "enum",
+      "values": {
+        "Command": {
+          "kind": "enum value",
+          "value": "",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Optional actions. Typically used in a command bar at the top of a view, panel and inside an inline command bar. Examples: Command bar at the top of OneDrive, Outlook, SharePoint. Inline command bar on the top of SharePoint web parts."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Compound": {
+          "kind": "enum value",
+          "value": "",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Always used as a set with both Standard and Primary compound buttons. Typically used in a confirmation dialog. Examples: A confirmation dialog when a user discards a form or task with a possible significant time investment such as an email or a complex form"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Hero": {
+          "kind": "enum value",
+          "value": "",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Hero button."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Icon": {
+          "kind": "enum value",
+          "value": "",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Same usage as Command button, when real estate does not allow for icons + labels or as secondary actions within the command bar. Typically used in Command bar in small and medium responsive web breakpoints. Also used on objects. Examples: OneDrive small and medium responsive web breakpoint Command Bars and view icons within the Command Bar. In SharePoint and OneDrive, Cards with social actions and images which allow users to access the image picker. In SharePoint, formatting experiences such as formatting a story within the Authoring experience. In Calendar, in the bottom of an event creation Callout when clicking inside an empty time range."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Normal": {
+          "kind": "enum value",
+          "value": "",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Optional completion action. Typically used at the end of a form or task when paired with the Primary button OR as a standalone button to undo an action. Examples: \"Done\" button which closes a container but doesn't make a server call or an \"Undo\" button when a user is uploading a file in OneDrive."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Primary": {
+          "kind": "enum value",
+          "value": "",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Preferred completion action when paired with a Standard button. Typically used at the end of a task or form. Examples: \"Create\", \"Save\", \"Send\" which makes a server call."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Enum for all the supported button types."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneCheckbox": {
+      "kind": "function",
+      "signature": "export function PropertyPaneCheckbox(targetProperty: string,\r\n  properties: IPropertyPaneCheckboxProps): IPropertyPaneField<IPropertyPaneCheckboxProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneCheckboxProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the checkbox is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Checkbox properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneCheckboxProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Checkbox on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneChoiceGroup": {
+      "kind": "function",
+      "signature": "export function PropertyPaneChoiceGroup(targetProperty: string,\r\n  properties: IPropertyPaneChoiceGroupProps): IPropertyPaneField<IPropertyPaneChoiceGroupProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneChoiceGroupProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the choice group is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Choice Group properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneChoiceGroupProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Choice Group on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneCustomField": {
+      "kind": "function",
+      "signature": "export function PropertyPaneCustomField(properties: IPropertyPaneCustomFieldProps): IPropertyPaneField<IPropertyPaneCustomFieldProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneCustomFieldProps>",
+        "description": []
+      },
+      "parameters": {
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Custom field properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneCustomFieldProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a custom field on the PropertyPane. The purpose of the custom field is to help the web part developer to add a custom control to the PropertyPane. The PropertyPane supports a host of inbuilt field types. While this list meets the demands of most web parts, but there are exceptional cases when web parts have special needs and need a special control. The custom field helps fill that gap."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true
+    },
+    "PropertyPaneDropdown": {
+      "kind": "function",
+      "signature": "export function PropertyPaneDropdown(targetProperty: string,\r\n  properties: IPropertyPaneDropdownProps): IPropertyPaneField<IPropertyPaneDropdownProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneDropdownProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the dropdown is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Dropdown properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneDropdownProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Dropdown on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneDropdownOptionType": {
+      "kind": "enum",
+      "values": {
+        "Divider": {
+          "kind": "enum value",
+          "value": "1",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Render a divider."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Header": {
+          "kind": "enum value",
+          "value": "2",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Render menu item as a header."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Normal": {
+          "kind": "enum value",
+          "value": "0",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Render normal menu item."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Specifies the type of option in a dropdown menu rendered by "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-webpart-base",
+          "exportName": "PropertyPaneDropdown",
+          "memberName": "",
+          "value": "PropertyPaneDropdown"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " ."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneFieldType": {
+      "kind": "enum",
+      "values": {
+        "Button": {
+          "kind": "enum value",
+          "value": "11",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Button field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "CheckBox": {
+          "kind": "enum value",
+          "value": "2",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Checkbox field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "ChoiceGroup": {
+          "kind": "enum value",
+          "value": "10",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Choice Group field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Custom": {
+          "kind": "enum value",
+          "value": "1",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Custom field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Dropdown": {
+          "kind": "enum value",
+          "value": "6",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Dropdown field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Heading": {
+          "kind": "enum value",
+          "value": "9",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Heading field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "HorizontalRule": {
+          "kind": "enum value",
+          "value": "12",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Horizontal Rule field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Label": {
+          "kind": "enum value",
+          "value": "7",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Label field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Link": {
+          "kind": "enum value",
+          "value": "13",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Link field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Slider": {
+          "kind": "enum value",
+          "value": "8",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Slider field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "TextField": {
+          "kind": "enum value",
+          "value": "3",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "TextField field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Toggle": {
+          "kind": "enum value",
+          "value": "5",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Toggle field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Enum for all the supported PropertyPane field types. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " Names should be consistent with those in office-ui-fabric-react, be careful to get letter casing correct."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneHorizontalRule": {
+      "kind": "function",
+      "signature": "export function PropertyPaneHorizontalRule(): IPropertyPaneField<void>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<void>",
+        "description": []
+      },
+      "parameters": {},
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Horizontal Rule on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneLabel": {
+      "kind": "function",
+      "signature": "export function PropertyPaneLabel(targetProperty: string,\r\n  properties: IPropertyPaneLabelProps): IPropertyPaneField<IPropertyPaneLabelProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneLabelProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the label is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Label properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneLabelProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Label on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneLink": {
+      "kind": "function",
+      "signature": "export function PropertyPaneLink(targetProperty: string,\r\n  properties: IPropertyPaneLinkProps): IPropertyPaneField<IPropertyPaneLinkProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneLinkProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the Link is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Link properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneLinkProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Link on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneSlider": {
+      "kind": "function",
+      "signature": "export function PropertyPaneSlider(targetProperty: string,\r\n  properties: IPropertyPaneSliderProps): IPropertyPaneField<IPropertyPaneSliderProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneSliderProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the slider is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Slider properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneSliderProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Slider on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneTextField": {
+      "kind": "function",
+      "signature": "export function PropertyPaneTextField(targetProperty: string,\r\n  properties: IPropertyPaneTextFieldProps): IPropertyPaneField<IPropertyPaneTextFieldProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneTextFieldProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the textfield is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed TextField properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneTextFieldProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a TextField on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneToggle": {
+      "kind": "function",
+      "signature": "export function PropertyPaneToggle(targetProperty: string,\r\n  properties: IPropertyPaneToggleProps): IPropertyPaneField<IPropertyPaneToggleProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneToggleProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Target property the toggle is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "textDocElement",
+              "value": "Strongly typed Toggle properties."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneToggleProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Helper method to create a Toggle on the PropertyPane."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "WebPartContext": {
+      "kind": "class",
+      "extends": "BaseComponentContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Web part context object. This object contains the contextual services available to a web part. e.g. a contextual instance to the http client."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(parameters: IWebPartContextParameters);",
+          "parameters": {
+            "parameters": {
+              "name": "parameters",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IWebPartContextParameters"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Constructs a new instance of the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "domElement": {
+          "kind": "property",
+          "signature": "public readonly domElement: HTMLElement;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HTMLElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Reference to the DOM element that hosts this client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "graphHttpClient": {
+          "kind": "property",
+          "signature": "public readonly graphHttpClient: GraphHttpClient;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "GraphHttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "GraphHttpClient instance scoped to this web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "httpClient": {
+          "kind": "property",
+          "signature": "public readonly httpClient: HttpClient;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "HttpClient instance scoped to this web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "public manifest: IClientSideWebPartManifestInstance<any>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IClientSideWebPartManifestInstance<any>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Manifest for the client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "propertyPane": {
+          "kind": "property",
+          "signature": "public readonly propertyPane: IPropertyPaneAccessor;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IPropertyPaneAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Accessor for common web part property pane operations."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "spHttpClient": {
+          "kind": "property",
+          "signature": "public readonly spHttpClient: SPHttpClient;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPHttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "SPHttpClient instance scoped to this web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "statusRenderer": {
+          "kind": "property",
+          "signature": "public readonly statusRenderer: IClientSideWebPartStatusRenderer;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IClientSideWebPartStatusRenderer",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Web part status renderer."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "webPartTag": {
+          "kind": "property",
+          "signature": "public readonly webPartTag: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Web part tag to be used for logging and telemetry."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    }
+  }
+}
