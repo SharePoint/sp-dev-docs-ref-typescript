@@ -1,7 +1,6 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-dialog.BaseDialog
-    isPreview: true
     summary: >-
       The base class for implementing dialogs in SharePoint Framework. This provides a supported way for showing dialogs
       to the user inside SharePoint Framework components.
@@ -12,6 +11,7 @@ items:
       how to render the overlay and modal. The application on the page can also have control on allowing dialogs to
       show. Refer to the documentation of the individual methods and properties to learn more about how to extend and
       use this class.
+    isPreview: true
     name: BaseDialog
     fullName: sp-dialog.BaseDialog
     langs:
@@ -52,11 +52,11 @@ items:
           type:
             - IDialogConfiguration
   - uid: sp-dialog.BaseDialog.close
-    isPreview: true
     summary: >-
       Close the dialog. This will void the permission to show for this dialog. Every dialog should have a mechanism to
       eventually close to avoid blocking the user interface. If called on an inactive dialog it will abort the request
       to show.
+    isPreview: true
     name: close()
     fullName: sp-dialog.BaseDialog.close
     langs:
@@ -69,10 +69,10 @@ items:
           - Promise<void>
         description: 'A promise that resolves when the dialog is visually closed, or if it was already closed'
   - uid: sp-dialog.BaseDialog.domElement
-    isPreview: true
     summary: >-
       Use this property to access the container element provided by the framework for rendering. see
       [BaseDialog.render](xref:sp-dialog.BaseDialog.render) for more information on rendering
+    isPreview: true
     name: domElement
     fullName: sp-dialog.BaseDialog.domElement
     langs:
@@ -84,11 +84,11 @@ items:
         type:
           - HTMLElement
   - uid: sp-dialog.BaseDialog.isHidden
-    isPreview: true
     summary: >-
       If the dialog is visually hidden. This happens when the dialog goes behind a secondary dialog. Note that this is
       different from closed, because the dialog still has the permission to show and will eventually unhide. This
       returns false if the dialog is closed.
+    isPreview: true
     name: isHidden
     fullName: sp-dialog.BaseDialog.isHidden
     langs:
@@ -100,10 +100,10 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.isOpen
-    isPreview: true
     summary: >-
       If the dialog is visually open. This returns true during onBeforeOpen() because there is a visual component. It
       returns false when the dialog is hidden.
+    isPreview: true
     name: isOpen
     fullName: sp-dialog.BaseDialog.isOpen
     langs:
@@ -115,8 +115,8 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.isSecondary
-    isPreview: true
     summary: If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.
+    isPreview: true
     name: isSecondary
     fullName: sp-dialog.BaseDialog.isSecondary
     langs:
@@ -128,13 +128,13 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.onAfterClose
-    isPreview: true
     summary: >-
       This method is called after the dialog is visually closed and gives an opprotunity for doing clean up. The dialog
       lifecycle completes after closing and there should be no unmanaged resources left inside the object. Even though
       the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle
       that should reallocate its own resources. If there are any resources that you would like to keep for multiple
       lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor.
+    isPreview: true
     name: onAfterClose()
     fullName: sp-dialog.BaseDialog.onAfterClose
     langs:
@@ -147,11 +147,11 @@ items:
           - void
         description: ''
   - uid: sp-dialog.BaseDialog.onBeforeOpen
-    isPreview: true
     summary: >-
       This method is called before the render method and can be overridden to make preparations for rendering. The
       loading indicator is displayed during the lifetime of this method.
     remarks: All resource allocations in onBeforeOpen() should be properly disposed in onAfterClose() to a avoid memory leak.
+    isPreview: true
     name: onBeforeOpen()
     fullName: sp-dialog.BaseDialog.onBeforeOpen
     langs:
@@ -166,7 +166,6 @@ items:
           A promise that resolves when the operations are done and the dialog is ready to render. If the promise is
           rejected, the dialog will not be rendered and onAfterClose() will not be called.
   - uid: sp-dialog.BaseDialog.render
-    isPreview: true
     summary: >-
       The render method must be implemented to render the content of the dialog in the conrainer element provided by the
       framework. Use this.domElement to access this container. The container is inside a modal rendered in the center of
@@ -178,6 +177,7 @@ items:
       you choose to do your initialization or other costly operations inside render method, make sure to have a friendly
       UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which
       is a bad user experience practice.
+    isPreview: true
     name: render()
     fullName: sp-dialog.BaseDialog.render
     langs:
@@ -190,7 +190,6 @@ items:
           - void
         description: ''
   - uid: sp-dialog.BaseDialog.secondaryDialogProvider
-    isPreview: true
     summary: >-
       An active dialog is permitted to show a secondary dialog on top of itself. By design, only two layers of dialogs
       are permitted.
@@ -198,6 +197,7 @@ items:
       Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show
       a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a
       secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active.
+    isPreview: true
     name: secondaryDialogProvider
     fullName: sp-dialog.BaseDialog.secondaryDialogProvider
     langs:
@@ -209,8 +209,8 @@ items:
         type:
           - SecondaryDialogProvider | undefined
   - uid: sp-dialog.BaseDialog.show
-    isPreview: true
     summary: Request the framework to show this dialog.
+    isPreview: true
     name: show(options)
     fullName: sp-dialog.BaseDialog.show
     langs:

@@ -1,12 +1,12 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.Event
-    isPreview: true
     summary: Representation of an event. It exposes an event that third parties can attach handlers to.
     remarks: >-
       When an event is raised, its handlers are executed synchronously. An event handler should not throw errors,
       although the system can recover from an error in a handler. Event handlers should be fast. If they need to do
       expensive operations, they should use Promises for that.
+    isPreview: true
     name: Event
     fullName: sp-core-library.Event
     langs:
@@ -17,7 +17,6 @@ items:
       - sp-core-library.Event.add
       - sp-core-library.Event.remove
   - uid: sp-core-library.Event.add
-    isPreview: true
     summary: >-
       Registers an event handler callback that will be invoked whenever the event occurs. The same object can add
       multiple event handlers to the same event.
@@ -25,6 +24,7 @@ items:
       Since BaseComponent implements the IEventObserver interface, a web part or extension can pass itself as the
       observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is
       disposed.
+    isPreview: true
     name: 'add(observer, eventHandler)'
     fullName: sp-core-library.Event.add
     langs:
@@ -49,11 +49,11 @@ items:
           type:
             - '(eventArgs: TEventArgs) => void'
   - uid: sp-core-library.Event.remove
-    isPreview: true
     summary: |-
       Removes an event handler to the event. Only removes the event handler passed as input. 
 
        If the event handler has already been removed, or it was never added, this operation does nothing.
+    isPreview: true
     name: 'remove(observer, eventHandler)'
     fullName: sp-core-library.Event.remove
     langs:

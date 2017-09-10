@@ -1,7 +1,6 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-application-base.PlaceholderProvider
-    isPreview: true
     summary: >-
       Allows third party components to discover and use "placeholders". Placeholders allow third party components to
       inject custom content into designated regions on the page.
@@ -11,6 +10,7 @@ items:
       party components should not assume that a given placeholder will always be available. 
 
        Use [PlaceholderProvider.tryCreateContent](xref:sp-application-base.PlaceholderProvider.tryCreateContent) to test whether a placeholder is available and add content to it. Use the [PlaceholderProvider.changedEvent](xref:sp-application-base.PlaceholderProvider.changedEvent) to discover when new placeholders appear.
+    isPreview: true
     name: PlaceholderProvider
     fullName: sp-application-base.PlaceholderProvider
     langs:
@@ -22,12 +22,12 @@ items:
       - sp-application-base.PlaceholderProvider.placeholderNames
       - sp-application-base.PlaceholderProvider.tryCreateContent
   - uid: sp-application-base.PlaceholderProvider.changedEvent
-    isPreview: true
     summary: This event is raised when the list of currently available placeholders is changed.
     remarks: >-
       The application can change its list of available placeholders at any time. This means that the existing
       placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
       they appear.
+    isPreview: true
     name: changedEvent
     fullName: sp-application-base.PlaceholderProvider.changedEvent
     langs:
@@ -39,8 +39,8 @@ items:
         type:
           - Event<EventArgs>
   - uid: sp-application-base.PlaceholderProvider.placeholderNames
-    isPreview: true
     summary: Returns the names of the currently available placeholders.
+    isPreview: true
     name: placeholderNames
     fullName: sp-application-base.PlaceholderProvider.placeholderNames
     langs:
@@ -52,7 +52,6 @@ items:
         type:
           - ReadonlyArray<PlaceholderName>
   - uid: sp-application-base.PlaceholderProvider.tryCreateContent
-    isPreview: true
     summary: >-
       Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created,
       which allows the caller to render custom content inside the placeholder.
@@ -60,6 +59,7 @@ items:
       The host application makes no guarantees about the availability of a given placeholder. In situations where an
       expected placeholder is not available, the third party extension must handle it gracefully, e.g. by not rendering
       anything, or by choosing an alternative placeholder.
+    isPreview: true
     name: 'tryCreateContent(name, options)'
     fullName: sp-application-base.PlaceholderProvider.tryCreateContent
     langs:
