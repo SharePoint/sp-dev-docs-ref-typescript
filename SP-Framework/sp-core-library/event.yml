@@ -1,12 +1,8 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.Event
-    summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
-      Representation of an event. It exposes an event that third parties can attach handlers to.
+    isPreview: true
+    summary: Representation of an event. It exposes an event that third parties can attach handlers to.
     remarks: >-
       When an event is raised, its handlers are executed synchronously. An event handler should not throw errors,
       although the system can recover from an error in a handler. Event handlers should be fast. If they need to do
@@ -21,14 +17,8 @@ items:
       - sp-core-library.Event.add
       - sp-core-library.Event.remove
   - uid: sp-core-library.Event.add
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       Registers an event handler callback that will be invoked whenever the event occurs. The same object can add
       multiple event handlers to the same event.
 
@@ -67,11 +57,8 @@ items:
           type:
             - '(eventArgs: TEventArgs) => void'
   - uid: sp-core-library.Event.remove
+    isPreview: true
     summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
       Removes an event handler to the event. Only removes the event handler passed as input. 
 
        If the event handler has already been removed, or it was never added, this operation does nothing.

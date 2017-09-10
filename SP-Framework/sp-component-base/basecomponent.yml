@@ -1,12 +1,8 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-component-base.BaseComponent
-    summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
-      Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.
+    isPreview: true
+    summary: 'Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.'
     remarks: >-
       **Implements:** `IEventObserver`
 
@@ -28,14 +24,8 @@ items:
       - sp-component-base.BaseComponent.manifest
       - sp-component-base.BaseComponent.onDispose
   - uid: sp-component-base.BaseComponent.componentId
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       Returns the component identifier as defined in the component’s associated manifest.
 
 
@@ -60,14 +50,8 @@ items:
         type:
           - string
   - uid: sp-component-base.BaseComponent.context
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       Use the context object to access common services and state associated with the component.
 
 
@@ -92,11 +76,8 @@ items:
         type:
           - BaseComponentContext
   - uid: sp-component-base.BaseComponent.dispose
+    isPreview: true
     summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
       Disposes the component. In order to write component-specific dispose mechanism, use onDispose instead. 
 
        The onDispose event should only be raised once - if this.\_disposed was false when the function was called. (Put another way, dispose() should be a no-op if this.\_disposed is true.)
@@ -112,14 +93,8 @@ items:
           - void
         description: ''
   - uid: sp-component-base.BaseComponent.instanceId
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       Unique identifier for the instance of the component. The same component can be instantiated several times, and
       each instance will have a different id.
     name: instanceId
@@ -133,12 +108,8 @@ items:
         type:
           - string
   - uid: sp-component-base.BaseComponent.isDisposed
-    summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
-      Returns true if the component has been already disposed.
+    isPreview: true
+    summary: Returns true if the component has been already disposed.
     name: isDisposed
     fullName: sp-component-base.BaseComponent.isDisposed
     langs:
@@ -150,12 +121,8 @@ items:
         type:
           - boolean
   - uid: sp-component-base.BaseComponent.manifest
-    summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
-      Returns the manifest for the component.
+    isPreview: true
+    summary: Returns the manifest for the component.
     name: manifest
     fullName: sp-component-base.BaseComponent.manifest
     langs:
@@ -167,14 +134,8 @@ items:
         type:
           - IClientSideComponentManifest
   - uid: sp-component-base.BaseComponent.onDispose
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       This event hook is called immediately before the component stops being used. It provides an opportunity to release
       any associated resources, cancel any outstanding requests, etc.
     name: onDispose()

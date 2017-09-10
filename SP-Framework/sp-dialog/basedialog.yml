@@ -1,14 +1,8 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-dialog.BaseDialog
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       The base class for implementing dialogs in SharePoint Framework. This provides a supported way for showing dialogs
       to the user inside SharePoint Framework components.
     remarks: >-
@@ -58,14 +52,8 @@ items:
           type:
             - IDialogConfiguration
   - uid: sp-dialog.BaseDialog.close
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       Close the dialog. This will void the permission to show for this dialog. Every dialog should have a mechanism to
       eventually close to avoid blocking the user interface. If called on an inactive dialog it will abort the request
       to show.
@@ -81,14 +69,8 @@ items:
           - Promise<void>
         description: 'A promise that resolves when the dialog is visually closed, or if it was already closed'
   - uid: sp-dialog.BaseDialog.domElement
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       Use this property to access the container element provided by the framework for rendering. see
       [BaseDialog.render](xref:sp-dialog.BaseDialog.render) for more information on rendering
     name: domElement
@@ -102,14 +84,8 @@ items:
         type:
           - HTMLElement
   - uid: sp-dialog.BaseDialog.isHidden
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       If the dialog is visually hidden. This happens when the dialog goes behind a secondary dialog. Note that this is
       different from closed, because the dialog still has the permission to show and will eventually unhide. This
       returns false if the dialog is closed.
@@ -124,14 +100,8 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.isOpen
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       If the dialog is visually open. This returns true during onBeforeOpen() because there is a visual component. It
       returns false when the dialog is hidden.
     name: isOpen
@@ -145,12 +115,8 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.isSecondary
-    summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
-      If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.
+    isPreview: true
+    summary: If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.
     name: isSecondary
     fullName: sp-dialog.BaseDialog.isSecondary
     langs:
@@ -162,14 +128,8 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.onAfterClose
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       This method is called after the dialog is visually closed and gives an opprotunity for doing clean up. The dialog
       lifecycle completes after closing and there should be no unmanaged resources left inside the object. Even though
       the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle
@@ -187,14 +147,8 @@ items:
           - void
         description: ''
   - uid: sp-dialog.BaseDialog.onBeforeOpen
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       This method is called before the render method and can be overridden to make preparations for rendering. The
       loading indicator is displayed during the lifetime of this method.
 
@@ -218,14 +172,8 @@ items:
           A promise that resolves when the operations are done and the dialog is ready to render. If the promise is
           rejected, the dialog will not be rendered and onAfterClose() will not be called.
   - uid: sp-dialog.BaseDialog.render
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       The render method must be implemented to render the content of the dialog in the conrainer element provided by the
       framework. Use this.domElement to access this container. The container is inside a modal rendered in the center of
       the page on top of a dark overlay.
@@ -259,14 +207,8 @@ items:
           - void
         description: ''
   - uid: sp-dialog.BaseDialog.secondaryDialogProvider
+    isPreview: true
     summary: >-
-      > [!NOTE]
-
-      > _This API is provided as a preview for developers and may change based on feedback_
-
-      > _that we receive. Do not use this API in a production environment._
-
-
       An active dialog is permitted to show a secondary dialog on top of itself. By design, only two layers of dialogs
       are permitted.
 
@@ -292,12 +234,8 @@ items:
         type:
           - SecondaryDialogProvider | undefined
   - uid: sp-dialog.BaseDialog.show
-    summary: |-
-      > [!NOTE]
-      > _This API is provided as a preview for developers and may change based on feedback_
-      > _that we receive. Do not use this API in a production environment._
-
-      Request the framework to show this dialog.
+    isPreview: true
+    summary: Request the framework to show this dialog.
     name: show(options)
     fullName: sp-dialog.BaseDialog.show
     langs:
