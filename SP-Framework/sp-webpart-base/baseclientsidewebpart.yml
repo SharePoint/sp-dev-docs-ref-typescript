@@ -113,16 +113,7 @@ items:
           - void
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.context
-    summary: >-
-      Use the context object to access common services and state associated with the component.
-
-
-      ### Remarks
-
-
-      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
-      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
-      the constructor), but child classes should redeclare it as readonly.
+    summary: Use the context object to access common services and state associated with the component.
     remarks: >-
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
@@ -243,15 +234,6 @@ items:
       The default implementation is a no-op. A web part developer can override this API if the deserialized object does
       not fully reflect the initial state of the property bag. This gives the web part developer a chance to populate
       the property bag right after the data is deserialized to an object.
-
-
-      ### Remarks
-
-
-      An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized
-      by an older version of the web part that supported a different schema of the property bag, resulting the
-      deserialized object to be incosistent with the current schema of the property bag. The developer can use
-      onAfterDeserialize to check the dataVersion and fix the property bag.
     remarks: >-
       An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized
       by an older version of the web part that supported a different schema of the property bag, resulting the

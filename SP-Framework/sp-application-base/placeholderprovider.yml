@@ -23,16 +23,7 @@ items:
       - sp-application-base.PlaceholderProvider.tryCreateContent
   - uid: sp-application-base.PlaceholderProvider.changedEvent
     isPreview: true
-    summary: >-
-      This event is raised when the list of currently available placeholders is changed.
-
-
-      ### Remarks
-
-
-      The application can change its list of available placeholders at any time. This means that the existing
-      placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
-      they appear.
+    summary: This event is raised when the list of currently available placeholders is changed.
     remarks: >-
       The application can change its list of available placeholders at any time. This means that the existing
       placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
@@ -65,14 +56,6 @@ items:
     summary: >-
       Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created,
       which allows the caller to render custom content inside the placeholder.
-
-
-      ### Remarks
-
-
-      The host application makes no guarantees about the availability of a given placeholder. In situations where an
-      expected placeholder is not available, the third party extension must handle it gracefully, e.g. by not rendering
-      anything, or by choosing an alternative placeholder.
     remarks: >-
       The host application makes no guarantees about the availability of a given placeholder. In situations where an
       expected placeholder is not available, the third party extension must handle it gracefully, e.g. by not rendering

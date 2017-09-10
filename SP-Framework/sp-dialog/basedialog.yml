@@ -151,12 +151,6 @@ items:
     summary: >-
       This method is called before the render method and can be overridden to make preparations for rendering. The
       loading indicator is displayed during the lifetime of this method.
-
-
-      ### Remarks
-
-
-      All resource allocations in onBeforeOpen() should be properly disposed in onAfterClose() to a avoid memory leak.
     remarks: All resource allocations in onBeforeOpen() should be properly disposed in onAfterClose() to a avoid memory leak.
     name: onBeforeOpen()
     fullName: sp-dialog.BaseDialog.onBeforeOpen
@@ -177,17 +171,6 @@ items:
       The render method must be implemented to render the content of the dialog in the conrainer element provided by the
       framework. Use this.domElement to access this container. The container is inside a modal rendered in the center of
       the page on top of a dark overlay.
-
-
-      ### Remarks
-
-
-      The render method is called once after the modal element is created and opened. It is recommended to use
-      onBeforeOpen() for doing non-UI preperations for your rendering that might take a long time. This will ensure that
-      the framework can show a friendly UI such as a spinner to let the user know that the dialog is being prepared. If
-      you choose to do your initialization or other costly operations inside render method, make sure to have a friendly
-      UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which
-      is a bad user experience practice.
     remarks: >-
       The render method is called once after the modal element is created and opened. It is recommended to use
       onBeforeOpen() for doing non-UI preperations for your rendering that might take a long time. This will ensure that
@@ -211,14 +194,6 @@ items:
     summary: >-
       An active dialog is permitted to show a secondary dialog on top of itself. By design, only two layers of dialogs
       are permitted.
-
-
-      ### Remarks
-
-
-      Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show
-      a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a
-      secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active.
     remarks: >-
       Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show
       a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a
