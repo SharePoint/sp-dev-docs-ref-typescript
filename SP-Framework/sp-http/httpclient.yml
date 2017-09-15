@@ -1,9 +1,10 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-http.HttpClient
-    summary: >-
-      HttpClient implements a basic set of features for performing REST operations. The subclass SPHttpClient extends
-      this basic functionality with SharePoint-specific enhancements.
+    summary: HttpClient implements a basic set of features for performing REST operations against a generic service.
+    remarks: >-
+      For communicating with SharePoint, use the [SPHttpClient](xref:sp-http.SPHttpClient) class instead. For
+      communicating with Microsoft Graph, use the [GraphHttpClient](xref:sp-http.GraphHttpClient) class.
     name: HttpClient
     fullName: sp-http.HttpClient
     langs:
@@ -44,9 +45,10 @@ items:
         type:
           - IHttpClientConfigurations
   - uid: sp-http.HttpClient.fetch
-    summary: >-
-      Performs a REST service call. Although the SPHttpClient subclass adds additional enhancements, the parameters and
-      semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
+    summary: Performs a REST service call.
+    remarks: >-
+      Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for
+      HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
       https://fetch.spec.whatwg.org/
     name: 'fetch(url, configuration, options)'
     fullName: sp-http.HttpClient.fetch
@@ -75,7 +77,7 @@ items:
           type:
             - IHttpClientOptions
   - uid: sp-http.HttpClient.get
-    summary: 'Calls fetch(), but sets the method to ''GET''.'
+    summary: 'Calls fetch(), but sets the method to "GET".'
     name: 'get(url, configuration, options)'
     fullName: sp-http.HttpClient.get
     langs:
@@ -103,7 +105,7 @@ items:
           type:
             - IHttpClientOptions
   - uid: sp-http.HttpClient.post
-    summary: 'Calls fetch(), but sets the method to ''POST''.'
+    summary: 'Calls fetch(), but sets the method to "POST".'
     name: 'post(url, configuration, options)'
     fullName: sp-http.HttpClient.post
     langs:

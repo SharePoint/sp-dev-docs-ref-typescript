@@ -10,7 +10,7 @@
   "remarks": [
     {
       "kind": "textDocElement",
-      "value": "This package supports development of client-side components (e.g. web parts, client-side extensions, and applications) built using the SharePoint Framework. It defines the base classes/interfaces that represent the functionality that is common across all client-side component types."
+      "value": "This package supports development of client-side components (e.g. web parts, client-side extensions, and applications) built using the SharePoint Framework. It defines the base classes and interfaces for functionality that is common across all client-side component types."
     }
   ],
   "exports": {
@@ -23,7 +23,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc."
+          "value": "The base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc."
         }
       ],
       "remarks": [
@@ -51,7 +51,7 @@
           "remarks": [
             {
               "kind": "textDocElement",
-              "value": "Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which may include additional metadata about the component. Manifests are tracked using a unique identifier, which is a text string containing a lower case GUID value"
+              "value": "Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which may include additional metadata about the component. The manifest is uniquely identified using a text string containing a lower case GUID value."
             }
           ],
           "isBeta": true
@@ -93,17 +93,28 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Disposes the component. In order to write component-specific dispose mechanism, use onDispose instead. "
+              "value": "Disposes the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Third party code generally does not need to call this method; it will be invoked automatically when the lifecycle ends for a web part or extension. To perform custom cleanup when your component is disposed, override the "
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-component-base",
+              "exportName": "BaseComponent",
+              "memberName": "onDispose",
+              "value": "BaseComponent.onDispose"
             },
             {
               "kind": "textDocElement",
-              "value": " The onDispose event should only be raised once - if this._disposed was false when the function was called. (Put another way, dispose() should be a no-op if this._disposed is true.)"
+              "value": " method."
             }
           ],
-          "remarks": [],
           "isBeta": true
         },
         "instanceId": {
@@ -117,10 +128,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Unique identifier for the instance of the component. The same component can be instantiated several times, and each instance will have a different id."
+              "value": "A unique identifier for the instance of the component."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "A given component implementation can be loaded multiple times on the page. For example, if the component is a charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely identifies each of these instances."
+            }
+          ],
           "isBeta": true
         },
         "isDisposed": {
@@ -151,10 +167,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Returns the manifest for the component."
+              "value": "Provides access to the manifest for the client-side component."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Child classes may override this with more specialized manifest types."
+            }
+          ],
           "isBeta": true
         },
         "onDispose": {
@@ -172,7 +193,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This event hook is called immediately before the component stops being used. It provides an opportunity to release any associated resources, cancel any outstanding requests, etc."
+              "value": "This event hook is called at the end of the component's lifecycle. It provides an opportunity to release any associated resources, cancel any outstanding requests, etc."
             }
           ],
           "remarks": [],
@@ -195,7 +216,7 @@
       "remarks": [
         {
           "kind": "textDocElement",
-          "value": "A \"context\" object is a collection of well-known services and other objects that are likely to be needed by any business logic working with the associated component. Each component type has its own specialized subclass ofClientSideComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, etc. "
+          "value": "A \"context\" object is a collection of well-known services and other objects that are likely to be needed by business logic that interacts with a associated component. Each component type has its own specialized subclass of BaseComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, and so on. "
         },
         {
           "kind": "paragraphDocElement"
@@ -218,10 +239,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Instance id for the client side component."
+              "value": "A unique identifier for the instance of the component."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "A given component implementation can be loaded multiple times on the page. For example, if the component is a charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely identifies each of these instances."
+            }
+          ],
           "isBeta": true
         },
         "manifest": {
@@ -269,10 +295,28 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Service scope instance that is scoped to this particular web part."
+              "value": "The associated "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-core-library",
+              "exportName": "ServiceScope",
+              "memberName": "",
+              "value": "@microsoft/sp-core-library:ServiceScope"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " for this component."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "A child service scope is created for each client-side component."
+            }
+          ],
           "isBeta": true
         }
       }

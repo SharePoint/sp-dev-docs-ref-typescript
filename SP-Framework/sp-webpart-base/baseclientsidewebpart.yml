@@ -3,8 +3,10 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart
     summary: >-
       This abstract class implements the the base functionality for a client side web part. Every client side web part
-      needs to inherit from this class. Along with the base functionality, this class provides some APIs that can be
-      used by the web part. These APIs fall in two catagories. 
+      needs to inherit from this class.
+    remarks: >-
+      Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall
+      in two catagories. 
 
        The first category of APIs provide data and functionality. Example, the web part context (i.e. this.context). This API should be used to access contextual data relevant to this web part instance. 
 
@@ -50,11 +52,12 @@ items:
       - sp-webpart-base.BaseClientSideWebPart.renderError
       - sp-webpart-base.BaseClientSideWebPart.title
   - uid: sp-webpart-base.BaseClientSideWebPart.constructor
-    summary: >-
-      Constructor for the BaseClientSideWebPart class. If a sub class overrides the constructor, it needs to call
-      super() as the first line of its constructor. 
-
-       It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle. 
+    summary: Constructor for the BaseClientSideWebPart class.
+    remarks: >-
+      If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is
+      highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of
+      the web part features like this.context and this.properties are not available to be used before the the onInit
+      part of the web part loading lifecycle. 
 
        e.g. constructor() { super(); . . class specific constructor code .. }
     name: constructor()
@@ -80,14 +83,14 @@ items:
         type:
           - string
   - uid: sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
-    summary: >-
-      This property indicates whether a web part can open a popup on initial render. In some environments the host
-      re-renders the web parts frequently, and therefor, opening popups during render will cause popups to open
-      repeatedly and hence poor user experience. As an example, the classic SharePoint pages perform postbacks and hence
-      page re-render on all button clicks. If a web part needs to open a popup on render, it should use this API before
-      opening the popup. If this API returns false, the web part should not open popup on initial render. Some web parts
-      that open popups during render are the document embed web part that pops up the file picker on initial render,
-      embedded video web part that pops up the PropertyPane on initial render.
+    summary: This property indicates whether a web part can open a popup on initial render.
+    remarks: >-
+      In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will
+      cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages
+      perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it
+      should use this API before opening the popup. If this API returns false, the web part should not open popup on
+      initial render. Some web parts that open popups during render are the document embed web part that pops up the
+      file picker on initial render, embedded video web part that pops up the PropertyPane on initial render.
     name: canOpenPopupOnRender
     fullName: sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
     langs:
@@ -154,12 +157,13 @@ items:
         type:
           - string
   - uid: sp-webpart-base.BaseClientSideWebPart.disableReactivePropertyChanges
-    summary: >-
-      This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive. The default
-      behaviour is Reactive. Where, Reactive implies that changes made in the PropertyPane are transmitted to the web
-      part instantly and the user can see instant updates. This helps the page creator get instant feedback and decide
-      if they should keep the new configuration changes or not. NonReactive implies that the configuraiton changes are
-      transmitted to the web part only after 'Apply' PropertyPane button is clicked.
+    summary: This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive.
+    remarks: |-
+      The default behavior is Reactive. 
+
+       Reactive implies that changes made in the PropertyPane are transmitted to the web part instantly and the user can see instant updates. This helps the page creator get instant feedback and decide if they should keep the new configuration changes or not. 
+
+       NonReactive implies that the configuration changes are transmitted to the web part only after "Apply" PropertyPane button is clicked.
     name: disableReactivePropertyChanges
     fullName: sp-webpart-base.BaseClientSideWebPart.disableReactivePropertyChanges
     langs:
@@ -200,8 +204,9 @@ items:
     summary: >-
       This API is used to ger the configuration to build the property pane for the web part. If the web part wants to
       use the PropertyPane for configuration, this API needs to be overridden and the web part needs to return the
-      configuration for the PropertyPane. see  IPropertyPane and other PropertyPane integration wiki documentation for
-      more details.
+      configuration for the PropertyPane. 
+
+       See IPropertyPane and other PropertyPane integration wiki documentation for more details.
     name: getPropertyPaneConfiguration()
     fullName: sp-webpart-base.BaseClientSideWebPart.getPropertyPaneConfiguration
     langs:
@@ -228,16 +233,13 @@ items:
         type:
           - boolean
   - uid: sp-webpart-base.BaseClientSideWebPart.onAfterDeserialize
-    summary: >-
-      This API is called after the web part is deserialized to an object, right before the property bag is populated.
+    summary: 'This API is called after the web part is deserialized to an object, right before the property bag is populated.'
+    remarks: >-
       The default implementation is a no-op. A web part developer can override this API if the deserialized object does
       not fully reflect the initial state of the property bag. This gives the web part developer a chance to populate
-      the property bag right after the data is deserialized to an object.
-    remarks: >-
-      An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized
-      by an older version of the web part that supported a different schema of the property bag, resulting the
-      deserialized object to be incosistent with the current schema of the property bag. The developer can use
-      onAfterDeserialize to check the dataVersion and fix the property bag.
+      the property bag right after the data is deserialized to an object. 
+
+       An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized by an older version of the web part that supported a different schema of the property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The developer can use onAfterDeserialize to check the dataVersion and fix the property bag.
     name: 'onAfterDeserialize(deserializedObject, dataVersion)'
     fullName: sp-webpart-base.BaseClientSideWebPart.onAfterDeserialize
     langs:
@@ -280,13 +282,14 @@ items:
           - void
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.onBeforeSerialize
-    summary: >-
-      This API is called before the web part is serialized. The default implementation is a no-op. The serialization
-      process serializes the web part property bag i.e. this.properties. This API gives the web part a chance to update
-      it's property bag before the serialization happens. Some web part's may keep their state other objects or even in
-      the DOM. If a web part needs to persist some of that state, it needs to override this API and update the web part
-      property bag to the latest state. If a web part updates the property bag with invalid property values, those will
-      get persisted. So that should be avoided. The web part property bag should always contain valid property values.
+    summary: This event hook is called before the web part is serialized.
+    remarks: >-
+      The default implementation is a no-op. The serialization process serializes the web part property bag i.e.
+      this.properties. This API gives the web part a chance to update it's property bag before the serialization
+      happens. Some web part's may keep their state other objects or even in the DOM. If a web part needs to persist
+      some of that state, it needs to override this API and update the web part property bag to the latest state. If a
+      web part updates the property bag with invalid property values, those will get persisted. So that should be
+      avoided. The web part property bag should always contain valid property values.
     name: onBeforeSerialize()
     fullName: sp-webpart-base.BaseClientSideWebPart.onBeforeSerialize
     langs:
@@ -299,11 +302,11 @@ items:
           - void
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.onDisplayModeChanged
-    summary: >-
-      This API is called when the display mode of a web part is changed. The default implementation of this API calls
-      the web part render method to re-render the web part with the new display mode. If a web part developer does not
-      want a full re-render to happen on display mode change, they can override this API and perform specific updates to
-      the web part DOM to switch its display mode.
+    summary: This event hook is called when the display mode of a web part is changed.
+    remarks: >-
+      The default implementation of this API calls the web part render method to re-render the web part with the new
+      display mode. If a web part developer does not want a full re-render to happen on display mode change, they can
+      override this API and perform specific updates to the web part DOM to switch its display mode.
     name: onDisplayModeChanged(oldDisplayMode)
     fullName: sp-webpart-base.BaseClientSideWebPart.onDisplayModeChanged
     langs:
@@ -321,11 +324,12 @@ items:
           type:
             - DisplayMode
   - uid: sp-webpart-base.BaseClientSideWebPart.onDispose
-    summary: >-
-      This API should be used to refresh the contents of the PropertyPane. This API is called at the end of the web part
-      lifecycle on a page. It should be used to dispose any local resources (i.e. DOM elements) that the web part is
-      holding onto. This API is expected to be called in scenarios like page navigation i.e. the host is transitioning
-      from one page to another and disposes the page that is being transitioned out.
+    summary: This API should be used to refresh the contents of the PropertyPane.
+    remarks: >-
+      This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local
+      resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios
+      like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
+      transitioned out.
     name: onDispose()
     fullName: sp-webpart-base.BaseClientSideWebPart.onDispose
     langs:
@@ -354,12 +358,17 @@ items:
           - Promise<void>
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationComplete
-    summary: >-
-      This API is invoked when the configuration is completed on the PropertyPane. It's invoked in the following cases:
-      - When the CONFIGURATION\_COMPLETE\_TIMEOUT((currently the value is 5 secs) elapses after the last change. - When
-      user clicks 'x'(close) button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses. - When user clciks 'Apply'
-      button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses. - When the user switches web parts then the current
-      web part gets this event.
+    summary: This API is invoked when the configuration is completed on the PropertyPane.
+    remarks: |-
+      This event hook is invoked in the following cases: 
+
+       - When the CONFIGURATION\_COMPLETE\_TIMEOUT((currently the value is 5 secs) elapses after the last change. 
+
+       - When user clicks 'x'(close) button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses. 
+
+       - When user clciks 'Apply' button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses. 
+
+       - When the user switches web parts then the current web part gets this event.
     name: onPropertyPaneConfigurationComplete()
     fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationComplete
     langs:
@@ -372,9 +381,13 @@ items:
           - void
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationStart
-    summary: >-
-      This API is invoked when the configuration starts on the PropertyPane. It's invoked in the following cases: - When
-      the PropertyPane is opened. - When the user switches web parts then the new web part gets this event.
+    summary: This event hook is invoked when the configuration starts on the PropertyPane.
+    remarks: |-
+      This event hook is invoked in the following cases: 
+
+       - When the PropertyPane is opened. 
+
+       - When the user switches web parts then the new web part gets this event.
     name: onPropertyPaneConfigurationStart()
     fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationStart
     langs:
@@ -418,10 +431,7 @@ items:
           type:
             - any
   - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneRendered
-    summary: |-
-      This API is invoked when the PropertyPane is rendered. 
-
-       From framework standpoint, we do not want to allow this event handler to be passed in, and trigger it. This api should be deprecated and then removed as part of refactoring.
+    summary: This API is invoked when the PropertyPane is rendered.
     name: onPropertyPaneRendered()
     fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneRendered
     langs:
@@ -463,8 +473,8 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart.propertiesMetadata
     summary: >-
       This property defines metadata for the web part property bag. The metadata can help SharePoint understand the
-      content of the properties better and perform relevant services on the data. see  IWebPartPropertiesMetadata for
-      more information about how to define metadata
+      content of the properties better and perform relevant services on the data.
+    remarks: See IWebPartPropertiesMetadata for more information about how to define metadata
     name: propertiesMetadata
     fullName: sp-webpart-base.BaseClientSideWebPart.propertiesMetadata
     langs:
@@ -510,8 +520,8 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
     summary: >-
       This property indicates whether the web part was rendered from the persisted data (serialized state from the last
-      time that the web part was saved) or not. Example: When web part is added for the first time using toolbox then
-      the value is false.
+      time that the web part was saved) or not.
+    remarks: 'Example: When web part is added for the first time using toolbox then the value is false.'
     name: renderedFromPersistedData
     fullName: sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
     langs:

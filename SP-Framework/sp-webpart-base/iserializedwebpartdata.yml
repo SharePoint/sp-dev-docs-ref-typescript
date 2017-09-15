@@ -15,12 +15,13 @@ items:
       - sp-webpart-base.ISerializedWebPartData.properties
       - sp-webpart-base.ISerializedWebPartData.serverProcessedContent
   - uid: sp-webpart-base.ISerializedWebPartData.dataVersion
-    summary: >-
-      Definition: Web part data version. Note that data version is different from the version field in the manifest. The
-      manifest version is used to control the versioning of the web part code, while data version is used to control the
-      versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more
-      information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version
-      Supported values: MAJOR.MINOR Example: "1.0"
+    summary: Web part data version.
+    remarks: >-
+      Note that data version is different from the version field in the manifest. The manifest version is used to
+      control the versioning of the web part code, while data version is used to control the versioning of the
+      serialized data of the web part. Refer to dataVersion field of your web part for more information. 
+
+       Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version Supported values: MAJOR.MINOR Example: "1.0"
     name: dataVersion
     fullName: sp-webpart-base.ISerializedWebPartData.dataVersion
     langs:
@@ -32,11 +33,11 @@ items:
         type:
           - Version
   - uid: sp-webpart-base.ISerializedWebPartData.properties
-    summary: >-
-      Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage:
-      used by the web part to manage its internal metadata and config data. The framework code never touches these
-      properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value':
-      'text value' }
+    summary: Web part specific properties. The individual web part owns the definition of these properties.
+    remarks: >-
+      Usage: used by the web part to manage its internal metadata and config data. The framework code never touches
+      these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: {
+      'value': 'text value' }
     name: properties
     fullName: sp-webpart-base.ISerializedWebPartData.properties
     langs:
@@ -48,9 +49,7 @@ items:
         type:
           - any
   - uid: sp-webpart-base.ISerializedWebPartData.serverProcessedContent
-    summary: >-
-      Definition: The collections of data that can be processed by server side services like search index and link fixup
-      Required: no
+    summary: The collections of data that can be processed by server side services like search index and link fixup.
     name: serverProcessedContent
     fullName: sp-webpart-base.ISerializedWebPartData.serverProcessedContent
     langs:

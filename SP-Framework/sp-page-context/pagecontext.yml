@@ -64,14 +64,15 @@ items:
         type:
           - boolean
   - uid: sp-page-context.PageContext.legacyPageContext
-    summary: >-
+    summary: An object providing classic SharePoint properties that may be required by certain legacy scripts.
+    remarks: >-
       This property is provided to facilitate migration of legacy code. It returns a JavaScript object whose contents
       are similar to the \_spPageContextInfo window variable from classic pages. The contents of this variable may
-      change in future releases of SharePoint. New projects are encouraged to use the framework APIs instead, since they
-      are documented and provide reliable backwards compatibility guarantees.
-    remarks: >-
-      If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript API,
-      please file an issue on GitHub.”
+      change in future releases of SharePoint. For this reason, new projects are encouraged to use the SharePoint
+      Framework TypeScript APIs instead, since they are fully documented and provide reliable backwards compatibility
+      guarantees. 
+
+       NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript API, please file an issue on GitHub. The intention is that no modern application should need to rely on the legacyPageContext object.
     name: legacyPageContext
     fullName: sp-page-context.PageContext.legacyPageContext
     langs:

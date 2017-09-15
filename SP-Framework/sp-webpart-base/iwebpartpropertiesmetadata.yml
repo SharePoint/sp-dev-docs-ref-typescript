@@ -1,11 +1,16 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-webpart-base.IWebPartPropertiesMetadata
-    summary: >-
-      This structure is used to define metadata for web part propeties as a map of string to IWebPartPropertyMetadata
-      The key should be a json path to the property in web part propeties. The json path supports the following
-      operators: - Dot . for selecting object members e.g. person.name - Brackets \[\] for selecting array items e.g.
-      person.photoURLs\[0\] - Bracketed asterisk \[\*\] for array elements wildcard e.g. person.websites\[\*\]. 
+    summary: This structure is used to define metadata for web part properties as a map of string to IWebPartPropertyMetadata
+    remarks: >-
+      The key should be a JSON path to the property in web part properties. The JSON path supports the following
+      operators: 
+
+       - Dot . for selecting object members e.g. person.name 
+
+       - Brackets \[\] for selecting array items e.g. person.photoURLs\[0\] 
+
+       - Bracketed asterisk \[\*\] for array elements wildcard e.g. person.websites\[\*\]. 
 
        You can make combinations of these operators e.g. person.websites\[\*\].url Important Note: Only one wildcard per path is supported. 
 

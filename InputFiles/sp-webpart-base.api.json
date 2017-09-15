@@ -4,13 +4,13 @@
   "summary": [
     {
       "kind": "textDocElement",
-      "value": "SharePoint Framework support for building web parts"
+      "value": "SharePoint Framework support for building web parts."
     }
   ],
   "remarks": [
     {
       "kind": "textDocElement",
-      "value": "A web part is a reusable visual object that a page author can add to their content, and customize using a property pane. Examples of web parts include an embedded video player, a map, a group calendar, a chart, etc. The sp-webpart-base package defines the APIs used by developers to create a custom web part."
+      "value": "This package defines the APIs used by developers to create a custom web part. A web part is a reusable visual object that a page author can add to their content, and customize using a property pane. Examples of web parts include an embedded video player, a map, a group calendar, a chart, etc."
     }
   ],
   "exports": {
@@ -25,7 +25,13 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "This abstract class implements the the base functionality for a client side web part. Every client side web part needs to inherit from this class. Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall in two catagories. "
+          "value": "This abstract class implements the the base functionality for a client side web part. Every client side web part needs to inherit from this class."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall in two catagories. "
         },
         {
           "kind": "paragraphDocElement"
@@ -42,7 +48,6 @@
           "value": " The second category of APIs provide a base implementation for the web part lifecycle and can be overridden for an updated implementation. The render() API is the only API that is mandatory to be implemented/overridden by a web part. All other life cycle APIs have a base implementation and can be overridden based on the needs of the web part. Please refer to the documentation of the individual APIs to make the right decision."
         }
       ],
-      "remarks": [],
       "isBeta": false,
       "members": {
         "__constructor": {
@@ -53,14 +58,13 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Constructor for the BaseClientSideWebPart class. If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
+              "value": "Constructor for the BaseClientSideWebPart class."
+            }
+          ],
+          "remarks": [
             {
               "kind": "textDocElement",
-              "value": " It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle. "
+              "value": "If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle. "
             },
             {
               "kind": "paragraphDocElement"
@@ -69,8 +73,7 @@
               "kind": "textDocElement",
               "value": " e.g. constructor() { super(); . . class specific constructor code .. }"
             }
-          ],
-          "remarks": []
+          ]
         },
         "accessibleTitle": {
           "kind": "property",
@@ -100,10 +103,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This property indicates whether a web part can open a popup on initial render. In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it should use this API before opening the popup. If this API returns false, the web part should not open popup on initial render. Some web parts that open popups during render are the document embed web part that pops up the file picker on initial render, embedded video web part that pops up the PropertyPane on initial render."
+              "value": "This property indicates whether a web part can open a popup on initial render."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it should use this API before opening the popup. If this API returns false, the web part should not open popup on initial render. Some web parts that open popups during render are the document embed web part that pops up the file picker on initial render, embedded video web part that pops up the PropertyPane on initial render."
+            }
+          ],
           "isBeta": false
         },
         "clearError": {
@@ -194,10 +202,29 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive. The default behaviour is Reactive. Where, Reactive implies that changes made in the PropertyPane are transmitted to the web part instantly and the user can see instant updates. This helps the page creator get instant feedback and decide if they should keep the new configuration changes or not. NonReactive implies that the configuraiton changes are transmitted to the web part only after 'Apply' PropertyPane button is clicked."
+              "value": "This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default behavior is Reactive. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Reactive implies that changes made in the PropertyPane are transmitted to the web part instantly and the user can see instant updates. This helps the page creator get instant feedback and decide if they should keep the new configuration changes or not. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " NonReactive implies that the configuration changes are transmitted to the web part only after \"Apply\" PropertyPane button is clicked."
+            }
+          ],
           "isBeta": false
         },
         "displayMode": {
@@ -252,13 +279,11 @@
               "value": "This API is used to ger the configuration to build the property pane for the web part. If the web part wants to use the PropertyPane for configuration, this API needs to be overridden and the web part needs to return the configuration for the PropertyPane. "
             },
             {
-              "kind": "seeDocElement",
-              "seeElements": [
-                {
-                  "kind": "textDocElement",
-                  "value": " IPropertyPane and other PropertyPane integration wiki documentation for more details. "
-                }
-              ]
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " See IPropertyPane and other PropertyPane integration wiki documentation for more details."
             }
           ],
           "remarks": [],
@@ -326,13 +351,20 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API is called after the web part is deserialized to an object, right before the property bag is populated. The default implementation is a no-op. A web part developer can override this API if the deserialized object does not fully reflect the initial state of the property bag. This gives the web part developer a chance to populate the property bag right after the data is deserialized to an object."
+              "value": "This API is called after the web part is deserialized to an object, right before the property bag is populated."
             }
           ],
           "remarks": [
             {
               "kind": "textDocElement",
-              "value": "An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized by an older version of the web part that supported a different schema of the property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The developer can use onAfterDeserialize to check the dataVersion and fix the property bag."
+              "value": "The default implementation is a no-op. A web part developer can override this API if the deserialized object does not fully reflect the initial state of the property bag. This gives the web part developer a chance to populate the property bag right after the data is deserialized to an object. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized by an older version of the web part that supported a different schema of the property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The developer can use onAfterDeserialize to check the dataVersion and fix the property bag."
             }
           ],
           "isBeta": false
@@ -373,10 +405,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API is called before the web part is serialized. The default implementation is a no-op. The serialization process serializes the web part property bag i.e. this.properties. This API gives the web part a chance to update it's property bag before the serialization happens. Some web part's may keep their state other objects or even in the DOM. If a web part needs to persist some of that state, it needs to override this API and update the web part property bag to the latest state. If a web part updates the property bag with invalid property values, those will get persisted. So that should be avoided. The web part property bag should always contain valid property values."
+              "value": "This event hook is called before the web part is serialized."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default implementation is a no-op. The serialization process serializes the web part property bag i.e. this.properties. This API gives the web part a chance to update it's property bag before the serialization happens. Some web part's may keep their state other objects or even in the DOM. If a web part needs to persist some of that state, it needs to override this API and update the web part property bag to the latest state. If a web part updates the property bag with invalid property values, those will get persisted. So that should be avoided. The web part property bag should always contain valid property values."
+            }
+          ],
           "isBeta": false
         },
         "onDisplayModeChanged": {
@@ -407,10 +444,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API is called when the display mode of a web part is changed. The default implementation of this API calls the web part render method to re-render the web part with the new display mode. If a web part developer does not want a full re-render to happen on display mode change, they can override this API and perform specific updates to the web part DOM to switch its display mode."
+              "value": "This event hook is called when the display mode of a web part is changed."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default implementation of this API calls the web part render method to re-render the web part with the new display mode. If a web part developer does not want a full re-render to happen on display mode change, they can override this API and perform specific updates to the web part DOM to switch its display mode."
+            }
+          ],
           "isBeta": false
         },
         "onDispose": {
@@ -428,10 +470,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API should be used to refresh the contents of the PropertyPane. This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being transitioned out."
+              "value": "This API should be used to refresh the contents of the PropertyPane."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being transitioned out."
+            }
+          ],
           "isBeta": false
         },
         "onInit": {
@@ -470,10 +517,43 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API is invoked when the configuration is completed on the PropertyPane. It's invoked in the following cases: - When the CONFIGURATION_COMPLETE_TIMEOUT((currently the value is 5 secs) elapses after the last change. - When user clicks 'x'(close) button before the CONFIGURATION_COMPLETE_TIMEOUT elapses. - When user clciks 'Apply' button before the CONFIGURATION_COMPLETE_TIMEOUT elapses. - When the user switches web parts then the current web part gets this event."
+              "value": "This API is invoked when the configuration is completed on the PropertyPane."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This event hook is invoked in the following cases: "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - When the CONFIGURATION_COMPLETE_TIMEOUT((currently the value is 5 secs) elapses after the last change. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - When user clicks 'x'(close) button before the CONFIGURATION_COMPLETE_TIMEOUT elapses. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - When user clciks 'Apply' button before the CONFIGURATION_COMPLETE_TIMEOUT elapses. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - When the user switches web parts then the current web part gets this event."
+            }
+          ],
           "isBeta": false
         },
         "onPropertyPaneConfigurationStart": {
@@ -491,10 +571,29 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API is invoked when the configuration starts on the PropertyPane. It's invoked in the following cases: - When the PropertyPane is opened. - When the user switches web parts then the new web part gets this event."
+              "value": "This event hook is invoked when the configuration starts on the PropertyPane."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This event hook is invoked in the following cases: "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - When the PropertyPane is opened. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - When the user switches web parts then the new web part gets this event."
+            }
+          ],
           "isBeta": false
         },
         "onPropertyPaneFieldChanged": {
@@ -570,14 +669,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API is invoked when the PropertyPane is rendered. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " From framework standpoint, we do not want to allow this event handler to be passed in, and trigger it. This api should be deprecated and then removed as part of refactoring."
+              "value": "This API is invoked when the PropertyPane is rendered."
             }
           ],
           "remarks": [],
@@ -628,19 +720,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This property defines metadata for the web part property bag. The metadata can help SharePoint understand the content of the properties better and perform relevant services on the data. "
-            },
-            {
-              "kind": "seeDocElement",
-              "seeElements": [
-                {
-                  "kind": "textDocElement",
-                  "value": " IWebPartPropertiesMetadata for more information about how to define metadata "
-                }
-              ]
+              "value": "This property defines metadata for the web part property bag. The metadata can help SharePoint understand the content of the properties better and perform relevant services on the data."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "See IWebPartPropertiesMetadata for more information about how to define metadata"
+            }
+          ],
           "isBeta": false
         },
         "render": {
@@ -696,10 +784,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not. Example: When web part is added for the first time using toolbox then the value is false."
+              "value": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: When web part is added for the first time using toolbox then the value is false."
+            }
+          ],
           "isBeta": false
         },
         "renderedOnce": {
@@ -781,7 +874,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Interface to be implemented by a component that should display the loading indicator and error messages for a webpart."
+          "value": "Interface to be implemented by a component that should display the loading indicator and error messages for a web part."
         }
       ],
       "remarks": [],
@@ -803,7 +896,7 @@
               "description": [
                 {
                   "kind": "textDocElement",
-                  "value": "the webpart container div."
+                  "value": "the web part container div."
                 }
               ],
               "isOptional": false,
@@ -837,7 +930,7 @@
               "description": [
                 {
                   "kind": "textDocElement",
-                  "value": "the webpart container div."
+                  "value": "the web part container div."
                 }
               ],
               "isOptional": false,
@@ -929,7 +1022,7 @@
               "description": [
                 {
                   "kind": "textDocElement",
-                  "value": "the webpart container div."
+                  "value": "the web part container div."
                 }
               ],
               "isOptional": false,
@@ -1021,7 +1114,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Web part context property pane accessor interface. Provides some most commonly used utilities to access the property pane."
+          "value": "Web part context property pane accessor interface. Provides some most commonly used operations to access the property pane."
         }
       ],
       "remarks": [],
@@ -1063,10 +1156,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Indicates whether the PropertyPane was initially opened by the web part. For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if the property pane was opened by the host, then the value will be false."
+              "value": "Indicates whether the PropertyPane was initially opened by the web part."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if the property pane was opened by the host, then the value will be false."
+            }
+          ],
           "isBeta": false
         },
         "open": {
@@ -1105,17 +1203,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This API should be used to invoke the PropertyPane to help configure the web part. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " This operation only works when the PropertyPane is already open for the currently active web part. If the PropertyPane is opened for another web part, calling the refresh API will have no impact."
+              "value": "This API should be used to invoke the PropertyPane to help configure the web part."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This operation only works when the PropertyPane is already open for the currently active web part. If the PropertyPane is opened for another web part, calling the refresh API will have no impact."
+            }
+          ],
           "isBeta": false
         }
       }
@@ -1306,17 +1402,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether the property pane checkbox is checked or not. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " Default value is false."
+              "value": "Whether the property pane checkbox is checked or not."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         },
         "disabled": {
@@ -1381,7 +1475,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether the property pane choicegroup option is checked or not. "
+              "value": "Whether the property pane choice group option is checked or not. "
             },
             {
               "kind": "paragraphDocElement"
@@ -1541,7 +1635,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "The name of the icon to use from th office fabric icon set."
+              "value": "The name of the icon to use from the Office Fabric icon set."
             }
           ],
           "remarks": [],
@@ -1643,17 +1737,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Number of milli seconds to be delayed before the loading indicator is shown on the property pane. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " default is 500."
+              "value": "Number of milli seconds to be delayed before the loading indicator is shown on the property pane."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is 500."
+            }
+          ],
           "isBeta": false
         },
         "pages": {
@@ -1684,7 +1776,13 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Indicates whether the loading indicator should be displayed on top of the property pane or not. This feature is intended to be used when the user is waiting on a promise to resolve. If set to true, overlay loading indicator appears after 500ms (web part author can override this behavior by using overlayLoadingIndicator property). "
+              "value": "Indicates whether the loading indicator should be displayed on top of the property pane or not."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This feature is intended to be used when the user is waiting on a promise to resolve. If set to true, overlay loading indicator appears after 500ms (web part author can override this behavior by using overlayLoadingIndicator property). "
             },
             {
               "kind": "paragraphDocElement"
@@ -1694,7 +1792,6 @@
               "value": " The reason why we are not showing it immediately is that our intent is to never show the loading indicator. But in real life async requests could take long and it becomes necessary to display a loading indicator to the end user."
             }
           ],
-          "remarks": [],
           "isBeta": false
         }
       }
@@ -2015,10 +2112,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Strongly typed properties object. Specific to each field type. Example: Checkbox has ICheckboxProps, TextField has ITextField props."
+              "value": "Strongly typed properties object. Specific to each field type."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: Checkbox has ICheckboxProps, TextField has ITextField props."
+            }
+          ],
           "isBeta": false
         },
         "shouldFocus": {
@@ -2032,17 +2134,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether this control should be focused. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " default value is false."
+              "value": "Whether this control should be focused."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         },
         "targetProperty": {
@@ -2124,17 +2224,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Display name for the group. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " For performance reasons, it's highly recommended to keep this name unique within the property pane page."
+              "value": "Display name for the group."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "For performance reasons, it's highly recommended to keep this name unique within the property pane page."
+            }
+          ],
           "isBeta": false
         },
         "isCollapsed": {
@@ -2148,17 +2246,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Indicates whether the PropertyPane group is collapsed or not. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " Defaullt: false"
+              "value": "Indicates whether the PropertyPane group is collapsed or not."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         }
       }
@@ -2189,10 +2285,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether the associated form field is required or not. If true, a red asterisk is displayed to the right of the label. Default value is false."
+              "value": "Whether the associated form field is required or not."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "If true, a red asterisk is displayed to the right of the label. Default value is false."
+            }
+          ],
           "isBeta": false
         },
         "text": {
@@ -2257,7 +2358,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Location to which the link is targetted to."
+              "value": "Location to which the link is targeted to."
             }
           ],
           "remarks": [],
@@ -2291,10 +2392,43 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This attribute specifies where to display the linked resource. Following values can be used: _self - (default) Load the response in the current page. _blank - Load the response into a new unnamed tab. _parent - Load the response in the parent of the current page. If no parent exists, then this option behaves same as '_self' _top - Load the response into the original window."
+              "value": "This attribute specifies where to display the linked resource."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Following values can be used: "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " _self - (default) Load the response in the current page. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " _blank - Load the response into a new unnamed tab. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " _parent - Load the response in the parent of the current page. If no parent exists, then this option behaves same as \"_self\" "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " _top - Load the response into the original window."
+            }
+          ],
           "isBeta": false
         },
         "text": {
@@ -2546,10 +2680,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether to show the value on the right of the Slider. If you want to show the value by yourself, you may want to set this value to false."
+              "value": "Whether to show the value on the right of the Slider."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "If you want to show the value by yourself, you may want to set this value to false."
+            }
+          ],
           "isBeta": false
         },
         "step": {
@@ -2621,7 +2760,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Aria Label for textfield, if any."
+              "value": "Aria Label for text field, if any."
             }
           ],
           "remarks": [],
@@ -2638,10 +2777,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds. Default value is 200."
+              "value": "Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is 200."
+            }
+          ],
           "isBeta": false
         },
         "description": {
@@ -2655,7 +2799,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "The textfield input description."
+              "value": "The text field input description."
             }
           ],
           "remarks": [],
@@ -2672,7 +2816,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether the property pane textfield is enabled or not."
+              "value": "Whether the property pane text field is enabled or not."
             }
           ],
           "remarks": [],
@@ -2689,24 +2833,22 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "If set, this will be displayed as an error message. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the error message. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " So, make sure to set this only if you want to see an error message dispalyed for the text field."
+              "value": "If set, this will be displayed as an error message."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the error message. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " So, make sure to set this only if you want to see an error message displayed for the text field."
+            }
+          ],
           "isBeta": false
         },
         "label": {
@@ -2720,7 +2862,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Label for the textfield."
+              "value": "Label for the text field."
             }
           ],
           "remarks": [],
@@ -2737,10 +2879,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Maximum number of characters that the PropertyPaneTextField can have. (If the value is set to a negative number, an exception will be thrown.)"
+              "value": "Maximum number of characters that the PropertyPaneTextField can have."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "If the value is set to a negative number, an exception will be thrown."
+            }
+          ],
           "isBeta": false
         },
         "multiline": {
@@ -2754,10 +2901,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether or not the textfield is a multiline textfield. Default value is false."
+              "value": "Whether or not the text field is a multiline text field."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         },
         "onGetErrorMessage": {
@@ -2771,24 +2923,50 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "The method is used to get the validation error message and determine whether the input value is valid or not. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " When it returns string: - If valid, it returns empty string. - If invalid, it returns the error message string and an error message is displayed below the text field. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " When it returns Promise<string>: - The resolved value is display as error message. - The rejected, the value is thrown away."
+              "value": "The method is used to get the validation error message and determine whether the input value is valid or not."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "When it returns string: "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - If valid, it returns empty string. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - If invalid, it returns the error message string and an error message is displayed below the text field. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " When it returns Promise<string>: "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - The resolved value is display as error message. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " - The rejected, the value is thrown away."
+            }
+          ],
           "isBeta": false
         },
         "placeholder": {
@@ -2802,7 +2980,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "placeholder text to be displayed in the Textfield."
+              "value": "placeholder text to be displayed in the text field."
             }
           ],
           "remarks": [],
@@ -2819,10 +2997,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether or not the multiline textfield is resizable. Default value is true."
+              "value": "Whether or not the multiline text field is resizable."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is true."
+            }
+          ],
           "isBeta": false
         },
         "rows": {
@@ -2836,17 +3019,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Specifies the visible height of a text area(multiline text TextField), in lines. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " This prop is used only when the multiline prop is set to true."
+              "value": "Specifies the visible height of a text area(multiline text TextField), in lines."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This prop is used only when the multiline prop is set to true."
+            }
+          ],
           "isBeta": false
         },
         "underlined": {
@@ -2860,10 +3041,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Whether or not the textfield is underlined. Default value is false."
+              "value": "Whether or not the text field is underlined."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         },
         "validateOnFocusIn": {
@@ -2877,17 +3063,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Run validation when the PropertyPaneTextField is focused. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " default value is false"
+              "value": "Run validation when the PropertyPaneTextField is focused."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         },
         "validateOnFocusOut": {
@@ -2901,17 +3085,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Run validation when the PropertyPaneTextField is out of focus or on blur. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " default value is false"
+              "value": "Run validation when the PropertyPaneTextField is out of focus or on blur."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The default value is false."
+            }
+          ],
           "isBeta": false
         },
         "value": {
@@ -2925,7 +3107,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Value to be displayed in the textfield when the value of the targetProperty in the manifest's property bag is empty or contains null value."
+              "value": "Value to be displayed in the text field when the value of the targetProperty in the manifest's property bag is empty or contains null value."
             }
           ],
           "remarks": [],
@@ -2959,10 +3141,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Checked state of the toggle. If you are maintaining state yourself, use this property."
+              "value": "Checked state of the toggle."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "If you are maintaining state yourself, use this property."
+            }
+          ],
           "isBeta": false
         },
         "disabled": {
@@ -3112,7 +3299,13 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them. "
+              "value": "A key-value map where keys are string identifiers and values are rich text with HTML format."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them. "
             },
             {
               "kind": "paragraphDocElement"
@@ -3122,7 +3315,6 @@
               "value": " Example: { 'myRichDescription': '<div>Some standard <b>HTML content</b><a href='http://somelink'>A Link</a></div>' 'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div> }"
             }
           ],
-          "remarks": [],
           "isBeta": false
         },
         "imageSources": {
@@ -3136,7 +3328,13 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them. "
+              "value": "A key-value map where keys are string identifiers and values are image sources."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "SharePoint servers treat the values as image sources and run services like search index and link fixup on them. "
             },
             {
               "kind": "paragraphDocElement"
@@ -3146,7 +3344,6 @@
               "value": " Example: { 'myImage1': 'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }"
             }
           ],
-          "remarks": [],
           "isBeta": false
         },
         "links": {
@@ -3160,7 +3357,13 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them. "
+              "value": "A key-value map where keys are string identifiers and values are links."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "SharePoint servers treat the values as links and run services like link fixup on them. "
             },
             {
               "kind": "paragraphDocElement"
@@ -3170,7 +3373,6 @@
               "value": " Example: { 'myWebURL': 'http://contoso.com' 'myFileLink': 'https://res.contoso.com/file.docx' }"
             }
           ],
-          "remarks": [],
           "isBeta": false
         },
         "searchablePlainTexts": {
@@ -3184,7 +3386,13 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "A key-value map where keys are string identifiers and values are strings that should be search indexed. The values are html-encoded before being sent to the server. The encoded values are visible to the search indexer, but are not treated as valid html. So, other services such as link fixup will not run on them. "
+              "value": "A key-value map where keys are string identifiers and values are strings that should be search indexed."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "The values are HTML-encoded before being sent to the server. The encoded values are visible to the search indexer, but are not treated as valid HTML. So, other services such as link fixup will not run on them. "
             },
             {
               "kind": "paragraphDocElement"
@@ -3194,7 +3402,6 @@
               "value": " Example: { 'justSomeText': 'This is some plain text', 'anotherText': 'Can have <any> characters here: \"<>&\\'' }"
             }
           ],
-          "remarks": [],
           "isBeta": false
         }
       }
@@ -3225,10 +3432,22 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: Web part data version. Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version Supported values: MAJOR.MINOR Example: \"1.0\""
+              "value": "Web part data version."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version Supported values: MAJOR.MINOR Example: \"1.0\""
+            }
+          ],
           "isBeta": false
         },
         "properties": {
@@ -3242,10 +3461,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+              "value": "Web part specific properties. The individual web part owns the definition of these properties."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+            }
+          ],
           "isBeta": false
         },
         "serverProcessedContent": {
@@ -3259,7 +3483,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: The collections of data that can be processed by server side services like search index and link fixup Required: no"
+              "value": "The collections of data that can be processed by server side services like search index and link fixup."
             }
           ],
           "remarks": [],
@@ -3272,7 +3496,25 @@
       "extends": "",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "textDocElement",
+          "value": "This interface will be removed in an upcoming release. Use the "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-webpart-base",
+          "exportName": "WebPartContext",
+          "memberName": "",
+          "value": "WebPartContext"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " class instead."
+        }
+      ],
       "summary": [
         {
           "kind": "textDocElement",
@@ -3294,7 +3536,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "HTMLElement",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3311,7 +3571,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "GraphHttpClient",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3328,7 +3606,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "HttpClient",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3345,7 +3641,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3362,7 +3676,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "IClientSideWebPartManifestInstance<any>",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3379,7 +3711,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "PageContext",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3396,7 +3746,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "IPropertyPaneAccessor",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3413,7 +3781,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "SPHttpClient",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3430,7 +3816,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "IClientSideWebPartStatusRenderer",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3447,7 +3851,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "textDocElement",
+              "value": "This interface will be removed in an upcoming release. Use the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-webpart-base",
+              "exportName": "WebPartContext",
+              "memberName": "",
+              "value": "WebPartContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class instead."
+            }
+          ],
           "summary": [
             {
               "kind": "textDocElement",
@@ -3468,7 +3890,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "This structure represents the serialized state of a web part. When the serialize() API is called on a web part, the output should be this structure. The structure of the 'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of properties it wants to serialialize."
+          "value": "This structure represents the serialized state of a web part. When the serialize() API is called on a web part, the output should be this structure. The structure of the 'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of properties it wants to serialize."
         }
       ],
       "remarks": [],
@@ -3485,10 +3907,22 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: Web part data version. Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: string Supported values: MAJOR.MINOR Example: \"1.0\""
+              "value": "Web part data version"
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Note that data version is different from the version field in the manifest. The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Usage: versioning and evolving the serialized data of the web part Required: yes Type: string Supported values: MAJOR.MINOR Example: \"1.0\""
+            }
+          ],
           "isBeta": false
         },
         "description": {
@@ -3502,10 +3936,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: web part description. Usage: display the description of the web part. Required: no Type: string Supported values: string with the description. Example: \"Text\""
+              "value": "Web part description"
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Usage: display the description of the web part. Required: no Type: string Supported values: string with the description. Example: \"Text\""
+            }
+          ],
           "isBeta": false
         },
         "id": {
@@ -3519,10 +3958,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: universally unique web part Type id. Usage: uniquely identify a web part. Required: yes Type: GUID Supported values: any GUID Example: \"dbef608d-3ad5-4f8f-b139-d916f2f0a294\""
+              "value": "Universally unique web part Type id."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Usage: uniquely identify a web part. Required: yes Type: GUID Supported values: any GUID Example: \"dbef608d-3ad5-4f8f-b139-d916f2f0a294\""
+            }
+          ],
           "isBeta": false
         },
         "instanceId": {
@@ -3536,10 +3980,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: universally unique instance id of the web part. A web part can have multiple instances on a page. This id is expected to be universally unique accross time and page boundaries. how used: used by the framework to uniquely identify an instance of a web part. mandatory: yes type: string supported values: a unique string. Could be GUID or other uniquely identifiable formats. example: [\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"] experimental: yes"
+              "value": "Universally unique instance id of the web part. A web part can have multiple instances on a page. This id is expected to be universally unique across time and page boundaries."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "how used: used by the framework to uniquely identify an instance of a web part. mandatory: yes type: string supported values: a unique string. Could be GUID or other uniquely identifiable formats. example: [\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"] experimental: yes"
+            }
+          ],
           "isBeta": false
         },
         "properties": {
@@ -3553,10 +4002,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+              "value": "Web part specific properties. The individual web part owns the definition of these properties."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+            }
+          ],
           "isBeta": false
         },
         "serverProcessedContent": {
@@ -3587,10 +4041,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Definition: web part title. Usage: display the name of the web part in the toolbox, web part gallery and the page. Required: yes Type: string Supported values: string less than 100 characters Example: \"Text\""
+              "value": "Web part title"
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Usage: display the name of the web part in the toolbox, web part gallery and the page. Required: yes Type: string Supported values: string less than 100 characters Example: \"Text\""
+            }
+          ],
           "isBeta": false
         }
       }
@@ -3604,7 +4063,34 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "This structure is used to define metadata for web part propeties as a map of string to IWebPartPropertyMetadata The key should be a json path to the property in web part propeties. The json path supports the following operators: - Dot . for selecting object members e.g. person.name - Brackets [] for selecting array items e.g. person.photoURLs[0] - Bracketed asterisk [*] for array elements wildcard e.g. person.websites[*]. "
+          "value": "This structure is used to define metadata for web part properties as a map of string to IWebPartPropertyMetadata"
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The key should be a JSON path to the property in web part properties. The JSON path supports the following operators: "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " - Dot . for selecting object members e.g. person.name "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " - Brackets [] for selecting array items e.g. person.photoURLs[0] "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " - Bracketed asterisk [*] for array elements wildcard e.g. person.websites[*]. "
         },
         {
           "kind": "paragraphDocElement"
@@ -3635,7 +4121,6 @@
           "value": " This will make SharePoint servers aware of the content of your properties and run services such as search indexing, link fix-up, etc on the data. In case any of the values needs to update by these services, e.g link fix-up, the web part property bag is automatically updated."
         }
       ],
-      "remarks": [],
       "isBeta": false,
       "members": {
         "__index": {
@@ -3717,10 +4202,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Optional actions. Typically used in a command bar at the top of a view, panel and inside an inline command bar. Examples: Command bar at the top of OneDrive, Outlook, SharePoint. Inline command bar on the top of SharePoint web parts."
+              "value": "Optional actions."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Typically used in a command bar at the top of a view, panel and inside an inline command bar. Examples: Command bar at the top of OneDrive, Outlook, SharePoint. Inline command bar on the top of SharePoint web parts."
+            }
+          ],
           "isBeta": false
         },
         "Compound": {
@@ -3730,10 +4220,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Always used as a set with both Standard and Primary compound buttons. Typically used in a confirmation dialog. Examples: A confirmation dialog when a user discards a form or task with a possible significant time investment such as an email or a complex form"
+              "value": "Always used as a set with both Standard and Primary compound buttons."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Typically used in a confirmation dialog. Examples: A confirmation dialog when a user discards a form or task with a possible significant time investment such as an email or a complex form"
+            }
+          ],
           "isBeta": false
         },
         "Hero": {
@@ -3756,10 +4251,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Same usage as Command button, when real estate does not allow for icons + labels or as secondary actions within the command bar. Typically used in Command bar in small and medium responsive web breakpoints. Also used on objects. Examples: OneDrive small and medium responsive web breakpoint Command Bars and view icons within the Command Bar. In SharePoint and OneDrive, Cards with social actions and images which allow users to access the image picker. In SharePoint, formatting experiences such as formatting a story within the Authoring experience. In Calendar, in the bottom of an event creation Callout when clicking inside an empty time range."
+              "value": "Same usage as Command button, when real estate does not allow for icons + labels or as secondary actions within the command bar."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Typically used in Command bar in small and medium responsive web breakpoints. Also used on objects. Examples: OneDrive small and medium responsive web breakpoint Command Bars and view icons within the Command Bar. In SharePoint and OneDrive, Cards with social actions and images which allow users to access the image picker. In SharePoint, formatting experiences such as formatting a story within the Authoring experience. In Calendar, in the bottom of an event creation Callout when clicking inside an empty time range."
+            }
+          ],
           "isBeta": false
         },
         "Normal": {
@@ -3769,10 +4269,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Optional completion action. Typically used at the end of a form or task when paired with the Primary button OR as a standalone button to undo an action. Examples: \"Done\" button which closes a container but doesn't make a server call or an \"Undo\" button when a user is uploading a file in OneDrive."
+              "value": "Optional completion action."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Typically used at the end of a form or task when paired with the Primary button OR as a standalone button to undo an action. Examples: \"Done\" button which closes a container but doesn't make a server call or an \"Undo\" button when a user is uploading a file in OneDrive."
+            }
+          ],
           "isBeta": false
         },
         "Primary": {
@@ -3782,10 +4287,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Preferred completion action when paired with a Standard button. Typically used at the end of a task or form. Examples: \"Create\", \"Save\", \"Send\" which makes a server call."
+              "value": "Preferred completion action when paired with a Standard button."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Typically used at the end of a task or form. Examples: \"Create\", \"Save\", \"Send\" which makes a server call."
+            }
+          ],
           "isBeta": false
         }
       },
@@ -3910,10 +4420,15 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Helper method to create a custom field on the PropertyPane. The purpose of the custom field is to help the web part developer to add a custom control to the PropertyPane. The PropertyPane supports a host of inbuilt field types. While this list meets the demands of most web parts, but there are exceptional cases when web parts have special needs and need a special control. The custom field helps fill that gap."
+          "value": "Helper method to create a custom field on the PropertyPane."
         }
       ],
-      "remarks": [],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The purpose of the custom field is to help the web part developer to add a custom control to the PropertyPane. The PropertyPane supports a host of inbuilt field types. While this list meets the demands of most web parts, but there are exceptional cases when web parts have special needs and need a special control. The custom field helps fill that gap."
+        }
+      ],
       "isBeta": true
     },
     "PropertyPaneDropdown": {

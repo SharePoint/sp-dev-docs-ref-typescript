@@ -18,10 +18,22 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Provides metadata and events of the SPFx application that's running."
+          "value": "Provides access to the client-side application that is currently executing."
         }
       ],
-      "remarks": [],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The client-side application determines the user experience for an entire web page. (It is a client-side component with a manifest; however, the SharePoint Framework does not yet enable third parties to create their own applications.) Within a web page, exactly one client-side application may be executing at a time. Certain in-place navigation transitions may cause the application to be unloaded and replaced a different application. "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently executing application. It acts as a proxy for the real application object (i.e. BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications."
+        }
+      ],
       "isBeta": true,
       "members": {
         "__constructor": {
@@ -48,14 +60,33 @@
               "scopeName": "@microsoft",
               "packageName": "sp-application-base",
               "exportName": "ApplicationAccessor",
+              "memberName": "",
               "value": "ApplicationAccessor"
             },
             {
               "kind": "textDocElement",
-              "value": " class"
+              "value": " class."
             }
           ],
-          "remarks": []
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component context, e.g. "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-application-base",
+              "exportName": "BaseApplicationCustomizer",
+              "memberName": "context",
+              "value": "BaseApplicationCustomizer.context"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " ."
+            }
+          ]
         },
         "navigatedEvent": {
           "kind": "property",
@@ -68,10 +99,28 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Event that gets raised every time there is a page navigation"
+              "value": "An event that is fired when the application's top-level page context navigates to a new page."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This event fires after the top-level "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "",
+              "packageName": "sp-page-context",
+              "exportName": "PageContext",
+              "memberName": "",
+              "value": "sp-page-context:PageContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " has navigated to a new page."
+            }
+          ],
           "isBeta": true
         }
       }
@@ -85,10 +134,28 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "This object provides contextual information for BaseApplicationCustomizer."
+          "value": "The component context for "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-application-base",
+          "exportName": "BaseApplicationCustomizer",
+          "memberName": "",
+          "value": "BaseApplicationCustomizer"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " ."
         }
       ],
-      "remarks": [],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The constructor for this class is marked as internal; third party code should not inherit directly from this base class."
+        }
+      ],
       "isBeta": false,
       "members": {
         "application": {
@@ -102,7 +169,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "The application accessor provides access to metadata and events from the application."
+              "value": "Provides access to the client-side application that is currently executing."
             }
           ],
           "remarks": [],
@@ -148,7 +215,12 @@
           "value": " In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
         }
       ],
-      "remarks": [],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period."
+        }
+      ],
       "isBeta": false,
       "members": {
         "context": {
@@ -214,10 +286,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "An event handler that will be invoked when the PlaceholderContent object is disposed."
+              "value": "An optional callback that will be invoked when the PlaceholderContent object is disposed."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it."
+            }
+          ],
           "isBeta": true
         }
       }
@@ -289,7 +366,7 @@
             },
             {
               "kind": "textDocElement",
-              "value": " callback and removes the attached DOM element from the page, and disposes the PlaceholderContent object."
+              "value": " callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object."
             }
           ],
           "isBeta": true
@@ -340,10 +417,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Identifies the placeholder that this content was added to. Example: PlaceholderName.Top"
+              "value": "Identifies the placeholder that this content was added to."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: PlaceholderName.Top"
+            }
+          ],
           "isBeta": true
         }
       }
@@ -358,7 +440,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Placeholder that exists on the bottom of the page."
+              "value": "A region at the bottom of the page."
             }
           ],
           "remarks": [],
@@ -371,7 +453,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Placeholder that exists on the top of the page."
+              "value": "A region at the top of the page."
             }
           ],
           "remarks": [],
@@ -382,7 +464,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "A \"placeholder\" is a region on the page where client-side components can inject custom content."
+          "value": "The identifier for a content placeholder, which is a region on the page where third party extensibility components can inject custom content."
         }
       ],
       "remarks": [
@@ -415,13 +497,26 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Allows third party components to discover and use \"placeholders\". Placeholders allow third party components to inject custom content into designated regions on the page."
+          "value": "Allows third party components to discover and use SharePoint placeholders. Placeholders enable third party components to inject custom content into designated regions on the page."
         }
       ],
       "remarks": [
         {
           "kind": "textDocElement",
-          "value": "Placeholders are defined by the application. Different applications and pages support different placeholders, and placeholders can appear and disappear as the user interacts with the page, e.g. via in-place navigation. Third party components should not assume that a given placeholder will always be available. "
+          "value": "Placeholders are designated regions on the page, identified by one of the predefined "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-application-base",
+          "exportName": "PlaceholderName",
+          "memberName": "",
+          "value": "PlaceholderName"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " constants. Different applications and pages may support different placeholder names. Placeholders can appear and disappear as the user interacts with the page, e.g. via in-place navigation. Third party components should not assume that a given placeholder will always be available. "
         },
         {
           "kind": "paragraphDocElement"

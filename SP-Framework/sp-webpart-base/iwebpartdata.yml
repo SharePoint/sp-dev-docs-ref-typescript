@@ -4,7 +4,7 @@ items:
     summary: >-
       This structure represents the serialized state of a web part. When the serialize() API is called on a web part,
       the output should be this structure. The structure of the 'properties' field is owned by the web part and is
-      specific to the web part. Each web part can decide the set of properties it wants to serialialize.
+      specific to the web part. Each web part can decide the set of properties it wants to serialize.
     name: IWebPartData
     fullName: sp-webpart-base.IWebPartData
     langs:
@@ -20,12 +20,13 @@ items:
       - sp-webpart-base.IWebPartData.serverProcessedContent
       - sp-webpart-base.IWebPartData.title
   - uid: sp-webpart-base.IWebPartData.dataVersion
-    summary: >-
-      Definition: Web part data version. Note that data version is different from the version field in the manifest. The
-      manifest version is used to control the versioning of the web part code, while data version is used to control the
-      versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more
-      information. Usage: versioning and evolving the serialized data of the web part Required: yes Type: string
-      Supported values: MAJOR.MINOR Example: "1.0"
+    summary: Web part data version
+    remarks: >-
+      Note that data version is different from the version field in the manifest. The manifest version is used to
+      control the versioning of the web part code, while data version is used to control the versioning of the
+      serialized data of the web part. Refer to dataVersion field of your web part for more information. 
+
+       Usage: versioning and evolving the serialized data of the web part Required: yes Type: string Supported values: MAJOR.MINOR Example: "1.0"
     name: dataVersion
     fullName: sp-webpart-base.IWebPartData.dataVersion
     langs:
@@ -37,9 +38,10 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IWebPartData.description
-    summary: >-
-      Definition: web part description. Usage: display the description of the web part. Required: no Type: string
-      Supported values: string with the description. Example: "Text"
+    summary: Web part description
+    remarks: >-
+      Usage: display the description of the web part. Required: no Type: string Supported values: string with the
+      description. Example: "Text"
     name: description
     fullName: sp-webpart-base.IWebPartData.description
     langs:
@@ -51,9 +53,10 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IWebPartData.id
-    summary: >-
-      Definition: universally unique web part Type id. Usage: uniquely identify a web part. Required: yes Type: GUID
-      Supported values: any GUID Example: "dbef608d-3ad5-4f8f-b139-d916f2f0a294"
+    summary: Universally unique web part Type id.
+    remarks: >-
+      Usage: uniquely identify a web part. Required: yes Type: GUID Supported values: any GUID Example:
+      "dbef608d-3ad5-4f8f-b139-d916f2f0a294"
     name: id
     fullName: sp-webpart-base.IWebPartData.id
     langs:
@@ -66,11 +69,12 @@ items:
           - string
   - uid: sp-webpart-base.IWebPartData.instanceId
     summary: >-
-      Definition: universally unique instance id of the web part. A web part can have multiple instances on a page. This
-      id is expected to be universally unique accross time and page boundaries. how used: used by the framework to
-      uniquely identify an instance of a web part. mandatory: yes type: string supported values: a unique string. Could
-      be GUID or other uniquely identifiable formats. example: \["dbef608d-3ad5-4f8f-b139-d916f2f0a294"\] experimental:
-      yes
+      Universally unique instance id of the web part. A web part can have multiple instances on a page. This id is
+      expected to be universally unique across time and page boundaries.
+    remarks: >-
+      how used: used by the framework to uniquely identify an instance of a web part. mandatory: yes type: string
+      supported values: a unique string. Could be GUID or other uniquely identifiable formats. example:
+      \["dbef608d-3ad5-4f8f-b139-d916f2f0a294"\] experimental: yes
     name: instanceId
     fullName: sp-webpart-base.IWebPartData.instanceId
     langs:
@@ -82,11 +86,11 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IWebPartData.properties
-    summary: >-
-      Definition: Web part specific properties. The individual web part owns the definition of these properties. Usage:
-      used by the web part to manage its internal metadata and config data. The framework code never touches these
-      properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value':
-      'text value' }
+    summary: Web part specific properties. The individual web part owns the definition of these properties.
+    remarks: >-
+      Usage: used by the web part to manage its internal metadata and config data. The framework code never touches
+      these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: {
+      'value': 'text value' }
     name: properties
     fullName: sp-webpart-base.IWebPartData.properties
     langs:
@@ -112,9 +116,10 @@ items:
         type:
           - ISerializedServerProcessedData
   - uid: sp-webpart-base.IWebPartData.title
-    summary: >-
-      Definition: web part title. Usage: display the name of the web part in the toolbox, web part gallery and the page.
-      Required: yes Type: string Supported values: string less than 100 characters Example: "Text"
+    summary: Web part title
+    remarks: >-
+      Usage: display the name of the web part in the toolbox, web part gallery and the page. Required: yes Type: string
+      Supported values: string less than 100 characters Example: "Text"
     name: title
     fullName: sp-webpart-base.IWebPartData.title
     langs:

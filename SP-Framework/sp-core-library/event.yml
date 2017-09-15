@@ -1,11 +1,19 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.Event
-    summary: Representation of an event. It exposes an event that third parties can attach handlers to.
+    summary: Represents a framework event that components can subscribe to.
     remarks: >-
-      When an event is raised, its handlers are executed synchronously. An event handler should not throw errors,
-      although the system can recover from an error in a handler. Event handlers should be fast. If they need to do
-      expensive operations, they should use Promises for that.
+      Examples of events in a web application might include: the user clicking a button, the system navigating to
+      another page, or an item being added/removed from an abstract collection. The SharePoint Framework represents
+      events using instances of the Event object, one for each kind of event. The Event object is typically exposed as a
+      property of an associated class (e.g. the button that can be clicked). When a component is interested in an event,
+      it calls add() to register an event handler callback that will be invoked each time the event occurs. The handler
+      receives an EventArgs parameter that may provide additional details about what happened. This is analogous to the
+      browser's Document Object Model (DOM) events. The main difference is the IEventObserver feature, which tracks
+      which component subscribed to each event, and automatically unsubscribes the handler when the component is
+      disposed. 
+
+       When an event is raised, all handlers are invoked synchronously. The order in which event handlers are called is unspecified. The event handler callback must catch any exceptions that occur during processing; an uncaught exception will not prevent other handlers from executing, but it will be reported as a problem with the associated component.
     isPreview: true
     name: Event
     fullName: sp-core-library.Event
@@ -17,13 +25,11 @@ items:
       - sp-core-library.Event.add
       - sp-core-library.Event.remove
   - uid: sp-core-library.Event.add
-    summary: >-
-      Registers an event handler callback that will be invoked whenever the event occurs. The same object can add
-      multiple event handlers to the same event.
+    summary: Registers a callback that will be invoked whenever the event occurs.
     remarks: >-
-      Since BaseComponent implements the IEventObserver interface, a web part or extension can pass itself as the
-      observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is
-      disposed.
+      The same object can add multiple event handlers to the same event. Since BaseComponent implements the
+      IEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event
+      handler to be automatically unsubscribed when the web part or extension is disposed.
     isPreview: true
     name: 'add(observer, eventHandler)'
     fullName: sp-core-library.Event.add
@@ -40,19 +46,17 @@ items:
         - id: observer
           description: >-
             Indicates the object that is subscribing to the event: When the object is disposed, the event handler will
-            be automatically removed. This object is also used for diagnostic purposes, e.g. if its event handler fails
-            to trap an exception
+            be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event
+            handler failed to catch an exception.
           type:
             - IEventObserver
         - id: eventHandler
-          description: A callback function that will be invoked whenever the event occurs.
+          description: A callback function that will be invoked whenever the event occurs
           type:
             - '(eventArgs: TEventArgs) => void'
   - uid: sp-core-library.Event.remove
-    summary: |-
-      Removes an event handler to the event. Only removes the event handler passed as input. 
-
-       If the event handler has already been removed, or it was never added, this operation does nothing.
+    summary: Unregisters a callback that was registered using add().
+    remarks: 'If the event handler has already been removed, or if it was never added, then this method has no effect.'
     isPreview: true
     name: 'remove(observer, eventHandler)'
     fullName: sp-core-library.Event.remove
@@ -67,10 +71,10 @@ items:
         description: ''
       parameters:
         - id: observer
-          description: Object that it's removing the event handler from the event
+          description: This must be the same observer that was passed to the add() function.
           type:
             - IEventObserver
         - id: eventHandler
-          description: Event handler to remove. It must be the same object instance that was used in add.
+          description: The event handler to remove; this must be the same object instance that was passed to the add() function.
           type:
             - '(eventArgs: TEventArgs) => void'

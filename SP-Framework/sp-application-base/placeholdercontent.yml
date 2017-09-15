@@ -23,7 +23,7 @@ items:
       This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the
       application when the containing placeholder is disposed. Calling dispose() invokes the
       [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
-      callback and removes the attached DOM element from the page, and disposes the PlaceholderContent object.
+      callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object.
     isPreview: true
     name: dispose()
     fullName: sp-application-base.PlaceholderContent.dispose
@@ -54,7 +54,8 @@ items:
         type:
           - HTMLDivElement
   - uid: sp-application-base.PlaceholderContent.name
-    summary: 'Identifies the placeholder that this content was added to. Example: PlaceholderName.Top'
+    summary: Identifies the placeholder that this content was added to.
+    remarks: 'Example: PlaceholderName.Top'
     isPreview: true
     name: name
     fullName: sp-application-base.PlaceholderContent.name

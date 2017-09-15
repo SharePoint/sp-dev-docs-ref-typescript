@@ -1,7 +1,8 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.IDisposable
-    summary: Interface for classes that can be disposed.
+    summary: Implemented by an object that supports a disposal lifecycle.
+    remarks: The dispose event allows an object to free an resources that it allocated before its lifecycle ends.
     isPreview: true
     name: IDisposable
     fullName: sp-core-library.IDisposable
@@ -13,7 +14,9 @@ items:
       - sp-core-library.IDisposable.dispose
       - sp-core-library.IDisposable.isDisposed
   - uid: sp-core-library.IDisposable.dispose
-    summary: 'Disposes the component. In order to write component-specific dispose mechanism, use onDispose instead.'
+    summary: >-
+      This method is called to dispose the object. After the object has been disposed, it should not be interacted with
+      any more.
     isPreview: true
     name: dispose()
     fullName: sp-core-library.IDisposable.dispose
@@ -27,7 +30,9 @@ items:
           - void
         description: ''
   - uid: sp-core-library.IDisposable.isDisposed
-    summary: Returns true if the component has been already disposed.
+    summary: >-
+      Returns true if the dispose() method has been called. Once an object is disposed, it remains in this state
+      permanently.
     isPreview: true
     name: isDisposed
     fullName: sp-core-library.IDisposable.isDisposed

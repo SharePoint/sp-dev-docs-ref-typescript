@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-component-base.BaseComponent
-    summary: 'Base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.'
+    summary: 'The base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.'
     remarks: >-
       The constructor for this class is marked as internal; third party code should not inherit directly from this base
       class.
@@ -26,8 +26,8 @@ items:
     summary: Returns the component identifier as defined in the component’s associated manifest.
     remarks: >-
       Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which
-      may include additional metadata about the component. Manifests are tracked using a unique identifier, which is a
-      text string containing a lower case GUID value
+      may include additional metadata about the component. The manifest is uniquely identified using a text string
+      containing a lower case GUID value.
     isPreview: true
     name: componentId
     fullName: sp-component-base.BaseComponent.componentId
@@ -57,10 +57,11 @@ items:
         type:
           - BaseComponentContext
   - uid: sp-component-base.BaseComponent.dispose
-    summary: |-
-      Disposes the component. In order to write component-specific dispose mechanism, use onDispose instead. 
-
-       The onDispose event should only be raised once - if this.\_disposed was false when the function was called. (Put another way, dispose() should be a no-op if this.\_disposed is true.)
+    summary: Disposes the component.
+    remarks: >-
+      Third party code generally does not need to call this method; it will be invoked automatically when the lifecycle
+      ends for a web part or extension. To perform custom cleanup when your component is disposed, override the
+      [BaseComponent.onDispose](xref:sp-component-base.BaseComponent.onDispose) method.
     isPreview: true
     name: dispose()
     fullName: sp-component-base.BaseComponent.dispose
@@ -74,9 +75,11 @@ items:
           - void
         description: ''
   - uid: sp-component-base.BaseComponent.instanceId
-    summary: >-
-      Unique identifier for the instance of the component. The same component can be instantiated several times, and
-      each instance will have a different id.
+    summary: A unique identifier for the instance of the component.
+    remarks: >-
+      A given component implementation can be loaded multiple times on the page. For example, if the component is a
+      charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId
+      uniquely identifies each of these instances.
     isPreview: true
     name: instanceId
     fullName: sp-component-base.BaseComponent.instanceId
@@ -102,7 +105,8 @@ items:
         type:
           - boolean
   - uid: sp-component-base.BaseComponent.manifest
-    summary: Returns the manifest for the component.
+    summary: Provides access to the manifest for the client-side component.
+    remarks: Child classes may override this with more specialized manifest types.
     isPreview: true
     name: manifest
     fullName: sp-component-base.BaseComponent.manifest
@@ -116,8 +120,8 @@ items:
           - IClientSideComponentManifest
   - uid: sp-component-base.BaseComponent.onDispose
     summary: >-
-      This event hook is called immediately before the component stops being used. It provides an opportunity to release
-      any associated resources, cancel any outstanding requests, etc.
+      This event hook is called at the end of the component's lifecycle. It provides an opportunity to release any
+      associated resources, cancel any outstanding requests, etc.
     isPreview: true
     name: onDispose()
     fullName: sp-component-base.BaseComponent.onDispose

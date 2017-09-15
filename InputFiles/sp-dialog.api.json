@@ -4,10 +4,41 @@
   "summary": [
     {
       "kind": "textDocElement",
-      "value": "SharePoint Framework support for displaying pop-up dialog boxes on a SharePoint page."
+      "value": "SharePoint Framework support for displaying pop-up dialog boxes."
     }
   ],
-  "remarks": [],
+  "remarks": [
+    {
+      "kind": "textDocElement",
+      "value": "This library provides simple stock dialogs such as "
+    },
+    {
+      "kind": "linkDocElement",
+      "referenceType": "code",
+      "scopeName": "@microsoft",
+      "packageName": "sp-dialog",
+      "exportName": "Dialog",
+      "memberName": "alert",
+      "value": "Dialog.alert"
+    },
+    {
+      "kind": "textDocElement",
+      "value": " and "
+    },
+    {
+      "kind": "linkDocElement",
+      "referenceType": "code",
+      "scopeName": "@microsoft",
+      "packageName": "sp-dialog",
+      "exportName": "Dialog",
+      "memberName": "prompt",
+      "value": "Dialog.prompt"
+    },
+    {
+      "kind": "textDocElement",
+      "value": " , along with a general framework for building custom dialog boxes that participate in the focus management system for SharePoint Framework applications."
+    }
+  ],
   "exports": {
     "BaseDialog": {
       "kind": "class",
@@ -50,17 +81,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "Constructor for the BaseDialog class. "
-            },
-            {
-              "kind": "paragraphDocElement"
-            },
-            {
-              "kind": "textDocElement",
-              "value": " It is important to keep the constructor lightweight. Use onBeforeOpen() for doing heavy-weight initializations that are needed for rendering the dialog such as resource allocations and asynchronous calls to fetch data. You can use the constructor to set initial parameters of your dialog such as references to resources in your application. The reason for this is that dialogs are usually constructed upon a UI event e.g. a button click, but the dialog may not always be shown right after construction. Keeping the constructor lightweight ensures smooth user experience and avoids doing throw-away work in case the dialog is not shown later e.g. if the framework rejects it. Another benefit of doing this is avoiding memory leaks by doing all the allocations and disposals in symmetric onBeforeOpen() and onAfterClose() events. If you allocate unmanaged resources in the constructor, you have a memory leak because there is no guarantee onAfterClose() will get called, and onAfterClose() is your only opportunity to dispose."
+              "value": "Constructor for the BaseDialog class."
             }
           ],
-          "remarks": []
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "It is important to keep the constructor lightweight. Use onBeforeOpen() for doing heavy-weight initialization that is needed for rendering the dialog such as resource allocations and asynchronous calls to fetch data. You can use the constructor to set initial parameters of your dialog such as references to resources in your application. The reason for this is that dialogs are usually constructed upon a UI event e.g. a button click, but the dialog may not always be shown right after construction. Keeping the constructor lightweight ensures smooth user experience and avoids doing throw-away work in case the dialog is not shown later e.g. if the framework rejects it. Another benefit of doing this is avoiding memory leaks by doing all the allocations and disposals in symmetric onBeforeOpen() and onAfterClose() events. If you allocate resources in the constructor, you have a memory leak because there is no guarantee onAfterClose() will get called, and onAfterClose() is your only opportunity to dispose."
+            }
+          ]
         },
         "close": {
           "kind": "method",
@@ -189,7 +218,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This method is called after the dialog is visually closed and gives an opprotunity for doing clean up. The dialog lifecycle completes after closing and there should be no unmanaged resources left inside the object. Even though the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle that should reallocate its own resources. If there are any resources that you would like to keep for multiple lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor."
+              "value": "This method is called after the dialog is visually closed and gives an opportunity for doing clean up. The dialog lifecycle completes after closing and there should be no resources left inside the object. Even though the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle that should reallocate its own resources. If there are any resources that you would like to keep for multiple lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor."
             }
           ],
           "remarks": [],
@@ -338,7 +367,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Static Dialog class to provide API for showing static dialogs such as alert and prompt"
+          "value": "A static class for showing stock dialogs such as an alert or prompt."
         }
       ],
       "remarks": [],
@@ -518,10 +547,15 @@
           "summary": [
             {
               "kind": "textDocElement",
+              "value": "A callback that is invoked immediately before the dialog receives focus."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
               "value": "Provide this callback if there is a case when you want to abort showing the dialog before it's approved by the framework. For example, you can check if a long time has passed since the request was made or the the component requesting the dialog is disposed and you don't want to show the dialog anymore. It is important to keep this callback lightweight so the framework can resolve it quickly and the user interface does not have to wait a long time for it."
             }
           ],
-          "remarks": [],
           "isBeta": true
         }
       }
@@ -535,7 +569,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Options for showing an prompt dialog"
+          "value": "Options for showing a prompt dialog"
         }
       ],
       "remarks": [],

@@ -14,7 +14,11 @@ items:
     children:
       - sp-application-base.IPlaceholderCreateContentOptions.onDispose
   - uid: sp-application-base.IPlaceholderCreateContentOptions.onDispose
-    summary: An event handler that will be invoked when the PlaceholderContent object is disposed.
+    summary: An optional callback that will be invoked when the PlaceholderContent object is disposed.
+    remarks: >-
+      To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content
+      was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler
+      might call ReactDOM.unmountComponentAtNode() to unmount it.
     isPreview: true
     name: onDispose
     fullName: sp-application-base.IPlaceholderCreateContentOptions.onDispose

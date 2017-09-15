@@ -3,10 +3,9 @@ items:
   - uid: sp-component-base.BaseComponentContext
     summary: The base class for context objects for client-side components.
     remarks: >-
-      A "context" object is a collection of well-known services and other objects that are likely to be needed by any
-      business logic working with the associated component. Each component type has its own specialized subclass
-      ofClientSideComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions,
-      etc. 
+      A "context" object is a collection of well-known services and other objects that are likely to be needed by
+      business logic that interacts with a associated component. Each component type has its own specialized subclass of
+      BaseComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, and so on. 
 
        The constructor for this class is marked as internal; third party code should not inherit directly from this base class.
     isPreview: true
@@ -22,7 +21,11 @@ items:
       - sp-component-base.BaseComponentContext.pageContext
       - sp-component-base.BaseComponentContext.serviceScope
   - uid: sp-component-base.BaseComponentContext.instanceId
-    summary: Instance id for the client side component.
+    summary: A unique identifier for the instance of the component.
+    remarks: >-
+      A given component implementation can be loaded multiple times on the page. For example, if the component is a
+      charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId
+      uniquely identifies each of these instances.
     isPreview: true
     name: instanceId
     fullName: sp-component-base.BaseComponentContext.instanceId
@@ -63,7 +66,8 @@ items:
         type:
           - PageContext
   - uid: sp-component-base.BaseComponentContext.serviceScope
-    summary: Service scope instance that is scoped to this particular web part.
+    summary: 'The associated [@microsoft/sp-core-library:ServiceScope](xref:sp-core-library.ServiceScope) for this component.'
+    remarks: A child service scope is created for each client-side component.
     isPreview: true
     name: serviceScope
     fullName: sp-component-base.BaseComponentContext.serviceScope

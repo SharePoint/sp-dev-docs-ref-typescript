@@ -116,17 +116,15 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "This is the base class that third parties should extend when implementing a client-side extension that provides a command set for a SharePoint list view. "
-        },
-        {
-          "kind": "paragraphDocElement"
-        },
-        {
-          "kind": "textDocElement",
-          "value": " In the component manifest, the \"extensionType\" should be set to \"ListViewCommandSet\"."
+          "value": "This is the base class that third parties should extend when implementing a client-side extension that provides a command set for a SharePoint list view."
         }
       ],
-      "remarks": [],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "In the component manifest, the \"extensionType\" should be set to \"ListViewCommandSet\"."
+        }
+      ],
       "isBeta": false,
       "members": {
         "context": {
@@ -203,10 +201,15 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "This event occurs whenever the ListView state changes. It allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title."
+              "value": "This event occurs whenever the ListView state changes."
             }
           ],
-          "remarks": [],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This event allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title."
+            }
+          ],
           "isBeta": false
         },
         "tryGetCommand": {
@@ -408,13 +411,20 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "A short label to be displayed by the associated button, menu item, etc. Example: \"Show information\""
+              "value": "A short label to be displayed by the associated button, menu item, etc."
             }
           ],
           "remarks": [
             {
               "kind": "textDocElement",
-              "value": "Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension."
+              "value": "Example: \"Show information\" "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension."
             }
           ],
           "isBeta": false
@@ -512,7 +522,7 @@
       "summary": [
         {
           "kind": "textDocElement",
-          "value": "Event parmeters for BaseFieldCustomizer.onRenderCell()"
+          "value": "Event parameters for BaseFieldCustomizer.onRenderCell()"
         }
       ],
       "remarks": [],
@@ -580,7 +590,7 @@
           "summary": [
             {
               "kind": "textDocElement",
-              "value": "An implementor-defined storage property."
+              "value": "An implementation defined storage property."
             }
           ],
           "remarks": [
@@ -599,7 +609,21 @@
       "implements": "",
       "typeParameters": [],
       "deprecatedMessage": [],
-      "summary": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Parameters for "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-listview-extensibility",
+          "exportName": "BaseListViewCommandSet",
+          "memberName": "onExecute",
+          "value": "BaseListViewCommandSet.onExecute"
+        }
+      ],
       "remarks": [],
       "isBeta": false,
       "members": {
@@ -645,7 +669,21 @@
       "implements": "",
       "typeParameters": [],
       "deprecatedMessage": [],
-      "summary": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Parameters for "
+        },
+        {
+          "kind": "linkDocElement",
+          "referenceType": "code",
+          "scopeName": "@microsoft",
+          "packageName": "sp-listview-extensibility",
+          "exportName": "BaseListViewCommandSet",
+          "memberName": "onListViewUpdated",
+          "value": "BaseListViewCommandSet.onListViewUpdated"
+        }
+      ],
       "remarks": [],
       "isBeta": false,
       "members": {

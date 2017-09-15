@@ -1,10 +1,11 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-page-context.SPPermission
-    summary: >-
-      This class can be used to determine if the current user has a requested set of permissions. Specifies the built-in
-      permissions available in SharePoint Foundation Derived from OneDriveWeb/ODBNext/odsp-shared
-      https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spbasepermissions.aspx
+    summary: Used to test whether the current user has a requested set of permissions.
+    remarks: |-
+      Specifies the built-in permissions available in SharePoint Foundation 
+
+       For more information, see: https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spbasepermissions.aspx
     name: SPPermission
     fullName: sp-page-context.SPPermission
     langs:
@@ -300,7 +301,7 @@ items:
         type:
           - SPPermission
   - uid: sp-page-context.SPPermission.hasAllPermissions
-    summary: Function for determining if a given permission mask has all of the requested permissions.
+    summary: Function for testing whether a given permission mask has all of the requested permissions.
     name: hasAllPermissions(requestedPerms)
     fullName: sp-page-context.SPPermission.hasAllPermissions
     langs:
@@ -318,7 +319,7 @@ items:
           type:
             - 'SPPermission[]'
   - uid: sp-page-context.SPPermission.hasAnyPermissions
-    summary: Function for determining if a given permission mask has any of the requested permissions.
+    summary: Function for testing whether a given permission mask has any of the requested permissions.
     name: hasAnyPermissions(requestedPerms)
     fullName: sp-page-context.SPPermission.hasAnyPermissions
     langs:
@@ -336,7 +337,7 @@ items:
           type:
             - 'SPPermission[]'
   - uid: sp-page-context.SPPermission.hasPermission
-    summary: Function for checking if a given permission mask has the requested permission.
+    summary: Function for testing whether a given permission mask has the requested permission.
     name: hasPermission(requestedPerm)
     fullName: sp-page-context.SPPermission.hasPermission
     langs:
@@ -426,12 +427,13 @@ items:
         type:
           - SPPermission
   - uid: sp-page-context.SPPermission.manageWeb
-    summary: >-
-      Grant the ability to perform all administration tasks for the Web site as well as manage content. Activate,
-      deactivate,or edit properties of Web site scoped Features through the object model or through the user interface
-      (UI). When grantedon the root Web site of a site collection, activate, deactivate, or edit properties of site
-      collection scoped Features through the object model. To browse to the Site Collection Features page and activate
-      or deactivate site collection scoped Features through the UI, you must be a site collection administrator.
+    summary: Grant the ability to perform all administration tasks for the Web site as well as manage content.
+    remarks: >-
+      Activate, deactivate, or edit properties of Web site scoped Features through the object model or through the user
+      interface (UI). When granted on the root Web site of a site collection, activate, deactivate, or edit properties
+      of site collection scoped Features through the object model. To browse to the Site Collection Features page and
+      activate or deactivate site collection scoped Features through the UI, you must be a site collection
+      administrator.
     name: manageWeb
     fullName: sp-page-context.SPPermission.manageWeb
     langs:
