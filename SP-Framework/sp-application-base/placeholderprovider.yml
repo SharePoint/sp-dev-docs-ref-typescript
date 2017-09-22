@@ -1,0 +1,84 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-application-base.PlaceholderProvider
+    summary: >-
+      Allows third party components to discover and use SharePoint placeholders. Placeholders enable third party
+      components to inject custom content into designated regions on the page.
+    remarks: >-
+      Placeholders are designated regions on the page, identified by one of the predefined
+      [PlaceholderName](xref:sp-application-base.PlaceholderName) constants. Different applications and pages may
+      support different placeholder names. Placeholders can appear and disappear as the user interacts with the page,
+      e.g. via in-place navigation. Third party components should not assume that a given placeholder will always be
+      available. 
+
+       Use [PlaceholderProvider.tryCreateContent](xref:sp-application-base.PlaceholderProvider.tryCreateContent) to test whether a placeholder is available and add content to it. Use the [PlaceholderProvider.changedEvent](xref:sp-application-base.PlaceholderProvider.changedEvent) to discover when new placeholders appear.
+    isPreview: true
+    name: PlaceholderProvider
+    fullName: sp-application-base.PlaceholderProvider
+    langs:
+      - typeScript
+    type: class
+    package: sp-application-base
+    children:
+      - sp-application-base.PlaceholderProvider.changedEvent
+      - sp-application-base.PlaceholderProvider.placeholderNames
+      - sp-application-base.PlaceholderProvider.tryCreateContent
+  - uid: sp-application-base.PlaceholderProvider.changedEvent
+    summary: This event is raised when the list of currently available placeholders is changed.
+    remarks: >-
+      The application can change its list of available placeholders at any time. This means that the existing
+      placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
+      they appear.
+    isPreview: true
+    name: changedEvent
+    fullName: sp-application-base.PlaceholderProvider.changedEvent
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly changedEvent: Event<EventArgs>;'
+      return:
+        type:
+          - Event<EventArgs>
+  - uid: sp-application-base.PlaceholderProvider.placeholderNames
+    summary: Returns the names of the currently available placeholders.
+    isPreview: true
+    name: placeholderNames
+    fullName: sp-application-base.PlaceholderProvider.placeholderNames
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly placeholderNames: ReadonlyArray<PlaceholderName>;'
+      return:
+        type:
+          - ReadonlyArray<PlaceholderName>
+  - uid: sp-application-base.PlaceholderProvider.tryCreateContent
+    summary: >-
+      Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created,
+      which allows the caller to render custom content inside the placeholder.
+    remarks: >-
+      The host application makes no guarantees about the availability of a given placeholder. In situations where an
+      expected placeholder is not available, the third party extension must handle it gracefully, e.g. by not rendering
+      anything, or by choosing an alternative placeholder.
+    isPreview: true
+    name: 'tryCreateContent(name, options)'
+    fullName: sp-application-base.PlaceholderProvider.tryCreateContent
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: "public tryCreateContent(name: PlaceholderName,\r\n    options?: IPlaceholderCreateContentOptions): PlaceholderContent | undefined;"
+      return:
+        type:
+          - PlaceholderContent | undefined
+        description: 'A new PlaceholderContent object, or undefined if the requested placeholder does not exist.'
+      parameters:
+        - id: name
+          description: The requested placeholder
+          type:
+            - PlaceholderName
+        - id: options
+          description: 'Additional options, for example to detect when the placeholder is disposed.'
+          type:
+            - IPlaceholderCreateContentOptions

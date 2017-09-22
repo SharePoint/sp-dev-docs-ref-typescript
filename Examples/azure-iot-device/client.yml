@@ -1,0 +1,63 @@
+### YamlMime:UniversalReference
+items:
+  - uid: azure-iot-device.Client
+    fullName: azure-iot-device.Client
+    name: Client
+    package: azure-iot-device
+    summary: Creates an IoT Hub device client. Normally, consumers will call the factory method, @azure-iot-device.Client.fromConnectionString(string,Transport), to create an IoT Hub device client
+    source:
+      path: lib\services\advisorManagement\lib\operations\operations.js
+      startLine: 276
+      remote:
+        branch: jsdoc
+        path: lib\services\advisorManagement\lib\operations\operations.js
+        repo: 'https://github.com/Azure/azure-sdk-for-node.git'
+    type: class
+    langs:
+      - typeScript
+    children:
+      - azure-iot-device.Client.#ctor(Transport,string,BlobUploadClient)
+      - azure-iot-device.Client.fromConnectionString(string,Transport)
+  - uid: azure-iot-device.Client.#ctor(Transport,string,BlobUploadClient)
+    fullName: azure-iot-device.Client.#ctor(Transport,string,BlobUploadClient)
+    name: Client(Transport,string,BlobUploadClient)
+    type: constructor
+    syntax:
+      content: 'constructor(transport: Transport, connStr?: string, blobUploadClient?: BlobUploadClient)'
+      parameters:
+      - id: transport
+        type:
+          - Transport
+        description: An object that implements the interface expected of a transport object, e.g., Http.
+      - id: connStr
+        type:
+          - string
+        description: 'A connection string (optional: when not provided, updateSharedAccessSignature must be called to set the SharedAccessSignature token directly).'
+      - id: blobUploadClient
+        type:
+          - BlobUploadClient
+        description: An object that is capable of uploading a stream to a blob.
+  - uid: azure-iot-device.Client.fromConnectionString(string,Transport)
+    fullName: azure-iot-device.Client.fromConnectionString(string, Transport)
+    name: fromConnectionString(string, Transport)
+    summary: Creates an IoT Hub device client from the given connection string using the given transport type.
+    type: method
+    syntax:
+      content: 'public static fromConnectionString(string, Transport)'
+      parameters:
+      - id: connStr
+        type:
+          - string
+        description: A connection string which encapsulates "device connect" permissions on an IoT hub.
+      - id: Transport
+        type:
+          - function
+        description: A transport constructor.
+      return:
+        type:
+          - azure-iot-device.Client
+    exceptions:
+    - type: ReferenceError
+      description: If the connStr parameter is falsy.
+    - type: ReferenceError222
+      description: If the connStr parameter is falsy.

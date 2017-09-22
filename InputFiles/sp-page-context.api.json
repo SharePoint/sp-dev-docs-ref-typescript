@@ -1,0 +1,1943 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-page-context",
+  "summary": [
+    {
+      "kind": "textDocElement",
+      "value": "Page context services for the SharePoint Framework"
+    }
+  ],
+  "remarks": [
+    {
+      "kind": "textDocElement",
+      "value": "The page context allows an application and its web parts to share common data about the current page, such as its contents, URL, list, user, permissions, navigation menu, etc."
+    }
+  ],
+  "exports": {
+    "CultureInfo": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This class is primarily used with the PageContext class. It provides culture info for the current user of the application."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "currentCultureName": {
+          "kind": "property",
+          "signature": "public readonly currentCultureName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This string determines the language default format for dates, times, numbers, currency values, the sorting order of text, casing conventions, and string comparisons."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This property may be an empty string, but it will never be undefined. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: If the currentCultureName is \"en-AU\" then the application could use this information to display the date as 1/8 instead of 8/1."
+            }
+          ],
+          "isBeta": false
+        },
+        "currentUICultureName": {
+          "kind": "property",
+          "signature": "public readonly currentUICultureName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This string determines the default user interface language. This used for localization and translation of text."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This property may have an empty string, but will never be undefined. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " Example: If the currentUICultureName is \"es-MX\", then the application could use this information to translate the word \"hello\" to \"hola\"."
+            }
+          ],
+          "isBeta": false
+        },
+        "isRightToLeft": {
+          "kind": "property",
+          "signature": "public readonly isRightToLeft: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This boolean represents the dominant direction of written text for the default user interface language."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "PageContext": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "The page context provides standard definitions for common SharePoint objects that need to be shared between the client-side application, web parts, and other components. Typically the data is fetched via REST queries when navigating to a new page, but it can also be preloaded by the web server, or filled from a custom application cache."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(serviceScope: ServiceScope);",
+          "parameters": {
+            "serviceScope": {
+              "name": "serviceScope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ServiceScope"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Constructs a new instance of the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-page-context",
+              "exportName": "PageContext",
+              "value": "PageContext"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "cultureInfo": {
+          "kind": "property",
+          "signature": "public readonly cultureInfo: CultureInfo;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "CultureInfo",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "It provides culture info for the current user of the application. This class is primarily used with the PageContext class."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isInitialized": {
+          "kind": "property",
+          "signature": "public readonly isInitialized: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns whether the PageContext has been initialized."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "legacyPageContext": {
+          "kind": "property",
+          "signature": "public readonly legacyPageContext: any;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "An object providing classic SharePoint properties that may be required by certain legacy scripts."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is provided to facilitate migration of legacy code. It returns a JavaScript object whose contents are similar to the _spPageContextInfo window variable from classic pages. The contents of this variable may change in future releases of SharePoint. For this reason, new projects are encouraged to use the SharePoint Framework TypeScript APIs instead, since they are fully documented and provide reliable backwards compatibility guarantees. "
+            },
+            {
+              "kind": "paragraphDocElement"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript API, please file an issue on GitHub. The intention is that no modern application should need to rely on the legacyPageContext object."
+            }
+          ],
+          "isBeta": false
+        },
+        "list": {
+          "kind": "property",
+          "signature": "public readonly list: SPList | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPList | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Contextual information for the SharePoint list that is hosting the page. If there is no list associated to the current page, this property will be undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "listItem": {
+          "kind": "property",
+          "signature": "public readonly listItem: SPListItem | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPListItem | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Contextual information for the SharePoint list item that is hosting the page. If there is no list item associated to the current page, this property will be undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serviceKey": {
+          "kind": "property",
+          "signature": "public static serviceKey: ServiceKey<PageContext>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "ServiceKey<PageContext>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The service key for PageContext."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "site": {
+          "kind": "property",
+          "signature": "public readonly site: SPSite;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPSite",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Contextual information for the SharePoint site collection (\"site\") that is hosting the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "user": {
+          "kind": "property",
+          "signature": "public readonly user: SPUser;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPUser",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "It provides contextual information for the SharePoint user that is accessing the page. This class is primarily used with the PageContext class."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "web": {
+          "kind": "property",
+          "signature": "public readonly web: SPWeb;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPWeb",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Contextual information for the SharePoint site (\"web\") that is hosting the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SPField": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "The client-side equivalent for SharePoint SPField class. Used in Fields property of SPList and SPListItem classes. A field represents the data model for a column in SharePoint list view."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "members": {
+        "clientSideComponentId": {
+          "kind": "property",
+          "signature": "public readonly clientSideComponentId: Guid | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The unique identifier of the client-side component associated with the field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "clientSideComponentProperties": {
+          "kind": "property",
+          "signature": "public readonly clientSideComponentProperties: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning are defined by the client-side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "displayName": {
+          "kind": "property",
+          "signature": "public readonly displayName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The display name of the field. This name is shown as column name in UI."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "fieldType": {
+          "kind": "property",
+          "signature": "public readonly fieldType: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The type of the field represented as a string"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "id": {
+          "kind": "property",
+          "signature": "public readonly id: Guid;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The GUID identifier for this field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "internalName": {
+          "kind": "property",
+          "signature": "public readonly internalName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The internal name of the field. This name is usually used to find the field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "isRequired": {
+          "kind": "property",
+          "signature": "public readonly isRequired: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Whether the field is required for each list item in the list"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    },
+    "SPList": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This class is primarily used with the PageContext class. It provides contextual information for the SharePoint list that hosts the page."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "id": {
+          "kind": "property",
+          "signature": "public readonly id: Guid;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The GUID that identifies the SPList on the server. This property could be undefined if the information isn't available."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "permissions": {
+          "kind": "property",
+          "signature": "public readonly permissions: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Return the SPPermission object that represents the set of permissions that the current user has for interacting with the list."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serverRelativeUrl": {
+          "kind": "property",
+          "signature": "public readonly serverRelativeUrl: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the server-relative URL for this SPList."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/sites/PubSite\""
+            }
+          ],
+          "isBeta": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "public readonly title: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the title for this SPList."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SPListItem": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This class is primarily used with the PageContext class. It provides contextual information for the SharePoint list item that hosts the page."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "id": {
+          "kind": "property",
+          "signature": "public readonly id: number;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The number that identifies the SPListItem on the server."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SPPermission": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "Used to test whether the current user has a requested set of permissions."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "Specifies the built-in permissions available in SharePoint Foundation "
+        },
+        {
+          "kind": "paragraphDocElement"
+        },
+        {
+          "kind": "textDocElement",
+          "value": " For more information, see: https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spbasepermissions.aspx"
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(value: IODataBasePermission);",
+          "parameters": {
+            "value": {
+              "name": "value",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IODataBasePermission"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Constructs a new instance of the "
+            },
+            {
+              "kind": "linkDocElement",
+              "referenceType": "code",
+              "scopeName": "@microsoft",
+              "packageName": "sp-page-context",
+              "exportName": "SPPermission",
+              "value": "SPPermission"
+            },
+            {
+              "kind": "textDocElement",
+              "value": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "addAndCustomizePages": {
+          "kind": "property",
+          "signature": "public static addAndCustomizePages: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Add, change, or delete HTML pages or web part Pages, and edit the Web site using a SharePoint Foundation–compatible editor."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "addDelPrivateWebParts": {
+          "kind": "property",
+          "signature": "public static addDelPrivateWebParts: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Add or remove personal web parts on a web part Page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "addListItems": {
+          "kind": "property",
+          "signature": "public static addListItems: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Add items to lists, add documents to document libraries, and add Web discussion comments."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "applyStyleSheets": {
+          "kind": "property",
+          "signature": "public static applyStyleSheets: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Apply a style sheet (.css file) to the Web site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "applyThemeAndBorder": {
+          "kind": "property",
+          "signature": "public static applyThemeAndBorder: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Apply a theme or borders to the entire Web site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "approveItems": {
+          "kind": "property",
+          "signature": "public static approveItems: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Approve a minor version of a list item or document."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "browseDirectories": {
+          "kind": "property",
+          "signature": "public static browseDirectories: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Enumerate files and folders in a Web site using Microsoft Office SharePoint Designer 2007 and WebDAV interfaces."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "browserUserInfo": {
+          "kind": "property",
+          "signature": "public static browserUserInfo: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View information about users of the Web site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "cancelCheckout": {
+          "kind": "property",
+          "signature": "public static cancelCheckout: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Discard or check in a document which is checked out to another user."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "createAlerts": {
+          "kind": "property",
+          "signature": "public static createAlerts: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create e-mail alerts."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "createGroups": {
+          "kind": "property",
+          "signature": "public static createGroups: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create a group of users that can be used anywhere within the site collection."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "createSSCSite": {
+          "kind": "property",
+          "signature": "public static createSSCSite: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create a Web site using Self-Service Site Creation."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "deleteListItems": {
+          "kind": "property",
+          "signature": "public static deleteListItems: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Delete items from a list, documents from a document library, and Web discussion comments in documents."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "deleteVersions": {
+          "kind": "property",
+          "signature": "public static deleteVersions: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Delete past versions of a list item or document."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "editListItems": {
+          "kind": "property",
+          "signature": "public static editListItems: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Edit items in lists, edit documents in document libraries, edit Web discussion comments in documents, and customize web part Pages in document libraries."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "editMyUserInfo": {
+          "kind": "property",
+          "signature": "public static editMyUserInfo: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Allows a user to change his or her user information, such as adding a picture."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "emptyMask": {
+          "kind": "property",
+          "signature": "public static emptyMask: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Has no permissions on the Web site. Not available through the user interface."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "enumeratePermissions": {
+          "kind": "property",
+          "signature": "public static enumeratePermissions: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Enumerate permissions on the Web site, list, folder, document, or list item."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "fullMask": {
+          "kind": "property",
+          "signature": "public static fullMask: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Has all permissions on the Web site. Not available through the user interface."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "hasAllPermissions": {
+          "kind": "method",
+          "signature": "public hasAllPermissions(...requestedPerms: SPPermission[]): boolean;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": []
+          },
+          "parameters": {
+            "requestedPerms": {
+              "name": "requestedPerms",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "Any number of SPPermission objects to be compared against the original"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": true,
+              "type": "SPPermission[]"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Function for testing whether a given permission mask has all of the requested permissions."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "hasAnyPermissions": {
+          "kind": "method",
+          "signature": "public hasAnyPermissions(...requestedPerms: SPPermission[]): boolean;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": []
+          },
+          "parameters": {
+            "requestedPerms": {
+              "name": "requestedPerms",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "Any number of SPPermission objects to be compared against the original"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": true,
+              "type": "SPPermission[]"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Function for testing whether a given permission mask has any of the requested permissions."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "hasPermission": {
+          "kind": "method",
+          "signature": "public hasPermission(requestedPerm: SPPermission): boolean;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": []
+          },
+          "parameters": {
+            "requestedPerm": {
+              "name": "requestedPerm",
+              "description": [
+                {
+                  "kind": "textDocElement",
+                  "value": "The SPPermission object to be compared against the original"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SPPermission"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Function for testing whether a given permission mask has the requested permission."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "layoutsPage": {
+          "kind": "property",
+          "signature": "public static layoutsPage: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View the layouts page?"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manageAlerts": {
+          "kind": "property",
+          "signature": "public static manageAlerts: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Manage alerts for all users of the Web site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manageLists": {
+          "kind": "property",
+          "signature": "public static manageLists: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create and delete lists, add or remove columns in a list, and add or remove public views of a list."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "managePermissions": {
+          "kind": "property",
+          "signature": "public static managePermissions: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create and change permission levels on the Web site and assign permissions to users and groups."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "managePersonalViews": {
+          "kind": "property",
+          "signature": "public static managePersonalViews: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create, change, and delete personal views of lists."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manageSubwebs": {
+          "kind": "property",
+          "signature": "public static manageSubwebs: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Create subsites such as team sites, Meeting Workspace sites, and Document Workspace sites."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manageWeb": {
+          "kind": "property",
+          "signature": "public static manageWeb: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Grant the ability to perform all administration tasks for the Web site as well as manage content."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Activate, deactivate, or edit properties of Web site scoped Features through the object model or through the user interface (UI). When granted on the root Web site of a site collection, activate, deactivate, or edit properties of site collection scoped Features through the object model. To browse to the Site Collection Features page and activate or deactivate site collection scoped Features through the UI, you must be a site collection administrator."
+            }
+          ],
+          "isBeta": false
+        },
+        "open": {
+          "kind": "property",
+          "signature": "public static open: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Allow users to open a Web site, list, or folder to access items inside that container."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "openItems": {
+          "kind": "property",
+          "signature": "public static openItems: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View the source of documents with server-side file handlers."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "updatePersonalWebParts": {
+          "kind": "property",
+          "signature": "public static updatePersonalWebParts: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Update web parts to display personalized information."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "useClientIntegration": {
+          "kind": "property",
+          "signature": "public static useClientIntegration: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use features that launch client applications; otherwise, users must work on documents locally and upload changes."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "useRemoteAPIs": {
+          "kind": "property",
+          "signature": "public static useRemoteAPIs: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use SOAP, WebDAV, or Microsoft Office SharePoint Designer 2007 interfaces to access the Web site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "value": {
+          "kind": "property",
+          "signature": "public readonly value: IODataBasePermission;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IODataBasePermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the value of this SPPermission object"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "viewFormPages": {
+          "kind": "property",
+          "signature": "public static viewFormPages: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View forms, views, and application pages, and enumerate lists."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "viewListItems": {
+          "kind": "property",
+          "signature": "public static viewListItems: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View items in lists, documents in document libraries, and view Web discussion comments."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "viewPages": {
+          "kind": "property",
+          "signature": "public static viewPages: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View pages in a Web site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "viewUsageData": {
+          "kind": "property",
+          "signature": "public static viewUsageData: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View reports on Web site usage."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "viewVersions": {
+          "kind": "property",
+          "signature": "public static viewVersions: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": true,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "View past versions of a list item or document."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SPSite": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This class is primarily used with the PageContext class. It provides contextual information for the SharePoint site collection (\"site\") that hosts the page."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "absoluteUrl": {
+          "kind": "property",
+          "signature": "public readonly absoluteUrl: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the absolute URL for this SPSite."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"https://example.com/sites/PubSite\""
+            }
+          ],
+          "isBeta": false
+        },
+        "cdnPrefix": {
+          "kind": "property",
+          "signature": "public readonly cdnPrefix: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the prefix of the application's specified cdn or an empty string if there isn't one."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "classification": {
+          "kind": "property",
+          "signature": "public readonly classification: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the classification of the site."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "correlationId": {
+          "kind": "property",
+          "signature": "public readonly correlationId: Guid;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the correlation id to the current server request."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "group": {
+          "kind": "property",
+          "signature": "public readonly group: O365GroupAssociation | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "O365GroupAssociation | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Contextual information about the O365 Group associated with this site. If there is no O365Group associated with the current site, this property will be undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "id": {
+          "kind": "property",
+          "signature": "public readonly id: Guid;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The GUID that identifies the SPSite on the server."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isNoScriptEnabled": {
+          "kind": "property",
+          "signature": "public readonly isNoScriptEnabled: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns true if isNoScript has been enabled on the SPSite."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "recycleBinItemCount": {
+          "kind": "property",
+          "signature": "public readonly recycleBinItemCount: number;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The amount of items in the recyle bin."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serverRelativeUrl": {
+          "kind": "property",
+          "signature": "public readonly serverRelativeUrl: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the server-relative URL for this SPSite."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/sites/PubSite\""
+            }
+          ],
+          "isBeta": false
+        },
+        "serverRequestPath": {
+          "kind": "property",
+          "signature": "public readonly serverRequestPath: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns serverRelativeUrl of the original request."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/teams/SPClientTest/SitePages/Home.aspx\""
+            }
+          ],
+          "isBeta": false
+        },
+        "sitePagesEnabled": {
+          "kind": "property",
+          "signature": "public readonly sitePagesEnabled: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns true if SitePages are enabled on this SPSite."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SPUser": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This class is primarily used with the PageContext class. It provides contextual information for the SharePoint user that is accessing the page."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "displayName": {
+          "kind": "property",
+          "signature": "public readonly displayName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The display name for the current user."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"John Doe\""
+            }
+          ],
+          "isBeta": false
+        },
+        "email": {
+          "kind": "property",
+          "signature": "public readonly email: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The email address for the current user."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"example@contoso.com\""
+            }
+          ],
+          "isBeta": false
+        },
+        "isAnonymousGuestUser": {
+          "kind": "property",
+          "signature": "public readonly isAnonymousGuestUser: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns if the current user is an anonymous guest."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isExternalGuestUser": {
+          "kind": "property",
+          "signature": "public readonly isExternalGuestUser: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns true if the current user is an external guest."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "loginName": {
+          "kind": "property",
+          "signature": "public readonly loginName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The login name for current user."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"i:0#.w|domain\\user\""
+            }
+          ],
+          "isBeta": false
+        },
+        "preferUserTimeZone": {
+          "kind": "property",
+          "signature": "public readonly preferUserTimeZone: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This boolean represents if a the user or web's time zone settings should be used to display the current time."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "SPWeb": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "This class is primarily used with the PageContext class. It provides contextual information for the SharePoint site (\"web\") that hosts the page."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "absoluteUrl": {
+          "kind": "property",
+          "signature": "public readonly absoluteUrl: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the absolute URL for this SPWeb. Example: \"https://example.com/sites/PubSite/SubWeb\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "description": {
+          "kind": "property",
+          "signature": "public readonly description: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the description of the current SPWeb."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "id": {
+          "kind": "property",
+          "signature": "public readonly id: Guid;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The GUID that identifies the SPWeb on the server."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "isAppWeb": {
+          "kind": "property",
+          "signature": "public readonly isAppWeb: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns true if this SPWeb the container web for an SPApp."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "language": {
+          "kind": "property",
+          "signature": "public readonly language: number;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the locale identifier (LCID) for the default language of the website."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: 1033 represents the locale identifier for en-US."
+            }
+          ],
+          "isBeta": false
+        },
+        "logoUrl": {
+          "kind": "property",
+          "signature": "public readonly logoUrl: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the absolute URL of the website logo."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: https://example.com/sites/PubSite/SubWeb/logo.jpg"
+            }
+          ],
+          "isBeta": false
+        },
+        "permissions": {
+          "kind": "property",
+          "signature": "public readonly permissions: SPPermission;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPPermission",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Return the SPPermission object that represents the set of permissions that the current user has for interacting with the web."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serverRelativeUrl": {
+          "kind": "property",
+          "signature": "public readonly serverRelativeUrl: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the server-relative URL for this SPWeb."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"/sites/PubSite/SubWeb\""
+            }
+          ],
+          "isBeta": false
+        },
+        "templateName": {
+          "kind": "property",
+          "signature": "public readonly templateName: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the string representing the numeric identifier for the site definition or site template that was used to create the site."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Example: \"1\" represents the team site template when creating a new site on SharePoint."
+            }
+          ],
+          "isBeta": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "public readonly title: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Returns the title of the current SPWeb."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

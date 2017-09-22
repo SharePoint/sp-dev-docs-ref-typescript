@@ -1,0 +1,175 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-extension-base",
+  "summary": [
+    {
+      "kind": "textDocElement",
+      "value": "SharePoint Framework support for building client-side extensions."
+    }
+  ],
+  "remarks": [],
+  "exports": {
+    "BaseExtension": {
+      "kind": "class",
+      "extends": "BaseComponent",
+      "implements": "",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "The base class for all client-side extensions."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The constructor for this class is marked as internal; third party code should not inherit directly from this base class."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "context": {
+          "kind": "property",
+          "signature": "protected context: ExtensionContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ExtensionContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false
+        },
+        "onInit": {
+          "kind": "method",
+          "signature": "@virtual protected onInit(): Promise<void>;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<void>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "This event hook is called when the client-side extension is first activated on the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "properties": {
+          "kind": "property",
+          "signature": "protected readonly properties: TProperties;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "TProperties",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "Extension properties is a JavaScript object that are passed in by the application that initializes the extension."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "textDocElement",
+              "value": "Properties can be used in the extension code to define configurable behaviors. The application has control over what properties to provide to an instance of the extension, however the most common way would be to have it stored on the server as JSON and pass it as is to the extension on initialization."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "ExtensionContext": {
+      "kind": "class",
+      "extends": "BaseComponentContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "textDocElement",
+          "value": "The base class for context objects for client-side extensions."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "textDocElement",
+          "value": "The constructor for this class is marked as internal; third party code should not inherit directly from this base class."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "graphHttpClient": {
+          "kind": "property",
+          "signature": "public readonly graphHttpClient: GraphHttpClient;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "GraphHttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The instance of GraphHttpClient created for this instance of extension"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "httpClient": {
+          "kind": "property",
+          "signature": "public readonly httpClient: HttpClient;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The instance of HttpClient created for this instance of extension"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "spHttpClient": {
+          "kind": "property",
+          "signature": "public readonly spHttpClient: SPHttpClient;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPHttpClient",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "textDocElement",
+              "value": "The instance of SpHttpClient created for this instance of extension"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

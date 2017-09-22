@@ -1,0 +1,93 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.BaseListViewCommandSet
+    summary: >-
+      This is the base class that third parties should extend when implementing a client-side extension that provides a
+      command set for a SharePoint list view.
+    remarks: 'In the component manifest, the "extensionType" should be set to "ListViewCommandSet".'
+    name: BaseListViewCommandSet
+    fullName: sp-listview-extensibility.BaseListViewCommandSet
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - BaseExtension
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.BaseListViewCommandSet.context
+      - sp-listview-extensibility.BaseListViewCommandSet.onExecute
+      - sp-listview-extensibility.BaseListViewCommandSet.onListViewUpdated
+      - sp-listview-extensibility.BaseListViewCommandSet.tryGetCommand
+  - uid: sp-listview-extensibility.BaseListViewCommandSet.context
+    summary: Use the context object to access common services and state associated with the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    name: context
+    fullName: sp-listview-extensibility.BaseListViewCommandSet.context
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public context: ListViewCommandSetContext;'
+      return:
+        type:
+          - ListViewCommandSetContext
+  - uid: sp-listview-extensibility.BaseListViewCommandSet.onExecute
+    summary: 'This event occurs when the command is invoked, e.g. because the user clicked on the toolbar button or menu item.'
+    name: onExecute(event)
+    fullName: sp-listview-extensibility.BaseListViewCommandSet.onExecute
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual public onExecute(event: IListViewCommandSetExecuteEventParameters): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: event
+          description: ''
+          type:
+            - IListViewCommandSetExecuteEventParameters
+  - uid: sp-listview-extensibility.BaseListViewCommandSet.onListViewUpdated
+    summary: This event occurs whenever the ListView state changes.
+    remarks: >-
+      This event allows the implementor to tailor the appearance of the command. For example, to hide the command,
+      assign its property visible = false. To customize the title, modify the command property title.
+    name: onListViewUpdated(event)
+    fullName: sp-listview-extensibility.BaseListViewCommandSet.onListViewUpdated
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: event
+          description: ''
+          type:
+            - IListViewCommandSetListViewUpdatedParameters
+  - uid: sp-listview-extensibility.BaseListViewCommandSet.tryGetCommand
+    summary: Returns the command with the given id. Returns undefined if there is not command with the given id.
+    name: tryGetCommand(id)
+    fullName: sp-listview-extensibility.BaseListViewCommandSet.tryGetCommand
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public tryGetCommand(id: string): Command;'
+      return:
+        type:
+          - Command
+        description: ''
+      parameters:
+        - id: id
+          description: Id of the command
+          type:
+            - string

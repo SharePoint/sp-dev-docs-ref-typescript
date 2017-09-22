@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.IListViewCommandSetExecuteEventParameters
+    summary: 'Parameters for [BaseListViewCommandSet.onExecute](xref:sp-listview-extensibility.BaseListViewCommandSet.onExecute)'
+    name: IListViewCommandSetExecuteEventParameters
+    fullName: sp-listview-extensibility.IListViewCommandSetExecuteEventParameters
+    langs:
+      - typeScript
+    type: interface
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.IListViewCommandSetExecuteEventParameters.itemId
+      - sp-listview-extensibility.IListViewCommandSetExecuteEventParameters.selectedRows
+  - uid: sp-listview-extensibility.IListViewCommandSetExecuteEventParameters.itemId
+    summary: >-
+      The unique identifier for the command. This is specified as ICommandDefinition.commandId in the component
+      manifest.
+    name: itemId
+    fullName: sp-listview-extensibility.IListViewCommandSetExecuteEventParameters.itemId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'itemId: string;'
+      return:
+        type:
+          - string
+  - uid: sp-listview-extensibility.IListViewCommandSetExecuteEventParameters.selectedRows
+    summary: 'The currently selected ListView rows, at the time when the event occurred.'
+    name: selectedRows
+    fullName: sp-listview-extensibility.IListViewCommandSetExecuteEventParameters.selectedRows
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'selectedRows: ReadonlyArray<RowAccessor>;'
+      return:
+        type:
+          - ReadonlyArray<RowAccessor>

@@ -1,0 +1,117 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.HttpClient
+    fullName: sp-http.HttpClient
+    name: HttpClient
+    package: sp-http
+    summary: HttpClient implements a basic set of features for performing REST operations. The subclass SPHttpClient extends this basic functionality with SharePoint-specific enhancements.
+    source:
+      path: lib\services\advisorManagement\lib\operations\operations.js
+      startLine: 276
+      remote:
+        branch: jsdoc
+        path: lib\services\advisorManagement\lib\operations\operations.js
+        repo: 'https://github.com/Azure/azure-sdk-for-node.git'
+    type: class
+    langs:
+      - typeScript
+    children:
+      - sp-http.HttpClient.configurations
+      - sp-http.HttpClient.serviceKey
+      - sp-http.HttpClient.fetch(url,configuration,options)
+      - sp-http.HttpClient.get(url,configuration,options)
+      - sp-http.HttpClient.post(url,configuration,options)
+  - uid: sp-http.HttpClient.configurations
+    fullName: sp-http.HttpClient.configurations
+    name: configurations
+    summary: The service key for HttpClient.
+    type: property
+    syntax:
+      content: public configurations { get; }
+      return:
+        type:
+          - sp-core-library.ServiceKey
+        description: The standard predefined HttpClientConfiguration objects for use with the HttpClient class.
+  - uid: sp-http.HttpClient.serviceKey
+    fullName: sp-http.HttpClient.serviceKey
+    name: serviceKey
+    summary: The service key for HttpClient.
+    type: property
+    syntax:
+      content: public serviceKey { get; }
+      return:
+        type:
+          - sp-core-library.ServiceKey
+        description: '`true` if the handler can be reused; otherwise, `false`.  The default is `false`.'
+  - uid: sp-http.HttpClient.fetch(url,configuration,options)
+    fullName: sp-http.HttpClient.fetch(url,configuration, options)
+    name: fetch(url,configuration, options)
+    summary: 'Performs a REST service call. Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for HttpClient.fetch() are essentially the same as the [WHATWG API standard](https://fetch.spec.whatwg.org/)'
+    type: method
+    syntax:
+      content: 'public fetch(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions): Promise<HttpClientResponse>'
+      parameters:
+      - id: url
+        type:
+          - string
+        description: the URL to fetch
+      - id: configuration
+        type:
+          - sp-http.HttpClientConfiguration
+        description: determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations
+      - id: options
+        type:
+          - sp-http.IHttpClientOptions
+        description: additional options that affect the request
+      return:
+        type:
+          - Promise<HttpClientResponse>
+        description: a promise that will return the result
+  - uid: sp-http.HttpClient.get(url,configuration,options)
+    fullName: sp-http.HttpClient.get(url,configuration, options)
+    name: get(url,configuration, options)
+    summary: 'Calls fetch(), but sets the method to "GET".'
+    type: method
+    syntax:
+      content: 'public get(url: string, configuration: HttpClientConfiguration, options?: IHttpClientOptions): Promise<HttpClientResponse>'
+      parameters:
+      - id: url
+        type:
+          - string
+        description: the URL to fetch
+      - id: configuration
+        type:
+          - sp-http.HttpClientConfiguration
+        description: determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations
+      - id: options
+        type:
+          - sp-http.IHttpClientOptions
+        description: Optional. additional options that affect the request
+      return:
+        type:
+          - Promise<HttpClientResponse>
+        description: a promise that will return the result
+  - uid: sp-http.HttpClient.post(url,configuration,options)
+    fullName: sp-http.HttpClient.post(url,configuration, options)
+    name: post(url,configuration, options)
+    summary: 'Calls fetch(), but sets the method to "POST".'
+    type: method
+    syntax:
+      content: 'public post(url: string, configuration: HttpClientConfiguration, options?: IHttpClientOptions): Promise<HttpClientResponse>'
+      parameters:
+      - id: url
+        type:
+          - string
+        description: the URL to fetch
+      - id: configuration
+        type:
+          - sp-http.HttpClientConfiguration
+        description: determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations
+      - id: options
+        type:
+          - sp-http.IHttpClientOptions
+        description: Optional. additional options that affect the request
+      return:
+        type:
+          - Promise<HttpClientResponse>
+        description: a promise that will return the result

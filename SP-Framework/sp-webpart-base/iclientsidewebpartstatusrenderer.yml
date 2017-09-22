@@ -1,0 +1,101 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer
+    summary: >-
+      Interface to be implemented by a component that should display the loading indicator and error messages for a web
+      part.
+    name: IClientSideWebPartStatusRenderer
+    fullName: sp-webpart-base.IClientSideWebPartStatusRenderer
+    langs:
+      - typeScript
+    type: interface
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
+      - sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
+      - sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
+      - sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
+  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
+    summary: Clear the webpart error message.
+    name: clearError(domElement)
+    fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'clearError(domElement: HTMLElement): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: domElement
+          description: the web part container div.
+          type:
+            - HTMLElement
+  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
+    summary: Clear the loading indicator.
+    name: clearLoadingIndicator(domElement)
+    fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'clearLoadingIndicator(domElement: Element): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: domElement
+          description: the web part container div.
+          type:
+            - Element
+  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
+    summary: Display a loading spinner.
+    name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
+    fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'displayLoadingIndicator(domElement: Element, loadingMessage: string, timeout?: number): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: domElement
+          description: the webpart container div.
+          type:
+            - Element
+        - id: loadingMessage
+          description: the message to be displayed when the loading spinner id displayed.
+          type:
+            - string
+        - id: timeout
+          description: timeout to render the loading indicator. Default is 900ms.
+          type:
+            - number
+  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
+    summary: Render the provided error message in the webpart container div.
+    name: 'renderError(domElement, error)'
+    fullName: sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'renderError(domElement: HTMLElement, error: Error | string): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: domElement
+          description: the web part container div.
+          type:
+            - HTMLElement
+        - id: error
+          description: the error message.
+          type:
+            - Error | string

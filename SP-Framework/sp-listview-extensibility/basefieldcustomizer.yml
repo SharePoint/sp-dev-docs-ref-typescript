@@ -1,0 +1,70 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.BaseFieldCustomizer
+    summary: >-
+      This is the base class that third parties should extend when implementing a client-side extension that customizes
+      the appearance of fields in a SharePoint ListView. 
+
+       In the component manifest, the "extensionType" should be set to "FieldCustomizer".
+    name: BaseFieldCustomizer
+    fullName: sp-listview-extensibility.BaseFieldCustomizer
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - BaseExtension
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.BaseFieldCustomizer.context
+      - sp-listview-extensibility.BaseFieldCustomizer.onDisposeCell
+      - sp-listview-extensibility.BaseFieldCustomizer.onRenderCell
+  - uid: sp-listview-extensibility.BaseFieldCustomizer.context
+    summary: Use the context object to access common services and state associated with the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    name: context
+    fullName: sp-listview-extensibility.BaseFieldCustomizer.context
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected context: FieldCustomizerContext;'
+      return:
+        type:
+          - FieldCustomizerContext
+  - uid: sp-listview-extensibility.BaseFieldCustomizer.onDisposeCell
+    name: onDisposeCell(event)
+    fullName: sp-listview-extensibility.BaseFieldCustomizer.onDisposeCell
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual public onDisposeCell(event: IFieldCustomizerCellEventParameters): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: event
+          description: ''
+          type:
+            - IFieldCustomizerCellEventParameters
+  - uid: sp-listview-extensibility.BaseFieldCustomizer.onRenderCell
+    name: onRenderCell(event)
+    fullName: sp-listview-extensibility.BaseFieldCustomizer.onRenderCell
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual public onRenderCell(event: IFieldCustomizerCellEventParameters): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: event
+          description: ''
+          type:
+            - IFieldCustomizerCellEventParameters

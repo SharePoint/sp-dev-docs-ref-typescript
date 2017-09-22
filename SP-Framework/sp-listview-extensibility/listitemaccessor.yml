@@ -1,0 +1,78 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.ListItemAccessor
+    summary: >-
+      When a field customizer extension is rendering a field, the ListItemAccessor provides access to the associated
+      SharePoint list item.
+    remarks: >-
+      ListItemAccessor allows a field customizer extension to determine which fields are available in the editor and
+      retrieve the current values for those fields. In the future, it may also support validation and editing
+      operations. 
+
+       When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether the associated table row is selected or not.
+    name: ListItemAccessor
+    fullName: sp-listview-extensibility.ListItemAccessor
+    langs:
+      - typeScript
+    type: class
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.ListItemAccessor.fields
+      - sp-listview-extensibility.ListItemAccessor.getValue
+      - sp-listview-extensibility.ListItemAccessor.getValueByName
+  - uid: sp-listview-extensibility.ListItemAccessor.fields
+    summary: The SharePoint fields that are currently available in the editor for this list item.
+    remarks: >-
+      The set of available fields depends on the editing context. For example, if a list view column is hidden, the
+      corresponding field definition may not be loaded. Field customizers should not assume that a given field will be
+      available, even if it is defined in the content type.
+    name: fields
+    fullName: sp-listview-extensibility.ListItemAccessor.fields
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly fields: ReadonlyArray<SPField>;'
+      return:
+        type:
+          - ReadonlyArray<SPField>
+  - uid: sp-listview-extensibility.ListItemAccessor.getValue
+    summary: >-
+      Retrieves the current data value for the specified field. The value will be a primitive JavaScript object such as
+      a string, number, etc.
+    name: getValue(field)
+    fullName: sp-listview-extensibility.ListItemAccessor.getValue
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public abstract getValue(field: SPField): any;'
+      return:
+        type:
+          - any
+        description: ''
+      parameters:
+        - id: field
+          description: ''
+          type:
+            - SPField
+  - uid: sp-listview-extensibility.ListItemAccessor.getValueByName
+    summary: >-
+      Retrieves the current data value for the field with the specified internal name. The value will be a primitive
+      JavaScript object such as a string, number, etc.
+    name: getValueByName(internalName)
+    fullName: sp-listview-extensibility.ListItemAccessor.getValueByName
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public abstract getValueByName(internalName: string): any;'
+      return:
+        type:
+          - any
+        description: ''
+      parameters:
+        - id: internalName
+          description: ''
+          type:
+            - string
