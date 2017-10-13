@@ -3,6 +3,11 @@
     "need_generate_intellisense": false,
     "docsets_to_publish": [
         {
+            "customized_tasks": {
+                "docset_prebuild": [
+                    "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
+                ]
+            },
             "docset_name": "SP-Framework",
             "build_source_folder": "SP-Framework",
             "build_output_subfolder": "SP-Framework",
@@ -21,17 +26,23 @@
             ]
         }
     ],
+    "JoinTOCPlugin": [
+        {
+            "TopLevelTOC": "SP-Framework/spfx-toc/toc.yml",
+            "ConceptualTOCUrl": "/sharepoint/dev/toc.json"
+        }
+    ],
     "notification_subscribers": [],
     "branches_to_filter": [],
     "skip_source_output_uploading": false,
     "need_preview_pull_request": false,
     "dependent_repositories": [
-      {
-        "path_to_root": "_themes",
-        "url": "https://github.com/Microsoft/templates.docs.msft",
-        "branch": "develop",
-        "branch_mapping": {}
-      }
+        {
+            "path_to_root": "_themes",
+            "url": "https://github.com/Microsoft/templates.docs.msft",
+            "branch": "develop",
+            "branch_mapping": {}
+        }
     ],
     "dependent_packages": [
         {
@@ -40,6 +51,13 @@
             "path_to_root": "_dependentPackages/uref",
             "target_framework": "net45",
             "version": "latest"
+        },
+        {
+            "path_to_root": "_dependentPackages/CommonPlugins",
+            "target_framework": "net45",
+            "version": "latest",
+            "id": "Microsoft.OpenPublishing.CommonPlugins",
+            "nuget_feed": "https://www.myget.org/F/op/api/v2"
         }
     ],
     "branch_target_mapping": {},
