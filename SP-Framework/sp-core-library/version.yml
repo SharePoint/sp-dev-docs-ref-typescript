@@ -5,9 +5,10 @@ items:
     remarks: >-
       This class represents versions that follow the string format of MAJOR.MINOR\[.PATCH\[.REVISION\]\] where the
       MAJOR, MINOR, PATCH and REVISION parts are integers. PATCH and REVISION are optional. Leading zero digits are
-      allowed, but they are discarded. Missing parts are treated as zeroes for comparisons. 
+      allowed, but they are discarded. Missing parts are treated as zeroes for comparisons.
 
-       Examples: 1.0, 1.0.0, 1.0.0.0, 1.01, 01.02.03, 001.002.003.004
+
+      Examples: 1.0, 1.0.0, 1.0.0.0, 1.01, 01.02.03, 001.002.003.004
     name: Version
     fullName: sp-core-library.Version
     langs:
@@ -40,8 +41,8 @@ items:
         type:
           - number
         description: >-
-          -1 if the first input is smaller than the second input; 0 if the first input is equal to the second input; 1
-          if the first input is larger than the second input.
+          -1 if the first input is less than the second input; 0 if the first input is equal to the second input; 1 if
+          the first input is greater than the second input.
       parameters:
         - id: v1
           description: The first version class for comparison
@@ -53,10 +54,12 @@ items:
             - Version
   - uid: sp-core-library.Version.equals
     summary: Tests whether this version is equal to the input parameter.
-    remarks: |-
-      Examples: 
+    remarks: >-
+      Examples:
 
-       1.0.0 equals 1.0.0 -&gt; true; 2.0.1 equals 2.0.0 -> false; 3.0 equals 3.0.0 -> true; 04.01 equals 4.1 -> true
+
+      1.0.0 equals 1.0.0 -&gt; true; 2.0.1 equals 2.0.0 -&gt; false; 3.0 equals 3.0.0 -&gt; true; 04.01 equals 4.1 -&gt;
+      true
     name: equals(compareWith)
     fullName: sp-core-library.Version.equals
     langs:
@@ -76,9 +79,9 @@ items:
   - uid: sp-core-library.Version.greaterThan
     summary: Tests whether this version is greater than (i.e. newer than) the input parameter.
     remarks: |-
-      Examples: 
+      Examples:
 
-       1.0.0 greaterThan 0.0.9 -&gt; true; 2.0 greaterThan 2.0.0 -> false; 3.0.1 greaterThan 3.0 -> true
+      1.0.0 greaterThan 0.0.9 -&gt; true; 2.0 greaterThan 2.0.0 -&gt; false; 3.0.1 greaterThan 3.0 -&gt; true
     name: greaterThan(compareWith)
     fullName: sp-core-library.Version.greaterThan
     langs:
@@ -96,7 +99,7 @@ items:
           type:
             - Version
   - uid: sp-core-library.Version.isValid
-    summary: Test whether a string is valid version specifier.
+    summary: Test whether a string is a valid version specifier.
     name: isValid(versionString)
     fullName: sp-core-library.Version.isValid
     langs:
@@ -107,7 +110,7 @@ items:
       return:
         type:
           - boolean
-        description: true if the version was parsed successfully
+        description: true if the versionString is a valid version specifier
       parameters:
         - id: versionString
           description: The version string
@@ -115,10 +118,12 @@ items:
             - string | undefined | null
   - uid: sp-core-library.Version.lessThan
     summary: Tests whether this version is less than (i.e. older than) the input parameter.
-    remarks: |-
-      Examples: 
+    remarks: >-
+      Examples:
 
-       0.9.9 lessThan 1.0.0 -&gt; true; 2.0 lessThan 2.0.0 -> false; 3.0 lessThan 3.0.1 -> true; 04.01 lessThan 4.1 -> false
+
+      0.9.9 lessThan 1.0.0 -&gt; true; 2.0 lessThan 2.0.0 -&gt; false; 3.0 lessThan 3.0.1 -&gt; true; 04.01 lessThan 4.1
+      -&gt; false
     name: lessThan(compareWith)
     fullName: sp-core-library.Version.lessThan
     langs:
@@ -217,11 +222,14 @@ items:
       compatible.
     remarks: >-
       In order to satisfy the compatibility requirements, this object must have the same major version number as the
-      input parameter, and it must NOT be older than the input parameter. 
+      input parameter, and it must NOT be older than the input parameter.
 
-       Examples: 
 
-       1.0.0 satisfies 1.0.0 -&gt; true; 1.1.0 satisfies 1.0.0 -> true; 2.0.0 satisfies 1.0.0 -> false; 1.0.0 satisfies 1.1.0 -> false
+      Examples:
+
+
+      1.0.0 satisfies 1.0.0 -&gt; true; 1.1.0 satisfies 1.0.0 -&gt; true; 2.0.0 satisfies 1.0.0 -&gt; false; 1.0.0
+      satisfies 1.1.0 -&gt; false
     name: satisfies(compareWith)
     fullName: sp-core-library.Version.satisfies
     langs:
@@ -240,8 +248,8 @@ items:
             - Version
   - uid: sp-core-library.Version.tryParse
     summary: >-
-      Attempts to construct a new Version instance using the version string, but returns undefined if the string cannot
-      be parsed.
+      Attempts to parse the input string to construct a new Version object. If the string cannot be parsed, then
+      undefined is returned.
     name: tryParse(versionString)
     fullName: sp-core-library.Version.tryParse
     langs:
@@ -252,7 +260,7 @@ items:
       return:
         type:
           - Version | undefined
-        description: 'If valid, a new Version instace. Otherwise, undefined.'
+        description: 'The Version object, or undefined if the string could not be parsed.'
       parameters:
         - id: versionString
           description: A version string

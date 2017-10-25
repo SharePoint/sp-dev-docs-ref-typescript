@@ -5,11 +5,18 @@ items:
       When a field customizer extension is rendering a field, the ListItemAccessor provides access to the associated
       SharePoint list item.
     remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      ListItemAccessor class or instantiate it directly.
+
+
       ListItemAccessor allows a field customizer extension to determine which fields are available in the editor and
       retrieve the current values for those fields. In the future, it may also support validation and editing
-      operations. 
+      operations.
 
-       When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether the associated table row is selected or not.
+
+      When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the
+      ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether
+      the associated table row is selected or not.
     name: ListItemAccessor
     fullName: sp-listview-extensibility.ListItemAccessor
     langs:

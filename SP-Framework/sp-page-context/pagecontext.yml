@@ -70,9 +70,12 @@ items:
       are similar to the \_spPageContextInfo window variable from classic pages. The contents of this variable may
       change in future releases of SharePoint. For this reason, new projects are encouraged to use the SharePoint
       Framework TypeScript APIs instead, since they are fully documented and provide reliable backwards compatibility
-      guarantees. 
+      guarantees.
 
-       NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript API, please file an issue on GitHub. The intention is that no modern application should need to rely on the legacyPageContext object.
+
+      NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript
+      API, please file an issue on GitHub. The intention is that no modern application should need to rely on the
+      legacyPageContext object.
     name: legacyPageContext
     fullName: sp-page-context.PageContext.legacyPageContext
     langs:
@@ -119,7 +122,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static serviceKey: ServiceKey<PageContext>;'
+      content: 'public static readonly serviceKey: ServiceKey<PageContext>;'
       return:
         type:
           - ServiceKey<PageContext>

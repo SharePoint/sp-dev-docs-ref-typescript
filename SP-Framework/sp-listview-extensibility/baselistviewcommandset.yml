@@ -4,7 +4,12 @@ items:
     summary: >-
       This is the base class that third parties should extend when implementing a client-side extension that provides a
       command set for a SharePoint list view.
-    remarks: 'In the component manifest, the "extensionType" should be set to "ListViewCommandSet".'
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      BaseListViewCommandSet class or instantiate it directly.
+
+
+      In the component manifest, the "extensionType" should be set to "ListViewCommandSet".
     name: BaseListViewCommandSet
     fullName: sp-listview-extensibility.BaseListViewCommandSet
     langs:
@@ -30,7 +35,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public context: ListViewCommandSetContext;'
+      content: 'public readonly context: ListViewCommandSetContext;'
       return:
         type:
           - ListViewCommandSetContext

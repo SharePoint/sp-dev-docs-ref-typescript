@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.Session
-    summary: Tracks the application's browser session and active page.
+    summary: Provides access to the application's browser session and active page.
     name: Session
     fullName: sp-core-library.Session
     langs:
@@ -34,11 +34,17 @@ items:
     remarks: >-
       A unique identifier used to correlate logging and other diagnostic information. Whereas the
       [Session.applicationId](xref:sp-core-library.Session.applicationId) tracks the entire lifetime of the client-side
-      application instance, the pageId tracks an individual "page" that is rendered. 
+      application instance, the pageId tracks an individual "page" that is rendered.
 
-       For example, suppose that the application initially loads PageA, then the user does in-place navigation (via the history.pushState() API) to PageB, then navigates back to PageA, and finally they close the browser tab. During this sequence, the applicationId will remain the same, however the pageId will change on each navigation. The 3 different pageId values are used by the diagnostics e.g. to track success/failure statistics for PageA independently of PageB. 
 
-       The concept of a page is subjective and defined by the router for a particular application.
+      For example, suppose that the application initially loads PageA, then the user does in-place navigation (via the
+      history.pushState() API) to PageB, then navigates back to PageA, and finally they close the browser tab. During
+      this sequence, the applicationId will remain the same, however the pageId will change on each navigation. The 3
+      different pageId values are used by the diagnostics e.g. to track success/failure statistics for PageA
+      independently of PageB.
+
+
+      The concept of a page is subjective and defined by the router for a particular application.
     name: pageId
     fullName: sp-core-library.Session.pageId
     langs:

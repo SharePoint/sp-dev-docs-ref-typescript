@@ -6,7 +6,10 @@ items:
       The input string is normalized and validated, which provides important guarantees that simplify other code that
       works with the GUID. This class also provides basic support for generating a pseudo-random GUID; however, be aware
       that the uniqueness depends on the browser's Math.random() function and may be not be suitable for some
-      applications. see [https://www.ietf.org/rfc/rfc4122.txt](https://www.ietf.org/rfc/rfc4122.txt)
+      applications.
+
+
+      See [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) for more information.
     name: Guid
     fullName: sp-core-library.Guid
     langs:
@@ -28,7 +31,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static empty: Guid;'
+      content: 'public static readonly empty: Guid;'
       return:
         type:
           - Guid

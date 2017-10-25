@@ -62,7 +62,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static configurations: ISPHttpClientConfigurations;'
+      content: 'public static readonly configurations: ISPHttpClientConfigurations;'
       return:
         type:
           - ISPHttpClientConfigurations
@@ -70,17 +70,26 @@ items:
     summary: Perform a REST service call.
     remarks: >-
       Generally, the parameters and semantics for SPHttpClient.fetch() are essentially the same as the WHATWG API
-      standard that is documented here: https://fetch.spec.whatwg.org/ 
+      standard that is documented here: https://fetch.spec.whatwg.org/
 
-       The SPHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead): 
 
-       - Default "Accept" and "Content-Type" headers are added if not explicitly specified. 
+      The SPHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA
+      API's (which can be avoided by using HttpClient instead):
 
-       - For write operations, an "X-RequestDigest" header is automatically added 
 
-       - The request digest token is automatically fetched and stored in a cache, with support for preloading 
+      - Default "Accept" and "Content-Type" headers are added if not explicitly specified.
 
-       For a write operation, SPHttpClient will automatically add the "X-RequestDigest" header, which may need to be obtained by issuing a seperate request such as "https://example.com/sites/sample/\_api/contextinfo". Typically the appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as "\_api" in the original URL passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly.
+
+      - For write operations, an "X-RequestDigest" header is automatically added
+
+
+      - The request digest token is automatically fetched and stored in a cache, with support for preloading
+
+
+      For a write operation, SPHttpClient will automatically add the "X-RequestDigest" header, which may need to be
+      obtained by issuing a seperate request such as "https://example.com/sites/sample/\_api/contextinfo". Typically the
+      appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as "\_api" in the original URL
+      passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly.
     name: 'fetch(url, configuration, options)'
     fullName: sp-http.SPHttpClient.fetch
     langs:
@@ -136,13 +145,19 @@ items:
           type:
             - ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.getWebUrlFromRequestUrl
-    summary: Guess the base URL for authentication.
+    summary: Use a heuristic to infer the base URL for authentication.
     remarks: >-
-      This uses a heuristic to guess the SPWeb URL associated with the provided REST URL. This is necessary for
-      operations such as the X-RequestDigest and ODATA batching, which require POSTing to a separate REST endpoint in
-      order to complete a request. 
+      Attempts to infer the SPWeb URL associated with the provided REST URL, by looking for common SharePoint path
+      components such as "\_api", "\_layouts", or "\_vit\_bin". This is necessary for operations such as the
+      X-RequestDigest and ODATA batching, which require POSTing to a separate REST endpoint in order to complete a
+      request.
 
-       For example, if the requestUrl is "/sites/site/web/\_api/service", the returned URL would be "/sites/site/web". Or if the requestUrl is "http://example.com/\_layouts/service", the returned URL would be "http://example.com".
+
+      For example, if the requestUrl is "/sites/site/web/\_api/service", the returned URL would be "/sites/site/web". Or
+      if the requestUrl is "http://example.com/\_layouts/service", the returned URL would be "http://example.com".
+
+
+      If the URL cannot be determined, an exception is thrown.
     name: getWebUrlFromRequestUrl(requestUrl)
     fullName: sp-http.SPHttpClient.getWebUrlFromRequestUrl
     langs:
@@ -195,7 +210,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static serviceKey: ServiceKey<SPHttpClient>;'
+      content: 'public static readonly serviceKey: ServiceKey<SPHttpClient>;'
       return:
         type:
           - ServiceKey<SPHttpClient>

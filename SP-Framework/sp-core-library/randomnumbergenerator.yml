@@ -1,7 +1,9 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.RandomNumberGenerator
-    summary: This is the default implementation of IRandomNumberGenerator that simply calls Math.random().
+    summary: >-
+      This is the default implementation of [IRandomNumberGenerator](xref:sp-core-library.IRandomNumberGenerator) that
+      simply calls Math.random().
     name: RandomNumberGenerator
     fullName: sp-core-library.RandomNumberGenerator
     langs:
@@ -29,6 +31,7 @@ items:
           type:
             - ServiceScope
   - uid: sp-core-library.RandomNumberGenerator.generate
+    summary: 'Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().'
     name: generate()
     fullName: sp-core-library.RandomNumberGenerator.generate
     langs:
@@ -48,7 +51,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static serviceKey: ServiceKey<IRandomNumberGenerator>;'
+      content: 'public static readonly serviceKey: ServiceKey<IRandomNumberGenerator>;'
       return:
         type:
           - ServiceKey<IRandomNumberGenerator>

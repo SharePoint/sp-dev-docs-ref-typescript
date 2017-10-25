@@ -38,7 +38,7 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.deferredValidationTime
-    summary: Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds.
+    summary: Text field will start to validate after users stop typing for \`deferredValidationTime\` milliseconds.
     remarks: The default value is 200.
     name: deferredValidationTime
     fullName: sp-webpart-base.IPropertyPaneTextFieldProps.deferredValidationTime
@@ -78,9 +78,10 @@ items:
     summary: 'If set, this will be displayed as an error message.'
     remarks: >-
       When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the
-      error message. 
+      error message.
 
-       So, make sure to set this only if you want to see an error message displayed for the text field.
+
+      So, make sure to set this only if you want to see an error message displayed for the text field.
     name: errorMessage
     fullName: sp-webpart-base.IPropertyPaneTextFieldProps.errorMessage
     langs:
@@ -132,17 +133,17 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.onGetErrorMessage
     summary: The method is used to get the validation error message and determine whether the input value is valid or not.
     remarks: |-
-      When it returns string: 
+      When it returns string:
 
-       - If valid, it returns empty string. 
+      - If valid, it returns empty string.
 
-       - If invalid, it returns the error message string and an error message is displayed below the text field. 
+      - If invalid, it returns the error message string and an error message is displayed below the text field.
 
-       When it returns Promise&lt;string&gt;: 
+      When it returns Promise&lt;string&gt;:
 
-       - The resolved value is display as error message. 
+      - The resolved value is display as error message.
 
-       - The rejected, the value is thrown away.
+      - The rejected, the value is thrown away.
     name: onGetErrorMessage
     fullName: sp-webpart-base.IPropertyPaneTextFieldProps.onGetErrorMessage
     langs:

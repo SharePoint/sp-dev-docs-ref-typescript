@@ -4,7 +4,9 @@ items:
     summary: >-
       The client-side equivalent for SharePoint SPField class. Used in Fields property of SPList and SPListItem classes.
       A field represents the data model for a column in SharePoint list view.
-    isPreview: true
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the SPField
+      class or instantiate it directly.
     name: SPField
     fullName: sp-page-context.SPField
     langs:
@@ -21,7 +23,6 @@ items:
       - sp-page-context.SPField.isRequired
   - uid: sp-page-context.SPField.clientSideComponentId
     summary: The unique identifier of the client-side component associated with the field.
-    isPreview: true
     name: clientSideComponentId
     fullName: sp-page-context.SPField.clientSideComponentId
     langs:
@@ -37,7 +38,6 @@ items:
       This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string
       must contain a JSON object with custom initialization properties whose format and meaning are defined by the
       client-side component.
-    isPreview: true
     name: clientSideComponentProperties
     fullName: sp-page-context.SPField.clientSideComponentProperties
     langs:
@@ -50,7 +50,6 @@ items:
           - string
   - uid: sp-page-context.SPField.displayName
     summary: The display name of the field. This name is shown as column name in UI.
-    isPreview: true
     name: displayName
     fullName: sp-page-context.SPField.displayName
     langs:
@@ -63,7 +62,6 @@ items:
           - string
   - uid: sp-page-context.SPField.fieldType
     summary: The type of the field represented as a string
-    isPreview: true
     name: fieldType
     fullName: sp-page-context.SPField.fieldType
     langs:
@@ -76,7 +74,6 @@ items:
           - string
   - uid: sp-page-context.SPField.id
     summary: The GUID identifier for this field.
-    isPreview: true
     name: id
     fullName: sp-page-context.SPField.id
     langs:
@@ -89,7 +86,6 @@ items:
           - Guid
   - uid: sp-page-context.SPField.internalName
     summary: The internal name of the field. This name is usually used to find the field.
-    isPreview: true
     name: internalName
     fullName: sp-page-context.SPField.internalName
     langs:
@@ -102,7 +98,6 @@ items:
           - string
   - uid: sp-page-context.SPField.isRequired
     summary: Whether the field is required for each list item in the list
-    isPreview: true
     name: isRequired
     fullName: sp-page-context.SPField.isRequired
     langs:

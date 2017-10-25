@@ -2,6 +2,9 @@
 items:
   - uid: sp-listview-extensibility.ListViewCommandSetContext
     summary: This object provides contextual information for BaseListViewCommandSet.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      ListViewCommandSetContext class or instantiate it directly.
     name: ListViewCommandSetContext
     fullName: sp-listview-extensibility.ListViewCommandSetContext
     langs:
@@ -33,7 +36,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public manifest: ICommandSetExtensionManifest;'
+      content: 'public readonly manifest: ICommandSetExtensionManifest;'
       return:
         type:
           - ICommandSetExtensionManifest

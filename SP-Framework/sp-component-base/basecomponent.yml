@@ -1,11 +1,10 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-component-base.BaseComponent
-    summary: 'The base class for client-side components such as BaseClientSideWebPart, BaseExtension, etc.'
+    summary: The base class for client-side components such as BaseClientSideWebPart or BaseExtension.
     remarks: >-
-      The constructor for this class is marked as internal; third party code should not inherit directly from this base
-      class.
-    isPreview: true
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      BaseComponent class or instantiate it directly.
     name: BaseComponent
     fullName: sp-component-base.BaseComponent
     langs:
@@ -28,7 +27,6 @@ items:
       Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which
       may include additional metadata about the component. The manifest is uniquely identified using a text string
       containing a lower case GUID value.
-    isPreview: true
     name: componentId
     fullName: sp-component-base.BaseComponent.componentId
     langs:
@@ -45,7 +43,6 @@ items:
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
       the constructor), but child classes should redeclare it as readonly.
-    isPreview: true
     name: context
     fullName: sp-component-base.BaseComponent.context
     langs:
@@ -59,10 +56,9 @@ items:
   - uid: sp-component-base.BaseComponent.dispose
     summary: Disposes the component.
     remarks: >-
-      Third party code generally does not need to call this method; it will be invoked automatically when the lifecycle
-      ends for a web part or extension. To perform custom cleanup when your component is disposed, override the
+      Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
+      for a web part or extension. To perform custom cleanup when your component is disposed, override the
       [BaseComponent.onDispose](xref:sp-component-base.BaseComponent.onDispose) method.
-    isPreview: true
     name: dispose()
     fullName: sp-component-base.BaseComponent.dispose
     langs:
@@ -77,10 +73,9 @@ items:
   - uid: sp-component-base.BaseComponent.instanceId
     summary: A unique identifier for the instance of the component.
     remarks: >-
-      A given component implementation can be loaded multiple times on the page. For example, if the component is a
-      charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId
-      uniquely identifies each of these instances.
-    isPreview: true
+      A component implementation can be loaded multiple times on the page. For example, if the component is a charting
+      web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely
+      identifies each of these instances.
     name: instanceId
     fullName: sp-component-base.BaseComponent.instanceId
     langs:
@@ -93,7 +88,6 @@ items:
           - string
   - uid: sp-component-base.BaseComponent.isDisposed
     summary: Returns true if the component has been already disposed.
-    isPreview: true
     name: isDisposed
     fullName: sp-component-base.BaseComponent.isDisposed
     langs:
@@ -106,8 +100,7 @@ items:
           - boolean
   - uid: sp-component-base.BaseComponent.manifest
     summary: Provides access to the manifest for the client-side component.
-    remarks: Child classes may override this with more specialized manifest types.
-    isPreview: true
+    remarks: Child classes can override this with more specialized manifest types.
     name: manifest
     fullName: sp-component-base.BaseComponent.manifest
     langs:
@@ -120,9 +113,8 @@ items:
           - IClientSideComponentManifest
   - uid: sp-component-base.BaseComponent.onDispose
     summary: >-
-      This event hook is called at the end of the component's lifecycle. It provides an opportunity to release any
+      This event method is called at the end of the component's lifecycle. It provides an opportunity to release any
       associated resources, cancel any outstanding requests, etc.
-    isPreview: true
     name: onDispose()
     fullName: sp-component-base.BaseComponent.onDispose
     langs:

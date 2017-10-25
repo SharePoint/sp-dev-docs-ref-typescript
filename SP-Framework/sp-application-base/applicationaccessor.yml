@@ -1,15 +1,19 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-application-base.ApplicationAccessor
-    summary: Provides access to the client-side application that is currently executing.
+    summary: Provides access to the client-side application that is currently running.
     remarks: >-
       The client-side application determines the user experience for an entire web page. (It is a client-side component
-      with a manifest; however, the SharePoint Framework does not yet enable third parties to create their own
-      applications.) Within a web page, exactly one client-side application may be executing at a time. Certain in-place
-      navigation transitions may cause the application to be unloaded and replaced a different application. 
+      with a manifest; however, the SharePoint Framework does not enable third parties to create their own client-side
+      applications at this time.) Within a web page, at most one client-side application will be running at a time.
+      Certain in-place navigation transitions can cause the application to be unloaded and replaced by a different
+      application.
 
-       The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently executing application. It acts as a proxy for the real application object (i.e. BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications.
-    isPreview: true
+
+      The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with
+      the currently running application. It acts as a proxy for the real application object (the BaseApplication
+      subclass), to ensure that extensibility components only rely on interactions that would be portable across all
+      applications.
     name: ApplicationAccessor
     fullName: sp-application-base.ApplicationAccessor
     langs:
@@ -23,7 +27,8 @@ items:
     summary: 'Constructs a new instance of the [ApplicationAccessor](xref:sp-application-base.ApplicationAccessor) class.'
     remarks: >-
       Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component
-      context, e.g. [BaseApplicationCustomizer.context](xref:sp-application-base.BaseApplicationCustomizer.context) .
+      context, for example
+      [BaseApplicationCustomizer.context](xref:sp-application-base.BaseApplicationCustomizer.context)<!-- -->.
     name: constructor(serviceScope)
     fullName: sp-application-base.ApplicationAccessor.constructor
     langs:
@@ -38,8 +43,9 @@ items:
             - ServiceScope
   - uid: sp-application-base.ApplicationAccessor.navigatedEvent
     summary: An event that is fired when the application's top-level page context navigates to a new page.
-    remarks: 'This event fires after the top-level sp-page-context:PageContext has navigated to a new page.'
-    isPreview: true
+    remarks: >-
+      This event fires after the top-level [@microsoft/sp-page-context:PageContext](xref:sp-page-context.PageContext)
+      has navigated to a new page.
     name: navigatedEvent
     fullName: sp-application-base.ApplicationAccessor.navigatedEvent
     langs:

@@ -1,7 +1,9 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-core-library.TimeProvider
-    summary: This is the default implementation of ITimeProvider that simply calls the real browser APIs.
+    summary: >-
+      This is the default implementation of [ITimeProvider](xref:sp-core-library.ITimeProvider) that simply calls the
+      real browser APIs.
     name: TimeProvider
     fullName: sp-core-library.TimeProvider
     langs:
@@ -30,7 +32,7 @@ items:
           type:
             - ServiceScope
   - uid: sp-core-library.TimeProvider.getDate
-    summary: Returns the current date/time.
+    summary: 'Returns the current date/time, similar to the Date class constructor.'
     name: getDate()
     fullName: sp-core-library.TimeProvider.getDate
     langs:
@@ -57,14 +59,13 @@ items:
         description: ''
   - uid: sp-core-library.TimeProvider.serviceKey
     summary: The service key for ITimeProvider.
-    isPreview: true
     name: serviceKey
     fullName: sp-core-library.TimeProvider.serviceKey
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'public static serviceKey: ServiceKey<ITimeProvider>;'
+      content: 'public static readonly serviceKey: ServiceKey<ITimeProvider>;'
       return:
         type:
           - ServiceKey<ITimeProvider>

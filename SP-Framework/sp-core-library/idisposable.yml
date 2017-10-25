@@ -2,8 +2,7 @@
 items:
   - uid: sp-core-library.IDisposable
     summary: Implemented by an object that supports a disposal lifecycle.
-    remarks: The dispose event allows an object to free an resources that it allocated before its lifecycle ends.
-    isPreview: true
+    remarks: The dispose event allows an object to free any resources that it allocated before its lifecycle ends.
     name: IDisposable
     fullName: sp-core-library.IDisposable
     langs:
@@ -14,10 +13,8 @@ items:
       - sp-core-library.IDisposable.dispose
       - sp-core-library.IDisposable.isDisposed
   - uid: sp-core-library.IDisposable.dispose
-    summary: >-
-      This method is called to dispose the object. After the object has been disposed, it should not be interacted with
-      any more.
-    isPreview: true
+    summary: This method is called to permanently dispose the object.
+    remarks: 'After the object has been disposed, do not call its methods or access its properties.'
     name: dispose()
     fullName: sp-core-library.IDisposable.dispose
     langs:
@@ -33,7 +30,7 @@ items:
     summary: >-
       Returns true if the dispose() method has been called. Once an object is disposed, it remains in this state
       permanently.
-    isPreview: true
+    remarks: 'After the object has been disposed, do not call its methods or access its properties.'
     name: isDisposed
     fullName: sp-core-library.IDisposable.isDisposed
     langs:

@@ -18,7 +18,7 @@ items:
       - sp-core-library.EnvironmentType.Test
   - uid: sp-core-library.EnvironmentType.ClassicSharePoint
     summary: >-
-      Indicates that the framework was loaded from a classic server-rendered SharePoint page. Some functionality may be
+      Indicates that the framework was hosted by a classic server-rendered SharePoint page. Some functionality may be
       limited, e.g. various extensibility APIs may not be supported.
     name: ClassicSharePoint
     fullName: sp-core-library.EnvironmentType.ClassicSharePoint
@@ -27,9 +27,10 @@ items:
     type: field
   - uid: sp-core-library.EnvironmentType.Local
     summary: >-
-      Indicates that the web page is hosted from a "localhost" web server, for example the SharePoint Workbench when
-      running via "gulp serve". SharePoint REST API calls will not be available, and in general network access may not
-      authenticate properly. Certain page context information may be using mock values for testing.
+      Indicates that the SharePoint Framework is running on a page from a "localhost" web server, for example the
+      SharePoint Workbench when hosted via "gulp serve". SharePoint REST API calls will not be available, and in general
+      network access may not authenticate properly. Certain page context information may be using mock values for
+      testing.
     name: Local
     fullName: sp-core-library.EnvironmentType.Local
     langs:
@@ -37,8 +38,8 @@ items:
     type: field
   - uid: sp-core-library.EnvironmentType.SharePoint
     summary: >-
-      Indicates that the framework was loaded on a SharePoint web page, with a client-side application. This is the
-      normal scenario for SharePoint Framework.
+      Indicates that the SharePoint Framework is running on a modern SharePoint web page, with full framework
+      functionality. This is the normal usage scenario.
     name: SharePoint
     fullName: sp-core-library.EnvironmentType.SharePoint
     langs:

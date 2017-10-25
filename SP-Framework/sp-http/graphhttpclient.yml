@@ -45,7 +45,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static configurations: IGraphHttpClientConfigurations;'
+      content: 'public static readonly configurations: IGraphHttpClientConfigurations;'
       return:
         type:
           - IGraphHttpClientConfigurations
@@ -53,9 +53,12 @@ items:
     summary: Perform a REST service call.
     remarks: >-
       Generally, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard
-      that is documented here: https://fetch.spec.whatwg.org/ 
+      that is documented here: https://fetch.spec.whatwg.org/
 
-       The GraphHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead): - Default "Accept" and "Content-Type" headers are added if not explicitly specified.
+
+      The GraphHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA
+      API's (which can be avoided by using HttpClient instead): - Default "Accept" and "Content-Type" headers are added
+      if not explicitly specified.
     isPreview: true
     name: 'fetch(url, configuration, options)'
     fullName: sp-http.GraphHttpClient.fetch
@@ -152,7 +155,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static serviceKey: ServiceKey<GraphHttpClient>;'
+      content: 'public static readonly serviceKey: ServiceKey<GraphHttpClient>;'
       return:
         type:
           - ServiceKey<GraphHttpClient>

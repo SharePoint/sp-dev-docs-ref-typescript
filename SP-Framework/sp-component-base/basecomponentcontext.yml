@@ -3,12 +3,13 @@ items:
   - uid: sp-component-base.BaseComponentContext
     summary: The base class for context objects for client-side components.
     remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      BaseComponentContext class or instantiate it directly.
+
+
       A "context" object is a collection of well-known services and other objects that are likely to be needed by
       business logic that interacts with a associated component. Each component type has its own specialized subclass of
-      BaseComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, and so on. 
-
-       The constructor for this class is marked as internal; third party code should not inherit directly from this base class.
-    isPreview: true
+      BaseComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, and so on.
     name: BaseComponentContext
     fullName: sp-component-base.BaseComponentContext
     langs:
@@ -23,10 +24,9 @@ items:
   - uid: sp-component-base.BaseComponentContext.instanceId
     summary: A unique identifier for the instance of the component.
     remarks: >-
-      A given component implementation can be loaded multiple times on the page. For example, if the component is a
-      charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId
-      uniquely identifies each of these instances.
-    isPreview: true
+      A component implementation can be loaded multiple times on the page. For example, if the component is a charting
+      web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely
+      identifies each of these instances.
     name: instanceId
     fullName: sp-component-base.BaseComponentContext.instanceId
     langs:
@@ -39,14 +39,13 @@ items:
           - string
   - uid: sp-component-base.BaseComponentContext.manifest
     summary: Manifest for the client side component.
-    isPreview: true
     name: manifest
     fullName: sp-component-base.BaseComponentContext.manifest
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'public manifest: IClientSideComponentManifest;'
+      content: 'public readonly manifest: IClientSideComponentManifest;'
       return:
         type:
           - IClientSideComponentManifest
@@ -54,7 +53,6 @@ items:
     summary: >-
       The page context provides standard definitions for common SharePoint objects that need to be shared between the
       client-side application, web parts, and other components.
-    isPreview: true
     name: pageContext
     fullName: sp-component-base.BaseComponentContext.pageContext
     langs:
@@ -68,7 +66,6 @@ items:
   - uid: sp-component-base.BaseComponentContext.serviceScope
     summary: 'The associated [@microsoft/sp-core-library:ServiceScope](xref:sp-core-library.ServiceScope) for this component.'
     remarks: A child service scope is created for each client-side component.
-    isPreview: true
     name: serviceScope
     fullName: sp-component-base.BaseComponentContext.serviceScope
     langs:
