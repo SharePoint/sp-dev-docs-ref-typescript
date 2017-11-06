@@ -1,0 +1,164 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-page-context.SPSite
+    summary: >-
+      This class is primarily used with the PageContext class. It provides contextual information for the SharePoint
+      site collection ("site") that hosts the page.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the SPSite
+      class or instantiate it directly.
+    name: SPSite
+    fullName: sp-page-context.SPSite
+    langs:
+      - typeScript
+    type: class
+    package: sp-page-context
+    children:
+      - sp-page-context.SPSite.absoluteUrl
+      - sp-page-context.SPSite.cdnPrefix
+      - sp-page-context.SPSite.classification
+      - sp-page-context.SPSite.correlationId
+      - sp-page-context.SPSite.group
+      - sp-page-context.SPSite.id
+      - sp-page-context.SPSite.isNoScriptEnabled
+      - sp-page-context.SPSite.recycleBinItemCount
+      - sp-page-context.SPSite.serverRelativeUrl
+      - sp-page-context.SPSite.serverRequestPath
+      - sp-page-context.SPSite.sitePagesEnabled
+  - uid: sp-page-context.SPSite.absoluteUrl
+    summary: Returns the absolute URL for this SPSite.
+    remarks: 'Example: "https://example.com/sites/PubSite"'
+    name: absoluteUrl
+    fullName: sp-page-context.SPSite.absoluteUrl
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly absoluteUrl: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.SPSite.cdnPrefix
+    summary: Returns the prefix of the application's specified cdn or an empty string if there isn't one.
+    name: cdnPrefix
+    fullName: sp-page-context.SPSite.cdnPrefix
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly cdnPrefix: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.SPSite.classification
+    summary: Returns the classification of the site.
+    name: classification
+    fullName: sp-page-context.SPSite.classification
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly classification: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.SPSite.correlationId
+    summary: Returns the correlation id to the current server request.
+    name: correlationId
+    fullName: sp-page-context.SPSite.correlationId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly correlationId: Guid;'
+      return:
+        type:
+          - Guid
+  - uid: sp-page-context.SPSite.group
+    summary: >-
+      Contextual information about the O365 Group associated with this site. If there is no O365Group associated with
+      the current site, this property will be undefined.
+    name: group
+    fullName: sp-page-context.SPSite.group
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly group: O365GroupAssociation | undefined;'
+      return:
+        type:
+          - O365GroupAssociation | undefined
+  - uid: sp-page-context.SPSite.id
+    summary: The GUID that identifies the SPSite on the server.
+    name: id
+    fullName: sp-page-context.SPSite.id
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly id: Guid;'
+      return:
+        type:
+          - Guid
+  - uid: sp-page-context.SPSite.isNoScriptEnabled
+    summary: Returns true if isNoScript has been enabled on the SPSite.
+    name: isNoScriptEnabled
+    fullName: sp-page-context.SPSite.isNoScriptEnabled
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly isNoScriptEnabled: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-page-context.SPSite.recycleBinItemCount
+    summary: The amount of items in the recyle bin.
+    name: recycleBinItemCount
+    fullName: sp-page-context.SPSite.recycleBinItemCount
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly recycleBinItemCount: number;'
+      return:
+        type:
+          - number
+  - uid: sp-page-context.SPSite.serverRelativeUrl
+    summary: Returns the server-relative URL for this SPSite.
+    remarks: 'Example: "/sites/PubSite"'
+    name: serverRelativeUrl
+    fullName: sp-page-context.SPSite.serverRelativeUrl
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly serverRelativeUrl: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.SPSite.serverRequestPath
+    summary: Returns serverRelativeUrl of the original request.
+    remarks: 'Example: "/teams/SPClientTest/SitePages/Home.aspx"'
+    name: serverRequestPath
+    fullName: sp-page-context.SPSite.serverRequestPath
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly serverRequestPath: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.SPSite.sitePagesEnabled
+    summary: Returns true if SitePages are enabled on this SPSite.
+    name: sitePagesEnabled
+    fullName: sp-page-context.SPSite.sitePagesEnabled
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly sitePagesEnabled: boolean;'
+      return:
+        type:
+          - boolean

@@ -1,0 +1,64 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-extension-base.BaseExtension
+    summary: The base class for all client-side extensions.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      BaseExtension class or instantiate it directly.
+    name: BaseExtension
+    fullName: sp-extension-base.BaseExtension
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - BaseComponent
+    package: sp-extension-base
+    children:
+      - sp-extension-base.BaseExtension.context
+      - sp-extension-base.BaseExtension.onInit
+      - sp-extension-base.BaseExtension.properties
+  - uid: sp-extension-base.BaseExtension.context
+    summary: Use the context object to access common services and state associated with the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    name: context
+    fullName: sp-extension-base.BaseExtension.context
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly context: ExtensionContext;'
+      return:
+        type:
+          - ExtensionContext
+  - uid: sp-extension-base.BaseExtension.onInit
+    summary: This event method is called when the client-side extension is first activated on the page.
+    name: onInit()
+    fullName: sp-extension-base.BaseExtension.onInit
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onInit(): Promise<void>;'
+      return:
+        type:
+          - Promise<void>
+        description: ''
+  - uid: sp-extension-base.BaseExtension.properties
+    summary: Extension properties is a JavaScript object that are passed in by the application that initializes the extension.
+    remarks: >-
+      Properties can be used in the extension code to define configurable behaviors. The application has control over
+      what properties to provide to an instance of the extension, however the most common way would be to have it stored
+      on the server as JSON and pass it as is to the extension on initialization.
+    name: properties
+    fullName: sp-extension-base.BaseExtension.properties
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly properties: TProperties;'
+      return:
+        type:
+          - TProperties

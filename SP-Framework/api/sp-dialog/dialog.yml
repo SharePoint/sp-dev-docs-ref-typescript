@@ -1,0 +1,72 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-dialog.Dialog
+    summary: A static class for showing stock dialogs such as an alert or prompt.
+    isPreview: true
+    name: Dialog
+    fullName: sp-dialog.Dialog
+    langs:
+      - typeScript
+    type: class
+    package: sp-dialog
+    children:
+      - sp-dialog.Dialog.alert
+      - sp-dialog.Dialog.prompt
+  - uid: sp-dialog.Dialog.alert
+    summary: >-
+      Alerts a message to the user with a user-friendly interface. Calling this method sends a request to application to
+      show the alert dialog.
+    remarks: >-
+      There might be a delay until the dialog is approved and shown by the application, for example, if there is another
+      dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
+      promise rejects if the application rejects the request for any reason.
+    isPreview: true
+    name: 'alert(message, options)'
+    fullName: sp-dialog.Dialog.alert
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static alert(message: string, options?: IAlertOptions): Promise<void>;'
+      return:
+        type:
+          - Promise<void>
+        description: ''
+      parameters:
+        - id: message
+          description: The message to alert
+          type:
+            - string
+        - id: options
+          description: ''
+          type:
+            - IAlertOptions
+  - uid: sp-dialog.Dialog.prompt
+    summary: >-
+      Prompts the user for a string value with a user-friendly interface. Calling this method sends a request to
+      application to show the dialog.
+    remarks: >-
+      There might be a delay until the dialog is approved and shown by the application, for example, if there is another
+      dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
+      promise rejects if the application rejects the request for any reason.
+    isPreview: true
+    name: 'prompt(message, options)'
+    fullName: sp-dialog.Dialog.prompt
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public static prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;'
+      return:
+        type:
+          - Promise<string | undefined>
+        description: The input string or undefined if the dialog was canceled
+      parameters:
+        - id: message
+          description: The message for prompt dialog
+          type:
+            - string
+        - id: options
+          description: ''
+          type:
+            - IPromptOptions

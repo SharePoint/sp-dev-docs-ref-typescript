@@ -1,0 +1,597 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.BaseClientSideWebPart
+    summary: >-
+      This abstract class implements the the base functionality for a client side web part. Every client side web part
+      needs to inherit from this class.
+    remarks: >-
+      Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall
+      in two catagories.
+
+
+      The first category of APIs provide data and functionality. Example, the web part context (i.e. this.context). This
+      API should be used to access contextual data relevant to this web part instance.
+
+
+      The second category of APIs provide a base implementation for the web part lifecycle and can be overridden for an
+      updated implementation. The render() API is the only API that is mandatory to be implemented/overridden by a web
+      part. All other life cycle APIs have a base implementation and can be overridden based on the needs of the web
+      part. Please refer to the documentation of the individual APIs to make the right decision.
+    name: BaseClientSideWebPart
+    fullName: sp-webpart-base.BaseClientSideWebPart
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - BaseComponent
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.BaseClientSideWebPart.constructor
+      - sp-webpart-base.BaseClientSideWebPart.accessibleTitle
+      - sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
+      - sp-webpart-base.BaseClientSideWebPart.clearError
+      - sp-webpart-base.BaseClientSideWebPart.context
+      - sp-webpart-base.BaseClientSideWebPart.dataVersion
+      - sp-webpart-base.BaseClientSideWebPart.description
+      - sp-webpart-base.BaseClientSideWebPart.disableReactivePropertyChanges
+      - sp-webpart-base.BaseClientSideWebPart.displayMode
+      - sp-webpart-base.BaseClientSideWebPart.domElement
+      - sp-webpart-base.BaseClientSideWebPart.getPropertyPaneConfiguration
+      - sp-webpart-base.BaseClientSideWebPart.isRenderAsync
+      - sp-webpart-base.BaseClientSideWebPart.onAfterDeserialize
+      - sp-webpart-base.BaseClientSideWebPart.onAfterPropertyPaneChangesApplied
+      - sp-webpart-base.BaseClientSideWebPart.onBeforeSerialize
+      - sp-webpart-base.BaseClientSideWebPart.onDisplayModeChanged
+      - sp-webpart-base.BaseClientSideWebPart.onDispose
+      - sp-webpart-base.BaseClientSideWebPart.onInit
+      - sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationComplete
+      - sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationStart
+      - sp-webpart-base.BaseClientSideWebPart.onPropertyPaneFieldChanged
+      - sp-webpart-base.BaseClientSideWebPart.onPropertyPaneRendered
+      - sp-webpart-base.BaseClientSideWebPart.previewImageUrl
+      - sp-webpart-base.BaseClientSideWebPart.properties
+      - sp-webpart-base.BaseClientSideWebPart.propertiesMetadata
+      - sp-webpart-base.BaseClientSideWebPart.render
+      - sp-webpart-base.BaseClientSideWebPart.renderCompleted
+      - sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
+      - sp-webpart-base.BaseClientSideWebPart.renderedOnce
+      - sp-webpart-base.BaseClientSideWebPart.renderError
+      - sp-webpart-base.BaseClientSideWebPart.title
+  - uid: sp-webpart-base.BaseClientSideWebPart.constructor
+    summary: Constructor for the BaseClientSideWebPart class.
+    remarks: >-
+      If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is
+      highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of
+      the web part features like this.context and this.properties are not available to be used before the the onInit
+      part of the web part loading lifecycle.
+
+
+      e.g. constructor() { super(); . . class specific constructor code .. }
+    name: constructor()
+    fullName: sp-webpart-base.BaseClientSideWebPart.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: constructor();
+  - uid: sp-webpart-base.BaseClientSideWebPart.accessibleTitle
+    summary: >-
+      This property points to the accessible title of web part made available to screen readers. The base implementation
+      returns that default title in the manifest. Web parts that want to provide more descriptive title containing
+      contextual information need to override this API.
+    name: accessibleTitle
+    fullName: sp-webpart-base.BaseClientSideWebPart.accessibleTitle
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected accessibleTitle: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
+    summary: This property indicates whether a web part can open a popup on initial render.
+    remarks: >-
+      In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will
+      cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages
+      perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it
+      should use this API before opening the popup. If this API returns false, the web part should not open popup on
+      initial render. Some web parts that open popups during render are the document embed web part that pops up the
+      file picker on initial render, embedded video web part that pops up the PropertyPane on initial render.
+    name: canOpenPopupOnRender
+    fullName: sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly canOpenPopupOnRender: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.BaseClientSideWebPart.clearError
+    summary: This API should be used to clear the error message from the web part display area.
+    name: clearError()
+    fullName: sp-webpart-base.BaseClientSideWebPart.clearError
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'protected clearError(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.context
+    summary: Use the context object to access common services and state associated with the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    name: context
+    fullName: sp-webpart-base.BaseClientSideWebPart.context
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly context: WebPartContext;'
+      return:
+        type:
+          - WebPartContext
+  - uid: sp-webpart-base.BaseClientSideWebPart.dataVersion
+    summary: >-
+      The value of this property is stored in the serialized data of the web part to allow developers to manage
+      versioning of their web part. The default version is 1.0
+    name: dataVersion
+    fullName: sp-webpart-base.BaseClientSideWebPart.dataVersion
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly dataVersion: Version;'
+      return:
+        type:
+          - Version
+  - uid: sp-webpart-base.BaseClientSideWebPart.description
+    summary: Description of the WebPart
+    name: description
+    fullName: sp-webpart-base.BaseClientSideWebPart.description
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly description: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.BaseClientSideWebPart.disableReactivePropertyChanges
+    summary: This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive.
+    remarks: >-
+      The default behavior is Reactive.
+
+
+      Reactive implies that changes made in the PropertyPane are transmitted to the web part instantly and the user can
+      see instant updates. This helps the page creator get instant feedback and decide if they should keep the new
+      configuration changes or not.
+
+
+      NonReactive implies that the configuration changes are transmitted to the web part only after "Apply" PropertyPane
+      button is clicked.
+    name: disableReactivePropertyChanges
+    fullName: sp-webpart-base.BaseClientSideWebPart.disableReactivePropertyChanges
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly disableReactivePropertyChanges: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.BaseClientSideWebPart.displayMode
+    summary: This property is the current display mode of the web part.
+    name: displayMode
+    fullName: sp-webpart-base.BaseClientSideWebPart.displayMode
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly displayMode: DisplayMode;'
+      return:
+        type:
+          - DisplayMode
+  - uid: sp-webpart-base.BaseClientSideWebPart.domElement
+    summary: >-
+      This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole
+      DOM subtree of the web part.
+    name: domElement
+    fullName: sp-webpart-base.BaseClientSideWebPart.domElement
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly domElement: HTMLElement;'
+      return:
+        type:
+          - HTMLElement
+  - uid: sp-webpart-base.BaseClientSideWebPart.getPropertyPaneConfiguration
+    summary: >-
+      This API is used to ger the configuration to build the property pane for the web part. If the web part wants to
+      use the PropertyPane for configuration, this API needs to be overridden and the web part needs to return the
+      configuration for the PropertyPane.
+
+
+      See IPropertyPane and other PropertyPane integration wiki documentation for more details.
+    name: getPropertyPaneConfiguration()
+    fullName: sp-webpart-base.BaseClientSideWebPart.getPropertyPaneConfiguration
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
+      return:
+        type:
+          - IPropertyPaneConfiguration
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.isRenderAsync
+    summary: >-
+      Indicates whether the web part is rendering in Async mode. Default value is false. If the web part overrides this
+      field to return true, then it needs to call renderCompleted API after the web part rendering is complete.
+    name: isRenderAsync
+    fullName: sp-webpart-base.BaseClientSideWebPart.isRenderAsync
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly isRenderAsync: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.BaseClientSideWebPart.onAfterDeserialize
+    summary: 'This API is called after the web part is deserialized to an object, right before the property bag is populated.'
+    remarks: >-
+      The default implementation is a no-op. A web part developer can override this API if the deserialized object does
+      not fully reflect the initial state of the property bag. This gives the web part developer a chance to populate
+      the property bag right after the data is deserialized to an object.
+
+
+      An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized
+      by an older version of the web part that supported a different schema of the property bag, resulting the
+      deserialized object to be incosistent with the current schema of the property bag. The developer can use
+      onAfterDeserialize to check the dataVersion and fix the property bag.
+    name: 'onAfterDeserialize(deserializedObject, dataVersion)'
+    fullName: sp-webpart-base.BaseClientSideWebPart.onAfterDeserialize
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;'
+      return:
+        type:
+          - TProperties
+        description: The property bag of the web part
+      parameters:
+        - id: deserializedObject
+          description: >-
+            The object deserialized from the stored data. Note that the schema of this object is not necessarily
+            consistent with the current property bag, because the serialization could have been done by an older version
+            of the web part
+          type:
+            - any
+        - id: dataVersion
+          description: >-
+            The data version of the stored data being deserialized. You can use this value to determine if the data was
+            serialized by an older web part. Web parts can define their data version by overriding the dataVersion
+            property.
+          type:
+            - Version
+  - uid: sp-webpart-base.BaseClientSideWebPart.onAfterPropertyPaneChangesApplied
+    summary: >-
+      This API is invoked after the changes made on the PropertyPane are applied when the PropertyPane is used in
+      Non-Reactive mode. This API is not invoked when the PropertyPane is used in Reactive mode.
+    name: onAfterPropertyPaneChangesApplied()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onAfterPropertyPaneChangesApplied
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onAfterPropertyPaneChangesApplied(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.onBeforeSerialize
+    summary: This event method is called before the web part is serialized.
+    remarks: >-
+      The default implementation is a no-op. The serialization process serializes the web part property bag i.e.
+      this.properties. This API gives the web part a chance to update it's property bag before the serialization
+      happens. Some web part's may keep their state other objects or even in the DOM. If a web part needs to persist
+      some of that state, it needs to override this API and update the web part property bag to the latest state. If a
+      web part updates the property bag with invalid property values, those will get persisted. So that should be
+      avoided. The web part property bag should always contain valid property values.
+    name: onBeforeSerialize()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onBeforeSerialize
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onBeforeSerialize(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.onDisplayModeChanged
+    summary: This event method is called when the display mode of a web part is changed.
+    remarks: >-
+      The default implementation of this API calls the web part render method to re-render the web part with the new
+      display mode. If a web part developer does not want a full re-render to happen on display mode change, they can
+      override this API and perform specific updates to the web part DOM to switch its display mode.
+    name: onDisplayModeChanged(oldDisplayMode)
+    fullName: sp-webpart-base.BaseClientSideWebPart.onDisplayModeChanged
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: oldDisplayMode
+          description: The old display mode.
+          type:
+            - DisplayMode
+  - uid: sp-webpart-base.BaseClientSideWebPart.onDispose
+    summary: This API should be used to refresh the contents of the PropertyPane.
+    remarks: >-
+      This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local
+      resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios
+      like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
+      transitioned out.
+    name: onDispose()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onDispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onDispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.onInit
+    summary: >-
+      This API should be overridden to perform long running operations e.g. data fetching from a remote service before
+      the initial rendering of the web part. The loading indicator is displayed during the lifetime of this method. This
+      API is called only once during the lifecycle of a web part.
+    name: onInit()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onInit
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onInit(): Promise<void>;'
+      return:
+        type:
+          - Promise<void>
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationComplete
+    summary: This API is invoked when the configuration is completed on the PropertyPane.
+    remarks: |-
+      This event method is invoked in the following cases:
+
+      - When the CONFIGURATION\_COMPLETE\_TIMEOUT((currently the value is 5 secs) elapses after the last change.
+
+      - When user clicks 'x'(close) button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
+
+      - When user clciks 'Apply' button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
+
+      - When the user switches web parts then the current web part gets this event.
+    name: onPropertyPaneConfigurationComplete()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationComplete
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onPropertyPaneConfigurationComplete(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationStart
+    summary: This event method is invoked when the configuration starts on the PropertyPane.
+    remarks: |-
+      This event method is invoked in the following cases:
+
+      - When the PropertyPane is opened.
+
+      - When the user switches web parts then the new web part gets this event.
+    name: onPropertyPaneConfigurationStart()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneConfigurationStart
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onPropertyPaneConfigurationStart(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneFieldChanged
+    summary: >-
+      This API is invoked after updating the new value of the property in the property bag when the PropertyPane is
+      being used in Reactive mode.
+    name: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
+    fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneFieldChanged
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: propertyPath
+          description: >-
+            JSON path of the property in the property bag. In the case of custom field, if no target property is
+            provided then a custom value is assigned, which will be in the form of '\_\_CustomField\_&lt;key provided
+            when the custom field is created&gt;'.
+          type:
+            - string
+        - id: oldValue
+          description: Old value of the property. This value could be undefined/empty in the case of custom field.
+          type:
+            - any
+        - id: newValue
+          description: New value of the property. This value could be undefined/empty in the case of custom field.
+          type:
+            - any
+  - uid: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneRendered
+    summary: This API is invoked when the PropertyPane is rendered.
+    name: onPropertyPaneRendered()
+    fullName: sp-webpart-base.BaseClientSideWebPart.onPropertyPaneRendered
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected onPropertyPaneRendered(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.previewImageUrl
+    summary: >-
+      This property points to the preview image for the web part. The base implementation returns undefined. Web parts
+      that want to provide a valid preview image url need to override this API. The preview image url can be used to
+      create a preview of the web part or of the page on which the web part is present.
+    name: previewImageUrl
+    fullName: sp-webpart-base.BaseClientSideWebPart.previewImageUrl
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected previewImageUrl: string | undefined;'
+      return:
+        type:
+          - string | undefined
+  - uid: sp-webpart-base.BaseClientSideWebPart.properties
+    summary: This property is the pointer to the custom property bag of the web part.
+    name: properties
+    fullName: sp-webpart-base.BaseClientSideWebPart.properties
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly properties: TProperties;'
+      return:
+        type:
+          - TProperties
+  - uid: sp-webpart-base.BaseClientSideWebPart.propertiesMetadata
+    summary: >-
+      This property defines metadata for the web part property bag. The metadata can help SharePoint understand the
+      content of the properties better and perform relevant services on the data.
+    remarks: See IWebPartPropertiesMetadata for more information about how to define metadata
+    name: propertiesMetadata
+    fullName: sp-webpart-base.BaseClientSideWebPart.propertiesMetadata
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly propertiesMetadata: IWebPartPropertiesMetadata | undefined;'
+      return:
+        type:
+          - IWebPartPropertiesMetadata | undefined
+  - uid: sp-webpart-base.BaseClientSideWebPart.render
+    summary: >-
+      This API is called to render the web part. There is no base implementation of this API and the web part is
+      required to override this API.
+    name: render()
+    fullName: sp-webpart-base.BaseClientSideWebPart.render
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'protected abstract render(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.renderCompleted
+    summary: >-
+      This API should be called by web parts that perform Async rendering. Those web part are required to override the
+      isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part
+      initiates the IFrame rendering in the render() API but the actual rendering is complete only after the iframe
+      loading completes.
+    name: renderCompleted()
+    fullName: sp-webpart-base.BaseClientSideWebPart.renderCompleted
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'protected renderCompleted(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
+    summary: >-
+      This property indicates whether the web part was rendered from the persisted data (serialized state from the last
+      time that the web part was saved) or not.
+    remarks: 'Example: When web part is added for the first time using toolbox then the value is false.'
+    name: renderedFromPersistedData
+    fullName: sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly renderedFromPersistedData: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.BaseClientSideWebPart.renderedOnce
+    summary: >-
+      This property indicates whether the web part has been rendered once or not. After the first time rendering, the
+      value of this property is always true. Till a full re-render of the web part happens.
+    name: renderedOnce
+    fullName: sp-webpart-base.BaseClientSideWebPart.renderedOnce
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly renderedOnce: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.BaseClientSideWebPart.renderError
+    summary: >-
+      This API should be used to render an error message in the web part display area. Also logs the error message using
+      the trace logger.
+    name: renderError(error)
+    fullName: sp-webpart-base.BaseClientSideWebPart.renderError
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'protected renderError(error: Error): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: error
+          description: An error object containing the error message to render.
+          type:
+            - Error
+  - uid: sp-webpart-base.BaseClientSideWebPart.title
+    summary: Title of the WebPart
+    name: title
+    fullName: sp-webpart-base.BaseClientSideWebPart.title
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly title: string;'
+      return:
+        type:
+          - string

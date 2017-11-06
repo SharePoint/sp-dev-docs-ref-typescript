@@ -1,0 +1,86 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.ISerializedServerProcessedData
+    summary: Contains collections of data that can be processed by server side services like search index and link fixup
+    name: ISerializedServerProcessedData
+    fullName: sp-webpart-base.ISerializedServerProcessedData
+    langs:
+      - typeScript
+    type: interface
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.ISerializedServerProcessedData.htmlStrings
+      - sp-webpart-base.ISerializedServerProcessedData.imageSources
+      - sp-webpart-base.ISerializedServerProcessedData.links
+      - sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
+  - uid: sp-webpart-base.ISerializedServerProcessedData.htmlStrings
+    summary: A key-value map where keys are string identifiers and values are rich text with HTML format.
+    remarks: >-
+      SharePoint servers treat the values as HTML content and run services like safety checks, search index and link
+      fixup on them.
+
+
+      Example: { 'myRichDescription': '&lt;div&gt;Some standard &lt;b&gt;HTML content&lt;/b&gt;&lt;a
+      href='http://somelink'&gt;A Link&lt;/a&gt;&lt;/div&gt;' 'anotherRichText': &lt;div class='aClass'&gt;&lt;span
+      style='color:red'&gt;Some red text&lt;/div&gt; }
+    name: htmlStrings
+    fullName: sp-webpart-base.ISerializedServerProcessedData.htmlStrings
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'htmlStrings?:'
+      return:
+        type:
+          - '{ [key: string]: string }'
+  - uid: sp-webpart-base.ISerializedServerProcessedData.imageSources
+    summary: A key-value map where keys are string identifiers and values are image sources.
+    remarks: |-
+      SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+
+      Example: { 'myImage1': 'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }
+    name: imageSources
+    fullName: sp-webpart-base.ISerializedServerProcessedData.imageSources
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'imageSources?:'
+      return:
+        type:
+          - '{ [key: string]: string }'
+  - uid: sp-webpart-base.ISerializedServerProcessedData.links
+    summary: A key-value map where keys are string identifiers and values are links.
+    remarks: |-
+      SharePoint servers treat the values as links and run services like link fixup on them.
+
+      Example: { 'myWebURL': 'http://contoso.com' 'myFileLink': 'https://res.contoso.com/file.docx' }
+    name: links
+    fullName: sp-webpart-base.ISerializedServerProcessedData.links
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'links?:'
+      return:
+        type:
+          - '{ [key: string]: string }'
+  - uid: sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
+    summary: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+    remarks: >-
+      The values are HTML-encoded before being sent to the server. The encoded values are visible to the search indexer,
+      but are not treated as valid HTML. So, other services such as link fixup will not run on them.
+
+
+      Example: { 'justSomeText': 'This is some plain text', 'anotherText': 'Can have &lt;any&gt; characters here:
+      "&lt;&gt;&amp;\\'' }
+    name: searchablePlainTexts
+    fullName: sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'searchablePlainTexts?:'
+      return:
+        type:
+          - '{ [key: string]: string }'

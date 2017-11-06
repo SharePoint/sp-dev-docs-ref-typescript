@@ -1,0 +1,59 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.ISPHttpClientCommonConfiguration
+    summary: Flags interface for SPHttpClientCommonConfiguration
+    name: ISPHttpClientCommonConfiguration
+    fullName: sp-http.ISPHttpClientCommonConfiguration
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - IHttpClientConfiguration
+    package: sp-http
+    children:
+      - sp-http.ISPHttpClientCommonConfiguration.jsonRequest
+      - sp-http.ISPHttpClientCommonConfiguration.jsonResponse
+  - uid: sp-http.ISPHttpClientCommonConfiguration.jsonRequest
+    summary: Automatically configure the "Content-Type" header for a JSON payload.
+    remarks: >-
+      When this switch is true:
+
+
+      If the "Content-Type" header was not explicitly added for the request, then SPHttpClient will add it if the
+      request is a write operation (i.e. an HTTP method other than "GET", "HEAD", or "OPTIONS").
+
+
+      For OData 3.0, the value is 'application/json;odata=verbose;charset=utf-8'.
+
+
+      For OData 4.0, the value is 'application/json;charset=utf-8'.
+    name: jsonRequest
+    fullName: sp-http.ISPHttpClientCommonConfiguration.jsonRequest
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'jsonRequest?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-http.ISPHttpClientCommonConfiguration.jsonResponse
+    summary: Automatically configure the "Accept" header for a JSON payload.
+    remarks: |-
+      When this switch is true:
+
+      If the "Accept" header was not explicitly added for the request, then SPHttpClient will add it.
+
+      For OData 3.0, the value is 'application/json'.
+
+      For OData 4.0, the value is 'application/json;odata.metadata=minimal'.
+    name: jsonResponse
+    fullName: sp-http.ISPHttpClientCommonConfiguration.jsonResponse
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'jsonResponse?: boolean;'
+      return:
+        type:
+          - boolean

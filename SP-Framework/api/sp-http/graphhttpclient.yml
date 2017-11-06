@@ -1,0 +1,161 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.GraphHttpClient
+    summary: >-
+      GraphHttpClient is used to perform REST calls against Microsoft Graph. It adds default headers and collects
+      telemetry that helps the service to monitor the performance of an application.
+      https://developer.microsoft.com/en-us/graph/
+    remarks: >-
+      For communicating with SharePoint, use the [SPHttpClient](xref:sp-http.SPHttpClient) class instead. For
+      communicating with other internet services, use the [HttpClient](xref:sp-http.HttpClient) class instead.
+    isPreview: true
+    name: GraphHttpClient
+    fullName: sp-http.GraphHttpClient
+    langs:
+      - typeScript
+    type: class
+    package: sp-http
+    children:
+      - sp-http.GraphHttpClient.constructor
+      - sp-http.GraphHttpClient.configurations
+      - sp-http.GraphHttpClient.fetch
+      - sp-http.GraphHttpClient.get
+      - sp-http.GraphHttpClient.post
+      - sp-http.GraphHttpClient.serviceKey
+  - uid: sp-http.GraphHttpClient.constructor
+    summary: 'Constructs a new instance of the [GraphHttpClient](xref:sp-http.GraphHttpClient) class'
+    name: constructor(serviceScope)
+    fullName: sp-http.GraphHttpClient.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope);'
+      parameters:
+        - id: serviceScope
+          description: ''
+          type:
+            - ServiceScope
+  - uid: sp-http.GraphHttpClient.configurations
+    summary: The standard predefined GraphHttpClientConfiguration objects for use with the GraphHttpClient class.
+    isPreview: true
+    name: configurations
+    fullName: sp-http.GraphHttpClient.configurations
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public static readonly configurations: IGraphHttpClientConfigurations;'
+      return:
+        type:
+          - IGraphHttpClientConfigurations
+  - uid: sp-http.GraphHttpClient.fetch
+    summary: Perform a REST service call.
+    remarks: >-
+      Generally, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard
+      that is documented here: https://fetch.spec.whatwg.org/
+
+
+      The GraphHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA
+      API's (which can be avoided by using HttpClient instead): - Default "Accept" and "Content-Type" headers are added
+      if not explicitly specified.
+    isPreview: true
+    name: 'fetch(url, configuration, options)'
+    fullName: sp-http.GraphHttpClient.fetch
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: "public fetch(url: string,\r\n    configuration: GraphHttpClientConfiguration,\r\n    options: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;"
+      return:
+        type:
+          - Promise<GraphHttpClientResponse>
+        description: a promise that will return the result
+      parameters:
+        - id: url
+          description: >-
+            The url string should be relative to the graph server. Good: 'v1.0/me/events' Bad: '/v1.0/me/events',
+            'https://graph.microsoft.com/v1.0/me/events'
+          type:
+            - string
+        - id: configuration
+          description: >-
+            determines the default behavior of GraphHttpClient; normally this should be the latest version number from
+            GraphHttpClientConfigurations
+          type:
+            - GraphHttpClientConfiguration
+        - id: options
+          description: additional options that affect the request
+          type:
+            - IGraphHttpClientOptions
+  - uid: sp-http.GraphHttpClient.get
+    summary: 'Calls fetch(), but sets the method to "GET".'
+    isPreview: true
+    name: 'get(url, configuration, options)'
+    fullName: sp-http.GraphHttpClient.get
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: "public get(url: string, configuration: GraphHttpClientConfiguration,\r\n    options?: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;"
+      return:
+        type:
+          - Promise<GraphHttpClientResponse>
+        description: a promise that will return the result
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+        - id: configuration
+          description: >-
+            determines the default behavior of GraphHttpClient; normally this should be the latest version number from
+            GraphHttpClientConfigurations
+          type:
+            - GraphHttpClientConfiguration
+        - id: options
+          description: additional options that affect the request
+          type:
+            - IGraphHttpClientOptions
+  - uid: sp-http.GraphHttpClient.post
+    summary: 'Calls fetch(), but sets the method to "POST".'
+    isPreview: true
+    name: 'post(url, configuration, options)'
+    fullName: sp-http.GraphHttpClient.post
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: "public post(url: string, configuration: GraphHttpClientConfiguration,\r\n    options: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;"
+      return:
+        type:
+          - Promise<GraphHttpClientResponse>
+        description: a promise that will return the result
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+        - id: configuration
+          description: >-
+            determines the default behavior of GraphHttpClient; normally this should be the latest version number from
+            GraphHttpClientConfigurations
+          type:
+            - GraphHttpClientConfiguration
+        - id: options
+          description: additional options that affect the request
+          type:
+            - IGraphHttpClientOptions
+  - uid: sp-http.GraphHttpClient.serviceKey
+    summary: The service key for GraphHttpClient.
+    isPreview: true
+    name: serviceKey
+    fullName: sp-http.GraphHttpClient.serviceKey
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public static readonly serviceKey: ServiceKey<GraphHttpClient>;'
+      return:
+        type:
+          - ServiceKey<GraphHttpClient>

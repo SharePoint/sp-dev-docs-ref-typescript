@@ -1,0 +1,69 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters
+    summary: Event parameters for BaseFieldCustomizer.onRenderCell()
+    name: IFieldCustomizerCellEventParameters
+    fullName: sp-listview-extensibility.IFieldCustomizerCellEventParameters
+    langs:
+      - typeScript
+    type: interface
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.domElement
+      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.fieldValue
+      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.listItem
+      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.userData
+  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.domElement
+    summary: >-
+      The HTML "div" element that the extension will take ownership of. This ownership will end when onDisposeCell() is
+      called.
+    name: domElement
+    fullName: sp-listview-extensibility.IFieldCustomizerCellEventParameters.domElement
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly domElement: HTMLDivElement;'
+      return:
+        type:
+          - HTMLDivElement
+  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.fieldValue
+    summary: The value of the field being rendered.
+    name: fieldValue
+    fullName: sp-listview-extensibility.IFieldCustomizerCellEventParameters.fieldValue
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly fieldValue: any;'
+      return:
+        type:
+          - any
+  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.listItem
+    summary: The list item being edited.
+    name: listItem
+    fullName: sp-listview-extensibility.IFieldCustomizerCellEventParameters.listItem
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly listItem: ListItemAccessor;'
+      return:
+        type:
+          - ListItemAccessor
+  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.userData
+    summary: An implementation defined storage property.
+    remarks: >-
+      For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request
+      to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this
+      property, and then onDisposeCell() can use this key to find the resource to be freed.
+    name: userData
+    fullName: sp-listview-extensibility.IFieldCustomizerCellEventParameters.userData
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'userData: any;'
+      return:
+        type:
+          - any

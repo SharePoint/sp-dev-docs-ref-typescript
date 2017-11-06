@@ -1,0 +1,190 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.IWebPartContext
+    summary: The base context interface for client-side web parts.
+    remarks: >-
+      A "context" object is a collection of well-known services and other objects that are likely to be needed by any
+      business logic working with a component. Each component type has its own specialized extension of this interface,
+      e.g. IWebPartContext for web parts, IExtensionContext for client-side extensions, etc.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: IWebPartContext
+    fullName: sp-webpart-base.IWebPartContext
+    langs:
+      - typeScript
+    type: interface
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.IWebPartContext.domElement
+      - sp-webpart-base.IWebPartContext.graphHttpClient
+      - sp-webpart-base.IWebPartContext.httpClient
+      - sp-webpart-base.IWebPartContext.instanceId
+      - sp-webpart-base.IWebPartContext.manifest
+      - sp-webpart-base.IWebPartContext.pageContext
+      - sp-webpart-base.IWebPartContext.propertyPane
+      - sp-webpart-base.IWebPartContext.spHttpClient
+      - sp-webpart-base.IWebPartContext.statusRenderer
+      - sp-webpart-base.IWebPartContext.webPartTag
+  - uid: sp-webpart-base.IWebPartContext.domElement
+    summary: Reference to the DOM element that hosts this client side component.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: domElement
+    fullName: sp-webpart-base.IWebPartContext.domElement
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly domElement: HTMLElement;'
+      return:
+        type:
+          - HTMLElement
+  - uid: sp-webpart-base.IWebPartContext.graphHttpClient
+    summary: GraphHttpClient instance scoped to this web part.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    isPreview: true
+    name: graphHttpClient
+    fullName: sp-webpart-base.IWebPartContext.graphHttpClient
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly graphHttpClient: GraphHttpClient;'
+      return:
+        type:
+          - GraphHttpClient
+  - uid: sp-webpart-base.IWebPartContext.httpClient
+    summary: HttpClient instance scoped to this web part.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: httpClient
+    fullName: sp-webpart-base.IWebPartContext.httpClient
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly httpClient: HttpClient;'
+      return:
+        type:
+          - HttpClient
+  - uid: sp-webpart-base.IWebPartContext.instanceId
+    summary: Web part instance id. This is a globally unique value.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: instanceId
+    fullName: sp-webpart-base.IWebPartContext.instanceId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly instanceId: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.IWebPartContext.manifest
+    summary: Manifest for the client side web part.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: manifest
+    fullName: sp-webpart-base.IWebPartContext.manifest
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
+      return:
+        type:
+          - IClientSideWebPartManifestInstance<any>
+  - uid: sp-webpart-base.IWebPartContext.pageContext
+    summary: SharePoint page context.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: pageContext
+    fullName: sp-webpart-base.IWebPartContext.pageContext
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly pageContext: PageContext;'
+      return:
+        type:
+          - PageContext
+  - uid: sp-webpart-base.IWebPartContext.propertyPane
+    summary: Accessor for common web part property pane operations.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: propertyPane
+    fullName: sp-webpart-base.IWebPartContext.propertyPane
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly propertyPane: IPropertyPaneAccessor;'
+      return:
+        type:
+          - IPropertyPaneAccessor
+  - uid: sp-webpart-base.IWebPartContext.spHttpClient
+    summary: SPHttpClient instance scoped to this web part.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: spHttpClient
+    fullName: sp-webpart-base.IWebPartContext.spHttpClient
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly spHttpClient: SPHttpClient;'
+      return:
+        type:
+          - SPHttpClient
+  - uid: sp-webpart-base.IWebPartContext.statusRenderer
+    summary: Web part status renderer.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: statusRenderer
+    fullName: sp-webpart-base.IWebPartContext.statusRenderer
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly statusRenderer: IClientSideWebPartStatusRenderer;'
+      return:
+        type:
+          - IClientSideWebPartStatusRenderer
+  - uid: sp-webpart-base.IWebPartContext.webPartTag
+    summary: Web part tag to be used for logging and telemetry.
+    deprecated:
+      content: >-
+        This interface will be removed in an upcoming release. Use the
+        [WebPartContext](xref:sp-webpart-base.WebPartContext) class instead.
+    name: webPartTag
+    fullName: sp-webpart-base.IWebPartContext.webPartTag
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly webPartTag: string;'
+      return:
+        type:
+          - string
