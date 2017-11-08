@@ -1,0 +1,166 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-page-context.PageContext
+    summary: >-
+      The page context provides standard definitions for common SharePoint objects that need to be shared between the
+      client-side application, web parts, and other components. Typically the data is fetched via REST queries when
+      navigating to a new page, but it can also be preloaded by the web server, or filled from a custom application
+      cache.
+    name: PageContext
+    fullName: sp-page-context.PageContext
+    langs:
+      - typeScript
+    type: class
+    package: sp-page-context
+    children:
+      - sp-page-context.PageContext.constructor
+      - sp-page-context.PageContext.cultureInfo
+      - sp-page-context.PageContext.isInitialized
+      - sp-page-context.PageContext.legacyPageContext
+      - sp-page-context.PageContext.list
+      - sp-page-context.PageContext.listItem
+      - sp-page-context.PageContext.serviceKey
+      - sp-page-context.PageContext.site
+      - sp-page-context.PageContext.user
+      - sp-page-context.PageContext.web
+  - uid: sp-page-context.PageContext.constructor
+    summary: 'Constructs a new instance of the [PageContext](xref:sp-page-context.PageContext) class'
+    name: constructor(serviceScope)
+    fullName: sp-page-context.PageContext.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope);'
+      parameters:
+        - id: serviceScope
+          description: ''
+          type:
+            - ServiceScope
+  - uid: sp-page-context.PageContext.cultureInfo
+    summary: >-
+      It provides culture info for the current user of the application. This class is primarily used with the
+      PageContext class.
+    name: cultureInfo
+    fullName: sp-page-context.PageContext.cultureInfo
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly cultureInfo: CultureInfo;'
+      return:
+        type:
+          - CultureInfo
+  - uid: sp-page-context.PageContext.isInitialized
+    summary: Returns whether the PageContext has been initialized.
+    name: isInitialized
+    fullName: sp-page-context.PageContext.isInitialized
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly isInitialized: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-page-context.PageContext.legacyPageContext
+    summary: An object providing classic SharePoint properties that may be required by certain legacy scripts.
+    remarks: >-
+      This property is provided to facilitate migration of legacy code. It returns a JavaScript object whose contents
+      are similar to the \_spPageContextInfo window variable from classic pages. The contents of this variable may
+      change in future releases of SharePoint. For this reason, new projects are encouraged to use the SharePoint
+      Framework TypeScript APIs instead, since they are fully documented and provide reliable backwards compatibility
+      guarantees.
+
+
+      NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript
+      API, please file an issue on GitHub. The intention is that no modern application should need to rely on the
+      legacyPageContext object.
+    name: legacyPageContext
+    fullName: sp-page-context.PageContext.legacyPageContext
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly legacyPageContext: any;'
+      return:
+        type:
+          - any
+  - uid: sp-page-context.PageContext.list
+    summary: >-
+      Contextual information for the SharePoint list that is hosting the page. If there is no list associated to the
+      current page, this property will be undefined.
+    name: list
+    fullName: sp-page-context.PageContext.list
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly list: SPList | undefined;'
+      return:
+        type:
+          - SPList | undefined
+  - uid: sp-page-context.PageContext.listItem
+    summary: >-
+      Contextual information for the SharePoint list item that is hosting the page. If there is no list item associated
+      to the current page, this property will be undefined.
+    name: listItem
+    fullName: sp-page-context.PageContext.listItem
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly listItem: SPListItem | undefined;'
+      return:
+        type:
+          - SPListItem | undefined
+  - uid: sp-page-context.PageContext.serviceKey
+    summary: The service key for PageContext.
+    name: serviceKey
+    fullName: sp-page-context.PageContext.serviceKey
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public static readonly serviceKey: ServiceKey<PageContext>;'
+      return:
+        type:
+          - ServiceKey<PageContext>
+  - uid: sp-page-context.PageContext.site
+    summary: Contextual information for the SharePoint site collection ("site") that is hosting the page.
+    name: site
+    fullName: sp-page-context.PageContext.site
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly site: SPSite;'
+      return:
+        type:
+          - SPSite
+  - uid: sp-page-context.PageContext.user
+    summary: >-
+      It provides contextual information for the SharePoint user that is accessing the page. This class is primarily
+      used with the PageContext class.
+    name: user
+    fullName: sp-page-context.PageContext.user
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly user: SPUser;'
+      return:
+        type:
+          - SPUser
+  - uid: sp-page-context.PageContext.web
+    summary: Contextual information for the SharePoint site ("web") that is hosting the page.
+    name: web
+    fullName: sp-page-context.PageContext.web
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly web: SPWeb;'
+      return:
+        type:
+          - SPWeb

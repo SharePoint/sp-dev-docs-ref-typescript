@@ -1,0 +1,69 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-page-context.CultureInfo
+    summary: >-
+      This class is primarily used with the PageContext class. It provides culture info for the current user of the
+      application.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not extend subclasses of the
+      CultureInfo class or instantiate it directly.
+    name: CultureInfo
+    fullName: sp-page-context.CultureInfo
+    langs:
+      - typeScript
+    type: class
+    package: sp-page-context
+    children:
+      - sp-page-context.CultureInfo.currentCultureName
+      - sp-page-context.CultureInfo.currentUICultureName
+      - sp-page-context.CultureInfo.isRightToLeft
+  - uid: sp-page-context.CultureInfo.currentCultureName
+    summary: >-
+      This string determines the language default format for dates, times, numbers, currency values, the sorting order
+      of text, casing conventions, and string comparisons.
+    remarks: >-
+      This property may be an empty string, but it will never be undefined.
+
+
+      Example: If the currentCultureName is "en-AU" then the application could use this information to display the date
+      as 1/8 instead of 8/1.
+    name: currentCultureName
+    fullName: sp-page-context.CultureInfo.currentCultureName
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly currentCultureName: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.CultureInfo.currentUICultureName
+    summary: This string determines the default user interface language. This used for localization and translation of text.
+    remarks: >-
+      This property may have an empty string, but will never be undefined.
+
+
+      Example: If the currentUICultureName is "es-MX", then the application could use this information to translate the
+      word "hello" to "hola".
+    name: currentUICultureName
+    fullName: sp-page-context.CultureInfo.currentUICultureName
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly currentUICultureName: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.CultureInfo.isRightToLeft
+    summary: This boolean represents the dominant direction of written text for the default user interface language.
+    name: isRightToLeft
+    fullName: sp-page-context.CultureInfo.isRightToLeft
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly isRightToLeft: boolean;'
+      return:
+        type:
+          - boolean

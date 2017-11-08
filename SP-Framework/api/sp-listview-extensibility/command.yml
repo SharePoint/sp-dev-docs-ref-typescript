@@ -1,0 +1,96 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-listview-extensibility.Command
+    summary: Represents a command belonging to a command set.
+    remarks: >-
+      The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons,
+      context menu items, etc. These commands are initially defined in the extension’s manifest file. At runtime, the
+      corresponding Command object can be obtained by calling
+      [BaseListViewCommandSet.tryGetCommand](xref:sp-listview-extensibility.BaseListViewCommandSet.tryGetCommand)<!--
+      -->. The command’s appearance can be customized by assigning its properties, for example to hide a command that is
+      not contextually relevant, or to pluralize the title based on the number of selected items.
+    name: Command
+    fullName: sp-listview-extensibility.Command
+    langs:
+      - typeScript
+    type: class
+    package: sp-listview-extensibility
+    children:
+      - sp-listview-extensibility.Command.ariaLabel
+      - sp-listview-extensibility.Command.iconImageUrl
+      - sp-listview-extensibility.Command.id
+      - sp-listview-extensibility.Command.title
+      - sp-listview-extensibility.Command.visible
+  - uid: sp-listview-extensibility.Command.ariaLabel
+    summary: >-
+      Custom accessibility text for the browser's "aria-label" attribute. If omitted, the title property will be used by
+      default. Example: "Show information. Press ENTER to select."
+    name: ariaLabel
+    fullName: sp-listview-extensibility.Command.ariaLabel
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public ariaLabel: string | undefined;'
+      return:
+        type:
+          - string | undefined
+  - uid: sp-listview-extensibility.Command.iconImageUrl
+    summary: >-
+      An optional URL for an image to be displayed next to the command. The requirements for this image are defined by
+      the type of extension; some extension types may not display the image at all.
+    remarks: This must be a absolute URL.
+    name: iconImageUrl
+    fullName: sp-listview-extensibility.Command.iconImageUrl
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public iconImageUrl: string | undefined;'
+      return:
+        type:
+          - string | undefined
+  - uid: sp-listview-extensibility.Command.id
+    summary: Id of the command.
+    name: id
+    fullName: sp-listview-extensibility.Command.id
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public id: string;'
+      return:
+        type:
+          - string
+  - uid: sp-listview-extensibility.Command.title
+    summary: 'A short label to be displayed by the associated button, menu item, etc.'
+    remarks: >-
+      Example: "Show information"
+
+
+      Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or
+      toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically
+      alters the meaning of the command, because administrators should be able to examine the extension manifest to
+      understand which commands are being implemented by a given extension.
+    name: title
+    fullName: sp-listview-extensibility.Command.title
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public title: string;'
+      return:
+        type:
+          - string
+  - uid: sp-listview-extensibility.Command.visible
+    summary: True if the command is visible.
+    name: visible
+    fullName: sp-listview-extensibility.Command.visible
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public visible: boolean;'
+      return:
+        type:
+          - boolean

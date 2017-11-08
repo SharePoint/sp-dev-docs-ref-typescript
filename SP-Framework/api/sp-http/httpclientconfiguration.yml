@@ -1,0 +1,84 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.HttpClientConfiguration
+    summary: Configuration for HttpClient.
+    remarks: >-
+      The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
+      HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the
+      predefined defaults from HttpClientConfigurations, however switches can also be changed via the
+      HttpClientConfiguration.overrideWith() method.
+    name: HttpClientConfiguration
+    fullName: sp-http.HttpClientConfiguration
+    langs:
+      - typeScript
+    type: class
+    implements:
+      - IHttpClientConfiguration
+    package: sp-http
+    children:
+      - sp-http.HttpClientConfiguration.constructor
+      - sp-http.HttpClientConfiguration.flags
+      - sp-http.HttpClientConfiguration.initializeFlags
+      - sp-http.HttpClientConfiguration.overrideWith
+  - uid: sp-http.HttpClientConfiguration.constructor
+    summary: >-
+      Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
+      any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
+    name: 'constructor(flags, overrideFlags)'
+    fullName: sp-http.HttpClientConfiguration.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(flags: IHttpClientConfiguration, overrideFlags?: IHttpClientConfiguration);'
+      parameters:
+        - id: flags
+          description: ''
+          type:
+            - IHttpClientConfiguration
+        - id: overrideFlags
+          description: ''
+          type:
+            - IHttpClientConfiguration
+  - uid: sp-http.HttpClientConfiguration.flags
+    name: flags
+    fullName: sp-http.HttpClientConfiguration.flags
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected flags: IHttpClientConfiguration;'
+      return:
+        type:
+          - IHttpClientConfiguration
+  - uid: sp-http.HttpClientConfiguration.initializeFlags
+    summary: Child classes should override this method to initialize the flags object.
+    name: initializeFlags()
+    fullName: sp-http.HttpClientConfiguration.initializeFlags
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual protected initializeFlags(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-http.HttpClientConfiguration.overrideWith
+    summary: 'Child classes should override this method to construct the child class type, rather than the base class type.'
+    name: overrideWith(sourceFlags)
+    fullName: sp-http.HttpClientConfiguration.overrideWith
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: '@virtual public overrideWith(sourceFlags: IHttpClientConfiguration): HttpClientConfiguration;'
+      return:
+        type:
+          - HttpClientConfiguration
+        description: ''
+      parameters:
+        - id: sourceFlags
+          description: ''
+          type:
+            - IHttpClientConfiguration
