@@ -3,8 +3,8 @@
   "name": "@microsoft/sp-application-base",
   "summary": [
     {
-      "kind": "textDocElement",
-      "value": "SharePoint Framework support for building and extending client-side applications."
+      "kind": "text",
+      "text": "SharePoint Framework support for building and extending client-side applications."
     }
   ],
   "remarks": [],
@@ -17,24 +17,24 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Provides access to the client-side application that is currently executing."
+          "kind": "text",
+          "text": "Provides access to the client-side application that is currently running."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "The client-side application determines the user experience for an entire web page. (It is a client-side component with a manifest; however, the SharePoint Framework does not yet enable third parties to create their own applications.) Within a web page, exactly one client-side application may be executing at a time. Certain in-place navigation transitions may cause the application to be unloaded and replaced a different application. "
+          "kind": "text",
+          "text": "The client-side application determines the user experience for an entire web page. (It is a client-side component with a manifest; however, the SharePoint Framework does not enable third parties to create their own client-side applications at this time.) Within a web page, at most one client-side application will be running at a time. Certain in-place navigation transitions can cause the application to be unloaded and replaced by a different application."
         },
         {
-          "kind": "paragraphDocElement"
+          "kind": "paragraph"
         },
         {
-          "kind": "textDocElement",
-          "value": " The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently executing application. It acts as a proxy for the real application object (i.e. BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications."
+          "kind": "text",
+          "text": "The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently running application. It acts as a proxy for the real application object (the BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications."
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -51,40 +51,52 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of the "
+              "kind": "text",
+              "text": "Constructs a new instance of the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-application-base",
-              "exportName": "ApplicationAccessor",
-              "memberName": "",
-              "value": "ApplicationAccessor"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "ApplicationAccessor"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "ApplicationAccessor",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " class."
+              "kind": "text",
+              "text": " class."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component context, e.g. "
+              "kind": "text",
+              "text": "Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component context, for example "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-application-base",
-              "exportName": "BaseApplicationCustomizer",
-              "memberName": "context",
-              "value": "BaseApplicationCustomizer.context"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "BaseApplicationCustomizer.context"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "BaseApplicationCustomizer",
+                "memberName": "context"
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " ."
+              "kind": "text",
+              "text": "."
             }
           ]
         },
@@ -98,30 +110,36 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "An event that is fired when the application's top-level page context navigates to a new page."
+              "kind": "text",
+              "text": "An event that is fired when the application's top-level page context navigates to a new page."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "This event fires after the top-level "
+              "kind": "text",
+              "text": "This event fires after the top-level "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "",
-              "packageName": "sp-page-context",
-              "exportName": "PageContext",
-              "memberName": "",
-              "value": "sp-page-context:PageContext"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "@microsoft/sp-page-context:PageContext"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-page-context",
+                "exportName": "PageContext",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " has navigated to a new page."
+              "kind": "text",
+              "text": " has navigated to a new page."
             }
           ],
-          "isBeta": true
+          "isBeta": false
         }
       }
     },
@@ -133,27 +151,36 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "The component context for "
+          "kind": "text",
+          "text": "The component context for "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "BaseApplicationCustomizer",
-          "memberName": "",
-          "value": "BaseApplicationCustomizer"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "BaseApplicationCustomizer"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "BaseApplicationCustomizer",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " ."
+          "kind": "text",
+          "text": "."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "The constructor for this class is marked as internal; third party code should not inherit directly from this base class."
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ApplicationCustomizerContext class."
+        },
+        {
+          "kind": "paragraph"
         }
       ],
       "isBeta": false,
@@ -168,8 +195,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Provides access to the client-side application that is currently executing."
+              "kind": "text",
+              "text": "Provides access to the client-side application that is currently running."
             }
           ],
           "remarks": [],
@@ -185,8 +212,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Exposes a collection of content placeholders for use by third parties."
+              "kind": "text",
+              "text": "Exposes a collection of content placeholders for use by third parties."
             }
           ],
           "remarks": [],
@@ -204,43 +231,43 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "This is the base class that third parties should extend when implementing a client-side extension that runs when an application is first starting. "
+          "kind": "text",
+          "text": "This is the base class that third parties should extend when implementing a client-side extension that runs when an application is first starting."
         },
         {
-          "kind": "paragraphDocElement"
+          "kind": "paragraph"
         },
         {
-          "kind": "textDocElement",
-          "value": " In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
+          "kind": "text",
+          "text": "In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period."
+          "kind": "text",
+          "text": "Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period."
         }
       ],
       "isBeta": false,
       "members": {
         "context": {
           "kind": "property",
-          "signature": "protected context: ApplicationCustomizerContext;",
+          "signature": "protected readonly context: ApplicationCustomizerContext;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": false,
           "type": "ApplicationCustomizerContext",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Use the context object to access common services and state associated with the component."
+              "kind": "text",
+              "text": "Use the context object to access common services and state associated with the component."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+              "kind": "text",
+              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
           "isBeta": false
@@ -255,25 +282,31 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Options for the "
+          "kind": "text",
+          "text": "Options for the "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "PlaceholderProvider",
-          "memberName": "tryCreateContent",
-          "value": "PlaceholderProvider.tryCreateContent"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.tryCreateContent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "tryCreateContent"
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " method."
+          "kind": "text",
+          "text": " method."
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "members": {
         "onDispose": {
           "kind": "property",
@@ -285,17 +318,17 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "An optional callback that will be invoked when the PlaceholderContent object is disposed."
+              "kind": "text",
+              "text": "An optional callback that will be invoked when the PlaceholderContent object is disposed."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it."
+              "kind": "text",
+              "text": "To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it."
             }
           ],
-          "isBeta": true
+          "isBeta": false
         }
       }
     },
@@ -307,30 +340,43 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Represents custom content that is rendered inside a placeholder on a SharePoint page."
+          "kind": "text",
+          "text": "Represents custom content that is rendered inside a placeholder on a SharePoint page."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This object is returned by "
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the PlaceholderContent class."
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "PlaceholderProvider",
-          "memberName": "tryCreateContent",
-          "value": "PlaceholderProvider.tryCreateContent"
+          "kind": "paragraph"
         },
         {
-          "kind": "textDocElement",
-          "value": " . It provides access to a Document Object Model (DOM) element where the caller can render its custom content."
+          "kind": "text",
+          "text": "This object is returned by "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.tryCreateContent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "tryCreateContent"
+          }
+        },
+        {
+          "kind": "text",
+          "text": ". It provides access to a Document Object Model (DOM) element where the owner can render its custom content."
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "members": {
         "dispose": {
           "kind": "method",
@@ -346,30 +392,36 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Disposes the PlaceholderContent object and removes its attached DOM element from the page."
+              "kind": "text",
+              "text": "Disposes the PlaceholderContent object and removes its attached DOM element from the page."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the application when the containing placeholder is disposed. Calling dispose() invokes the "
+              "kind": "text",
+              "text": "This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the application when the containing placeholder is disposed. Calling dispose() invokes the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-application-base",
-              "exportName": "IPlaceholderCreateContentOptions",
-              "memberName": "onDispose",
-              "value": "IPlaceholderCreateContentOptions.onDispose"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "IPlaceholderCreateContentOptions.onDispose"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "IPlaceholderCreateContentOptions",
+                "memberName": "onDispose"
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object."
+              "kind": "text",
+              "text": " callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object."
             }
           ],
-          "isBeta": true
+          "isBeta": false
         },
         "domElement": {
           "kind": "property",
@@ -381,30 +433,36 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The Document Object Model (DOM) element where the owner should render its custom content."
+              "kind": "text",
+              "text": "The Document Object Model (DOM) element where the owner should render its custom content."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "If the caller needs to be notified when the DOM element is disposed, use the "
+              "kind": "text",
+              "text": "If the caller needs to be notified when the DOM element is disposed, use the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-application-base",
-              "exportName": "IPlaceholderCreateContentOptions",
-              "memberName": "onDispose",
-              "value": "IPlaceholderCreateContentOptions.onDispose"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "IPlaceholderCreateContentOptions.onDispose"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "IPlaceholderCreateContentOptions",
+                "memberName": "onDispose"
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " callback."
+              "kind": "text",
+              "text": " callback."
             }
           ],
-          "isBeta": true
+          "isBeta": false
         },
         "name": {
           "kind": "property",
@@ -416,17 +474,17 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Identifies the placeholder that this content was added to."
+              "kind": "text",
+              "text": "Identifies the placeholder that this content was added to."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "Example: PlaceholderName.Top"
+              "kind": "text",
+              "text": "Example: PlaceholderName.Top"
             }
           ],
-          "isBeta": true
+          "isBeta": false
         }
       }
     },
@@ -439,12 +497,12 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "A region at the bottom of the page."
+              "kind": "text",
+              "text": "A region at the bottom of the page."
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": false
         },
         "Top": {
           "kind": "enum value",
@@ -452,41 +510,47 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "A region at the top of the page."
+              "kind": "text",
+              "text": "A region at the top of the page."
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": false
         }
       },
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "The identifier for a content placeholder, which is a region on the page where third party extensibility components can inject custom content."
+          "kind": "text",
+          "text": "The identifier for a content placeholder, which is a region on the page where third-party extensibility components can render custom content."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "For more information about placeholders, see "
+          "kind": "text",
+          "text": "For more information about placeholders, see "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "PlaceholderProvider",
-          "memberName": "",
-          "value": "PlaceholderProvider"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " ."
+          "kind": "text",
+          "text": "."
         }
       ],
-      "isBeta": true
+      "isBeta": false
     },
     "PlaceholderProvider": {
       "kind": "class",
@@ -496,63 +560,88 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Allows third party components to discover and use SharePoint placeholders. Placeholders enable third party components to inject custom content into designated regions on the page."
+          "kind": "text",
+          "text": "Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party components to render custom content into designated regions on the page."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "Placeholders are designated regions on the page, identified by one of the predefined "
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the PlaceholderProvider class."
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "PlaceholderName",
-          "memberName": "",
-          "value": "PlaceholderName"
+          "kind": "paragraph"
         },
         {
-          "kind": "textDocElement",
-          "value": " constants. Different applications and pages may support different placeholder names. Placeholders can appear and disappear as the user interacts with the page, e.g. via in-place navigation. Third party components should not assume that a given placeholder will always be available. "
+          "kind": "text",
+          "text": "Placeholders are designated regions on the page, identified by one of the predefined "
         },
         {
-          "kind": "paragraphDocElement"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderName"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderName",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " Use "
+          "kind": "text",
+          "text": " constants. Different applications and pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with the page, for example via in-place navigation. Third-party components should not assume that a given placeholder will always be available."
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "PlaceholderProvider",
-          "memberName": "tryCreateContent",
-          "value": "PlaceholderProvider.tryCreateContent"
+          "kind": "paragraph"
         },
         {
-          "kind": "textDocElement",
-          "value": " to test whether a placeholder is available and add content to it. Use the "
+          "kind": "text",
+          "text": "Use "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-application-base",
-          "exportName": "PlaceholderProvider",
-          "memberName": "changedEvent",
-          "value": "PlaceholderProvider.changedEvent"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.tryCreateContent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "tryCreateContent"
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " to discover when new placeholders appear."
+          "kind": "text",
+          "text": " to test whether a placeholder is available and add content to it. Use the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.changedEvent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "changedEvent"
+          }
+        },
+        {
+          "kind": "text",
+          "text": " event to discover when new placeholders appear."
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "members": {
         "changedEvent": {
           "kind": "property",
@@ -564,17 +653,17 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "This event is raised when the list of currently available placeholders is changed."
+              "kind": "text",
+              "text": "This event is raised when the list of currently available placeholders is changed."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "The application can change its list of available placeholders at any time. This means that the existing placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when they appear."
+              "kind": "text",
+              "text": "The application can change its list of available placeholders at any time. This means that the existing placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when they appear."
             }
           ],
-          "isBeta": true
+          "isBeta": false
         },
         "placeholderNames": {
           "kind": "property",
@@ -586,12 +675,12 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Returns the names of the currently available placeholders."
+              "kind": "text",
+              "text": "Returns the names of the currently available placeholders."
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": false
         },
         "tryCreateContent": {
           "kind": "method",
@@ -603,8 +692,8 @@
             "type": "PlaceholderContent | undefined",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "A new PlaceholderContent object, or undefined if the requested placeholder does not exist."
+                "kind": "text",
+                "text": "A new PlaceholderContent object, or undefined if the requested placeholder does not exist."
               }
             ]
           },
@@ -613,8 +702,8 @@
               "name": "name",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "The requested placeholder"
+                  "kind": "text",
+                  "text": "The requested placeholder"
                 }
               ],
               "isOptional": false,
@@ -625,8 +714,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "Additional options, for example to detect when the placeholder is disposed."
+                  "kind": "text",
+                  "text": "Additional options, for example to detect when the placeholder is disposed."
                 }
               ],
               "isOptional": true,
@@ -637,17 +726,17 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created, which allows the caller to render custom content inside the placeholder."
+              "kind": "text",
+              "text": "Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created, which allows the caller to render custom content inside the placeholder."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "The host application makes no guarantees about the availability of a given placeholder. In situations where an expected placeholder is not available, the third party extension must handle it gracefully, e.g. by not rendering anything, or by choosing an alternative placeholder."
+              "kind": "text",
+              "text": "The host application makes no guarantees about the availability of a given placeholder. In situations where an expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering anything, or by choosing an alternative placeholder."
             }
           ],
-          "isBeta": true
+          "isBeta": false
         }
       }
     }

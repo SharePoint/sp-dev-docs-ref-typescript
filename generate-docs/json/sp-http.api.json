@@ -3,14 +3,14 @@
   "name": "@microsoft/sp-http",
   "summary": [
     {
-      "kind": "textDocElement",
-      "value": "Base communication layer for the SharePoint Framework"
+      "kind": "text",
+      "text": "Base communication layer for the SharePoint Framework"
     }
   ],
   "remarks": [
     {
-      "kind": "textDocElement",
-      "value": "This package defines the base communication layer for the SharePoint Framework. For REST calls, it handles authentication, logging, diagnostics, and batching. It also simplifies requests by adding default headers that follow the recommended best practices."
+      "kind": "text",
+      "text": "This package defines the base communication layer for the SharePoint Framework. For REST calls, it handles authentication, logging, diagnostics, and batching. It also simplifies requests by adding default headers that follow the recommended best practices."
     }
   ],
   "exports": {
@@ -19,43 +19,60 @@
       "extends": "",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+        }
+      ],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "GraphHttpClient is used to perform REST calls against Microsoft Graph. It adds default headers and collects telemetry that helps the service to monitor the performance of an application. https://developer.microsoft.com/en-us/graph/"
+          "kind": "text",
+          "text": "GraphHttpClient is used to perform REST calls against Microsoft Graph. It adds default headers and collects telemetry that helps the service to monitor the performance of an application. https://developer.microsoft.com/en-us/graph/"
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "For communicating with SharePoint, use the "
+          "kind": "text",
+          "text": "For communicating with SharePoint, use the "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "SPHttpClient",
-          "memberName": "",
-          "value": "SPHttpClient"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "SPHttpClient",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " class instead. For communicating with other internet services, use the "
+          "kind": "text",
+          "text": " class instead. For communicating with other internet services, use the "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "HttpClient",
-          "memberName": "",
-          "value": "HttpClient"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "HttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "HttpClient",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " class instead."
+          "kind": "text",
+          "text": " class instead."
         }
       ],
       "isBeta": true,
@@ -72,39 +89,56 @@
               "type": "ServiceScope"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of the "
+              "kind": "text",
+              "text": "Constructs a new instance of the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-http",
-              "exportName": "GraphHttpClient",
-              "value": "GraphHttpClient"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "GraphHttpClient"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "GraphHttpClient",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " class"
+              "kind": "text",
+              "text": " class"
             }
           ],
           "remarks": []
         },
         "configurations": {
           "kind": "property",
-          "signature": "public static configurations: IGraphHttpClientConfigurations;",
+          "signature": "public static readonly configurations: IGraphHttpClientConfigurations;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": true,
           "type": "IGraphHttpClientConfigurations",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The standard predefined GraphHttpClientConfiguration objects for use with the GraphHttpClient class."
+              "kind": "text",
+              "text": "The standard predefined GraphHttpClientConfiguration objects for use with the GraphHttpClient class."
             }
           ],
           "remarks": [],
@@ -120,8 +154,8 @@
             "type": "Promise<GraphHttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -130,8 +164,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "The url string should be relative to the graph server. Good: 'v1.0/me/events' Bad: '/v1.0/me/events', 'https://graph.microsoft.com/v1.0/me/events'"
+                  "kind": "text",
+                  "text": "The url string should be relative to the graph server. Good: 'v1.0/me/events' Bad: '/v1.0/me/events', 'https://graph.microsoft.com/v1.0/me/events'"
                 }
               ],
               "isOptional": false,
@@ -142,8 +176,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of GraphHttpClient; normally this should be the latest version number from GraphHttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of GraphHttpClient; normally this should be the latest version number from GraphHttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -154,8 +188,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": false,
@@ -163,24 +197,29 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Perform a REST service call."
+              "kind": "text",
+              "text": "Perform a REST service call."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "Generally, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/ "
+              "kind": "text",
+              "text": "Generally, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " The GraphHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead): - Default \"Accept\" and \"Content-Type\" headers are added if not explicitly specified."
+              "kind": "text",
+              "text": "The GraphHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead): - Default \"Accept\" and \"Content-Type\" headers are added if not explicitly specified."
             }
           ],
           "isBeta": true
@@ -195,8 +234,8 @@
             "type": "Promise<GraphHttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -205,8 +244,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -217,8 +256,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of GraphHttpClient; normally this should be the latest version number from GraphHttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of GraphHttpClient; normally this should be the latest version number from GraphHttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -229,8 +268,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": true,
@@ -238,11 +277,16 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Calls fetch(), but sets the method to \"GET\"."
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"GET\"."
             }
           ],
           "remarks": [],
@@ -258,8 +302,8 @@
             "type": "Promise<GraphHttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -268,8 +312,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -280,8 +324,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of GraphHttpClient; normally this should be the latest version number from GraphHttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of GraphHttpClient; normally this should be the latest version number from GraphHttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -292,8 +336,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": false,
@@ -301,11 +345,16 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Calls fetch(), but sets the method to \"POST\"."
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"POST\"."
             }
           ],
           "remarks": [],
@@ -313,16 +362,21 @@
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static serviceKey: ServiceKey<GraphHttpClient>;",
+          "signature": "public static readonly serviceKey: ServiceKey<GraphHttpClient>;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": true,
           "type": "ServiceKey<GraphHttpClient>",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The service key for GraphHttpClient."
+              "kind": "text",
+              "text": "The service key for GraphHttpClient."
             }
           ],
           "remarks": [],
@@ -335,30 +389,41 @@
       "extends": "HttpClientConfiguration",
       "implements": "IGraphHttpClientConfiguration",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+        }
+      ],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Configuration for "
+          "kind": "text",
+          "text": "Configuration for "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "GraphHttpClient",
-          "memberName": "",
-          "value": "GraphHttpClient"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "GraphHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "GraphHttpClient",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " ."
+          "kind": "text",
+          "text": "."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "The GraphHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the GraphHttpClient class. Normally these switches are set (e.g. when calling GraphHttpClient.fetch()) by providing one of the predefined defaults from GraphHttpClientConfigurations, however switches can also be changed via the GraphHttpClientConfiguration.overrideWith() method."
+          "kind": "text",
+          "text": "The GraphHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the GraphHttpClient class. Normally these switches are set (e.g. when calling GraphHttpClient.fetch()) by providing one of the predefined defaults from GraphHttpClientConfigurations, however switches can also be changed via the GraphHttpClientConfiguration.overrideWith() method."
         }
       ],
       "isBeta": true,
@@ -382,17 +447,22 @@
               "type": "IGraphHttpClientConfiguration"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of GraphHttpClientCommonConfiguration with the specified flags."
+              "kind": "text",
+              "text": "Constructs a new instance of GraphHttpClientCommonConfiguration with the specified flags."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
+              "kind": "text",
+              "text": "The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
             }
           ]
         },
@@ -403,7 +473,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "IGraphHttpClientConfiguration",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [],
           "remarks": [],
           "isBeta": true
@@ -415,17 +490,22 @@
       "extends": "HttpClientResponse",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+        }
+      ],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "The Response subclass returned by methods such as GraphHttpClient.fetch()."
+          "kind": "text",
+          "text": "The Response subclass returned by methods such as GraphHttpClient.fetch()."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This is a placeholder. In the future, additional GraphHttpClient-specific functionality may be added to this class."
+          "kind": "text",
+          "text": "This is a placeholder. In the future, additional GraphHttpClient-specific functionality may be added to this class."
         }
       ],
       "isBeta": true,
@@ -442,23 +522,35 @@
               "type": "Response"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of the "
+              "kind": "text",
+              "text": "Constructs a new instance of the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-http",
-              "exportName": "GraphHttpClientResponse",
-              "value": "GraphHttpClientResponse"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "GraphHttpClientResponse"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "GraphHttpClientResponse",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " class"
+              "kind": "text",
+              "text": " class"
             }
           ],
           "remarks": []
@@ -474,7 +566,12 @@
             "description": []
           },
           "parameters": {},
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [],
           "remarks": [],
           "isBeta": true
@@ -489,40 +586,33 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "HttpClient implements a basic set of features for performing REST operations against a generic service."
+          "kind": "text",
+          "text": "HttpClient implements a basic set of features for performing REST operations against a generic service."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "For communicating with SharePoint, use the "
+          "kind": "text",
+          "text": "For communicating with SharePoint, use the "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "SPHttpClient",
-          "memberName": "",
-          "value": "SPHttpClient"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "SPHttpClient",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " class instead. For communicating with Microsoft Graph, use the "
-        },
-        {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "GraphHttpClient",
-          "memberName": "",
-          "value": "GraphHttpClient"
-        },
-        {
-          "kind": "textDocElement",
-          "value": " class."
+          "kind": "text",
+          "text": " class instead."
         }
       ],
       "isBeta": false,
@@ -542,36 +632,43 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of the "
+              "kind": "text",
+              "text": "Constructs a new instance of the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-http",
-              "exportName": "HttpClient",
-              "value": "HttpClient"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "HttpClient"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "HttpClient",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " class"
+              "kind": "text",
+              "text": " class"
             }
           ],
           "remarks": []
         },
         "configurations": {
           "kind": "property",
-          "signature": "public static configurations: IHttpClientConfigurations;",
+          "signature": "public static readonly configurations: IHttpClientConfigurations;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": true,
           "type": "IHttpClientConfigurations",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The standard predefined HttpClientConfiguration objects for use with the HttpClient class."
+              "kind": "text",
+              "text": "The standard predefined HttpClientConfiguration objects for use with the HttpClient class."
             }
           ],
           "remarks": [],
@@ -587,8 +684,8 @@
             "type": "Promise<HttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -597,8 +694,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -609,8 +706,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -621,8 +718,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": false,
@@ -633,14 +730,14 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Performs a REST service call."
+              "kind": "text",
+              "text": "Performs a REST service call."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
+              "kind": "text",
+              "text": "Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
             }
           ],
           "isBeta": false
@@ -655,8 +752,8 @@
             "type": "Promise<HttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -665,8 +762,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -677,8 +774,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -689,8 +786,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": true,
@@ -701,8 +798,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Calls fetch(), but sets the method to \"GET\"."
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"GET\"."
             }
           ],
           "remarks": [],
@@ -718,8 +815,8 @@
             "type": "Promise<HttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -728,8 +825,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -740,8 +837,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -752,8 +849,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": false,
@@ -764,8 +861,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Calls fetch(), but sets the method to \"POST\"."
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"POST\"."
             }
           ],
           "remarks": [],
@@ -773,16 +870,16 @@
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static serviceKey: ServiceKey<HttpClient>;",
+          "signature": "public static readonly serviceKey: ServiceKey<HttpClient>;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": true,
           "type": "ServiceKey<HttpClient>",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The service key for HttpClient."
+              "kind": "text",
+              "text": "The service key for HttpClient."
             }
           ],
           "remarks": [],
@@ -798,14 +895,14 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Configuration for HttpClient."
+          "kind": "text",
+          "text": "Configuration for HttpClient."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the predefined defaults from HttpClientConfigurations, however switches can also be changed via the HttpClientConfiguration.overrideWith() method."
+          "kind": "text",
+          "text": "The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the predefined defaults from HttpClientConfigurations, however switches can also be changed via the HttpClientConfiguration.overrideWith() method."
         }
       ],
       "isBeta": false,
@@ -832,8 +929,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
+              "kind": "text",
+              "text": "Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
             }
           ],
           "remarks": []
@@ -864,8 +961,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Child classes should override this method to initialize the flags object."
+              "kind": "text",
+              "text": "Child classes should override this method to initialize the flags object."
             }
           ],
           "remarks": [],
@@ -893,8 +990,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Child classes should override this method to construct the child class type, rather than the base class type."
+              "kind": "text",
+              "text": "Child classes should override this method to construct the child class type, rather than the base class type."
             }
           ],
           "remarks": [],
@@ -910,14 +1007,21 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "The Response subclass returned by methods such as HttpClient.fetch()."
+          "kind": "text",
+          "text": "The Response subclass returned by methods such as HttpClient.fetch()."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This is a placeholder. In the future, additional HttpClient-specific functionality may be added to this class."
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the HttpClientResponse class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "This is a placeholder. In the future, additional HttpClient-specific functionality may be added to this class."
         }
       ],
       "isBeta": false,
@@ -936,8 +1040,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Body.arrayBuffer"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Body.arrayBuffer"
             }
           ],
           "remarks": [],
@@ -957,8 +1061,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Body.blob"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Body.blob"
             }
           ],
           "remarks": [],
@@ -974,8 +1078,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Body.bodyUsed"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Body.bodyUsed"
             }
           ],
           "remarks": [],
@@ -1011,8 +1115,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Body.formData"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Body.formData"
             }
           ],
           "remarks": [],
@@ -1028,8 +1132,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Response.headers"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Response.headers"
             }
           ],
           "remarks": [],
@@ -1049,8 +1153,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Body.json"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Body.json"
             }
           ],
           "remarks": [],
@@ -1078,8 +1182,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Response.ok"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Response.ok"
             }
           ],
           "remarks": [],
@@ -1095,8 +1199,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Response.status"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Response.status"
             }
           ],
           "remarks": [],
@@ -1112,8 +1216,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Response.statusText"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Response.statusText"
             }
           ],
           "remarks": [],
@@ -1133,8 +1237,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Body.text"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Body.text"
             }
           ],
           "remarks": [],
@@ -1150,8 +1254,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Response.type"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Response.type"
             }
           ],
           "remarks": [],
@@ -1167,8 +1271,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "See documentation for whatwg-fetch:Response.url"
+              "kind": "text",
+              "text": "See documentation for whatwg-fetch:Response.url"
             }
           ],
           "remarks": [],
@@ -1181,11 +1285,16 @@
       "extends": "IHttpClientConfiguration",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+        }
+      ],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Flags interface for GraphHttpClientCommonConfiguration"
+          "kind": "text",
+          "text": "Flags interface for GraphHttpClientCommonConfiguration"
         }
       ],
       "remarks": [],
@@ -1196,33 +1305,43 @@
       "extends": "",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+        }
+      ],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Standard configurations for GraphHttpClient."
+          "kind": "text",
+          "text": "Standard configurations for GraphHttpClient."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This interface provides standard predefined GraphHttpClientConfiguration objects for use with the GraphHttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
+          "kind": "text",
+          "text": "This interface provides standard predefined GraphHttpClientConfiguration objects for use with the GraphHttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
         }
       ],
       "isBeta": true,
       "members": {
         "v1": {
           "kind": "property",
-          "signature": "v1: GraphHttpClientConfiguration;",
+          "signature": "readonly v1: GraphHttpClientConfiguration;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": false,
           "type": "GraphHttpClientConfiguration",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "This configuration turns off every feature switch for HttpClient. The fetch() behavior will be essentially identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/"
+              "kind": "text",
+              "text": "This configuration turns off every feature switch for HttpClient. The fetch() behavior will be essentially identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/"
             }
           ],
           "remarks": [],
@@ -1238,14 +1357,14 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Options for HttpClient"
+          "kind": "text",
+          "text": "Options for HttpClient"
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This interface defines the options for the GraphHttpClient operations such as get(), post(), fetch(), etc. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
+          "kind": "text",
+          "text": "This interface defines the options for the GraphHttpClient operations such as get(), post(), fetch(), etc. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
         }
       ],
       "isBeta": true
@@ -1258,8 +1377,8 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Flags interface for HttpClientConfiguration."
+          "kind": "text",
+          "text": "Flags interface for HttpClientConfiguration."
         }
       ],
       "remarks": [],
@@ -1273,30 +1392,30 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Standard configurations for HttpClient."
+          "kind": "text",
+          "text": "Standard configurations for HttpClient."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This interface provides standard predefined HttpClientConfiguration objects for use with the HttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
+          "kind": "text",
+          "text": "This interface provides standard predefined HttpClientConfiguration objects for use with the HttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
         }
       ],
       "isBeta": false,
       "members": {
         "v1": {
           "kind": "property",
-          "signature": "v1: HttpClientConfiguration;",
+          "signature": "readonly v1: HttpClientConfiguration;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": false,
           "type": "HttpClientConfiguration",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "This configuration turns off every feature switch for HttpClient. The fetch() behavior will be essentially identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/"
+              "kind": "text",
+              "text": "This configuration turns off every feature switch for HttpClient. The fetch() behavior will be essentially identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/"
             }
           ],
           "remarks": [],
@@ -1312,17 +1431,120 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Options for HttpClient"
+          "kind": "text",
+          "text": "Options for HttpClient"
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This interface defines the options for the HttpClient operations such as get(), post(), fetch(), etc. It is based on the whatwg API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
+          "kind": "text",
+          "text": "This interface defines the options for the HttpClient operations such as get(), post(), fetch(), etc. It is based on the whatwg API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
         }
       ],
       "isBeta": false
+    },
+    "ISPHttpClientBatchConfiguration": {
+      "kind": "interface",
+      "extends": "ISPHttpClientCommonConfiguration",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Flags interface for SPHttpClientBatchConfiguration."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true
+    },
+    "ISPHttpClientBatchConfigurations": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Standard configurations for SPHttpClient."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "This interface provides standard predefined SPHttpClientBatchConfiguration objects for use with the SPHttpClientBatch class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
+        }
+      ],
+      "isBeta": true,
+      "members": {
+        "v1": {
+          "kind": "property",
+          "signature": "readonly v1: SPHttpClientBatchConfiguration;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPHttpClientBatchConfiguration",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Version 1 enables these switches: consoleLogging = true; jsonRequest = true; jsonResponse = true"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    },
+    "ISPHttpClientBatchCreationOptions": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This interface is passed to the SPHttpClientBatch constructor. It specifies options that affect the entire batch."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "members": {
+        "webUrl": {
+          "kind": "property",
+          "signature": "webUrl?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "SPHttpClientBatch will need to perform its POST to an endpoint such as \"http://example.com/sites/sample/_api/$batch\". Typically the SPWeb URL (\"https://example.com/sites/sample\" in this example) can be guessed by looking for a reserved URL segment such as \"_api\" in the first URL passed to fetch(), but if not, the webUrl can be explicitly specified using this option."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    },
+    "ISPHttpClientBatchOptions": {
+      "kind": "interface",
+      "extends": "IHttpClientOptions",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This interface defines the options for an individual REST request that is part of an SPHttpClientBatch. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
+        }
+      ],
+      "remarks": [],
+      "isBeta": true
     },
     "ISPHttpClientCommonConfiguration": {
       "kind": "interface",
@@ -1332,8 +1554,8 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Flags interface for SPHttpClientCommonConfiguration"
+          "kind": "text",
+          "text": "Flags interface for SPHttpClientCommonConfiguration"
         }
       ],
       "remarks": [],
@@ -1349,35 +1571,35 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the \"Content-Type\" header for a JSON payload."
+              "kind": "text",
+              "text": "Automatically configure the \"Content-Type\" header for a JSON payload."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If the \"Content-Type\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). "
+              "kind": "text",
+              "text": "If the \"Content-Type\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\")."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 3.0, the value is 'application/json;odata=verbose;charset=utf-8'. "
+              "kind": "text",
+              "text": "For OData 3.0, the value is 'application/json;odata=verbose;charset=utf-8'."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 4.0, the value is 'application/json;charset=utf-8'."
+              "kind": "text",
+              "text": "For OData 4.0, the value is 'application/json;charset=utf-8'."
             }
           ],
           "isBeta": false
@@ -1392,35 +1614,35 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the \"Accept\" header for a JSON payload."
+              "kind": "text",
+              "text": "Automatically configure the \"Accept\" header for a JSON payload."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If the \"Accept\" header was not explicitly added for the request, then SPHttpClient will add it. "
+              "kind": "text",
+              "text": "If the \"Accept\" header was not explicitly added for the request, then SPHttpClient will add it."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 3.0, the value is 'application/json'. "
+              "kind": "text",
+              "text": "For OData 3.0, the value is 'application/json'."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 4.0, the value is 'application/json;odata.metadata=minimal'."
+              "kind": "text",
+              "text": "For OData 4.0, the value is 'application/json;odata.metadata=minimal'."
             }
           ],
           "isBeta": false
@@ -1435,8 +1657,8 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Flags interface for SPHttpClientConfiguration."
+          "kind": "text",
+          "text": "Flags interface for SPHttpClientConfiguration."
         }
       ],
       "remarks": [],
@@ -1452,21 +1674,21 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the \"OData-Version\" header."
+              "kind": "text",
+              "text": "Automatically configure the \"OData-Version\" header."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is specified (i.e. not undefined): If the \"OData-Version\" header was not explicitly added for the request, then SPHttpClient will add the header to specify the version indicated by defaultODataVersion. "
+              "kind": "text",
+              "text": "When this switch is specified (i.e. not undefined): If the \"OData-Version\" header was not explicitly added for the request, then SPHttpClient will add the header to specify the version indicated by defaultODataVersion."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases. The recommended version is 4.0."
+              "kind": "text",
+              "text": "NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases. The recommended version is 4.0."
             }
           ],
           "isBeta": false
@@ -1481,28 +1703,28 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the RequestInit.credentials."
+              "kind": "text",
+              "text": "Automatically configure the RequestInit.credentials."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If RequestInit.credentials is not explicitly specified for the request, then SPHttpClient will assign it to be \"same-origin\". Without this switch, different web browsers may apply different defaults. "
+              "kind": "text",
+              "text": "If RequestInit.credentials is not explicitly specified for the request, then SPHttpClient will assign it to be \"same-origin\". Without this switch, different web browsers may apply different defaults."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For more information, see the spec: https://fetch.spec.whatwg.org/#cors-protocol-and-credentials"
+              "kind": "text",
+              "text": "For more information, see the spec: https://fetch.spec.whatwg.org/#cors-protocol-and-credentials"
             }
           ],
           "isBeta": false
@@ -1517,21 +1739,21 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically provide an \"X-RequestDigest\" header for authentication."
+              "kind": "text",
+              "text": "Automatically provide an \"X-RequestDigest\" header for authentication."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If the \"X-RequestDigest\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). The request digest is managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed."
+              "kind": "text",
+              "text": "If the \"X-RequestDigest\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). The request digest is managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed."
             }
           ],
           "isBeta": false
@@ -1546,37 +1768,37 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Standard configurations for SPHttpClient."
+          "kind": "text",
+          "text": "Standard configurations for SPHttpClient."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This interface provides standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
+          "kind": "text",
+          "text": "This interface provides standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
         }
       ],
       "isBeta": false,
       "members": {
         "v1": {
           "kind": "property",
-          "signature": "v1: SPHttpClientConfiguration;",
+          "signature": "readonly v1: SPHttpClientConfiguration;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": false,
           "type": "SPHttpClientConfiguration",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Version 1 enables these switches: "
+              "kind": "text",
+              "text": "Version 1 enables these switches:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " consoleLogging = true; jsonRequest = true; jsonResponse = true; defaultSameOriginCredentials = true; defaultODataVersion = ODataVersion.v4; requestDigest = true"
+              "kind": "text",
+              "text": "consoleLogging = true; jsonRequest = true; jsonResponse = true; defaultSameOriginCredentials = true; defaultODataVersion = ODataVersion.v4; requestDigest = true"
             }
           ],
           "remarks": [],
@@ -1592,8 +1814,8 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "This interface defines the options for the SPHttpClient operations such as get(), post(), fetch(), etc. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
+          "kind": "text",
+          "text": "This interface defines the options for the SPHttpClient operations such as get(), post(), fetch(), etc. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
         }
       ],
       "remarks": [],
@@ -1609,14 +1831,14 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Configure the SPWeb URL for authentication."
+              "kind": "text",
+              "text": "Configure the SPWeb URL for authentication."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "For a write operation, SPHttpClient will automatically add the \"X-RequestDigest\" header, which may need to be fetched using a seperate request such as \"https://example.com/sites/sample/_api/contextinfo\". Typically the SPWeb URL (\"https://example.com/sites/sample\" in this example) can be guessed by looking for a reserved URL segment such as \"_api\" in the original REST query, however certain REST endpoints do not contain a reserved URL segment; in this case, the webUrl can be explicitly specified using this option."
+              "kind": "text",
+              "text": "For a write operation, SPHttpClient will automatically add the \"X-RequestDigest\" header, which may need to be fetched using a seperate request such as \"https://example.com/sites/sample/_api/contextinfo\". Typically the SPWeb URL (\"https://example.com/sites/sample\" in this example) can be guessed by looking for a reserved URL segment such as \"_api\" in the original REST query, however certain REST endpoints do not contain a reserved URL segment; in this case, the webUrl can be explicitly specified using this option."
             }
           ],
           "isBeta": false
@@ -1631,8 +1853,8 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Represents supported version of the \"OData-Version\" header, which is part of the Open Data Protocol standard."
+          "kind": "text",
+          "text": "Represents supported version of the \"OData-Version\" header, which is part of the Open Data Protocol standard."
         }
       ],
       "remarks": [],
@@ -1652,8 +1874,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Returns the \"OData-Version\" value, for example \"4.0\"."
+              "kind": "text",
+              "text": "Returns the \"OData-Version\" value, for example \"4.0\"."
             }
           ],
           "remarks": [],
@@ -1681,14 +1903,14 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Attempt to parse the \"OData-Version\" header."
+              "kind": "text",
+              "text": "Attempt to parse the \"OData-Version\" header."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "If the \"OData-Version\" header is present, this returns the corresponding ODataVersion constant. An error is thrown if the version number is not supported. If the header is missing, then undefined is returned."
+              "kind": "text",
+              "text": "If the \"OData-Version\" header is present, this returns the corresponding ODataVersion constant. An error is thrown if the version number is not supported. If the header is missing, then undefined is returned."
             }
           ],
           "isBeta": false
@@ -1703,8 +1925,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Represents version 3.0 for the \"OData-Version\" header"
+              "kind": "text",
+              "text": "Represents version 3.0 for the \"OData-Version\" header"
             }
           ],
           "remarks": [],
@@ -1720,8 +1942,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Represents version 4.0 for the \"OData-Version\" header"
+              "kind": "text",
+              "text": "Represents version 4.0 for the \"OData-Version\" header"
             }
           ],
           "remarks": [],
@@ -1737,40 +1959,33 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "SPHttpClient is used to perform REST calls against SharePoint. It adds default headers, manages the digest needed for writes, and collects telemetry that helps the service to monitor the performance of an application."
+          "kind": "text",
+          "text": "SPHttpClient is used to perform REST calls against SharePoint. It adds default headers, manages the digest needed for writes, and collects telemetry that helps the service to monitor the performance of an application."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "For communicating with Microsoft Graph, use the "
+          "kind": "text",
+          "text": "For communicating with other internet services, use the "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "GraphHttpClient",
-          "memberName": "",
-          "value": "GraphHttpClient"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "HttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "HttpClient",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " class instead. For communicating with other internet services, use the "
-        },
-        {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "HttpClient",
-          "memberName": "",
-          "value": "HttpClient"
-        },
-        {
-          "kind": "textDocElement",
-          "value": " class."
+          "kind": "text",
+          "text": " class."
         }
       ],
       "isBeta": false,
@@ -1790,20 +2005,27 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of the "
+              "kind": "text",
+              "text": "Constructs a new instance of the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-http",
-              "exportName": "SPHttpClient",
-              "value": "SPHttpClient"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "SPHttpClient"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "SPHttpClient",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " class"
+              "kind": "text",
+              "text": " class"
             }
           ],
           "remarks": []
@@ -1818,8 +2040,8 @@
             "type": "SPHttpClientBatch",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -1835,25 +2057,25 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Begins an ODATA batch, which allows multiple REST queries to be bundled into a single web request."
+              "kind": "text",
+              "text": "Begins an ODATA batch, which allows multiple REST queries to be bundled into a single web request."
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": true
         },
         "configurations": {
           "kind": "property",
-          "signature": "public static configurations: ISPHttpClientConfigurations;",
+          "signature": "public static readonly configurations: ISPHttpClientConfigurations;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": true,
           "type": "ISPHttpClientConfigurations",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class."
+              "kind": "text",
+              "text": "The standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class."
             }
           ],
           "remarks": [],
@@ -1869,8 +2091,8 @@
             "type": "Promise<SPHttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -1879,8 +2101,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -1891,8 +2113,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of SPHttpClient; normally this should be the latest version number from SPHttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of SPHttpClient; normally this should be the latest version number from SPHttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -1903,8 +2125,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": false,
@@ -1915,49 +2137,49 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Perform a REST service call."
+              "kind": "text",
+              "text": "Perform a REST service call."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "Generally, the parameters and semantics for SPHttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/ "
+              "kind": "text",
+              "text": "Generally, the parameters and semantics for SPHttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " The SPHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead): "
+              "kind": "text",
+              "text": "The SPHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead):"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " - Default \"Accept\" and \"Content-Type\" headers are added if not explicitly specified. "
+              "kind": "text",
+              "text": "- Default \"Accept\" and \"Content-Type\" headers are added if not explicitly specified."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " - For write operations, an \"X-RequestDigest\" header is automatically added "
+              "kind": "text",
+              "text": "- For write operations, an \"X-RequestDigest\" header is automatically added"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " - The request digest token is automatically fetched and stored in a cache, with support for preloading "
+              "kind": "text",
+              "text": "- The request digest token is automatically fetched and stored in a cache, with support for preloading"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For a write operation, SPHttpClient will automatically add the \"X-RequestDigest\" header, which may need to be obtained by issuing a seperate request such as \"https://example.com/sites/sample/_api/contextinfo\". Typically the appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as \"_api\" in the original URL passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly."
+              "kind": "text",
+              "text": "For a write operation, SPHttpClient will automatically add the \"X-RequestDigest\" header, which may need to be obtained by issuing a seperate request such as \"https://example.com/sites/sample/_api/contextinfo\". Typically the appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as \"_api\" in the original URL passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly."
             }
           ],
           "isBeta": false
@@ -1972,8 +2194,8 @@
             "type": "Promise<SPHttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -1982,8 +2204,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -1994,8 +2216,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of SPHttpClient; normally this should be the latest version number from SPHttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of SPHttpClient; normally this should be the latest version number from SPHttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -2006,8 +2228,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": true,
@@ -2018,8 +2240,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Calls fetch(), but sets the method to \"GET\"."
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"GET\"."
             }
           ],
           "remarks": [],
@@ -2035,8 +2257,8 @@
             "type": "string",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "the inferred SPWeb URL"
+                "kind": "text",
+                "text": "the inferred SPWeb URL"
               }
             ]
           },
@@ -2045,8 +2267,8 @@
               "name": "requestUrl",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "The URL for a SharePoint REST service"
+                  "kind": "text",
+                  "text": "The URL for a SharePoint REST service"
                 }
               ],
               "isOptional": false,
@@ -2057,21 +2279,28 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Guess the base URL for authentication."
+              "kind": "text",
+              "text": "Use a heuristic to infer the base URL for authentication."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "This uses a heuristic to guess the SPWeb URL associated with the provided REST URL. This is necessary for operations such as the X-RequestDigest and ODATA batching, which require POSTing to a separate REST endpoint in order to complete a request. "
+              "kind": "text",
+              "text": "Attempts to infer the SPWeb URL associated with the provided REST URL, by looking for common SharePoint path components such as \"_api\", \"_layouts\", or \"_vit_bin\". This is necessary for operations such as the X-RequestDigest and ODATA batching, which require POSTing to a separate REST endpoint in order to complete a request."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For example, if the requestUrl is \"/sites/site/web/_api/service\", the returned URL would be \"/sites/site/web\". Or if the requestUrl is \"http://example.com/_layouts/service\", the returned URL would be \"http://example.com\"."
+              "kind": "text",
+              "text": "For example, if the requestUrl is \"/sites/site/web/_api/service\", the returned URL would be \"/sites/site/web\". Or if the requestUrl is \"http://example.com/_layouts/service\", the returned URL would be \"http://example.com\"."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "If the URL cannot be determined, an exception is thrown."
             }
           ],
           "isBeta": false
@@ -2086,8 +2315,8 @@
             "type": "Promise<SPHttpClientResponse>",
             "description": [
               {
-                "kind": "textDocElement",
-                "value": "a promise that will return the result"
+                "kind": "text",
+                "text": "a promise that will return the result"
               }
             ]
           },
@@ -2096,8 +2325,8 @@
               "name": "url",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "the URL to fetch"
+                  "kind": "text",
+                  "text": "the URL to fetch"
                 }
               ],
               "isOptional": false,
@@ -2108,8 +2337,8 @@
               "name": "configuration",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "determines the default behavior of SPHttpClient; normally this should be the latest version number from SPHttpClientConfigurations"
+                  "kind": "text",
+                  "text": "determines the default behavior of SPHttpClient; normally this should be the latest version number from SPHttpClientConfigurations"
                 }
               ],
               "isOptional": false,
@@ -2120,8 +2349,8 @@
               "name": "options",
               "description": [
                 {
-                  "kind": "textDocElement",
-                  "value": "additional options that affect the request"
+                  "kind": "text",
+                  "text": "additional options that affect the request"
                 }
               ],
               "isOptional": false,
@@ -2132,8 +2361,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Calls fetch(), but sets the method to \"POST\"."
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"POST\"."
             }
           ],
           "remarks": [],
@@ -2141,20 +2370,395 @@
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static serviceKey: ServiceKey<SPHttpClient>;",
+          "signature": "public static readonly serviceKey: ServiceKey<SPHttpClient>;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": true,
           "type": "ServiceKey<SPHttpClient>",
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "The service key for SPHttpClient."
+              "kind": "text",
+              "text": "The service key for SPHttpClient."
             }
           ],
           "remarks": [],
           "isBeta": false
+        }
+      }
+    },
+    "SPHttpClientBatch": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The SPHttpClientBatch class accumulates a number of REST service calls and transmits them as a single ODATA batch. This protocol is documented here: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "The usage is to call SPHttpClientBatch.fetch() to queue each individual request, and then call SPHttpClientBatch.execute() to execute the batch operation. The execute() method returns a promise that resolves when the real REST call has completed. Each call to fetch() also returns a promise that will resolve with an SPHttpClientResponse object for that particular request."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the SPHttpClientBatch class."
+        },
+        {
+          "kind": "paragraph"
+        }
+      ],
+      "isBeta": true,
+      "members": {
+        "configurations": {
+          "kind": "property",
+          "signature": "public static readonly configurations: ISPHttpClientBatchConfigurations;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": true,
+          "type": "ISPHttpClientBatchConfigurations",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The standard predefined SPHttpClientBatchConfigurations objects for use with the SPHttpClientBatch class."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "execute": {
+          "kind": "method",
+          "signature": "public execute(): Promise<SPHttpClientBatch>;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<SPHttpClientBatch>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Executes the batched queries that were queued using SPHttpClientBatch.fetch()."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "fetch": {
+          "kind": "method",
+          "signature": "public fetch(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<SPHttpClientResponse>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "a promise that will return the result"
+              }
+            ]
+          },
+          "parameters": {
+            "url": {
+              "name": "url",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the URL to fetch"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "determines the default behavior of this request; normally this should be the latest version number from SPHttpClientBatchConfigurations"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SPHttpClientBatchConfiguration"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "additional options that affect the request"
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "ISPHttpClientBatchOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Queues a new request, and returns a promise that can be used to access the server response (after execute() has completed). The parameters for this function are basically the same as the WHATWG API standard documented here: https://fetch.spec.whatwg.org/"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "However, be aware that certain REST headers are ignored or not allowed inside a batch. See the ODATA documentation for details."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "When execute() is called, it will POST to a URL such as \"http://example.com/sites/sample/_api/$batch\". Typically SPHttpClientBatch can successfully guess the appropriate SPWeb URL by looking for a reserved URL segment such as \"_api\" in the first URL passed to fetch(). If not, use ISPHttpClientBatchCreationOptions.webUrl to specify it explicitly."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "get": {
+          "kind": "method",
+          "signature": "public get(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<SPHttpClientResponse>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "a promise that will return the result"
+              }
+            ]
+          },
+          "parameters": {
+            "url": {
+              "name": "url",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the URL to fetch"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "determines the default behavior of this request; normally this should be the latest version number from SPHttpClientBatchConfigurations"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SPHttpClientBatchConfiguration"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "additional options that affect the request"
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "ISPHttpClientBatchOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to 'GET'."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        },
+        "post": {
+          "kind": "method",
+          "signature": "public post(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<SPHttpClientResponse>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "a promise that will return the result"
+              }
+            ]
+          },
+          "parameters": {
+            "url": {
+              "name": "url",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the URL to fetch"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "determines the default behavior of this request; normally this should be the latest version number from SPHttpClientBatchConfigurations"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "SPHttpClientBatchConfiguration"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "additional options that affect the request"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ISPHttpClientBatchOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to 'POST'."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      }
+    },
+    "SPHttpClientBatchConfiguration": {
+      "kind": "class",
+      "extends": "SPHttpClientCommonConfiguration",
+      "implements": "ISPHttpClientBatchConfiguration",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Configuration for SPHttpClientBatch."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The SPHttpClientBatchConfiguration object provides a set of switches for enabling/disabling various features of the SPHttpClientBatch class. Normally these switches are set (e.g. when calling SPHttpClientBatch.fetch()) by providing one of the predefined defaults from SPHttpClientBatchConfigurations, however switches can also be changed via the SPHttpClientBatchConfiguration.overrideWith() method."
+        }
+      ],
+      "isBeta": true,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(flags: ISPHttpClientBatchConfiguration, overrideFlags?: ISPHttpClientBatchConfiguration);",
+          "parameters": {
+            "flags": {
+              "name": "flags",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ISPHttpClientBatchConfiguration"
+            },
+            "overrideFlags": {
+              "name": "overrideFlags",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "ISPHttpClientBatchConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of SPHttpClientBatchConfiguration with the specified flags. The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
+            }
+          ],
+          "remarks": []
+        },
+        "flags": {
+          "kind": "property",
+          "signature": "protected flags: ISPHttpClientBatchConfiguration;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "ISPHttpClientBatchConfiguration",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": true
+        },
+        "initializeFlags": {
+          "kind": "method",
+          "signature": "@override protected initializeFlags(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": true
+        },
+        "overrideWith": {
+          "kind": "method",
+          "signature": "@override public overrideWith(sourceFlags: ISPHttpClientBatchConfiguration): SPHttpClientBatchConfiguration;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "SPHttpClientBatchConfiguration",
+            "description": []
+          },
+          "parameters": {
+            "sourceFlags": {
+              "name": "sourceFlags",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ISPHttpClientBatchConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": true
         }
       }
     },
@@ -2166,8 +2770,8 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Common base class for SPHttpClientConfiguration and SPHttpClientBatchConfiguration."
+          "kind": "text",
+          "text": "Common base class for SPHttpClientConfiguration and SPHttpClientBatchConfiguration."
         }
       ],
       "remarks": [],
@@ -2195,14 +2799,14 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags."
+              "kind": "text",
+              "text": "Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
+              "kind": "text",
+              "text": "The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
             }
           ]
         },
@@ -2244,35 +2848,35 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the \"Content-Type\" header for a JSON payload."
+              "kind": "text",
+              "text": "Automatically configure the \"Content-Type\" header for a JSON payload."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If the \"Content-Type\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). "
+              "kind": "text",
+              "text": "If the \"Content-Type\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\")."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 3.0, the value is 'application/json;odata=verbose;charset=utf-8'. "
+              "kind": "text",
+              "text": "For OData 3.0, the value is 'application/json;odata=verbose;charset=utf-8'."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 4.0, the value is 'application/json;charset=utf-8'."
+              "kind": "text",
+              "text": "For OData 4.0, the value is 'application/json;charset=utf-8'."
             }
           ],
           "isBeta": false
@@ -2287,35 +2891,35 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the \"Accept\" header for a JSON payload."
+              "kind": "text",
+              "text": "Automatically configure the \"Accept\" header for a JSON payload."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If the \"Accept\" header was not explicitly added for the request, then SPHttpClient will add it. "
+              "kind": "text",
+              "text": "If the \"Accept\" header was not explicitly added for the request, then SPHttpClient will add it."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 3.0, the value is 'application/json'. "
+              "kind": "text",
+              "text": "For OData 3.0, the value is 'application/json'."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For OData 4.0, the value is 'application/json;odata.metadata=minimal'."
+              "kind": "text",
+              "text": "For OData 4.0, the value is 'application/json;odata.metadata=minimal'."
             }
           ],
           "isBeta": false
@@ -2354,27 +2958,33 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "Configuration for "
+          "kind": "text",
+          "text": "Configuration for "
         },
         {
-          "kind": "linkDocElement",
-          "referenceType": "code",
-          "scopeName": "@microsoft",
-          "packageName": "sp-http",
-          "exportName": "SPHttpClient",
-          "memberName": "",
-          "value": "SPHttpClient"
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "SPHttpClient",
+            "memberName": ""
+          }
         },
         {
-          "kind": "textDocElement",
-          "value": " ."
+          "kind": "text",
+          "text": "."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "The SPHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the SPHttpClient class. Normally these switches are set (e.g. when calling SPHttpClient.fetch()) by providing one of the predefined defaults from SPHttpClientConfigurations, however switches can also be changed via the SPHttpClientConfiguration.overrideWith() method."
+          "kind": "text",
+          "text": "The SPHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the SPHttpClient class. Normally these switches are set (e.g. when calling SPHttpClient.fetch()) by providing one of the predefined defaults from SPHttpClientConfigurations, however switches can also be changed via the SPHttpClientConfiguration.overrideWith() method."
         }
       ],
       "isBeta": false,
@@ -2401,8 +3011,8 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
+              "kind": "text",
+              "text": "Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
             }
           ],
           "remarks": []
@@ -2417,21 +3027,21 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the \"OData-Version\" header."
+              "kind": "text",
+              "text": "Automatically configure the \"OData-Version\" header."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is specified (i.e. not undefined): If the \"OData-Version\" header was not explicitly added for the request, then SPHttpClient will add the header to specify the version indicated by defaultODataVersion. "
+              "kind": "text",
+              "text": "When this switch is specified (i.e. not undefined): If the \"OData-Version\" header was not explicitly added for the request, then SPHttpClient will add the header to specify the version indicated by defaultODataVersion."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases. The recommended version is 4.0."
+              "kind": "text",
+              "text": "NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases. The recommended version is 4.0."
             }
           ],
           "isBeta": false
@@ -2446,28 +3056,28 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically configure the RequestInit.credentials."
+              "kind": "text",
+              "text": "Automatically configure the RequestInit.credentials."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If RequestInit.credentials is not explicitly specified for the request, then SPHttpClient will assign it to be \"same-origin\". Without this switch, different web browsers may apply different defaults. "
+              "kind": "text",
+              "text": "If RequestInit.credentials is not explicitly specified for the request, then SPHttpClient will assign it to be \"same-origin\". Without this switch, different web browsers may apply different defaults."
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " For more information, see the spec: https://fetch.spec.whatwg.org/#cors-protocol-and-credentials"
+              "kind": "text",
+              "text": "For more information, see the spec: https://fetch.spec.whatwg.org/#cors-protocol-and-credentials"
             }
           ],
           "isBeta": false
@@ -2534,21 +3144,21 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Automatically provide an \"X-RequestDigest\" header for authentication."
+              "kind": "text",
+              "text": "Automatically provide an \"X-RequestDigest\" header for authentication."
             }
           ],
           "remarks": [
             {
-              "kind": "textDocElement",
-              "value": "When this switch is true: "
+              "kind": "text",
+              "text": "When this switch is true:"
             },
             {
-              "kind": "paragraphDocElement"
+              "kind": "paragraph"
             },
             {
-              "kind": "textDocElement",
-              "value": " If the \"X-RequestDigest\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). The request digest is managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed."
+              "kind": "text",
+              "text": "If the \"X-RequestDigest\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). The request digest is managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed."
             }
           ],
           "isBeta": false
@@ -2563,14 +3173,14 @@
       "deprecatedMessage": [],
       "summary": [
         {
-          "kind": "textDocElement",
-          "value": "The Response subclass returned by methods such as SPHttpClient.fetch()."
+          "kind": "text",
+          "text": "The Response subclass returned by methods such as SPHttpClient.fetch()."
         }
       ],
       "remarks": [
         {
-          "kind": "textDocElement",
-          "value": "This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class."
+          "kind": "text",
+          "text": "This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class."
         }
       ],
       "isBeta": false,
@@ -2590,20 +3200,27 @@
           "deprecatedMessage": [],
           "summary": [
             {
-              "kind": "textDocElement",
-              "value": "Constructs a new instance of the "
+              "kind": "text",
+              "text": "Constructs a new instance of the "
             },
             {
-              "kind": "linkDocElement",
-              "referenceType": "code",
-              "scopeName": "@microsoft",
-              "packageName": "sp-http",
-              "exportName": "SPHttpClientResponse",
-              "value": "SPHttpClientResponse"
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "SPHttpClientResponse"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "SPHttpClientResponse",
+                "memberName": ""
+              }
             },
             {
-              "kind": "textDocElement",
-              "value": " class"
+              "kind": "text",
+              "text": " class"
             }
           ],
           "remarks": []
@@ -2623,8 +3240,83 @@
           "summary": [],
           "remarks": [],
           "isBeta": false
+        },
+        "correlationId": {
+          "kind": "property",
+          "signature": "public readonly correlationId: Guid | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the SharePoint correlation ID."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation, but may originate from different services or components. SharePoint REST operations return the server's correlation ID as the \"sprequestguid\" header."
+            }
+          ],
+          "isBeta": true
         }
       }
+    },
+    "SPHttpHeader": {
+      "kind": "enum",
+      "values": {
+        "SPRequestGuid": {
+          "kind": "enum value",
+          "value": "'SPRequestGuid'",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "SharePoint uses the 'SPRequestGuid' header to return the server's correlation ID for a request."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example value: \"9417279e-40e1-0000-2465-306ba786bfd7\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": true
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Standard HTTP headers used with "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "SPHttpClient",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": ""
+        }
+      ],
+      "remarks": [],
+      "isBeta": true
     }
   }
 }
