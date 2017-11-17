@@ -1,0 +1,744 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-application-base",
+  "summary": [
+    {
+      "kind": "text",
+      "text": "SharePoint Framework support for building and extending client-side applications."
+    }
+  ],
+  "remarks": [],
+  "exports": {
+    "ApplicationAccessor": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Provides access to the client-side application that is currently running."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The client-side application determines the user experience for an entire web page. (It is a client-side component with a manifest; however, the SharePoint Framework does not enable third parties to create their own client-side applications at this time.) Within a web page, at most one client-side application will be running at a time. Certain in-place navigation transitions can cause the application to be unloaded and replaced by a different application."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently running application. It acts as a proxy for the real application object (the BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(serviceScope: ServiceScope);",
+          "parameters": {
+            "serviceScope": {
+              "name": "serviceScope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ServiceScope"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "ApplicationAccessor"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "ApplicationAccessor",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component context, for example "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "BaseApplicationCustomizer.context"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "BaseApplicationCustomizer",
+                "memberName": "context"
+              }
+            },
+            {
+              "kind": "text",
+              "text": "."
+            }
+          ]
+        },
+        "navigatedEvent": {
+          "kind": "property",
+          "signature": "public readonly navigatedEvent: Event<EventArgs>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Event<EventArgs>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "An event that is fired when the application's top-level page context navigates to a new page."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This event fires after the top-level "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "@microsoft/sp-page-context:PageContext"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-page-context",
+                "exportName": "PageContext",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " has navigated to a new page."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "ApplicationCustomizerContext": {
+      "kind": "class",
+      "extends": "ExtensionContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The component context for "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "BaseApplicationCustomizer"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "BaseApplicationCustomizer",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": "."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ApplicationCustomizerContext class."
+        },
+        {
+          "kind": "paragraph"
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "application": {
+          "kind": "property",
+          "signature": "public readonly application: ApplicationAccessor;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ApplicationAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Provides access to the client-side application that is currently running."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "placeholderProvider": {
+          "kind": "property",
+          "signature": "public readonly placeholderProvider: PlaceholderProvider;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "PlaceholderProvider",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Exposes a collection of content placeholders for use by third parties."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "BaseApplicationCustomizer": {
+      "kind": "class",
+      "extends": "BaseExtension",
+      "implements": "",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This is the base class that third parties should extend when implementing a client-side extension that runs when an application is first starting."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "context": {
+          "kind": "property",
+          "signature": "protected readonly context: ApplicationCustomizerContext;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ApplicationCustomizerContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "IPlaceholderCreateContentOptions": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Options for the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.tryCreateContent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "tryCreateContent"
+          }
+        },
+        {
+          "kind": "text",
+          "text": " method."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "members": {
+        "onDispose": {
+          "kind": "property",
+          "signature": "onDispose?: (placeholderContent: PlaceholderContent) => void;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "(placeholderContent: PlaceholderContent) => void",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "An optional callback that will be invoked when the PlaceholderContent object is disposed."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "PlaceholderContent": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Represents custom content that is rendered inside a placeholder on a SharePoint page."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the PlaceholderContent class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "This object is returned by "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.tryCreateContent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "tryCreateContent"
+          }
+        },
+        {
+          "kind": "text",
+          "text": ". It provides access to a Document Object Model (DOM) element where the owner can render its custom content."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "dispose": {
+          "kind": "method",
+          "signature": "public dispose(): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Disposes the PlaceholderContent object and removes its attached DOM element from the page."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the application when the containing placeholder is disposed. Calling dispose() invokes the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "IPlaceholderCreateContentOptions.onDispose"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "IPlaceholderCreateContentOptions",
+                "memberName": "onDispose"
+              }
+            },
+            {
+              "kind": "text",
+              "text": " callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object."
+            }
+          ],
+          "isBeta": false
+        },
+        "domElement": {
+          "kind": "property",
+          "signature": "public readonly domElement: HTMLDivElement;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HTMLDivElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The Document Object Model (DOM) element where the owner should render its custom content."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "If the caller needs to be notified when the DOM element is disposed, use the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "IPlaceholderCreateContentOptions.onDispose"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-application-base",
+                "exportName": "IPlaceholderCreateContentOptions",
+                "memberName": "onDispose"
+              }
+            },
+            {
+              "kind": "text",
+              "text": " callback."
+            }
+          ],
+          "isBeta": false
+        },
+        "name": {
+          "kind": "property",
+          "signature": "public readonly name: PlaceholderName;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "PlaceholderName",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Identifies the placeholder that this content was added to."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Example: PlaceholderName.Top"
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    },
+    "PlaceholderName": {
+      "kind": "enum",
+      "values": {
+        "Bottom": {
+          "kind": "enum value",
+          "value": "2",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "A region at the bottom of the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Top": {
+          "kind": "enum value",
+          "value": "1",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "A region at the top of the page."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The identifier for a content placeholder, which is a region on the page where third-party extensibility components can render custom content."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "For more information about placeholders, see "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": "."
+        }
+      ],
+      "isBeta": false
+    },
+    "PlaceholderProvider": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party components to render custom content into designated regions on the page."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the PlaceholderProvider class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Placeholders are designated regions on the page, identified by one of the predefined "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderName"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderName",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " constants. Different applications and pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with the page, for example via in-place navigation. Third-party components should not assume that a given placeholder will always be available."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Use "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.tryCreateContent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "tryCreateContent"
+          }
+        },
+        {
+          "kind": "text",
+          "text": " to test whether a placeholder is available and add content to it. Use the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "PlaceholderProvider.changedEvent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-application-base",
+            "exportName": "PlaceholderProvider",
+            "memberName": "changedEvent"
+          }
+        },
+        {
+          "kind": "text",
+          "text": " event to discover when new placeholders appear."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "changedEvent": {
+          "kind": "property",
+          "signature": "public readonly changedEvent: Event<EventArgs>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Event<EventArgs>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This event is raised when the list of currently available placeholders is changed."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The application can change its list of available placeholders at any time. This means that the existing placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when they appear."
+            }
+          ],
+          "isBeta": false
+        },
+        "placeholderNames": {
+          "kind": "property",
+          "signature": "public readonly placeholderNames: ReadonlyArray<PlaceholderName>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ReadonlyArray<PlaceholderName>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the names of the currently available placeholders."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "tryCreateContent": {
+          "kind": "method",
+          "signature": "public tryCreateContent(name: PlaceholderName,\r\n    options?: IPlaceholderCreateContentOptions): PlaceholderContent | undefined;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "PlaceholderContent | undefined",
+            "description": [
+              {
+                "kind": "text",
+                "text": "A new PlaceholderContent object, or undefined if the requested placeholder does not exist."
+              }
+            ]
+          },
+          "parameters": {
+            "name": {
+              "name": "name",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The requested placeholder"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "PlaceholderName"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Additional options, for example to detect when the placeholder is disposed."
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "IPlaceholderCreateContentOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created, which allows the caller to render custom content inside the placeholder."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The host application makes no guarantees about the availability of a given placeholder. In situations where an expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering anything, or by choosing an alternative placeholder."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-component-base",
+  "summary": [
+    {
+      "kind": "text",
+      "text": "SharePoint Framework support for building client-side components"
+    }
+  ],
+  "remarks": [
+    {
+      "kind": "text",
+      "text": "This package supports development of client-side components (e.g. web parts, client-side extensions, and applications) built using the SharePoint Framework. It defines the base classes and interfaces for functionality that is common across all client-side component types."
+    }
+  ],
+  "exports": {
+    "BaseComponent": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IEventObserver",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The base class for client-side components such as BaseClientSideWebPart or BaseExtension."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the BaseComponent class."
+        },
+        {
+          "kind": "paragraph"
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "componentId": {
+          "kind": "property",
+          "signature": "public readonly componentId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the component identifier as defined in the component’s associated manifest."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which may include additional metadata about the component. The manifest is uniquely identified using a text string containing a lower case GUID value."
+            }
+          ],
+          "isBeta": false
+        },
+        "context": {
+          "kind": "property",
+          "signature": "protected context: BaseComponentContext;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "BaseComponentContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false
+        },
+        "dispose": {
+          "kind": "method",
+          "signature": "public dispose(): void;",
+          "accessModifier": "public",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Disposes the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends for a web part or extension. To perform custom cleanup when your component is disposed, override the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "BaseComponent.onDispose"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-component-base",
+                "exportName": "BaseComponent",
+                "memberName": "onDispose"
+              }
+            },
+            {
+              "kind": "text",
+              "text": " method."
+            }
+          ],
+          "isBeta": false
+        },
+        "instanceId": {
+          "kind": "property",
+          "signature": "public readonly instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "A unique identifier for the instance of the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "A component implementation can be loaded multiple times on the page. For example, if the component is a charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely identifies each of these instances."
+            }
+          ],
+          "isBeta": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "public readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns true if the component has been already disposed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "public readonly manifest: IClientSideComponentManifest;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IClientSideComponentManifest",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Provides access to the manifest for the client-side component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Child classes can override this with more specialized manifest types."
+            }
+          ],
+          "isBeta": false
+        },
+        "onDispose": {
+          "kind": "method",
+          "signature": "@virtual protected onDispose(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This event method is called at the end of the component's lifecycle. It provides an opportunity to release any associated resources, cancel any outstanding requests, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      }
+    },
+    "BaseComponentContext": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The base class for context objects for client-side components."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the BaseComponentContext class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "A \"context\" object is a collection of well-known services and other objects that are likely to be needed by business logic that interacts with a associated component. Each component type has its own specialized subclass of BaseComponentContext, e.g. WebPartContext for web parts, ExtensionContext for client-side extensions, and so on."
+        }
+      ],
+      "isBeta": false,
+      "members": {
+        "instanceId": {
+          "kind": "property",
+          "signature": "public readonly instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "A unique identifier for the instance of the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "A component implementation can be loaded multiple times on the page. For example, if the component is a charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely identifies each of these instances."
+            }
+          ],
+          "isBeta": false
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "public readonly manifest: IClientSideComponentManifest;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IClientSideComponentManifest",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Manifest for the client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "pageContext": {
+          "kind": "property",
+          "signature": "public readonly pageContext: PageContext;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "PageContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The page context provides standard definitions for common SharePoint objects that need to be shared between the client-side application, web parts, and other components."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "serviceScope": {
+          "kind": "property",
+          "signature": "public readonly serviceScope: ServiceScope;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "ServiceScope",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The associated "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "@microsoft/sp-core-library:ServiceScope"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-core-library",
+                "exportName": "ServiceScope",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " for this component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "A child service scope is created for each client-side component."
+            }
+          ],
+          "isBeta": false
+        }
+      }
+    }
+  }
+}

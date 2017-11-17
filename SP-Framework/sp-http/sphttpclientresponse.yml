@@ -14,6 +14,7 @@ items:
     children:
       - sp-http.SPHttpClientResponse.constructor
       - sp-http.SPHttpClientResponse.clone
+      - sp-http.SPHttpClientResponse.correlationId
   - uid: sp-http.SPHttpClientResponse.constructor
     summary: 'Constructs a new instance of the [SPHttpClientResponse](xref:sp-http.SPHttpClientResponse) class'
     name: constructor(response)
@@ -40,3 +41,20 @@ items:
         type:
           - SPHttpClientResponse
         description: ''
+  - uid: sp-http.SPHttpClientResponse.correlationId
+    summary: Returns the SharePoint correlation ID.
+    remarks: >-
+      The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation,
+      but may originate from different services or components. SharePoint REST operations return the server's
+      correlation ID as the "sprequestguid" header.
+    isPreview: true
+    name: correlationId
+    fullName: sp-http.SPHttpClientResponse.correlationId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public readonly correlationId: Guid | undefined;'
+      return:
+        type:
+          - Guid | undefined

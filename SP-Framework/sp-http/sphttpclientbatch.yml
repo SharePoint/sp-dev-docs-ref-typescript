@@ -1,0 +1,157 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.SPHttpClientBatch
+    summary: >-
+      The SPHttpClientBatch class accumulates a number of REST service calls and transmits them as a single ODATA batch.
+      This protocol is documented here: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html
+
+
+      The usage is to call SPHttpClientBatch.fetch() to queue each individual request, and then call
+      SPHttpClientBatch.execute() to execute the batch operation. The execute() method returns a promise that resolves
+      when the real REST call has completed. Each call to fetch() also returns a promise that will resolve with an
+      SPHttpClientResponse object for that particular request.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the SPHttpClientBatch class.
+    isPreview: true
+    name: SPHttpClientBatch
+    fullName: sp-http.SPHttpClientBatch
+    langs:
+      - typeScript
+    type: class
+    package: sp-http
+    children:
+      - sp-http.SPHttpClientBatch.configurations
+      - sp-http.SPHttpClientBatch.execute
+      - sp-http.SPHttpClientBatch.fetch
+      - sp-http.SPHttpClientBatch.get
+      - sp-http.SPHttpClientBatch.post
+  - uid: sp-http.SPHttpClientBatch.configurations
+    summary: The standard predefined SPHttpClientBatchConfigurations objects for use with the SPHttpClientBatch class.
+    isPreview: true
+    name: configurations
+    fullName: sp-http.SPHttpClientBatch.configurations
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'public static readonly configurations: ISPHttpClientBatchConfigurations;'
+      return:
+        type:
+          - ISPHttpClientBatchConfigurations
+  - uid: sp-http.SPHttpClientBatch.execute
+    summary: Executes the batched queries that were queued using SPHttpClientBatch.fetch().
+    isPreview: true
+    name: execute()
+    fullName: sp-http.SPHttpClientBatch.execute
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'public execute(): Promise<SPHttpClientBatch>;'
+      return:
+        type:
+          - Promise<SPHttpClientBatch>
+        description: ''
+  - uid: sp-http.SPHttpClientBatch.fetch
+    summary: >-
+      Queues a new request, and returns a promise that can be used to access the server response (after execute() has
+      completed). The parameters for this function are basically the same as the WHATWG API standard documented here:
+      https://fetch.spec.whatwg.org/
+
+
+      However, be aware that certain REST headers are ignored or not allowed inside a batch. See the ODATA documentation
+      for details.
+
+
+      When execute() is called, it will POST to a URL such as "http://example.com/sites/sample/\_api/$batch". Typically
+      SPHttpClientBatch can successfully guess the appropriate SPWeb URL by looking for a reserved URL segment such as
+      "\_api" in the first URL passed to fetch(). If not, use ISPHttpClientBatchCreationOptions.webUrl to specify it
+      explicitly.
+    isPreview: true
+    name: 'fetch(url, configuration, options)'
+    fullName: sp-http.SPHttpClientBatch.fetch
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: >-
+        public fetch(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions):
+        Promise<SPHttpClientResponse>;
+      return:
+        type:
+          - Promise<SPHttpClientResponse>
+        description: a promise that will return the result
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+        - id: configuration
+          description: >-
+            determines the default behavior of this request; normally this should be the latest version number from
+            SPHttpClientBatchConfigurations
+          type:
+            - SPHttpClientBatchConfiguration
+        - id: options
+          description: additional options that affect the request
+          type:
+            - ISPHttpClientBatchOptions
+  - uid: sp-http.SPHttpClientBatch.get
+    summary: 'Calls fetch(), but sets the method to ''GET''.'
+    isPreview: true
+    name: 'get(url, configuration, options)'
+    fullName: sp-http.SPHttpClientBatch.get
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: "public get(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;"
+      return:
+        type:
+          - Promise<SPHttpClientResponse>
+        description: a promise that will return the result
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+        - id: configuration
+          description: >-
+            determines the default behavior of this request; normally this should be the latest version number from
+            SPHttpClientBatchConfigurations
+          type:
+            - SPHttpClientBatchConfiguration
+        - id: options
+          description: additional options that affect the request
+          type:
+            - ISPHttpClientBatchOptions
+  - uid: sp-http.SPHttpClientBatch.post
+    summary: 'Calls fetch(), but sets the method to ''POST''.'
+    isPreview: true
+    name: 'post(url, configuration, options)'
+    fullName: sp-http.SPHttpClientBatch.post
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: "public post(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;"
+      return:
+        type:
+          - Promise<SPHttpClientResponse>
+        description: a promise that will return the result
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+        - id: configuration
+          description: >-
+            determines the default behavior of this request; normally this should be the latest version number from
+            SPHttpClientBatchConfigurations
+          type:
+            - SPHttpClientBatchConfiguration
+        - id: options
+          description: additional options that affect the request
+          type:
+            - ISPHttpClientBatchOptions
