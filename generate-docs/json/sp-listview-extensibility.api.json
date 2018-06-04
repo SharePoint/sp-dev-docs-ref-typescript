@@ -32,6 +32,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "context": {
           "kind": "property",
@@ -53,12 +54,15 @@
               "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onDisposeCell": {
           "kind": "method",
-          "signature": "@virtual public onDisposeCell(event: IFieldCustomizerCellEventParameters): void;",
-          "accessModifier": "public",
+          "signature": "onDisposeCell(event: IFieldCustomizerCellEventParameters): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -77,12 +81,15 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onRenderCell": {
           "kind": "method",
-          "signature": "@virtual public onRenderCell(event: IFieldCustomizerCellEventParameters): void;",
-          "accessModifier": "public",
+          "signature": "onRenderCell(event: IFieldCustomizerCellEventParameters): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -101,7 +108,10 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -133,10 +143,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "context": {
           "kind": "property",
-          "signature": "public readonly context: ListViewCommandSetContext;",
+          "signature": "readonly context: ListViewCommandSetContext;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -154,12 +165,15 @@
               "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onExecute": {
           "kind": "method",
-          "signature": "@virtual public onExecute(event: IListViewCommandSetExecuteEventParameters): void;",
-          "accessModifier": "public",
+          "signature": "onExecute(event: IListViewCommandSetExecuteEventParameters): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -183,12 +197,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onListViewUpdated": {
           "kind": "method",
-          "signature": "@virtual public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void;",
-          "accessModifier": "public",
+          "signature": "onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -217,12 +234,15 @@
               "text": "This event allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryGetCommand": {
           "kind": "method",
-          "signature": "public tryGetCommand(id: string): Command;",
-          "accessModifier": "public",
+          "signature": "tryGetCommand(id: string): Command;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -251,7 +271,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -288,10 +311,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "field": {
           "kind": "property",
-          "signature": "public readonly field: SPField;",
+          "signature": "readonly field: SPField;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -304,11 +328,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "visible": {
           "kind": "property",
-          "signature": "public readonly visible: boolean;",
+          "signature": "readonly visible: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -321,7 +348,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -363,10 +393,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "ariaLabel": {
           "kind": "property",
-          "signature": "public ariaLabel: string | undefined;",
+          "signature": "ariaLabel: string | undefined;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
@@ -379,11 +410,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "iconImageUrl": {
           "kind": "property",
-          "signature": "public iconImageUrl: string | undefined;",
+          "signature": "iconImageUrl: string | undefined;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
@@ -401,11 +435,14 @@
               "text": "This must be a absolute URL."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "id": {
           "kind": "property",
-          "signature": "public id: string;",
+          "signature": "id: string;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
@@ -418,11 +455,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "title": {
           "kind": "property",
-          "signature": "public title: string;",
+          "signature": "title: string;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
@@ -447,11 +487,14 @@
               "text": "Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "visible": {
           "kind": "property",
-          "signature": "public visible: boolean;",
+          "signature": "visible: boolean;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
@@ -464,7 +507,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -490,10 +536,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "field": {
           "kind": "property",
-          "signature": "public readonly field: SPField;",
+          "signature": "readonly field: SPField;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -506,12 +553,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryGetListView": {
           "kind": "method",
-          "signature": "public tryGetListView(): ListViewAccessor | undefined;",
-          "accessModifier": "public",
+          "signature": "tryGetListView(): ListViewAccessor | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -537,7 +587,10 @@
               "text": "Although the SharePoint list view is the main usage scenario, field customizers can be used by other user interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -555,6 +608,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "domElement": {
           "kind": "property",
@@ -571,7 +625,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fieldValue": {
           "kind": "property",
@@ -588,7 +645,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "listItem": {
           "kind": "property",
@@ -605,7 +665,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "userData": {
           "kind": "property",
@@ -627,7 +690,10 @@
               "text": "For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this property, and then onDisposeCell() can use this key to find the resource to be freed."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -664,6 +730,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "itemId": {
           "kind": "property",
@@ -680,7 +747,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "selectedRows": {
           "kind": "property",
@@ -697,7 +767,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -734,6 +807,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "selectedRows": {
           "kind": "property",
@@ -750,7 +824,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -787,10 +864,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "fields": {
           "kind": "property",
-          "signature": "public readonly fields: ReadonlyArray<SPField>;",
+          "signature": "readonly fields: ReadonlyArray<SPField>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -808,12 +886,15 @@
               "text": "The set of available fields depends on the editing context. For example, if a list view column is hidden, the corresponding field definition may not be loaded. Field customizers should not assume that a given field will be available, even if it is defined in the content type."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getValue": {
           "kind": "method",
-          "signature": "public abstract getValue(field: SPField): any;",
-          "accessModifier": "public",
+          "signature": "abstract getValue(field: SPField): any;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -837,12 +918,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getValueByName": {
           "kind": "method",
-          "signature": "public abstract getValueByName(internalName: string): any;",
-          "accessModifier": "public",
+          "signature": "abstract getValueByName(internalName: string): any;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -866,7 +950,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -892,10 +979,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "columns": {
           "kind": "property",
-          "signature": "public readonly columns: ReadonlyArray<ColumnAccessor>;",
+          "signature": "readonly columns: ReadonlyArray<ColumnAccessor>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -908,15 +996,18 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "selectedRowsChangedEvent": {
           "kind": "property",
-          "signature": "public readonly selectedRowsChangedEvent: Event<SelectedRowsChangedEventArgs>;",
+          "signature": "readonly selectedRowsChangedEvent: SPEvent<SelectedRowsChangedEventArgs>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
-          "type": "Event<SelectedRowsChangedEventArgs>",
+          "type": "SPEvent<SelectedRowsChangedEventArgs>",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -925,12 +1016,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryGetColumnByName": {
           "kind": "method",
-          "signature": "public abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;",
-          "accessModifier": "public",
+          "signature": "abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -954,7 +1048,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -980,10 +1077,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "listView": {
           "kind": "property",
-          "signature": "public readonly listView: ListViewAccessor;",
+          "signature": "readonly listView: ListViewAccessor;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -996,11 +1094,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manifest": {
           "kind": "property",
-          "signature": "public readonly manifest: ICommandSetExtensionManifest;",
+          "signature": "readonly manifest: ICommandSetExtensionManifest;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1013,7 +1114,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1050,11 +1154,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {}
     },
     "SelectedRowsChangedEventArgs": {
       "kind": "class",
-      "extends": "EventArgs",
+      "extends": "SPEventArgs",
       "implements": "",
       "typeParameters": [],
       "deprecatedMessage": [],
@@ -1066,10 +1171,11 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "selectedRows": {
           "kind": "property",
-          "signature": "public selectedRows: ReadonlyArray<RowAccessor>;",
+          "signature": "selectedRows: ReadonlyArray<RowAccessor>;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
@@ -1082,7 +1188,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }

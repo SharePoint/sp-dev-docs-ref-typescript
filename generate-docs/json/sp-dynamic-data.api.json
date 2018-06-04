@@ -1,0 +1,571 @@
+{
+  "kind": "package",
+  "name": "@microsoft/sp-dynamic-data",
+  "summary": [
+    {
+      "kind": "text",
+      "text": "SharePoint Framework support for dynamic data bindings."
+    }
+  ],
+  "remarks": [
+    {
+      "kind": "text",
+      "text": "This package provides the necessary infrastructure classes and public APIs necessary to run dynamic data, and implement components that use it."
+    }
+  ],
+  "exports": {
+    "DynamicDataReference": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Class that contains the Dynamic Data reference. This includes the source, property, and property path (if applicable) of Dynamic Data"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "The reference string is of the form <sourceId>:<property> or <sourceId>:<property>:<propertyPath>"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Examples of references are: PageContext:user WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName"
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(reference: string);",
+          "parameters": {
+            "reference": {
+              "name": "reference",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "DynamicDataReference"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-dynamic-data",
+                "exportName": "DynamicDataReference",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "property": {
+          "kind": "property",
+          "signature": "readonly property: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the referred property of the Dynamic Data."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "propertyPath": {
+          "kind": "property",
+          "signature": "readonly propertyPath: string | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "reference": {
+          "kind": "property",
+          "signature": "readonly reference: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the full reference of the Dynamic Data object as a string."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "sourceId": {
+          "kind": "property",
+          "signature": "readonly sourceId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the referred id of the Dynamic Data Source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IDynamicDataController": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Interface for components to implement in order to be dynamic data sources. This can be implemented as an object with state, or a set of loose functions that returns the data."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "getPropertyDefinitions": {
+          "kind": "method",
+          "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ReadonlyArray<IDynamicDataPropertyDefinition>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getPropertyValue": {
+          "kind": "method",
+          "signature": "getPropertyValue(propertyId: string): any;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "any",
+            "description": []
+          },
+          "parameters": {
+            "propertyId": {
+              "name": "propertyId",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Given a property id, returns the value of the property. This needs to be overriden by the implementation of the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IDynamicDataPropertyDefinition": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly, localized title and description to be seen and used by end users."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized description of the property. Example: \"Contains a list of ids with the files of the current user\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "id": {
+          "kind": "property",
+          "signature": "id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Id of the property. This can only contains letters, numbers, dashes and underscores."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The regular expression used to validate the constraints is /^[a-zA-Z0-9\\-_]+$/ Example: \"myFiles\""
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized title of the property. Example: \"My files\" / \"Mis archivos\" (depending of current language)"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IDynamicDataSource": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API to get the data."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "getPropertyDefinitions": {
+          "kind": "method",
+          "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ReadonlyArray<IDynamicDataPropertyDefinition>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the definitions for all the properties exposed by the source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getPropertyValue": {
+          "kind": "method",
+          "signature": "getPropertyValue(propertyId: string): any;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "any",
+            "description": []
+          },
+          "parameters": {
+            "propertyId": {
+              "name": "propertyId",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "For a given property id, returns the value of the property. Throws an error if the property id doesn't exist in the source."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "It returns a read-only copy of the property value, so modifying its value will not impact on the value in the data source."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Property values are JSON-serializable objects, so there are no functions that can be called inside."
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "id": {
+          "kind": "property",
+          "signature": "id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Id of the Dynamic Data Source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "metadata": {
+          "kind": "property",
+          "signature": "metadata: IDynamicDataSourceMetadata;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IDynamicDataSourceMetadata",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Metadata of the Dynamic Data Source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IDynamicDataSourceMetadata": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Metadata of the Dynamic Data Source. It allows consumers to easily distinguish Dynamic Data Sources."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "alias": {
+          "kind": "property",
+          "signature": "alias?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Alias of the component that the Dynamic Data Source refers to. It can be undefined when the sources doesn't come from a component, for example framework level data sources."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "componentId": {
+          "kind": "property",
+          "signature": "componentId?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Id of the component that the Dynamic Data Source refers to. It can be undefined when the sources doesn't come from a component, for example framework level data sources."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized description of the Dynamic Data Source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "instanceId": {
+          "kind": "property",
+          "signature": "instanceId?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Id of the instance of the component that the Dynamic Data Source refers to. This allows to distinguish, for example, between two web parts with the same type. It can be undefined when the sources doesn't come from a component, for example framework level data sources."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized title of the Dynamic Data Source. This can be customized by the component it refers to. By default it's the alias of the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    }
+  }
+}

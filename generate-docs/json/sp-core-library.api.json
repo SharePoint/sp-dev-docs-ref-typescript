@@ -68,10 +68,11 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "type": {
           "kind": "property",
-          "signature": "public static readonly type: EnvironmentType;",
+          "signature": "static readonly type: EnvironmentType;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -84,7 +85,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -93,7 +97,7 @@
       "values": {
         "ClassicSharePoint": {
           "kind": "enum value",
-          "value": "",
+          "value": "3",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -106,7 +110,7 @@
         },
         "Local": {
           "kind": "enum value",
-          "value": "",
+          "value": "1",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -119,7 +123,7 @@
         },
         "SharePoint": {
           "kind": "enum value",
-          "value": "",
+          "value": "2",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -132,7 +136,7 @@
         },
         "Test": {
           "kind": "enum value",
-          "value": "",
+          "value": "0",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -178,185 +182,6 @@
       ],
       "isBeta": false
     },
-    "Event": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [
-        "TEventArgs extends EventArgs"
-      ],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents a framework event that components can subscribe to."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the Event class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "Examples of events in a web application might include: the user clicking a button, the system navigating to another page, or an item being added/removed from an abstract collection. The SharePoint Framework represents events using instances of the Event object, one for each kind of event. The Event object is typically exposed as a property of an associated class (e.g. the button that can be clicked). When a component is interested in an event, it calls add() to register an event handler callback that will be invoked each time the event occurs. The handler receives an EventArgs parameter that may provide additional details about what happened. This is analogous to the browser's Document Object Model (DOM) events. The main difference is the IEventObserver feature, which tracks which component subscribed to each event, and automatically unsubscribes the handler when the component is disposed."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "When an event is raised, all handlers are invoked synchronously. The order in which event handlers are called is unspecified. The event handler callback must catch any exceptions that occur during processing; an uncaught exception will not prevent other handlers from executing, but it will be reported as a problem with the associated component."
-        }
-      ],
-      "isBeta": false,
-      "members": {
-        "add": {
-          "kind": "method",
-          "signature": "public add(observer: IEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;",
-          "accessModifier": "public",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "observer": {
-              "name": "observer",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "Indicates the object that is subscribing to the event: When the object is disposed, the event handler will be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event handler failed to catch an exception."
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IEventObserver"
-            },
-            "eventHandler": {
-              "name": "eventHandler",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "A callback function that will be invoked whenever the event occurs"
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "(eventArgs: TEventArgs) => void"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Registers a callback that will be invoked whenever the event occurs."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "The same object can add multiple event handlers to the same event. Since BaseComponent implements the IEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is disposed."
-            }
-          ],
-          "isBeta": false
-        },
-        "remove": {
-          "kind": "method",
-          "signature": "public remove(observer: IEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;",
-          "accessModifier": "public",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "observer": {
-              "name": "observer",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "This must be the same observer that was passed to the add() function."
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IEventObserver"
-            },
-            "eventHandler": {
-              "name": "eventHandler",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "The event handler to remove; this must be the same object instance that was passed to the add() function."
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "(eventArgs: TEventArgs) => void"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Unregisters a callback that was registered using add()."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "If the event handler has already been removed, or if it was never added, then this method has no effect."
-            }
-          ],
-          "isBeta": false
-        }
-      }
-    },
-    "EventArgs": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "The base class for event arguments used with the "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "Event"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-core-library",
-            "exportName": "Event",
-            "memberName": ""
-          }
-        },
-        {
-          "kind": "text",
-          "text": " class."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "If certain event types need to provide additional details, they will define a subclass of EventArgs."
-        }
-      ],
-      "isBeta": false
-    },
     "Guid": {
       "kind": "class",
       "extends": "",
@@ -397,10 +222,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "empty": {
           "kind": "property",
-          "signature": "public static readonly empty: Guid;",
+          "signature": "static readonly empty: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -413,12 +239,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "equals": {
           "kind": "method",
-          "signature": "public equals(guid: Guid): boolean;",
-          "accessModifier": "public",
+          "signature": "equals(guid: Guid): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -447,12 +276,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isValid": {
           "kind": "method",
-          "signature": "public static isValid(guid: string | undefined | null): boolean;",
-          "accessModifier": "public",
+          "signature": "static isValid(guid: string | undefined | null): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -486,12 +318,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "newGuid": {
           "kind": "method",
-          "signature": "public static newGuid(randomNumberGenerator?: IRandomNumberGenerator): Guid;",
-          "accessModifier": "public",
+          "signature": "static newGuid(randomNumberGenerator?: IRandomNumberGenerator): Guid;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -520,12 +355,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "parse": {
           "kind": "method",
-          "signature": "public static parse(guidString: string | undefined | null): Guid;",
-          "accessModifier": "public",
+          "signature": "static parse(guidString: string | undefined | null): Guid;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -559,12 +397,15 @@
               "text": "Example syntaxes accepted by this function: 'd5369f3b-bd7a-412a-9c0f-7f0650bb5489' '{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}' '/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)'"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "toString": {
           "kind": "method",
-          "signature": "public toString(): string;",
-          "accessModifier": "public",
+          "signature": "toString(): string;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -592,12 +433,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryParse": {
           "kind": "method",
-          "signature": "public static tryParse(guid: string | undefined | null): Guid | undefined;",
-          "accessModifier": "public",
+          "signature": "static tryParse(guid: string | undefined | null): Guid | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -636,7 +480,10 @@
               "text": "Example syntaxes accepted by this function: 'd5369f3b-bd7a-412a-9c0f-7f0650bb5489' '{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}' '/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)'"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -659,6 +506,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "dispose": {
           "kind": "method",
@@ -684,7 +532,10 @@
               "text": "After the object has been disposed, do not call its methods or access its properties."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isDisposed": {
           "kind": "property",
@@ -706,92 +557,10 @@
               "text": "After the object has been disposed, do not call its methods or access its properties."
             }
           ],
-          "isBeta": false
-        }
-      }
-    },
-    "IEventObserver": {
-      "kind": "interface",
-      "extends": "IDisposable",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Used with the "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "Event"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-core-library",
-            "exportName": "Event",
-            "memberName": ""
-          }
-        },
-        {
-          "kind": "text",
-          "text": " system, this interface is implemented by components that can subscribe to events."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "IEventObserver is an abstraction of the key features that a component must have in order to subscribe to a SharePoint Framework event: It must have instanceId and componentId information for diagnostics reporting, and it must have a way to notify the event system when the component is disposed, so that its handlers can be automatically removed. Other objects may implement this contract, as long as they meet these requirements."
-        }
-      ],
-      "isBeta": false,
-      "members": {
-        "componentId": {
-          "kind": "property",
-          "signature": "readonly componentId: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The component identifier, from the component's manifest."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception"
-            }
-          ],
-          "isBeta": false
-        },
-        "instanceId": {
-          "kind": "property",
-          "signature": "readonly instanceId: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The instance identifier for the component."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception"
-            }
-          ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -871,6 +640,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "generate": {
           "kind": "method",
@@ -891,7 +661,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -914,6 +687,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "serviceScope": {
           "kind": "property",
@@ -935,7 +709,102 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "ISPEventObserver": {
+      "kind": "interface",
+      "extends": "IDisposable",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Used with the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPEvent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-core-library",
+            "exportName": "SPEvent",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " system, this interface is implemented by components that can subscribe to events."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "ISPEventObserver is an abstraction of the key features that a component must have in order to subscribe to a SharePoint Framework event: It must have instanceId and componentId information for diagnostics reporting, and it must have a way to notify the event system when the component is disposed, so that its handlers can be automatically removed. Other objects may implement this contract, as long as they meet these requirements."
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "componentId": {
+          "kind": "property",
+          "signature": "readonly componentId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The component identifier, from the component's manifest."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception"
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "instanceId": {
+          "kind": "property",
+          "signature": "readonly instanceId: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The instance identifier for the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception"
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1015,6 +884,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "getDate": {
           "kind": "method",
@@ -1035,7 +905,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getTimestamp": {
           "kind": "method",
@@ -1056,7 +929,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1079,11 +955,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "error": {
           "kind": "method",
-          "signature": "public static error(source: string, error: Error, scope?: ServiceScope): void;",
-          "accessModifier": "public",
+          "signature": "static error(source: string, error: Error, scope?: ServiceScope): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1136,12 +1013,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "info": {
           "kind": "method",
-          "signature": "public static info(source: string, message: string, scope?: ServiceScope): void;",
-          "accessModifier": "public",
+          "signature": "static info(source: string, message: string, scope?: ServiceScope): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1194,12 +1074,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "verbose": {
           "kind": "method",
-          "signature": "public static verbose(source: string, message: string, scope?: ServiceScope): void;",
-          "accessModifier": "public",
+          "signature": "static verbose(source: string, message: string, scope?: ServiceScope): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1252,12 +1135,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "warn": {
           "kind": "method",
-          "signature": "public static warn(source: string, message: string, scope?: ServiceScope): void;",
-          "accessModifier": "public",
+          "signature": "static warn(source: string, message: string, scope?: ServiceScope): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1310,7 +1196,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1347,6 +1236,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -1390,8 +1280,8 @@
         },
         "generate": {
           "kind": "method",
-          "signature": "public generate(): number;",
-          "accessModifier": "public",
+          "signature": "generate(): number;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1407,11 +1297,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static readonly serviceKey: ServiceKey<IRandomNumberGenerator>;",
+          "signature": "static readonly serviceKey: ServiceKey<IRandomNumberGenerator>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1424,7 +1317,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1468,11 +1364,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "create": {
           "kind": "method",
-          "signature": "public static create < TKey >(name: string,\r\n    serviceClass: { new (serviceScope: ServiceScope); }): ServiceKey<TKey>;",
-          "accessModifier": "public",
+          "signature": "static create<TKey>(name: string, serviceClass: {\n        new (serviceScope: ServiceScope);\n    }): ServiceKey<TKey>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1507,7 +1404,7 @@
               ],
               "isOptional": false,
               "isSpread": false,
-              "type": "{ new (serviceScope: ServiceScope); }"
+              "type": "{\n        new (serviceScope: ServiceScope);\n    }"
             }
           },
           "deprecatedMessage": [],
@@ -1542,12 +1439,15 @@
               "text": " instead."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "createCustom": {
           "kind": "method",
-          "signature": "public static createCustom < TKey >(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;",
-          "accessModifier": "public",
+          "signature": "static createCustom<TKey>(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1593,11 +1493,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "defaultCreator": {
           "kind": "property",
-          "signature": "public readonly defaultCreator: ServiceCreator<T>;",
+          "signature": "readonly defaultCreator: ServiceCreator<T>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1610,11 +1513,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "id": {
           "kind": "property",
-          "signature": "public readonly id: string;",
+          "signature": "readonly id: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1632,11 +1538,14 @@
               "text": "The identifier is a currently generated by incrementing an integer counter; however this may change in the future."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "name": {
           "kind": "property",
-          "signature": "public readonly name: string;",
+          "signature": "readonly name: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1680,7 +1589,10 @@
               "text": " is used wherever a lookup key is needed."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1724,11 +1636,52 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "protected constructor(parent: ServiceScope | undefined);",
+          "parameters": {
+            "parent": {
+              "name": "parent",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ServiceScope | undefined"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "ServiceScope"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-core-library",
+                "exportName": "ServiceScope",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
         "consume": {
           "kind": "method",
-          "signature": "public consume < T >(serviceKey: ServiceKey<T>): T;",
-          "accessModifier": "public",
+          "signature": "consume<T>(serviceKey: ServiceKey<T>): T;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1767,12 +1720,15 @@
               "text": "Components should call this function to \"consume\" a dependency, i.e. look up the serviceKey and return the registered service instance. If the instance cannot be found, then a default instance will be automatically created and registered with the root ServiceScope."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "createAndProvide": {
           "kind": "method",
-          "signature": "public createAndProvide < T >(serviceKey: ServiceKey<T>,\r\n    simpleServiceClass: { new (serviceScope: ServiceScope); }): T;",
-          "accessModifier": "public",
+          "signature": "createAndProvide<T>(serviceKey: ServiceKey<T>, simpleServiceClass: {\n        new (serviceScope: ServiceScope);\n    }): T;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1807,7 +1763,7 @@
               ],
               "isOptional": false,
               "isSpread": false,
-              "type": "{ new (serviceScope: ServiceScope); }"
+              "type": "{\n        new (serviceScope: ServiceScope);\n    }"
             }
           },
           "deprecatedMessage": [],
@@ -1818,12 +1774,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "createDefaultAndProvide": {
           "kind": "method",
-          "signature": "public createDefaultAndProvide < T >(serviceKey: ServiceKey<T>): T;",
-          "accessModifier": "public",
+          "signature": "createDefaultAndProvide<T>(serviceKey: ServiceKey<T>): T;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1857,12 +1816,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "finish": {
           "kind": "method",
-          "signature": "public finish(): void;",
-          "accessModifier": "public",
+          "signature": "finish(): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1890,12 +1852,15 @@
               "text": "This formalism prevents a number of complex situations that could lead to bugs. For example, supposed that Scope2 is a child of Scope1, and Scope1 provides instance A1 of interface A. If someone consumes A1 from Scope2 (via inheritance) before Scope2.provide() is called with A2, then a subsequent call to Scope2.consume() might return a different result than the previous call. This nondeterminism could cause unpredictable results that are difficult to diagnose."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getParent": {
           "kind": "method",
-          "signature": "public getParent(): ServiceScope | undefined;",
-          "accessModifier": "public",
+          "signature": "getParent(): ServiceScope | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1916,12 +1881,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "provide": {
           "kind": "method",
-          "signature": "public provide < T >(serviceKey: ServiceKey<T>, service: T): T;",
-          "accessModifier": "public",
+          "signature": "provide<T>(serviceKey: ServiceKey<T>, service: T): T;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1972,12 +1940,15 @@
               "text": "ServiceScope.provide() is used to register an implementation of the given serviceKey for the current scope. It may only be used when the ServiceScope is in an \"unfinished\" state, i.e. before finish() has been called."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "startNewChild": {
           "kind": "method",
-          "signature": "public startNewChild(): ServiceScope;",
-          "accessModifier": "public",
+          "signature": "startNewChild(): ServiceScope;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2003,12 +1974,15 @@
               "text": "The service scopes form a tree structure, such that when consuming a service, if the key is not explicitly provided by a child scope, the parent hierarchy will be consulted."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "startNewRoot": {
           "kind": "method",
-          "signature": "public static startNewRoot(): ServiceScope;",
-          "accessModifier": "public",
+          "signature": "static startNewRoot(): ServiceScope;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2029,12 +2003,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "whenFinished": {
           "kind": "method",
-          "signature": "public whenFinished(callback: () => void): void;",
-          "accessModifier": "public",
+          "signature": "whenFinished(callback: () => void): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2094,7 +2071,10 @@
               "text": "NOTE: This is not an asynchronous callback. ServiceScope initialization is typically inexpensive and short lived. However, the control flow often threads through numerous constructors and base classes, which can be simplified using whenFinished()."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2112,10 +2092,11 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "applicationId": {
           "kind": "property",
-          "signature": "public static readonly applicationId: Guid;",
+          "signature": "static readonly applicationId: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -2133,11 +2114,14 @@
               "text": "A unique identifier used to correlate logging and other diagnostic information. Its lifetime persists for the duration of the client-side application instance, i.e. it begins with the server request that renders the page, and ends e.g. when the browser tab is closed or F5 is pressed to reload the page. Note that if the application's router supports in-place navigation (via the history.pushState() API), the application session persists across these transitions."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "pageId": {
           "kind": "property",
-          "signature": "public static readonly pageId: Guid;",
+          "signature": "static readonly pageId: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -2188,9 +2172,199 @@
               "text": "The concept of a page is subjective and defined by the router for a particular application."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
+    },
+    "SPEvent": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [
+        "TEventArgs extends SPEventArgs"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Represents a framework event that components can subscribe to."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the SPEvent class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "Examples of events in a web application might include: the user clicking a button, the system navigating to another page, or an item being added/removed from an abstract collection. The SharePoint Framework represents events using instances of the SPEvent object, one for each kind of event. The SPEvent object is typically exposed as a property of an associated class (e.g. the button that can be clicked). When a component is interested in an event, it calls add() to register an event handler callback that will be invoked each time the event occurs. The handler receives an SPEventArgs parameter that may provide additional details about what happened. This is analogous to the browser's Document Object Model (DOM) events. The main difference is the ISPEventObserver feature, which tracks which component subscribed to each event, and automatically unsubscribes the handler when the component is disposed."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "When an event is raised, all handlers are invoked synchronously. The order in which event handlers are called is unspecified. The event handler callback must catch any exceptions that occur during processing; an uncaught exception will not prevent other handlers from executing, but it will be reported as a problem with the associated component."
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "add": {
+          "kind": "method",
+          "signature": "add(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "observer": {
+              "name": "observer",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Indicates the object that is subscribing to the event: When the object is disposed, the event handler will be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event handler failed to catch an exception."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ISPEventObserver"
+            },
+            "eventHandler": {
+              "name": "eventHandler",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "A callback function that will be invoked whenever the event occurs"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "(eventArgs: TEventArgs) => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Registers a callback that will be invoked whenever the event occurs."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The same object can add multiple event handlers to the same event. Since BaseComponent implements the ISPEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is disposed."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "remove": {
+          "kind": "method",
+          "signature": "remove(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "observer": {
+              "name": "observer",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "This must be the same observer that was passed to the add() function."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ISPEventObserver"
+            },
+            "eventHandler": {
+              "name": "eventHandler",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The event handler to remove; this must be the same object instance that was passed to the add() function."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "(eventArgs: TEventArgs) => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Unregisters a callback that was registered using add()."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "If the event handler has already been removed, or if it was never added, then this method has no effect."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "SPEventArgs": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The base class for event arguments used with the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPEvent"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-core-library",
+            "exportName": "SPEvent",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " class."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "If certain event types need to provide additional details, they will define a subclass of SPEventArgs."
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false
     },
     "Text": {
       "kind": "class",
@@ -2211,11 +2385,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "format": {
           "kind": "method",
-          "signature": "public static format(s: string, ...values: any[]): string;",
-          "accessModifier": "public",
+          "signature": "static format(s: string, ...values: any[]): string;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2265,7 +2440,10 @@
               "text": "Text.format(\"hello {0}!\", \"world\") will return \"hello world!\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2302,6 +2480,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -2345,8 +2524,8 @@
         },
         "getDate": {
           "kind": "method",
-          "signature": "public getDate(): Date;",
-          "accessModifier": "public",
+          "signature": "getDate(): Date;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2362,12 +2541,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getTimestamp": {
           "kind": "method",
-          "signature": "public getTimestamp(): number;",
-          "accessModifier": "public",
+          "signature": "getTimestamp(): number;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2383,11 +2565,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static readonly serviceKey: ServiceKey<ITimeProvider>;",
+          "signature": "static readonly serviceKey: ServiceKey<ITimeProvider>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -2400,7 +2585,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2442,6 +2630,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -2490,8 +2679,8 @@
         },
         "getValue": {
           "kind": "method",
-          "signature": "public getValue(param: string): string | undefined;",
-          "accessModifier": "public",
+          "signature": "getValue(param: string): string | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2530,12 +2719,15 @@
               "text": "Examples: this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}] getValue('TEST') ---> 'done' getValue('debug') ---> 'false' getValue('lost') ---> undefined"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getValues": {
           "kind": "method",
-          "signature": "public getValues(param: string): (string | undefined)[] | undefined;",
-          "accessModifier": "public",
+          "signature": "getValues(param: string): (string | undefined)[] | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2574,7 +2766,10 @@
               "text": "Examples: this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}] getValues('TEST') ---> ['done', 'notdone'] getValues('debug') ---> ['false'] getValues('lost') ---> undefined"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2597,11 +2792,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "isNonemptyString": {
           "kind": "method",
-          "signature": "public static isNonemptyString(value: string | undefined | null, variableName: string): void;",
-          "accessModifier": "public",
+          "signature": "static isNonemptyString(value: string | undefined | null, variableName: string): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2642,12 +2838,64 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "isNotDisposed": {
+          "kind": "method",
+          "signature": "static isNotDisposed(value: IDisposable, className: string): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": true,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "value": {
+              "name": "value",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the value to check"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IDisposable"
+            },
+            "className": {
+              "name": "className",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the class name, which will be mentioned in the error message"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Throws an exception if the specified object has been disposed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isNotNullOrUndefined": {
           "kind": "method",
-          "signature": "public static isNotNullOrUndefined(value: any, variableName: string): void;",
-          "accessModifier": "public",
+          "signature": "static isNotNullOrUndefined(value: any, variableName: string): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2688,12 +2936,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isTrue": {
           "kind": "method",
-          "signature": "public static isTrue(value: boolean | undefined | null, variableName: string): void;",
-          "accessModifier": "public",
+          "signature": "static isTrue(value: boolean | undefined | null, variableName: string): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2734,7 +2985,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2764,11 +3018,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "compare": {
           "kind": "method",
-          "signature": "public static compare(v1: Version, v2: Version): number;",
-          "accessModifier": "public",
+          "signature": "static compare(v1: Version, v2: Version): number;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2814,12 +3069,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "equals": {
           "kind": "method",
-          "signature": "public equals(compareWith: Version): boolean;",
-          "accessModifier": "public",
+          "signature": "equals(compareWith: Version): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2865,12 +3123,15 @@
               "text": "1.0.0 equals 1.0.0 -> true; 2.0.1 equals 2.0.0 -> false; 3.0 equals 3.0.0 -> true; 04.01 equals 4.1 -> true"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "greaterThan": {
           "kind": "method",
-          "signature": "public greaterThan(compareWith: Version): boolean;",
-          "accessModifier": "public",
+          "signature": "greaterThan(compareWith: Version): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2916,12 +3177,15 @@
               "text": "1.0.0 greaterThan 0.0.9 -> true; 2.0 greaterThan 2.0.0 -> false; 3.0.1 greaterThan 3.0 -> true"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isValid": {
           "kind": "method",
-          "signature": "public static isValid(versionString: string | undefined | null): boolean;",
-          "accessModifier": "public",
+          "signature": "static isValid(versionString: string | undefined | null): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2955,12 +3219,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "lessThan": {
           "kind": "method",
-          "signature": "public lessThan(compareWith: Version): boolean;",
-          "accessModifier": "public",
+          "signature": "lessThan(compareWith: Version): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -3006,11 +3273,14 @@
               "text": "0.9.9 lessThan 1.0.0 -> true; 2.0 lessThan 2.0.0 -> false; 3.0 lessThan 3.0.1 -> true; 04.01 lessThan 4.1 -> false"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "major": {
           "kind": "property",
-          "signature": "public readonly major: number;",
+          "signature": "readonly major: number;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3028,11 +3298,14 @@
               "text": "Typically a change in the major version number indicates a compatibility break with previous versions."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "minor": {
           "kind": "property",
-          "signature": "public readonly minor: number;",
+          "signature": "readonly minor: number;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3050,12 +3323,15 @@
               "text": "Typically a change in the minor version number indicates that new features were added, while remaining backwards compatible with previous releases."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "parse": {
           "kind": "method",
-          "signature": "public static parse(versionString: string | undefined | null): Version;",
-          "accessModifier": "public",
+          "signature": "static parse(versionString: string | undefined | null): Version;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -3089,11 +3365,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "patch": {
           "kind": "property",
-          "signature": "public readonly patch: number | undefined;",
+          "signature": "readonly patch: number | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3111,11 +3390,14 @@
               "text": "Typically a change in the patch version number indicates a small fix that does not affect the compatibility contract for the library. For a .NET System.Version object, this is referred to as the \"build\" number."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "revision": {
           "kind": "property",
-          "signature": "public readonly revision: number | undefined;",
+          "signature": "readonly revision: number | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3133,12 +3415,15 @@
               "text": "This number is not part of the Semantic Versioning (SemVer) standard used in JavaScript, but it is used by .NET version numbers."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "satisfies": {
           "kind": "method",
-          "signature": "public satisfies(compareWith: Version): boolean;",
-          "accessModifier": "public",
+          "signature": "satisfies(compareWith: Version): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -3191,12 +3476,15 @@
               "text": "1.0.0 satisfies 1.0.0 -> true; 1.1.0 satisfies 1.0.0 -> true; 2.0.0 satisfies 1.0.0 -> false; 1.0.0 satisfies 1.1.0 -> false"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "toString": {
           "kind": "method",
-          "signature": "public toString(): string;",
-          "accessModifier": "public",
+          "signature": "toString(): string;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -3217,12 +3505,15 @@
               "text": "The value is normalized and may be different from the original string (e.g. leading zeroes may be removed). However, the number of version parts will be unchanged."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryParse": {
           "kind": "method",
-          "signature": "public static tryParse(versionString: string | undefined | null): Version | undefined;",
-          "accessModifier": "public",
+          "signature": "static tryParse(versionString: string | undefined | null): Version | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -3256,7 +3547,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }
