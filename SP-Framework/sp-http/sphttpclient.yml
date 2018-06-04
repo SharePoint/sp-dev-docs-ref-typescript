@@ -4,7 +4,10 @@ items:
     summary: >-
       SPHttpClient is used to perform REST calls against SharePoint. It adds default headers, manages the digest needed
       for writes, and collects telemetry that helps the service to monitor the performance of an application.
-    remarks: 'For communicating with other internet services, use the [HttpClient](xref:sp-http.HttpClient) class.'
+    remarks: |-
+      This class is marked as `@sealed`. Subclasses should not extend it.
+
+      For communicating with other internet services, use the [HttpClient](xref:sp-http.HttpClient) class.
     name: SPHttpClient
     fullName: sp-http.SPHttpClient
     langs:
@@ -43,11 +46,11 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;'
+      content: 'beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;'
       return:
         type:
           - SPHttpClientBatch
-        description: a promise that will return the result
+        description: 'An [SPHttpClientBatch](xref:sp-http.SPHttpClientBatch) object used to manage the batch operation.'
       parameters:
         - id: batchCreationOptions
           description: ''
@@ -61,7 +64,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static readonly configurations: ISPHttpClientConfigurations;'
+      content: 'static readonly configurations: ISPHttpClientConfigurations;'
       return:
         type:
           - ISPHttpClientConfigurations
@@ -95,11 +98,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public fetch(url: string, configuration: SPHttpClientConfiguration,\r\n    options: ISPHttpClientOptions): Promise<SPHttpClientResponse>;"
+      content: >-
+        fetch(url: string, configuration: SPHttpClientConfiguration, options: ISPHttpClientOptions):
+        Promise<SPHttpClientResponse>;
       return:
         type:
           - Promise<SPHttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -123,11 +132,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public get(url: string, configuration: SPHttpClientConfiguration,\r\n    options?: ISPHttpClientOptions): Promise<SPHttpClientResponse>;"
+      content: >-
+        get(url: string, configuration: SPHttpClientConfiguration, options?: ISPHttpClientOptions):
+        Promise<SPHttpClientResponse>;
       return:
         type:
           - Promise<SPHttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -163,7 +178,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public static getWebUrlFromRequestUrl(requestUrl: string): string;'
+      content: 'static getWebUrlFromRequestUrl(requestUrl: string): string;'
       return:
         type:
           - string
@@ -181,11 +196,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public post(url: string, configuration: SPHttpClientConfiguration,\r\n    options: ISPHttpClientOptions): Promise<SPHttpClientResponse>;"
+      content: >-
+        post(url: string, configuration: SPHttpClientConfiguration, options: ISPHttpClientOptions):
+        Promise<SPHttpClientResponse>;
       return:
         type:
           - Promise<SPHttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -209,7 +230,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static readonly serviceKey: ServiceKey<SPHttpClient>;'
+      content: 'static readonly serviceKey: ServiceKey<SPHttpClient>;'
       return:
         type:
           - ServiceKey<SPHttpClient>

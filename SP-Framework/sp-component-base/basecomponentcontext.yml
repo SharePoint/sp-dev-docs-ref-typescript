@@ -15,12 +15,113 @@ items:
     langs:
       - typeScript
     type: class
+    implements:
+      - IDisposable
     package: sp-component-base
     children:
+      - sp-component-base.BaseComponentContext.aadClientFactory
+      - sp-component-base.BaseComponentContext.aadTokenFactory
+      - sp-component-base.BaseComponentContext.dispose
+      - sp-component-base.BaseComponentContext.dynamicDataProvider
+      - sp-component-base.BaseComponentContext.dynamicDataSourceManager
+      - sp-component-base.BaseComponentContext.graphHttpClient
+      - sp-component-base.BaseComponentContext.httpClient
       - sp-component-base.BaseComponentContext.instanceId
+      - sp-component-base.BaseComponentContext.isDisposed
       - sp-component-base.BaseComponentContext.manifest
       - sp-component-base.BaseComponentContext.pageContext
       - sp-component-base.BaseComponentContext.serviceScope
+      - sp-component-base.BaseComponentContext.spHttpClient
+  - uid: sp-component-base.BaseComponentContext.aadClientFactory
+    summary: The instance of AadHttpClientFactory created for this instance of component
+    isPreview: true
+    name: aadClientFactory
+    fullName: sp-component-base.BaseComponentContext.aadClientFactory
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly aadClientFactory: AadHttpClientFactory;'
+      return:
+        type:
+          - AadHttpClientFactory
+  - uid: sp-component-base.BaseComponentContext.aadTokenFactory
+    summary: The instance of AadTokenProviderFactory created for this instance of component
+    isPreview: true
+    name: aadTokenFactory
+    fullName: sp-component-base.BaseComponentContext.aadTokenFactory
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly aadTokenFactory: AadTokenProviderFactory;'
+      return:
+        type:
+          - AadTokenProviderFactory
+  - uid: sp-component-base.BaseComponentContext.dispose
+    summary: Disposes the base component context.
+    name: dispose()
+    fullName: sp-component-base.BaseComponentContext.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-component-base.BaseComponentContext.dynamicDataProvider
+    summary: Returns the Dynamic Data Provider associated with the component.
+    isPreview: true
+    name: dynamicDataProvider
+    fullName: sp-component-base.BaseComponentContext.dynamicDataProvider
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly dynamicDataProvider: DynamicDataProvider;'
+      return:
+        type:
+          - DynamicDataProvider
+  - uid: sp-component-base.BaseComponentContext.dynamicDataSourceManager
+    summary: Returns the Dynamic Data Source Manager associated with the component.
+    isPreview: true
+    name: dynamicDataSourceManager
+    fullName: sp-component-base.BaseComponentContext.dynamicDataSourceManager
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly dynamicDataSourceManager: DynamicDataSourceManager;'
+      return:
+        type:
+          - DynamicDataSourceManager
+  - uid: sp-component-base.BaseComponentContext.graphHttpClient
+    summary: The instance of GraphHttpClient created for this instance of component
+    isPreview: true
+    name: graphHttpClient
+    fullName: sp-component-base.BaseComponentContext.graphHttpClient
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly graphHttpClient: GraphHttpClient;'
+      return:
+        type:
+          - GraphHttpClient
+  - uid: sp-component-base.BaseComponentContext.httpClient
+    summary: The instance of HttpClient created for this instance of component
+    name: httpClient
+    fullName: sp-component-base.BaseComponentContext.httpClient
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly httpClient: HttpClient;'
+      return:
+        type:
+          - HttpClient
   - uid: sp-component-base.BaseComponentContext.instanceId
     summary: A unique identifier for the instance of the component.
     remarks: >-
@@ -33,10 +134,22 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly instanceId: string;'
+      content: 'readonly instanceId: string;'
       return:
         type:
           - string
+  - uid: sp-component-base.BaseComponentContext.isDisposed
+    summary: Returns true if the context is disposed.
+    name: isDisposed
+    fullName: sp-component-base.BaseComponentContext.isDisposed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
   - uid: sp-component-base.BaseComponentContext.manifest
     summary: Manifest for the client side component.
     name: manifest
@@ -45,7 +158,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly manifest: IClientSideComponentManifest;'
+      content: 'readonly manifest: IClientSideComponentManifest;'
       return:
         type:
           - IClientSideComponentManifest
@@ -59,7 +172,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly pageContext: PageContext;'
+      content: 'readonly pageContext: PageContext;'
       return:
         type:
           - PageContext
@@ -72,7 +185,19 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly serviceScope: ServiceScope;'
+      content: 'readonly serviceScope: ServiceScope;'
       return:
         type:
           - ServiceScope
+  - uid: sp-component-base.BaseComponentContext.spHttpClient
+    summary: The instance of SpHttpClient created for this instance of component
+    name: spHttpClient
+    fullName: sp-component-base.BaseComponentContext.spHttpClient
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly spHttpClient: SPHttpClient;'
+      return:
+        type:
+          - SPHttpClient

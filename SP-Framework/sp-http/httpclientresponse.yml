@@ -39,7 +39,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public arrayBuffer(): Promise<ArrayBuffer>;'
+      content: 'arrayBuffer(): Promise<ArrayBuffer>;'
       return:
         type:
           - Promise<ArrayBuffer>
@@ -52,7 +52,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public blob(): Promise<Blob>;'
+      content: 'blob(): Promise<Blob>;'
       return:
         type:
           - Promise<Blob>
@@ -65,7 +65,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly bodyUsed: boolean;'
+      content: 'readonly bodyUsed: boolean;'
       return:
         type:
           - boolean
@@ -76,7 +76,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual public clone(): HttpClientResponse;'
+      content: |-
+        /** @virtual */
+        clone(): HttpClientResponse;
       return:
         type:
           - HttpClientResponse
@@ -89,7 +91,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public formData(): Promise<FormData>;'
+      content: 'formData(): Promise<FormData>;'
       return:
         type:
           - Promise<FormData>
@@ -102,7 +104,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly headers: Headers;'
+      content: 'readonly headers: Headers;'
       return:
         type:
           - Headers
@@ -114,7 +116,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public json(): Promise<any>;'
+      content: 'json(): Promise<any>;'
       return:
         type:
           - Promise<any>
@@ -138,7 +140,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly ok: boolean;'
+      content: 'readonly ok: boolean;'
       return:
         type:
           - boolean
@@ -150,7 +152,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly status: number;'
+      content: 'readonly status: number;'
       return:
         type:
           - number
@@ -162,7 +164,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly statusText: string;'
+      content: 'readonly statusText: string;'
       return:
         type:
           - string
@@ -174,7 +176,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public text(): Promise<string>;'
+      content: 'text(): Promise<string>;'
       return:
         type:
           - Promise<string>
@@ -187,7 +189,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly type: ResponseType;'
+      content: 'readonly type: ResponseType;'
       return:
         type:
           - ResponseType
@@ -199,7 +201,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly url: string;'
+      content: 'readonly url: string;'
       return:
         type:
           - string

@@ -35,7 +35,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static readonly configurations: ISPHttpClientBatchConfigurations;'
+      content: 'static readonly configurations: ISPHttpClientBatchConfigurations;'
       return:
         type:
           - ISPHttpClientBatchConfigurations
@@ -48,7 +48,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public execute(): Promise<SPHttpClientBatch>;'
+      content: 'execute(): Promise<SPHttpClientBatch>;'
       return:
         type:
           - Promise<SPHttpClientBatch>
@@ -56,12 +56,13 @@ items:
   - uid: sp-http.SPHttpClientBatch.fetch
     summary: >-
       Queues a new request, and returns a promise that can be used to access the server response (after execute() has
-      completed). The parameters for this function are basically the same as the WHATWG API standard documented here:
-      https://fetch.spec.whatwg.org/
+      completed).
+    remarks: >-
+      The parameters for this function are basically the same as the WHATWG API standard documented here:
 
 
-      However, be aware that certain REST headers are ignored or not allowed inside a batch. See the ODATA documentation
-      for details.
+      [https://fetch.spec.whatwg.org/](https://fetch.spec.whatwg.org/)<!-- -->However, be aware that certain REST
+      headers are ignored or not allowed inside a batch. See the ODATA documentation for details.
 
 
       When execute() is called, it will POST to a URL such as "http://example.com/sites/sample/\_api/$batch". Typically
@@ -76,12 +77,16 @@ items:
     type: method
     syntax:
       content: >-
-        public fetch(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions):
+        fetch(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions):
         Promise<SPHttpClientResponse>;
       return:
         type:
           - Promise<SPHttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -106,11 +111,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public get(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;"
+      content: >-
+        get(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions):
+        Promise<SPHttpClientResponse>;
       return:
         type:
           - Promise<SPHttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -135,11 +146,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public post(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;"
+      content: >-
+        post(url: string, configuration: SPHttpClientBatchConfiguration, options: ISPHttpClientBatchOptions):
+        Promise<SPHttpClientResponse>;
       return:
         type:
           - Promise<SPHttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch

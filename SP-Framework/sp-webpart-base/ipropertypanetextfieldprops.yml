@@ -15,6 +15,7 @@ items:
       - sp-webpart-base.IPropertyPaneTextFieldProps.disabled
       - sp-webpart-base.IPropertyPaneTextFieldProps.errorMessage
       - sp-webpart-base.IPropertyPaneTextFieldProps.label
+      - sp-webpart-base.IPropertyPaneTextFieldProps.logName
       - sp-webpart-base.IPropertyPaneTextFieldProps.maxLength
       - sp-webpart-base.IPropertyPaneTextFieldProps.multiline
       - sp-webpart-base.IPropertyPaneTextFieldProps.onGetErrorMessage
@@ -104,6 +105,27 @@ items:
       return:
         type:
           - string
+  - uid: sp-webpart-base.IPropertyPaneTextFieldProps.logName
+    summary: Engagement name to log PropertyPaneTextField value change.
+    remarks: >-
+      It will be logged format as &lt;moduleName&gt;.&lt;controlName&gt;. E.g. {moduleName: 'ImageWebPart', controlName:
+      'OverlayText'}, it will log: 1. action type, including 'Add', 'Clear' and 'Edit'. Clear: reset the content of
+      caption element to initial/unset state. Add: change from initial/unset state to customized content. (first edit)
+      Edit: any edition that changes the content apart from add and clear 2. text length after each edit.
+    name: logName
+    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.logName
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'logName?:'
+      return:
+        type:
+          - |-
+            {
+                    moduleName: string;
+                    controlName: string;
+                }
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.maxLength
     summary: Maximum number of characters that the PropertyPaneTextField can have.
     remarks: 'If the value is set to a negative number, an exception will be thrown.'

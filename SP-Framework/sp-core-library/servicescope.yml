@@ -51,6 +51,7 @@ items:
     type: class
     package: sp-core-library
     children:
+      - sp-core-library.ServiceScope.constructor
       - sp-core-library.ServiceScope.consume
       - sp-core-library.ServiceScope.createAndProvide
       - sp-core-library.ServiceScope.createDefaultAndProvide
@@ -60,6 +61,20 @@ items:
       - sp-core-library.ServiceScope.startNewChild
       - sp-core-library.ServiceScope.startNewRoot
       - sp-core-library.ServiceScope.whenFinished
+  - uid: sp-core-library.ServiceScope.constructor
+    summary: 'Constructs a new instance of the [ServiceScope](xref:sp-core-library.ServiceScope) class'
+    name: constructor(parent)
+    fullName: sp-core-library.ServiceScope.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'protected constructor(parent: ServiceScope | undefined);'
+      parameters:
+        - id: parent
+          description: ''
+          type:
+            - ServiceScope | undefined
   - uid: sp-core-library.ServiceScope.consume
     summary: Consumes a service from the service scope.
     remarks: >-
@@ -72,7 +87,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public consume < T >(serviceKey: ServiceKey<T>): T;'
+      content: 'consume<T>(serviceKey: ServiceKey<T>): T;'
       return:
         type:
           - T
@@ -92,7 +107,10 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public createAndProvide < T >(serviceKey: ServiceKey<T>,\r\n    simpleServiceClass: { new (serviceScope: ServiceScope); }): T;"
+      content: |-
+        createAndProvide<T>(serviceKey: ServiceKey<T>, simpleServiceClass: {
+                new (serviceScope: ServiceScope);
+            }): T;
       return:
         type:
           - T
@@ -105,7 +123,10 @@ items:
         - id: simpleServiceClass
           description: the TypeScript class to be constructed
           type:
-            - '{ new (serviceScope: ServiceScope); }'
+            - |-
+              {
+                      new (serviceScope: ServiceScope);
+                  }
   - uid: sp-core-library.ServiceScope.createDefaultAndProvide
     summary: >-
       This is a shorthand function that constructs the default implementation of the specified serviceKey, and then
@@ -116,7 +137,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public createDefaultAndProvide < T >(serviceKey: ServiceKey<T>): T;'
+      content: 'createDefaultAndProvide<T>(serviceKey: ServiceKey<T>): T;'
       return:
         type:
           - T
@@ -144,7 +165,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public finish(): void;'
+      content: 'finish(): void;'
       return:
         type:
           - void
@@ -157,7 +178,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public getParent(): ServiceScope | undefined;'
+      content: 'getParent(): ServiceScope | undefined;'
       return:
         type:
           - ServiceScope | undefined
@@ -173,7 +194,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public provide < T >(serviceKey: ServiceKey<T>, service: T): T;'
+      content: 'provide<T>(serviceKey: ServiceKey<T>, service: T): T;'
       return:
         type:
           - T
@@ -198,7 +219,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public startNewChild(): ServiceScope;'
+      content: 'startNewChild(): ServiceScope;'
       return:
         type:
           - ServiceScope
@@ -213,7 +234,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public static startNewRoot(): ServiceScope;'
+      content: 'static startNewRoot(): ServiceScope;'
       return:
         type:
           - ServiceScope
@@ -236,7 +257,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public whenFinished(callback: () => void): void;'
+      content: 'whenFinished(callback: () => void): void;'
       return:
         type:
           - void

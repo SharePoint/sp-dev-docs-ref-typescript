@@ -1,0 +1,61 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.AadHttpClientFactory
+    summary: >-
+      The will return a preinitialized version of the AadHttpClient for a given resource url. See more -&gt;
+      https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the AadHttpClientFactory class.
+    isPreview: true
+    name: AadHttpClientFactory
+    fullName: sp-http.AadHttpClientFactory
+    langs:
+      - typeScript
+    type: class
+    package: sp-http
+    children:
+      - sp-http.AadHttpClientFactory.getExtendedClient
+      - sp-http.AadHttpClientFactory.getStandardClient
+  - uid: sp-http.AadHttpClientFactory.getExtendedClient
+    summary: >-
+      Returns an instance of the AadHttpClient that communicates with the current tenant's configurable Service
+      Principal.
+    isPreview: true
+    name: getExtendedClient(resourceEndpoint)
+    fullName: sp-http.AadHttpClientFactory.getExtendedClient
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getExtendedClient(resourceEndpoint: string): AadHttpClient | undefined;'
+      return:
+        type:
+          - AadHttpClient | undefined
+        description: ''
+      parameters:
+        - id: resourceEndpoint
+          description: The target AAD application's resource endpoint.
+          type:
+            - string
+  - uid: sp-http.AadHttpClientFactory.getStandardClient
+    summary: >-
+      Returns an instance of the AadHttpClient that communicates with the preconfigured SharePoint Online Web Service
+      Principal.
+    isPreview: true
+    name: getStandardClient(resourceEndpoint)
+    fullName: sp-http.AadHttpClientFactory.getStandardClient
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getStandardClient(resourceEndpoint: string): AadHttpClient | undefined;'
+      return:
+        type:
+          - AadHttpClient | undefined
+        description: ''
+      parameters:
+        - id: resourceEndpoint
+          description: The target AAD application's resource endpoint.
+          type:
+            - string

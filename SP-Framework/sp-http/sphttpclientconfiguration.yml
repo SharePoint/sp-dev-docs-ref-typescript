@@ -60,7 +60,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly defaultODataVersion: ODataVersion;'
+      content: 'readonly defaultODataVersion: ODataVersion;'
       return:
         type:
           - ODataVersion
@@ -81,7 +81,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly defaultSameOriginCredentials: boolean;'
+      content: 'readonly defaultSameOriginCredentials: boolean;'
       return:
         type:
           - boolean
@@ -103,7 +103,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@override protected initializeFlags(): void;'
+      content: |-
+        /** @override */
+        protected initializeFlags(): void;
       return:
         type:
           - void
@@ -115,7 +117,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@override public overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;'
+      content: |-
+        /** @override */
+        overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;
       return:
         type:
           - SPHttpClientConfiguration
@@ -140,7 +144,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly requestDigest: boolean;'
+      content: 'readonly requestDigest: boolean;'
       return:
         type:
           - boolean
