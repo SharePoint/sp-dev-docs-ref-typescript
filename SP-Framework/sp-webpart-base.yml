@@ -23,8 +23,10 @@ items:
       - sp-webpart-base.IPropertyPaneChoiceGroupProps
       - sp-webpart-base.IPropertyPaneConfiguration
       - sp-webpart-base.IPropertyPaneCustomFieldProps
+      - sp-webpart-base.IPropertyPaneDropdownCalloutProps
       - sp-webpart-base.IPropertyPaneDropdownOption
       - sp-webpart-base.IPropertyPaneDropdownProps
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps
       - sp-webpart-base.IPropertyPaneField
       - sp-webpart-base.IPropertyPaneGroup
       - sp-webpart-base.IPropertyPaneLabelProps
@@ -46,6 +48,7 @@ items:
       - sp-webpart-base.PropertyPaneCustomField
       - sp-webpart-base.PropertyPaneDropdown
       - sp-webpart-base.PropertyPaneDropdownOptionType
+      - sp-webpart-base.PropertyPaneDynamicTextField
       - sp-webpart-base.PropertyPaneFieldType
       - sp-webpart-base.PropertyPaneHorizontalRule
       - sp-webpart-base.PropertyPaneLabel
@@ -62,7 +65,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneButton(targetProperty: string,\r\n  properties: IPropertyPaneButtonProps): IPropertyPaneField<IPropertyPaneButtonProps>;"
+      content: >-
+        export function PropertyPaneButton(targetProperty: string, properties: IPropertyPaneButtonProps):
+        IPropertyPaneField<IPropertyPaneButtonProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneButtonProps>
@@ -84,7 +89,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneCheckbox(targetProperty: string,\r\n  properties: IPropertyPaneCheckboxProps): IPropertyPaneField<IPropertyPaneCheckboxProps>;"
+      content: >-
+        export function PropertyPaneCheckbox(targetProperty: string, properties: IPropertyPaneCheckboxProps):
+        IPropertyPaneField<IPropertyPaneCheckboxProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneCheckboxProps>
@@ -106,7 +113,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneChoiceGroup(targetProperty: string,\r\n  properties: IPropertyPaneChoiceGroupProps): IPropertyPaneField<IPropertyPaneChoiceGroupProps>;"
+      content: >-
+        export function PropertyPaneChoiceGroup(targetProperty: string, properties: IPropertyPaneChoiceGroupProps):
+        IPropertyPaneField<IPropertyPaneChoiceGroupProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneChoiceGroupProps>
@@ -154,7 +163,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneDropdown(targetProperty: string,\r\n  properties: IPropertyPaneDropdownProps): IPropertyPaneField<IPropertyPaneDropdownProps>;"
+      content: >-
+        export function PropertyPaneDropdown(targetProperty: string, properties: IPropertyPaneDropdownProps):
+        IPropertyPaneField<IPropertyPaneDropdownProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneDropdownProps>
@@ -168,6 +179,31 @@ items:
           description: Strongly typed Dropdown properties.
           type:
             - IPropertyPaneDropdownProps
+  - uid: sp-webpart-base.PropertyPaneDynamicTextField
+    summary: Helper method to create a Dynamic TextField on the PropertyPane.
+    isPreview: true
+    name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
+    fullName: sp-webpart-base.PropertyPaneDynamicTextField
+    langs:
+      - typeScript
+    type: function
+    syntax:
+      content: >-
+        export function PropertyPaneDynamicTextField(targetProperty: string, properties:
+        IPropertyPaneDynamicTextFieldProps): IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>;
+      return:
+        type:
+          - IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>
+        description: ''
+      parameters:
+        - id: targetProperty
+          description: Target property the dynamic textfield is associated to.
+          type:
+            - string
+        - id: properties
+          description: Properties of the PropertyPaneDynamicTextField.
+          type:
+            - IPropertyPaneDynamicTextFieldProps
   - uid: sp-webpart-base.PropertyPaneHorizontalRule
     summary: Helper method to create a Horizontal Rule on the PropertyPane.
     name: PropertyPaneHorizontalRule()
@@ -189,7 +225,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneLabel(targetProperty: string,\r\n  properties: IPropertyPaneLabelProps): IPropertyPaneField<IPropertyPaneLabelProps>;"
+      content: >-
+        export function PropertyPaneLabel(targetProperty: string, properties: IPropertyPaneLabelProps):
+        IPropertyPaneField<IPropertyPaneLabelProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneLabelProps>
@@ -211,7 +249,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneLink(targetProperty: string,\r\n  properties: IPropertyPaneLinkProps): IPropertyPaneField<IPropertyPaneLinkProps>;"
+      content: >-
+        export function PropertyPaneLink(targetProperty: string, properties: IPropertyPaneLinkProps):
+        IPropertyPaneField<IPropertyPaneLinkProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneLinkProps>
@@ -233,7 +273,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneSlider(targetProperty: string,\r\n  properties: IPropertyPaneSliderProps): IPropertyPaneField<IPropertyPaneSliderProps>;"
+      content: >-
+        export function PropertyPaneSlider(targetProperty: string, properties: IPropertyPaneSliderProps):
+        IPropertyPaneField<IPropertyPaneSliderProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneSliderProps>
@@ -255,7 +297,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneTextField(targetProperty: string,\r\n  properties: IPropertyPaneTextFieldProps): IPropertyPaneField<IPropertyPaneTextFieldProps>;"
+      content: >-
+        export function PropertyPaneTextField(targetProperty: string, properties: IPropertyPaneTextFieldProps):
+        IPropertyPaneField<IPropertyPaneTextFieldProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneTextFieldProps>
@@ -277,7 +321,9 @@ items:
       - typeScript
     type: function
     syntax:
-      content: "export function PropertyPaneToggle(targetProperty: string,\r\n  properties: IPropertyPaneToggleProps): IPropertyPaneField<IPropertyPaneToggleProps>;"
+      content: >-
+        export function PropertyPaneToggle(targetProperty: string, properties: IPropertyPaneToggleProps):
+        IPropertyPaneField<IPropertyPaneToggleProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneToggleProps>
@@ -314,10 +360,14 @@ references:
     name: IPropertyPaneConfiguration
   - uid: sp-webpart-base.IPropertyPaneCustomFieldProps
     name: IPropertyPaneCustomFieldProps
+  - uid: sp-webpart-base.IPropertyPaneDropdownCalloutProps
+    name: IPropertyPaneDropdownCalloutProps
   - uid: sp-webpart-base.IPropertyPaneDropdownOption
     name: IPropertyPaneDropdownOption
   - uid: sp-webpart-base.IPropertyPaneDropdownProps
     name: IPropertyPaneDropdownProps
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
+    name: IPropertyPaneDynamicTextFieldProps
   - uid: sp-webpart-base.IPropertyPaneField
     name: IPropertyPaneField
   - uid: sp-webpart-base.IPropertyPaneGroup

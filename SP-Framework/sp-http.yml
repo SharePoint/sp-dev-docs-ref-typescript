@@ -12,12 +12,18 @@ items:
       - typeScript
     type: package
     children:
+      - sp-http.AadHttpClient
+      - sp-http.AadHttpClientConfiguration
+      - sp-http.AadTokenProvider
       - sp-http.GraphHttpClient
       - sp-http.GraphHttpClientConfiguration
       - sp-http.GraphHttpClientResponse
       - sp-http.HttpClient
       - sp-http.HttpClientConfiguration
       - sp-http.HttpClientResponse
+      - sp-http.IAadHttpClientConfiguration
+      - sp-http.IAadHttpClientConfigurations
+      - sp-http.IAadTokenProviderConfiguration
       - sp-http.IGraphHttpClientConfiguration
       - sp-http.IGraphHttpClientConfigurations
       - sp-http.IGraphHttpClientOptions
@@ -40,7 +46,14 @@ items:
       - sp-http.SPHttpClientConfiguration
       - sp-http.SPHttpClientResponse
       - sp-http.SPHttpHeader
+      - sp-http.TokenAcquisitionEventArgs
 references:
+  - uid: sp-http.AadHttpClient
+    name: AadHttpClient
+  - uid: sp-http.AadHttpClientConfiguration
+    name: AadHttpClientConfiguration
+  - uid: sp-http.AadTokenProvider
+    name: AadTokenProvider
   - uid: sp-http.GraphHttpClient
     name: GraphHttpClient
   - uid: sp-http.GraphHttpClientConfiguration
@@ -53,6 +66,12 @@ references:
     name: HttpClientConfiguration
   - uid: sp-http.HttpClientResponse
     name: HttpClientResponse
+  - uid: sp-http.IAadHttpClientConfiguration
+    name: IAadHttpClientConfiguration
+  - uid: sp-http.IAadHttpClientConfigurations
+    name: IAadHttpClientConfigurations
+  - uid: sp-http.IAadTokenProviderConfiguration
+    name: IAadTokenProviderConfiguration
   - uid: sp-http.IGraphHttpClientConfiguration
     name: IGraphHttpClientConfiguration
   - uid: sp-http.IGraphHttpClientConfigurations
@@ -97,3 +116,5 @@ references:
     name: SPHttpClientResponse
   - uid: sp-http.SPHttpHeader
     name: SPHttpHeader
+  - uid: sp-http.TokenAcquisitionEventArgs
+    name: TokenAcquisitionEventArgs

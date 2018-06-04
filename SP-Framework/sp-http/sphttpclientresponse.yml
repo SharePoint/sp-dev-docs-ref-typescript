@@ -2,7 +2,10 @@
 items:
   - uid: sp-http.SPHttpClientResponse
     summary: The Response subclass returned by methods such as SPHttpClient.fetch().
-    remarks: 'This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class.'
+    remarks: |-
+      This class is marked as `@sealed`. Subclasses should not extend it.
+
+      This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class.
     name: SPHttpClientResponse
     fullName: sp-http.SPHttpClientResponse
     langs:
@@ -23,7 +26,7 @@ items:
       - typeScript
     type: constructor
     syntax:
-      content: 'public constructor(response: Response);'
+      content: 'constructor(response: Response);'
       parameters:
         - id: response
           description: ''
@@ -36,7 +39,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@override public clone(): SPHttpClientResponse;'
+      content: |-
+        /** @override */
+        clone(): SPHttpClientResponse;
       return:
         type:
           - SPHttpClientResponse
@@ -54,7 +59,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly correlationId: Guid | undefined;'
+      content: 'readonly correlationId: Guid | undefined;'
       return:
         type:
           - Guid | undefined

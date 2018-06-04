@@ -42,10 +42,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly changedEvent: Event<EventArgs>;'
+      content: 'readonly changedEvent: SPEvent<SPEventArgs>;'
       return:
         type:
-          - Event<EventArgs>
+          - SPEvent<SPEventArgs>
   - uid: sp-application-base.PlaceholderProvider.placeholderNames
     summary: Returns the names of the currently available placeholders.
     name: placeholderNames
@@ -54,7 +54,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly placeholderNames: ReadonlyArray<PlaceholderName>;'
+      content: 'readonly placeholderNames: ReadonlyArray<PlaceholderName>;'
       return:
         type:
           - ReadonlyArray<PlaceholderName>
@@ -72,7 +72,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public tryCreateContent(name: PlaceholderName,\r\n    options?: IPlaceholderCreateContentOptions): PlaceholderContent | undefined;"
+      content: >-
+        tryCreateContent(name: PlaceholderName, options?: IPlaceholderCreateContentOptions): PlaceholderContent |
+        undefined;
       return:
         type:
           - PlaceholderContent | undefined

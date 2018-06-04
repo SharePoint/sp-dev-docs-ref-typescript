@@ -15,12 +15,57 @@ items:
     langs:
       - typeScript
     type: class
+    implements:
+      - IDisposable
     package: sp-component-base
     children:
+      - sp-component-base.BaseComponentContext.dispose
+      - sp-component-base.BaseComponentContext.dynamicDataProvider
+      - sp-component-base.BaseComponentContext.dynamicDataSourceManager
       - sp-component-base.BaseComponentContext.instanceId
+      - sp-component-base.BaseComponentContext.isDisposed
       - sp-component-base.BaseComponentContext.manifest
       - sp-component-base.BaseComponentContext.pageContext
       - sp-component-base.BaseComponentContext.serviceScope
+  - uid: sp-component-base.BaseComponentContext.dispose
+    summary: Disposes the base component context.
+    name: dispose()
+    fullName: sp-component-base.BaseComponentContext.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-component-base.BaseComponentContext.dynamicDataProvider
+    summary: Returns the Dynamic Data Provider associated with the component.
+    isPreview: true
+    name: dynamicDataProvider
+    fullName: sp-component-base.BaseComponentContext.dynamicDataProvider
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly dynamicDataProvider: DynamicDataProvider;'
+      return:
+        type:
+          - DynamicDataProvider
+  - uid: sp-component-base.BaseComponentContext.dynamicDataSourceManager
+    summary: Returns the Dynamic Data Source Manager associated with the component.
+    isPreview: true
+    name: dynamicDataSourceManager
+    fullName: sp-component-base.BaseComponentContext.dynamicDataSourceManager
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly dynamicDataSourceManager: DynamicDataSourceManager;'
+      return:
+        type:
+          - DynamicDataSourceManager
   - uid: sp-component-base.BaseComponentContext.instanceId
     summary: A unique identifier for the instance of the component.
     remarks: >-
@@ -33,10 +78,22 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly instanceId: string;'
+      content: 'readonly instanceId: string;'
       return:
         type:
           - string
+  - uid: sp-component-base.BaseComponentContext.isDisposed
+    summary: Returns true if the context is disposed.
+    name: isDisposed
+    fullName: sp-component-base.BaseComponentContext.isDisposed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
   - uid: sp-component-base.BaseComponentContext.manifest
     summary: Manifest for the client side component.
     name: manifest
@@ -45,7 +102,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly manifest: IClientSideComponentManifest;'
+      content: 'readonly manifest: IClientSideComponentManifest;'
       return:
         type:
           - IClientSideComponentManifest
@@ -59,7 +116,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly pageContext: PageContext;'
+      content: 'readonly pageContext: PageContext;'
       return:
         type:
           - PageContext
@@ -72,7 +129,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly serviceScope: ServiceScope;'
+      content: 'readonly serviceScope: ServiceScope;'
       return:
         type:
           - ServiceScope

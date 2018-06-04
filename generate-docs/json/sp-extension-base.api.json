@@ -33,6 +33,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "context": {
           "kind": "property",
@@ -54,11 +55,14 @@
               "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onInit": {
           "kind": "method",
-          "signature": "@virtual protected onInit(): Promise<void>;",
+          "signature": "protected onInit(): Promise<void>;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -75,7 +79,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "properties": {
           "kind": "property",
@@ -97,7 +104,10 @@
               "text": "Properties can be used in the extension code to define configurable behaviors. The application has control over what properties to provide to an instance of the extension, however the most common way would be to have it stored on the server as JSON and pass it as is to the extension on initialization."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -123,10 +133,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "graphHttpClient": {
           "kind": "property",
-          "signature": "public readonly graphHttpClient: GraphHttpClient;",
+          "signature": "readonly graphHttpClient: GraphHttpClient;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -139,11 +150,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "httpClient": {
           "kind": "property",
-          "signature": "public readonly httpClient: HttpClient;",
+          "signature": "readonly httpClient: HttpClient;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -156,11 +170,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "spHttpClient": {
           "kind": "property",
-          "signature": "public readonly spHttpClient: SPHttpClient;",
+          "signature": "readonly spHttpClient: SPHttpClient;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -173,7 +190,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }

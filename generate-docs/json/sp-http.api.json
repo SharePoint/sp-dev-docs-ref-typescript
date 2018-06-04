@@ -14,17 +14,549 @@
     }
   ],
   "exports": {
+    "AadHttpClient": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "AadHttpClient is used to perform REST calls against an Azure AD Application."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the AadHttpClient class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "For communicating with SharePoint, use the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "SPHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "SPHttpClient",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " class instead. For communicating with Microsoft Graph, use the "
+        },
+        {
+          "kind": "api-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "GraphHttpClient"
+            }
+          ],
+          "target": {
+            "scopeName": "@microsoft",
+            "packageName": "sp-http",
+            "exportName": "GraphHttpClient",
+            "memberName": ""
+          }
+        },
+        {
+          "kind": "text",
+          "text": " class."
+        }
+      ],
+      "isBeta": true,
+      "isSealed": true,
+      "members": {
+        "configurations": {
+          "kind": "property",
+          "signature": "static readonly configurations: IAadHttpClientConfigurations;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": true,
+          "type": "IAadHttpClientConfigurations",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient class."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "fetch": {
+          "kind": "method",
+          "signature": "fetch(url: string, configuration: AadHttpClientConfiguration, options: IHttpClientOptions): Promise<HttpClientResponse>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<HttpClientResponse>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "a promise that will return the result"
+              }
+            ]
+          },
+          "parameters": {
+            "url": {
+              "name": "url",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the URL to fetch"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "AadHttpClientConfiguration"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "additional options that affect the request"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IHttpClientOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Performs a REST service call."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Although the AadHttpClient subclass adds additional enhancements, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "get": {
+          "kind": "method",
+          "signature": "get(url: string, configuration: AadHttpClientConfiguration, options?: IHttpClientOptions): Promise<HttpClientResponse>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<HttpClientResponse>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "a promise that will return the result"
+              }
+            ]
+          },
+          "parameters": {
+            "url": {
+              "name": "url",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the URL to fetch"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "AadHttpClientConfiguration"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "additional options that affect the request"
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "IHttpClientOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"GET\"."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "post": {
+          "kind": "method",
+          "signature": "post(url: string, configuration: AadHttpClientConfiguration, options: IHttpClientOptions): Promise<HttpClientResponse>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<HttpClientResponse>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "a promise that will return the result"
+              }
+            ]
+          },
+          "parameters": {
+            "url": {
+              "name": "url",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the URL to fetch"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "AadHttpClientConfiguration"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "additional options that affect the request"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IHttpClientOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Calls fetch(), but sets the method to \"POST\"."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "AadHttpClientConfiguration": {
+      "kind": "class",
+      "extends": "HttpClientConfiguration",
+      "implements": "IAadHttpClientConfiguration",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Configuration for HttpClient."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the predefined defaults from HttpClientConfigurations, however switches can also be changed via the HttpClientConfiguration.overrideWith() method."
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(flags: IAadHttpClientConfiguration, overrideFlags?: IAadHttpClientConfiguration);",
+          "parameters": {
+            "flags": {
+              "name": "flags",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IAadHttpClientConfiguration"
+            },
+            "overrideFlags": {
+              "name": "overrideFlags",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "IAadHttpClientConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags."
+            }
+          ],
+          "remarks": []
+        },
+        "flags": {
+          "kind": "property",
+          "signature": "protected flags: IAadHttpClientConfiguration;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IAadHttpClientConfiguration",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "overrideWith": {
+          "kind": "method",
+          "signature": "overrideWith(sourceFlags: IAadHttpClientConfiguration): AadHttpClientConfiguration;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "AadHttpClientConfiguration",
+            "description": []
+          },
+          "parameters": {
+            "sourceFlags": {
+              "name": "sourceFlags",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IAadHttpClientConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
+        }
+      }
+    },
+    "AadTokenProvider": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This class allows a developer to obtain OAuth2 tokens from Azure AD."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway, Exchange, Yammer, etc."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "AadTokenProvider is replacing the /_api.SP.OAuth.Token/Acquire endpoint for authentication with ADAL.js. At some point in the near future, when Azure AD v2.0 can support the same scenarios as the original version, we will switch to MSAL."
+        }
+      ],
+      "isBeta": true,
+      "isSealed": true,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(configuration: IAadTokenProviderConfiguration);",
+          "parameters": {
+            "configuration": {
+              "name": "configuration",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IAadTokenProviderConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "AadTokenProvider"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "AadTokenProvider",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "getToken": {
+          "kind": "method",
+          "signature": "getToken(resourceEndpoint: string, configuration?: IAadTokenProviderConfiguration): Promise<string>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<string>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "A promise that will be fullfiled with the token or that will reject with an error message"
+              }
+            ]
+          },
+          "parameters": {
+            "resourceEndpoint": {
+              "name": "resourceEndpoint",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the resource for which the token should be obtained"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "IAadTokenProviderConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "The OAuth2 token SHOULD NOT be cached by the caller since it is already cached by the method itself."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "An example of a resourceEndpoint would be https://sdfpilot.outlook.com"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "tokenAcquisitionEvent": {
+          "kind": "property",
+          "signature": "readonly tokenAcquisitionEvent: SPEvent<TokenAcquisitionEventArgs>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "SPEvent<TokenAcquisitionEventArgs>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Notifies the developer when Token Acquistion requires user action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
     "GraphHttpClient": {
       "kind": "class",
       "extends": "",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [
-        {
-          "kind": "text",
-          "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-        }
-      ],
+      "deprecatedMessage": [],
       "summary": [
         {
           "kind": "text",
@@ -76,6 +608,7 @@
         }
       ],
       "isBeta": true,
+      "isSealed": true,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -89,12 +622,7 @@
               "type": "ServiceScope"
             }
           },
-          "deprecatedMessage": [
-            {
-              "kind": "text",
-              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-            }
-          ],
+          "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
@@ -124,17 +652,12 @@
         },
         "configurations": {
           "kind": "property",
-          "signature": "public static readonly configurations: IGraphHttpClientConfigurations;",
+          "signature": "static readonly configurations: IGraphHttpClientConfigurations;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
           "type": "IGraphHttpClientConfigurations",
-          "deprecatedMessage": [
-            {
-              "kind": "text",
-              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-            }
-          ],
+          "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
@@ -142,12 +665,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fetch": {
           "kind": "method",
-          "signature": "public fetch(url: string,\r\n    configuration: GraphHttpClientConfiguration,\r\n    options: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "fetch(url: string, configuration: GraphHttpClientConfiguration, options: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -197,12 +723,7 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [
-            {
-              "kind": "text",
-              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-            }
-          ],
+          "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
@@ -222,12 +743,15 @@
               "text": "The GraphHttpClient subclass adds some additional behaviors that are convenient when working with SharePoint ODATA API's (which can be avoided by using HttpClient instead): - Default \"Accept\" and \"Content-Type\" headers are added if not explicitly specified."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "get": {
           "kind": "method",
-          "signature": "public get(url: string, configuration: GraphHttpClientConfiguration,\r\n    options?: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "get(url: string, configuration: GraphHttpClientConfiguration, options?: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -277,12 +801,7 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [
-            {
-              "kind": "text",
-              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-            }
-          ],
+          "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
@@ -290,12 +809,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "post": {
           "kind": "method",
-          "signature": "public post(url: string, configuration: GraphHttpClientConfiguration,\r\n    options: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "post(url: string, configuration: GraphHttpClientConfiguration, options: IGraphHttpClientOptions): Promise<GraphHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -345,12 +867,7 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [
-            {
-              "kind": "text",
-              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-            }
-          ],
+          "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
@@ -358,21 +875,19 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static readonly serviceKey: ServiceKey<GraphHttpClient>;",
+          "signature": "static readonly serviceKey: ServiceKey<GraphHttpClient>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
           "type": "ServiceKey<GraphHttpClient>",
-          "deprecatedMessage": [
-            {
-              "kind": "text",
-              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
-            }
-          ],
+          "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
@@ -380,7 +895,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -427,6 +945,7 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -481,7 +1000,10 @@
           ],
           "summary": [],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -509,10 +1031,11 @@
         }
       ],
       "isBeta": true,
+      "isSealed": true,
       "members": {
         "__constructor": {
           "kind": "constructor",
-          "signature": "public constructor(response: Response);",
+          "signature": "constructor(response: Response);",
           "parameters": {
             "response": {
               "name": "response",
@@ -557,8 +1080,8 @@
         },
         "clone": {
           "kind": "method",
-          "signature": "@override public clone(): GraphHttpClientResponse;",
-          "accessModifier": "public",
+          "signature": "clone(): GraphHttpClientResponse;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -574,7 +1097,35 @@
           ],
           "summary": [],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
+        },
+        "correlationId": {
+          "kind": "property",
+          "signature": "readonly correlationId: Guid | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "Guid | undefined",
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superceded by the MSGraphClient class."
+            }
+          ],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the Graph API correlation ID."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -616,6 +1167,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -659,7 +1211,7 @@
         },
         "configurations": {
           "kind": "property",
-          "signature": "public static readonly configurations: IHttpClientConfigurations;",
+          "signature": "static readonly configurations: IHttpClientConfigurations;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -672,12 +1224,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fetch": {
           "kind": "method",
-          "signature": "public fetch(url: string, configuration: HttpClientConfiguration,\r\n    options: IHttpClientOptions): Promise<HttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "fetch(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions): Promise<HttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -685,7 +1240,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -740,12 +1314,15 @@
               "text": "Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "get": {
           "kind": "method",
-          "signature": "public get(url: string, configuration: HttpClientConfiguration,\r\n    options?: IHttpClientOptions): Promise<HttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "get(url: string, configuration: HttpClientConfiguration, options?: IHttpClientOptions): Promise<HttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -753,7 +1330,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -803,12 +1399,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "post": {
           "kind": "method",
-          "signature": "public post(url: string, configuration: HttpClientConfiguration,\r\n    options: IHttpClientOptions): Promise<HttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "post(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions): Promise<HttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -816,7 +1415,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -866,11 +1484,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static readonly serviceKey: ServiceKey<HttpClient>;",
+          "signature": "static readonly serviceKey: ServiceKey<HttpClient>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -883,7 +1504,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -906,6 +1530,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -945,11 +1570,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "initializeFlags": {
           "kind": "method",
-          "signature": "@virtual protected initializeFlags(): void;",
+          "signature": "protected initializeFlags(): void;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -966,12 +1594,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": true,
+          "isOverride": false
         },
         "overrideWith": {
           "kind": "method",
-          "signature": "@virtual public overrideWith(sourceFlags: IHttpClientConfiguration): HttpClientConfiguration;",
-          "accessModifier": "public",
+          "signature": "overrideWith(sourceFlags: IHttpClientConfiguration): HttpClientConfiguration;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -995,7 +1626,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": true,
+          "isOverride": false
         }
       }
     },
@@ -1025,11 +1659,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "arrayBuffer": {
           "kind": "method",
-          "signature": "public arrayBuffer(): Promise<ArrayBuffer>;",
-          "accessModifier": "public",
+          "signature": "arrayBuffer(): Promise<ArrayBuffer>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1045,12 +1680,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "blob": {
           "kind": "method",
-          "signature": "public blob(): Promise<Blob>;",
-          "accessModifier": "public",
+          "signature": "blob(): Promise<Blob>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1066,11 +1704,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "bodyUsed": {
           "kind": "property",
-          "signature": "public readonly bodyUsed: boolean;",
+          "signature": "readonly bodyUsed: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1083,12 +1724,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "clone": {
           "kind": "method",
-          "signature": "@virtual public clone(): HttpClientResponse;",
-          "accessModifier": "public",
+          "signature": "clone(): HttpClientResponse;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1099,12 +1743,15 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": true,
+          "isOverride": false
         },
         "formData": {
           "kind": "method",
-          "signature": "public formData(): Promise<FormData>;",
-          "accessModifier": "public",
+          "signature": "formData(): Promise<FormData>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1120,11 +1767,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "headers": {
           "kind": "property",
-          "signature": "public readonly headers: Headers;",
+          "signature": "readonly headers: Headers;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1137,12 +1787,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "json": {
           "kind": "method",
-          "signature": "public json(): Promise<any>;",
-          "accessModifier": "public",
+          "signature": "json(): Promise<any>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1158,7 +1811,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "nativeResponse": {
           "kind": "property",
@@ -1170,11 +1826,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "ok": {
           "kind": "property",
-          "signature": "public readonly ok: boolean;",
+          "signature": "readonly ok: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1187,11 +1846,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "status": {
           "kind": "property",
-          "signature": "public readonly status: number;",
+          "signature": "readonly status: number;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1204,11 +1866,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "statusText": {
           "kind": "property",
-          "signature": "public readonly statusText: string;",
+          "signature": "readonly statusText: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1221,12 +1886,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "text": {
           "kind": "method",
-          "signature": "public text(): Promise<string>;",
-          "accessModifier": "public",
+          "signature": "text(): Promise<string>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1242,11 +1910,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "type": {
           "kind": "property",
-          "signature": "public readonly type: ResponseType;",
+          "signature": "readonly type: ResponseType;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1259,11 +1930,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "url": {
           "kind": "property",
-          "signature": "public readonly url: string;",
+          "signature": "readonly url: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1276,7 +1950,187 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IAadHttpClientConfiguration": {
+      "kind": "interface",
+      "extends": "IHttpClientConfiguration",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Flags interface for HttpClientConfiguration."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false
+    },
+    "IAadHttpClientConfigurations": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Standard configurations for AadHttpClient."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "This interface provides standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)"
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "v1": {
+          "kind": "property",
+          "signature": "readonly v1: AadHttpClientConfiguration;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "AadHttpClientConfiguration",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This configuration turns off every feature switch for AadHttpClient. The fetch() behavior will be essentially identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IAadTokenProviderConfiguration": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Required strings for constructing an AadTokenProvider."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "aadInstanceUrl": {
+          "kind": "property",
+          "signature": "aadInstanceUrl: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The sign in page used to authenticate with Azure Active Directory. Trailing slashes are forbidden."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "aadTenantId": {
+          "kind": "property",
+          "signature": "aadTenantId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The Azure Active Directory's tenant id."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "aadUserId": {
+          "kind": "property",
+          "signature": "aadUserId?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The user's Azure Active Directory id. This will be used to ensure that a valid cached token is for the current user."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "redirectUri": {
+          "kind": "property",
+          "signature": "redirectUri: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The page used to retrieve tokens from Azure Active Directory. This url must be listed in the developer's application redirect uris."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "servicePrincipalId": {
+          "kind": "property",
+          "signature": "servicePrincipalId: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The client ID of the developer's Azure Active Directory application."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1298,7 +2152,8 @@
         }
       ],
       "remarks": [],
-      "isBeta": true
+      "isBeta": true,
+      "isSealed": false
     },
     "IGraphHttpClientConfigurations": {
       "kind": "interface",
@@ -1324,6 +2179,7 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "v1": {
           "kind": "property",
@@ -1345,7 +2201,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1367,7 +2226,8 @@
           "text": "This interface defines the options for the GraphHttpClient operations such as get(), post(), fetch(), etc. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
         }
       ],
-      "isBeta": true
+      "isBeta": true,
+      "isSealed": false
     },
     "IHttpClientConfiguration": {
       "kind": "interface",
@@ -1382,7 +2242,8 @@
         }
       ],
       "remarks": [],
-      "isBeta": false
+      "isBeta": false,
+      "isSealed": false
     },
     "IHttpClientConfigurations": {
       "kind": "interface",
@@ -1403,6 +2264,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "v1": {
           "kind": "property",
@@ -1419,7 +2281,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1441,7 +2306,8 @@
           "text": "This interface defines the options for the HttpClient operations such as get(), post(), fetch(), etc. It is based on the whatwg API standard parameters that are documented here: https://fetch.spec.whatwg.org/"
         }
       ],
-      "isBeta": false
+      "isBeta": false,
+      "isSealed": false
     },
     "ISPHttpClientBatchConfiguration": {
       "kind": "interface",
@@ -1456,7 +2322,8 @@
         }
       ],
       "remarks": [],
-      "isBeta": true
+      "isBeta": true,
+      "isSealed": false
     },
     "ISPHttpClientBatchConfigurations": {
       "kind": "interface",
@@ -1477,6 +2344,7 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "v1": {
           "kind": "property",
@@ -1493,7 +2361,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1511,6 +2382,7 @@
       ],
       "remarks": [],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "webUrl": {
           "kind": "property",
@@ -1527,7 +2399,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1544,7 +2419,8 @@
         }
       ],
       "remarks": [],
-      "isBeta": true
+      "isBeta": true,
+      "isSealed": false
     },
     "ISPHttpClientCommonConfiguration": {
       "kind": "interface",
@@ -1560,6 +2436,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "jsonRequest": {
           "kind": "property",
@@ -1602,7 +2479,10 @@
               "text": "For OData 4.0, the value is 'application/json;charset=utf-8'."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "jsonResponse": {
           "kind": "property",
@@ -1645,7 +2525,10 @@
               "text": "For OData 4.0, the value is 'application/json;odata.metadata=minimal'."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1663,6 +2546,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "defaultODataVersion": {
           "kind": "property",
@@ -1691,7 +2575,10 @@
               "text": "NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases. The recommended version is 4.0."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "defaultSameOriginCredentials": {
           "kind": "property",
@@ -1727,7 +2614,10 @@
               "text": "For more information, see the spec: https://fetch.spec.whatwg.org/#cors-protocol-and-credentials"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "requestDigest": {
           "kind": "property",
@@ -1756,7 +2646,10 @@
               "text": "If the \"X-RequestDigest\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). The request digest is managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1779,6 +2672,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "v1": {
           "kind": "property",
@@ -1802,7 +2696,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1820,6 +2717,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "webUrl": {
           "kind": "property",
@@ -1841,7 +2739,10 @@
               "text": "For a write operation, SPHttpClient will automatically add the \"X-RequestDigest\" header, which may need to be fetched using a seperate request such as \"https://example.com/sites/sample/_api/contextinfo\". Typically the SPWeb URL (\"https://example.com/sites/sample\" in this example) can be guessed by looking for a reserved URL segment such as \"_api\" in the original REST query, however certain REST endpoints do not contain a reserved URL segment; in this case, the webUrl can be explicitly specified using this option."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1859,11 +2760,12 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "toString": {
           "kind": "method",
-          "signature": "public toString(): string;",
-          "accessModifier": "public",
+          "signature": "toString(): string;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1879,12 +2781,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryParseFromHeaders": {
           "kind": "method",
-          "signature": "public static tryParseFromHeaders(headers: Headers): ODataVersion | undefined;",
-          "accessModifier": "public",
+          "signature": "static tryParseFromHeaders(headers: Headers): ODataVersion | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -1913,11 +2818,14 @@
               "text": "If the \"OData-Version\" header is present, this returns the corresponding ODataVersion constant. An error is thrown if the version number is not supported. If the header is missing, then undefined is returned."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "v3": {
           "kind": "property",
-          "signature": "public static v3: ODataVersion;",
+          "signature": "static v3: ODataVersion;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": true,
@@ -1930,11 +2838,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "v4": {
           "kind": "property",
-          "signature": "public static v4: ODataVersion;",
+          "signature": "static v4: ODataVersion;",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": true,
@@ -1947,7 +2858,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1989,6 +2903,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": true,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -2032,8 +2947,8 @@
         },
         "beginBatch": {
           "kind": "method",
-          "signature": "public beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;",
-          "accessModifier": "public",
+          "signature": "beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2041,7 +2956,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "An "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "SPHttpClientBatch"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "SPHttpClientBatch",
+                  "memberName": ""
+                }
+              },
+              {
+                "kind": "text",
+                "text": " object used to manage the batch operation."
               }
             ]
           },
@@ -2062,11 +2996,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "configurations": {
           "kind": "property",
-          "signature": "public static readonly configurations: ISPHttpClientConfigurations;",
+          "signature": "static readonly configurations: ISPHttpClientConfigurations;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -2079,12 +3016,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fetch": {
           "kind": "method",
-          "signature": "public fetch(url: string, configuration: SPHttpClientConfiguration,\r\n    options: ISPHttpClientOptions): Promise<SPHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "fetch(url: string, configuration: SPHttpClientConfiguration, options: ISPHttpClientOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2092,7 +3032,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -2182,12 +3141,15 @@
               "text": "For a write operation, SPHttpClient will automatically add the \"X-RequestDigest\" header, which may need to be obtained by issuing a seperate request such as \"https://example.com/sites/sample/_api/contextinfo\". Typically the appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as \"_api\" in the original URL passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "get": {
           "kind": "method",
-          "signature": "public get(url: string, configuration: SPHttpClientConfiguration,\r\n    options?: ISPHttpClientOptions): Promise<SPHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "get(url: string, configuration: SPHttpClientConfiguration, options?: ISPHttpClientOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2195,7 +3157,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -2245,12 +3226,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "getWebUrlFromRequestUrl": {
           "kind": "method",
-          "signature": "public static getWebUrlFromRequestUrl(requestUrl: string): string;",
-          "accessModifier": "public",
+          "signature": "static getWebUrlFromRequestUrl(requestUrl: string): string;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -2303,12 +3287,15 @@
               "text": "If the URL cannot be determined, an exception is thrown."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "post": {
           "kind": "method",
-          "signature": "public post(url: string, configuration: SPHttpClientConfiguration,\r\n    options: ISPHttpClientOptions): Promise<SPHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "post(url: string, configuration: SPHttpClientConfiguration, options: ISPHttpClientOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2316,7 +3303,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -2366,11 +3372,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static readonly serviceKey: ServiceKey<SPHttpClient>;",
+          "signature": "static readonly serviceKey: ServiceKey<SPHttpClient>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -2383,7 +3392,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2416,10 +3428,11 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "configurations": {
           "kind": "property",
-          "signature": "public static readonly configurations: ISPHttpClientBatchConfigurations;",
+          "signature": "static readonly configurations: ISPHttpClientBatchConfigurations;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -2432,12 +3445,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "execute": {
           "kind": "method",
-          "signature": "public execute(): Promise<SPHttpClientBatch>;",
-          "accessModifier": "public",
+          "signature": "execute(): Promise<SPHttpClientBatch>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2453,12 +3469,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fetch": {
           "kind": "method",
-          "signature": "public fetch(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "fetch(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2466,7 +3485,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -2512,10 +3550,26 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Queues a new request, and returns a promise that can be used to access the server response (after execute() has completed). The parameters for this function are basically the same as the WHATWG API standard documented here: https://fetch.spec.whatwg.org/"
+              "text": "Queues a new request, and returns a promise that can be used to access the server response (after execute() has completed)."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The parameters for this function are basically the same as the WHATWG API standard documented here:"
             },
             {
               "kind": "paragraph"
+            },
+            {
+              "kind": "web-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "https://fetch.spec.whatwg.org/"
+                }
+              ],
+              "targetUrl": "https://fetch.spec.whatwg.org/"
             },
             {
               "kind": "text",
@@ -2529,13 +3583,15 @@
               "text": "When execute() is called, it will POST to a URL such as \"http://example.com/sites/sample/_api/$batch\". Typically SPHttpClientBatch can successfully guess the appropriate SPWeb URL by looking for a reserved URL segment such as \"_api\" in the first URL passed to fetch(). If not, use ISPHttpClientBatchCreationOptions.webUrl to specify it explicitly."
             }
           ],
-          "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "get": {
           "kind": "method",
-          "signature": "public get(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "get(url: string, configuration: SPHttpClientBatchConfiguration, options?: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2543,7 +3599,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -2593,12 +3668,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "post": {
           "kind": "method",
-          "signature": "public post(url: string, configuration: SPHttpClientBatchConfiguration,\r\n    options: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
-          "accessModifier": "public",
+          "signature": "post(url: string, configuration: SPHttpClientBatchConfiguration, options: ISPHttpClientBatchOptions): Promise<SPHttpClientResponse>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2606,7 +3684,26 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with "
+              },
+              {
+                "kind": "api-link",
+                "elements": [
+                  {
+                    "kind": "text",
+                    "text": "HttpClientResponse.ok"
+                  }
+                ],
+                "target": {
+                  "scopeName": "@microsoft",
+                  "packageName": "sp-http",
+                  "exportName": "HttpClientResponse",
+                  "memberName": "ok"
+                }
+              },
+              {
+                "kind": "text",
+                "text": " being false) for error status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent communication with the server."
               }
             ]
           },
@@ -2656,7 +3753,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -2679,6 +3779,7 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -2718,11 +3819,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "initializeFlags": {
           "kind": "method",
-          "signature": "@override protected initializeFlags(): void;",
+          "signature": "protected initializeFlags(): void;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -2734,12 +3838,15 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         },
         "overrideWith": {
           "kind": "method",
-          "signature": "@override public overrideWith(sourceFlags: ISPHttpClientBatchConfiguration): SPHttpClientBatchConfiguration;",
-          "accessModifier": "public",
+          "signature": "overrideWith(sourceFlags: ISPHttpClientBatchConfiguration): SPHttpClientBatchConfiguration;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2758,7 +3865,10 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         }
       }
     },
@@ -2776,6 +3886,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -2820,11 +3931,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "initializeFlags": {
           "kind": "method",
-          "signature": "@override protected initializeFlags(): void;",
+          "signature": "protected initializeFlags(): void;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -2836,11 +3950,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         },
         "jsonRequest": {
           "kind": "property",
-          "signature": "public readonly jsonRequest: boolean;",
+          "signature": "readonly jsonRequest: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -2879,11 +3996,14 @@
               "text": "For OData 4.0, the value is 'application/json;charset=utf-8'."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "jsonResponse": {
           "kind": "property",
-          "signature": "public readonly jsonResponse: boolean;",
+          "signature": "readonly jsonResponse: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -2922,12 +4042,15 @@
               "text": "For OData 4.0, the value is 'application/json;odata.metadata=minimal'."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "overrideWith": {
           "kind": "method",
-          "signature": "@override public overrideWith(sourceFlags: ISPHttpClientCommonConfiguration): SPHttpClientCommonConfiguration;",
-          "accessModifier": "public",
+          "signature": "overrideWith(sourceFlags: ISPHttpClientCommonConfiguration): SPHttpClientCommonConfiguration;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -2946,7 +4069,10 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         }
       }
     },
@@ -2988,6 +4114,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -3019,7 +4146,7 @@
         },
         "defaultODataVersion": {
           "kind": "property",
-          "signature": "public readonly defaultODataVersion: ODataVersion;",
+          "signature": "readonly defaultODataVersion: ODataVersion;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3044,11 +4171,14 @@
               "text": "NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases. The recommended version is 4.0."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "defaultSameOriginCredentials": {
           "kind": "property",
-          "signature": "public readonly defaultSameOriginCredentials: boolean;",
+          "signature": "readonly defaultSameOriginCredentials: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3080,7 +4210,10 @@
               "text": "For more information, see the spec: https://fetch.spec.whatwg.org/#cors-protocol-and-credentials"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "flags": {
           "kind": "property",
@@ -3092,11 +4225,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "initializeFlags": {
           "kind": "method",
-          "signature": "@override protected initializeFlags(): void;",
+          "signature": "protected initializeFlags(): void;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -3108,12 +4244,15 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         },
         "overrideWith": {
           "kind": "method",
-          "signature": "@override public overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;",
-          "accessModifier": "public",
+          "signature": "overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -3132,11 +4271,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         },
         "requestDigest": {
           "kind": "property",
-          "signature": "public readonly requestDigest: boolean;",
+          "signature": "readonly requestDigest: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3161,7 +4303,10 @@
               "text": "If the \"X-RequestDigest\" header was not explicitly added for the request, then SPHttpClient will add it if the request is a write operation (i.e. an HTTP method other than \"GET\", \"HEAD\", or \"OPTIONS\"). The request digest is managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -3184,10 +4329,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": true,
       "members": {
         "__constructor": {
           "kind": "constructor",
-          "signature": "public constructor(response: Response);",
+          "signature": "constructor(response: Response);",
           "parameters": {
             "response": {
               "name": "response",
@@ -3227,8 +4373,8 @@
         },
         "clone": {
           "kind": "method",
-          "signature": "@override public clone(): SPHttpClientResponse;",
-          "accessModifier": "public",
+          "signature": "clone(): SPHttpClientResponse;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -3239,11 +4385,14 @@
           "deprecatedMessage": [],
           "summary": [],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         },
         "correlationId": {
           "kind": "property",
-          "signature": "public readonly correlationId: Guid | undefined;",
+          "signature": "readonly correlationId: Guid | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -3261,7 +4410,10 @@
               "text": "The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation, but may originate from different services or components. SharePoint REST operations return the server's correlation ID as the \"sprequestguid\" header."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -3270,7 +4422,7 @@
       "values": {
         "SPRequestGuid": {
           "kind": "enum value",
-          "value": "'SPRequestGuid'",
+          "value": "\"SPRequestGuid\"",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -3317,6 +4469,111 @@
       ],
       "remarks": [],
       "isBeta": true
+    },
+    "TokenAcquisitionEventArgs": {
+      "kind": "class",
+      "extends": "SPEventArgs",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Represents arguments used for raising a token acquisiton failure event."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(message: string, redirectUrl?: string);",
+          "parameters": {
+            "message": {
+              "name": "message",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "redirectUrl": {
+              "name": "redirectUrl",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "TokenAcquisitionEventArgs"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "TokenAcquisitionEventArgs",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "message": {
+          "kind": "property",
+          "signature": "message: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The message returned from ADAL fails to retrieve a token from Azure AD."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "redirectUrl": {
+          "kind": "property",
+          "signature": "redirectUrl?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The url of the page for the end user to perform Multi Factor Authentication"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
     }
   }
 }

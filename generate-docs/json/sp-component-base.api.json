@@ -17,7 +17,7 @@
     "BaseComponent": {
       "kind": "class",
       "extends": "",
-      "implements": "IEventObserver",
+      "implements": "ISPEventObserver",
       "typeParameters": [],
       "deprecatedMessage": [],
       "summary": [
@@ -36,10 +36,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "componentId": {
           "kind": "property",
-          "signature": "public readonly componentId: string;",
+          "signature": "readonly componentId: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -57,7 +58,10 @@
               "text": "Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which may include additional metadata about the component. The manifest is uniquely identified using a text string containing a lower case GUID value."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "context": {
           "kind": "property",
@@ -79,12 +83,15 @@
               "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "dispose": {
           "kind": "method",
-          "signature": "public dispose(): void;",
-          "accessModifier": "public",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -124,11 +131,14 @@
               "text": " method."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "instanceId": {
           "kind": "property",
-          "signature": "public readonly instanceId: string;",
+          "signature": "readonly instanceId: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -146,11 +156,14 @@
               "text": "A component implementation can be loaded multiple times on the page. For example, if the component is a charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely identifies each of these instances."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isDisposed": {
           "kind": "property",
-          "signature": "public readonly isDisposed: boolean;",
+          "signature": "readonly isDisposed: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -163,11 +176,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manifest": {
           "kind": "property",
-          "signature": "public readonly manifest: IClientSideComponentManifest;",
+          "signature": "readonly manifest: IClientSideComponentManifest;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -185,11 +201,14 @@
               "text": "Child classes can override this with more specialized manifest types."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onDispose": {
           "kind": "method",
-          "signature": "@virtual protected onDispose(): void;",
+          "signature": "protected onDispose(): void;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -206,14 +225,17 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
     "BaseComponentContext": {
       "kind": "class",
       "extends": "",
-      "implements": "",
+      "implements": "IDisposable",
       "typeParameters": [],
       "deprecatedMessage": [],
       "summary": [
@@ -236,10 +258,75 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Disposes the base component context."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "dynamicDataProvider": {
+          "kind": "property",
+          "signature": "readonly dynamicDataProvider: DynamicDataProvider;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "DynamicDataProvider",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the Dynamic Data Provider associated with the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "dynamicDataSourceManager": {
+          "kind": "property",
+          "signature": "readonly dynamicDataSourceManager: DynamicDataSourceManager;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "DynamicDataSourceManager",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the Dynamic Data Source Manager associated with the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
         "instanceId": {
           "kind": "property",
-          "signature": "public readonly instanceId: string;",
+          "signature": "readonly instanceId: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -257,11 +344,34 @@
               "text": "A component implementation can be loaded multiple times on the page. For example, if the component is a charting web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely identifies each of these instances."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns true if the context is disposed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manifest": {
           "kind": "property",
-          "signature": "public readonly manifest: IClientSideComponentManifest;",
+          "signature": "readonly manifest: IClientSideComponentManifest;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -274,11 +384,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "pageContext": {
           "kind": "property",
-          "signature": "public readonly pageContext: PageContext;",
+          "signature": "readonly pageContext: PageContext;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -291,11 +404,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceScope": {
           "kind": "property",
-          "signature": "public readonly serviceScope: ServiceScope;",
+          "signature": "readonly serviceScope: ServiceScope;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -332,7 +448,1020 @@
               "text": "A child service scope is created for each client-side component."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "DynamicDataProvider": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IDisposable",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The Dynamic Data Provider allows components to consume Dynamic Data. It allows data consumers to request Dynamic Data sources and register/unregister to those."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Disposes the Dynamic Data Provider."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getAvailableSources": {
+          "kind": "method",
+          "signature": "getAvailableSources(): ReadonlyArray<IDynamicDataSource>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ReadonlyArray<IDynamicDataSource>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "Read-only array with all available sources."
+              }
+            ]
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns a list with all available Dynamic Data Sources."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns true if the Dynamic Data Provider is disposed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "registerAvailableSourcesChanged": {
+          "kind": "method",
+          "signature": "registerAvailableSourcesChanged(callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Function to execute when the sources are updated."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Registers a callback to an event that raises when the list of available Dynamic Data Sources is updated."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "registerPropertyChanged": {
+          "kind": "method",
+          "signature": "registerPropertyChanged(sourceId: string, propertyId: string, callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "sourceId": {
+              "name": "sourceId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the Dynamic Data Source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "propertyId": {
+              "name": "propertyId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the property of the source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Function to execute when the source updates its data."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Registers a callback for updates when a property is changed in a Dynamic Data source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "registerSourceChanged": {
+          "kind": "method",
+          "signature": "registerSourceChanged(sourceId: string, callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "sourceId": {
+              "name": "sourceId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the Dynamic Data Source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Function to execute when the source updates its data."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Registers a callback for updates when a Dynamic Data source is changed. This happens when any property is updated within the source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "tryGetSource": {
+          "kind": "method",
+          "signature": "tryGetSource(id: string): IDynamicDataSource | undefined;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IDynamicDataSource | undefined",
+            "description": []
+          },
+          "parameters": {
+            "id": {
+              "name": "id",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the Dynamic Data Source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns a Dynamic Data Source, by its id. If the source is not present, it returns undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "unregisterAvailableSourcesChanged": {
+          "kind": "method",
+          "signature": "unregisterAvailableSourcesChanged(callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Function to remove from the registration. Must be the same it was registered with."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Unregisters a callback to an event that raises when the list of available Dynamic Data Sources is updated."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "unregisterPropertyChanged": {
+          "kind": "method",
+          "signature": "unregisterPropertyChanged(sourceId: string, propertyId: string, callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "sourceId": {
+              "name": "sourceId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the Dynamic Data Source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "propertyId": {
+              "name": "propertyId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the property of the source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Function to remove from the registration. Must be the same it was registered with."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Unregisters a callback for updates when a property is changed in a Dynamic Data source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "unregisterSourceChanged": {
+          "kind": "method",
+          "signature": "unregisterSourceChanged(sourceId: string, callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "sourceId": {
+              "name": "sourceId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the Dynamic Data Source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Function to remove from the registration. Must be the same it was registered with."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Unregisters a callback for updates when a Dynamic Data source is changed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "DynamicDataSourceManager": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IDisposable",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "The Dynamic Data Source Manager allows components to expose data to other components through Dynamic Data. It allows data providers to update their metadata and notify when data has been updated."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Disposes the Dynamic Data Provider."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "initializeSource": {
+          "kind": "method",
+          "signature": "initializeSource(controller: IDynamicDataController): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "controller": {
+              "name": "controller",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Set of functions for the Dynamic Data Source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "IDynamicDataController"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Initializes a Dynamic Data Source for the component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns true if the Dynamic Data Provider is disposed."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "notifyPropertyChanged": {
+          "kind": "method",
+          "signature": "notifyPropertyChanged(propertyId: string): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "propertyId": {
+              "name": "propertyId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the updated property in the source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Notifies any Dynamic Data consumer that this source has updated a specific property."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "notifySourceChanged": {
+          "kind": "method",
+          "signature": "notifySourceChanged(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Notifies any Dynamic Data consumer that this source has updated its data."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "updateMetadata": {
+          "kind": "method",
+          "signature": "updateMetadata(metadata: Partial<IDynamicDataSourceMetadata>): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "metadata": {
+              "name": "metadata",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Partial of the metadata."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Partial<IDynamicDataSourceMetadata>"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Updated the metadata of the Dynamic Data Source associated with the component. It allows to updated fields like title or description. Auto-generated fields like alias, componentId or instanceId cannot be updated."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "DynamicProperty": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IDisposable",
+      "typeParameters": [
+        "TValue"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Serializable object that simplifies usage of Dynamic Data."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "This is built for usage in Web Part properties, and modified through the property pane. Can be initialized with a default callback. Web parts initialize with the render method so if the 3rd party developer does nothing, a change in the dynamic data will re-render the web part automatically."
+        }
+      ],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(provider: DynamicDataProvider, callback?: () => void);",
+          "parameters": {
+            "provider": {
+              "name": "provider",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Dynamic Data Provider."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DynamicDataProvider"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Optional. Default callback to be registered for updates in the Dynamic Data source."
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Create a new Dynamic Data object."
+            }
+          ],
+          "remarks": []
+        },
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This method is called to permanently dispose the object."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "After the object has been disposed, do not call its methods or access its properties."
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "hasDefaultCallback": {
+          "kind": "method",
+          "signature": "hasDefaultCallback(): boolean;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns true if the object has a default callback."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns true if the dispose() method has been called. Once an object is disposed, it remains in this state permanently."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "After the object has been disposed, do not call its methods or access its properties."
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "reference": {
+          "kind": "property",
+          "signature": "readonly reference: string | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "DynamicDataReference string that the Dynamic Data object points to. The reference is of the form <source>:<property>:<path>."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "If the Dynamic Data object is set up with static data, this returns undefined."
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "register": {
+          "kind": "method",
+          "signature": "register(callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Callback function to register."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Registers a callback function for updates on the associated Dynamic Data Source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "removeDefaultCallback": {
+          "kind": "method",
+          "signature": "removeDefaultCallback(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Removes the registration for the default callback."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This can be useful for advanced users who only want their custom callbacks."
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "setReference": {
+          "kind": "method",
+          "signature": "setReference(reference: string): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "reference": {
+              "name": "reference",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Id of the Dynamic Data."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Sets a Dynamic data id in the Dynamic Data object."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "setValue": {
+          "kind": "method",
+          "signature": "setValue(value: TValue): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "value": {
+              "name": "value",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Value for the Dynamic Data."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "TValue"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Sets a static value in the Dynamic Data object."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "tryGetSource": {
+          "kind": "method",
+          "signature": "tryGetSource(): IDynamicDataSource | undefined;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IDynamicDataSource | undefined",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the Dynamic Data Source that the Dynamic Data object refers to. Returns undefined if the source doesn't exist."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "tryGetValue": {
+          "kind": "method",
+          "signature": "tryGetValue(): TValue | undefined;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "TValue | undefined",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns the value of the Dynamic Data object. Returns undefined if the source or the data doesn't exist."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "unregister": {
+          "kind": "method",
+          "signature": "unregister(callback: () => void): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Callback function to unregister."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "() => void"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Unregisters a callback function for updates on the associated Dynamic Data Source. The callback function must be the same it was registered with."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }

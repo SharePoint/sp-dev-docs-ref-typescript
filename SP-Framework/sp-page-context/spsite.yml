@@ -20,11 +20,13 @@ items:
       - sp-page-context.SPSite.correlationId
       - sp-page-context.SPSite.group
       - sp-page-context.SPSite.id
+      - sp-page-context.SPSite.isFeatureVersionKillSwitchActivated
       - sp-page-context.SPSite.isNoScriptEnabled
       - sp-page-context.SPSite.recycleBinItemCount
       - sp-page-context.SPSite.serverRelativeUrl
       - sp-page-context.SPSite.serverRequestPath
       - sp-page-context.SPSite.sitePagesEnabled
+      - sp-page-context.SPSite.sitePagesFeatureVersion
   - uid: sp-page-context.SPSite.absoluteUrl
     summary: Returns the absolute URL for this SPSite.
     remarks: 'Example: "https://example.com/sites/PubSite"'
@@ -34,7 +36,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly absoluteUrl: string;'
+      content: 'readonly absoluteUrl: string;'
       return:
         type:
           - string
@@ -46,7 +48,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly cdnPrefix: string;'
+      content: 'readonly cdnPrefix: string;'
       return:
         type:
           - string
@@ -58,7 +60,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly classification: string;'
+      content: 'readonly classification: string;'
       return:
         type:
           - string
@@ -70,7 +72,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly correlationId: Guid;'
+      content: 'readonly correlationId: Guid;'
       return:
         type:
           - Guid
@@ -84,7 +86,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly group: O365GroupAssociation | undefined;'
+      content: 'readonly group: O365GroupAssociation | undefined;'
       return:
         type:
           - O365GroupAssociation | undefined
@@ -96,10 +98,21 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly id: Guid;'
+      content: 'readonly id: Guid;'
       return:
         type:
           - Guid
+  - uid: sp-page-context.SPSite.isFeatureVersionKillSwitchActivated
+    name: isFeatureVersionKillSwitchActivated
+    fullName: sp-page-context.SPSite.isFeatureVersionKillSwitchActivated
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'static readonly isFeatureVersionKillSwitchActivated: boolean;'
+      return:
+        type:
+          - boolean
   - uid: sp-page-context.SPSite.isNoScriptEnabled
     summary: Returns true if isNoScript has been enabled on the SPSite.
     name: isNoScriptEnabled
@@ -108,19 +121,19 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly isNoScriptEnabled: boolean;'
+      content: 'readonly isNoScriptEnabled: boolean;'
       return:
         type:
           - boolean
   - uid: sp-page-context.SPSite.recycleBinItemCount
-    summary: The amount of items in the recyle bin.
+    summary: The amount of items in the recycle bin.
     name: recycleBinItemCount
     fullName: sp-page-context.SPSite.recycleBinItemCount
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly recycleBinItemCount: number;'
+      content: 'readonly recycleBinItemCount: number;'
       return:
         type:
           - number
@@ -133,7 +146,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly serverRelativeUrl: string;'
+      content: 'readonly serverRelativeUrl: string;'
       return:
         type:
           - string
@@ -146,7 +159,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly serverRequestPath: string;'
+      content: 'readonly serverRequestPath: string;'
       return:
         type:
           - string
@@ -158,7 +171,21 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly sitePagesEnabled: boolean;'
+      content: 'readonly sitePagesEnabled: boolean;'
       return:
         type:
           - boolean
+  - uid: sp-page-context.SPSite.sitePagesFeatureVersion
+    summary: >-
+      Returns site pages feature version number if defined on this SPSite. Example, for version 16.0.4.0 this would
+      return 4.
+    name: sitePagesFeatureVersion
+    fullName: sp-page-context.SPSite.sitePagesFeatureVersion
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly sitePagesFeatureVersion: number;'
+      return:
+        type:
+          - number

@@ -71,6 +71,7 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -105,8 +106,8 @@
         },
         "close": {
           "kind": "method",
-          "signature": "public close(): Promise<void>;",
-          "accessModifier": "public",
+          "signature": "close(): Promise<void>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -127,7 +128,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "domElement": {
           "kind": "property",
@@ -170,11 +174,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isHidden": {
           "kind": "property",
-          "signature": "public readonly isHidden: boolean;",
+          "signature": "readonly isHidden: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -187,11 +194,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isOpen": {
           "kind": "property",
-          "signature": "public readonly isOpen: boolean;",
+          "signature": "readonly isOpen: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -204,11 +214,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isSecondary": {
           "kind": "property",
-          "signature": "public readonly isSecondary: boolean;",
+          "signature": "readonly isSecondary: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -221,11 +234,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onAfterClose": {
           "kind": "method",
-          "signature": "@virtual protected onAfterClose(): void;",
+          "signature": "protected onAfterClose(): void;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -242,11 +258,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "onBeforeOpen": {
           "kind": "method",
-          "signature": "@virtual protected onBeforeOpen(): Promise<void>;",
+          "signature": "protected onBeforeOpen(): Promise<void>;",
           "accessModifier": "protected",
           "isOptional": false,
           "isStatic": false,
@@ -273,7 +292,10 @@
               "text": "All resource allocations in onBeforeOpen() should be properly disposed in onAfterClose() to a avoid memory leak."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "render": {
           "kind": "method",
@@ -299,11 +321,14 @@
               "text": "The render method is called once after the modal element is created and opened. It is recommended to use onBeforeOpen() for doing non-UI preperations for your rendering that might take a long time. This will ensure that the framework can show a friendly UI such as a spinner to let the user know that the dialog is being prepared. If you choose to do your initialization or other costly operations inside render method, make sure to have a friendly UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which is a bad user experience practice."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "secondaryDialogProvider": {
           "kind": "property",
-          "signature": "public readonly secondaryDialogProvider: SecondaryDialogProvider | undefined;",
+          "signature": "readonly secondaryDialogProvider: SecondaryDialogProvider | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -321,12 +346,15 @@
               "text": "Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "show": {
           "kind": "method",
-          "signature": "public show(options?: IDialogShowOptions): Promise<void>;",
-          "accessModifier": "public",
+          "signature": "show(options?: IDialogShowOptions): Promise<void>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -379,7 +407,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -397,11 +428,12 @@
       ],
       "remarks": [],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "alert": {
           "kind": "method",
-          "signature": "public static alert(message: string, options?: IAlertOptions): Promise<void>;",
-          "accessModifier": "public",
+          "signature": "static alert(message: string, options?: IAlertOptions): Promise<void>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -442,12 +474,15 @@
               "text": "There might be a delay until the dialog is approved and shown by the application, for example, if there is another dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The promise rejects if the application rejects the request for any reason."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "prompt": {
           "kind": "method",
-          "signature": "public static prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;",
-          "accessModifier": "public",
+          "signature": "static prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": true,
           "returnValue": {
@@ -493,7 +528,10 @@
               "text": "There might be a delay until the dialog is approved and shown by the application, for example, if there is another dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The promise rejects if the application rejects the request for any reason."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -510,7 +548,8 @@
         }
       ],
       "remarks": [],
-      "isBeta": true
+      "isBeta": true,
+      "isSealed": false
     },
     "IDialogConfiguration": {
       "kind": "interface",
@@ -526,6 +565,7 @@
       ],
       "remarks": [],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "isBlocking": {
           "kind": "property",
@@ -542,7 +582,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -560,6 +603,7 @@
       ],
       "remarks": [],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "confirmOpen": {
           "kind": "property",
@@ -581,7 +625,10 @@
               "text": "Provide this callback if there is a case when you want to abort showing the dialog before it's approved by the framework. For example, you can check if a long time has passed since the request was made or the the component requesting the dialog is disposed and you don't want to show the dialog anymore. It is important to keep this callback lightweight so the framework can resolve it quickly and the user interface does not have to wait a long time for it."
             }
           ],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -599,6 +646,7 @@
       ],
       "remarks": [],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "defaultValue": {
           "kind": "property",
@@ -615,7 +663,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -664,11 +715,12 @@
         }
       ],
       "isBeta": true,
+      "isSealed": false,
       "members": {
         "alert": {
           "kind": "method",
-          "signature": "public alert(message: string, options?: IAlertOptions): Promise<void>;",
-          "accessModifier": "public",
+          "signature": "alert(message: string, options?: IAlertOptions): Promise<void>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -742,12 +794,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "prompt": {
           "kind": "method",
-          "signature": "public prompt(message: string, options?: IPromptOptions): Promise<string>;",
-          "accessModifier": "public",
+          "signature": "prompt(message: string, options?: IPromptOptions): Promise<string>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -821,12 +876,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "show": {
           "kind": "method",
-          "signature": "public show(dialog: BaseDialog, options?: IDialogShowOptions): Promise<void>;",
-          "accessModifier": "public",
+          "signature": "show(dialog: BaseDialog, options?: IDialogShowOptions): Promise<void>;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -900,7 +958,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": true
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }

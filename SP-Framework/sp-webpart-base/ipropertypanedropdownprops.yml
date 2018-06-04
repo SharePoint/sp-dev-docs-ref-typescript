@@ -10,6 +10,9 @@ items:
     package: sp-webpart-base
     children:
       - sp-webpart-base.IPropertyPaneDropdownProps.ariaLabel
+      - sp-webpart-base.IPropertyPaneDropdownProps.ariaPositionInSet
+      - sp-webpart-base.IPropertyPaneDropdownProps.ariaSetSize
+      - sp-webpart-base.IPropertyPaneDropdownProps.calloutProps
       - sp-webpart-base.IPropertyPaneDropdownProps.disabled
       - sp-webpart-base.IPropertyPaneDropdownProps.label
       - sp-webpart-base.IPropertyPaneDropdownProps.options
@@ -26,6 +29,44 @@ items:
       return:
         type:
           - string
+  - uid: sp-webpart-base.IPropertyPaneDropdownProps.ariaPositionInSet
+    summary: >-
+      Defines an element's number or position in the current set of controls. Maps to native aria-posinset attribute. It
+      starts from 1.
+    name: ariaPositionInSet
+    fullName: sp-webpart-base.IPropertyPaneDropdownProps.ariaPositionInSet
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'ariaPositionInSet?: number;'
+      return:
+        type:
+          - number
+  - uid: sp-webpart-base.IPropertyPaneDropdownProps.ariaSetSize
+    summary: Defines the number of items in the current set of controls. Maps to native aria-setsize attribute.
+    name: ariaSetSize
+    fullName: sp-webpart-base.IPropertyPaneDropdownProps.ariaSetSize
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'ariaSetSize?: number;'
+      return:
+        type:
+          - number
+  - uid: sp-webpart-base.IPropertyPaneDropdownProps.calloutProps
+    summary: Custom properties for Dropdown's Callout used to render options.
+    name: calloutProps
+    fullName: sp-webpart-base.IPropertyPaneDropdownProps.calloutProps
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'calloutProps?: IPropertyPaneDropdownCalloutProps;'
+      return:
+        type:
+          - IPropertyPaneDropdownCalloutProps
   - uid: sp-webpart-base.IPropertyPaneDropdownProps.disabled
     summary: Whether the property pane dropdown option is disabled or not.
     name: disabled

@@ -1,0 +1,174 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
+    summary: PropertyPaneDynamicData component props.
+    isPreview: true
+    name: IPropertyPaneDynamicTextFieldProps
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
+    langs:
+      - typeScript
+    type: interface
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.ariaLabel
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.description
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.disabled
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.errorMessage
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.label
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.onGetErrorMessage
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.placeholder
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusIn
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusOut
+      - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.value
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.ariaLabel
+    summary: 'Aria Label for text field, if any.'
+    isPreview: true
+    name: ariaLabel
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.ariaLabel
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'ariaLabel?: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.description
+    summary: The text field input description.
+    isPreview: true
+    name: description
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.description
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'description?: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.disabled
+    summary: Whether the property pane text field is enabled or not.
+    isPreview: true
+    name: disabled
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.disabled
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'disabled?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.errorMessage
+    summary: 'If set, this will be displayed as an error message.'
+    remarks: >-
+      When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the
+      error message.
+
+
+      So, make sure to set this only if you want to see an error message displayed for the text field.
+    isPreview: true
+    name: errorMessage
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.errorMessage
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'errorMessage?: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.label
+    summary: Label for the text field.
+    isPreview: true
+    name: label
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.label
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'label?: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.onGetErrorMessage
+    summary: The method is used to get the validation error message and determine whether the input value is valid or not.
+    remarks: |-
+      When it returns string:
+
+      - If valid, it returns empty string.
+
+      - If invalid, it returns the error message string and an error message is displayed below the text field.
+
+      When it returns Promise&lt;string&gt;:
+
+      - The resolved value is display as error message.
+
+      - The rejected, the value is thrown away.
+    isPreview: true
+    name: onGetErrorMessage
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.onGetErrorMessage
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'onGetErrorMessage?: (value: string) => string | Promise<string>;'
+      return:
+        type:
+          - '(value: string) => string | Promise<string>'
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.placeholder
+    summary: placeholder text to be displayed in the text field.
+    isPreview: true
+    name: placeholder
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.placeholder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'placeholder?: string;'
+      return:
+        type:
+          - string
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusIn
+    summary: Run validation when the PropertyPaneTextField is focused.
+    remarks: The default value is false.
+    isPreview: true
+    name: validateOnFocusIn
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusIn
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'validateOnFocusIn?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusOut
+    summary: Run validation when the PropertyPaneTextField is out of focus or on blur.
+    remarks: The default value is false.
+    isPreview: true
+    name: validateOnFocusOut
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusOut
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'validateOnFocusOut?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.value
+    summary: >-
+      Value to be displayed in the text field when the value of the targetProperty in the manifest's property bag is
+      empty or contains null value.
+    isPreview: true
+    name: value
+    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.value
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'value?: string;'
+      return:
+        type:
+          - string

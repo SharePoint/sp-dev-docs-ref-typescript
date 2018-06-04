@@ -1,0 +1,82 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.AadTokenProvider
+    summary: >-
+      This class allows a developer to obtain OAuth2 tokens from Azure AD.
+
+
+      OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway,
+      Exchange, Yammer, etc.
+    remarks: >-
+      This class is marked as `@sealed`. Subclasses should not extend it.
+
+
+      AadTokenProvider is replacing the /\_api.SP.OAuth.Token/Acquire endpoint for authentication with ADAL.js. At some
+      point in the near future, when Azure AD v2.0 can support the same scenarios as the original version, we will
+      switch to MSAL.
+    isPreview: true
+    name: AadTokenProvider
+    fullName: sp-http.AadTokenProvider
+    langs:
+      - typeScript
+    type: class
+    package: sp-http
+    children:
+      - sp-http.AadTokenProvider.constructor
+      - sp-http.AadTokenProvider.getToken
+      - sp-http.AadTokenProvider.tokenAcquisitionEvent
+  - uid: sp-http.AadTokenProvider.constructor
+    summary: 'Constructs a new instance of the [AadTokenProvider](xref:sp-http.AadTokenProvider) class'
+    name: constructor(configuration)
+    fullName: sp-http.AadTokenProvider.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(configuration: IAadTokenProviderConfiguration);'
+      parameters:
+        - id: configuration
+          description: ''
+          type:
+            - IAadTokenProviderConfiguration
+  - uid: sp-http.AadTokenProvider.getToken
+    summary: |-
+      Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
+
+      The OAuth2 token SHOULD NOT be cached by the caller since it is already cached by the method itself.
+
+      An example of a resourceEndpoint would be https://sdfpilot.outlook.com
+    isPreview: true
+    name: 'getToken(resourceEndpoint, configuration)'
+    fullName: sp-http.AadTokenProvider.getToken
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getToken(resourceEndpoint: string, configuration?: IAadTokenProviderConfiguration): Promise<string>;'
+      return:
+        type:
+          - Promise<string>
+        description: A promise that will be fullfiled with the token or that will reject with an error message
+      parameters:
+        - id: resourceEndpoint
+          description: the resource for which the token should be obtained
+          type:
+            - string
+        - id: configuration
+          description: ''
+          type:
+            - IAadTokenProviderConfiguration
+  - uid: sp-http.AadTokenProvider.tokenAcquisitionEvent
+    summary: Notifies the developer when Token Acquistion requires user action.
+    isPreview: true
+    name: tokenAcquisitionEvent
+    fullName: sp-http.AadTokenProvider.tokenAcquisitionEvent
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly tokenAcquisitionEvent: SPEvent<TokenAcquisitionEventArgs>;'
+      return:
+        type:
+          - SPEvent<TokenAcquisitionEventArgs>

@@ -34,7 +34,10 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public static create < TKey >(name: string,\r\n    serviceClass: { new (serviceScope: ServiceScope); }): ServiceKey<TKey>;"
+      content: |-
+        static create<TKey>(name: string, serviceClass: {
+                new (serviceScope: ServiceScope);
+            }): ServiceKey<TKey>;
       return:
         type:
           - ServiceKey<TKey>
@@ -47,7 +50,10 @@ items:
         - id: serviceClass
           description: the TypeScript class that implements the service.
           type:
-            - '{ new (serviceScope: ServiceScope); }'
+            - |-
+              {
+                      new (serviceScope: ServiceScope);
+                  }
   - uid: sp-core-library.ServiceKey.createCustom
     summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
     name: 'createCustom(name, defaultCreator)'
@@ -56,7 +62,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public static createCustom < TKey >(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;'
+      content: 'static createCustom<TKey>(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;'
       return:
         type:
           - ServiceKey<TKey>
@@ -78,7 +84,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly defaultCreator: ServiceCreator<T>;'
+      content: 'readonly defaultCreator: ServiceCreator<T>;'
       return:
         type:
           - ServiceCreator<T>
@@ -91,7 +97,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly id: string;'
+      content: 'readonly id: string;'
       return:
         type:
           - string
@@ -110,7 +116,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly name: string;'
+      content: 'readonly name: string;'
       return:
         type:
           - string
