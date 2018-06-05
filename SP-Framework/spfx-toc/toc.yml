@@ -27,6 +27,12 @@
           uid: sp-component-base.BaseComponent
         - name: BaseComponentContext
           uid: sp-component-base.BaseComponentContext
+        - name: DynamicDataProvider
+          uid: sp-component-base.DynamicDataProvider
+        - name: DynamicDataSourceManager
+          uid: sp-component-base.DynamicDataSourceManager
+        - name: DynamicProperty
+          uid: sp-component-base.DynamicProperty
     - name: sp-core-library
       uid: sp-core-library
       items:
@@ -36,20 +42,16 @@
           uid: sp-core-library.Environment
         - name: EnvironmentType
           uid: sp-core-library.EnvironmentType
-        - name: Event
-          uid: sp-core-library.Event
-        - name: EventArgs
-          uid: sp-core-library.EventArgs
         - name: Guid
           uid: sp-core-library.Guid
         - name: IDisposable
           uid: sp-core-library.IDisposable
-        - name: IEventObserver
-          uid: sp-core-library.IEventObserver
         - name: IRandomNumberGenerator
           uid: sp-core-library.IRandomNumberGenerator
         - name: IServiceCollection
           uid: sp-core-library.IServiceCollection
+        - name: ISPEventObserver
+          uid: sp-core-library.ISPEventObserver
         - name: ITimeProvider
           uid: sp-core-library.ITimeProvider
         - name: Log
@@ -62,6 +64,10 @@
           uid: sp-core-library.ServiceScope
         - name: Session
           uid: sp-core-library.Session
+        - name: SPEvent
+          uid: sp-core-library.SPEvent
+        - name: SPEventArgs
+          uid: sp-core-library.SPEventArgs
         - name: Text
           uid: sp-core-library.Text
         - name: TimeProvider
@@ -72,6 +78,8 @@
           uid: sp-core-library.Validate
         - name: Version
           uid: sp-core-library.Version
+    - name: sp-diagnostics
+      uid: sp-diagnostics
     - name: sp-dialog
       uid: sp-dialog
       items:
@@ -89,6 +97,19 @@
           uid: sp-dialog.IPromptOptions
         - name: SecondaryDialogProvider
           uid: sp-dialog.SecondaryDialogProvider
+    - name: sp-dynamic-data
+      uid: sp-dynamic-data
+      items:
+        - name: DynamicDataReference
+          uid: sp-dynamic-data.DynamicDataReference
+        - name: IDynamicDataController
+          uid: sp-dynamic-data.IDynamicDataController
+        - name: IDynamicDataPropertyDefinition
+          uid: sp-dynamic-data.IDynamicDataPropertyDefinition
+        - name: IDynamicDataSource
+          uid: sp-dynamic-data.IDynamicDataSource
+        - name: IDynamicDataSourceMetadata
+          uid: sp-dynamic-data.IDynamicDataSourceMetadata
     - name: sp-extension-base
       uid: sp-extension-base
       items:
@@ -99,6 +120,16 @@
     - name: sp-http
       uid: sp-http
       items:
+        - name: AadHttpClient
+          uid: sp-http.AadHttpClient
+        - name: AadHttpClientConfiguration
+          uid: sp-http.AadHttpClientConfiguration
+        - name: AadHttpClientFactory
+          uid: sp-http.AadHttpClientFactory
+        - name: AadTokenProvider
+          uid: sp-http.AadTokenProvider
+        - name: AadTokenProviderFactory
+          uid: sp-http.AadTokenProviderFactory
         - name: GraphHttpClient
           uid: sp-http.GraphHttpClient
         - name: GraphHttpClientConfiguration
@@ -111,6 +142,14 @@
           uid: sp-http.HttpClientConfiguration
         - name: HttpClientResponse
           uid: sp-http.HttpClientResponse
+        - name: IAadHttpClientConfiguration
+          uid: sp-http.IAadHttpClientConfiguration
+        - name: IAadHttpClientConfigurations
+          uid: sp-http.IAadHttpClientConfigurations
+        - name: IAadTokenProvider
+          uid: sp-http.IAadTokenProvider
+        - name: IAadTokenProviderConfiguration
+          uid: sp-http.IAadTokenProviderConfiguration
         - name: IGraphHttpClientConfiguration
           uid: sp-http.IGraphHttpClientConfiguration
         - name: IGraphHttpClientConfigurations
@@ -155,6 +194,8 @@
           uid: sp-http.SPHttpClientResponse
         - name: SPHttpHeader
           uid: sp-http.SPHttpHeader
+        - name: TokenAcquisitionEventArgs
+          uid: sp-http.TokenAcquisitionEventArgs
     - name: sp-listview-extensibility
       uid: sp-listview-extensibility
       items:
@@ -253,10 +294,14 @@
           uid: sp-webpart-base.IPropertyPaneConfiguration
         - name: IPropertyPaneCustomFieldProps
           uid: sp-webpart-base.IPropertyPaneCustomFieldProps
+        - name: IPropertyPaneDropdownCalloutProps
+          uid: sp-webpart-base.IPropertyPaneDropdownCalloutProps
         - name: IPropertyPaneDropdownOption
           uid: sp-webpart-base.IPropertyPaneDropdownOption
         - name: IPropertyPaneDropdownProps
           uid: sp-webpart-base.IPropertyPaneDropdownProps
+        - name: IPropertyPaneDynamicTextFieldProps
+          uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
         - name: IPropertyPaneField
           uid: sp-webpart-base.IPropertyPaneField
         - name: IPropertyPaneGroup

@@ -1,0 +1,92 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-dynamic-data.DynamicDataReference
+    summary: >-
+      Class that contains the Dynamic Data reference. This includes the source, property, and property path (if
+      applicable) of Dynamic Data
+    remarks: >-
+      The reference string is of the form &lt;sourceId&gt;:&lt;property&gt; or
+      &lt;sourceId&gt;:&lt;property&gt;:&lt;propertyPath&gt;
+
+
+      Examples of references are: PageContext:user
+      WebPart.&lt;componentId&gt;.&lt;instanceId&gt;:myComplexProperty:myArray\[0\].lastName
+    isPreview: true
+    name: DynamicDataReference
+    fullName: sp-dynamic-data.DynamicDataReference
+    langs:
+      - typeScript
+    type: class
+    package: sp-dynamic-data
+    children:
+      - sp-dynamic-data.DynamicDataReference.constructor
+      - sp-dynamic-data.DynamicDataReference.property
+      - sp-dynamic-data.DynamicDataReference.propertyPath
+      - sp-dynamic-data.DynamicDataReference.reference
+      - sp-dynamic-data.DynamicDataReference.sourceId
+  - uid: sp-dynamic-data.DynamicDataReference.constructor
+    summary: 'Constructs a new instance of the [DynamicDataReference](xref:sp-dynamic-data.DynamicDataReference) class'
+    name: constructor(reference)
+    fullName: sp-dynamic-data.DynamicDataReference.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(reference: string);'
+      parameters:
+        - id: reference
+          description: ''
+          type:
+            - string
+  - uid: sp-dynamic-data.DynamicDataReference.property
+    summary: Returns the referred property of the Dynamic Data.
+    isPreview: true
+    name: property
+    fullName: sp-dynamic-data.DynamicDataReference.property
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly property: string;'
+      return:
+        type:
+          - string
+  - uid: sp-dynamic-data.DynamicDataReference.propertyPath
+    summary: Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path.
+    isPreview: true
+    name: propertyPath
+    fullName: sp-dynamic-data.DynamicDataReference.propertyPath
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly propertyPath: string | undefined;'
+      return:
+        type:
+          - string | undefined
+  - uid: sp-dynamic-data.DynamicDataReference.reference
+    summary: Returns the full reference of the Dynamic Data object as a string.
+    isPreview: true
+    name: reference
+    fullName: sp-dynamic-data.DynamicDataReference.reference
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly reference: string;'
+      return:
+        type:
+          - string
+  - uid: sp-dynamic-data.DynamicDataReference.sourceId
+    summary: Returns the referred id of the Dynamic Data Source.
+    isPreview: true
+    name: sourceId
+    fullName: sp-dynamic-data.DynamicDataReference.sourceId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly sourceId: string;'
+      return:
+        type:
+          - string

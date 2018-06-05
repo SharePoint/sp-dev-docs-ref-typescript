@@ -1,0 +1,85 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-dynamic-data.IDynamicDataSource
+    summary: >-
+      Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API
+      to get the data.
+    isPreview: true
+    name: IDynamicDataSource
+    fullName: sp-dynamic-data.IDynamicDataSource
+    langs:
+      - typeScript
+    type: interface
+    package: sp-dynamic-data
+    children:
+      - sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
+      - sp-dynamic-data.IDynamicDataSource.getPropertyValue
+      - sp-dynamic-data.IDynamicDataSource.id
+      - sp-dynamic-data.IDynamicDataSource.metadata
+  - uid: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
+    summary: Returns the definitions for all the properties exposed by the source.
+    isPreview: true
+    name: getPropertyDefinitions()
+    fullName: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;'
+      return:
+        type:
+          - ReadonlyArray<IDynamicDataPropertyDefinition>
+        description: ''
+  - uid: sp-dynamic-data.IDynamicDataSource.getPropertyValue
+    summary: >-
+      For a given property id, returns the value of the property. Throws an error if the property id doesn't exist in
+      the source.
+    remarks: >-
+      It returns a read-only copy of the property value, so modifying its value will not impact on the value in the data
+      source.
+
+
+      Property values are JSON-serializable objects, so there are no functions that can be called inside.
+    isPreview: true
+    name: getPropertyValue(propertyId)
+    fullName: sp-dynamic-data.IDynamicDataSource.getPropertyValue
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getPropertyValue(propertyId: string): any;'
+      return:
+        type:
+          - any
+        description: ''
+      parameters:
+        - id: propertyId
+          description: ''
+          type:
+            - string
+  - uid: sp-dynamic-data.IDynamicDataSource.id
+    summary: Id of the Dynamic Data Source.
+    isPreview: true
+    name: id
+    fullName: sp-dynamic-data.IDynamicDataSource.id
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'id: string;'
+      return:
+        type:
+          - string
+  - uid: sp-dynamic-data.IDynamicDataSource.metadata
+    summary: Metadata of the Dynamic Data Source.
+    isPreview: true
+    name: metadata
+    fullName: sp-dynamic-data.IDynamicDataSource.metadata
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'metadata: IDynamicDataSourceMetadata;'
+      return:
+        type:
+          - IDynamicDataSourceMetadata

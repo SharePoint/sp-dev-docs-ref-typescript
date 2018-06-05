@@ -36,10 +36,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "currentCultureName": {
           "kind": "property",
-          "signature": "public readonly currentCultureName: string;",
+          "signature": "readonly currentCultureName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -64,11 +65,14 @@
               "text": "Example: If the currentCultureName is \"en-AU\" then the application could use this information to display the date as 1/8 instead of 8/1."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "currentUICultureName": {
           "kind": "property",
-          "signature": "public readonly currentUICultureName: string;",
+          "signature": "readonly currentUICultureName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -93,11 +97,14 @@
               "text": "Example: If the currentUICultureName is \"es-MX\", then the application could use this information to translate the word \"hello\" to \"hola\"."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isRightToLeft": {
           "kind": "property",
-          "signature": "public readonly isRightToLeft: boolean;",
+          "signature": "readonly isRightToLeft: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -110,7 +117,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -128,6 +138,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -169,9 +180,29 @@
           ],
           "remarks": []
         },
+        "aadInfo": {
+          "kind": "property",
+          "signature": "readonly aadInfo: AzureActiveDirectoryInfo | undefined;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "AzureActiveDirectoryInfo | undefined",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Contextual information for communicating with Azure Active Directory. If the current page doesn't have an associated Azure Active Directory tenant, this property will be undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
         "cultureInfo": {
           "kind": "property",
-          "signature": "public readonly cultureInfo: CultureInfo;",
+          "signature": "readonly cultureInfo: CultureInfo;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -184,11 +215,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isInitialized": {
           "kind": "property",
-          "signature": "public readonly isInitialized: boolean;",
+          "signature": "readonly isInitialized: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -201,11 +235,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "legacyPageContext": {
           "kind": "property",
-          "signature": "public readonly legacyPageContext: any;",
+          "signature": "readonly legacyPageContext: any;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -230,11 +267,14 @@
               "text": "NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript API, please file an issue on GitHub. The intention is that no modern application should need to rely on the legacyPageContext object."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "list": {
           "kind": "property",
-          "signature": "public readonly list: SPList | undefined;",
+          "signature": "readonly list: SPList | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -247,11 +287,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "listItem": {
           "kind": "property",
-          "signature": "public readonly listItem: SPListItem | undefined;",
+          "signature": "readonly listItem: SPListItem | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -264,11 +307,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serviceKey": {
           "kind": "property",
-          "signature": "public static readonly serviceKey: ServiceKey<PageContext>;",
+          "signature": "static readonly serviceKey: ServiceKey<PageContext>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -281,11 +327,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "site": {
           "kind": "property",
-          "signature": "public readonly site: SPSite;",
+          "signature": "readonly site: SPSite;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -298,11 +347,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "user": {
           "kind": "property",
-          "signature": "public readonly user: SPUser;",
+          "signature": "readonly user: SPUser;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -315,11 +367,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "web": {
           "kind": "property",
-          "signature": "public readonly web: SPWeb;",
+          "signature": "readonly web: SPWeb;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -332,7 +387,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -358,10 +416,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "clientSideComponentId": {
           "kind": "property",
-          "signature": "public readonly clientSideComponentId: Guid | undefined;",
+          "signature": "readonly clientSideComponentId: Guid | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -374,11 +433,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "clientSideComponentProperties": {
           "kind": "property",
-          "signature": "public readonly clientSideComponentProperties: string;",
+          "signature": "readonly clientSideComponentProperties: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -391,11 +453,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "displayName": {
           "kind": "property",
-          "signature": "public readonly displayName: string;",
+          "signature": "readonly displayName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -408,11 +473,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fieldType": {
           "kind": "property",
-          "signature": "public readonly fieldType: string;",
+          "signature": "readonly fieldType: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -425,11 +493,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "id": {
           "kind": "property",
-          "signature": "public readonly id: Guid;",
+          "signature": "readonly id: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -442,11 +513,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "internalName": {
           "kind": "property",
-          "signature": "public readonly internalName: string;",
+          "signature": "readonly internalName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -459,11 +533,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isRequired": {
           "kind": "property",
-          "signature": "public readonly isRequired: boolean;",
+          "signature": "readonly isRequired: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -476,7 +553,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -502,10 +582,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "id": {
           "kind": "property",
-          "signature": "public readonly id: Guid;",
+          "signature": "readonly id: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -518,11 +599,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "permissions": {
           "kind": "property",
-          "signature": "public readonly permissions: SPPermission;",
+          "signature": "readonly permissions: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -535,11 +619,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serverRelativeUrl": {
           "kind": "property",
-          "signature": "public readonly serverRelativeUrl: string;",
+          "signature": "readonly serverRelativeUrl: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -557,11 +644,14 @@
               "text": "Example: \"/sites/PubSite\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "title": {
           "kind": "property",
-          "signature": "public readonly title: string;",
+          "signature": "readonly title: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -574,7 +664,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -600,10 +693,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "id": {
           "kind": "property",
-          "signature": "public readonly id: number;",
+          "signature": "readonly id: number;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -616,7 +710,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -646,6 +743,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -689,7 +787,7 @@
         },
         "addAndCustomizePages": {
           "kind": "property",
-          "signature": "public static readonly addAndCustomizePages: SPPermission;",
+          "signature": "static readonly addAndCustomizePages: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -702,11 +800,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "addDelPrivateWebParts": {
           "kind": "property",
-          "signature": "public static readonly addDelPrivateWebParts: SPPermission;",
+          "signature": "static readonly addDelPrivateWebParts: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -719,11 +820,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "addListItems": {
           "kind": "property",
-          "signature": "public static readonly addListItems: SPPermission;",
+          "signature": "static readonly addListItems: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -736,11 +840,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "applyStyleSheets": {
           "kind": "property",
-          "signature": "public static readonly applyStyleSheets: SPPermission;",
+          "signature": "static readonly applyStyleSheets: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -753,11 +860,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "applyThemeAndBorder": {
           "kind": "property",
-          "signature": "public static readonly applyThemeAndBorder: SPPermission;",
+          "signature": "static readonly applyThemeAndBorder: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -770,11 +880,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "approveItems": {
           "kind": "property",
-          "signature": "public static readonly approveItems: SPPermission;",
+          "signature": "static readonly approveItems: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -787,11 +900,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "browseDirectories": {
           "kind": "property",
-          "signature": "public static readonly browseDirectories: SPPermission;",
+          "signature": "static readonly browseDirectories: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -804,11 +920,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "browserUserInfo": {
           "kind": "property",
-          "signature": "public static readonly browserUserInfo: SPPermission;",
+          "signature": "static readonly browserUserInfo: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -821,11 +940,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "cancelCheckout": {
           "kind": "property",
-          "signature": "public static readonly cancelCheckout: SPPermission;",
+          "signature": "static readonly cancelCheckout: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -838,11 +960,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "createAlerts": {
           "kind": "property",
-          "signature": "public static readonly createAlerts: SPPermission;",
+          "signature": "static readonly createAlerts: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -855,11 +980,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "createGroups": {
           "kind": "property",
-          "signature": "public static readonly createGroups: SPPermission;",
+          "signature": "static readonly createGroups: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -872,11 +1000,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "createSSCSite": {
           "kind": "property",
-          "signature": "public static readonly createSSCSite: SPPermission;",
+          "signature": "static readonly createSSCSite: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -889,11 +1020,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "deleteListItems": {
           "kind": "property",
-          "signature": "public static readonly deleteListItems: SPPermission;",
+          "signature": "static readonly deleteListItems: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -906,11 +1040,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "deleteVersions": {
           "kind": "property",
-          "signature": "public static readonly deleteVersions: SPPermission;",
+          "signature": "static readonly deleteVersions: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -923,11 +1060,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "editListItems": {
           "kind": "property",
-          "signature": "public static readonly editListItems: SPPermission;",
+          "signature": "static readonly editListItems: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -940,11 +1080,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "editMyUserInfo": {
           "kind": "property",
-          "signature": "public static readonly editMyUserInfo: SPPermission;",
+          "signature": "static readonly editMyUserInfo: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -957,11 +1100,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "emptyMask": {
           "kind": "property",
-          "signature": "public static readonly emptyMask: SPPermission;",
+          "signature": "static readonly emptyMask: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -974,11 +1120,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "enumeratePermissions": {
           "kind": "property",
-          "signature": "public static readonly enumeratePermissions: SPPermission;",
+          "signature": "static readonly enumeratePermissions: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -991,11 +1140,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "fullMask": {
           "kind": "property",
-          "signature": "public static readonly fullMask: SPPermission;",
+          "signature": "static readonly fullMask: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1008,12 +1160,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "hasAllPermissions": {
           "kind": "method",
-          "signature": "public hasAllPermissions(...requestedPerms: SPPermission[]): boolean;",
-          "accessModifier": "public",
+          "signature": "hasAllPermissions(...requestedPerms: SPPermission[]): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1042,12 +1197,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "hasAnyPermissions": {
           "kind": "method",
-          "signature": "public hasAnyPermissions(...requestedPerms: SPPermission[]): boolean;",
-          "accessModifier": "public",
+          "signature": "hasAnyPermissions(...requestedPerms: SPPermission[]): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1076,12 +1234,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "hasPermission": {
           "kind": "method",
-          "signature": "public hasPermission(requestedPerm: SPPermission): boolean;",
-          "accessModifier": "public",
+          "signature": "hasPermission(requestedPerm: SPPermission): boolean;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -1110,11 +1271,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "layoutsPage": {
           "kind": "property",
-          "signature": "public static readonly layoutsPage: SPPermission;",
+          "signature": "static readonly layoutsPage: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1127,11 +1291,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manageAlerts": {
           "kind": "property",
-          "signature": "public static readonly manageAlerts: SPPermission;",
+          "signature": "static readonly manageAlerts: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1144,11 +1311,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manageLists": {
           "kind": "property",
-          "signature": "public static readonly manageLists: SPPermission;",
+          "signature": "static readonly manageLists: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1161,11 +1331,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "managePermissions": {
           "kind": "property",
-          "signature": "public static readonly managePermissions: SPPermission;",
+          "signature": "static readonly managePermissions: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1178,11 +1351,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "managePersonalViews": {
           "kind": "property",
-          "signature": "public static readonly managePersonalViews: SPPermission;",
+          "signature": "static readonly managePersonalViews: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1195,11 +1371,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manageSubwebs": {
           "kind": "property",
-          "signature": "public static readonly manageSubwebs: SPPermission;",
+          "signature": "static readonly manageSubwebs: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1212,11 +1391,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "manageWeb": {
           "kind": "property",
-          "signature": "public static readonly manageWeb: SPPermission;",
+          "signature": "static readonly manageWeb: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1234,11 +1416,14 @@
               "text": "Activate, deactivate, or edit properties of Web site scoped Features through the object model or through the user interface (UI). When granted on the root Web site of a site collection, activate, deactivate, or edit properties of site collection scoped Features through the object model. To browse to the Site Collection Features page and activate or deactivate site collection scoped Features through the UI, you must be a site collection administrator."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "open": {
           "kind": "property",
-          "signature": "public static readonly open: SPPermission;",
+          "signature": "static readonly open: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1251,11 +1436,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "openItems": {
           "kind": "property",
-          "signature": "public static readonly openItems: SPPermission;",
+          "signature": "static readonly openItems: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1268,11 +1456,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "updatePersonalWebParts": {
           "kind": "property",
-          "signature": "public static readonly updatePersonalWebParts: SPPermission;",
+          "signature": "static readonly updatePersonalWebParts: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1285,11 +1476,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "useClientIntegration": {
           "kind": "property",
-          "signature": "public static readonly useClientIntegration: SPPermission;",
+          "signature": "static readonly useClientIntegration: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1302,11 +1496,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "useRemoteAPIs": {
           "kind": "property",
-          "signature": "public static readonly useRemoteAPIs: SPPermission;",
+          "signature": "static readonly useRemoteAPIs: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1319,11 +1516,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "value": {
           "kind": "property",
-          "signature": "public readonly value: IODataBasePermission;",
+          "signature": "readonly value: IODataBasePermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1336,11 +1536,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "viewFormPages": {
           "kind": "property",
-          "signature": "public static readonly viewFormPages: SPPermission;",
+          "signature": "static readonly viewFormPages: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1353,11 +1556,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "viewListItems": {
           "kind": "property",
-          "signature": "public static readonly viewListItems: SPPermission;",
+          "signature": "static readonly viewListItems: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1370,11 +1576,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "viewPages": {
           "kind": "property",
-          "signature": "public static readonly viewPages: SPPermission;",
+          "signature": "static readonly viewPages: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1387,11 +1596,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "viewUsageData": {
           "kind": "property",
-          "signature": "public static readonly viewUsageData: SPPermission;",
+          "signature": "static readonly viewUsageData: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1404,11 +1616,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "viewVersions": {
           "kind": "property",
-          "signature": "public static readonly viewVersions: SPPermission;",
+          "signature": "static readonly viewVersions: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": true,
@@ -1421,7 +1636,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1447,10 +1665,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "absoluteUrl": {
           "kind": "property",
-          "signature": "public readonly absoluteUrl: string;",
+          "signature": "readonly absoluteUrl: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1468,11 +1687,14 @@
               "text": "Example: \"https://example.com/sites/PubSite\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "cdnPrefix": {
           "kind": "property",
-          "signature": "public readonly cdnPrefix: string;",
+          "signature": "readonly cdnPrefix: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1485,11 +1707,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "classification": {
           "kind": "property",
-          "signature": "public readonly classification: string;",
+          "signature": "readonly classification: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1502,11 +1727,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "correlationId": {
           "kind": "property",
-          "signature": "public readonly correlationId: Guid;",
+          "signature": "readonly correlationId: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1519,11 +1747,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "group": {
           "kind": "property",
-          "signature": "public readonly group: O365GroupAssociation | undefined;",
+          "signature": "readonly group: O365GroupAssociation | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1536,11 +1767,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "id": {
           "kind": "property",
-          "signature": "public readonly id: Guid;",
+          "signature": "readonly id: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1553,11 +1787,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isNoScriptEnabled": {
           "kind": "property",
-          "signature": "public readonly isNoScriptEnabled: boolean;",
+          "signature": "readonly isNoScriptEnabled: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1570,11 +1807,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "recycleBinItemCount": {
           "kind": "property",
-          "signature": "public readonly recycleBinItemCount: number;",
+          "signature": "readonly recycleBinItemCount: number;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1583,15 +1823,18 @@
           "summary": [
             {
               "kind": "text",
-              "text": "The amount of items in the recyle bin."
+              "text": "The amount of items in the recycle bin."
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serverRelativeUrl": {
           "kind": "property",
-          "signature": "public readonly serverRelativeUrl: string;",
+          "signature": "readonly serverRelativeUrl: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1609,11 +1852,14 @@
               "text": "Example: \"/sites/PubSite\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serverRequestPath": {
           "kind": "property",
-          "signature": "public readonly serverRequestPath: string;",
+          "signature": "readonly serverRequestPath: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1631,11 +1877,14 @@
               "text": "Example: \"/teams/SPClientTest/SitePages/Home.aspx\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "sitePagesEnabled": {
           "kind": "property",
-          "signature": "public readonly sitePagesEnabled: boolean;",
+          "signature": "readonly sitePagesEnabled: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1648,7 +1897,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1674,10 +1926,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "displayName": {
           "kind": "property",
-          "signature": "public readonly displayName: string;",
+          "signature": "readonly displayName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1695,11 +1948,14 @@
               "text": "Example: \"John Doe\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "email": {
           "kind": "property",
-          "signature": "public readonly email: string;",
+          "signature": "readonly email: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1717,11 +1973,14 @@
               "text": "Example: \"example@contoso.com\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isAnonymousGuestUser": {
           "kind": "property",
-          "signature": "public readonly isAnonymousGuestUser: boolean;",
+          "signature": "readonly isAnonymousGuestUser: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1734,11 +1993,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isExternalGuestUser": {
           "kind": "property",
-          "signature": "public readonly isExternalGuestUser: boolean;",
+          "signature": "readonly isExternalGuestUser: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1751,11 +2013,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "loginName": {
           "kind": "property",
-          "signature": "public readonly loginName: string;",
+          "signature": "readonly loginName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1770,14 +2035,17 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "Example: \"i:0#.w|domain\\user\""
+              "text": "Example: on-premise user: \"domain\\user\", online user: \"user@domain.com\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "preferUserTimeZone": {
           "kind": "property",
-          "signature": "public readonly preferUserTimeZone: boolean;",
+          "signature": "readonly preferUserTimeZone: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1790,7 +2058,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -1816,10 +2087,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "absoluteUrl": {
           "kind": "property",
-          "signature": "public readonly absoluteUrl: string;",
+          "signature": "readonly absoluteUrl: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1832,11 +2104,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "description": {
           "kind": "property",
-          "signature": "public readonly description: string;",
+          "signature": "readonly description: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1849,11 +2124,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "id": {
           "kind": "property",
-          "signature": "public readonly id: Guid;",
+          "signature": "readonly id: Guid;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1866,11 +2144,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "isAppWeb": {
           "kind": "property",
-          "signature": "public readonly isAppWeb: boolean;",
+          "signature": "readonly isAppWeb: boolean;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1883,11 +2164,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "language": {
           "kind": "property",
-          "signature": "public readonly language: number;",
+          "signature": "readonly language: number;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1905,11 +2189,14 @@
               "text": "Example: 1033 represents the locale identifier for en-US."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "logoUrl": {
           "kind": "property",
-          "signature": "public readonly logoUrl: string;",
+          "signature": "readonly logoUrl: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1927,11 +2214,14 @@
               "text": "Example: https://example.com/sites/PubSite/SubWeb/logo.jpg"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "permissions": {
           "kind": "property",
-          "signature": "public readonly permissions: SPPermission;",
+          "signature": "readonly permissions: SPPermission;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1944,11 +2234,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "serverRelativeUrl": {
           "kind": "property",
-          "signature": "public readonly serverRelativeUrl: string;",
+          "signature": "readonly serverRelativeUrl: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1966,11 +2259,14 @@
               "text": "Example: \"/sites/PubSite/SubWeb\""
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "templateName": {
           "kind": "property",
-          "signature": "public readonly templateName: string;",
+          "signature": "readonly templateName: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -1988,11 +2284,14 @@
               "text": "Example: \"1\" represents the team site template when creating a new site on SharePoint."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "title": {
           "kind": "property",
-          "signature": "public readonly title: string;",
+          "signature": "readonly title: string;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -2005,7 +2304,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }

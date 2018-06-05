@@ -38,7 +38,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static readonly configurations: IHttpClientConfigurations;'
+      content: 'static readonly configurations: IHttpClientConfigurations;'
       return:
         type:
           - IHttpClientConfigurations
@@ -54,11 +54,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public fetch(url: string, configuration: HttpClientConfiguration,\r\n    options: IHttpClientOptions): Promise<HttpClientResponse>;"
+      content: >-
+        fetch(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions):
+        Promise<HttpClientResponse>;
       return:
         type:
           - Promise<HttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -82,11 +88,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public get(url: string, configuration: HttpClientConfiguration,\r\n    options?: IHttpClientOptions): Promise<HttpClientResponse>;"
+      content: >-
+        get(url: string, configuration: HttpClientConfiguration, options?: IHttpClientOptions):
+        Promise<HttpClientResponse>;
       return:
         type:
           - Promise<HttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -110,11 +122,17 @@ items:
       - typeScript
     type: method
     syntax:
-      content: "public post(url: string, configuration: HttpClientConfiguration,\r\n    options: IHttpClientOptions): Promise<HttpClientResponse>;"
+      content: >-
+        post(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions):
+        Promise<HttpClientResponse>;
       return:
         type:
           - Promise<HttpClientResponse>
-        description: a promise that will return the result
+        description: >-
+          A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
+          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
+          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
+          the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -138,7 +156,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public static readonly serviceKey: ServiceKey<HttpClient>;'
+      content: 'static readonly serviceKey: ServiceKey<HttpClient>;'
       return:
         type:
           - ServiceKey<HttpClient>

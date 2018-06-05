@@ -11,7 +11,7 @@ items:
       - typeScript
     type: class
     implements:
-      - IEventObserver
+      - ISPEventObserver
     package: sp-component-base
     children:
       - sp-component-base.BaseComponent.componentId
@@ -33,7 +33,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly componentId: string;'
+      content: 'readonly componentId: string;'
       return:
         type:
           - string
@@ -65,7 +65,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public dispose(): void;'
+      content: 'dispose(): void;'
       return:
         type:
           - void
@@ -82,7 +82,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly instanceId: string;'
+      content: 'readonly instanceId: string;'
       return:
         type:
           - string
@@ -94,7 +94,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly isDisposed: boolean;'
+      content: 'readonly isDisposed: boolean;'
       return:
         type:
           - boolean
@@ -107,7 +107,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly manifest: IClientSideComponentManifest;'
+      content: 'readonly manifest: IClientSideComponentManifest;'
       return:
         type:
           - IClientSideComponentManifest
@@ -121,7 +121,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onDispose(): void;'
+      content: 'protected onDispose(): void;'
       return:
         type:
           - void

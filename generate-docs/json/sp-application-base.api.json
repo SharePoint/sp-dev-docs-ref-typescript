@@ -35,6 +35,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "__constructor": {
           "kind": "constructor",
@@ -102,11 +103,11 @@
         },
         "navigatedEvent": {
           "kind": "property",
-          "signature": "public readonly navigatedEvent: Event<EventArgs>;",
+          "signature": "readonly navigatedEvent: SPEvent<SPEventArgs>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
-          "type": "Event<EventArgs>",
+          "type": "SPEvent<SPEventArgs>",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -139,7 +140,10 @@
               "text": " has navigated to a new page."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -184,10 +188,11 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "application": {
           "kind": "property",
-          "signature": "public readonly application: ApplicationAccessor;",
+          "signature": "readonly application: ApplicationAccessor;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -200,11 +205,14 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "placeholderProvider": {
           "kind": "property",
-          "signature": "public readonly placeholderProvider: PlaceholderProvider;",
+          "signature": "readonly placeholderProvider: PlaceholderProvider;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -217,7 +225,10 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -249,6 +260,7 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "context": {
           "kind": "property",
@@ -270,7 +282,10 @@
               "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -307,6 +322,7 @@
       ],
       "remarks": [],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "onDispose": {
           "kind": "property",
@@ -328,14 +344,17 @@
               "text": "To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
     "PlaceholderContent": {
       "kind": "class",
       "extends": "",
-      "implements": "",
+      "implements": "IDisposable",
       "typeParameters": [],
       "deprecatedMessage": [],
       "summary": [
@@ -377,11 +396,12 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "dispose": {
           "kind": "method",
-          "signature": "public dispose(): void;",
-          "accessModifier": "public",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -421,11 +441,14 @@
               "text": " callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "domElement": {
           "kind": "property",
-          "signature": "public readonly domElement: HTMLDivElement;",
+          "signature": "readonly domElement: HTMLDivElement;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -462,11 +485,29 @@
               "text": " callback."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "name": {
           "kind": "property",
-          "signature": "public readonly name: PlaceholderName;",
+          "signature": "readonly name: PlaceholderName;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -484,7 +525,10 @@
               "text": "Example: PlaceholderName.Top"
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     },
@@ -642,14 +686,15 @@
         }
       ],
       "isBeta": false,
+      "isSealed": false,
       "members": {
         "changedEvent": {
           "kind": "property",
-          "signature": "public readonly changedEvent: Event<EventArgs>;",
+          "signature": "readonly changedEvent: SPEvent<SPEventArgs>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
-          "type": "Event<EventArgs>",
+          "type": "SPEvent<SPEventArgs>",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -663,11 +708,14 @@
               "text": "The application can change its list of available placeholders at any time. This means that the existing placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when they appear."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "placeholderNames": {
           "kind": "property",
-          "signature": "public readonly placeholderNames: ReadonlyArray<PlaceholderName>;",
+          "signature": "readonly placeholderNames: ReadonlyArray<PlaceholderName>;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
@@ -680,12 +728,15 @@
             }
           ],
           "remarks": [],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         },
         "tryCreateContent": {
           "kind": "method",
-          "signature": "public tryCreateContent(name: PlaceholderName,\r\n    options?: IPlaceholderCreateContentOptions): PlaceholderContent | undefined;",
-          "accessModifier": "public",
+          "signature": "tryCreateContent(name: PlaceholderName, options?: IPlaceholderCreateContentOptions): PlaceholderContent | undefined;",
+          "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
@@ -736,7 +787,10 @@
               "text": "The host application makes no guarantees about the availability of a given placeholder. In situations where an expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering anything, or by choosing an alternative placeholder."
             }
           ],
-          "isBeta": false
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
         }
       }
     }

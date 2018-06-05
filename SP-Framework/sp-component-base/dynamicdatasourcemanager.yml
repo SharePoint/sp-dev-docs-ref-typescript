@@ -1,0 +1,122 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-component-base.DynamicDataSourceManager
+    summary: >-
+      The Dynamic Data Source Manager allows components to expose data to other components through Dynamic Data. It
+      allows data providers to update their metadata and notify when data has been updated.
+    isPreview: true
+    name: DynamicDataSourceManager
+    fullName: sp-component-base.DynamicDataSourceManager
+    langs:
+      - typeScript
+    type: class
+    implements:
+      - IDisposable
+    package: sp-component-base
+    children:
+      - sp-component-base.DynamicDataSourceManager.dispose
+      - sp-component-base.DynamicDataSourceManager.initializeSource
+      - sp-component-base.DynamicDataSourceManager.isDisposed
+      - sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
+      - sp-component-base.DynamicDataSourceManager.notifySourceChanged
+      - sp-component-base.DynamicDataSourceManager.updateMetadata
+  - uid: sp-component-base.DynamicDataSourceManager.dispose
+    summary: Disposes the Dynamic Data Provider.
+    isPreview: true
+    name: dispose()
+    fullName: sp-component-base.DynamicDataSourceManager.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-component-base.DynamicDataSourceManager.initializeSource
+    summary: Initializes a Dynamic Data Source for the component.
+    isPreview: true
+    name: initializeSource(controller)
+    fullName: sp-component-base.DynamicDataSourceManager.initializeSource
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'initializeSource(controller: IDynamicDataController): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: controller
+          description: Set of functions for the Dynamic Data Source.
+          type:
+            - IDynamicDataController
+  - uid: sp-component-base.DynamicDataSourceManager.isDisposed
+    summary: Returns true if the Dynamic Data Provider is disposed.
+    isPreview: true
+    name: isDisposed
+    fullName: sp-component-base.DynamicDataSourceManager.isDisposed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
+    summary: Notifies any Dynamic Data consumer that this source has updated a specific property.
+    isPreview: true
+    name: notifyPropertyChanged(propertyId)
+    fullName: sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'notifyPropertyChanged(propertyId: string): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: propertyId
+          description: Id of the updated property in the source.
+          type:
+            - string
+  - uid: sp-component-base.DynamicDataSourceManager.notifySourceChanged
+    summary: Notifies any Dynamic Data consumer that this source has updated its data.
+    isPreview: true
+    name: notifySourceChanged()
+    fullName: sp-component-base.DynamicDataSourceManager.notifySourceChanged
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'notifySourceChanged(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-component-base.DynamicDataSourceManager.updateMetadata
+    summary: >-
+      Updated the metadata of the Dynamic Data Source associated with the component. It allows to updated fields like
+      title or description. Auto-generated fields like alias, componentId or instanceId cannot be updated.
+    isPreview: true
+    name: updateMetadata(metadata)
+    fullName: sp-component-base.DynamicDataSourceManager.updateMetadata
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'updateMetadata(metadata: Partial<IDynamicDataSourceMetadata>): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: metadata
+          description: Partial of the metadata.
+          type:
+            - Partial<IDynamicDataSourceMetadata>

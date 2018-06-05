@@ -23,7 +23,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly columns: ReadonlyArray<ColumnAccessor>;'
+      content: 'readonly columns: ReadonlyArray<ColumnAccessor>;'
       return:
         type:
           - ReadonlyArray<ColumnAccessor>
@@ -35,10 +35,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'public readonly selectedRowsChangedEvent: Event<SelectedRowsChangedEventArgs>;'
+      content: 'readonly selectedRowsChangedEvent: SPEvent<SelectedRowsChangedEventArgs>;'
       return:
         type:
-          - Event<SelectedRowsChangedEventArgs>
+          - SPEvent<SelectedRowsChangedEventArgs>
   - uid: sp-listview-extensibility.ListViewAccessor.tryGetColumnByName
     summary: >-
       Returns the list view column corresponding to the field with the specified internal name, or undefined if none is
@@ -49,7 +49,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'public abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;'
+      content: 'abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;'
       return:
         type:
           - ColumnAccessor | undefined

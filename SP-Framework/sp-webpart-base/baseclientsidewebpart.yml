@@ -51,6 +51,7 @@ items:
       - sp-webpart-base.BaseClientSideWebPart.previewImageUrl
       - sp-webpart-base.BaseClientSideWebPart.properties
       - sp-webpart-base.BaseClientSideWebPart.propertiesMetadata
+      - sp-webpart-base.BaseClientSideWebPart.propertyPaneRenderedByWebPart
       - sp-webpart-base.BaseClientSideWebPart.render
       - sp-webpart-base.BaseClientSideWebPart.renderCompleted
       - sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
@@ -219,6 +220,9 @@ items:
       configuration for the PropertyPane.
 
 
+      This API is not invoked until the 'loadPropertyPaneResources' promise is resolved.
+
+
       See IPropertyPane and other PropertyPane integration wiki documentation for more details.
     name: getPropertyPaneConfiguration()
     fullName: sp-webpart-base.BaseClientSideWebPart.getPropertyPaneConfiguration
@@ -226,7 +230,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
+      content: 'protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
       return:
         type:
           - IPropertyPaneConfiguration
@@ -263,7 +267,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;'
+      content: 'protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;'
       return:
         type:
           - TProperties
@@ -293,7 +297,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onAfterPropertyPaneChangesApplied(): void;'
+      content: 'protected onAfterPropertyPaneChangesApplied(): void;'
       return:
         type:
           - void
@@ -313,7 +317,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onBeforeSerialize(): void;'
+      content: 'protected onBeforeSerialize(): void;'
       return:
         type:
           - void
@@ -330,7 +334,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;'
+      content: 'protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;'
       return:
         type:
           - void
@@ -353,7 +357,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onDispose(): void;'
+      content: 'protected onDispose(): void;'
       return:
         type:
           - void
@@ -369,7 +373,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onInit(): Promise<void>;'
+      content: 'protected onInit(): Promise<void>;'
       return:
         type:
           - Promise<void>
@@ -392,7 +396,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onPropertyPaneConfigurationComplete(): void;'
+      content: 'protected onPropertyPaneConfigurationComplete(): void;'
       return:
         type:
           - void
@@ -411,7 +415,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onPropertyPaneConfigurationStart(): void;'
+      content: 'protected onPropertyPaneConfigurationStart(): void;'
       return:
         type:
           - void
@@ -426,7 +430,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;'
+      content: 'protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;'
       return:
         type:
           - void
@@ -455,7 +459,7 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@virtual protected onPropertyPaneRendered(): void;'
+      content: 'protected onPropertyPaneRendered(): void;'
       return:
         type:
           - void
@@ -502,6 +506,17 @@ items:
       return:
         type:
           - IWebPartPropertiesMetadata | undefined
+  - uid: sp-webpart-base.BaseClientSideWebPart.propertyPaneRenderedByWebPart
+    name: propertyPaneRenderedByWebPart
+    fullName: sp-webpart-base.BaseClientSideWebPart.propertyPaneRenderedByWebPart
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected propertyPaneRenderedByWebPart: boolean;'
+      return:
+        type:
+          - boolean
   - uid: sp-webpart-base.BaseClientSideWebPart.render
     summary: >-
       This API is called to render the web part. There is no base implementation of this API and the web part is

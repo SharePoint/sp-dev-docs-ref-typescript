@@ -1,0 +1,73 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.AadHttpClientConfiguration
+    summary: Configuration for HttpClient.
+    remarks: >-
+      The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
+      HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the
+      predefined defaults from HttpClientConfigurations, however switches can also be changed via the
+      HttpClientConfiguration.overrideWith() method.
+    name: AadHttpClientConfiguration
+    fullName: sp-http.AadHttpClientConfiguration
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - HttpClientConfiguration
+    implements:
+      - IAadHttpClientConfiguration
+    package: sp-http
+    children:
+      - sp-http.AadHttpClientConfiguration.constructor
+      - sp-http.AadHttpClientConfiguration.flags
+      - sp-http.AadHttpClientConfiguration.overrideWith
+  - uid: sp-http.AadHttpClientConfiguration.constructor
+    summary: >-
+      Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
+      any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
+    name: 'constructor(flags, overrideFlags)'
+    fullName: sp-http.AadHttpClientConfiguration.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(flags: IAadHttpClientConfiguration, overrideFlags?: IAadHttpClientConfiguration);'
+      parameters:
+        - id: flags
+          description: ''
+          type:
+            - IAadHttpClientConfiguration
+        - id: overrideFlags
+          description: ''
+          type:
+            - IAadHttpClientConfiguration
+  - uid: sp-http.AadHttpClientConfiguration.flags
+    name: flags
+    fullName: sp-http.AadHttpClientConfiguration.flags
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected flags: IAadHttpClientConfiguration;'
+      return:
+        type:
+          - IAadHttpClientConfiguration
+  - uid: sp-http.AadHttpClientConfiguration.overrideWith
+    name: overrideWith(sourceFlags)
+    fullName: sp-http.AadHttpClientConfiguration.overrideWith
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: |-
+        /** @override */
+        overrideWith(sourceFlags: IAadHttpClientConfiguration): AadHttpClientConfiguration;
+      return:
+        type:
+          - AadHttpClientConfiguration
+        description: ''
+      parameters:
+        - id: sourceFlags
+          description: ''
+          type:
+            - IAadHttpClientConfiguration

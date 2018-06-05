@@ -3,6 +3,9 @@ items:
   - uid: sp-http.GraphHttpClientResponse
     summary: The Response subclass returned by methods such as GraphHttpClient.fetch().
     remarks: >-
+      This class is marked as `@sealed`. Subclasses should not extend it.
+
+
       This is a placeholder. In the future, additional GraphHttpClient-specific functionality may be added to this
       class.
     deprecated:
@@ -19,6 +22,7 @@ items:
     children:
       - sp-http.GraphHttpClientResponse.constructor
       - sp-http.GraphHttpClientResponse.clone
+      - sp-http.GraphHttpClientResponse.correlationId
   - uid: sp-http.GraphHttpClientResponse.constructor
     summary: 'Constructs a new instance of the [GraphHttpClientResponse](xref:sp-http.GraphHttpClientResponse) class'
     deprecated:
@@ -29,7 +33,7 @@ items:
       - typeScript
     type: constructor
     syntax:
-      content: 'public constructor(response: Response);'
+      content: 'constructor(response: Response);'
       parameters:
         - id: response
           description: ''
@@ -45,8 +49,25 @@ items:
       - typeScript
     type: method
     syntax:
-      content: '@override public clone(): GraphHttpClientResponse;'
+      content: |-
+        /** @override */
+        clone(): GraphHttpClientResponse;
       return:
         type:
           - GraphHttpClientResponse
         description: ''
+  - uid: sp-http.GraphHttpClientResponse.correlationId
+    summary: Returns the Graph API correlation ID.
+    deprecated:
+      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
+    isPreview: true
+    name: correlationId
+    fullName: sp-http.GraphHttpClientResponse.correlationId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly correlationId: Guid | undefined;'
+      return:
+        type:
+          - Guid | undefined
