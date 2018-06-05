@@ -12,5 +12,7 @@ copy /y ..\..\..\sp-client\spfx-core\decorators\dist\*.api.json .
 copy /y ..\..\..\sp-client\spfx-core\sp-dialog\dist\*.api.json . 
 copy /y ..\..\..\sp-client\spfx-core\sp-listview-extensibility\dist\*.api.json . 
 copy /y ..\..\..\sp-client\spfx-core\sp-dynamic-data\dist\*.api.json . 
+copy /y ..\..\..\sp-client\spfx-core\sp-diagnostics\dist\*.api.json . 
+copy /y ..\..\..\sp-client\spfx-core\sp-property-pane\dist\*.api.json . 
 
 pause

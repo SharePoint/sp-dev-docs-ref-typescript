@@ -424,12 +424,12 @@
       "members": {
         "getExtendedClient": {
           "kind": "method",
-          "signature": "getExtendedClient(resourceEndpoint: string): AadHttpClient | undefined;",
+          "signature": "getExtendedClient(resourceEndpoint: string): AadHttpClient;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
-            "type": "AadHttpClient | undefined",
+            "type": "AadHttpClient",
             "description": []
           },
           "parameters": {
@@ -461,12 +461,12 @@
         },
         "getStandardClient": {
           "kind": "method",
-          "signature": "getStandardClient(resourceEndpoint: string): AadHttpClient | undefined;",
+          "signature": "getStandardClient(resourceEndpoint: string): AadHttpClient;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
-            "type": "AadHttpClient | undefined",
+            "type": "AadHttpClient",
             "description": []
           },
           "parameters": {
@@ -501,7 +501,7 @@
     "AadTokenProvider": {
       "kind": "class",
       "extends": "",
-      "implements": "",
+      "implements": "IAadTokenProvider",
       "typeParameters": [],
       "deprecatedMessage": [],
       "summary": [
@@ -669,12 +669,12 @@
       "members": {
         "getExtendedProvider": {
           "kind": "method",
-          "signature": "getExtendedProvider(): AadTokenProvider | undefined;",
+          "signature": "getExtendedProvider(): IAadTokenProvider;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
-            "type": "AadTokenProvider | undefined",
+            "type": "IAadTokenProvider",
             "description": []
           },
           "parameters": {},
@@ -2152,6 +2152,119 @@
           ],
           "remarks": [],
           "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IAadTokenProvider": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This class allows a developer to obtain OAuth2 tokens from Azure AD."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway, Exchange, Yammer, etc."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "AadTokenProvider is replacing the /_api.SP.OAuth.Token/Acquire endpoint for authentication with ADAL.js. At some point in the near future, when Azure AD v2.0 can support the same scenarios as the original version, we will switch to MSAL."
+        }
+      ],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "getToken": {
+          "kind": "method",
+          "signature": "getToken(resourceEndpoint: string, configuration?: IAadTokenProviderConfiguration): Promise<string>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<string>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "A promise that will be fullfiled with the token or that will reject with an error message"
+              }
+            ]
+          },
+          "parameters": {
+            "resourceEndpoint": {
+              "name": "resourceEndpoint",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "the resource for which the token should be obtained"
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "configuration": {
+              "name": "configuration",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "IAadTokenProviderConfiguration"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "The OAuth2 token SHOULD NOT be cached by the caller since it is already cached by the method itself."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "An example of a resourceEndpoint would be https://sdfpilot.outlook.com"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "tokenAcquisitionEvent": {
+          "kind": "property",
+          "signature": "tokenAcquisitionEvent: SPEvent<ITokenAcquisitionEventArgs>;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "SPEvent<ITokenAcquisitionEventArgs>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Notifies the developer when Token Acquistion requires user action."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
