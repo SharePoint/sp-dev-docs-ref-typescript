@@ -181,7 +181,7 @@ items:
       content: 'getParent(): ServiceScope | undefined;'
       return:
         type:
-          - ServiceScope | undefined
+          - sp-core-library.ServiceKey
         description: the parent service scope
   - uid: sp-core-library.ServiceScope.provide
     summary: Add a new service to a service scope.
@@ -203,7 +203,7 @@ items:
         - id: serviceKey
           description: the key that will later be used to consume the service
           type:
-            - ServiceKey<T>
+            - sp-core-library.ServiceKey
         - id: service
           description: the service instance that is being registered
           type:
