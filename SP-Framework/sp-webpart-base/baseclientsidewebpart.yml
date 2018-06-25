@@ -137,7 +137,7 @@ items:
       content: 'protected readonly context: WebPartContext;'
       return:
         type:
-          - WebPartContext
+          - sp-webpart-base.WebPartContext
   - uid: sp-webpart-base.BaseClientSideWebPart.dataVersion
     summary: >-
       The value of this property is stored in the serialized data of the web part to allow developers to manage
@@ -151,7 +151,7 @@ items:
       content: 'protected readonly dataVersion: Version;'
       return:
         type:
-          - Version
+          - sp-core-library.Version
   - uid: sp-webpart-base.BaseClientSideWebPart.description
     summary: Description of the WebPart
     name: description
@@ -198,7 +198,7 @@ items:
       content: 'protected readonly displayMode: DisplayMode;'
       return:
         type:
-          - DisplayMode
+          - sp-core-library.DisplayMode
   - uid: sp-webpart-base.BaseClientSideWebPart.domElement
     summary: >-
       This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole
@@ -233,7 +233,7 @@ items:
       content: 'protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
       return:
         type:
-          - IPropertyPaneConfiguration
+          - sp-webpart-base.IPropertyPaneConfiguration
         description: ''
   - uid: sp-webpart-base.BaseClientSideWebPart.isRenderAsync
     summary: >-
@@ -286,7 +286,7 @@ items:
             serialized by an older web part. Web parts can define their data version by overriding the dataVersion
             property.
           type:
-            - Version
+            - sp-core-library.Version
   - uid: sp-webpart-base.BaseClientSideWebPart.onAfterPropertyPaneChangesApplied
     summary: >-
       This API is invoked after the changes made on the PropertyPane are applied when the PropertyPane is used in
@@ -343,7 +343,7 @@ items:
         - id: oldDisplayMode
           description: The old display mode.
           type:
-            - DisplayMode
+            - sp-core-library.DisplayMode
   - uid: sp-webpart-base.BaseClientSideWebPart.onDispose
     summary: This API should be used to refresh the contents of the PropertyPane.
     remarks: >-

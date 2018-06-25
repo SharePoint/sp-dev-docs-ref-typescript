@@ -44,7 +44,7 @@ items:
       content: 'readonly aadClientFactory: AadHttpClientFactory;'
       return:
         type:
-          - AadHttpClientFactory
+          - sp-http.AadHttpClientFactory
   - uid: sp-component-base.BaseComponentContext.aadTokenFactory
     summary: The instance of AadTokenProviderFactory created for this instance of component
     isPreview: true
@@ -57,7 +57,7 @@ items:
       content: 'readonly aadTokenFactory: AadTokenProviderFactory;'
       return:
         type:
-          - AadTokenProviderFactory
+          - sp-http.AadTokenProviderFactory
   - uid: sp-component-base.BaseComponentContext.dispose
     summary: Disposes the base component context.
     name: dispose()
@@ -83,7 +83,7 @@ items:
       content: 'readonly dynamicDataProvider: DynamicDataProvider;'
       return:
         type:
-          - DynamicDataProvider
+          - sp-component-base.DynamicDataProvider
   - uid: sp-component-base.BaseComponentContext.dynamicDataSourceManager
     summary: Returns the Dynamic Data Source Manager associated with the component.
     isPreview: true
@@ -96,7 +96,7 @@ items:
       content: 'readonly dynamicDataSourceManager: DynamicDataSourceManager;'
       return:
         type:
-          - DynamicDataSourceManager
+          - sp-component-base.DynamicDataSourceManager
   - uid: sp-component-base.BaseComponentContext.graphHttpClient
     summary: The instance of GraphHttpClient created for this instance of component
     isPreview: true
@@ -109,7 +109,7 @@ items:
       content: 'readonly graphHttpClient: GraphHttpClient;'
       return:
         type:
-          - GraphHttpClient
+          - sp-http.GraphHttpClient
   - uid: sp-component-base.BaseComponentContext.httpClient
     summary: The instance of HttpClient created for this instance of component
     name: httpClient
@@ -121,7 +121,7 @@ items:
       content: 'readonly httpClient: HttpClient;'
       return:
         type:
-          - HttpClient
+          - sp-http.HttpClient
   - uid: sp-component-base.BaseComponentContext.instanceId
     summary: A unique identifier for the instance of the component.
     remarks: >-
@@ -175,7 +175,7 @@ items:
       content: 'readonly pageContext: PageContext;'
       return:
         type:
-          - PageContext
+          - sp-page-context.PageContext
   - uid: sp-component-base.BaseComponentContext.serviceScope
     summary: 'The associated [@microsoft/sp-core-library:ServiceScope](xref:sp-core-library.ServiceScope) for this component.'
     remarks: A child service scope is created for each client-side component.
@@ -188,7 +188,7 @@ items:
       content: 'readonly serviceScope: ServiceScope;'
       return:
         type:
-          - ServiceScope
+          - sp-core-library.ServiceScope
   - uid: sp-component-base.BaseComponentContext.spHttpClient
     summary: The instance of SpHttpClient created for this instance of component
     name: spHttpClient
@@ -200,4 +200,4 @@ items:
       content: 'readonly spHttpClient: SPHttpClient;'
       return:
         type:
-          - SPHttpClient
+          - sp-http.SPHttpClient

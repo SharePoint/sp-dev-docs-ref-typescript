@@ -37,7 +37,7 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - ServiceScope
+            - sp-core-library.ServiceScope
   - uid: sp-page-context.PageContext.aadInfo
     summary: >-
       Contextual information for communicating with Azure Active Directory. If the current page doesn't have an
@@ -65,7 +65,7 @@ items:
       content: 'readonly cultureInfo: CultureInfo;'
       return:
         type:
-          - CultureInfo
+          - sp-page-context.CultureInfo
   - uid: sp-page-context.PageContext.isInitialized
     summary: Returns whether the PageContext has been initialized.
     name: isInitialized
@@ -152,7 +152,7 @@ items:
       content: 'readonly site: SPSite;'
       return:
         type:
-          - SPSite
+          - sp-page-context.SPSite
   - uid: sp-page-context.PageContext.user
     summary: >-
       It provides contextual information for the SharePoint user that is accessing the page. This class is primarily
@@ -166,7 +166,7 @@ items:
       content: 'readonly user: SPUser;'
       return:
         type:
-          - SPUser
+          - sp-page-context.SPUser
   - uid: sp-page-context.PageContext.web
     summary: Contextual information for the SharePoint site ("web") that is hosting the page.
     name: web
@@ -178,4 +178,4 @@ items:
       content: 'readonly web: SPWeb;'
       return:
         type:
-          - SPWeb
+          - sp-page-context.SPWeb

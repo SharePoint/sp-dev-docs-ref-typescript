@@ -1,0 +1,126 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.DigestCache
+    summary: The default implementation of IDigestCache.
+    isPreview: true
+    name: DigestCache
+    fullName: sp-http.DigestCache
+    langs:
+      - typeScript
+    type: class
+    implements:
+      - IDigestCache
+    package: sp-http
+    children:
+      - sp-http.DigestCache.constructor
+      - sp-http.DigestCache.addDigestToCache
+      - sp-http.DigestCache.clearAllDigests
+      - sp-http.DigestCache.clearDigest
+      - sp-http.DigestCache.fetchDigest
+      - sp-http.DigestCache.serviceKey
+  - uid: sp-http.DigestCache.constructor
+    summary: 'Constructs a new instance of the [DigestCache](xref:sp-http.DigestCache) class'
+    name: constructor(serviceScope)
+    fullName: sp-http.DigestCache.constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope);'
+      parameters:
+        - id: serviceScope
+          description: ''
+          type:
+            - sp-core-library.ServiceScope
+  - uid: sp-http.DigestCache.addDigestToCache
+    summary: Implements IDigestCache
+    isPreview: true
+    name: 'addDigestToCache(webUrl, digestValue, expirationTimestamp)'
+    fullName: sp-http.DigestCache.addDigestToCache
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'addDigestToCache(webUrl: string, digestValue: string, expirationTimestamp: number): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: webUrl
+          description: ''
+          type:
+            - string
+        - id: digestValue
+          description: ''
+          type:
+            - string
+        - id: expirationTimestamp
+          description: ''
+          type:
+            - number
+  - uid: sp-http.DigestCache.clearAllDigests
+    summary: Implements IDigestCache
+    isPreview: true
+    name: clearAllDigests()
+    fullName: sp-http.DigestCache.clearAllDigests
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'clearAllDigests(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-http.DigestCache.clearDigest
+    summary: Implements IDigestCache
+    isPreview: true
+    name: clearDigest(webUrl)
+    fullName: sp-http.DigestCache.clearDigest
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'clearDigest(webUrl: string): boolean;'
+      return:
+        type:
+          - boolean
+        description: ''
+      parameters:
+        - id: webUrl
+          description: ''
+          type:
+            - string
+  - uid: sp-http.DigestCache.fetchDigest
+    summary: Implements IDigestCache
+    isPreview: true
+    name: fetchDigest(webUrl)
+    fullName: sp-http.DigestCache.fetchDigest
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'fetchDigest(webUrl: string): Promise<string>;'
+      return:
+        type:
+          - Promise<string>
+        description: ''
+      parameters:
+        - id: webUrl
+          description: ''
+          type:
+            - string
+  - uid: sp-http.DigestCache.serviceKey
+    summary: The service key for IDigestCache.
+    isPreview: true
+    name: serviceKey
+    fullName: sp-http.DigestCache.serviceKey
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'static readonly serviceKey: ServiceKey<IDigestCache>;'
+      return:
+        type:
+          - ServiceKey<IDigestCache>

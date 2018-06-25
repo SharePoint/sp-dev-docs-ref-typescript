@@ -1,0 +1,124 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-page-context.SPTimeZone
+    summary: >-
+      It provides timezone information from SharePoint. A conversion from UTC to local time can be calculated by using
+      the following formula.
+
+
+      isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the StandardDate LocalTime = UTCTime -
+      Offset - (isDaylightSavingsTime ? daylightOffset : standardOffset) June 11, 2 A.M. PST = June 11, 9 A.M. - (480
+      minutes) - (-60 minutes)
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the SPTimeZone class.
+    isPreview: true
+    name: SPTimeZone
+    fullName: sp-page-context.SPTimeZone
+    langs:
+      - typeScript
+    type: class
+    package: sp-page-context
+    children:
+      - sp-page-context.SPTimeZone.daylightDate
+      - sp-page-context.SPTimeZone.daylightOffset
+      - sp-page-context.SPTimeZone.description
+      - sp-page-context.SPTimeZone.id
+      - sp-page-context.SPTimeZone.offset
+      - sp-page-context.SPTimeZone.standardDate
+      - sp-page-context.SPTimeZone.standardOffset
+  - uid: sp-page-context.SPTimeZone.daylightDate
+    summary: Gets the date on which daylight time begins for the time zone.
+    isPreview: true
+    name: daylightDate
+    fullName: sp-page-context.SPTimeZone.daylightDate
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly daylightDate: ISPSystemTime;'
+      return:
+        type:
+          - sp-page-context.ISPSystemTime
+  - uid: sp-page-context.SPTimeZone.daylightOffset
+    summary: >-
+      Gets the offset in the number of minutes that daylight time for the time zone differs from Coordinated Universal
+      Time (UTC).
+    isPreview: true
+    name: daylightOffset
+    fullName: sp-page-context.SPTimeZone.daylightOffset
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly daylightOffset: number;'
+      return:
+        type:
+          - number
+  - uid: sp-page-context.SPTimeZone.description
+    summary: Gets the description for the time zone.
+    isPreview: true
+    name: description
+    fullName: sp-page-context.SPTimeZone.description
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly description: string;'
+      return:
+        type:
+          - string
+  - uid: sp-page-context.SPTimeZone.id
+    summary: Gets the ID of the time zone.
+    isPreview: true
+    name: id
+    fullName: sp-page-context.SPTimeZone.id
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly id: number;'
+      return:
+        type:
+          - number
+  - uid: sp-page-context.SPTimeZone.offset
+    summary: Gets the offset in the number of minutes that the time zone differs from Coordinated Universal Time (UTC).
+    isPreview: true
+    name: offset
+    fullName: sp-page-context.SPTimeZone.offset
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly offset: number;'
+      return:
+        type:
+          - number
+  - uid: sp-page-context.SPTimeZone.standardDate
+    summary: Gets the date on which standard time begins for the time zone.
+    isPreview: true
+    name: standardDate
+    fullName: sp-page-context.SPTimeZone.standardDate
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly standardDate: ISPSystemTime;'
+      return:
+        type:
+          - sp-page-context.ISPSystemTime
+  - uid: sp-page-context.SPTimeZone.standardOffset
+    summary: >-
+      Gets the offset in the number of minutes that standard time for the time zone differs from coordinated universal
+      time (UTC).
+    isPreview: true
+    name: standardOffset
+    fullName: sp-page-context.SPTimeZone.standardOffset
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly standardOffset: number;'
+      return:
+        type:
+          - number

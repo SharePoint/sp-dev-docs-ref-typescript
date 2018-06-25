@@ -2,7 +2,6 @@
 items:
   - uid: sp-dialog.Dialog
     summary: A static class for showing stock dialogs such as an alert or prompt.
-    isPreview: true
     name: Dialog
     fullName: sp-dialog.Dialog
     langs:
@@ -20,7 +19,6 @@ items:
       There might be a delay until the dialog is approved and shown by the application, for example, if there is another
       dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
       promise rejects if the application rejects the request for any reason.
-    isPreview: true
     name: 'alert(message, options)'
     fullName: sp-dialog.Dialog.alert
     langs:
@@ -40,7 +38,7 @@ items:
         - id: options
           description: ''
           type:
-            - IAlertOptions
+            - sp-dialog.IAlertOptions
   - uid: sp-dialog.Dialog.prompt
     summary: >-
       Prompts the user for a string value with a user-friendly interface. Calling this method sends a request to
@@ -49,7 +47,6 @@ items:
       There might be a delay until the dialog is approved and shown by the application, for example, if there is another
       dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
       promise rejects if the application rejects the request for any reason.
-    isPreview: true
     name: 'prompt(message, options)'
     fullName: sp-dialog.Dialog.prompt
     langs:
@@ -69,4 +66,4 @@ items:
         - id: options
           description: ''
           type:
-            - IPromptOptions
+            - sp-dialog.IPromptOptions

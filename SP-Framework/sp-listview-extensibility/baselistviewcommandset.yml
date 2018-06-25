@@ -38,7 +38,7 @@ items:
       content: 'readonly context: ListViewCommandSetContext;'
       return:
         type:
-          - ListViewCommandSetContext
+          - sp-listview-extensibility.ListViewCommandSetContext
   - uid: sp-listview-extensibility.BaseListViewCommandSet.onExecute
     summary: 'This event occurs when the command is invoked, e.g. because the user clicked on the toolbar button or menu item.'
     name: onExecute(event)
@@ -56,7 +56,7 @@ items:
         - id: event
           description: ''
           type:
-            - IListViewCommandSetExecuteEventParameters
+            - sp-listview-extensibility.IListViewCommandSetExecuteEventParameters
   - uid: sp-listview-extensibility.BaseListViewCommandSet.onListViewUpdated
     summary: This event occurs whenever the ListView state changes.
     remarks: >-
@@ -77,7 +77,7 @@ items:
         - id: event
           description: ''
           type:
-            - IListViewCommandSetListViewUpdatedParameters
+            - sp-listview-extensibility.IListViewCommandSetListViewUpdatedParameters
   - uid: sp-listview-extensibility.BaseListViewCommandSet.tryGetCommand
     summary: Returns the command with the given id. Returns undefined if there is not command with the given id.
     name: tryGetCommand(id)
@@ -89,7 +89,7 @@ items:
       content: 'tryGetCommand(id: string): Command;'
       return:
         type:
-          - Command
+          - sp-listview-extensibility.Command
         description: ''
       parameters:
         - id: id

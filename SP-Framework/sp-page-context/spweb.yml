@@ -16,6 +16,7 @@ items:
     children:
       - sp-page-context.SPWeb.absoluteUrl
       - sp-page-context.SPWeb.description
+      - sp-page-context.SPWeb.firstDayOfWeek
       - sp-page-context.SPWeb.id
       - sp-page-context.SPWeb.isAppWeb
       - sp-page-context.SPWeb.language
@@ -23,6 +24,7 @@ items:
       - sp-page-context.SPWeb.permissions
       - sp-page-context.SPWeb.serverRelativeUrl
       - sp-page-context.SPWeb.templateName
+      - sp-page-context.SPWeb.timeZoneInfo
       - sp-page-context.SPWeb.title
   - uid: sp-page-context.SPWeb.absoluteUrl
     summary: 'Returns the absolute URL for this SPWeb. Example: "https://example.com/sites/PubSite/SubWeb"'
@@ -48,6 +50,19 @@ items:
       return:
         type:
           - string
+  - uid: sp-page-context.SPWeb.firstDayOfWeek
+    summary: Returns the web's regional first day of week setting or undefined if it hasn't been set.
+    isPreview: true
+    name: firstDayOfWeek
+    fullName: sp-page-context.SPWeb.firstDayOfWeek
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly firstDayOfWeek: SPDayOfWeek | undefined;'
+      return:
+        type:
+          - SPDayOfWeek | undefined
   - uid: sp-page-context.SPWeb.id
     summary: The GUID that identifies the SPWeb on the server.
     name: id
@@ -59,7 +74,7 @@ items:
       content: 'readonly id: Guid;'
       return:
         type:
-          - Guid
+          - sp-core-library.Guid
   - uid: sp-page-context.SPWeb.isAppWeb
     summary: Returns true if this SPWeb the container web for an SPApp.
     name: isAppWeb
@@ -111,7 +126,7 @@ items:
       content: 'readonly permissions: SPPermission;'
       return:
         type:
-          - SPPermission
+          - sp-page-context.SPPermission
   - uid: sp-page-context.SPWeb.serverRelativeUrl
     summary: Returns the server-relative URL for this SPWeb.
     remarks: 'Example: "/sites/PubSite/SubWeb"'
@@ -140,6 +155,19 @@ items:
       return:
         type:
           - string
+  - uid: sp-page-context.SPWeb.timeZoneInfo
+    summary: Returns the web's regional timezone settings or undefined if they haven't been set.
+    isPreview: true
+    name: timeZoneInfo
+    fullName: sp-page-context.SPWeb.timeZoneInfo
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly timeZoneInfo: SPTimeZone | undefined;'
+      return:
+        type:
+          - SPTimeZone | undefined
   - uid: sp-page-context.SPWeb.title
     summary: Returns the title of the current SPWeb.
     name: title

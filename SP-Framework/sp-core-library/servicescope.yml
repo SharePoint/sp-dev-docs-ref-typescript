@@ -181,7 +181,7 @@ items:
       content: 'getParent(): ServiceScope | undefined;'
       return:
         type:
-          - sp-core-library.ServiceKey
+          - ServiceScope | undefined
         description: the parent service scope
   - uid: sp-core-library.ServiceScope.provide
     summary: Add a new service to a service scope.
@@ -203,7 +203,7 @@ items:
         - id: serviceKey
           description: the key that will later be used to consume the service
           type:
-            - sp-core-library.ServiceKey
+            - ServiceKey<T>
         - id: service
           description: the service instance that is being registered
           type:
@@ -222,7 +222,7 @@ items:
       content: 'startNewChild(): ServiceScope;'
       return:
         type:
-          - ServiceScope
+          - sp-core-library.ServiceScope
         description: the newly created root ServiceScope
   - uid: sp-core-library.ServiceScope.startNewRoot
     summary: >-
@@ -237,7 +237,7 @@ items:
       content: 'static startNewRoot(): ServiceScope;'
       return:
         type:
-          - ServiceScope
+          - sp-core-library.ServiceScope
         description: the newly created root ServiceScope
   - uid: sp-core-library.ServiceScope.whenFinished
     summary: 'Defer an operation until after [ServiceScope.finish](xref:sp-core-library.ServiceScope.finish) has completed.'

@@ -11,6 +11,7 @@ items:
     package: sp-core-library
     children:
       - sp-core-library.Text.format
+      - sp-core-library.Text.replaceAll
   - uid: sp-core-library.Text.format
     summary: Format a string by substituting parameters.
     remarks: >-
@@ -43,3 +44,30 @@ items:
           description: ''
           type:
             - 'any[]'
+  - uid: sp-core-library.Text.replaceAll
+    summary: 'Returns the input string, with all instances of searchValue replaced by replaceValue.'
+    remarks: 'Note that JavaScript''s string.replace() only replaces the first match, unless a global RegExp is provided.'
+    name: 'replaceAll(input, searchValue, replaceValue)'
+    fullName: sp-core-library.Text.replaceAll
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'static replaceAll(input: string, searchValue: string, replaceValue: string): string;'
+      return:
+        type:
+          - string
+        description: ''
+      parameters:
+        - id: input
+          description: The string to be modified
+          type:
+            - string
+        - id: searchValue
+          description: The value to search for
+          type:
+            - string
+        - id: replaceValue
+          description: The replacement text
+          type:
+            - string

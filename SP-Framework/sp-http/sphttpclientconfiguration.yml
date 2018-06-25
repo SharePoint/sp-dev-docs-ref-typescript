@@ -40,11 +40,11 @@ items:
         - id: flags
           description: ''
           type:
-            - ISPHttpClientConfiguration
+            - sp-http.ISPHttpClientConfiguration
         - id: overrideFlags
           description: ''
           type:
-            - ISPHttpClientConfiguration
+            - sp-http.ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.defaultODataVersion
     summary: Automatically configure the "OData-Version" header.
     remarks: >-
@@ -63,7 +63,7 @@ items:
       content: 'readonly defaultODataVersion: ODataVersion;'
       return:
         type:
-          - ODataVersion
+          - sp-http.ODataVersion
   - uid: sp-http.SPHttpClientConfiguration.defaultSameOriginCredentials
     summary: Automatically configure the RequestInit.credentials.
     remarks: >-
@@ -95,7 +95,7 @@ items:
       content: 'protected flags: ISPHttpClientConfiguration;'
       return:
         type:
-          - ISPHttpClientConfiguration
+          - sp-http.ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.initializeFlags
     name: initializeFlags()
     fullName: sp-http.SPHttpClientConfiguration.initializeFlags
@@ -122,13 +122,13 @@ items:
         overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;
       return:
         type:
-          - SPHttpClientConfiguration
+          - sp-http.SPHttpClientConfiguration
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - ISPHttpClientConfiguration
+            - sp-http.ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.requestDigest
     summary: Automatically provide an "X-RequestDigest" header for authentication.
     remarks: >-
