@@ -47,11 +47,11 @@ items:
         - id: v1
           description: The first version class for comparison
           type:
-            - sp-core-library.Version
+            - Version
         - id: v2
           description: The second version class for comparison
           type:
-            - sp-core-library.Version
+            - Version
   - uid: sp-core-library.Version.equals
     summary: Tests whether this version is equal to the input parameter.
     remarks: >-
@@ -75,7 +75,7 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
+            - Version
   - uid: sp-core-library.Version.greaterThan
     summary: Tests whether this version is greater than (i.e. newer than) the input parameter.
     remarks: |-
@@ -97,7 +97,7 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
+            - Version
   - uid: sp-core-library.Version.isValid
     summary: Test whether a string is a valid version specifier.
     name: isValid(versionString)
@@ -139,7 +139,7 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
+            - Version
   - uid: sp-core-library.Version.major
     summary: Returns the first component of the version string.
     remarks: Typically a change in the major version number indicates a compatibility break with previous versions.
@@ -179,7 +179,7 @@ items:
       content: 'static parse(versionString: string | undefined | null): Version;'
       return:
         type:
-          - sp-core-library.Version
+          - Version
         description: a new Version object
       parameters:
         - id: versionString
@@ -245,7 +245,7 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
+            - Version
   - uid: sp-core-library.Version.tryParse
     summary: >-
       Attempts to parse the input string to construct a new Version object. If the string cannot be parsed, then

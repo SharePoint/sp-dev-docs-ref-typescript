@@ -34,7 +34,7 @@ items:
       content: 'static readonly empty: Guid;'
       return:
         type:
-          - sp-core-library.Guid
+          - Guid
   - uid: sp-core-library.Guid.equals
     summary: Compare this instance to another Guid instance
     name: equals(guid)
@@ -52,7 +52,7 @@ items:
         - id: guid
           description: ''
           type:
-            - sp-core-library.Guid
+            - Guid
   - uid: sp-core-library.Guid.isValid
     summary: >-
       Indicates whether a GUID is valid, i.e. whether it would be successfully parsed by Guid.tryParse(). This function
@@ -86,13 +86,13 @@ items:
       content: 'static newGuid(randomNumberGenerator?: IRandomNumberGenerator): Guid;'
       return:
         type:
-          - sp-core-library.Guid
+          - Guid
         description: A new unique Guid object
       parameters:
         - id: randomNumberGenerator
           description: ''
           type:
-            - sp-core-library.IRandomNumberGenerator
+            - IRandomNumberGenerator
   - uid: sp-core-library.Guid.parse
     summary: 'Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.'
     remarks: >-
@@ -107,7 +107,7 @@ items:
       content: 'static parse(guidString: string | undefined | null): Guid;'
       return:
         type:
-          - sp-core-library.Guid
+          - Guid
         description: A valid Guid object
       parameters:
         - id: guidString

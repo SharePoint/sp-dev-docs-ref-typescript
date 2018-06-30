@@ -34,7 +34,7 @@ items:
         - id: serviceScope
           description: The service scope is needed to retrieve some of the class's internal components
           type:
-            - sp-core-library.ServiceScope
+            - ServiceScope
         - id: resourceEndpoint
           description: ''
           type:
@@ -42,7 +42,7 @@ items:
         - id: options
           description: Configuration options for the request to get an access token.
           type:
-            - sp-http.IAadHttpClientOptions
+            - IAadHttpClientOptions
   - uid: sp-http.AadHttpClient.configurations
     summary: The standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient class.
     isPreview: true
@@ -55,7 +55,7 @@ items:
       content: 'static readonly configurations: IAadHttpClientConfigurations;'
       return:
         type:
-          - sp-http.IAadHttpClientConfigurations
+          - IAadHttpClientConfigurations
   - uid: sp-http.AadHttpClient.fetch
     summary: Performs a REST service call.
     remarks: >-
@@ -86,11 +86,11 @@ items:
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
-            - sp-http.AadHttpClientConfiguration
+            - AadHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.IHttpClientOptions
+            - IHttpClientOptions
   - uid: sp-http.AadHttpClient.get
     summary: 'Calls fetch(), but sets the method to "GET".'
     isPreview: true
@@ -117,11 +117,11 @@ items:
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
-            - sp-http.AadHttpClientConfiguration
+            - AadHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.IHttpClientOptions
+            - IHttpClientOptions
   - uid: sp-http.AadHttpClient.post
     summary: 'Calls fetch(), but sets the method to "POST".'
     isPreview: true
@@ -148,8 +148,8 @@ items:
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
-            - sp-http.AadHttpClientConfiguration
+            - AadHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.IHttpClientOptions
+            - IHttpClientOptions

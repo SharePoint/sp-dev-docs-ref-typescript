@@ -48,7 +48,7 @@ items:
         - id: configuration
           description: ''
           type:
-            - sp-http.IAadTokenProviderConfiguration
+            - IAadTokenProviderConfiguration
   - uid: sp-http.IAadTokenProvider.tokenAcquisitionEvent
     summary: Notifies the developer when Token Acquistion requires user action.
     isPreview: true
@@ -56,9 +56,9 @@ items:
     fullName: sp-http.IAadTokenProvider.tokenAcquisitionEvent
     langs:
       - typeScript
-    type: property
+    type: event
     syntax:
-      content: 'tokenAcquisitionEvent: SPEvent<ITokenAcquisitionEventArgs>;'
+      content: 'readonly tokenAcquisitionEvent: SPEvent<ITokenAcquisitionEventArgs>;'
       return:
         type:
           - SPEvent<ITokenAcquisitionEventArgs>

@@ -40,7 +40,7 @@ items:
         - id: configuration
           description: ''
           type:
-            - sp-http.IAadTokenProviderConfiguration
+            - IAadTokenProviderConfiguration
   - uid: sp-http.AadTokenProvider.getToken
     summary: |-
       Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
@@ -68,7 +68,7 @@ items:
         - id: configuration
           description: ''
           type:
-            - sp-http.IAadTokenProviderConfiguration
+            - IAadTokenProviderConfiguration
   - uid: sp-http.AadTokenProvider.tokenAcquisitionEvent
     summary: Notifies the developer when Token Acquistion requires user action.
     isPreview: true
@@ -76,7 +76,7 @@ items:
     fullName: sp-http.AadTokenProvider.tokenAcquisitionEvent
     langs:
       - typeScript
-    type: property
+    type: event
     syntax:
       content: 'readonly tokenAcquisitionEvent: SPEvent<TokenAcquisitionEventArgs>;'
       return:

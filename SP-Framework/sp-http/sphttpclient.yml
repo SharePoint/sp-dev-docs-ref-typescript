@@ -36,7 +36,7 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
+            - ServiceScope
   - uid: sp-http.SPHttpClient.beginBatch
     summary: 'Begins an ODATA batch, which allows multiple REST queries to be bundled into a single web request.'
     isPreview: true
@@ -49,13 +49,13 @@ items:
       content: 'beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;'
       return:
         type:
-          - sp-http.SPHttpClientBatch
+          - SPHttpClientBatch
         description: 'An [SPHttpClientBatch](xref:sp-http.SPHttpClientBatch) object used to manage the batch operation.'
       parameters:
         - id: batchCreationOptions
           description: ''
           type:
-            - sp-http.ISPHttpClientBatchCreationOptions
+            - ISPHttpClientBatchCreationOptions
   - uid: sp-http.SPHttpClient.configurations
     summary: The standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class.
     name: configurations
@@ -67,7 +67,7 @@ items:
       content: 'static readonly configurations: ISPHttpClientConfigurations;'
       return:
         type:
-          - sp-http.ISPHttpClientConfigurations
+          - ISPHttpClientConfigurations
   - uid: sp-http.SPHttpClient.fetch
     summary: Perform a REST service call.
     remarks: >-
@@ -119,11 +119,11 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - sp-http.SPHttpClientConfiguration
+            - SPHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientOptions
+            - ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.get
     summary: 'Calls fetch(), but sets the method to "GET".'
     name: 'get(url, configuration, options)'
@@ -153,11 +153,11 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - sp-http.SPHttpClientConfiguration
+            - SPHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientOptions
+            - ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.getWebUrlFromRequestUrl
     summary: Use a heuristic to infer the base URL for authentication.
     remarks: >-
@@ -217,11 +217,11 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - sp-http.SPHttpClientConfiguration
+            - SPHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientOptions
+            - ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.serviceKey
     summary: The service key for SPHttpClient.
     name: serviceKey

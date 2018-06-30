@@ -29,7 +29,7 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
+            - ServiceScope
   - uid: sp-http.HttpClient.configurations
     summary: The standard predefined HttpClientConfiguration objects for use with the HttpClient class.
     name: configurations
@@ -41,7 +41,7 @@ items:
       content: 'static readonly configurations: IHttpClientConfigurations;'
       return:
         type:
-          - sp-http.IHttpClientConfigurations
+          - IHttpClientConfigurations
   - uid: sp-http.HttpClient.fetch
     summary: Performs a REST service call.
     remarks: >-
@@ -75,11 +75,11 @@ items:
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
-            - sp-http.HttpClientConfiguration
+            - HttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.IHttpClientOptions
+            - IHttpClientOptions
   - uid: sp-http.HttpClient.get
     summary: 'Calls fetch(), but sets the method to "GET".'
     name: 'get(url, configuration, options)'
@@ -109,11 +109,11 @@ items:
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
-            - sp-http.HttpClientConfiguration
+            - HttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.IHttpClientOptions
+            - IHttpClientOptions
   - uid: sp-http.HttpClient.post
     summary: 'Calls fetch(), but sets the method to "POST".'
     name: 'post(url, configuration, options)'
@@ -143,11 +143,11 @@ items:
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
           type:
-            - sp-http.HttpClientConfiguration
+            - HttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.IHttpClientOptions
+            - IHttpClientOptions
   - uid: sp-http.HttpClient.serviceKey
     summary: The service key for HttpClient.
     name: serviceKey
