@@ -95,17 +95,19 @@
           uid: sp-dialog.IDialogShowOptions
         - name: IPromptOptions
           uid: sp-dialog.IPromptOptions
-        - name: SecondaryDialogProvider
-          uid: sp-dialog.SecondaryDialogProvider
+        - name: ISecondaryDialogProvider
+          uid: sp-dialog.ISecondaryDialogProvider
     - name: sp-dynamic-data
       uid: sp-dynamic-data
       items:
         - name: DynamicDataReference
           uid: sp-dynamic-data.DynamicDataReference
-        - name: IDynamicDataController
-          uid: sp-dynamic-data.IDynamicDataController
+        - name: IDynamicDataCallables
+          uid: sp-dynamic-data.IDynamicDataCallables
         - name: IDynamicDataPropertyDefinition
           uid: sp-dynamic-data.IDynamicDataPropertyDefinition
+        - name: IDynamicDataPropertyMetadata
+          uid: sp-dynamic-data.IDynamicDataPropertyMetadata
         - name: IDynamicDataSource
           uid: sp-dynamic-data.IDynamicDataSource
         - name: IDynamicDataSourceMetadata
@@ -130,12 +132,16 @@
           uid: sp-http.AadTokenProvider
         - name: AadTokenProviderFactory
           uid: sp-http.AadTokenProviderFactory
+        - name: DigestCache
+          uid: sp-http.DigestCache
         - name: GraphHttpClient
           uid: sp-http.GraphHttpClient
         - name: GraphHttpClientConfiguration
           uid: sp-http.GraphHttpClientConfiguration
         - name: GraphHttpClientResponse
           uid: sp-http.GraphHttpClientResponse
+        - name: GraphRequest
+          uid: sp-http.GraphRequest
         - name: HttpClient
           uid: sp-http.HttpClient
         - name: HttpClientConfiguration
@@ -146,10 +152,10 @@
           uid: sp-http.IAadHttpClientConfiguration
         - name: IAadHttpClientConfigurations
           uid: sp-http.IAadHttpClientConfigurations
-        - name: IAadTokenProvider
-          uid: sp-http.IAadTokenProvider
-        - name: IAadTokenProviderConfiguration
-          uid: sp-http.IAadTokenProviderConfiguration
+        - name: IAadHttpClientOptions
+          uid: sp-http.IAadHttpClientOptions
+        - name: IDigestCache
+          uid: sp-http.IDigestCache
         - name: IGraphHttpClientConfiguration
           uid: sp-http.IGraphHttpClientConfiguration
         - name: IGraphHttpClientConfigurations
@@ -178,6 +184,10 @@
           uid: sp-http.ISPHttpClientConfigurations
         - name: ISPHttpClientOptions
           uid: sp-http.ISPHttpClientOptions
+        - name: MSGraphClient
+          uid: sp-http.MSGraphClient
+        - name: MSGraphClientFactory
+          uid: sp-http.MSGraphClientFactory
         - name: ODataVersion
           uid: sp-http.ODataVersion
         - name: SPHttpClient
@@ -253,8 +263,14 @@
       items:
         - name: CultureInfo
           uid: sp-page-context.CultureInfo
+        - name: ISPSystemTime
+          uid: sp-page-context.ISPSystemTime
+        - name: ISPTimeZoneData
+          uid: sp-page-context.ISPTimeZoneData
         - name: PageContext
           uid: sp-page-context.PageContext
+        - name: SPDayOfWeek
+          uid: sp-page-context.SPDayOfWeek
         - name: SPField
           uid: sp-page-context.SPField
         - name: SPList
@@ -265,15 +281,23 @@
           uid: sp-page-context.SPPermission
         - name: SPSite
           uid: sp-page-context.SPSite
+        - name: SPTimeZone
+          uid: sp-page-context.SPTimeZone
         - name: SPUser
           uid: sp-page-context.SPUser
         - name: SPWeb
           uid: sp-page-context.SPWeb
+    - name: sp-property-pane
+      uid: sp-property-pane
     - name: sp-webpart-base
       uid: sp-webpart-base
       items:
         - name: BaseClientSideWebPart
           uid: sp-webpart-base.BaseClientSideWebPart
+        - name: BaseWebPart
+          uid: sp-webpart-base.BaseWebPart
+        - name: BaseWebPartContext
+          uid: sp-webpart-base.BaseWebPartContext
         - name: IClientSideWebPartStatusRenderer
           uid: sp-webpart-base.IClientSideWebPartStatusRenderer
         - name: IPlaceholderSpinnerProps
@@ -330,6 +354,8 @@
           uid: sp-webpart-base.IWebPartData
         - name: IWebPartPropertiesMetadata
           uid: sp-webpart-base.IWebPartPropertiesMetadata
+        - name: IWebPartPropertyMetadata
+          uid: sp-webpart-base.IWebPartPropertyMetadata
         - name: PropertyPaneButtonType
           uid: sp-webpart-base.PropertyPaneButtonType
         - name: PropertyPaneDropdownOptionType

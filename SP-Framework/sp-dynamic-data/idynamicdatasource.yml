@@ -17,7 +17,9 @@ items:
       - sp-dynamic-data.IDynamicDataSource.id
       - sp-dynamic-data.IDynamicDataSource.metadata
   - uid: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
-    summary: Returns the definitions for all the properties exposed by the source.
+    summary: >-
+      Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
+      component.
     isPreview: true
     name: getPropertyDefinitions()
     fullName: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
@@ -32,14 +34,8 @@ items:
         description: ''
   - uid: sp-dynamic-data.IDynamicDataSource.getPropertyValue
     summary: >-
-      For a given property id, returns the value of the property. Throws an error if the property id doesn't exist in
-      the source.
-    remarks: >-
-      It returns a read-only copy of the property value, so modifying its value will not impact on the value in the data
-      source.
-
-
-      Property values are JSON-serializable objects, so there are no functions that can be called inside.
+      Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
+      component.
     isPreview: true
     name: getPropertyValue(propertyId)
     fullName: sp-dynamic-data.IDynamicDataSource.getPropertyValue

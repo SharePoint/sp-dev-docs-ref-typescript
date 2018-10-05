@@ -10,26 +10,11 @@ items:
     langs:
       - typeScript
     type: interface
+    extends:
+      - IDynamicDataPropertyMetadata
     package: sp-dynamic-data
     children:
-      - sp-dynamic-data.IDynamicDataPropertyDefinition.description
       - sp-dynamic-data.IDynamicDataPropertyDefinition.id
-      - sp-dynamic-data.IDynamicDataPropertyDefinition.title
-  - uid: sp-dynamic-data.IDynamicDataPropertyDefinition.description
-    summary: >-
-      User-friendly, localized description of the property. Example: "Contains a list of ids with the files of the
-      current user"
-    isPreview: true
-    name: description
-    fullName: sp-dynamic-data.IDynamicDataPropertyDefinition.description
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'description?: string;'
-      return:
-        type:
-          - string
   - uid: sp-dynamic-data.IDynamicDataPropertyDefinition.id
     summary: 'Id of the property. This can only contains letters, numbers, dashes and underscores.'
     remarks: 'The regular expression used to validate the constraints is /^\[a-zA-Z0-9\\-\_\]+$/ Example: "myFiles"'
@@ -41,21 +26,6 @@ items:
     type: property
     syntax:
       content: 'id: string;'
-      return:
-        type:
-          - string
-  - uid: sp-dynamic-data.IDynamicDataPropertyDefinition.title
-    summary: >-
-      User-friendly, localized title of the property. Example: "My files" / "Mis archivos" (depending of current
-      language)
-    isPreview: true
-    name: title
-    fullName: sp-dynamic-data.IDynamicDataPropertyDefinition.title
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'title: string;'
       return:
         type:
           - string

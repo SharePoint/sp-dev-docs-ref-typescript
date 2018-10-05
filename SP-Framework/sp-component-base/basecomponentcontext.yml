@@ -19,8 +19,8 @@ items:
       - IDisposable
     package: sp-component-base
     children:
-      - sp-component-base.BaseComponentContext.aadClientFactory
-      - sp-component-base.BaseComponentContext.aadTokenFactory
+      - sp-component-base.BaseComponentContext.aadHttpClientFactory
+      - sp-component-base.BaseComponentContext.aadTokenProviderFactory
       - sp-component-base.BaseComponentContext.dispose
       - sp-component-base.BaseComponentContext.dynamicDataProvider
       - sp-component-base.BaseComponentContext.dynamicDataSourceManager
@@ -29,32 +29,31 @@ items:
       - sp-component-base.BaseComponentContext.instanceId
       - sp-component-base.BaseComponentContext.isDisposed
       - sp-component-base.BaseComponentContext.manifest
+      - sp-component-base.BaseComponentContext.msGraphClientFactory
       - sp-component-base.BaseComponentContext.pageContext
       - sp-component-base.BaseComponentContext.serviceScope
       - sp-component-base.BaseComponentContext.spHttpClient
-  - uid: sp-component-base.BaseComponentContext.aadClientFactory
+  - uid: sp-component-base.BaseComponentContext.aadHttpClientFactory
     summary: The instance of AadHttpClientFactory created for this instance of component
-    isPreview: true
-    name: aadClientFactory
-    fullName: sp-component-base.BaseComponentContext.aadClientFactory
+    name: aadHttpClientFactory
+    fullName: sp-component-base.BaseComponentContext.aadHttpClientFactory
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'readonly aadClientFactory: AadHttpClientFactory;'
+      content: 'readonly aadHttpClientFactory: AadHttpClientFactory;'
       return:
         type:
           - AadHttpClientFactory
-  - uid: sp-component-base.BaseComponentContext.aadTokenFactory
+  - uid: sp-component-base.BaseComponentContext.aadTokenProviderFactory
     summary: The instance of AadTokenProviderFactory created for this instance of component
-    isPreview: true
-    name: aadTokenFactory
-    fullName: sp-component-base.BaseComponentContext.aadTokenFactory
+    name: aadTokenProviderFactory
+    fullName: sp-component-base.BaseComponentContext.aadTokenProviderFactory
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'readonly aadTokenFactory: AadTokenProviderFactory;'
+      content: 'readonly aadTokenProviderFactory: AadTokenProviderFactory;'
       return:
         type:
           - AadTokenProviderFactory
@@ -99,6 +98,8 @@ items:
           - DynamicDataSourceManager
   - uid: sp-component-base.BaseComponentContext.graphHttpClient
     summary: The instance of GraphHttpClient created for this instance of component
+    deprecated:
+      content: ''
     isPreview: true
     name: graphHttpClient
     fullName: sp-component-base.BaseComponentContext.graphHttpClient
@@ -162,6 +163,18 @@ items:
       return:
         type:
           - IClientSideComponentManifest
+  - uid: sp-component-base.BaseComponentContext.msGraphClientFactory
+    summary: The instance of MSGraphClientFactory created for this instance of component
+    name: msGraphClientFactory
+    fullName: sp-component-base.BaseComponentContext.msGraphClientFactory
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly msGraphClientFactory: MSGraphClientFactory;'
+      return:
+        type:
+          - MSGraphClientFactory
   - uid: sp-component-base.BaseComponentContext.pageContext
     summary: >-
       The page context provides standard definitions for common SharePoint objects that need to be shared between the

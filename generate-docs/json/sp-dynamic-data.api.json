@@ -100,7 +100,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "propertyPath": {
           "kind": "property",
@@ -120,7 +121,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "reference": {
           "kind": "property",
@@ -140,7 +142,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "sourceId": {
           "kind": "property",
@@ -160,11 +163,12 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
-    "IDynamicDataController": {
+    "IDynamicDataCallables": {
       "kind": "interface",
       "extends": "",
       "implements": "",
@@ -240,7 +244,7 @@
     },
     "IDynamicDataPropertyDefinition": {
       "kind": "interface",
-      "extends": "",
+      "extends": "IDynamicDataPropertyMetadata",
       "implements": "",
       "typeParameters": [],
       "deprecatedMessage": [],
@@ -248,6 +252,50 @@
         {
           "kind": "text",
           "text": "Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly, localized title and description to be seen and used by end users."
+        }
+      ],
+      "remarks": [],
+      "isBeta": true,
+      "isSealed": false,
+      "members": {
+        "id": {
+          "kind": "property",
+          "signature": "id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Id of the property. This can only contains letters, numbers, dashes and underscores."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The regular expression used to validate the constraints is /^[a-zA-Z0-9\\-_]+$/ Example: \"myFiles\""
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataPropertyMetadata": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Metadata of a property"
         }
       ],
       "remarks": [],
@@ -272,32 +320,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "id": {
-          "kind": "property",
-          "signature": "id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the property. This can only contains letters, numbers, dashes and underscores."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "The regular expression used to validate the constraints is /^[a-zA-Z0-9\\-_]+$/ Example: \"myFiles\""
-            }
-          ],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -317,7 +341,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -352,7 +377,7 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Returns the definitions for all the properties exposed by the source."
+              "text": "Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the component."
             }
           ],
           "remarks": [],
@@ -384,22 +409,10 @@
           "summary": [
             {
               "kind": "text",
-              "text": "For a given property id, returns the value of the property. Throws an error if the property id doesn't exist in the source."
+              "text": "Given a property id, returns the value of the property. This needs to be overriden by the implementation of the component."
             }
           ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "It returns a read-only copy of the property value, so modifying its value will not impact on the value in the data source."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Property values are JSON-serializable objects, so there are no functions that can be called inside."
-            }
-          ],
+          "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
@@ -423,7 +436,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "metadata": {
           "kind": "property",
@@ -443,7 +457,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -481,7 +496,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "componentId": {
           "kind": "property",
@@ -501,7 +517,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -521,7 +538,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "instanceId": {
           "kind": "property",
@@ -541,7 +559,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -561,7 +580,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     }

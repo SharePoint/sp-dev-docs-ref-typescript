@@ -29,13 +29,6 @@
       "remarks": [
         {
           "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the AadHttpClient class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
           "text": "For communicating with SharePoint, use the "
         },
         {
@@ -62,13 +55,13 @@
           "elements": [
             {
               "kind": "text",
-              "text": "GraphHttpClient"
+              "text": "MSGraphClient"
             }
           ],
           "target": {
             "scopeName": "@microsoft",
             "packageName": "sp-http",
-            "exportName": "GraphHttpClient",
+            "exportName": "MSGraphClient",
             "memberName": ""
           }
         },
@@ -77,9 +70,73 @@
           "text": " class."
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": true,
       "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(serviceScope: ServiceScope, resourceEndpoint: string, options?: IAadHttpClientOptions);",
+          "parameters": {
+            "serviceScope": {
+              "name": "serviceScope",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The service scope is needed to retrieve some of the class's internal components."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ServiceScope"
+            },
+            "resourceEndpoint": {
+              "name": "resourceEndpoint",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "options": {
+              "name": "options",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Configuration options for the request to get an access token."
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "IAadHttpClientOptions"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "AadHttpClient"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "AadHttpClient",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
         "configurations": {
           "kind": "property",
           "signature": "static readonly configurations: IAadHttpClientConfigurations;",
@@ -95,10 +152,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "fetch": {
           "kind": "method",
@@ -111,7 +169,7 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise that will return the result."
               }
             ]
           },
@@ -121,7 +179,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "the URL to fetch"
+                  "text": "The endpoint URL that fetch will be called on."
                 }
               ],
               "isOptional": false,
@@ -133,7 +191,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                  "text": "Determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations."
                 }
               ],
               "isOptional": false,
@@ -145,7 +203,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "additional options that affect the request"
+                  "text": "Additional options that affect the request."
                 }
               ],
               "isOptional": false,
@@ -166,7 +224,7 @@
               "text": "Although the AadHttpClient subclass adds additional enhancements, the parameters and semantics for HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here: https://fetch.spec.whatwg.org/"
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -182,7 +240,7 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise that will return the result."
               }
             ]
           },
@@ -192,7 +250,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "the URL to fetch"
+                  "text": "The endpoint URL that fetch will be called on."
                 }
               ],
               "isOptional": false,
@@ -204,7 +262,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                  "text": "Determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations."
                 }
               ],
               "isOptional": false,
@@ -216,7 +274,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "additional options that affect the request"
+                  "text": "Additional options that affect the request."
                 }
               ],
               "isOptional": true,
@@ -232,7 +290,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -248,7 +306,7 @@
             "description": [
               {
                 "kind": "text",
-                "text": "a promise that will return the result"
+                "text": "A promise that will return the result."
               }
             ]
           },
@@ -258,7 +316,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "the URL to fetch"
+                  "text": "The endpoint URL that fetch will be called on."
                 }
               ],
               "isOptional": false,
@@ -270,7 +328,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations"
+                  "text": "Determines the default behavior of HttpClient; normally this should be the latest version number from HttpClientConfigurations."
                 }
               ],
               "isOptional": false,
@@ -282,7 +340,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "additional options that affect the request"
+                  "text": "Additional options that affect the request."
                 }
               ],
               "isOptional": false,
@@ -298,7 +356,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -367,7 +425,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "overrideWith": {
           "kind": "method",
@@ -407,7 +466,21 @@
       "summary": [
         {
           "kind": "text",
-          "text": "The will return a preinitialized version of the AadHttpClient for a given resource url. See more -> https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient"
+          "text": "Returns a preinitialized version of the AadHttpClient for a given resource url. For more information: "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient"
+            }
+          ],
+          "targetUrl": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient"
+        },
+        {
+          "kind": "text",
+          "text": ""
         }
       ],
       "remarks": [
@@ -419,17 +492,17 @@
           "kind": "paragraph"
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
-        "getExtendedClient": {
+        "getClient": {
           "kind": "method",
-          "signature": "getExtendedClient(resourceEndpoint: string): AadHttpClient;",
+          "signature": "getClient(resourceEndpoint: string): Promise<AadHttpClient>;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
-            "type": "AadHttpClient",
+            "type": "Promise<AadHttpClient>",
             "description": []
           },
           "parameters": {
@@ -454,47 +527,31 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
         },
-        "getStandardClient": {
-          "kind": "method",
-          "signature": "getStandardClient(resourceEndpoint: string): AadHttpClient;",
-          "accessModifier": "",
+        "serviceKey": {
+          "kind": "property",
+          "signature": "static readonly serviceKey: ServiceKey<AadHttpClientFactory>;",
           "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "AadHttpClient",
-            "description": []
-          },
-          "parameters": {
-            "resourceEndpoint": {
-              "name": "resourceEndpoint",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "The target AAD application's resource endpoint."
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
+          "isReadOnly": true,
+          "isStatic": true,
+          "type": "ServiceKey<AadHttpClientFactory>",
           "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
-              "text": "Returns an instance of the AadHttpClient that communicates with the preconfigured SharePoint Online Web Service Principal."
+              "text": "The service key for AadHttpClientFactory."
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -520,55 +577,18 @@
       "remarks": [
         {
           "kind": "text",
-          "text": "AadTokenProvider is replacing the /_api.SP.OAuth.Token/Acquire endpoint for authentication with ADAL.js. At some point in the near future, when Azure AD v2.0 can support the same scenarios as the original version, we will switch to MSAL."
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the AadTokenProvider class."
+        },
+        {
+          "kind": "paragraph"
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": true,
       "members": {
-        "__constructor": {
-          "kind": "constructor",
-          "signature": "constructor(configuration: IAadTokenProviderConfiguration);",
-          "parameters": {
-            "configuration": {
-              "name": "configuration",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IAadTokenProviderConfiguration"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Constructs a new instance of the "
-            },
-            {
-              "kind": "api-link",
-              "elements": [
-                {
-                  "kind": "text",
-                  "text": "AadTokenProvider"
-                }
-              ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-http",
-                "exportName": "AadTokenProvider",
-                "memberName": ""
-              }
-            },
-            {
-              "kind": "text",
-              "text": " class"
-            }
-          ],
-          "remarks": []
-        },
         "getToken": {
           "kind": "method",
-          "signature": "getToken(resourceEndpoint: string, configuration?: IAadTokenProviderConfiguration): Promise<string>;",
+          "signature": "getToken(resourceEndpoint: string): Promise<string>;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
@@ -587,19 +607,12 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "the resource for which the token should be obtained"
+                  "text": "the resource for which the token should be obtained An example of a resourceEndpoint would be https://graph.microsoft.com"
                 }
               ],
               "isOptional": false,
               "isSpread": false,
               "type": "string"
-            },
-            "configuration": {
-              "name": "configuration",
-              "description": [],
-              "isOptional": true,
-              "isSpread": false,
-              "type": "IAadTokenProviderConfiguration"
             }
           },
           "deprecatedMessage": [],
@@ -613,18 +626,11 @@
             },
             {
               "kind": "text",
-              "text": "The OAuth2 token SHOULD NOT be cached by the caller since it is already cached by the method itself."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "An example of a resourceEndpoint would be https://sdfpilot.outlook.com"
+              "text": "The OAuth2 token should not be cached by the caller since it is already cached by the method itself."
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -640,14 +646,15 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Notifies the developer when Token Acquistion requires user action."
+              "text": "Notifies the developer when Token Acquisition requires user action."
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": true
         }
       }
     },
@@ -660,21 +667,21 @@
       "summary": [
         {
           "kind": "text",
-          "text": "The will return a preinitialized version of the AadTokenProviderFactory."
+          "text": "Returns a preinitialized version of the AadTokenProviderFactory."
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
-        "getExtendedProvider": {
+        "getTokenProvider": {
           "kind": "method",
-          "signature": "getExtendedProvider(): IAadTokenProvider;",
+          "signature": "getTokenProvider(): Promise<AadTokenProvider>;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
           "returnValue": {
-            "type": "IAadTokenProvider",
+            "type": "Promise<AadTokenProvider>",
             "description": []
           },
           "parameters": {},
@@ -686,10 +693,300 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
+        },
+        "serviceKey": {
+          "kind": "property",
+          "signature": "static readonly serviceKey: ServiceKey<AadTokenProviderFactory>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": true,
+          "type": "ServiceKey<AadTokenProviderFactory>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The service key for AadTokenProviderFactory."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "DigestCache": {
+      "kind": "class",
+      "extends": "",
+      "implements": "IDigestCache",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "IDigestCache is an internal service used by SPHttpClient to maintain a cache of request digests for each SPWeb URL. A request digest is a security token that the SharePoint server requires for for any REST write operation, specified via the \"X-RequestDigest\" HTTP header. It is obtained by calling the \"/_api/contextinfo\" REST endpoint, and expires after a server configurable amount of time."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "For more information, see the MSDN article "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "\"Complete basic operations using SharePoint 2013 REST endpoints\""
+            }
+          ],
+          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj164022.aspx"
+        },
+        {
+          "kind": "text",
+          "text": ""
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(serviceScope: ServiceScope);",
+          "parameters": {
+            "serviceScope": {
+              "name": "serviceScope",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "ServiceScope"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "DigestCache"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "DigestCache",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "addDigestToCache": {
+          "kind": "method",
+          "signature": "addDigestToCache(webUrl: string, digestValue: string, expirationTimestamp: number): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "webUrl": {
+              "name": "webUrl",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The URL of the SPWeb that the API call will be issued to. This may be a server-relative or absolute URL."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "digestValue": {
+              "name": "digestValue",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The digest value, which is an opaque that must be generated by the SharePoint server. The syntax will look something like this: \"0x0B85...2EAC,29 Jan 2016 01:23:45 -0000\""
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "expirationTimestamp": {
+              "name": "expirationTimestamp",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "A future point in time, as measured by performance.now(), after which the digest value will no longer be valid. NOTE: The expirationTime is a DOMHighResTimeStamp value whose units are fractional milliseconds; for example, to specify an expiration \"5 seconds from right now\", use performance.now()+5000."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "number"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Inserts a specific request digest value into the cache. Normally this is unnecessary because the framework will automatically issue a REST request to fetch the digest when necessary; however, in advanced scenarios addDigestToCache() can be used to avoid the overhead of the REST call."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "clearAllDigests": {
+          "kind": "method",
+          "signature": "clearAllDigests(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Clears all values from the cache."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "clearDigest": {
+          "kind": "method",
+          "signature": "clearDigest(webUrl: string): boolean;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": [
+              {
+                "kind": "text",
+                "text": "Returns true if a cache entry was found and deleted; false otherwise."
+              }
+            ]
+          },
+          "parameters": {
+            "webUrl": {
+              "name": "webUrl",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The URL of the SPWeb whose digest should be cleared. This may be a server-relative or absolute URL."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Clears the cached digest for the specified SPWeb URL. This operation is useful e.g. if an error indicates that a digest was invalidated prior to its expiration time."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "fetchDigest": {
+          "kind": "method",
+          "signature": "fetchDigest(webUrl: string): Promise<string>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<string>",
+            "description": [
+              {
+                "kind": "text",
+                "text": "A promise that is fulfilled with the digest value."
+              }
+            ]
+          },
+          "parameters": {
+            "webUrl": {
+              "name": "webUrl",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The URL of the SPWeb that the API call will be issued to. This may be a server-relative or absolute URL."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns a digest string for the specified SPWeb URL. If the cache already contains a usable value, the promise is fulfilled immediately. Otherwise, the promise will be pending and resolve after an HTTP request obtains the digest, which will be added to the cache."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "serviceKey": {
+          "kind": "property",
+          "signature": "static readonly serviceKey: ServiceKey<IDigestCache>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": true,
+          "type": "ServiceKey<IDigestCache>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The service key for IDigestCache."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -698,7 +995,12 @@
       "extends": "",
       "implements": "",
       "typeParameters": [],
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+        }
+      ],
       "summary": [
         {
           "kind": "text",
@@ -764,7 +1066,12 @@
               "type": "ServiceScope"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -799,7 +1106,12 @@
           "isReadOnly": true,
           "isStatic": true,
           "type": "IGraphHttpClientConfigurations",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -810,7 +1122,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "fetch": {
           "kind": "method",
@@ -865,7 +1178,12 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -943,7 +1261,12 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -1009,7 +1332,12 @@
               "type": "IGraphHttpClientOptions"
             }
           },
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -1029,7 +1357,12 @@
           "isReadOnly": true,
           "isStatic": true,
           "type": "ServiceKey<GraphHttpClient>",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "The GraphHttpClient class has been superseded by the MSGraphClient class."
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -1040,7 +1373,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1145,7 +1479,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1267,6 +1602,866 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "GraphRequest": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Typings for the GraphRequest Object For more information: "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "https://github.com/microsoftgraph/msgraph-sdk-javascript"
+            }
+          ],
+          "targetUrl": "https://github.com/microsoftgraph/msgraph-sdk-javascript"
+        },
+        {
+          "kind": "text",
+          "text": ""
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor(config: Options, path: string);",
+          "parameters": {
+            "config": {
+              "name": "config",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Options"
+            },
+            "path": {
+              "name": "path",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructs a new instance of the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "GraphRequest"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-http",
+                "exportName": "GraphRequest",
+                "memberName": ""
+              }
+            },
+            {
+              "kind": "text",
+              "text": " class"
+            }
+          ],
+          "remarks": []
+        },
+        "_headers": {
+          "kind": "property",
+          "signature": "_headers:",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{\n        [key: string]: string | number;\n    }",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "_responseType": {
+          "kind": "property",
+          "signature": "_responseType: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "buildFullUrl": {
+          "kind": "method",
+          "signature": "buildFullUrl(): string;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "string",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "config": {
+          "kind": "property",
+          "signature": "config: Options;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Options",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "count": {
+          "kind": "method",
+          "signature": "count(count: boolean): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "count": {
+              "name": "count",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "boolean"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "create": {
+          "kind": "method",
+          "signature": "create(content: any, callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "content": {
+              "name": "content",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "del": {
+          "kind": "method",
+          "signature": "del(callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "delete": {
+          "kind": "method",
+          "signature": "delete(callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "expand": {
+          "kind": "method",
+          "signature": "expand(properties: string | string[]): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "properties": {
+              "name": "properties",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string | string[]"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "filter": {
+          "kind": "method",
+          "signature": "filter(filterStr: string): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "filterStr": {
+              "name": "filterStr",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "get": {
+          "kind": "method",
+          "signature": "get(callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getStream": {
+          "kind": "method",
+          "signature": "getStream(callback: GraphRequestCallback): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "header": {
+          "kind": "method",
+          "signature": "header(headerKey: string, headerValue: string): this;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "this",
+            "description": []
+          },
+          "parameters": {
+            "headerKey": {
+              "name": "headerKey",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "headerValue": {
+              "name": "headerValue",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "headers": {
+          "kind": "method",
+          "signature": "headers(headers: {\n        [key: string]: string | number;\n    }): this;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "this",
+            "description": []
+          },
+          "parameters": {
+            "headers": {
+              "name": "headers",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "{\n        [key: string]: string | number;\n    }"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "orderby": {
+          "kind": "method",
+          "signature": "orderby(properties: string | string[]): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "properties": {
+              "name": "properties",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string | string[]"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "parsePath": {
+          "kind": "method",
+          "signature": "parsePath(rawPath: string): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "rawPath": {
+              "name": "rawPath",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "patch": {
+          "kind": "method",
+          "signature": "patch(content: any, callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "content": {
+              "name": "content",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "post": {
+          "kind": "method",
+          "signature": "post(content: any, callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "content": {
+              "name": "content",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "put": {
+          "kind": "method",
+          "signature": "put(content: any, callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "content": {
+              "name": "content",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "putStream": {
+          "kind": "method",
+          "signature": "putStream(stream: any, callback: GraphRequestCallback): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "stream": {
+              "name": "stream",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "query": {
+          "kind": "method",
+          "signature": "query(queryDictionaryOrString: string | {\n        [key: string]: string | number;\n    }): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "queryDictionaryOrString": {
+              "name": "queryDictionaryOrString",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string | {\n        [key: string]: string | number;\n    }"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "responseType": {
+          "kind": "method",
+          "signature": "responseType(responseType: string): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "responseType": {
+              "name": "responseType",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "select": {
+          "kind": "method",
+          "signature": "select(properties: string | string[]): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "properties": {
+              "name": "properties",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string | string[]"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "skip": {
+          "kind": "method",
+          "signature": "skip(n: number): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "n": {
+              "name": "n",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "number"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "skipToken": {
+          "kind": "method",
+          "signature": "skipToken(token: string): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "token": {
+              "name": "token",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "top": {
+          "kind": "method",
+          "signature": "top(n: number): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "n": {
+              "name": "n",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "number"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "update": {
+          "kind": "method",
+          "signature": "update(content: any, callback?: GraphRequestCallback): Promise<any>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<any>",
+            "description": []
+          },
+          "parameters": {
+            "content": {
+              "name": "content",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            },
+            "callback": {
+              "name": "callback",
+              "description": [],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "GraphRequestCallback"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "urlComponents": {
+          "kind": "property",
+          "signature": "urlComponents: URLComponents;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "URLComponents",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "version": {
+          "kind": "method",
+          "signature": "version(v: string): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "v": {
+              "name": "v",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
           "isOverride": false
         }
       }
@@ -1369,7 +2564,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "fetch": {
           "kind": "method",
@@ -1649,7 +2845,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1715,7 +2912,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "initializeFlags": {
           "kind": "method",
@@ -1869,7 +3067,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "clone": {
           "kind": "method",
@@ -1932,7 +3131,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "json": {
           "kind": "method",
@@ -1971,7 +3171,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ok": {
           "kind": "property",
@@ -1991,7 +3192,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "status": {
           "kind": "property",
@@ -2011,7 +3213,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "statusText": {
           "kind": "property",
@@ -2031,7 +3234,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "method",
@@ -2075,7 +3279,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "url": {
           "kind": "property",
@@ -2095,7 +3300,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2154,11 +3360,12 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
-    "IAadTokenProvider": {
+    "IAadHttpClientOptions": {
       "kind": "interface",
       "extends": "",
       "implements": "",
@@ -2167,28 +3374,214 @@
       "summary": [
         {
           "kind": "text",
-          "text": "This class allows a developer to obtain OAuth2 tokens from Azure AD."
+          "text": "Interface for overriding the default behavior of AadHttpClient."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "configuration": {
+          "kind": "property",
+          "signature": "configuration?: IAadTokenProviderConfiguration;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IAadTokenProviderConfiguration",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "tokenProvider": {
+          "kind": "property",
+          "signature": "tokenProvider?: IAadTokenProvider;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IAadTokenProvider",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDigestCache": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "IDigestCache is an internal service used by SPHttpClient to maintain a cache of request digests for each SPWeb URL. A request digest is a security token that the SharePoint server requires for for any REST write operation, specified via the \"X-RequestDigest\" HTTP header. It is obtained by calling the \"/_api/contextinfo\" REST endpoint, and expires after a server configurable amount of time."
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway, Exchange, Yammer, etc."
-        }
-      ],
-      "remarks": [
+          "text": "For more information, see the MSDN article "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "\"Complete basic operations using SharePoint 2013 REST endpoints\""
+            }
+          ],
+          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj164022.aspx"
+        },
         {
           "kind": "text",
-          "text": "AadTokenProvider is replacing the /_api.SP.OAuth.Token/Acquire endpoint for authentication with ADAL.js. At some point in the near future, when Azure AD v2.0 can support the same scenarios as the original version, we will switch to MSAL."
+          "text": ""
         }
       ],
-      "isBeta": true,
+      "remarks": [],
+      "isBeta": false,
       "isSealed": false,
       "members": {
-        "getToken": {
+        "addDigestToCache": {
           "kind": "method",
-          "signature": "getToken(resourceEndpoint: string, configuration?: IAadTokenProviderConfiguration): Promise<string>;",
+          "signature": "addDigestToCache(webUrl: string, digestValue: string, expirationTimestamp: number): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "webUrl": {
+              "name": "webUrl",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The URL of the SPWeb that the API call will be issued to. This may be a server-relative or absolute URL."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "digestValue": {
+              "name": "digestValue",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The digest value, which is an opaque that must be generated by the SharePoint server. The syntax will look something like this: \"0x0B85...2EAC,29 Jan 2016 01:23:45 -0000\""
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "expirationTimestamp": {
+              "name": "expirationTimestamp",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "A future point in time, as measured by performance.now(), after which the digest value will no longer be valid. NOTE: The expirationTime is a DOMHighResTimeStamp value whose units are fractional milliseconds; for example, to specify an expiration \"5 seconds from right now\", use performance.now()+5000."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "number"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Inserts a specific request digest value into the cache. Normally this is unnecessary because the framework will automatically issue a REST request to fetch the digest when necessary; however, in advanced scenarios addDigestToCache() can be used to avoid the overhead of the REST call."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "clearAllDigests": {
+          "kind": "method",
+          "signature": "clearAllDigests(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Clears all values from the cache."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "clearDigest": {
+          "kind": "method",
+          "signature": "clearDigest(webUrl: string): boolean;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "boolean",
+            "description": [
+              {
+                "kind": "text",
+                "text": "Returns true if a cache entry was found and deleted; false otherwise."
+              }
+            ]
+          },
+          "parameters": {
+            "webUrl": {
+              "name": "webUrl",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The URL of the SPWeb whose digest should be cleared. This may be a server-relative or absolute URL."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Clears the cached digest for the specified SPWeb URL. This operation is useful e.g. if an error indicates that a digest was invalidated prior to its expiration time."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "fetchDigest": {
+          "kind": "method",
+          "signature": "fetchDigest(webUrl: string): Promise<string>;",
           "accessModifier": "",
           "isOptional": false,
           "isStatic": false,
@@ -2197,192 +3590,33 @@
             "description": [
               {
                 "kind": "text",
-                "text": "A promise that will be fullfiled with the token or that will reject with an error message"
+                "text": "A promise that is fulfilled with the digest value."
               }
             ]
           },
           "parameters": {
-            "resourceEndpoint": {
-              "name": "resourceEndpoint",
+            "webUrl": {
+              "name": "webUrl",
               "description": [
                 {
                   "kind": "text",
-                  "text": "the resource for which the token should be obtained"
+                  "text": "The URL of the SPWeb that the API call will be issued to. This may be a server-relative or absolute URL."
                 }
               ],
               "isOptional": false,
               "isSpread": false,
               "type": "string"
-            },
-            "configuration": {
-              "name": "configuration",
-              "description": [],
-              "isOptional": true,
-              "isSpread": false,
-              "type": "IAadTokenProviderConfiguration"
             }
           },
           "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
-              "text": "Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "The OAuth2 token SHOULD NOT be cached by the caller since it is already cached by the method itself."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "An example of a resourceEndpoint would be https://sdfpilot.outlook.com"
+              "text": "Returns a digest string for the specified SPWeb URL. If the cache already contains a usable value, the promise is fulfilled immediately. Otherwise, the promise will be pending and resolve after an HTTP request obtains the digest, which will be added to the cache."
             }
           ],
           "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "tokenAcquisitionEvent": {
-          "kind": "property",
-          "signature": "tokenAcquisitionEvent: SPEvent<ITokenAcquisitionEventArgs>;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "SPEvent<ITokenAcquisitionEventArgs>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Notifies the developer when Token Acquistion requires user action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IAadTokenProviderConfiguration": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Required strings for constructing an AadTokenProvider."
-        }
-      ],
-      "remarks": [],
-      "isBeta": true,
-      "isSealed": false,
-      "members": {
-        "aadInstanceUrl": {
-          "kind": "property",
-          "signature": "aadInstanceUrl: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The sign in page used to authenticate with Azure Active Directory. Trailing slashes are forbidden."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "aadTenantId": {
-          "kind": "property",
-          "signature": "aadTenantId: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The Azure Active Directory's tenant id."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "aadUserId": {
-          "kind": "property",
-          "signature": "aadUserId?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The user's Azure Active Directory id. This will be used to ensure that a valid cached token is for the current user."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "redirectUri": {
-          "kind": "property",
-          "signature": "redirectUri: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The page used to retrieve tokens from Azure Active Directory. This url must be listed in the developer's application redirect uris."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "servicePrincipalId": {
-          "kind": "property",
-          "signature": "servicePrincipalId: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The client ID of the developer's Azure Active Directory application."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -2459,7 +3693,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2539,7 +3774,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2619,7 +3855,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2657,7 +3894,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2737,7 +3975,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "jsonResponse": {
           "kind": "property",
@@ -2783,7 +4022,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2833,7 +4073,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "defaultSameOriginCredentials": {
           "kind": "property",
@@ -2872,7 +4113,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "requestDigest": {
           "kind": "property",
@@ -2904,7 +4146,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2954,7 +4197,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2997,7 +4241,205 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "MSGraphClient": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "MSGraphClient is used to perform REST calls against Microsoft Graph."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the MSGraphClient class."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "The Microsoft Graph JavaScript client library is a lightweight wrapper around the Microsoft Graph API. This class allows developers to start making REST calls to MSGraph without needing to initialize the the MSGraph client library. If a custom configuration is desired, the MSGraphClient api function needs to be provided with that custom configuration for every request."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "For more information: "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "https://github.com/microsoftgraph/msgraph-sdk-javascript"
+            }
+          ],
+          "targetUrl": "https://github.com/microsoftgraph/msgraph-sdk-javascript"
+        },
+        {
+          "kind": "text",
+          "text": ""
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "api": {
+          "kind": "method",
+          "signature": "api(path: string, config?: Options): GraphRequest;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "GraphRequest",
+            "description": []
+          },
+          "parameters": {
+            "path": {
+              "name": "path",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The path for the request to MSGraph."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "config": {
+              "name": "config",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Sets the configuration for this request."
+                }
+              ],
+              "isOptional": true,
+              "isSpread": false,
+              "type": "Options"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "All calls to Microsoft Graph are chained together starting with the api function."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Path supports the following formats: * me * /me * https://graph.microsoft.com/v1.0/me * https://graph.microsoft.com/beta/me * me/events?$filter=startswith(subject, 'ship')"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "The authProvider and baseUrl option should not be used, as they have already been provided by the framework. See the official documentation here: https://github.com/microsoftgraph/msgraph-sdk-javascript"
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
           "isOverride": false
+        }
+      }
+    },
+    "MSGraphClientFactory": {
+      "kind": "class",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Returns a preinitialized version of the MSGraphClient. For more information: "
+        },
+        {
+          "kind": "web-link",
+          "elements": [
+            {
+              "kind": "text",
+              "text": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph"
+            }
+          ],
+          "targetUrl": "https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph"
+        },
+        {
+          "kind": "text",
+          "text": ""
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the MSGraphClientFactory class."
+        },
+        {
+          "kind": "paragraph"
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "getClient": {
+          "kind": "method",
+          "signature": "getClient(): Promise<MSGraphClient>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "Promise<MSGraphClient>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns an instance of the MSGraphClient that communicates with the current tenant's configurable Service Principal."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "serviceKey": {
+          "kind": "property",
+          "signature": "static readonly serviceKey: ServiceKey<MSGraphClientFactory>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": true,
+          "type": "ServiceKey<MSGraphClientFactory>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "The service key for MSGraphClientFactory."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3096,7 +4538,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "v4": {
           "kind": "property",
@@ -3116,7 +4559,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3274,7 +4718,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "fetch": {
           "kind": "method",
@@ -3650,7 +5095,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3703,7 +5149,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "execute": {
           "kind": "method",
@@ -4077,7 +5524,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "initializeFlags": {
           "kind": "method",
@@ -4189,7 +5637,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "initializeFlags": {
           "kind": "method",
@@ -4254,7 +5703,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "jsonResponse": {
           "kind": "property",
@@ -4300,7 +5750,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "overrideWith": {
           "kind": "method",
@@ -4429,7 +5880,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "defaultSameOriginCredentials": {
           "kind": "property",
@@ -4468,7 +5920,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "flags": {
           "kind": "property",
@@ -4483,7 +5936,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "initializeFlags": {
           "kind": "method",
@@ -4561,7 +6015,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4668,7 +6123,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4734,11 +6190,11 @@
       "summary": [
         {
           "kind": "text",
-          "text": "Represents arguments used for raising a token acquisiton failure event."
+          "text": "Arguments for a token acquisition failure event."
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "__constructor": {
@@ -4803,10 +6259,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "redirectUrl": {
           "kind": "property",
@@ -4823,10 +6280,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     }

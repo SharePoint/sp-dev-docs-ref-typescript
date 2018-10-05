@@ -16,7 +16,7 @@
   "exports": {
     "BaseClientSideWebPart": {
       "kind": "class",
-      "extends": "BaseComponent",
+      "extends": "BaseWebPart",
       "implements": "",
       "typeParameters": [
         "TProperties"
@@ -76,26 +76,6 @@
             }
           ]
         },
-        "accessibleTitle": {
-          "kind": "property",
-          "signature": "protected accessibleTitle: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property points to the accessible title of web part made available to screen readers. The base implementation returns that default title in the manifest. Web parts that want to provide more descriptive title containing contextual information need to override this API."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
         "canOpenPopupOnRender": {
           "kind": "property",
           "signature": "protected readonly canOpenPopupOnRender: boolean;",
@@ -119,7 +99,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "clearError": {
           "kind": "method",
@@ -168,7 +149,345 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "domElement": {
+          "kind": "property",
+          "signature": "protected readonly domElement: HTMLElement;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HTMLElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole DOM subtree of the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isRenderAsync": {
+          "kind": "property",
+          "signature": "protected readonly isRenderAsync: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates whether the web part is rendering in Async mode. Default value is false. If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part rendering is complete."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "onDisplayModeChanged": {
+          "kind": "method",
+          "signature": "protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "oldDisplayMode": {
+              "name": "oldDisplayMode",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The old display mode."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DisplayMode"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This event method is called when the display mode of a web part is changed."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The default implementation of this API calls the web part render method to re-render the web part with the new display mode. If a web part developer does not want a full re-render to happen on display mode change, they can override this API and perform specific updates to the web part DOM to switch its display mode."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
           "isOverride": false
+        },
+        "onDispose": {
+          "kind": "method",
+          "signature": "protected onDispose(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be used to refresh the contents of the PropertyPane."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being transitioned out."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "render": {
+          "kind": "method",
+          "signature": "protected abstract render(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API is called to render the web part. There is no base implementation of this API and the web part is required to override this API."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "renderCompleted": {
+          "kind": "method",
+          "signature": "protected renderCompleted(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be called by web parts that perform Async rendering. Those web part are required to override the isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part initiates the IFrame rendering in the render() API but the actual rendering is complete only after the iframe loading completes."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "renderedFromPersistedData": {
+          "kind": "property",
+          "signature": "protected readonly renderedFromPersistedData: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Example: When web part is added for the first time using toolbox then the value is false."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "renderedOnce": {
+          "kind": "property",
+          "signature": "protected readonly renderedOnce: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property indicates whether the web part has been rendered once or not. After the first time rendering, the value of this property is always true. Till a full re-render of the web part happens."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "renderError": {
+          "kind": "method",
+          "signature": "protected renderError(error: Error): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "error": {
+              "name": "error",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "An error object containing the error message to render."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Error"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be used to render an error message in the web part display area. Also logs the error message using the trace logger."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "BaseWebPart": {
+      "kind": "class",
+      "extends": "BaseComponent",
+      "implements": "IPropertyPaneConsumer",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This abstract class implements the UI-agnostic base functionality for a client side web part. The purpose is to allow a common core between 2D and MR WebParts."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor();",
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructor for the BaseWebPart class."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "e.g. constructor() { super(); . . class specific constructor code .. }"
+            }
+          ]
+        },
+        "accessibleTitle": {
+          "kind": "property",
+          "signature": "protected readonly accessibleTitle: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property points to the accessible title of web part made available to screen readers. The base implementation returns that default title in the manifest. Web parts that want to provide more descriptive title containing contextual information need to override this API."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "context": {
+          "kind": "property",
+          "signature": "protected readonly context: BaseWebPartContext;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "BaseWebPartContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dataVersion": {
           "kind": "property",
@@ -188,7 +507,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -208,7 +528,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disableReactivePropertyChanges": {
           "kind": "property",
@@ -247,7 +568,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "displayMode": {
           "kind": "property",
@@ -267,27 +589,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "domElement": {
-          "kind": "property",
-          "signature": "protected readonly domElement: HTMLElement;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "HTMLElement",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole DOM subtree of the web part."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "getPropertyPaneConfiguration": {
           "kind": "method",
@@ -319,26 +622,6 @@
             {
               "kind": "text",
               "text": "See IPropertyPane and other PropertyPane integration wiki documentation for more details."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "isRenderAsync": {
-          "kind": "property",
-          "signature": "protected readonly isRenderAsync: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Indicates whether the web part is rendering in Async mode. Default value is false. If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part rendering is complete."
             }
           ],
           "remarks": [],
@@ -748,9 +1031,9 @@
         },
         "previewImageUrl": {
           "kind": "property",
-          "signature": "protected previewImageUrl: string | undefined;",
+          "signature": "protected readonly previewImageUrl: string | undefined;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": false,
           "type": "string | undefined",
           "deprecatedMessage": [],
@@ -764,7 +1047,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "properties": {
           "kind": "property",
@@ -784,7 +1068,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "propertiesMetadata": {
           "kind": "property",
@@ -809,152 +1094,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "propertyPaneRenderedByWebPart": {
-          "kind": "property",
-          "signature": "protected propertyPaneRenderedByWebPart: boolean;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "render": {
-          "kind": "method",
-          "signature": "protected abstract render(): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This API is called to render the web part. There is no base implementation of this API and the web part is required to override this API."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderCompleted": {
-          "kind": "method",
-          "signature": "protected renderCompleted(): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This API should be called by web parts that perform Async rendering. Those web part are required to override the isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part initiates the IFrame rendering in the render() API but the actual rendering is complete only after the iframe loading completes."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderedFromPersistedData": {
-          "kind": "property",
-          "signature": "protected readonly renderedFromPersistedData: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: When web part is added for the first time using toolbox then the value is false."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderedOnce": {
-          "kind": "property",
-          "signature": "protected readonly renderedOnce: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property indicates whether the web part has been rendered once or not. After the first time rendering, the value of this property is always true. Till a full re-render of the web part happens."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderError": {
-          "kind": "method",
-          "signature": "protected renderError(error: Error): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "error": {
-              "name": "error",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "An error object containing the error message to render."
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "Error"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This API should be used to render an error message in the web part display area. Also logs the error message using the trace logger."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -974,7 +1115,104 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "BaseWebPartContext": {
+      "kind": "class",
+      "extends": "BaseComponentContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Web part context object. This object contains the contextual services available to a web part. e.g. a contextual instance to the http client."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "This base is to be extended by UI-specific WebPart's base."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the BaseWebPartContext class."
+        },
+        {
+          "kind": "paragraph"
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "manifest": {
+          "kind": "property",
+          "signature": "readonly manifest: IClientSideWebPartManifestInstance<any>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IClientSideWebPartManifestInstance<any>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Manifest for the client side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "propertyPane": {
+          "kind": "property",
+          "signature": "readonly propertyPane: IPropertyPaneAccessor;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IPropertyPaneAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Accessor for common web part property pane operations."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "webPartTag": {
+          "kind": "property",
+          "signature": "readonly webPartTag: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Web part tag to be used for logging and telemetry."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1084,7 +1322,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "the webpart container div."
+                  "text": "the web part container div."
                 }
               ],
               "isOptional": false,
@@ -1108,7 +1346,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "timeout to render the loading indicator. Default is 900ms."
+                  "text": "timeout to render the loading indicator. Default is 1500ms."
                 }
               ],
               "isOptional": true,
@@ -1214,7 +1452,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -1234,7 +1473,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1403,7 +1643,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ariaLabel": {
           "kind": "property",
@@ -1423,7 +1664,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "buttonType": {
           "kind": "property",
@@ -1443,7 +1685,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -1463,7 +1706,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -1483,7 +1727,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "icon": {
           "kind": "property",
@@ -1503,7 +1748,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onClick": {
           "kind": "property",
@@ -1523,7 +1769,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -1543,7 +1790,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1586,7 +1834,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -1606,7 +1855,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -1626,7 +1876,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1671,7 +1922,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -1691,7 +1943,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "iconProps": {
           "kind": "property",
@@ -1711,7 +1964,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "imageSize": {
           "kind": "property",
@@ -1731,7 +1985,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "imageSrc": {
           "kind": "property",
@@ -1751,7 +2006,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -1771,7 +2027,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "selectedImageSrc": {
           "kind": "property",
@@ -1791,7 +2048,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -1811,7 +2069,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1849,7 +2108,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1887,7 +2147,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "options": {
           "kind": "property",
@@ -1907,7 +2168,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1945,7 +2207,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "loadingIndicatorDelayTime": {
           "kind": "property",
@@ -1970,7 +2233,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "pages": {
           "kind": "property",
@@ -1990,7 +2254,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "showLoadingIndicator": {
           "kind": "property",
@@ -2022,7 +2287,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2060,7 +2326,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -2108,7 +2375,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onDispose": {
           "kind": "property",
@@ -2128,7 +2396,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onRender": {
           "kind": "property",
@@ -2148,7 +2417,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2186,7 +2456,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2224,7 +2495,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -2244,7 +2516,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -2264,7 +2537,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "type": {
           "kind": "property",
@@ -2284,7 +2558,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2322,7 +2597,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ariaPositionInSet": {
           "kind": "property",
@@ -2342,7 +2618,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ariaSetSize": {
           "kind": "property",
@@ -2362,7 +2639,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "calloutProps": {
           "kind": "property",
@@ -2382,7 +2660,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -2402,7 +2681,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -2422,7 +2702,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "options": {
           "kind": "property",
@@ -2442,7 +2723,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "selectedKey": {
           "kind": "property",
@@ -2462,7 +2744,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2500,7 +2783,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -2520,7 +2804,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -2540,7 +2825,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "errorMessage": {
           "kind": "property",
@@ -2572,7 +2858,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -2592,7 +2879,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onGetErrorMessage": {
           "kind": "property",
@@ -2652,7 +2940,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "placeholder": {
           "kind": "property",
@@ -2672,7 +2961,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusIn": {
           "kind": "property",
@@ -2697,7 +2987,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusOut": {
           "kind": "property",
@@ -2722,7 +3013,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "value": {
           "kind": "property",
@@ -2742,7 +3034,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2787,7 +3080,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "shouldFocus": {
           "kind": "property",
@@ -2812,7 +3106,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "targetProperty": {
           "kind": "property",
@@ -2832,7 +3127,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "type": {
           "kind": "property",
@@ -2852,7 +3148,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2890,7 +3187,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "groupName": {
           "kind": "property",
@@ -2915,7 +3213,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "isCollapsed": {
           "kind": "property",
@@ -2940,7 +3239,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2983,7 +3283,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -3003,7 +3304,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3041,7 +3343,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "href": {
           "kind": "property",
@@ -3061,7 +3364,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "popupWindowProps": {
           "kind": "property",
@@ -3081,7 +3385,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "target": {
           "kind": "property",
@@ -3134,7 +3439,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -3154,7 +3460,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3192,15 +3499,16 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "groups": {
           "kind": "property",
-          "signature": "groups: IPropertyPaneGroup[];",
+          "signature": "groups: (IPropertyPaneGroup | IPropertyPaneConditionalGroup)[];",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
-          "type": "IPropertyPaneGroup[]",
+          "type": "(IPropertyPaneGroup | IPropertyPaneConditionalGroup)[]",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -3212,7 +3520,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "header": {
           "kind": "property",
@@ -3232,7 +3541,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3270,7 +3580,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "image": {
           "kind": "property",
@@ -3290,7 +3601,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3328,7 +3640,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -3348,7 +3661,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -3368,7 +3682,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "max": {
           "kind": "property",
@@ -3388,7 +3703,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "min": {
           "kind": "property",
@@ -3408,7 +3724,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "showValue": {
           "kind": "property",
@@ -3433,7 +3750,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "step": {
           "kind": "property",
@@ -3453,7 +3771,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "value": {
           "kind": "property",
@@ -3480,7 +3799,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3518,7 +3838,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "deferredValidationTime": {
           "kind": "property",
@@ -3543,7 +3864,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -3563,7 +3885,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -3583,7 +3906,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "errorMessage": {
           "kind": "property",
@@ -3615,7 +3939,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -3635,7 +3960,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "logName": {
           "kind": "property",
@@ -3660,7 +3986,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "maxLength": {
           "kind": "property",
@@ -3685,7 +4012,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "multiline": {
           "kind": "property",
@@ -3710,7 +4038,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onGetErrorMessage": {
           "kind": "property",
@@ -3770,7 +4099,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "placeholder": {
           "kind": "property",
@@ -3790,7 +4120,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "resizable": {
           "kind": "property",
@@ -3815,7 +4146,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "rows": {
           "kind": "property",
@@ -3840,7 +4172,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "underlined": {
           "kind": "property",
@@ -3865,7 +4198,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusIn": {
           "kind": "property",
@@ -3890,7 +4224,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusOut": {
           "kind": "property",
@@ -3915,7 +4250,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "value": {
           "kind": "property",
@@ -3935,7 +4271,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3978,7 +4315,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -3998,7 +4336,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -4018,7 +4357,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -4038,7 +4378,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "offAriaLabel": {
           "kind": "property",
@@ -4058,7 +4399,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "offText": {
           "kind": "property",
@@ -4078,7 +4420,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onAriaLabel": {
           "kind": "property",
@@ -4098,7 +4441,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onText": {
           "kind": "property",
@@ -4118,7 +4462,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4168,7 +4513,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "imageSources": {
           "kind": "property",
@@ -4200,7 +4546,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "links": {
           "kind": "property",
@@ -4232,7 +4579,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "searchablePlainTexts": {
           "kind": "property",
@@ -4264,7 +4612,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4314,7 +4663,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataPaths": {
           "kind": "property",
@@ -4341,7 +4691,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataValues": {
           "kind": "property",
@@ -4368,7 +4719,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "properties": {
           "kind": "property",
@@ -4393,7 +4745,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "serverProcessedContent": {
           "kind": "property",
@@ -4413,7 +4766,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4504,7 +4858,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "graphHttpClient": {
           "kind": "property",
@@ -4548,7 +4903,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "httpClient": {
           "kind": "property",
@@ -4592,7 +4948,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "instanceId": {
           "kind": "property",
@@ -4636,7 +4993,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "manifest": {
           "kind": "property",
@@ -4680,7 +5038,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "pageContext": {
           "kind": "property",
@@ -4724,7 +5083,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "propertyPane": {
           "kind": "property",
@@ -4768,7 +5128,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "spHttpClient": {
           "kind": "property",
@@ -4812,7 +5173,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "statusRenderer": {
           "kind": "property",
@@ -4856,7 +5218,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "webPartTag": {
           "kind": "property",
@@ -4900,7 +5263,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4950,7 +5314,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -4975,7 +5340,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataPaths": {
           "kind": "property",
@@ -5002,7 +5368,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataValues": {
           "kind": "property",
@@ -5029,7 +5396,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "id": {
           "kind": "property",
@@ -5054,7 +5422,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "instanceId": {
           "kind": "property",
@@ -5079,7 +5448,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "properties": {
           "kind": "property",
@@ -5104,7 +5474,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "serverProcessedContent": {
           "kind": "property",
@@ -5124,7 +5495,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -5149,7 +5521,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -5249,6 +5622,153 @@
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
+        }
+      }
+    },
+    "IWebPartPropertyMetadata": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This is the structure used for map values in IWebPartPropertiesMetadata"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "isHtmlString": {
+          "kind": "property",
+          "signature": "isHtmlString?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates whether the property should be serialized as HTML."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This flag instructs framework to store the value as HTML, so that SharePoint can perform the following services on it: - normalizing HTML encodings - stripping unsafe HTML tags (i.e. for usage with Element.innerHTML) - search indexing - SharePoint link fix-up"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Only enable this flag for HTML content where these modifications are acceptable. If non-HTML content is provided, SharePoint framework might make modifications to convert it to HTML valid. For plain text content that simply needs to be exposed to the search index (without any rewriting), use the isSearchablePlainText flag instead."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isImageSource": {
+          "kind": "property",
+          "signature": "isImageSource?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform services like link fix-up, search indexing, loading from CDN, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isLink": {
+          "kind": "property",
+          "signature": "isLink?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform services like search indexing, link fix-up, loading from CDN, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isSearchablePlainText": {
+          "kind": "property",
+          "signature": "isSearchablePlainText?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the property contains plain text that should be search-indexed by SharePoint."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This flag instructs the framework to store the property in a representation that supports search indexing. The content will be treated as plain text; SharePoint will not modify the string in any way, and special HTML characters may be stored encoded and appear in search results. If your string contains HTML markup, use the isHtmlString setting instead. Security note: For security reasons, never assign a plain text string to Element.innerHTML."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "shouldNotPersist": {
+          "kind": "property",
+          "signature": "shouldNotPersist?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the framework should persist the property on the server. Use this for properties that are only important in run-time, and do not need to persist on the server. This can reduce the size of the serialized data of the web part and optimize the webpart load time. The property value will be removed from the serialized data sent to the server, but this has no effect on the run-time property bag. The property value will still be available in onBeforeSerialize() method, and the value will not be cleared from the run-time property bag. The initial render of your web part should not depend on the value of the property. Setting a default value for the property can be done in onInit() method."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Note that if the property path refers to a property that has a complex object as the value, the whole object will be removed from the persisted data."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -6117,7 +6637,7 @@
     },
     "WebPartContext": {
       "kind": "class",
-      "extends": "BaseComponentContext",
+      "extends": "BaseWebPartContext",
       "implements": "",
       "typeParameters": [],
       "deprecatedMessage": [],
@@ -6157,47 +6677,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "manifest": {
-          "kind": "property",
-          "signature": "readonly manifest: IClientSideWebPartManifestInstance<any>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "IClientSideWebPartManifestInstance<any>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Manifest for the client side component."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "propertyPane": {
-          "kind": "property",
-          "signature": "readonly propertyPane: IPropertyPaneAccessor;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "IPropertyPaneAccessor",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Accessor for common web part property pane operations."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "statusRenderer": {
           "kind": "property",
@@ -6217,27 +6698,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "webPartTag": {
-          "kind": "property",
-          "signature": "readonly webPartTag: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Web part tag to be used for logging and telemetry."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     }

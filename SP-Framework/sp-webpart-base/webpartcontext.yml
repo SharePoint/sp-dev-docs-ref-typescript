@@ -13,14 +13,11 @@ items:
       - typeScript
     type: class
     extends:
-      - BaseComponentContext
+      - BaseWebPartContext
     package: sp-webpart-base
     children:
       - sp-webpart-base.WebPartContext.domElement
-      - sp-webpart-base.WebPartContext.manifest
-      - sp-webpart-base.WebPartContext.propertyPane
       - sp-webpart-base.WebPartContext.statusRenderer
-      - sp-webpart-base.WebPartContext.webPartTag
   - uid: sp-webpart-base.WebPartContext.domElement
     summary: Reference to the DOM element that hosts this client side component.
     name: domElement
@@ -33,30 +30,6 @@ items:
       return:
         type:
           - HTMLElement
-  - uid: sp-webpart-base.WebPartContext.manifest
-    summary: Manifest for the client side component.
-    name: manifest
-    fullName: sp-webpart-base.WebPartContext.manifest
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
-      return:
-        type:
-          - IClientSideWebPartManifestInstance<any>
-  - uid: sp-webpart-base.WebPartContext.propertyPane
-    summary: Accessor for common web part property pane operations.
-    name: propertyPane
-    fullName: sp-webpart-base.WebPartContext.propertyPane
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly propertyPane: IPropertyPaneAccessor;'
-      return:
-        type:
-          - IPropertyPaneAccessor
   - uid: sp-webpart-base.WebPartContext.statusRenderer
     summary: Web part status renderer.
     name: statusRenderer
@@ -69,15 +42,3 @@ items:
       return:
         type:
           - IClientSideWebPartStatusRenderer
-  - uid: sp-webpart-base.WebPartContext.webPartTag
-    summary: Web part tag to be used for logging and telemetry.
-    name: webPartTag
-    fullName: sp-webpart-base.WebPartContext.webPartTag
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly webPartTag: string;'
-      return:
-        type:
-          - string

@@ -70,7 +70,7 @@
           "text": "Extend this class to create dialogs for SharePoint Framework. By following the guidelines in implementation, the framework can ensure that the dialogs are shown in a user-friendly manner. While the content of the dialog is controlled by this class by implementing the render method, the framework can decide when to show the dialog and how to render the overlay and modal. The application on the page can also have control on allowing dialogs to show. Refer to the documentation of the individual methods and properties to learn more about how to extend and use this class."
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "__constructor": {
@@ -128,7 +128,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -174,10 +174,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "isHidden": {
           "kind": "property",
@@ -194,10 +195,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "isOpen": {
           "kind": "property",
@@ -214,10 +216,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "isSecondary": {
           "kind": "property",
@@ -234,10 +237,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onAfterClose": {
           "kind": "method",
@@ -258,7 +262,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -292,7 +296,7 @@
               "text": "All resource allocations in onBeforeOpen() should be properly disposed in onAfterClose() to a avoid memory leak."
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -321,18 +325,18 @@
               "text": "The render method is called once after the modal element is created and opened. It is recommended to use onBeforeOpen() for doing non-UI preperations for your rendering that might take a long time. This will ensure that the framework can show a friendly UI such as a spinner to let the user know that the dialog is being prepared. If you choose to do your initialization or other costly operations inside render method, make sure to have a friendly UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which is a bad user experience practice."
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
         },
         "secondaryDialogProvider": {
           "kind": "property",
-          "signature": "readonly secondaryDialogProvider: SecondaryDialogProvider | undefined;",
+          "signature": "readonly secondaryDialogProvider: ISecondaryDialogProvider | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
-          "type": "SecondaryDialogProvider | undefined",
+          "type": "ISecondaryDialogProvider | undefined",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -346,10 +350,11 @@
               "text": "Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active."
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "show": {
           "kind": "method",
@@ -407,7 +412,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -427,7 +432,7 @@
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "alert": {
@@ -474,7 +479,7 @@
               "text": "There might be a delay until the dialog is approved and shown by the application, for example, if there is another dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The promise rejects if the application rejects the request for any reason."
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -528,7 +533,7 @@
               "text": "There might be a delay until the dialog is approved and shown by the application, for example, if there is another dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The promise rejects if the application rejects the request for any reason."
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -548,7 +553,7 @@
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false
     },
     "IDialogConfiguration": {
@@ -564,7 +569,7 @@
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "isBlocking": {
@@ -582,10 +587,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -602,7 +608,7 @@
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "confirmOpen": {
@@ -625,10 +631,11 @@
               "text": "Provide this callback if there is a case when you want to abort showing the dialog before it's approved by the framework. For example, you can check if a long time has passed since the request was made or the the component requesting the dialog is disposed and you don't want to show the dialog anymore. It is important to keep this callback lightweight so the framework can resolve it quickly and the user interface does not have to wait a long time for it."
             }
           ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -645,7 +652,7 @@
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "defaultValue": {
@@ -663,15 +670,16 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
-    "SecondaryDialogProvider": {
-      "kind": "class",
+    "ISecondaryDialogProvider": {
+      "kind": "interface",
       "extends": "",
       "implements": "",
       "typeParameters": [],
@@ -679,7 +687,7 @@
       "summary": [
         {
           "kind": "text",
-          "text": "This class handles calls to show a secondary dialog. It's only available by calling this.secondaryManagerProvider inside a dialog."
+          "text": "This interface handles calls to show a secondary dialog. It's only available by calling this.secondaryManagerProvider inside a dialog."
         }
       ],
       "remarks": [
@@ -714,7 +722,7 @@
           "text": " for how to use this."
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "alert": {
@@ -794,7 +802,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -876,7 +884,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -958,7 +966,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false

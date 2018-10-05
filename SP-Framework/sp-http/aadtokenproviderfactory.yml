@@ -1,8 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-http.AadTokenProviderFactory
-    summary: The will return a preinitialized version of the AadTokenProviderFactory.
-    isPreview: true
+    summary: Returns a preinitialized version of the AadTokenProviderFactory.
     name: AadTokenProviderFactory
     fullName: sp-http.AadTokenProviderFactory
     langs:
@@ -10,20 +9,32 @@ items:
     type: class
     package: sp-http
     children:
-      - sp-http.AadTokenProviderFactory.getExtendedProvider
-  - uid: sp-http.AadTokenProviderFactory.getExtendedProvider
+      - sp-http.AadTokenProviderFactory.getTokenProvider
+      - sp-http.AadTokenProviderFactory.serviceKey
+  - uid: sp-http.AadTokenProviderFactory.getTokenProvider
     summary: >-
       Returns an instance of the AadTokenProvider that communicates with the current tenant's configurable Service
       Principal.
-    isPreview: true
-    name: getExtendedProvider()
-    fullName: sp-http.AadTokenProviderFactory.getExtendedProvider
+    name: getTokenProvider()
+    fullName: sp-http.AadTokenProviderFactory.getTokenProvider
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'getExtendedProvider(): IAadTokenProvider;'
+      content: 'getTokenProvider(): Promise<AadTokenProvider>;'
       return:
         type:
-          - IAadTokenProvider
+          - Promise<AadTokenProvider>
         description: ''
+  - uid: sp-http.AadTokenProviderFactory.serviceKey
+    summary: The service key for AadTokenProviderFactory.
+    name: serviceKey
+    fullName: sp-http.AadTokenProviderFactory.serviceKey
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'static readonly serviceKey: ServiceKey<AadTokenProviderFactory>;'
+      return:
+        type:
+          - ServiceKey<AadTokenProviderFactory>
