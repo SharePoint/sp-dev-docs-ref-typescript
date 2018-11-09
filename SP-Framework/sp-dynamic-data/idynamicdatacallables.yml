@@ -5,7 +5,7 @@ items:
       Interface for components to implement in order to be dynamic data sources. This can be implemented as an object
       with state, or a set of loose functions that returns the data.
     name: IDynamicDataCallables
-    fullName: sp-dynamic-data.IDynamicDataCallables
+    fullName: IDynamicDataCallables
     langs:
       - typeScript
     type: interface
@@ -25,7 +25,7 @@ items:
       If this api is not defined or returns an empty array, then no consumer will be able to talk to this source.
     isPreview: true
     name: allowedEvents()
-    fullName: sp-dynamic-data.IDynamicDataCallables.allowedEvents
+    fullName: allowedEvents
     langs:
       - typeScript
     type: method
@@ -40,7 +40,7 @@ items:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined.
     name: getAnnotatedPropertyValue(propertyId)
-    fullName: sp-dynamic-data.IDynamicDataCallables.getAnnotatedPropertyValue
+    fullName: getAnnotatedPropertyValue
     langs:
       - typeScript
     type: method
@@ -58,7 +58,7 @@ items:
   - uid: sp-dynamic-data.IDynamicDataCallables.getPropertyDefinitions
     summary: Returns all the property definitions that the DataSource will provide.
     name: getPropertyDefinitions()
-    fullName: sp-dynamic-data.IDynamicDataCallables.getPropertyDefinitions
+    fullName: getPropertyDefinitions
     langs:
       - typeScript
     type: method
@@ -72,7 +72,7 @@ items:
     summary: 'Given a property id, returns the value of the property.'
     remarks: 'It is assumed that when this function returns an array, it is homogeneous.'
     name: getPropertyValue(propertyId)
-    fullName: sp-dynamic-data.IDynamicDataCallables.getPropertyValue
+    fullName: getPropertyValue
     langs:
       - typeScript
     type: method
@@ -96,7 +96,7 @@ items:
       Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
     isPreview: true
     name: 'sendEvent(eventName, data)'
-    fullName: sp-dynamic-data.IDynamicDataCallables.sendEvent
+    fullName: sendEvent
     langs:
       - typeScript
     type: method

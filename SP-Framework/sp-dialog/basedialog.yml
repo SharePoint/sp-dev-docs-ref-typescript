@@ -12,7 +12,7 @@ items:
       show. Refer to the documentation of the individual methods and properties to learn more about how to extend and
       use this class.
     name: BaseDialog
-    fullName: sp-dialog.BaseDialog
+    fullName: BaseDialog
     langs:
       - typeScript
     type: class
@@ -57,7 +57,7 @@ items:
 
       ```
     name: constructor(config)
-    fullName: sp-dialog.BaseDialog.constructor
+    fullName: constructor
     langs:
       - typeScript
     type: constructor
@@ -74,7 +74,7 @@ items:
       This will void the permission to show for this dialog. Every dialog should have a mechanism to eventually close to
       avoid blocking the user interface. If called on an inactive dialog it will abort the request to show.
     name: close()
-    fullName: sp-dialog.BaseDialog.close
+    fullName: close
     langs:
       - typeScript
     type: method
@@ -88,7 +88,7 @@ items:
     summary: Use this property to access the container element provided by the framework for rendering.
     remarks: 'See [BaseDialog.render](xref:sp-dialog.BaseDialog.render) for more information on rendering.'
     name: domElement
-    fullName: sp-dialog.BaseDialog.domElement
+    fullName: domElement
     langs:
       - typeScript
     type: property
@@ -103,7 +103,7 @@ items:
       This happens when the dialog goes behind a secondary dialog. Note that this is different from closed, because the
       dialog still has the permission to show and will eventually unhide. This returns false if the dialog is closed.
     name: isHidden
-    fullName: sp-dialog.BaseDialog.isHidden
+    fullName: isHidden
     langs:
       - typeScript
     type: property
@@ -117,7 +117,7 @@ items:
       If the dialog is visually open. This returns true during onBeforeOpen() because there is a visual component. It
       returns false when the dialog is hidden.
     name: isOpen
-    fullName: sp-dialog.BaseDialog.isOpen
+    fullName: isOpen
     langs:
       - typeScript
     type: property
@@ -129,7 +129,7 @@ items:
   - uid: sp-dialog.BaseDialog.isSecondary
     summary: If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.
     name: isSecondary
-    fullName: sp-dialog.BaseDialog.isSecondary
+    fullName: isSecondary
     langs:
       - typeScript
     type: property
@@ -146,7 +146,7 @@ items:
       that should reallocate its own resources. If there are any resources that you would like to keep for multiple
       lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor.
     name: onAfterClose()
-    fullName: sp-dialog.BaseDialog.onAfterClose
+    fullName: onAfterClose
     langs:
       - typeScript
     type: method
@@ -162,7 +162,7 @@ items:
       loading indicator is displayed during the lifetime of this method.
     remarks: All resource allocations in onBeforeOpen() should be properly disposed in `onAfterClose()` to a avoid memory leak.
     name: onBeforeOpen()
-    fullName: sp-dialog.BaseDialog.onBeforeOpen
+    fullName: onBeforeOpen
     langs:
       - typeScript
     type: method
@@ -189,7 +189,7 @@ items:
       UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which
       is a bad user experience practice.
     name: render()
-    fullName: sp-dialog.BaseDialog.render
+    fullName: render
     langs:
       - typeScript
     type: method
@@ -208,7 +208,7 @@ items:
       a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a
       secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active.
     name: secondaryDialogProvider
-    fullName: sp-dialog.BaseDialog.secondaryDialogProvider
+    fullName: secondaryDialogProvider
     langs:
       - typeScript
     type: property
@@ -220,7 +220,7 @@ items:
   - uid: sp-dialog.BaseDialog.show
     summary: Request the framework to show this dialog.
     name: show(options)
-    fullName: sp-dialog.BaseDialog.show
+    fullName: show
     langs:
       - typeScript
     type: method
