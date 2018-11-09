@@ -21,13 +21,17 @@ items:
       [PlaceholderProvider.changedEvent](xref:sp-application-base.PlaceholderProvider.changedEvent) event to discover
       when new placeholders appear.
     name: PlaceholderProvider
-    fullName: sp-application-base.PlaceholderProvider
+    fullName: PlaceholderProvider
     langs:
       - typeScript
     type: class
+    implements:
+      - IDisposable
     package: sp-application-base
     children:
       - sp-application-base.PlaceholderProvider.changedEvent
+      - sp-application-base.PlaceholderProvider.dispose
+      - sp-application-base.PlaceholderProvider.isDisposed
       - sp-application-base.PlaceholderProvider.placeholderNames
       - sp-application-base.PlaceholderProvider.tryCreateContent
   - uid: sp-application-base.PlaceholderProvider.changedEvent
@@ -37,19 +41,42 @@ items:
       placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
       they appear.
     name: changedEvent
-    fullName: sp-application-base.PlaceholderProvider.changedEvent
+    fullName: changedEvent
     langs:
       - typeScript
-    type: property
+    type: event
     syntax:
       content: 'readonly changedEvent: SPEvent<SPEventArgs>;'
       return:
         type:
           - SPEvent<SPEventArgs>
+  - uid: sp-application-base.PlaceholderProvider.dispose
+    name: dispose()
+    fullName: dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-application-base.PlaceholderProvider.isDisposed
+    name: isDisposed
+    fullName: isDisposed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
   - uid: sp-application-base.PlaceholderProvider.placeholderNames
     summary: Returns the names of the currently available placeholders.
     name: placeholderNames
-    fullName: sp-application-base.PlaceholderProvider.placeholderNames
+    fullName: placeholderNames
     langs:
       - typeScript
     type: property
@@ -67,7 +94,7 @@ items:
       expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering
       anything, or by choosing an alternative placeholder.
     name: 'tryCreateContent(name, options)'
-    fullName: sp-application-base.PlaceholderProvider.tryCreateContent
+    fullName: tryCreateContent
     langs:
       - typeScript
     type: method

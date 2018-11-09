@@ -29,17 +29,36 @@
       "remarks": [
         {
           "kind": "text",
-          "text": "The reference string is of the form <sourceId>:<property> or <sourceId>:<property>:<propertyPath>"
+          "text": "The reference string is of the form "
+        },
+        {
+          "kind": "code",
+          "text": "<sourceId>:<property>",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": " or "
+        },
+        {
+          "kind": "code",
+          "text": "<sourceId>:<property>:<propertyPath>",
+          "highlighter": "plain"
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "Examples of references are: PageContext:user WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName"
+          "text": "Examples of references are: "
+        },
+        {
+          "kind": "code",
+          "text": "WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName",
+          "highlighter": "plain"
         }
       ],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "__constructor": {
@@ -97,10 +116,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "propertyPath": {
           "kind": "property",
@@ -117,10 +137,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "reference": {
           "kind": "property",
@@ -137,10 +158,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "sourceId": {
           "kind": "property",
@@ -157,14 +179,75 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
-    "IDynamicDataController": {
+    "IDynamicDataAnnotatedPropertyValue": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Describes the value and the structure of a property value. It contains sample value of the property and the metadata describing the structure of that value."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "metadata": {
+          "kind": "property",
+          "signature": "metadata?: IDynamicDataPropertyValueMetadataCollection;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IDynamicDataPropertyValueMetadataCollection",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Metadata describing the sample value of the property."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "sampleValue": {
+          "kind": "property",
+          "signature": "sampleValue: any;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "any",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Sample value of a property"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataCallables": {
       "kind": "interface",
       "extends": "",
       "implements": "",
@@ -177,9 +260,573 @@
         }
       ],
       "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "allowedEvents": {
+          "kind": "method",
+          "signature": "allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;",
+          "accessModifier": "",
+          "isOptional": true,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ReadonlyArray<IDynamicDataEventDefinition>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns list of allowed events on the dynamic data source."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "When this function returns a non-empty result, then source must define 'sendEvent' api."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "If this api is not defined or returns an empty array, then no consumer will be able to talk to this source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getAnnotatedPropertyValue": {
+          "kind": "method",
+          "signature": "getAnnotatedPropertyValue?(propertyId: string): IDynamicDataAnnotatedPropertyValue | undefined;",
+          "accessModifier": "",
+          "isOptional": true,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IDynamicDataAnnotatedPropertyValue | undefined",
+            "description": []
+          },
+          "parameters": {
+            "propertyId": {
+              "name": "propertyId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "One of the property ids exposed from the dynamic data source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getPropertyDefinitions": {
+          "kind": "method",
+          "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ReadonlyArray<IDynamicDataPropertyDefinition>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns all the property definitions that the DataSource will provide."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getPropertyValue": {
+          "kind": "method",
+          "signature": "getPropertyValue(propertyId: string): any;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "any",
+            "description": []
+          },
+          "parameters": {
+            "propertyId": {
+              "name": "propertyId",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Given a property id, returns the value of the property."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "It is assumed that when this function returns an array, it is homogeneous."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "sendEvent": {
+          "kind": "method",
+          "signature": "sendEvent?(eventName: string, data: any): void;",
+          "accessModifier": "",
+          "isOptional": true,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "eventName": {
+              "name": "eventName",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "A case-sensitive string representing the name of the event."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "data": {
+              "name": "data",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Data to be sent to the dynamic data source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "If defined, enables the consumer to send data to the associated dynamic data source. Then source can act accordingly."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IDynamicDataEventDefinition": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Definition of an event which a dynamic data source accepts."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "It includes the name of the event and description to be seen and used by end users."
+        }
+      ],
+      "remarks": [],
       "isBeta": true,
       "isSealed": false,
       "members": {
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized description of the event."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "name": {
+          "kind": "property",
+          "signature": "name: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Event name"
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataPropertyDefinition": {
+      "kind": "interface",
+      "extends": "IDynamicDataPropertyMetadata",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly, localized title and description to be seen and used by end users."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "id": {
+          "kind": "property",
+          "signature": "id: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Id of the property. This can only contains letters, numbers, dashes and underscores. Example: \"myFiles\" or \"time_in_24-hour_clock\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataPropertyMetadata": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Metadata of a property"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "description": {
+          "kind": "property",
+          "signature": "description?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized description of the property. Example: \"Contains a list of ids with the files of the current user\""
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "title": {
+          "kind": "property",
+          "signature": "title: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized title of the property. Example: \"My files\" / \"Mis archivos\" (depending of current language)"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataPropertyValueMetadata": {
+      "kind": "interface",
+      "extends": "IDynamicDataPropertyMetadata",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Metadata describing the sample value of the property."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "metadata": {
+          "kind": "property",
+          "signature": "metadata?: IDynamicDataPropertyValueMetadataCollection;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IDynamicDataPropertyValueMetadataCollection",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Metadata describing the sample value of the property."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataPropertyValueMetadataCollection": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "A collection of key value pairs, where 'key' is one of the keys from the property value object and 'value' is the metadata describing the 'key' and its value."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "Important note:"
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "1. Key in the metadata should match the key in the sample value object."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "2. For arrays, metadataCollection would be same as describing the element of the array, only once. See below example for more details."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "For example:"
+        },
+        {
+          "kind": "code-box",
+          "text": "case 1: With simple values\n Sample Property Id value - {\n   firstName: 'Bob',\n   lastName: 'Smith',\n   age: 30\n }\n\n MetadataCollection for the above object would be -\n metadataCollection: {\n   'firstName': { title: 'First Name' },\n   'lastName': { title: 'Last Name' },\n   'age': { title: 'Age' }\n }\n\nCase 2: With complex values\n Sample Property Id value - {\n   person: {\n     firstName: 'Bob',\n     lastName: 'Smith',\n     age: 30\n   },\n   visitedLocations: [\n     {\n       city: 'Redmond',\n       state: 'WA'\n     },\n     {\n       city: 'New York City',\n       state: 'NY'\n     }\n   ]\n }\n\n MetadataCollection for the above object would be -\n metadataCollection: {\n   'person': {\n     title: 'Person',\n     metadataCollection: {\n       'firstName': { title: 'First Name' },\n       'lastName': { title: 'Last Name' },\n       'age': { title: 'Age' }\n     }\n   },\n   'vistedLocations': {\n     title: 'Visted Locations',\n     metadataCollection: {\n       'city': { title: 'City' },\n       'state': { title: 'State' }\n     }\n   }\n }\n",
+          "highlighter": "plain"
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "__index": {
+          "kind": "method",
+          "signature": "[key: string]: IDynamicDataPropertyValueMetadata;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IDynamicDataPropertyValueMetadata",
+            "description": []
+          },
+          "parameters": {
+            "key": {
+              "name": "key",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Key-Value pair where 'key' is one of the keys from the property value object and 'value' is the metadata describing the 'key' and its value."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "IDynamicDataSource": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API to get the data."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "allowedEvents": {
+          "kind": "method",
+          "signature": "allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;",
+          "accessModifier": "",
+          "isOptional": true,
+          "isStatic": false,
+          "returnValue": {
+            "type": "ReadonlyArray<IDynamicDataEventDefinition>",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Returns list of allowed events on the dynamic data source. When this api returns a non-empty result, then source must define 'sendData' api."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "If this api is not defined or returns an empty map, then no consumer will be able to talk to this source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "getAnnotatedPropertyValue": {
+          "kind": "method",
+          "signature": "getAnnotatedPropertyValue(propertyId: string): IDynamicDataAnnotatedPropertyValue;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "IDynamicDataAnnotatedPropertyValue",
+            "description": []
+          },
+          "parameters": {
+            "propertyId": {
+              "name": "propertyId",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "One of the property ids exposed from the dynamic data source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls back to whatever 'getPropertyValue' as the sample value and metadata would be undefined."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
         "getPropertyDefinitions": {
           "kind": "method",
           "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
@@ -199,7 +846,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -231,176 +878,7 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IDynamicDataPropertyDefinition": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly, localized title and description to be seen and used by end users."
-        }
-      ],
-      "remarks": [],
-      "isBeta": true,
-      "isSealed": false,
-      "members": {
-        "description": {
-          "kind": "property",
-          "signature": "description?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized description of the property. Example: \"Contains a list of ids with the files of the current user\""
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "id": {
-          "kind": "property",
-          "signature": "id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the property. This can only contains letters, numbers, dashes and underscores."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "The regular expression used to validate the constraints is /^[a-zA-Z0-9\\-_]+$/ Example: \"myFiles\""
-            }
-          ],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "title": {
-          "kind": "property",
-          "signature": "title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized title of the property. Example: \"My files\" / \"Mis archivos\" (depending of current language)"
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IDynamicDataSource": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API to get the data."
-        }
-      ],
-      "remarks": [],
-      "isBeta": true,
-      "isSealed": false,
-      "members": {
-        "getPropertyDefinitions": {
-          "kind": "method",
-          "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ReadonlyArray<IDynamicDataPropertyDefinition>",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the definitions for all the properties exposed by the source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "getPropertyValue": {
-          "kind": "method",
-          "signature": "getPropertyValue(propertyId: string): any;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "any",
-            "description": []
-          },
-          "parameters": {
-            "propertyId": {
-              "name": "propertyId",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "For a given property id, returns the value of the property. Throws an error if the property id doesn't exist in the source."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "It returns a read-only copy of the property value, so modifying its value will not impact on the value in the data source."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Property values are JSON-serializable objects, so there are no functions that can be called inside."
-            }
-          ],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
@@ -420,10 +898,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "metadata": {
           "kind": "property",
@@ -437,6 +916,63 @@
             {
               "kind": "text",
               "text": "Metadata of the Dynamic Data Source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "sendEvent": {
+          "kind": "method",
+          "signature": "sendEvent?(eventName: string, data: any): void;",
+          "accessModifier": "",
+          "isOptional": true,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "eventName": {
+              "name": "eventName",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "A case-sensitive string representing the name of the event."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "string"
+            },
+            "data": {
+              "name": "data",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "Data to be sent to the dynamic data source."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "any"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "If defined, enables the consumer to send data to the associated dynamic data source. Then source can act accordingly."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source."
             }
           ],
           "remarks": [],
@@ -460,7 +996,7 @@
         }
       ],
       "remarks": [],
-      "isBeta": true,
+      "isBeta": false,
       "isSealed": false,
       "members": {
         "alias": {
@@ -478,10 +1014,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "componentId": {
           "kind": "property",
@@ -498,10 +1035,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -518,10 +1056,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "instanceId": {
           "kind": "property",
@@ -538,10 +1077,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -558,10 +1098,11 @@
             }
           ],
           "remarks": [],
-          "isBeta": true,
+          "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     }

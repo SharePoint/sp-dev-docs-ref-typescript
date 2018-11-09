@@ -1,10 +1,12 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
-    summary: PropertyPaneDynamicData component props.
+    summary: '`PropertyPaneDynamicData` component props.'
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: IPropertyPaneDynamicTextFieldProps
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
+    fullName: IPropertyPaneDynamicTextFieldProps
     langs:
       - typeScript
     type: interface
@@ -21,10 +23,12 @@ items:
       - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusOut
       - sp-webpart-base.IPropertyPaneDynamicTextFieldProps.value
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.ariaLabel
-    summary: 'Aria Label for text field, if any.'
+    summary: 'ARIA Label for text field, if any.'
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: ariaLabel
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.ariaLabel
+    fullName: ariaLabel
     langs:
       - typeScript
     type: property
@@ -35,9 +39,11 @@ items:
           - string
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.description
     summary: The text field input description.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: description
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.description
+    fullName: description
     langs:
       - typeScript
     type: property
@@ -48,9 +54,11 @@ items:
           - string
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.disabled
     summary: Whether the property pane text field is enabled or not.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: disabled
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.disabled
+    fullName: disabled
     langs:
       - typeScript
     type: property
@@ -62,14 +70,16 @@ items:
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.errorMessage
     summary: 'If set, this will be displayed as an error message.'
     remarks: >-
-      When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the
+      When `onGetErrorMessage` returns empty string, if this property has a value set then this will be displayed as the
       error message.
 
 
-      So, make sure to set this only if you want to see an error message displayed for the text field.
+      Make sure to set this only if you want to see an error message displayed for the text field.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: errorMessage
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.errorMessage
+    fullName: errorMessage
     langs:
       - typeScript
     type: property
@@ -80,9 +90,11 @@ items:
           - string
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.label
     summary: Label for the text field.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: label
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.label
+    fullName: label
     langs:
       - typeScript
     type: property
@@ -92,7 +104,7 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.onGetErrorMessage
-    summary: The method is used to get the validation error message and determine whether the input value is valid or not.
+    summary: This method is used to get the validation error message and determine whether the input value is valid or not.
     remarks: |-
       When it returns string:
 
@@ -100,14 +112,16 @@ items:
 
       - If invalid, it returns the error message string and an error message is displayed below the text field.
 
-      When it returns Promise&lt;string&gt;:
+      When it returns `Promise<string>`<!-- -->:
 
       - The resolved value is display as error message.
 
       - The rejected, the value is thrown away.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: onGetErrorMessage
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.onGetErrorMessage
+    fullName: onGetErrorMessage
     langs:
       - typeScript
     type: property
@@ -117,10 +131,12 @@ items:
         type:
           - '(value: string) => string | Promise<string>'
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.placeholder
-    summary: placeholder text to be displayed in the text field.
+    summary: Placeholder text to be displayed in the text field.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: placeholder
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.placeholder
+    fullName: placeholder
     langs:
       - typeScript
     type: property
@@ -132,9 +148,11 @@ items:
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusIn
     summary: Run validation when the PropertyPaneTextField is focused.
     remarks: The default value is false.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: validateOnFocusIn
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusIn
+    fullName: validateOnFocusIn
     langs:
       - typeScript
     type: property
@@ -144,11 +162,13 @@ items:
         type:
           - boolean
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusOut
-    summary: Run validation when the PropertyPaneTextField is out of focus or on blur.
+    summary: Run validation when the `PropertyPaneTextField` is out of focus or on blur.
     remarks: The default value is false.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: validateOnFocusOut
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.validateOnFocusOut
+    fullName: validateOnFocusOut
     langs:
       - typeScript
     type: property
@@ -161,9 +181,11 @@ items:
     summary: >-
       Value to be displayed in the text field when the value of the targetProperty in the manifest's property bag is
       empty or contains null value.
+    deprecated:
+      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
     isPreview: true
     name: value
-    fullName: sp-webpart-base.IPropertyPaneDynamicTextFieldProps.value
+    fullName: value
     langs:
       - typeScript
     type: property

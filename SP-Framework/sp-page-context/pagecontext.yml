@@ -1,13 +1,14 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-page-context.PageContext
-    summary: >-
+    summary: The SharePoint page context object.
+    remarks: >-
       The page context provides standard definitions for common SharePoint objects that need to be shared between the
       client-side application, web parts, and other components. Typically the data is fetched via REST queries when
       navigating to a new page, but it can also be preloaded by the web server, or filled from a custom application
       cache.
     name: PageContext
-    fullName: sp-page-context.PageContext
+    fullName: PageContext
     langs:
       - typeScript
     type: class
@@ -27,7 +28,7 @@ items:
   - uid: sp-page-context.PageContext.constructor
     summary: 'Constructs a new instance of the [PageContext](xref:sp-page-context.PageContext) class'
     name: constructor(serviceScope)
-    fullName: sp-page-context.PageContext.constructor
+    fullName: constructor
     langs:
       - typeScript
     type: constructor
@@ -43,7 +44,7 @@ items:
       Contextual information for communicating with Azure Active Directory. If the current page doesn't have an
       associated Azure Active Directory tenant, this property will be undefined.
     name: aadInfo
-    fullName: sp-page-context.PageContext.aadInfo
+    fullName: aadInfo
     langs:
       - typeScript
     type: property
@@ -55,9 +56,9 @@ items:
   - uid: sp-page-context.PageContext.cultureInfo
     summary: >-
       It provides culture info for the current user of the application. This class is primarily used with the
-      PageContext class.
+      `PageContext` class.
     name: cultureInfo
-    fullName: sp-page-context.PageContext.cultureInfo
+    fullName: cultureInfo
     langs:
       - typeScript
     type: property
@@ -67,9 +68,9 @@ items:
         type:
           - CultureInfo
   - uid: sp-page-context.PageContext.isInitialized
-    summary: Returns whether the PageContext has been initialized.
+    summary: Returns whether the `PageContext` has been initialized.
     name: isInitialized
-    fullName: sp-page-context.PageContext.isInitialized
+    fullName: isInitialized
     langs:
       - typeScript
     type: property
@@ -82,17 +83,17 @@ items:
     summary: An object providing classic SharePoint properties that may be required by certain legacy scripts.
     remarks: >-
       This property is provided to facilitate migration of legacy code. It returns a JavaScript object whose contents
-      are similar to the \_spPageContextInfo window variable from classic pages. The contents of this variable may
+      are similar to the `_spPageContextInfo` window variable from classic pages. The contents of this variable may
       change in future releases of SharePoint. For this reason, new projects are encouraged to use the SharePoint
       Framework TypeScript APIs instead, since they are fully documented and provide reliable backwards compatibility
       guarantees.
 
 
-      NOTE: If certain functionality is exposed in the legacyPageContext but does not seem to have a proper TypeScript
+      NOTE: If certain functionality is exposed in the `legacyPageContext` but does not seem to have a proper TypeScript
       API, please file an issue on GitHub. The intention is that no modern application should need to rely on the
-      legacyPageContext object.
+      `legacyPageContext` object.
     name: legacyPageContext
-    fullName: sp-page-context.PageContext.legacyPageContext
+    fullName: legacyPageContext
     langs:
       - typeScript
     type: property
@@ -106,7 +107,7 @@ items:
       Contextual information for the SharePoint list that is hosting the page. If there is no list associated to the
       current page, this property will be undefined.
     name: list
-    fullName: sp-page-context.PageContext.list
+    fullName: list
     langs:
       - typeScript
     type: property
@@ -120,7 +121,7 @@ items:
       Contextual information for the SharePoint list item that is hosting the page. If there is no list item associated
       to the current page, this property will be undefined.
     name: listItem
-    fullName: sp-page-context.PageContext.listItem
+    fullName: listItem
     langs:
       - typeScript
     type: property
@@ -132,7 +133,7 @@ items:
   - uid: sp-page-context.PageContext.serviceKey
     summary: The service key for PageContext.
     name: serviceKey
-    fullName: sp-page-context.PageContext.serviceKey
+    fullName: serviceKey
     langs:
       - typeScript
     type: property
@@ -142,9 +143,9 @@ items:
         type:
           - ServiceKey<PageContext>
   - uid: sp-page-context.PageContext.site
-    summary: Contextual information for the SharePoint site collection ("site") that is hosting the page.
+    summary: Contextual information for the SharePoint site collection ("SPSite") that is hosting the page.
     name: site
-    fullName: sp-page-context.PageContext.site
+    fullName: site
     langs:
       - typeScript
     type: property
@@ -156,9 +157,9 @@ items:
   - uid: sp-page-context.PageContext.user
     summary: >-
       It provides contextual information for the SharePoint user that is accessing the page. This class is primarily
-      used with the PageContext class.
+      used with the `PageContext` class.
     name: user
-    fullName: sp-page-context.PageContext.user
+    fullName: user
     langs:
       - typeScript
     type: property
@@ -168,9 +169,9 @@ items:
         type:
           - SPUser
   - uid: sp-page-context.PageContext.web
-    summary: Contextual information for the SharePoint site ("web") that is hosting the page.
+    summary: Contextual information for the SharePoint site ("SPWeb") that is hosting the page.
     name: web
-    fullName: sp-page-context.PageContext.web
+    fullName: web
     langs:
       - typeScript
     type: property

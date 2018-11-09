@@ -16,7 +16,7 @@
   "exports": {
     "BaseClientSideWebPart": {
       "kind": "class",
-      "extends": "BaseComponent",
+      "extends": "BaseWebPart",
       "implements": "",
       "typeParameters": [
         "TProperties"
@@ -25,7 +25,7 @@
       "summary": [
         {
           "kind": "text",
-          "text": "This abstract class implements the the base functionality for a client side web part. Every client side web part needs to inherit from this class."
+          "text": "This abstract class implements the the base functionality for a client-side web part. Every client-side web part needs to inherit from this class."
         }
       ],
       "remarks": [
@@ -65,36 +65,36 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle."
+              "text": "It is highly recommended that the web part use the "
             },
             {
-              "kind": "paragraph"
+              "kind": "code",
+              "text": "onInit()",
+              "highlighter": "plain"
             },
             {
               "kind": "text",
-              "text": "e.g. constructor() { super(); . . class specific constructor code .. }"
+              "text": " API to perform any web part specific initialization. Most of the web part features like this.context and "
+            },
+            {
+              "kind": "code",
+              "text": "this.properties",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " are not available to be used before the the "
+            },
+            {
+              "kind": "code",
+              "text": "onInit()",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " part of the web part loading lifecycle."
             }
           ]
-        },
-        "accessibleTitle": {
-          "kind": "property",
-          "signature": "protected accessibleTitle: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property points to the accessible title of web part made available to screen readers. The base implementation returns that default title in the manifest. Web parts that want to provide more descriptive title containing contextual information need to override this API."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
         },
         "canOpenPopupOnRender": {
           "kind": "property",
@@ -113,13 +113,21 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it should use this API before opening the popup. If this API returns false, the web part should not open popup on initial render. Some web parts that open popups during render are the document embed web part that pops up the file picker on initial render, embedded video web part that pops up the PropertyPane on initial render."
+              "text": "In some environments the host re-renders the web parts frequently, and therefore opening popups during render will cause popups to open repeatedly, which is a poor user experience. As an example, the classic SharePoint pages perform postbacks causing the page to re-render on all button clicks."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "If a web part needs to open a popup on render, it should use this API before opening the popup. If this API returns false, the web part should not open popup on initial render. Some web parts that open popups during render are the document embed web part that pops up the file picker on initial render, embedded video web part that pops up the PropertyPane on initial render."
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "clearError": {
           "kind": "method",
@@ -168,7 +176,368 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "domElement": {
+          "kind": "property",
+          "signature": "protected readonly domElement: HTMLElement;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "HTMLElement",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole DOM subtree of the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isRenderAsync": {
+          "kind": "property",
+          "signature": "protected readonly isRenderAsync: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates whether the web part is rendering in Async mode."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part rendering is complete."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "The default value is false."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": true,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "onDisplayModeChanged": {
+          "kind": "method",
+          "signature": "protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "oldDisplayMode": {
+              "name": "oldDisplayMode",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "The old display mode."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "DisplayMode"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This event method is called when the display mode of a web part is changed."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The default implementation of this API calls the web part render method to re-render the web part with the new display mode. If a web part developer does not want a full re-render to happen on display mode change, they can override this API and perform specific updates to the web part DOM to switch its display mode."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": true,
           "isOverride": false
+        },
+        "onDispose": {
+          "kind": "method",
+          "signature": "protected onDispose(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be used to refresh the contents of the PropertyPane."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being transitioned out."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": true,
+          "isOverride": false
+        },
+        "render": {
+          "kind": "method",
+          "signature": "protected abstract render(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API is called to render the web part. There is no base implementation of this API and the web part is required to override this API."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "renderCompleted": {
+          "kind": "method",
+          "signature": "protected renderCompleted(): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be called by web parts that perform Async rendering. Those web part are required to override the isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part initiates the IFrame rendering in the "
+            },
+            {
+              "kind": "code",
+              "text": "render()",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " API but the actual rendering is complete only after the iframe loading completes."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "renderedFromPersistedData": {
+          "kind": "property",
+          "signature": "protected readonly renderedFromPersistedData: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Example: When web part is added for the first time using toolbox then the value is false."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "renderedOnce": {
+          "kind": "property",
+          "signature": "protected readonly renderedOnce: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property indicates whether the web part has been rendered once or not. After the first time rendering, the value of this property is always true until a full re-render of the web part happens."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "renderError": {
+          "kind": "method",
+          "signature": "protected renderError(error: Error): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "error": {
+              "name": "error",
+              "description": [
+                {
+                  "kind": "text",
+                  "text": "An error object containing the error message to render."
+                }
+              ],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "Error"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be used to render an error message in the web part display area. Also logs the error message using the trace logger."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        }
+      }
+    },
+    "BaseWebPart": {
+      "kind": "class",
+      "extends": "BaseComponent",
+      "implements": "IPropertyPaneConsumer",
+      "typeParameters": [
+        "TProperties"
+      ],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This abstract class implements the UI-agnostic base functionality for a client-side web part. The purpose is to allow a common core between 2D and MR WebParts."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "__constructor": {
+          "kind": "constructor",
+          "signature": "constructor();",
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Constructor for the "
+            },
+            {
+              "kind": "code",
+              "text": "BaseWebPart",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " class."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "It is highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of the web part features like this.context and this.properties are not available to be used before the the onInit part of the web part loading lifecycle."
+            }
+          ]
+        },
+        "accessibleTitle": {
+          "kind": "property",
+          "signature": "protected readonly accessibleTitle: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This property points to the accessible title of web part made available to screen readers. The base implementation returns that default title in the manifest. Web parts that want to provide more descriptive title containing contextual information need to override this API."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "context": {
+          "kind": "property",
+          "signature": "protected readonly context: BaseWebPartContext;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "BaseWebPartContext",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Use the context object to access common services and state associated with the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dataVersion": {
           "kind": "property",
@@ -188,7 +557,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -208,7 +578,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disableReactivePropertyChanges": {
           "kind": "property",
@@ -221,7 +592,7 @@
           "summary": [
             {
               "kind": "text",
-              "text": "This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive."
+              "text": "This property is used to change the web part's property pane interaction from Reactive to NonReactive."
             }
           ],
           "remarks": [
@@ -247,7 +618,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "displayMode": {
           "kind": "property",
@@ -267,27 +639,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "domElement": {
-          "kind": "property",
-          "signature": "protected readonly domElement: HTMLElement;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "HTMLElement",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole DOM subtree of the web part."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "getPropertyPaneConfiguration": {
           "kind": "method",
@@ -319,26 +672,6 @@
             {
               "kind": "text",
               "text": "See IPropertyPane and other PropertyPane integration wiki documentation for more details."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "isRenderAsync": {
-          "kind": "property",
-          "signature": "protected readonly isRenderAsync: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Indicates whether the web part is rendering in Async mode. Default value is false. If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part rendering is complete."
             }
           ],
           "remarks": [],
@@ -405,7 +738,16 @@
             },
             {
               "kind": "text",
-              "text": "An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized by an older version of the web part that supported a different schema of the property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The developer can use onAfterDeserialize to check the dataVersion and fix the property bag."
+              "text": "An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized by an older version of the web part that supported a different schema of the property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The developer can use "
+            },
+            {
+              "kind": "code",
+              "text": "onAfterDeserialize",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " to check the dataVersion and fix the property bag."
             }
           ],
           "isBeta": false,
@@ -552,10 +894,15 @@
           "summary": [
             {
               "kind": "text",
+              "text": "This event method is called when the web part is initialized."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
               "text": "This API should be overridden to perform long running operations e.g. data fetching from a remote service before the initial rendering of the web part. The loading indicator is displayed during the lifetime of this method. This API is called only once during the lifecycle of a web part."
             }
           ],
-          "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
@@ -596,14 +943,14 @@
             },
             {
               "kind": "text",
-              "text": "- When user clicks 'x'(close) button before the CONFIGURATION_COMPLETE_TIMEOUT elapses."
+              "text": "- When user clicks the \"X\" (close) button before the CONFIGURATION_COMPLETE_TIMEOUT elapses."
             },
             {
               "kind": "paragraph"
             },
             {
               "kind": "text",
-              "text": "- When user clciks 'Apply' button before the CONFIGURATION_COMPLETE_TIMEOUT elapses."
+              "text": "- When user clicks the 'Apply' button before the CONFIGURATION_COMPLETE_TIMEOUT elapses."
             },
             {
               "kind": "paragraph"
@@ -677,7 +1024,16 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "JSON path of the property in the property bag. In the case of custom field, if no target property is provided then a custom value is assigned, which will be in the form of '__CustomField_<key provided when the custom field is created>'."
+                  "text": "JSON path of the property in the property bag. In the case of custom field, if no target property is provided then a custom value is assigned, which will be in the form of "
+                },
+                {
+                  "kind": "code",
+                  "text": "__CustomField_<key provided when the custom field is created>",
+                  "highlighter": "plain"
+                },
+                {
+                  "kind": "text",
+                  "text": "."
                 }
               ],
               "isOptional": false,
@@ -748,9 +1104,9 @@
         },
         "previewImageUrl": {
           "kind": "property",
-          "signature": "protected previewImageUrl: string | undefined;",
+          "signature": "protected readonly previewImageUrl: string | undefined;",
           "isOptional": false,
-          "isReadOnly": false,
+          "isReadOnly": true,
           "isStatic": false,
           "type": "string | undefined",
           "deprecatedMessage": [],
@@ -764,7 +1120,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "properties": {
           "kind": "property",
@@ -784,7 +1141,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "propertiesMetadata": {
           "kind": "property",
@@ -803,158 +1161,33 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "See IWebPartPropertiesMetadata for more information about how to define metadata"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "propertyPaneRenderedByWebPart": {
-          "kind": "property",
-          "signature": "protected propertyPaneRenderedByWebPart: boolean;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "render": {
-          "kind": "method",
-          "signature": "protected abstract render(): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
+              "text": "See "
+            },
             {
-              "kind": "text",
-              "text": "This API is called to render the web part. There is no base implementation of this API and the web part is required to override this API."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderCompleted": {
-          "kind": "method",
-          "signature": "protected renderCompleted(): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This API should be called by web parts that perform Async rendering. Those web part are required to override the isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part initiates the IFrame rendering in the render() API but the actual rendering is complete only after the iframe loading completes."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderedFromPersistedData": {
-          "kind": "property",
-          "signature": "protected readonly renderedFromPersistedData: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property indicates whether the web part was rendered from the persisted data (serialized state from the last time that the web part was saved) or not."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: When web part is added for the first time using toolbox then the value is false."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderedOnce": {
-          "kind": "property",
-          "signature": "protected readonly renderedOnce: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This property indicates whether the web part has been rendered once or not. After the first time rendering, the value of this property is always true. Till a full re-render of the web part happens."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "renderError": {
-          "kind": "method",
-          "signature": "protected renderError(error: Error): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "error": {
-              "name": "error",
-              "description": [
+              "kind": "api-link",
+              "elements": [
                 {
                   "kind": "text",
-                  "text": "An error object containing the error message to render."
+                  "text": "IWebPartPropertiesMetadata"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "Error"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-webpart-base",
+                "exportName": "IWebPartPropertiesMetadata",
+                "memberName": ""
+              }
+            },
             {
               "kind": "text",
-              "text": "This API should be used to render an error message in the web part display area. Also logs the error message using the trace logger."
+              "text": " for more information about how to define metadata"
             }
           ],
-          "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -974,9 +1207,185 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
+    },
+    "BaseWebPartContext": {
+      "kind": "class",
+      "extends": "BaseComponentContext",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Web part context object. This object contains the contextual services available to a web part. e.g. a contextual instance to the http client."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "This base is to be extended by UI-specific WebPart's base."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the BaseWebPartContext class."
+        },
+        {
+          "kind": "paragraph"
+        }
+      ],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "formFactor": {
+          "kind": "property",
+          "signature": "readonly formFactor: WebPartFormFactor;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "WebPartFormFactor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Form factor of the web part."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Web parts may behave differently based on its form factor. E.g. a web part rendering as full size may want to set up different margins that when rendering in a canvas."
+            }
+          ],
+          "isBeta": true,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "manifest": {
+          "kind": "property",
+          "signature": "readonly manifest: IClientSideWebPartManifestInstance<any>;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IClientSideWebPartManifestInstance<any>",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Manifest for the client-side component."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "propertyPane": {
+          "kind": "property",
+          "signature": "readonly propertyPane: IPropertyPaneAccessor;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "IPropertyPaneAccessor",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Accessor for common web part property pane operations."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "webPartTag": {
+          "kind": "property",
+          "signature": "readonly webPartTag: string;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Web part tag to be used for logging and telemetry."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "DynamicDataSharedDepth": {
+      "kind": "enum",
+      "values": {
+        "None": {
+          "kind": "enum value",
+          "value": "0",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates that nothing is shared."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Property": {
+          "kind": "enum value",
+          "value": "2",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates that both the dynamic data source and the property are shared."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "Source": {
+          "kind": "enum value",
+          "value": "1",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates that the dynamic data source is shared."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Enum for the possible values of shared depth of the dynamic data reference."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
     },
     "IClientSideWebPartStatusRenderer": {
       "kind": "interface",
@@ -1084,7 +1493,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "the webpart container div."
+                  "text": "the web part container div."
                 }
               ],
               "isOptional": false,
@@ -1108,7 +1517,7 @@
               "description": [
                 {
                   "kind": "text",
-                  "text": "timeout to render the loading indicator. Default is 900ms."
+                  "text": "timeout to render the loading indicator. Default is 1500ms."
                 }
               ],
               "isOptional": true,
@@ -1180,6 +1589,294 @@
         }
       }
     },
+    "IDynamicDataSharedPropertyConfiguration": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Configuration related to a shared property."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "filters": {
+          "kind": "property",
+          "signature": "filters?: IDynamicDataSharedPropertyFilters;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IDynamicDataSharedPropertyFilters",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Filters for the shared property."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataSharedPropertyFilters": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Property pane dynamic data property filters."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "propertyId": {
+          "kind": "property",
+          "signature": "propertyId?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Property Id"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Usage: Use this filter when the author can only to connect to a specific property from the selected source."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This is to filter which specific property is to be pre-selected in the properties dropdown(second level) on the dynamic data widget."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "When provided, the dynamic data properties dropdown is pre-selected to show the specific property, if avaialble. Otherwise the dropdown will fall back to show all the exposed properties from the source. If a property is pre-selected, the control will be disabled to ensure that authors can not change it."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataSharedSourceConfiguration": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Configuration related to a shared source."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "filters": {
+          "kind": "property",
+          "signature": "filters?: IDynamicDataSharedSourceFilters;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IDynamicDataSharedSourceFilters",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Filters for the shared source."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "sourcesLabel": {
+          "kind": "property",
+          "signature": "sourcesLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized label for the sources dropdown."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "default value - 'Connect to source'"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IDynamicDataSharedSourceFilters": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Property pane dynamic data source filters."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "componentId": {
+          "kind": "property",
+          "signature": "componentId?: Guid;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "Guid",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Component Id."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Usage: Use this filter when the author should only be able to connect to a specific type of source."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This is to filter what type of source needs to be shown in the data sources dropdown (first level) on the dynamic data widget."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "When provided, the dynamic data sources dropdown in the dynamic data widget is filtered to only show the sources matching the given component id."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example - If the document library web part component id is supplied, then the dynamic data sources dropdown only shows document library web parts on the page which are registered dynamic sources."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "sourceId": {
+          "kind": "property",
+          "signature": "sourceId?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Source Id"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Usage: Use this filter, when the author can only to connect to a specific data source."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This is to filter which specific source is to be pre-selected in the data sources dropdown (first level) on the dynamic data widget."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "When provided, the dynamic data sources dropdown is pre-selected to show the source with the provided id, if available. Otherwise the dropdown will fall back to show all the existing data sources on the page. If a source is pre-selected, the control will be disabled to ensure that authors can not change it."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "The source id for a web part will be of the form WebPart."
+            },
+            {
+              "kind": "html-tag",
+              "token": "<ComponentId>"
+            },
+            {
+              "kind": "text",
+              "text": "."
+            },
+            {
+              "kind": "html-tag",
+              "token": "<InstanceId>"
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
     "IPlaceholderSpinnerProps": {
       "kind": "interface",
       "extends": "",
@@ -1214,7 +1911,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -1234,7 +1932,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1254,6 +1953,30 @@
       "isBeta": false,
       "isSealed": false,
       "members": {
+        "close": {
+          "kind": "method",
+          "signature": "close(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This API should be used to close the PropertyPane to help configure the web part."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
         "isPropertyPaneOpen": {
           "kind": "method",
           "signature": "isPropertyPaneOpen(): boolean;",
@@ -1403,7 +2126,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ariaLabel": {
           "kind": "property",
@@ -1423,7 +2147,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "buttonType": {
           "kind": "property",
@@ -1443,7 +2168,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -1463,7 +2189,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -1483,7 +2210,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "icon": {
           "kind": "property",
@@ -1503,7 +2231,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onClick": {
           "kind": "property",
@@ -1523,7 +2252,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -1543,7 +2273,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1586,7 +2317,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -1606,7 +2338,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -1626,7 +2359,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1671,7 +2405,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -1691,7 +2426,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "iconProps": {
           "kind": "property",
@@ -1711,7 +2447,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "imageSize": {
           "kind": "property",
@@ -1731,7 +2468,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "imageSrc": {
           "kind": "property",
@@ -1751,7 +2489,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -1771,7 +2510,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "selectedImageSrc": {
           "kind": "property",
@@ -1791,7 +2531,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -1811,7 +2552,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1849,7 +2591,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1887,7 +2630,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "options": {
           "kind": "property",
@@ -1907,7 +2651,131 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IPropertyPaneConditionalGroup": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Property pane conditional group."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "onShowPrimaryGroup": {
+          "kind": "property",
+          "signature": "onShowPrimaryGroup?: () => void;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "() => void",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Callback when user clicks to show primary group."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "onShowSecondaryGroup": {
+          "kind": "property",
+          "signature": "onShowSecondaryGroup?: () => void;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "() => void",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Callback when user clicks to show secondary group."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "primaryGroup": {
+          "kind": "property",
+          "signature": "primaryGroup: IPropertyPaneGroup;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneGroup",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Primary group to show"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "secondaryGroup": {
+          "kind": "property",
+          "signature": "secondaryGroup: IPropertyPaneGroup;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneGroup",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Secondary group to show"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "showSecondaryGroup": {
+          "kind": "property",
+          "signature": "showSecondaryGroup: boolean;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicating whether the property pane should show primary group or the secondary group."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -1945,7 +2813,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "loadingIndicatorDelayTime": {
           "kind": "property",
@@ -1970,7 +2839,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "pages": {
           "kind": "property",
@@ -1990,7 +2860,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "showLoadingIndicator": {
           "kind": "property",
@@ -2022,7 +2893,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2060,7 +2932,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -2108,7 +2981,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onDispose": {
           "kind": "property",
@@ -2128,7 +3002,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onRender": {
           "kind": "property",
@@ -2148,7 +3023,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2186,7 +3062,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2224,7 +3101,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -2244,7 +3122,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -2264,7 +3143,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "type": {
           "kind": "property",
@@ -2284,7 +3164,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2322,7 +3203,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ariaPositionInSet": {
           "kind": "property",
@@ -2342,7 +3224,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "ariaSetSize": {
           "kind": "property",
@@ -2362,7 +3245,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "calloutProps": {
           "kind": "property",
@@ -2382,7 +3266,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -2402,7 +3287,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -2422,7 +3308,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "options": {
           "kind": "property",
@@ -2442,7 +3329,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "selectedKey": {
           "kind": "property",
@@ -2462,11 +3350,12 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
-    "IPropertyPaneDynamicTextFieldProps": {
+    "IPropertyPaneDynamicFieldProps": {
       "kind": "interface",
       "extends": "",
       "implements": "",
@@ -2475,7 +3364,219 @@
       "summary": [
         {
           "kind": "text",
-          "text": "PropertyPaneDynamicData component props."
+          "text": "PropertyPaneDynamicField props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "filters": {
+          "kind": "property",
+          "signature": "filters?: IPropertyPaneDynamicFieldFilters;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneDynamicFieldFilters",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Filters for the property pane dynamic field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized label to identify the field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "propertyValueDepth": {
+          "kind": "property",
+          "signature": "propertyValueDepth?: number;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "number",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates to what depth of property values are shown on the property pane dynamic data widget."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "If not specified, then max of 2 levels of property value will be shown."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "It takes following values - - 0: Indicates that no property value will be shown i.e., the widget will display only source and property for this field. - 1: Indicates that a depth of one level of property value will be shown i.e., the widget will display one level after the source and property for this field. - 2: Indicates that a depth of two levels of property value will be shown i.e., the widget will display two levels after the source and property for this field."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "sourcesLabel": {
+          "kind": "property",
+          "signature": "sourcesLabel?: string;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized label for the sources dropdown."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "default value - 'Connect to source'"
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IPropertyPaneDynamicFieldSetProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "PropertyPane DynamicFieldSet props."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "fields": {
+          "kind": "property",
+          "signature": "fields: IPropertyPaneField<IPropertyPaneDynamicFieldProps>[];",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "IPropertyPaneField<IPropertyPaneDynamicFieldProps>[]",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "List of property pane dynamic fields to be configured on the Dynamic Data Widget."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "label": {
+          "kind": "property",
+          "signature": "label: string;",
+          "isOptional": false,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "string",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "User-friendly, localized label to identify the property."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "sharedConfiguration": {
+          "kind": "property",
+          "signature": "sharedConfiguration?:",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "{\n        /**\n         * Indicates to what depth the dynamic reference is shared between the set of fields\n         * of the dynamic field set.\n         */\n        depth: DynamicDataSharedDepth;\n        /**\n         * Shared source configuration\n         */\n        source?: IDynamicDataSharedSourceConfiguration;\n        /**\n         * Shared property configuration\n         */\n        property?: IDynamicDataSharedPropertyConfiguration;\n    }",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Configuration shared between all the entries of the set."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "IPropertyPaneDynamicTextFieldProps": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+        }
+      ],
+      "summary": [
+        {
+          "kind": "code",
+          "text": "PropertyPaneDynamicData",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": " component props."
         }
       ],
       "remarks": [],
@@ -2489,18 +3590,24 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
-              "text": "Aria Label for text field, if any."
+              "text": "ARIA Label for text field, if any."
             }
           ],
           "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -2509,7 +3616,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -2520,7 +3632,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -2529,7 +3642,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "boolean",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -2540,7 +3658,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "errorMessage": {
           "kind": "property",
@@ -2549,7 +3668,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -2559,20 +3683,30 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the error message."
+              "text": "When "
+            },
+            {
+              "kind": "code",
+              "text": "onGetErrorMessage",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " returns empty string, if this property has a value set then this will be displayed as the error message."
             },
             {
               "kind": "paragraph"
             },
             {
               "kind": "text",
-              "text": "So, make sure to set this only if you want to see an error message displayed for the text field."
+              "text": "Make sure to set this only if you want to see an error message displayed for the text field."
             }
           ],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -2581,7 +3715,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -2592,7 +3731,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onGetErrorMessage": {
           "kind": "property",
@@ -2601,11 +3741,16 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "(value: string) => string | Promise<string>",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
-              "text": "The method is used to get the validation error message and determine whether the input value is valid or not."
+              "text": "This method is used to get the validation error message and determine whether the input value is valid or not."
             }
           ],
           "remarks": [
@@ -2632,7 +3777,16 @@
             },
             {
               "kind": "text",
-              "text": "When it returns Promise<string>:"
+              "text": "When it returns "
+            },
+            {
+              "kind": "code",
+              "text": "Promise<string>",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": ":"
             },
             {
               "kind": "paragraph"
@@ -2652,7 +3806,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "placeholder": {
           "kind": "property",
@@ -2661,18 +3816,24 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
-              "text": "placeholder text to be displayed in the text field."
+              "text": "Placeholder text to be displayed in the text field."
             }
           ],
           "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusIn": {
           "kind": "property",
@@ -2681,7 +3842,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "boolean",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -2697,7 +3863,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusOut": {
           "kind": "property",
@@ -2706,11 +3873,25 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "boolean",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
-              "text": "Run validation when the PropertyPaneTextField is out of focus or on blur."
+              "text": "Run validation when the "
+            },
+            {
+              "kind": "code",
+              "text": "PropertyPaneTextField",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " is out of focus or on blur."
             }
           ],
           "remarks": [
@@ -2722,7 +3903,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "value": {
           "kind": "property",
@@ -2731,7 +3913,12 @@
           "isReadOnly": false,
           "isStatic": false,
           "type": "string",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- This has been replaced by IPropertyPaneDynamicFieldProps"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -2742,7 +3929,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2787,7 +3975,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "shouldFocus": {
           "kind": "property",
@@ -2812,7 +4001,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "targetProperty": {
           "kind": "property",
@@ -2832,7 +4022,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "type": {
           "kind": "property",
@@ -2852,7 +4043,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2890,7 +4082,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "groupName": {
           "kind": "property",
@@ -2915,7 +4108,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "isCollapsed": {
           "kind": "property",
@@ -2940,7 +4134,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -2983,7 +4178,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -3003,7 +4199,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3041,7 +4238,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "href": {
           "kind": "property",
@@ -3061,7 +4259,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "popupWindowProps": {
           "kind": "property",
@@ -3081,7 +4280,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "target": {
           "kind": "property",
@@ -3134,7 +4334,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "text": {
           "kind": "property",
@@ -3154,7 +4355,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3192,15 +4394,16 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "groups": {
           "kind": "property",
-          "signature": "groups: IPropertyPaneGroup[];",
+          "signature": "groups: (IPropertyPaneGroup | IPropertyPaneConditionalGroup)[];",
           "isOptional": false,
           "isReadOnly": false,
           "isStatic": false,
-          "type": "IPropertyPaneGroup[]",
+          "type": "(IPropertyPaneGroup | IPropertyPaneConditionalGroup)[]",
           "deprecatedMessage": [],
           "summary": [
             {
@@ -3212,7 +4415,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "header": {
           "kind": "property",
@@ -3232,7 +4436,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3270,7 +4475,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "image": {
           "kind": "property",
@@ -3290,7 +4496,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3328,7 +4535,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -3348,7 +4556,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -3368,7 +4577,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "max": {
           "kind": "property",
@@ -3388,7 +4598,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "min": {
           "kind": "property",
@@ -3408,7 +4619,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "showValue": {
           "kind": "property",
@@ -3433,7 +4645,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "step": {
           "kind": "property",
@@ -3453,7 +4666,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "value": {
           "kind": "property",
@@ -3480,7 +4694,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3518,7 +4733,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "deferredValidationTime": {
           "kind": "property",
@@ -3531,7 +4747,16 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds."
+              "text": "Text field will start to validate after users stop typing for "
+            },
+            {
+              "kind": "code",
+              "text": "deferredValidationTime",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " milliseconds."
             }
           ],
           "remarks": [
@@ -3543,7 +4768,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -3563,7 +4789,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -3583,7 +4810,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "errorMessage": {
           "kind": "property",
@@ -3615,7 +4843,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -3635,7 +4864,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "logName": {
           "kind": "property",
@@ -3648,19 +4878,104 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Engagement name to log PropertyPaneTextField value change."
+              "text": "Name used to log "
+            },
+            {
+              "kind": "code",
+              "text": "PropertyPaneTextField",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " value changes for engagement tracking."
             }
           ],
           "remarks": [
             {
               "kind": "text",
-              "text": "It will be logged format as <moduleName>.<controlName>. E.g. {moduleName: 'ImageWebPart', controlName: 'OverlayText'}, it will log: 1. action type, including 'Add', 'Clear' and 'Edit'. Clear: reset the content of caption element to initial/unset state. Add: change from initial/unset state to customized content. (first edit) Edit: any edition that changes the content apart from add and clear 2. text length after each edit."
+              "text": "The messages will be logged with a format such as "
+            },
+            {
+              "kind": "code",
+              "text": "<moduleName>.<controlName>",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": "."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "For example, if "
+            },
+            {
+              "kind": "code",
+              "text": "{moduleName: 'ImageWebPart', controlName: 'OverlayText'}",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " is specified, the engagement log might contain:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "1. The action type:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "code",
+              "text": "Add",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": ": change from initial/unset state to customized content. (first edit)"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "code",
+              "text": "Clear",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": ": reset the content of caption element to initial/unset state."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "code",
+              "text": "Edit",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": ": any edition that changes the content apart from add and clear"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "2. The text length after each edit"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "maxLength": {
           "kind": "property",
@@ -3685,7 +5000,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "multiline": {
           "kind": "property",
@@ -3710,7 +5026,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onGetErrorMessage": {
           "kind": "property",
@@ -3750,7 +5067,16 @@
             },
             {
               "kind": "text",
-              "text": "When it returns Promise<string>:"
+              "text": "When it returns "
+            },
+            {
+              "kind": "code",
+              "text": "Promise<string>",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": ":"
             },
             {
               "kind": "paragraph"
@@ -3770,7 +5096,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "placeholder": {
           "kind": "property",
@@ -3790,7 +5117,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "resizable": {
           "kind": "property",
@@ -3815,7 +5143,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "rows": {
           "kind": "property",
@@ -3840,7 +5169,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "underlined": {
           "kind": "property",
@@ -3865,7 +5195,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusIn": {
           "kind": "property",
@@ -3890,7 +5221,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "validateOnFocusOut": {
           "kind": "property",
@@ -3915,7 +5247,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "value": {
           "kind": "property",
@@ -3935,7 +5268,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -3978,7 +5312,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "disabled": {
           "kind": "property",
@@ -3998,7 +5333,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "key": {
           "kind": "property",
@@ -4018,7 +5354,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "label": {
           "kind": "property",
@@ -4038,7 +5375,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "offAriaLabel": {
           "kind": "property",
@@ -4058,7 +5396,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "offText": {
           "kind": "property",
@@ -4078,7 +5417,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onAriaLabel": {
           "kind": "property",
@@ -4098,7 +5438,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "onText": {
           "kind": "property",
@@ -4118,7 +5459,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4162,13 +5504,19 @@
             },
             {
               "kind": "text",
-              "text": "Example: { 'myRichDescription': '<div>Some standard <b>HTML content</b><a href='http://somelink'>A Link</a></div>' 'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div> }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'myRichDescription': '<div>Some standard <b>HTML content</b><a href='http://somelink'>A Link</a></div>'\n  'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div>\n}\n",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "imageSources": {
           "kind": "property",
@@ -4194,13 +5542,19 @@
             },
             {
               "kind": "text",
-              "text": "Example: { 'myImage1': 'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'myImage1': 'http://res.contoso.com/path/to/file'\n  'myImage2': 'https://res.contoso.com/someName.jpg'\n}\n",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "links": {
           "kind": "property",
@@ -4226,13 +5580,19 @@
             },
             {
               "kind": "text",
-              "text": "Example: { 'myWebURL': 'http://contoso.com' 'myFileLink': 'https://res.contoso.com/file.docx' }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'myWebURL': 'http://contoso.com'\n  'myFileLink': 'https://res.contoso.com/file.docx'\n}\n",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "searchablePlainTexts": {
           "kind": "property",
@@ -4258,13 +5618,19 @@
             },
             {
               "kind": "text",
-              "text": "Example: { 'justSomeText': 'This is some plain text', 'anotherText': 'Can have <any> characters here: \"<>&\\'' }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n 'justSomeText': 'This is some plain text',\n 'anotherText': 'Can have <any> characters here: \"<>&\\''\n}\n",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4308,13 +5674,26 @@
             },
             {
               "kind": "text",
-              "text": "Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version Supported values: MAJOR.MINOR Example: \"1.0\""
+              "text": "Supported values: MAJOR.MINOR"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "\"1.0\"",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataPaths": {
           "kind": "property",
@@ -4327,21 +5706,32 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within the web part properties, and the value is the dynamic data internal id."
+              "text": "Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The key is the path within the web part properties, and the value is the dynamic data internal id."
             },
             {
               "kind": "paragraph"
             },
             {
               "kind": "text",
-              "text": "Required: no Supported values: Map from string to string Example: { 'pageContextUser': 'PageContext:user', 'anotherWebPartProperty': 'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty' }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'pageContextUser':\n    'PageContext:user',\n  'anotherWebPartProperty':\n    'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty'\n}\n",
+              "highlighter": "plain"
             }
           ],
-          "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataValues": {
           "kind": "property",
@@ -4354,21 +5744,32 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Static values for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within the web part properties, and the value is the dynamic data static value."
+              "text": "Static values for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The key is the path within the web part properties, and the value is the dynamic data static value."
             },
             {
               "kind": "paragraph"
             },
             {
               "kind": "text",
-              "text": "Required: no Supported values: Map from string to string Example: { 'aStringProperty': 'thisIsAString', 'aBooleanProperty': true }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'aStringProperty': 'thisIsAString',\n  'aBooleanProperty': true\n}\n",
+              "highlighter": "plain"
             }
           ],
-          "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "properties": {
           "kind": "property",
@@ -4387,13 +5788,33 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+              "text": "Used by the web part to manage its internal metadata and config data. The framework code never touches these properties."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Supported values: any JSON stringifiable object hierarchy."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "{ 'value': 'text value' }",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "serverProcessedContent": {
           "kind": "property",
@@ -4413,7 +5834,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4497,14 +5919,15 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Reference to the DOM element that hosts this client side component."
+              "text": "Reference to the DOM element that hosts this client-side component."
             }
           ],
           "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "graphHttpClient": {
           "kind": "property",
@@ -4548,7 +5971,8 @@
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "httpClient": {
           "kind": "property",
@@ -4592,7 +6016,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "instanceId": {
           "kind": "property",
@@ -4636,7 +6061,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "manifest": {
           "kind": "property",
@@ -4673,14 +6099,15 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Manifest for the client side web part."
+              "text": "Manifest for the client-side web part."
             }
           ],
           "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "pageContext": {
           "kind": "property",
@@ -4724,7 +6151,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "propertyPane": {
           "kind": "property",
@@ -4768,7 +6196,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "spHttpClient": {
           "kind": "property",
@@ -4812,7 +6241,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "statusRenderer": {
           "kind": "property",
@@ -4856,7 +6286,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "webPartTag": {
           "kind": "property",
@@ -4900,7 +6331,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -4913,10 +6345,24 @@
       "summary": [
         {
           "kind": "text",
-          "text": "This structure represents the serialized state of a web part. When the serialize() API is called on a web part, the output should be this structure. The structure of the 'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of properties it wants to serialize."
+          "text": "This structure represents the serialized state of a web part."
         }
       ],
-      "remarks": [],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "When the "
+        },
+        {
+          "kind": "code",
+          "text": "serialize()",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": " API is called on a web part, the output should be this structure. The structure of the 'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of properties it wants to serialize."
+        }
+      ],
       "isBeta": false,
       "isSealed": false,
       "members": {
@@ -4944,13 +6390,26 @@
             },
             {
               "kind": "text",
-              "text": "Usage: versioning and evolving the serialized data of the web part Required: yes Type: string Supported values: MAJOR.MINOR Example: \"1.0\""
+              "text": "Supported values: MAJOR.MINOR"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "\"1.0\"",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "description": {
           "kind": "property",
@@ -4969,13 +6428,33 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "Usage: display the description of the web part. Required: no Type: string Supported values: string with the description. Example: \"Text\""
+              "text": "Used to display the description of the web part."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Supported values: string with the description."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "\"Text\"",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataPaths": {
           "kind": "property",
@@ -4988,21 +6467,32 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within the web part properties, and the value is the dynamic data internal id."
+              "text": "Paths for the dynamic data."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within the web part properties, and the value is the dynamic data internal id."
             },
             {
               "kind": "paragraph"
             },
             {
               "kind": "text",
-              "text": "Required: no Supported values: Map from string to string Example: { 'pageContextUser': 'PageContext:user', 'anotherWebPartProperty': 'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty' }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'pageContextUser':\n    'PageContext:user',\n  'anotherWebPartProperty':\n    'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty'\n}\n",
+              "highlighter": "plain"
             }
           ],
-          "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "dynamicDataValues": {
           "kind": "property",
@@ -5015,21 +6505,32 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Static values for the dynamic data.This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within the web part properties, and the value is the dynamic data static value."
+              "text": "Static values for the dynamic data.This is used to reconstruct the dynamic data objects when deserializing the web part."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "The key is the path within the web part properties, and the value is the dynamic data static value."
             },
             {
               "kind": "paragraph"
             },
             {
               "kind": "text",
-              "text": "Required: no Supported values: Map from string to string Example: { 'aStringProperty': 'thisIsAString', 'aBooleanProperty': true }"
+              "text": "Example:"
+            },
+            {
+              "kind": "code-box",
+              "text": "{\n  'aStringProperty': 'thisIsAString',\n  'aBooleanProperty': true\n}\n",
+              "highlighter": "plain"
             }
           ],
-          "remarks": [],
           "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "id": {
           "kind": "property",
@@ -5048,13 +6549,19 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "Usage: uniquely identify a web part. Required: yes Type: GUID Supported values: any GUID Example: \"dbef608d-3ad5-4f8f-b139-d916f2f0a294\""
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "instanceId": {
           "kind": "property",
@@ -5073,13 +6580,26 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "how used: used by the framework to uniquely identify an instance of a web part. mandatory: yes type: string supported values: a unique string. Could be GUID or other uniquely identifiable formats. example: [\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"] experimental: yes"
+              "text": "supported values: a unique string. Could be GUID or other uniquely identifiable formats."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "example: "
+            },
+            {
+              "kind": "code",
+              "text": "[\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"]",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "properties": {
           "kind": "property",
@@ -5098,13 +6618,42 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "Usage: used by the web part to manage its internal metadata and config data. The framework code never touches these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: { 'value': 'text value' }"
+              "text": "Used by the web part to manage its internal metadata and config data. The framework code never touches these properties."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Supported values: any object hierarchy that can be serialized using "
+            },
+            {
+              "kind": "code",
+              "text": "JSON.stringify()",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": "."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "{ 'value': 'text value' }",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "serverProcessedContent": {
           "kind": "property",
@@ -5117,14 +6666,15 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Definition: The collections of data that can be processed by server side services like search index and link fixup Required: no"
+              "text": "The collections of data that can be processed by server side services like search index and link fixup"
             }
           ],
           "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "title": {
           "kind": "property",
@@ -5143,13 +6693,33 @@
           "remarks": [
             {
               "kind": "text",
-              "text": "Usage: display the name of the web part in the toolbox, web part gallery and the page. Required: yes Type: string Supported values: string less than 100 characters Example: \"Text\""
+              "text": "Used to display the name of the web part in the toolbox, web part gallery and the page."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Supported values: string less than 100 characters"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Example: "
+            },
+            {
+              "kind": "code",
+              "text": "\"Text\"",
+              "highlighter": "plain"
             }
           ],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -5162,7 +6732,12 @@
       "summary": [
         {
           "kind": "text",
-          "text": "This structure is used to define metadata for web part properties as a map of string to IWebPartPropertyMetadata"
+          "text": "This structure is used to define metadata for web part properties as a map of string to "
+        },
+        {
+          "kind": "code",
+          "text": "IWebPartPropertyMetadata",
+          "highlighter": "plain"
         }
       ],
       "remarks": [
@@ -5175,45 +6750,107 @@
         },
         {
           "kind": "text",
-          "text": "- Dot . for selecting object members e.g. person.name"
+          "text": "- Dot "
+        },
+        {
+          "kind": "code",
+          "text": ".",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": " for selecting object members, for example "
+        },
+        {
+          "kind": "code",
+          "text": "person.name",
+          "highlighter": "plain"
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "- Brackets [] for selecting array items e.g. person.photoURLs[0]"
+          "text": "- Brackets "
+        },
+        {
+          "kind": "code",
+          "text": "[]",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": " for selecting array items, for example "
+        },
+        {
+          "kind": "code",
+          "text": "person.photoURLs[0]",
+          "highlighter": "plain"
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "- Bracketed asterisk [*] for array elements wildcard e.g. person.websites[*]."
+          "text": "- Bracketed asterisk "
+        },
+        {
+          "kind": "code",
+          "text": "[*]",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": " for array elements wildcard, for example "
+        },
+        {
+          "kind": "code",
+          "text": "person.websites[*]",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": "."
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "You can make combinations of these operators e.g. person.websites[*].url Important Note: Only one wildcard per path is supported."
+          "text": "You can make combinations of these operators, for example "
+        },
+        {
+          "kind": "code",
+          "text": "person.websites[*].url",
+          "highlighter": "plain"
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "Example: Let's assume we have a web part with properties that have the following schema: { title: string; person: { name: string; bio: string; photoURLs: string[]; websites: { title: string; url: string; }[] } }"
+          "text": "Important Note: Only one wildcard per path is supported."
         },
         {
           "kind": "paragraph"
         },
         {
           "kind": "text",
-          "text": "We can define the metadata for the desired properties as following: { 'person.bio': { isRichContent: true }, 'person.photoURLs[*]': { isImageSource: true }, 'person.websites[*].url': { isLink: true } }"
+          "text": "Example: Let's assume we have a web part with properties that have the following schema:"
         },
         {
-          "kind": "paragraph"
+          "kind": "code-box",
+          "text": "{\n  title: string;\n  person: {\n    name: string;\n    bio: string;\n    photoURLs: string[];\n    websites: { title: string; url: string; }[]\n  }\n}\n",
+          "highlighter": "plain"
+        },
+        {
+          "kind": "text",
+          "text": "We can define the metadata for the desired properties as following:"
+        },
+        {
+          "kind": "code-box",
+          "text": "{\n 'person.bio': { isRichContent: true },\n 'person.photoURLs[*]': { isImageSource: true },\n 'person.websites[*].url': { isLink: true }\n}\n",
+          "highlighter": "plain"
         },
         {
           "kind": "text",
@@ -5249,6 +6886,283 @@
           "isSealed": false,
           "isVirtual": false,
           "isOverride": false
+        }
+      }
+    },
+    "IWebPartPropertyMetadata": {
+      "kind": "interface",
+      "extends": "",
+      "implements": "",
+      "typeParameters": [],
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "This is the structure used for map values in "
+        },
+        {
+          "kind": "code",
+          "text": "IWebPartPropertiesMetadata",
+          "highlighter": "plain"
+        }
+      ],
+      "remarks": [],
+      "isBeta": false,
+      "isSealed": false,
+      "members": {
+        "dynamicPropertyType": {
+          "kind": "property",
+          "signature": "dynamicPropertyType?: 'boolean' | 'number' | 'string' | 'array' | 'object';",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "'boolean' | 'number' | 'string' | 'array' | 'object'",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "If specified, indicates that the property is a dynamic property and the type of the dynamic property."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "If a web part has properties that are dynamically configurable, then use this flag to declare the property as a dynamic property by specifying its type. When a property specifies its dynamic property type, then the framework ensures that its value can be accessed using 'tryGetValue' anytime in the life cycle of the web part. If a property is marked as DynamicProperty in the IWebPartProperties interface, but does not appear in the IWebPartPropertiesMetadata with a dynamicPropertyType, then the web part developer will need to manually create the DynamicProperty themselves and assign it to the property."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "A web part can configure a default value for the property by specifying it in the properties section of the web part's manifest. This value will be used when a dynamic property is constructed for the property."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Note: Web parts should be able to type cast the resultant value from the "
+            },
+            {
+              "kind": "code",
+              "text": "tryGetValue",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " to suit their needs."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isHtmlString": {
+          "kind": "property",
+          "signature": "isHtmlString?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates whether the property should be serialized as HTML."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This flag instructs framework to store the value as HTML, so that SharePoint can perform the following services on it:"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "- normalizing HTML encodings"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "- stripping unsafe HTML tags (i.e. for usage with Element.innerHTML)"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "- search indexing"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "- SharePoint link fix-up"
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Only enable this flag for HTML content where these modifications are acceptable. If non-HTML content is provided, SharePoint framework might make modifications to convert it to HTML valid. For plain text content that simply needs to be exposed to the search index (without any rewriting), use the "
+            },
+            {
+              "kind": "code",
+              "text": "isSearchablePlainText",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " flag instead."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isImageSource": {
+          "kind": "property",
+          "signature": "isImageSource?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform services like link fix-up, search indexing, loading from CDN, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isLink": {
+          "kind": "property",
+          "signature": "isLink?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform services like search indexing, link fix-up, loading from CDN, etc."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isSearchablePlainText": {
+          "kind": "property",
+          "signature": "isSearchablePlainText?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the property contains plain text that should be search-indexed by SharePoint."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This flag instructs the framework to store the property in a representation that supports search indexing. The content will be treated as plain text; SharePoint will not modify the string in any way, and special HTML characters may be stored encoded and appear in search results. If your string contains HTML markup, use the isHtmlString setting instead."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Security note: For security reasons, never assign a plain text string to "
+            },
+            {
+              "kind": "code",
+              "text": "Element.innerHTML",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": "."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "shouldNotPersist": {
+          "kind": "property",
+          "signature": "shouldNotPersist?: boolean;",
+          "isOptional": true,
+          "isReadOnly": false,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Indicates if the framework should persist the property on the server."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Use this for properties that are only important in run-time, and do not need to persist on the server. This can reduce the size of the serialized data of the web part and optimize the web part load time. The property value will be removed from the serialized data sent to the server, but this has no effect on the run-time property bag. The property value will still be available in the "
+            },
+            {
+              "kind": "code",
+              "text": "onBeforeSerialize()",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " method, and the value will not be cleared from the run-time property bag. The initial render of your web part should not depend on the value of the property. Setting a default value for the property can be done in "
+            },
+            {
+              "kind": "code",
+              "text": "onInit()",
+              "highlighter": "plain"
+            },
+            {
+              "kind": "text",
+              "text": " method."
+            },
+            {
+              "kind": "paragraph"
+            },
+            {
+              "kind": "text",
+              "text": "Note that if the property path refers to a property that has a complex object as the value, the whole object will be removed from the persisted data."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -5649,6 +7563,82 @@
       "remarks": [],
       "isBeta": false
     },
+    "PropertyPaneDynamicField": {
+      "kind": "function",
+      "signature": "export function PropertyPaneDynamicField(targetProperty: string, properties: IPropertyPaneDynamicFieldProps): IPropertyPaneField<IPropertyPaneDynamicFieldProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneDynamicFieldProps>",
+        "description": []
+      },
+      "parameters": {
+        "targetProperty": {
+          "name": "targetProperty",
+          "description": [
+            {
+              "kind": "text",
+              "text": "Target property the Dynamic Data widget is associated to."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "string"
+        },
+        "properties": {
+          "name": "properties",
+          "description": [],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneDynamicFieldProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Helper method to create a Dynamic Data widget on the PropertyPane for a dynamic field."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
+    "PropertyPaneDynamicFieldSet": {
+      "kind": "function",
+      "signature": "export function PropertyPaneDynamicFieldSet(properties: IPropertyPaneDynamicFieldSetProps): IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>;",
+      "returnValue": {
+        "type": "IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>",
+        "description": []
+      },
+      "parameters": {
+        "properties": {
+          "name": "properties",
+          "description": [
+            {
+              "kind": "text",
+              "text": "Contains entries and options, described as below: entries - A set of entries to be configured by the widget. Each entry includes the target property and, optionally, the label to show. options - Options enabling customized values for callback, filters etc., for the given set of dynamic fields."
+            }
+          ],
+          "isOptional": false,
+          "isSpread": false,
+          "type": "IPropertyPaneDynamicFieldSetProps"
+        }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Helper method to create a Dynamic Data widget on the Property Pane for a set of dynamic fields with a common data source."
+        },
+        {
+          "kind": "paragraph"
+        },
+        {
+          "kind": "text",
+          "text": "These fields can possibly share the same property based on the associated filters."
+        }
+      ],
+      "remarks": [],
+      "isBeta": false
+    },
     "PropertyPaneDynamicTextField": {
       "kind": "function",
       "signature": "export function PropertyPaneDynamicTextField(targetProperty: string, properties: IPropertyPaneDynamicTextFieldProps): IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>;",
@@ -5682,7 +7672,12 @@
           "type": "IPropertyPaneDynamicTextFieldProps"
         }
       },
-      "deprecatedMessage": [],
+      "deprecatedMessage": [
+        {
+          "kind": "text",
+          "text": "- This has been replaced by PropertyPaneDynamicField"
+        }
+      ],
       "summary": [
         {
           "kind": "text",
@@ -5760,10 +7755,41 @@
           "remarks": [],
           "isBeta": false
         },
+        "DynamicField": {
+          "kind": "enum value",
+          "value": "14",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Dynamic data field."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
+        "DynamicFieldSet": {
+          "kind": "enum value",
+          "value": "16",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "A set of dynamic fields."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false
+        },
         "DynamicTextField": {
           "kind": "enum value",
           "value": "15",
-          "deprecatedMessage": [],
+          "deprecatedMessage": [
+            {
+              "kind": "text",
+              "text": "- Please use DynamicField"
+            }
+          ],
           "summary": [
             {
               "kind": "text",
@@ -6117,7 +8143,7 @@
     },
     "WebPartContext": {
       "kind": "class",
-      "extends": "BaseComponentContext",
+      "extends": "BaseWebPartContext",
       "implements": "",
       "typeParameters": [],
       "deprecatedMessage": [],
@@ -6150,54 +8176,51 @@
           "summary": [
             {
               "kind": "text",
-              "text": "Reference to the DOM element that hosts this client side component."
+              "text": "Reference to the DOM element that hosts this client-side component."
             }
           ],
           "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
-        "manifest": {
+        "microsoftTeams": {
           "kind": "property",
-          "signature": "readonly manifest: IClientSideWebPartManifestInstance<any>;",
+          "signature": "readonly microsoftTeams: typeof microsoftTeams | undefined;",
           "isOptional": false,
           "isReadOnly": true,
           "isStatic": false,
-          "type": "IClientSideWebPartManifestInstance<any>",
+          "type": "typeof microsoftTeams | undefined",
           "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
-              "text": "Manifest for the client side component."
+              "text": "Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is being hosted in Microsoft Teams."
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "propertyPane": {
-          "kind": "property",
-          "signature": "readonly propertyPane: IPropertyPaneAccessor;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "IPropertyPaneAccessor",
-          "deprecatedMessage": [],
-          "summary": [
+          "remarks": [
             {
               "kind": "text",
-              "text": "Accessor for common web part property pane operations."
+              "text": "For more information, please see: "
+            },
+            {
+              "kind": "web-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest"
+                }
+              ],
+              "targetUrl": "https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest"
             }
           ],
-          "remarks": [],
-          "isBeta": false,
+          "isBeta": true,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "statusRenderer": {
           "kind": "property",
@@ -6217,29 +8240,60 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
-        },
-        "webPartTag": {
-          "kind": "property",
-          "signature": "readonly webPartTag: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
+          "isOverride": false,
+          "isEventProperty": false
+        }
+      }
+    },
+    "WebPartFormFactor": {
+      "kind": "enum",
+      "values": {
+        "FullSize": {
+          "kind": "enum value",
+          "value": "1",
           "deprecatedMessage": [],
           "summary": [
             {
               "kind": "text",
-              "text": "Web part tag to be used for logging and telemetry."
+              "text": "Full size form factor. This means the web part is rendered in full size, taking all space available in the page."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "This is the case for Teams tabs or single web part App pages."
+            }
+          ],
+          "isBeta": true
+        },
+        "Standard": {
+          "kind": "enum value",
+          "value": "0",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Standard form factor. This means the web part is rendered in a canvas, potentially with other web parts. In this case, the width is determined by the container, and web part self-adjust for height."
             }
           ],
           "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "isBeta": true
         }
-      }
+      },
+      "deprecatedMessage": [],
+      "summary": [
+        {
+          "kind": "text",
+          "text": "Form factor of the web part."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "This will change based on how the web part is used, not by the web part itself. In cases like web parts used in Teams tab or as App pages, it will have full size form factor. If a web part is render in a canvas, with other web parts, it will have a canvas web part form factor."
+        }
+      ],
+      "isBeta": true
     }
   }
 }

@@ -33,6 +33,22 @@
           uid: sp-component-base.DynamicDataSourceManager
         - name: DynamicProperty
           uid: sp-component-base.DynamicProperty
+        - name: IFontStyles
+          uid: sp-component-base.IFontStyles
+        - name: IPalette
+          uid: sp-component-base.IPalette
+        - name: IReadonlyFontStyles
+          uid: sp-component-base.IReadonlyFontStyles
+        - name: IReadonlyTheme
+          uid: sp-component-base.IReadonlyTheme
+        - name: ISemanticColors
+          uid: sp-component-base.ISemanticColors
+        - name: ITheme
+          uid: sp-component-base.ITheme
+        - name: ThemeChangedEventArgs
+          uid: sp-component-base.ThemeChangedEventArgs
+        - name: ThemeProvider
+          uid: sp-component-base.ThemeProvider
     - name: sp-core-library
       uid: sp-core-library
       items:
@@ -95,17 +111,27 @@
           uid: sp-dialog.IDialogShowOptions
         - name: IPromptOptions
           uid: sp-dialog.IPromptOptions
-        - name: SecondaryDialogProvider
-          uid: sp-dialog.SecondaryDialogProvider
+        - name: ISecondaryDialogProvider
+          uid: sp-dialog.ISecondaryDialogProvider
     - name: sp-dynamic-data
       uid: sp-dynamic-data
       items:
         - name: DynamicDataReference
           uid: sp-dynamic-data.DynamicDataReference
-        - name: IDynamicDataController
-          uid: sp-dynamic-data.IDynamicDataController
+        - name: IDynamicDataAnnotatedPropertyValue
+          uid: sp-dynamic-data.IDynamicDataAnnotatedPropertyValue
+        - name: IDynamicDataCallables
+          uid: sp-dynamic-data.IDynamicDataCallables
+        - name: IDynamicDataEventDefinition
+          uid: sp-dynamic-data.IDynamicDataEventDefinition
         - name: IDynamicDataPropertyDefinition
           uid: sp-dynamic-data.IDynamicDataPropertyDefinition
+        - name: IDynamicDataPropertyMetadata
+          uid: sp-dynamic-data.IDynamicDataPropertyMetadata
+        - name: IDynamicDataPropertyValueMetadata
+          uid: sp-dynamic-data.IDynamicDataPropertyValueMetadata
+        - name: IDynamicDataPropertyValueMetadataCollection
+          uid: sp-dynamic-data.IDynamicDataPropertyValueMetadataCollection
         - name: IDynamicDataSource
           uid: sp-dynamic-data.IDynamicDataSource
         - name: IDynamicDataSourceMetadata
@@ -130,12 +156,16 @@
           uid: sp-http.AadTokenProvider
         - name: AadTokenProviderFactory
           uid: sp-http.AadTokenProviderFactory
+        - name: DigestCache
+          uid: sp-http.DigestCache
         - name: GraphHttpClient
           uid: sp-http.GraphHttpClient
         - name: GraphHttpClientConfiguration
           uid: sp-http.GraphHttpClientConfiguration
         - name: GraphHttpClientResponse
           uid: sp-http.GraphHttpClientResponse
+        - name: GraphRequest
+          uid: sp-http.GraphRequest
         - name: HttpClient
           uid: sp-http.HttpClient
         - name: HttpClientConfiguration
@@ -146,10 +176,10 @@
           uid: sp-http.IAadHttpClientConfiguration
         - name: IAadHttpClientConfigurations
           uid: sp-http.IAadHttpClientConfigurations
-        - name: IAadTokenProvider
-          uid: sp-http.IAadTokenProvider
-        - name: IAadTokenProviderConfiguration
-          uid: sp-http.IAadTokenProviderConfiguration
+        - name: IAadHttpClientOptions
+          uid: sp-http.IAadHttpClientOptions
+        - name: IDigestCache
+          uid: sp-http.IDigestCache
         - name: IGraphHttpClientConfiguration
           uid: sp-http.IGraphHttpClientConfiguration
         - name: IGraphHttpClientConfigurations
@@ -178,6 +208,10 @@
           uid: sp-http.ISPHttpClientConfigurations
         - name: ISPHttpClientOptions
           uid: sp-http.ISPHttpClientOptions
+        - name: MSGraphClient
+          uid: sp-http.MSGraphClient
+        - name: MSGraphClientFactory
+          uid: sp-http.MSGraphClientFactory
         - name: ODataVersion
           uid: sp-http.ODataVersion
         - name: SPHttpClient
@@ -253,8 +287,14 @@
       items:
         - name: CultureInfo
           uid: sp-page-context.CultureInfo
+        - name: ISPSystemTime
+          uid: sp-page-context.ISPSystemTime
+        - name: ISPTimeZoneData
+          uid: sp-page-context.ISPTimeZoneData
         - name: PageContext
           uid: sp-page-context.PageContext
+        - name: SPDayOfWeek
+          uid: sp-page-context.SPDayOfWeek
         - name: SPField
           uid: sp-page-context.SPField
         - name: SPList
@@ -265,6 +305,8 @@
           uid: sp-page-context.SPPermission
         - name: SPSite
           uid: sp-page-context.SPSite
+        - name: SPTimeZone
+          uid: sp-page-context.SPTimeZone
         - name: SPUser
           uid: sp-page-context.SPUser
         - name: SPWeb
@@ -274,8 +316,22 @@
       items:
         - name: BaseClientSideWebPart
           uid: sp-webpart-base.BaseClientSideWebPart
+        - name: BaseWebPart
+          uid: sp-webpart-base.BaseWebPart
+        - name: BaseWebPartContext
+          uid: sp-webpart-base.BaseWebPartContext
+        - name: DynamicDataSharedDepth
+          uid: sp-webpart-base.DynamicDataSharedDepth
         - name: IClientSideWebPartStatusRenderer
           uid: sp-webpart-base.IClientSideWebPartStatusRenderer
+        - name: IDynamicDataSharedPropertyConfiguration
+          uid: sp-webpart-base.IDynamicDataSharedPropertyConfiguration
+        - name: IDynamicDataSharedPropertyFilters
+          uid: sp-webpart-base.IDynamicDataSharedPropertyFilters
+        - name: IDynamicDataSharedSourceConfiguration
+          uid: sp-webpart-base.IDynamicDataSharedSourceConfiguration
+        - name: IDynamicDataSharedSourceFilters
+          uid: sp-webpart-base.IDynamicDataSharedSourceFilters
         - name: IPlaceholderSpinnerProps
           uid: sp-webpart-base.IPlaceholderSpinnerProps
         - name: IPropertyPaneAccessor
@@ -290,6 +346,8 @@
           uid: sp-webpart-base.IPropertyPaneChoiceGroupOptionIconProps
         - name: IPropertyPaneChoiceGroupProps
           uid: sp-webpart-base.IPropertyPaneChoiceGroupProps
+        - name: IPropertyPaneConditionalGroup
+          uid: sp-webpart-base.IPropertyPaneConditionalGroup
         - name: IPropertyPaneConfiguration
           uid: sp-webpart-base.IPropertyPaneConfiguration
         - name: IPropertyPaneCustomFieldProps
@@ -300,6 +358,10 @@
           uid: sp-webpart-base.IPropertyPaneDropdownOption
         - name: IPropertyPaneDropdownProps
           uid: sp-webpart-base.IPropertyPaneDropdownProps
+        - name: IPropertyPaneDynamicFieldProps
+          uid: sp-webpart-base.IPropertyPaneDynamicFieldProps
+        - name: IPropertyPaneDynamicFieldSetProps
+          uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps
         - name: IPropertyPaneDynamicTextFieldProps
           uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
         - name: IPropertyPaneField
@@ -330,6 +392,8 @@
           uid: sp-webpart-base.IWebPartData
         - name: IWebPartPropertiesMetadata
           uid: sp-webpart-base.IWebPartPropertiesMetadata
+        - name: IWebPartPropertyMetadata
+          uid: sp-webpart-base.IWebPartPropertyMetadata
         - name: PropertyPaneButtonType
           uid: sp-webpart-base.PropertyPaneButtonType
         - name: PropertyPaneDropdownOptionType
@@ -338,3 +402,5 @@
           uid: sp-webpart-base.PropertyPaneFieldType
         - name: WebPartContext
           uid: sp-webpart-base.WebPartContext
+        - name: WebPartFormFactor
+          uid: sp-webpart-base.WebPartFormFactor

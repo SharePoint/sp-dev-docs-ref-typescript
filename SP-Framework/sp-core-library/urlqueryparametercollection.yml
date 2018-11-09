@@ -17,7 +17,7 @@ items:
     deprecated:
       content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
     name: UrlQueryParameterCollection
-    fullName: sp-core-library.UrlQueryParameterCollection
+    fullName: UrlQueryParameterCollection
     langs:
       - typeScript
     type: class
@@ -33,7 +33,7 @@ items:
     deprecated:
       content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
     name: constructor(url)
-    fullName: sp-core-library.UrlQueryParameterCollection.constructor
+    fullName: constructor
     langs:
       - typeScript
     type: constructor
@@ -46,14 +46,22 @@ items:
             - string
   - uid: sp-core-library.UrlQueryParameterCollection.getValue
     summary: Returns the value of the first matching query parameter or undefined if the key doesn't exist.
-    remarks: >-
-      Examples: this.\_queryParameterList = \[ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value:
-      notdone}\] getValue('TEST') \-\-\-&gt; 'done' getValue('debug') \-\-\-&gt; 'false' getValue('lost') \-\-\-&gt;
-      undefined
+    remarks: |-
+      Examples:
+      ```
+      this._queryParameterList = [
+      {key: TEST, value: done},
+      {key: DEBUG, value: false},
+      {key: TEST, value: notdone}]
+        getValue('TEST') ---> 'done'
+        getValue('debug')  ---> 'false'
+        getValue('lost')  ---> undefined
+
+      ```
     deprecated:
       content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
     name: getValue(param)
-    fullName: sp-core-library.UrlQueryParameterCollection.getValue
+    fullName: getValue
     langs:
       - typeScript
     type: method
@@ -70,14 +78,22 @@ items:
             - string
   - uid: sp-core-library.UrlQueryParameterCollection.getValues
     summary: Returns the values of all of the matching query parameters or undefined if the key doesn't exist.
-    remarks: >-
-      Examples: this.\_queryParameterList = \[ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value:
-      notdone}\] getValues('TEST') \-\-\-&gt; \['done', 'notdone'\] getValues('debug') \-\-\-&gt; \['false'\]
-      getValues('lost') \-\-\-&gt; undefined
+    remarks: |-
+      Examples:
+      ```
+      this._queryParameterList = [
+      {key: TEST, value: done},
+      {key: DEBUG, value: false},
+      {key: TEST, value: notdone}]
+        getValues('TEST') ---> ['done', 'notdone']
+        getValues('debug')  ---> ['false']
+        getValues('lost')  ---> undefined
+
+      ```
     deprecated:
       content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
     name: getValues(param)
-    fullName: sp-core-library.UrlQueryParameterCollection.getValues
+    fullName: getValues
     langs:
       - typeScript
     type: method

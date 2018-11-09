@@ -125,7 +125,7 @@
               "elements": [
                 {
                   "kind": "text",
-                  "text": "@microsoft/sp-page-context:PageContext"
+                  "text": "PageContext"
                 }
               ],
               "target": {
@@ -143,7 +143,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": true
         }
       }
     },
@@ -208,7 +209,27 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": true
         },
         "placeholderProvider": {
           "kind": "property",
@@ -228,7 +249,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -244,16 +266,16 @@
         {
           "kind": "text",
           "text": "This is the base class that third parties should extend when implementing a client-side extension that runs when an application is first starting."
+        }
+      ],
+      "remarks": [
+        {
+          "kind": "text",
+          "text": "In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
         },
         {
           "kind": "paragraph"
         },
-        {
-          "kind": "text",
-          "text": "In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
-        }
-      ],
-      "remarks": [
         {
           "kind": "text",
           "text": "Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period."
@@ -282,6 +304,87 @@
               "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
             }
           ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Disposes the component."
+            }
+          ],
+          "remarks": [
+            {
+              "kind": "text",
+              "text": "Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends for a web part or extension. To perform custom cleanup when your component is disposed, override the "
+            },
+            {
+              "kind": "api-link",
+              "elements": [
+                {
+                  "kind": "text",
+                  "text": "BaseComponent.onDispose"
+                }
+              ],
+              "target": {
+                "scopeName": "@microsoft",
+                "packageName": "sp-component-base",
+                "exportName": "BaseComponent",
+                "memberName": "onDispose"
+              }
+            },
+            {
+              "kind": "text",
+              "text": " method."
+            }
+          ],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false
+        },
+        "onPlaceholdersChanged": {
+          "kind": "method",
+          "signature": "protected onPlaceholdersChanged(placeholderProvider: PlaceholderProvider): void;",
+          "accessModifier": "protected",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {
+            "placeholderProvider": {
+              "name": "placeholderProvider",
+              "description": [],
+              "isOptional": false,
+              "isSpread": false,
+              "type": "PlaceholderProvider"
+            }
+          },
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "This event method is called when the placeholders of the host application change, come into existence, or disappear."
+            }
+          ],
+          "remarks": [],
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
@@ -347,7 +450,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -488,7 +592,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "isDisposed": {
           "kind": "property",
@@ -503,7 +608,29 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
+        },
+        "isVisible": {
+          "kind": "property",
+          "signature": "readonly isVisible: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [
+            {
+              "kind": "text",
+              "text": "Return true if this PlacholderContent object is visible. If you create a placeholder and the host page isn't displaying it, this will return false."
+            }
+          ],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         },
         "name": {
           "kind": "property",
@@ -528,7 +655,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         }
       }
     },
@@ -599,7 +727,7 @@
     "PlaceholderProvider": {
       "kind": "class",
       "extends": "",
-      "implements": "",
+      "implements": "IDisposable",
       "typeParameters": [],
       "deprecatedMessage": [],
       "summary": [
@@ -711,7 +839,43 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": true
+        },
+        "dispose": {
+          "kind": "method",
+          "signature": "dispose(): void;",
+          "accessModifier": "",
+          "isOptional": false,
+          "isStatic": false,
+          "returnValue": {
+            "type": "void",
+            "description": []
+          },
+          "parameters": {},
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
           "isOverride": false
+        },
+        "isDisposed": {
+          "kind": "property",
+          "signature": "readonly isDisposed: boolean;",
+          "isOptional": false,
+          "isReadOnly": true,
+          "isStatic": false,
+          "type": "boolean",
+          "deprecatedMessage": [],
+          "summary": [],
+          "remarks": [],
+          "isBeta": false,
+          "isSealed": false,
+          "isVirtual": false,
+          "isOverride": false,
+          "isEventProperty": false
         },
         "placeholderNames": {
           "kind": "property",
@@ -731,7 +895,8 @@
           "isBeta": false,
           "isSealed": false,
           "isVirtual": false,
-          "isOverride": false
+          "isOverride": false,
+          "isEventProperty": false
         },
         "tryCreateContent": {
           "kind": "method",

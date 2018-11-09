@@ -1,0 +1,1016 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-component-base.ISemanticColors
+    summary: >-
+      The collection of semantic slots for colors used in themes.
+
+
+      \#\# Naming Convention
+
+
+      The name of a semantic slot can quickly tell you how it’s meant to be used. It generally follows this format:
+
+
+      \[category name\]\[element name\]\[checked state\]\[hovered/pressed/disabled state\] \[category name\] – The
+      “family” that this slot belongs to. \[element name\] – The name of the thing being targeted, such as the
+      background or border. \[checked state\] – Whether the thing is checked. We assume things are unchecked by default,
+      so no need to specify the unchecked state. (We used “checked” to refer to anything that is on, selected, toggled,
+      highlighted, emphasized, etc.) \[hovered/pressed/disabled state\] – One of these states, if applicable. Each of
+      these states are mutually exclusive. Pressed styles overwrite hovered styles, and disabled elements cannot be
+      hovered or pressed.
+
+
+      \#\# Base Slots
+
+
+      A basic set of slots that provide many default body styles, such as text, subtext, disabled colors, and so on. If
+      a category doesn't provide the slot you're looking for, use one from this category. For example, the placeholder
+      text on a text input field has no corresponding slot in its category, so you'd use the bodySubtextColor from this
+      category.
+
+
+      \#\# Invariants
+
+
+      When color has meaning, we do not want to change the color much theme to theme. For example, we will always want
+      errors to be some shade of red, but we will need to tweak the exact shade so it's legible depending on whether
+      it's an inverted theme or not. Invariant colors should almost never be changed by the theme, the defaults should
+      suffice.
+
+
+      \#\# Input Controls
+
+
+      This category contains input components commonly used to denote state, including radio buttons, check boxes,
+      toggle switches, sliders, progress bars, and more.
+
+
+      \#\# Buttons
+
+
+      Buttons! And all the flavors thereof.
+
+
+      \#\# Menus
+
+
+      Any kind of popup menus uses this category.
+
+
+      \#\# Lists
+
+
+      Lists differ from menus in that they are designed to show infinite amounts of items, often scroll, and have a
+      large and complex interaction surface. This category covers all kinds of lists, whether they're typical
+      one-item-per-row lists (like DetailsList) or ones with a tiled layout.
+    isPreview: true
+    name: ISemanticColors
+    fullName: ISemanticColors
+    langs:
+      - typeScript
+    type: interface
+    package: sp-component-base
+    children:
+      - sp-component-base.ISemanticColors.actionLink
+      - sp-component-base.ISemanticColors.actionLinkHovered
+      - sp-component-base.ISemanticColors.blockingBackground
+      - sp-component-base.ISemanticColors.bodyBackground
+      - sp-component-base.ISemanticColors.bodyDivider
+      - sp-component-base.ISemanticColors.bodyFrameBackground
+      - sp-component-base.ISemanticColors.bodyFrameDivider
+      - sp-component-base.ISemanticColors.bodyStandoutBackground
+      - sp-component-base.ISemanticColors.bodySubtext
+      - sp-component-base.ISemanticColors.bodyText
+      - sp-component-base.ISemanticColors.bodyTextChecked
+      - sp-component-base.ISemanticColors.buttonBackground
+      - sp-component-base.ISemanticColors.buttonBackgroundChecked
+      - sp-component-base.ISemanticColors.buttonBackgroundCheckedHovered
+      - sp-component-base.ISemanticColors.buttonBackgroundHovered
+      - sp-component-base.ISemanticColors.buttonBackgroundPressed
+      - sp-component-base.ISemanticColors.buttonBorder
+      - sp-component-base.ISemanticColors.buttonBorderDisabled
+      - sp-component-base.ISemanticColors.buttonText
+      - sp-component-base.ISemanticColors.buttonTextChecked
+      - sp-component-base.ISemanticColors.buttonTextCheckedHovered
+      - sp-component-base.ISemanticColors.buttonTextDisabled
+      - sp-component-base.ISemanticColors.buttonTextHovered
+      - sp-component-base.ISemanticColors.buttonTextPressed
+      - sp-component-base.ISemanticColors.disabledBackground
+      - sp-component-base.ISemanticColors.disabledBodyText
+      - sp-component-base.ISemanticColors.disabledSubtext
+      - sp-component-base.ISemanticColors.disabledText
+      - sp-component-base.ISemanticColors.errorBackground
+      - sp-component-base.ISemanticColors.errorText
+      - sp-component-base.ISemanticColors.focusBorder
+      - sp-component-base.ISemanticColors.inputBackground
+      - sp-component-base.ISemanticColors.inputBackgroundChecked
+      - sp-component-base.ISemanticColors.inputBackgroundCheckedHovered
+      - sp-component-base.ISemanticColors.inputBorder
+      - sp-component-base.ISemanticColors.inputBorderHovered
+      - sp-component-base.ISemanticColors.inputFocusBorderAlt
+      - sp-component-base.ISemanticColors.inputForegroundChecked
+      - sp-component-base.ISemanticColors.inputPlaceholderText
+      - sp-component-base.ISemanticColors.link
+      - sp-component-base.ISemanticColors.linkHovered
+      - sp-component-base.ISemanticColors.listBackground
+      - sp-component-base.ISemanticColors.listHeaderBackgroundHovered
+      - sp-component-base.ISemanticColors.listHeaderBackgroundPressed
+      - sp-component-base.ISemanticColors.listItemBackgroundChecked
+      - sp-component-base.ISemanticColors.listItemBackgroundCheckedHovered
+      - sp-component-base.ISemanticColors.listItemBackgroundHovered
+      - sp-component-base.ISemanticColors.listText
+      - sp-component-base.ISemanticColors.listTextColor
+      - sp-component-base.ISemanticColors.menuHeader
+      - sp-component-base.ISemanticColors.menuIcon
+      - sp-component-base.ISemanticColors.menuItemBackgroundChecked
+      - sp-component-base.ISemanticColors.menuItemBackgroundHovered
+      - sp-component-base.ISemanticColors.primaryButtonBackground
+      - sp-component-base.ISemanticColors.primaryButtonBackgroundHovered
+      - sp-component-base.ISemanticColors.primaryButtonBackgroundPressed
+      - sp-component-base.ISemanticColors.primaryButtonBorder
+      - sp-component-base.ISemanticColors.primaryButtonText
+      - sp-component-base.ISemanticColors.primaryButtonTextHovered
+      - sp-component-base.ISemanticColors.primaryButtonTextPressed
+      - sp-component-base.ISemanticColors.smallInputBorder
+      - sp-component-base.ISemanticColors.successBackground
+      - sp-component-base.ISemanticColors.variantBorder
+      - sp-component-base.ISemanticColors.warningBackground
+      - sp-component-base.ISemanticColors.warningHighlight
+      - sp-component-base.ISemanticColors.warningText
+  - uid: sp-component-base.ISemanticColors.actionLink
+    summary: Neutral colored links and links for action buttons.
+    isPreview: true
+    name: actionLink
+    fullName: actionLink
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'actionLink: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.actionLinkHovered
+    summary: Hover state for neutral colored links and links for action buttons.
+    isPreview: true
+    name: actionLinkHovered
+    fullName: actionLinkHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'actionLinkHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.blockingBackground
+    summary: 'Background for blocking issues, which is more severe than a warning, but not as bad as an error.'
+    isPreview: true
+    name: blockingBackground
+    fullName: blockingBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'blockingBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyBackground
+    summary: The default color for backgrounds.
+    isPreview: true
+    name: bodyBackground
+    fullName: bodyBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyDivider
+    summary: 'Divider lines; e.g. lines that separate sections in a menu, an <HR> element.'
+    isPreview: true
+    name: bodyDivider
+    fullName: bodyDivider
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyDivider: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyFrameBackground
+    summary: >-
+      The color for chrome adjacent to an area with bodyBackground. This can be used to provide visual separation of
+      zones when using stronger colors, when using a divider line is not desired. In most themes, this should match the
+      color of bodyBackground. See also: bodyFrameDivider
+    isPreview: true
+    name: bodyFrameBackground
+    fullName: bodyFrameBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyFrameBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyFrameDivider
+    summary: >-
+      Used as the border between a zone with bodyFrameBackground and a zone with bodyBackground. If bodyBackground and
+      bodyFrameBackground are different, this should be the same color as bodyFrameBackground in order to visually
+      disappear. See also: bodyFrameBackground
+    isPreview: true
+    name: bodyFrameDivider
+    fullName: bodyFrameDivider
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyFrameDivider: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyStandoutBackground
+    summary: >-
+      The standout color for highlighted content backgrounds. For highlighted content when there is no emphasis, use the
+      neutral variant instead. This should be a shade darker than bodyBackground in light themes, and a shade lighter in
+      inverted themes.
+    isPreview: true
+    name: bodyStandoutBackground
+    fullName: bodyStandoutBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyStandoutBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodySubtext
+    summary: 'De-emphasized text; e.g. metadata, captions, placeholder text.'
+    isPreview: true
+    name: bodySubtext
+    fullName: bodySubtext
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodySubtext: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyText
+    summary: The default color for text.
+    isPreview: true
+    name: bodyText
+    fullName: bodyText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.bodyTextChecked
+    summary: 'Checked text color, e.g. selected menu item text.'
+    isPreview: true
+    name: bodyTextChecked
+    fullName: bodyTextChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'bodyTextChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBackground
+    summary: Background of a standard button
+    isPreview: true
+    name: buttonBackground
+    fullName: buttonBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBackgroundChecked
+    summary: Background of a checked standard button; e.g. bold/italicize/underline text button in toolbar
+    isPreview: true
+    name: buttonBackgroundChecked
+    fullName: buttonBackgroundChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBackgroundChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBackgroundCheckedHovered
+    summary: Background of a checked and hovered standard button; e.g. bold/italicize/underline text button in toolbar
+    isPreview: true
+    name: buttonBackgroundCheckedHovered
+    fullName: buttonBackgroundCheckedHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBackgroundCheckedHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBackgroundHovered
+    summary: Background of a hovered standard button
+    isPreview: true
+    name: buttonBackgroundHovered
+    fullName: buttonBackgroundHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBackgroundHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBackgroundPressed
+    summary: Background of a pressed standard button; i.e. currently being clicked by mouse
+    isPreview: true
+    name: buttonBackgroundPressed
+    fullName: buttonBackgroundPressed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBackgroundPressed: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBorder
+    summary: Border of a standard button
+    isPreview: true
+    name: buttonBorder
+    fullName: buttonBorder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBorder: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonBorderDisabled
+    summary: Border of a disabled standard button
+    isPreview: true
+    name: buttonBorderDisabled
+    fullName: buttonBorderDisabled
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonBorderDisabled: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonText
+    summary: Color of text in a standard button
+    isPreview: true
+    name: buttonText
+    fullName: buttonText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonTextChecked
+    summary: Color of text in a checked standard button
+    isPreview: true
+    name: buttonTextChecked
+    fullName: buttonTextChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonTextChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonTextCheckedHovered
+    summary: Color of text in a checked and hovered standard button
+    isPreview: true
+    name: buttonTextCheckedHovered
+    fullName: buttonTextCheckedHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonTextCheckedHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonTextDisabled
+    summary: Color of text in a disabled standard button
+    isPreview: true
+    name: buttonTextDisabled
+    fullName: buttonTextDisabled
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonTextDisabled: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonTextHovered
+    summary: Color of text in a hovered standard button
+    isPreview: true
+    name: buttonTextHovered
+    fullName: buttonTextHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonTextHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.buttonTextPressed
+    summary: Color of text in a pressed standard button; i.e. currently being clicked by mouse
+    isPreview: true
+    name: buttonTextPressed
+    fullName: buttonTextPressed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'buttonTextPressed: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.disabledBackground
+    summary: The default color for backgrounds of disabled controls; e.g. disabled text field.
+    isPreview: true
+    name: disabledBackground
+    fullName: disabledBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'disabledBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.disabledBodyText
+    summary: The default color for disabled text on the default background (bodyBackground).
+    isPreview: true
+    name: disabledBodyText
+    fullName: disabledBodyText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'disabledBodyText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.disabledSubtext
+    summary: 'Disabled de-emphasized text, for use on disabledBackground.'
+    isPreview: true
+    name: disabledSubtext
+    fullName: disabledSubtext
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'disabledSubtext: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.disabledText
+    summary: >-
+      The default color for disabled text on top of disabledBackground; e.g. text in a disabled text field, disabled
+      button text.
+    isPreview: true
+    name: disabledText
+    fullName: disabledText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'disabledText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.errorBackground
+    summary: 'The background for errors, if necessary, or highlighting the section of the page where the error is present.'
+    isPreview: true
+    name: errorBackground
+    fullName: errorBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'errorBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.errorText
+    summary: 'The default color of error text, used on bodyBackground.'
+    isPreview: true
+    name: errorText
+    fullName: errorText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'errorText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.focusBorder
+    summary: The color of the outline around focused controls that don't already have a border; e.g. menu items
+    isPreview: true
+    name: focusBorder
+    fullName: focusBorder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'focusBorder: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputBackground
+    summary: 'The background color of an input, e.g. textbox background.'
+    isPreview: true
+    name: inputBackground
+    fullName: inputBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputBackgroundChecked
+    summary: 'The background of a checked control; e.g. checked radio button''s dot, checked toggle''s background.'
+    isPreview: true
+    name: inputBackgroundChecked
+    fullName: inputBackgroundChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputBackgroundChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputBackgroundCheckedHovered
+    summary: The background of a checked and hovered control; e.g. checked checkbox's background color on hover.
+    isPreview: true
+    name: inputBackgroundCheckedHovered
+    fullName: inputBackgroundCheckedHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputBackgroundCheckedHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputBorder
+    summary: 'The border of a large input control in its resting, state; e.g. the box of dropdown.'
+    isPreview: true
+    name: inputBorder
+    fullName: inputBorder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputBorder: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputBorderHovered
+    summary: 'The border color of a large hovered input control, such as textbox.'
+    isPreview: true
+    name: inputBorderHovered
+    fullName: inputBorderHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputBorderHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputFocusBorderAlt
+    summary: The alternate focus border color for elements that already have a border; e.g. text field borders on focus.
+    isPreview: true
+    name: inputFocusBorderAlt
+    fullName: inputFocusBorderAlt
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputFocusBorderAlt: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputForegroundChecked
+    summary: >-
+      The foreground of a checked control; e.g. checked checkbox's checkmark color, checked toggle's thumb color, radio
+      button's background color around the dot.
+    isPreview: true
+    name: inputForegroundChecked
+    fullName: inputForegroundChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputForegroundChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.inputPlaceholderText
+    summary: The color of placeholder text.
+    isPreview: true
+    name: inputPlaceholderText
+    fullName: inputPlaceholderText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'inputPlaceholderText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.link
+    summary: The color of a link.
+    isPreview: true
+    name: link
+    fullName: link
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'link: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.linkHovered
+    summary: The color of a hovered link. Also used when the link is active.
+    isPreview: true
+    name: linkHovered
+    fullName: linkHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'linkHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listBackground
+    summary: The background color for the entire list.
+    isPreview: true
+    name: listBackground
+    fullName: listBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listHeaderBackgroundHovered
+    summary: The background color for a hovered list header.
+    isPreview: true
+    name: listHeaderBackgroundHovered
+    fullName: listHeaderBackgroundHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listHeaderBackgroundHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listHeaderBackgroundPressed
+    summary: The background color for a pressed list header.
+    isPreview: true
+    name: listHeaderBackgroundPressed
+    fullName: listHeaderBackgroundPressed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listHeaderBackgroundPressed: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listItemBackgroundChecked
+    summary: The background color of a checked list item.
+    isPreview: true
+    name: listItemBackgroundChecked
+    fullName: listItemBackgroundChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listItemBackgroundChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listItemBackgroundCheckedHovered
+    summary: The background color of a checked and hovered list item.
+    isPreview: true
+    name: listItemBackgroundCheckedHovered
+    fullName: listItemBackgroundCheckedHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listItemBackgroundCheckedHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listItemBackgroundHovered
+    summary: The background color of a hovered list item.
+    isPreview: true
+    name: listItemBackgroundHovered
+    fullName: listItemBackgroundHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listItemBackgroundHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listText
+    summary: The default text color for list item titles and text in column fields.
+    isPreview: true
+    name: listText
+    fullName: listText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.listTextColor
+    summary: Deprecated. Do not use.
+    deprecated:
+      content: This slot was incorrectly named. Use listText instead.
+    isPreview: true
+    name: listTextColor
+    fullName: listTextColor
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'listTextColor: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.menuHeader
+    summary: The headers in menus that denote title of a section.
+    isPreview: true
+    name: menuHeader
+    fullName: menuHeader
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'menuHeader: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.menuIcon
+    summary: The default colors of icons in menus.
+    isPreview: true
+    name: menuIcon
+    fullName: menuIcon
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'menuIcon: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.menuItemBackgroundChecked
+    summary: Deprecated. Do not use.
+    deprecated:
+      content: >-
+        (Checked menu items no longer get a background color.) The background of checked menu item; e.g. a menu item
+        whose submenu is open, a selected dropdown item.
+    isPreview: true
+    name: menuItemBackgroundChecked
+    fullName: menuItemBackgroundChecked
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'menuItemBackgroundChecked: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.menuItemBackgroundHovered
+    summary: The background of a hovered menu item.
+    isPreview: true
+    name: menuItemBackgroundHovered
+    fullName: menuItemBackgroundHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'menuItemBackgroundHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonBackground
+    summary: Background of a primary button
+    isPreview: true
+    name: primaryButtonBackground
+    fullName: primaryButtonBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonBackgroundHovered
+    summary: Background of a hovered primary button
+    isPreview: true
+    name: primaryButtonBackgroundHovered
+    fullName: primaryButtonBackgroundHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonBackgroundHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonBackgroundPressed
+    summary: Background of a pressed primary button; i.e. currently being clicked by mouse
+    isPreview: true
+    name: primaryButtonBackgroundPressed
+    fullName: primaryButtonBackgroundPressed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonBackgroundPressed: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonBorder
+    summary: Border of a primary button
+    isPreview: true
+    name: primaryButtonBorder
+    fullName: primaryButtonBorder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonBorder: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonText
+    summary: Color of text in a primary button
+    isPreview: true
+    name: primaryButtonText
+    fullName: primaryButtonText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonText: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonTextHovered
+    summary: Color of text in a hovered primary button
+    isPreview: true
+    name: primaryButtonTextHovered
+    fullName: primaryButtonTextHovered
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonTextHovered: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.primaryButtonTextPressed
+    summary: Color of text in a pressed primary button; i.e. currently being clicked by mouse
+    isPreview: true
+    name: primaryButtonTextPressed
+    fullName: primaryButtonTextPressed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'primaryButtonTextPressed: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.smallInputBorder
+    summary: The border of a small input control in its resting unchecked state; e.g. the box of an unchecked checkbox.
+    isPreview: true
+    name: smallInputBorder
+    fullName: smallInputBorder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'smallInputBorder: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.successBackground
+    summary: Background for success
+    isPreview: true
+    name: successBackground
+    fullName: successBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'successBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.variantBorder
+    summary: 'The color of the border that provides contrast between an element, such as a card, and an emphasized background.'
+    isPreview: true
+    name: variantBorder
+    fullName: variantBorder
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'variantBorder: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.warningBackground
+    summary: Background for warning messages.
+    isPreview: true
+    name: warningBackground
+    fullName: warningBackground
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'warningBackground: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.warningHighlight
+    summary: Foreground color for warning highlights
+    isPreview: true
+    name: warningHighlight
+    fullName: warningHighlight
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'warningHighlight: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.ISemanticColors.warningText
+    summary: 'The color of text on errorBackground, warningBackground, blockingBackground, or successBackground.'
+    isPreview: true
+    name: warningText
+    fullName: warningText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'warningText: string;'
+      return:
+        type:
+          - string

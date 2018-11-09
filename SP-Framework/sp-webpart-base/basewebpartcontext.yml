@@ -1,0 +1,77 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.BaseWebPartContext
+    summary: >-
+      Web part context object. This object contains the contextual services available to a web part. e.g. a contextual
+      instance to the http client.
+
+
+      This base is to be extended by UI-specific WebPart's base.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the BaseWebPartContext class.
+    name: BaseWebPartContext
+    fullName: BaseWebPartContext
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - BaseComponentContext
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.BaseWebPartContext.formFactor
+      - sp-webpart-base.BaseWebPartContext.manifest
+      - sp-webpart-base.BaseWebPartContext.propertyPane
+      - sp-webpart-base.BaseWebPartContext.webPartTag
+  - uid: sp-webpart-base.BaseWebPartContext.formFactor
+    summary: Form factor of the web part.
+    remarks: >-
+      Web parts may behave differently based on its form factor. E.g. a web part rendering as full size may want to set
+      up different margins that when rendering in a canvas.
+    isPreview: true
+    name: formFactor
+    fullName: formFactor
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly formFactor: WebPartFormFactor;'
+      return:
+        type:
+          - WebPartFormFactor
+  - uid: sp-webpart-base.BaseWebPartContext.manifest
+    summary: Manifest for the client-side component.
+    name: manifest
+    fullName: manifest
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
+      return:
+        type:
+          - IClientSideWebPartManifestInstance<any>
+  - uid: sp-webpart-base.BaseWebPartContext.propertyPane
+    summary: Accessor for common web part property pane operations.
+    name: propertyPane
+    fullName: propertyPane
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly propertyPane: IPropertyPaneAccessor;'
+      return:
+        type:
+          - IPropertyPaneAccessor
+  - uid: sp-webpart-base.BaseWebPartContext.webPartTag
+    summary: Web part tag to be used for logging and telemetry.
+    name: webPartTag
+    fullName: webPartTag
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly webPartTag: string;'
+      return:
+        type:
+          - string

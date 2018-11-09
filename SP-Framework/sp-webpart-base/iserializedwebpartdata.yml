@@ -5,7 +5,7 @@ items:
       This structure represents the part of the serialized state of a web part which is controlled by the web part. It
       is extended by IWebPartData which contains additional data added by the framework to the serialized data.
     name: ISerializedWebPartData
-    fullName: sp-webpart-base.ISerializedWebPartData
+    fullName: ISerializedWebPartData
     langs:
       - typeScript
     type: interface
@@ -24,10 +24,12 @@ items:
       serialized data of the web part. Refer to dataVersion field of your web part for more information.
 
 
-      Usage: versioning and evolving the serialized data of the web part Required: yes Type: Version Supported values:
-      MAJOR.MINOR Example: "1.0"
+      Supported values: MAJOR.MINOR
+
+
+      Example: `"1.0"`
     name: dataVersion
-    fullName: sp-webpart-base.ISerializedWebPartData.dataVersion
+    fullName: dataVersion
     langs:
       - typeScript
     type: property
@@ -37,17 +39,23 @@ items:
         type:
           - Version
   - uid: sp-webpart-base.ISerializedWebPartData.dynamicDataPaths
-    summary: >-
-      Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part.
+    summary: Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part.
+    remarks: |-
       The key is the path within the web part properties, and the value is the dynamic data internal id.
 
+      Example:
+      ```
+      {
+        'pageContextUser':
+          'PageContext:user',
+        'anotherWebPartProperty':
+          'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty'
+      }
 
-      Required: no Supported values: Map from string to string Example: { 'pageContextUser': 'PageContext:user',
-      'anotherWebPartProperty':
-      'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty' }
+      ```
     isPreview: true
     name: dynamicDataPaths
-    fullName: sp-webpart-base.ISerializedWebPartData.dynamicDataPaths
+    fullName: dynamicDataPaths
     langs:
       - typeScript
     type: property
@@ -62,14 +70,21 @@ items:
   - uid: sp-webpart-base.ISerializedWebPartData.dynamicDataValues
     summary: >-
       Static values for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the
-      web part. The key is the path within the web part properties, and the value is the dynamic data static value.
+      web part.
+    remarks: |-
+      The key is the path within the web part properties, and the value is the dynamic data static value.
 
+      Example:
+      ```
+      {
+        'aStringProperty': 'thisIsAString',
+        'aBooleanProperty': true
+      }
 
-      Required: no Supported values: Map from string to string Example: { 'aStringProperty': 'thisIsAString',
-      'aBooleanProperty': true }
+      ```
     isPreview: true
     name: dynamicDataValues
-    fullName: sp-webpart-base.ISerializedWebPartData.dynamicDataValues
+    fullName: dynamicDataValues
     langs:
       - typeScript
     type: property
@@ -84,11 +99,16 @@ items:
   - uid: sp-webpart-base.ISerializedWebPartData.properties
     summary: Web part specific properties. The individual web part owns the definition of these properties.
     remarks: >-
-      Usage: used by the web part to manage its internal metadata and config data. The framework code never touches
-      these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: {
-      'value': 'text value' }
+      Used by the web part to manage its internal metadata and config data. The framework code never touches these
+      properties.
+
+
+      Supported values: any JSON stringifiable object hierarchy.
+
+
+      Example: `{ 'value': 'text value' }`
     name: properties
-    fullName: sp-webpart-base.ISerializedWebPartData.properties
+    fullName: properties
     langs:
       - typeScript
     type: property
@@ -100,7 +120,7 @@ items:
   - uid: sp-webpart-base.ISerializedWebPartData.serverProcessedContent
     summary: The collections of data that can be processed by server side services like search index and link fixup.
     name: serverProcessedContent
-    fullName: sp-webpart-base.ISerializedWebPartData.serverProcessedContent
+    fullName: serverProcessedContent
     langs:
       - typeScript
     type: property

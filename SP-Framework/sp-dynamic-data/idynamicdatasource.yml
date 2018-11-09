@@ -4,23 +4,65 @@ items:
     summary: >-
       Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API
       to get the data.
-    isPreview: true
     name: IDynamicDataSource
-    fullName: sp-dynamic-data.IDynamicDataSource
+    fullName: IDynamicDataSource
     langs:
       - typeScript
     type: interface
     package: sp-dynamic-data
     children:
+      - sp-dynamic-data.IDynamicDataSource.allowedEvents
+      - sp-dynamic-data.IDynamicDataSource.getAnnotatedPropertyValue
       - sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
       - sp-dynamic-data.IDynamicDataSource.getPropertyValue
       - sp-dynamic-data.IDynamicDataSource.id
       - sp-dynamic-data.IDynamicDataSource.metadata
-  - uid: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
-    summary: Returns the definitions for all the properties exposed by the source.
+      - sp-dynamic-data.IDynamicDataSource.sendEvent
+  - uid: sp-dynamic-data.IDynamicDataSource.allowedEvents
+    summary: >-
+      Returns list of allowed events on the dynamic data source. When this api returns a non-empty result, then source
+      must define 'sendData' api.
+
+
+      If this api is not defined or returns an empty map, then no consumer will be able to talk to this source.
     isPreview: true
+    name: allowedEvents()
+    fullName: allowedEvents
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;'
+      return:
+        type:
+          - ReadonlyArray<IDynamicDataEventDefinition>
+        description: ''
+  - uid: sp-dynamic-data.IDynamicDataSource.getAnnotatedPropertyValue
+    summary: >-
+      Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
+      back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
+    name: getAnnotatedPropertyValue(propertyId)
+    fullName: getAnnotatedPropertyValue
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getAnnotatedPropertyValue(propertyId: string): IDynamicDataAnnotatedPropertyValue;'
+      return:
+        type:
+          - IDynamicDataAnnotatedPropertyValue
+        description: ''
+      parameters:
+        - id: propertyId
+          description: One of the property ids exposed from the dynamic data source.
+          type:
+            - string
+  - uid: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
+    summary: >-
+      Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
+      component.
     name: getPropertyDefinitions()
-    fullName: sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
+    fullName: getPropertyDefinitions
     langs:
       - typeScript
     type: method
@@ -32,17 +74,10 @@ items:
         description: ''
   - uid: sp-dynamic-data.IDynamicDataSource.getPropertyValue
     summary: >-
-      For a given property id, returns the value of the property. Throws an error if the property id doesn't exist in
-      the source.
-    remarks: >-
-      It returns a read-only copy of the property value, so modifying its value will not impact on the value in the data
-      source.
-
-
-      Property values are JSON-serializable objects, so there are no functions that can be called inside.
-    isPreview: true
+      Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
+      component.
     name: getPropertyValue(propertyId)
-    fullName: sp-dynamic-data.IDynamicDataSource.getPropertyValue
+    fullName: getPropertyValue
     langs:
       - typeScript
     type: method
@@ -59,9 +94,8 @@ items:
             - string
   - uid: sp-dynamic-data.IDynamicDataSource.id
     summary: Id of the Dynamic Data Source.
-    isPreview: true
     name: id
-    fullName: sp-dynamic-data.IDynamicDataSource.id
+    fullName: id
     langs:
       - typeScript
     type: property
@@ -72,9 +106,8 @@ items:
           - string
   - uid: sp-dynamic-data.IDynamicDataSource.metadata
     summary: Metadata of the Dynamic Data Source.
-    isPreview: true
     name: metadata
-    fullName: sp-dynamic-data.IDynamicDataSource.metadata
+    fullName: metadata
     langs:
       - typeScript
     type: property
@@ -83,3 +116,31 @@ items:
       return:
         type:
           - IDynamicDataSourceMetadata
+  - uid: sp-dynamic-data.IDynamicDataSource.sendEvent
+    summary: >-
+      If defined, enables the consumer to send data to the associated dynamic data source. Then source can act
+      accordingly.
+
+
+      Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
+    isPreview: true
+    name: 'sendEvent(eventName, data)'
+    fullName: sendEvent
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'sendEvent?(eventName: string, data: any): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: eventName
+          description: A case-sensitive string representing the name of the event.
+          type:
+            - string
+        - id: data
+          description: Data to be sent to the dynamic data source.
+          type:
+            - any

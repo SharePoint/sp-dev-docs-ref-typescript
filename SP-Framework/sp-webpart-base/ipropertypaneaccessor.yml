@@ -5,20 +5,34 @@ items:
       Web part context property pane accessor interface. Provides some most commonly used operations to access the
       property pane.
     name: IPropertyPaneAccessor
-    fullName: sp-webpart-base.IPropertyPaneAccessor
+    fullName: IPropertyPaneAccessor
     langs:
       - typeScript
     type: interface
     package: sp-webpart-base
     children:
+      - sp-webpart-base.IPropertyPaneAccessor.close
       - sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
       - sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
       - sp-webpart-base.IPropertyPaneAccessor.open
       - sp-webpart-base.IPropertyPaneAccessor.refresh
+  - uid: sp-webpart-base.IPropertyPaneAccessor.close
+    summary: This API should be used to close the PropertyPane to help configure the web part.
+    name: close()
+    fullName: close
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'close(): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
     summary: Returns true if the PropertyPane is open.
     name: isPropertyPaneOpen()
-    fullName: sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
+    fullName: isPropertyPaneOpen
     langs:
       - typeScript
     type: method
@@ -34,7 +48,7 @@ items:
       For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if
       the property pane was opened by the host, then the value will be false.
     name: isRenderedByWebPart()
-    fullName: sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
+    fullName: isRenderedByWebPart
     langs:
       - typeScript
     type: method
@@ -47,7 +61,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneAccessor.open
     summary: This API should be used to open the PropertyPane to help configure the web part.
     name: open()
-    fullName: sp-webpart-base.IPropertyPaneAccessor.open
+    fullName: open
     langs:
       - typeScript
     type: method
@@ -63,7 +77,7 @@ items:
       This operation only works when the PropertyPane is already open for the currently active web part. If the
       PropertyPane is opened for another web part, calling the refresh API will have no impact.
     name: refresh()
-    fullName: sp-webpart-base.IPropertyPaneAccessor.refresh
+    fullName: refresh
     langs:
       - typeScript
     type: method

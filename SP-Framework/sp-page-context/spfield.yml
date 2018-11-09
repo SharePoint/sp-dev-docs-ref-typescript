@@ -1,14 +1,16 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-page-context.SPField
-    summary: >-
-      The client-side equivalent for SharePoint SPField class. Used in Fields property of SPList and SPListItem classes.
-      A field represents the data model for a column in SharePoint list view.
+    summary: A field represents the data model for a column in SharePoint list view.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
       create subclasses that extend the SPField class.
+
+
+      This is the client-side equivalent for SharePoint `SPField` class. It is used with the
+      `@microsoft/sp-listview-extensibility` package.
     name: SPField
-    fullName: sp-page-context.SPField
+    fullName: SPField
     langs:
       - typeScript
     type: class
@@ -24,7 +26,7 @@ items:
   - uid: sp-page-context.SPField.clientSideComponentId
     summary: The unique identifier of the client-side component associated with the field.
     name: clientSideComponentId
-    fullName: sp-page-context.SPField.clientSideComponentId
+    fullName: clientSideComponentId
     langs:
       - typeScript
     type: property
@@ -34,12 +36,12 @@ items:
         type:
           - Guid | undefined
   - uid: sp-page-context.SPField.clientSideComponentProperties
-    summary: >-
-      This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string
-      must contain a JSON object with custom initialization properties whose format and meaning are defined by the
-      client-side component.
+    summary: This property is only used when a `ClientSideComponentId` is specified. It is optional.
+    remarks: >-
+      If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning
+      are defined by the client-side component.
     name: clientSideComponentProperties
-    fullName: sp-page-context.SPField.clientSideComponentProperties
+    fullName: clientSideComponentProperties
     langs:
       - typeScript
     type: property
@@ -51,7 +53,7 @@ items:
   - uid: sp-page-context.SPField.displayName
     summary: The display name of the field. This name is shown as column name in UI.
     name: displayName
-    fullName: sp-page-context.SPField.displayName
+    fullName: displayName
     langs:
       - typeScript
     type: property
@@ -63,7 +65,7 @@ items:
   - uid: sp-page-context.SPField.fieldType
     summary: The type of the field represented as a string
     name: fieldType
-    fullName: sp-page-context.SPField.fieldType
+    fullName: fieldType
     langs:
       - typeScript
     type: property
@@ -75,7 +77,7 @@ items:
   - uid: sp-page-context.SPField.id
     summary: The GUID identifier for this field.
     name: id
-    fullName: sp-page-context.SPField.id
+    fullName: id
     langs:
       - typeScript
     type: property
@@ -87,7 +89,7 @@ items:
   - uid: sp-page-context.SPField.internalName
     summary: The internal name of the field. This name is usually used to find the field.
     name: internalName
-    fullName: sp-page-context.SPField.internalName
+    fullName: internalName
     langs:
       - typeScript
     type: property
@@ -99,7 +101,7 @@ items:
   - uid: sp-page-context.SPField.isRequired
     summary: Whether the field is required for each list item in the list
     name: isRequired
-    fullName: sp-page-context.SPField.isRequired
+    fullName: isRequired
     langs:
       - typeScript
     type: property

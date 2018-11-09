@@ -1,0 +1,76 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-component-base.ThemeProvider
+    summary: >-
+      The ThemeProvider class provides the capability to get different themes from the Framework. Themes can be provided
+      in different contexts, e.g. Canvas sections may provide a variant of the global theme in some contexts.
+    isPreview: true
+    name: ThemeProvider
+    fullName: ThemeProvider
+    langs:
+      - typeScript
+    type: class
+    package: sp-component-base
+    children:
+      - sp-component-base.ThemeProvider.constructor
+      - sp-component-base.ThemeProvider.serviceKey
+      - sp-component-base.ThemeProvider.themeChangedEvent
+      - sp-component-base.ThemeProvider.tryGetTheme
+  - uid: sp-component-base.ThemeProvider.constructor
+    summary: 'Constructs a new instance of the [ThemeProvider](xref:sp-component-base.ThemeProvider) class'
+    name: 'constructor(serviceScope, theme)'
+    fullName: constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope, theme?: ITheme);'
+      parameters:
+        - id: serviceScope
+          description: ''
+          type:
+            - ServiceScope
+        - id: theme
+          description: ''
+          type:
+            - ITheme
+  - uid: sp-component-base.ThemeProvider.serviceKey
+    summary: The service key for ThemeProvider.
+    isPreview: true
+    name: serviceKey
+    fullName: serviceKey
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'static readonly serviceKey: ServiceKey<ThemeProvider>;'
+      return:
+        type:
+          - ServiceKey<ThemeProvider>
+  - uid: sp-component-base.ThemeProvider.themeChangedEvent
+    summary: Raised when the theme changes with the new theme as an argument.
+    isPreview: true
+    name: themeChangedEvent
+    fullName: themeChangedEvent
+    langs:
+      - typeScript
+    type: event
+    syntax:
+      content: 'readonly themeChangedEvent: SPEvent<ThemeChangedEventArgs>;'
+      return:
+        type:
+          - SPEvent<ThemeChangedEventArgs>
+  - uid: sp-component-base.ThemeProvider.tryGetTheme
+    summary: 'If set, get the current scoped theme.'
+    isPreview: true
+    name: tryGetTheme()
+    fullName: tryGetTheme
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'tryGetTheme(): IReadonlyTheme | undefined;'
+      return:
+        type:
+          - IReadonlyTheme | undefined
+        description: ''

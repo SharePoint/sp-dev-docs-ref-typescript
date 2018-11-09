@@ -8,23 +8,21 @@ items:
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
       create subclasses that extend the WebPartContext class.
     name: WebPartContext
-    fullName: sp-webpart-base.WebPartContext
+    fullName: WebPartContext
     langs:
       - typeScript
     type: class
     extends:
-      - BaseComponentContext
+      - BaseWebPartContext
     package: sp-webpart-base
     children:
       - sp-webpart-base.WebPartContext.domElement
-      - sp-webpart-base.WebPartContext.manifest
-      - sp-webpart-base.WebPartContext.propertyPane
+      - sp-webpart-base.WebPartContext.microsoftTeams
       - sp-webpart-base.WebPartContext.statusRenderer
-      - sp-webpart-base.WebPartContext.webPartTag
   - uid: sp-webpart-base.WebPartContext.domElement
-    summary: Reference to the DOM element that hosts this client side component.
+    summary: Reference to the DOM element that hosts this client-side component.
     name: domElement
-    fullName: sp-webpart-base.WebPartContext.domElement
+    fullName: domElement
     langs:
       - typeScript
     type: property
@@ -33,34 +31,28 @@ items:
       return:
         type:
           - HTMLElement
-  - uid: sp-webpart-base.WebPartContext.manifest
-    summary: Manifest for the client side component.
-    name: manifest
-    fullName: sp-webpart-base.WebPartContext.manifest
+  - uid: sp-webpart-base.WebPartContext.microsoftTeams
+    summary: >-
+      Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
+      being hosted in Microsoft Teams.
+    remarks: >-
+      For more information, please see:
+      [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
+    isPreview: true
+    name: microsoftTeams
+    fullName: microsoftTeams
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
+      content: 'readonly microsoftTeams: typeof microsoftTeams | undefined;'
       return:
         type:
-          - IClientSideWebPartManifestInstance<any>
-  - uid: sp-webpart-base.WebPartContext.propertyPane
-    summary: Accessor for common web part property pane operations.
-    name: propertyPane
-    fullName: sp-webpart-base.WebPartContext.propertyPane
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly propertyPane: IPropertyPaneAccessor;'
-      return:
-        type:
-          - IPropertyPaneAccessor
+          - typeof microsoftTeams | undefined
   - uid: sp-webpart-base.WebPartContext.statusRenderer
     summary: Web part status renderer.
     name: statusRenderer
-    fullName: sp-webpart-base.WebPartContext.statusRenderer
+    fullName: statusRenderer
     langs:
       - typeScript
     type: property
@@ -69,15 +61,3 @@ items:
       return:
         type:
           - IClientSideWebPartStatusRenderer
-  - uid: sp-webpart-base.WebPartContext.webPartTag
-    summary: Web part tag to be used for logging and telemetry.
-    name: webPartTag
-    fullName: sp-webpart-base.WebPartContext.webPartTag
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly webPartTag: string;'
-      return:
-        type:
-          - string

@@ -3,7 +3,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps
     summary: PropertyPaneTextField component props.
     name: IPropertyPaneTextFieldProps
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps
+    fullName: IPropertyPaneTextFieldProps
     langs:
       - typeScript
     type: interface
@@ -29,7 +29,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.ariaLabel
     summary: 'Aria Label for text field, if any.'
     name: ariaLabel
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.ariaLabel
+    fullName: ariaLabel
     langs:
       - typeScript
     type: property
@@ -39,10 +39,10 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.deferredValidationTime
-    summary: Text field will start to validate after users stop typing for \`deferredValidationTime\` milliseconds.
+    summary: Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds.
     remarks: The default value is 200.
     name: deferredValidationTime
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.deferredValidationTime
+    fullName: deferredValidationTime
     langs:
       - typeScript
     type: property
@@ -54,7 +54,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.description
     summary: The text field input description.
     name: description
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.description
+    fullName: description
     langs:
       - typeScript
     type: property
@@ -66,7 +66,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.disabled
     summary: Whether the property pane text field is enabled or not.
     name: disabled
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.disabled
+    fullName: disabled
     langs:
       - typeScript
     type: property
@@ -84,7 +84,7 @@ items:
 
       So, make sure to set this only if you want to see an error message displayed for the text field.
     name: errorMessage
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.errorMessage
+    fullName: errorMessage
     langs:
       - typeScript
     type: property
@@ -96,7 +96,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.label
     summary: Label for the text field.
     name: label
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.label
+    fullName: label
     langs:
       - typeScript
     type: property
@@ -106,14 +106,30 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.logName
-    summary: Engagement name to log PropertyPaneTextField value change.
+    summary: Name used to log `PropertyPaneTextField` value changes for engagement tracking.
     remarks: >-
-      It will be logged format as &lt;moduleName&gt;.&lt;controlName&gt;. E.g. {moduleName: 'ImageWebPart', controlName:
-      'OverlayText'}, it will log: 1. action type, including 'Add', 'Clear' and 'Edit'. Clear: reset the content of
-      caption element to initial/unset state. Add: change from initial/unset state to customized content. (first edit)
-      Edit: any edition that changes the content apart from add and clear 2. text length after each edit.
+      The messages will be logged with a format such as `<moduleName>.<controlName>`<!-- -->.
+
+
+      For example, if `{moduleName: 'ImageWebPart', controlName: 'OverlayText'}` is specified, the engagement log might
+      contain:
+
+
+      1. The action type:
+
+
+      `Add`<!-- -->: change from initial/unset state to customized content. (first edit)
+
+
+      `Clear`<!-- -->: reset the content of caption element to initial/unset state.
+
+
+      `Edit`<!-- -->: any edition that changes the content apart from add and clear
+
+
+      2. The text length after each edit
     name: logName
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.logName
+    fullName: logName
     langs:
       - typeScript
     type: property
@@ -130,7 +146,7 @@ items:
     summary: Maximum number of characters that the PropertyPaneTextField can have.
     remarks: 'If the value is set to a negative number, an exception will be thrown.'
     name: maxLength
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.maxLength
+    fullName: maxLength
     langs:
       - typeScript
     type: property
@@ -143,7 +159,7 @@ items:
     summary: Whether or not the text field is a multiline text field.
     remarks: The default value is false.
     name: multiline
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.multiline
+    fullName: multiline
     langs:
       - typeScript
     type: property
@@ -161,13 +177,13 @@ items:
 
       - If invalid, it returns the error message string and an error message is displayed below the text field.
 
-      When it returns Promise&lt;string&gt;:
+      When it returns `Promise<string>`<!-- -->:
 
       - The resolved value is display as error message.
 
       - The rejected, the value is thrown away.
     name: onGetErrorMessage
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.onGetErrorMessage
+    fullName: onGetErrorMessage
     langs:
       - typeScript
     type: property
@@ -179,7 +195,7 @@ items:
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.placeholder
     summary: placeholder text to be displayed in the text field.
     name: placeholder
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.placeholder
+    fullName: placeholder
     langs:
       - typeScript
     type: property
@@ -192,7 +208,7 @@ items:
     summary: Whether or not the multiline text field is resizable.
     remarks: The default value is true.
     name: resizable
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.resizable
+    fullName: resizable
     langs:
       - typeScript
     type: property
@@ -205,7 +221,7 @@ items:
     summary: 'Specifies the visible height of a text area(multiline text TextField), in lines.'
     remarks: This prop is used only when the multiline prop is set to true.
     name: rows
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.rows
+    fullName: rows
     langs:
       - typeScript
     type: property
@@ -218,7 +234,7 @@ items:
     summary: Whether or not the text field is underlined.
     remarks: The default value is false.
     name: underlined
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.underlined
+    fullName: underlined
     langs:
       - typeScript
     type: property
@@ -231,7 +247,7 @@ items:
     summary: Run validation when the PropertyPaneTextField is focused.
     remarks: The default value is false.
     name: validateOnFocusIn
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.validateOnFocusIn
+    fullName: validateOnFocusIn
     langs:
       - typeScript
     type: property
@@ -244,7 +260,7 @@ items:
     summary: Run validation when the PropertyPaneTextField is out of focus or on blur.
     remarks: The default value is false.
     name: validateOnFocusOut
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.validateOnFocusOut
+    fullName: validateOnFocusOut
     langs:
       - typeScript
     type: property
@@ -258,7 +274,7 @@ items:
       Value to be displayed in the text field when the value of the targetProperty in the manifest's property bag is
       empty or contains null value.
     name: value
-    fullName: sp-webpart-base.IPropertyPaneTextFieldProps.value
+    fullName: value
     langs:
       - typeScript
     type: property

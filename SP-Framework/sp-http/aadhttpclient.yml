@@ -6,29 +6,46 @@ items:
       This class is marked as `@sealed`. Subclasses should not extend it.
 
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the AadHttpClient class.
-
-
       For communicating with SharePoint, use the [SPHttpClient](xref:sp-http.SPHttpClient) class instead. For
-      communicating with Microsoft Graph, use the [GraphHttpClient](xref:sp-http.GraphHttpClient) class.
-    isPreview: true
+      communicating with Microsoft Graph, use the [MSGraphClient](xref:sp-http.MSGraphClient) class.
     name: AadHttpClient
-    fullName: sp-http.AadHttpClient
+    fullName: AadHttpClient
     langs:
       - typeScript
     type: class
     package: sp-http
     children:
+      - sp-http.AadHttpClient.constructor
       - sp-http.AadHttpClient.configurations
       - sp-http.AadHttpClient.fetch
       - sp-http.AadHttpClient.get
       - sp-http.AadHttpClient.post
+  - uid: sp-http.AadHttpClient.constructor
+    summary: 'Constructs a new instance of the [AadHttpClient](xref:sp-http.AadHttpClient) class'
+    name: 'constructor(serviceScope, resourceEndpoint, options)'
+    fullName: constructor
+    langs:
+      - typeScript
+    type: constructor
+    syntax:
+      content: 'constructor(serviceScope: ServiceScope, resourceEndpoint: string, options?: IAadHttpClientOptions);'
+      parameters:
+        - id: serviceScope
+          description: The service scope is needed to retrieve some of the class's internal components.
+          type:
+            - ServiceScope
+        - id: resourceEndpoint
+          description: ''
+          type:
+            - string
+        - id: options
+          description: Configuration options for the request to get an access token.
+          type:
+            - IAadHttpClientOptions
   - uid: sp-http.AadHttpClient.configurations
     summary: The standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient class.
-    isPreview: true
     name: configurations
-    fullName: sp-http.AadHttpClient.configurations
+    fullName: configurations
     langs:
       - typeScript
     type: property
@@ -43,9 +60,8 @@ items:
       Although the AadHttpClient subclass adds additional enhancements, the parameters and semantics for
       HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
       https://fetch.spec.whatwg.org/
-    isPreview: true
     name: 'fetch(url, configuration, options)'
-    fullName: sp-http.AadHttpClient.fetch
+    fullName: fetch
     langs:
       - typeScript
     type: method
@@ -56,27 +72,26 @@ items:
       return:
         type:
           - Promise<HttpClientResponse>
-        description: a promise that will return the result
+        description: A promise that will return the result.
       parameters:
         - id: url
-          description: the URL to fetch
+          description: The endpoint URL that fetch will be called on.
           type:
             - string
         - id: configuration
           description: >-
-            determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations
+            Determines the default behavior of HttpClient; normally this should be the latest version number from
+            HttpClientConfigurations.
           type:
             - AadHttpClientConfiguration
         - id: options
-          description: additional options that affect the request
+          description: Additional options that affect the request.
           type:
             - IHttpClientOptions
   - uid: sp-http.AadHttpClient.get
     summary: 'Calls fetch(), but sets the method to "GET".'
-    isPreview: true
     name: 'get(url, configuration, options)'
-    fullName: sp-http.AadHttpClient.get
+    fullName: get
     langs:
       - typeScript
     type: method
@@ -87,27 +102,26 @@ items:
       return:
         type:
           - Promise<HttpClientResponse>
-        description: a promise that will return the result
+        description: A promise that will return the result.
       parameters:
         - id: url
-          description: the URL to fetch
+          description: The endpoint URL that fetch will be called on.
           type:
             - string
         - id: configuration
           description: >-
-            determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations
+            Determines the default behavior of HttpClient; normally this should be the latest version number from
+            HttpClientConfigurations.
           type:
             - AadHttpClientConfiguration
         - id: options
-          description: additional options that affect the request
+          description: Additional options that affect the request.
           type:
             - IHttpClientOptions
   - uid: sp-http.AadHttpClient.post
     summary: 'Calls fetch(), but sets the method to "POST".'
-    isPreview: true
     name: 'post(url, configuration, options)'
-    fullName: sp-http.AadHttpClient.post
+    fullName: post
     langs:
       - typeScript
     type: method
@@ -118,19 +132,19 @@ items:
       return:
         type:
           - Promise<HttpClientResponse>
-        description: a promise that will return the result
+        description: A promise that will return the result.
       parameters:
         - id: url
-          description: the URL to fetch
+          description: The endpoint URL that fetch will be called on.
           type:
             - string
         - id: configuration
           description: >-
-            determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations
+            Determines the default behavior of HttpClient; normally this should be the latest version number from
+            HttpClientConfigurations.
           type:
             - AadHttpClientConfiguration
         - id: options
-          description: additional options that affect the request
+          description: Additional options that affect the request.
           type:
             - IHttpClientOptions
