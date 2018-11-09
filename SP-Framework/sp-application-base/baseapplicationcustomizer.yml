@@ -4,10 +4,10 @@ items:
     summary: >-
       This is the base class that third parties should extend when implementing a client-side extension that runs when
       an application is first starting.
-
-
-      In the component manifest, the "extensionType" should be set to "ApplicationCustomizer".
     remarks: >-
+      In the component manifest, the "extensionType" should be set to "ApplicationCustomizer".
+
+
       Example usage scenarios for an application customizer might include: rendering custom UI elements inside a
       SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a
       certain time period.
@@ -21,6 +21,8 @@ items:
     package: sp-application-base
     children:
       - sp-application-base.BaseApplicationCustomizer.context
+      - sp-application-base.BaseApplicationCustomizer.dispose
+      - sp-application-base.BaseApplicationCustomizer.onPlaceholdersChanged
   - uid: sp-application-base.BaseApplicationCustomizer.context
     summary: Use the context object to access common services and state associated with the component.
     remarks: >-
@@ -37,3 +39,40 @@ items:
       return:
         type:
           - ApplicationCustomizerContext
+  - uid: sp-application-base.BaseApplicationCustomizer.dispose
+    summary: Disposes the component.
+    remarks: >-
+      Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
+      for a web part or extension. To perform custom cleanup when your component is disposed, override the
+      [BaseComponent.onDispose](xref:sp-component-base.BaseComponent.onDispose) method.
+    name: dispose()
+    fullName: sp-application-base.BaseApplicationCustomizer.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-application-base.BaseApplicationCustomizer.onPlaceholdersChanged
+    summary: >-
+      This event method is called when the placeholders of the host application change, come into existence, or
+      disappear.
+    name: onPlaceholdersChanged(placeholderProvider)
+    fullName: sp-application-base.BaseApplicationCustomizer.onPlaceholdersChanged
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'protected onPlaceholdersChanged(placeholderProvider: PlaceholderProvider): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: placeholderProvider
+          description: ''
+          type:
+            - PlaceholderProvider

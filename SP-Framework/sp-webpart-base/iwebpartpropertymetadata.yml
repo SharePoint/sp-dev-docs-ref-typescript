@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-webpart-base.IWebPartPropertyMetadata
-    summary: This is the structure used for map values in IWebPartPropertiesMetadata
+    summary: This is the structure used for map values in `IWebPartPropertiesMetadata`
     name: IWebPartPropertyMetadata
     fullName: sp-webpart-base.IWebPartPropertyMetadata
     langs:
@@ -9,22 +9,60 @@ items:
     type: interface
     package: sp-webpart-base
     children:
+      - sp-webpart-base.IWebPartPropertyMetadata.dynamicPropertyType
       - sp-webpart-base.IWebPartPropertyMetadata.isHtmlString
       - sp-webpart-base.IWebPartPropertyMetadata.isImageSource
       - sp-webpart-base.IWebPartPropertyMetadata.isLink
       - sp-webpart-base.IWebPartPropertyMetadata.isSearchablePlainText
       - sp-webpart-base.IWebPartPropertyMetadata.shouldNotPersist
+  - uid: sp-webpart-base.IWebPartPropertyMetadata.dynamicPropertyType
+    summary: 'If specified, indicates that the property is a dynamic property and the type of the dynamic property.'
+    remarks: >-
+      If a web part has properties that are dynamically configurable, then use this flag to declare the property as a
+      dynamic property by specifying its type. When a property specifies its dynamic property type, then the framework
+      ensures that its value can be accessed using 'tryGetValue' anytime in the life cycle of the web part. If a
+      property is marked as DynamicProperty in the IWebPartProperties interface, but does not appear in the
+      IWebPartPropertiesMetadata with a dynamicPropertyType, then the web part developer will need to manually create
+      the DynamicProperty themselves and assign it to the property.
+
+
+      A web part can configure a default value for the property by specifying it in the properties section of the web
+      part's manifest. This value will be used when a dynamic property is constructed for the property.
+
+
+      Note: Web parts should be able to type cast the resultant value from the `tryGetValue` to suit their needs.
+    name: dynamicPropertyType
+    fullName: sp-webpart-base.IWebPartPropertyMetadata.dynamicPropertyType
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'dynamicPropertyType?: ''boolean'' | ''number'' | ''string'' | ''array'' | ''object'';'
+      return:
+        type:
+          - '''boolean'' | ''number'' | ''string'' | ''array'' | ''object'''
   - uid: sp-webpart-base.IWebPartPropertyMetadata.isHtmlString
     summary: Indicates whether the property should be serialized as HTML.
     remarks: >-
       This flag instructs framework to store the value as HTML, so that SharePoint can perform the following services on
-      it: - normalizing HTML encodings - stripping unsafe HTML tags (i.e. for usage with Element.innerHTML) - search
-      indexing - SharePoint link fix-up
+      it:
+
+
+      - normalizing HTML encodings
+
+
+      - stripping unsafe HTML tags (i.e. for usage with Element.innerHTML)
+
+
+      - search indexing
+
+
+      - SharePoint link fix-up
 
 
       Only enable this flag for HTML content where these modifications are acceptable. If non-HTML content is provided,
       SharePoint framework might make modifications to convert it to HTML valid. For plain text content that simply
-      needs to be exposed to the search index (without any rewriting), use the isSearchablePlainText flag instead.
+      needs to be exposed to the search index (without any rewriting), use the `isSearchablePlainText` flag instead.
     name: isHtmlString
     fullName: sp-webpart-base.IWebPartPropertyMetadata.isHtmlString
     langs:
@@ -69,8 +107,10 @@ items:
       This flag instructs the framework to store the property in a representation that supports search indexing. The
       content will be treated as plain text; SharePoint will not modify the string in any way, and special HTML
       characters may be stored encoded and appear in search results. If your string contains HTML markup, use the
-      isHtmlString setting instead. Security note: For security reasons, never assign a plain text string to
-      Element.innerHTML.
+      isHtmlString setting instead.
+
+
+      Security note: For security reasons, never assign a plain text string to `Element.innerHTML`<!-- -->.
     name: isSearchablePlainText
     fullName: sp-webpart-base.IWebPartPropertyMetadata.isSearchablePlainText
     langs:
@@ -82,14 +122,14 @@ items:
         type:
           - boolean
   - uid: sp-webpart-base.IWebPartPropertyMetadata.shouldNotPersist
-    summary: >-
-      Indicates if the framework should persist the property on the server. Use this for properties that are only
-      important in run-time, and do not need to persist on the server. This can reduce the size of the serialized data
-      of the web part and optimize the webpart load time. The property value will be removed from the serialized data
-      sent to the server, but this has no effect on the run-time property bag. The property value will still be
-      available in onBeforeSerialize() method, and the value will not be cleared from the run-time property bag. The
-      initial render of your web part should not depend on the value of the property. Setting a default value for the
-      property can be done in onInit() method.
+    summary: Indicates if the framework should persist the property on the server.
+    remarks: >-
+      Use this for properties that are only important in run-time, and do not need to persist on the server. This can
+      reduce the size of the serialized data of the web part and optimize the web part load time. The property value
+      will be removed from the serialized data sent to the server, but this has no effect on the run-time property bag.
+      The property value will still be available in the `onBeforeSerialize()` method, and the value will not be cleared
+      from the run-time property bag. The initial render of your web part should not depend on the value of the
+      property. Setting a default value for the property can be done in `onInit()` method.
 
 
       Note that if the property path refers to a property that has a complex object as the value, the whole object will

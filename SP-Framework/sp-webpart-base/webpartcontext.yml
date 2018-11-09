@@ -17,9 +17,10 @@ items:
     package: sp-webpart-base
     children:
       - sp-webpart-base.WebPartContext.domElement
+      - sp-webpart-base.WebPartContext.microsoftTeams
       - sp-webpart-base.WebPartContext.statusRenderer
   - uid: sp-webpart-base.WebPartContext.domElement
-    summary: Reference to the DOM element that hosts this client side component.
+    summary: Reference to the DOM element that hosts this client-side component.
     name: domElement
     fullName: sp-webpart-base.WebPartContext.domElement
     langs:
@@ -30,6 +31,24 @@ items:
       return:
         type:
           - HTMLElement
+  - uid: sp-webpart-base.WebPartContext.microsoftTeams
+    summary: >-
+      Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
+      being hosted in Microsoft Teams.
+    remarks: >-
+      For more information, please see:
+      [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
+    isPreview: true
+    name: microsoftTeams
+    fullName: sp-webpart-base.WebPartContext.microsoftTeams
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly microsoftTeams: typeof microsoftTeams | undefined;'
+      return:
+        type:
+          - typeof microsoftTeams | undefined
   - uid: sp-webpart-base.WebPartContext.statusRenderer
     summary: Web part status renderer.
     name: statusRenderer

@@ -30,18 +30,32 @@ items:
       - sp-dialog.BaseDialog.secondaryDialogProvider
       - sp-dialog.BaseDialog.show
   - uid: sp-dialog.BaseDialog.constructor
-    summary: Constructor for the BaseDialog class.
+    summary: Constructor for the `BaseDialog` class.
     remarks: >-
-      It is important to keep the constructor lightweight. Use onBeforeOpen() for doing heavy-weight initialization that
-      is needed for rendering the dialog such as resource allocations and asynchronous calls to fetch data. You can use
-      the constructor to set initial parameters of your dialog such as references to resources in your application. The
-      reason for this is that dialogs are usually constructed upon a UI event e.g. a button click, but the dialog may
-      not always be shown right after construction. Keeping the constructor lightweight ensures smooth user experience
-      and avoids doing throw-away work in case the dialog is not shown later e.g. if the framework rejects it. Another
-      benefit of doing this is avoiding memory leaks by doing all the allocations and disposals in symmetric
-      onBeforeOpen() and onAfterClose() events. If you allocate resources in the constructor, you have a memory leak
+      It is important to keep the constructor lightweight. Use `onBeforeOpen()` for doing heavy-weight initialization
+      that is needed for rendering the dialog such as resource allocations and asynchronous calls to fetch data. You can
+      use the constructor to set initial parameters of your dialog such as references to resources in your application.
+      The reason for this is that dialogs are usually constructed upon a UI event e.g. a button click, but the dialog
+      may not always be shown right after construction. Keeping the constructor lightweight ensures smooth user
+      experience and avoids doing throw-away work in case the dialog is not shown later e.g. if the framework rejects
+      it. Another benefit of doing this is avoiding memory leaks by doing all the allocations and disposals in symmetric
+      `onBeforeOpen()` and `onAfterClose()` events. If you allocate resources in the constructor, you have a memory leak
       because there is no guarantee onAfterClose() will get called, and onAfterClose() is your only opportunity to
       dispose.
+
+
+      Example:
+
+      ```
+        constructor(cacheReference: any) {
+          super();
+
+          this._cache = cacheReference; // This is okay. Keeping a reference to my internal cache.
+          this._cache.refresh(); // This is bad practice.
+          // If you need to refresh the cache (or fetch data) for rendering, do it in onBeforeOpen()
+        }
+
+      ```
     name: constructor(config)
     fullName: sp-dialog.BaseDialog.constructor
     langs:
@@ -51,18 +65,14 @@ items:
       content: 'constructor(config?: IDialogConfiguration);'
       parameters:
         - id: config
-          description: >-
-            the dialog configuration that affects how the dialog is displayed Example: constructor(cacheReference: any)
-            { super(); this.\_cache = cacheReference; // This is okay. Keeping a reference to my internal cache.
-            this.\_cache.refresh(); // This is bad practice. // If you need to refresh the cache (or fetch data) for
-            rendering, do it in onBeforeOpen() }
+          description: the dialog configuration that affects how the dialog is displayed \*
           type:
             - IDialogConfiguration
   - uid: sp-dialog.BaseDialog.close
-    summary: >-
-      Close the dialog. This will void the permission to show for this dialog. Every dialog should have a mechanism to
-      eventually close to avoid blocking the user interface. If called on an inactive dialog it will abort the request
-      to show.
+    summary: Close the dialog.
+    remarks: >-
+      This will void the permission to show for this dialog. Every dialog should have a mechanism to eventually close to
+      avoid blocking the user interface. If called on an inactive dialog it will abort the request to show.
     name: close()
     fullName: sp-dialog.BaseDialog.close
     langs:
@@ -75,10 +85,8 @@ items:
           - Promise<void>
         description: 'A promise that resolves when the dialog is visually closed, or if it was already closed'
   - uid: sp-dialog.BaseDialog.domElement
-    summary: |-
-      Use this property to access the container element provided by the framework for rendering.
-
-      See [BaseDialog.render](xref:sp-dialog.BaseDialog.render) for more information on rendering.
+    summary: Use this property to access the container element provided by the framework for rendering.
+    remarks: 'See [BaseDialog.render](xref:sp-dialog.BaseDialog.render) for more information on rendering.'
     name: domElement
     fullName: sp-dialog.BaseDialog.domElement
     langs:
@@ -90,10 +98,10 @@ items:
         type:
           - HTMLElement
   - uid: sp-dialog.BaseDialog.isHidden
-    summary: >-
-      If the dialog is visually hidden. This happens when the dialog goes behind a secondary dialog. Note that this is
-      different from closed, because the dialog still has the permission to show and will eventually unhide. This
-      returns false if the dialog is closed.
+    summary: If the dialog is visually hidden.
+    remarks: >-
+      This happens when the dialog goes behind a secondary dialog. Note that this is different from closed, because the
+      dialog still has the permission to show and will eventually unhide. This returns false if the dialog is closed.
     name: isHidden
     fullName: sp-dialog.BaseDialog.isHidden
     langs:
@@ -131,12 +139,12 @@ items:
         type:
           - boolean
   - uid: sp-dialog.BaseDialog.onAfterClose
-    summary: >-
-      This method is called after the dialog is visually closed and gives an opportunity for doing clean up. The dialog
-      lifecycle completes after closing and there should be no resources left inside the object. Even though the dialog
-      may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle that should
-      reallocate its own resources. If there are any resources that you would like to keep for multiple lifecycles,
-      consider allocating it outside the dialog object and passing its reference to the dialog constructor.
+    summary: This method is called after the dialog is visually closed and gives an opportunity for doing clean up.
+    remarks: >-
+      The dialog lifecycle completes after closing and there should be no resources left inside the object. Even though
+      the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle
+      that should reallocate its own resources. If there are any resources that you would like to keep for multiple
+      lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor.
     name: onAfterClose()
     fullName: sp-dialog.BaseDialog.onAfterClose
     langs:
@@ -152,7 +160,7 @@ items:
     summary: >-
       This method is called before the render method and can be overridden to make preparations for rendering. The
       loading indicator is displayed during the lifetime of this method.
-    remarks: All resource allocations in onBeforeOpen() should be properly disposed in onAfterClose() to a avoid memory leak.
+    remarks: All resource allocations in onBeforeOpen() should be properly disposed in `onAfterClose()` to a avoid memory leak.
     name: onBeforeOpen()
     fullName: sp-dialog.BaseDialog.onBeforeOpen
     langs:
@@ -165,15 +173,17 @@ items:
           - Promise<void>
         description: >-
           A promise that resolves when the operations are done and the dialog is ready to render. If the promise is
-          rejected, the dialog will not be rendered and onAfterClose() will not be called.
+          rejected, the dialog will not be rendered and `onAfterClose()` will not be called.
   - uid: sp-dialog.BaseDialog.render
-    summary: >-
-      The render method must be implemented to render the content of the dialog in the conrainer element provided by the
-      framework. Use this.domElement to access this container. The container is inside a modal rendered in the center of
-      the page on top of a dark overlay.
+    summary: Renders the contents of the dialog.
     remarks: >-
+      The `render` method must be implemented to render the content of the dialog in the container element provided by
+      the framework. Use `this.domElement` to access this container. The container is inside a modal rendered in the
+      center of the page on top of a dark overlay.
+
+
       The render method is called once after the modal element is created and opened. It is recommended to use
-      onBeforeOpen() for doing non-UI preperations for your rendering that might take a long time. This will ensure that
+      `onBeforeOpen()` for doing non-UI operations for your rendering that might take a long time. This will ensure that
       the framework can show a friendly UI such as a spinner to let the user know that the dialog is being prepared. If
       you choose to do your initialization or other costly operations inside render method, make sure to have a friendly
       UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which
@@ -224,6 +234,6 @@ items:
           request is rejected or aborted.
       parameters:
         - id: options
-          description: 'Dialog showing options. See[IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) for more information.'
+          description: 'Dialog showing options. See [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) for more information.'
           type:
             - IDialogShowOptions

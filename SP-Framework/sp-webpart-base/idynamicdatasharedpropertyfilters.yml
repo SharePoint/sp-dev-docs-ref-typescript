@@ -1,0 +1,35 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.IDynamicDataSharedPropertyFilters
+    summary: Property pane dynamic data property filters.
+    name: IDynamicDataSharedPropertyFilters
+    fullName: sp-webpart-base.IDynamicDataSharedPropertyFilters
+    langs:
+      - typeScript
+    type: interface
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.IDynamicDataSharedPropertyFilters.propertyId
+  - uid: sp-webpart-base.IDynamicDataSharedPropertyFilters.propertyId
+    summary: |-
+      Property Id
+
+      Usage: Use this filter when the author can only to connect to a specific property from the selected source.
+    remarks: >-
+      This is to filter which specific property is to be pre-selected in the properties dropdown(second level) on the
+      dynamic data widget.
+
+
+      When provided, the dynamic data properties dropdown is pre-selected to show the specific property, if avaialble.
+      Otherwise the dropdown will fall back to show all the exposed properties from the source. If a property is
+      pre-selected, the control will be disabled to ensure that authors can not change it.
+    name: propertyId
+    fullName: sp-webpart-base.IDynamicDataSharedPropertyFilters.propertyId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'propertyId?: string;'
+      return:
+        type:
+          - string

@@ -25,9 +25,13 @@ items:
     langs:
       - typeScript
     type: class
+    implements:
+      - IDisposable
     package: sp-application-base
     children:
       - sp-application-base.PlaceholderProvider.changedEvent
+      - sp-application-base.PlaceholderProvider.dispose
+      - sp-application-base.PlaceholderProvider.isDisposed
       - sp-application-base.PlaceholderProvider.placeholderNames
       - sp-application-base.PlaceholderProvider.tryCreateContent
   - uid: sp-application-base.PlaceholderProvider.changedEvent
@@ -46,6 +50,29 @@ items:
       return:
         type:
           - SPEvent<SPEventArgs>
+  - uid: sp-application-base.PlaceholderProvider.dispose
+    name: dispose()
+    fullName: sp-application-base.PlaceholderProvider.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: sp-application-base.PlaceholderProvider.isDisposed
+    name: isDisposed
+    fullName: sp-application-base.PlaceholderProvider.isDisposed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
   - uid: sp-application-base.PlaceholderProvider.placeholderNames
     summary: Returns the names of the currently available placeholders.
     name: placeholderNames

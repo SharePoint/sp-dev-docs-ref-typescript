@@ -15,6 +15,7 @@ items:
     package: sp-application-base
     children:
       - sp-application-base.ApplicationCustomizerContext.application
+      - sp-application-base.ApplicationCustomizerContext.dispose
       - sp-application-base.ApplicationCustomizerContext.placeholderProvider
   - uid: sp-application-base.ApplicationCustomizerContext.application
     summary: Provides access to the client-side application that is currently running.
@@ -28,6 +29,20 @@ items:
       return:
         type:
           - ApplicationAccessor
+  - uid: sp-application-base.ApplicationCustomizerContext.dispose
+    name: dispose()
+    fullName: sp-application-base.ApplicationCustomizerContext.dispose
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: |-
+        /** @override */
+        dispose(): void;
+      return:
+        type:
+          - void
+        description: ''
   - uid: sp-application-base.ApplicationCustomizerContext.placeholderProvider
     summary: Exposes a collection of content placeholders for use by third parties.
     name: placeholderProvider

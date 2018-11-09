@@ -1,12 +1,14 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-page-context.SPField
-    summary: >-
-      The client-side equivalent for SharePoint SPField class. Used in Fields property of SPList and SPListItem classes.
-      A field represents the data model for a column in SharePoint list view.
+    summary: A field represents the data model for a column in SharePoint list view.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
       create subclasses that extend the SPField class.
+
+
+      This is the client-side equivalent for SharePoint `SPField` class. It is used with the
+      `@microsoft/sp-listview-extensibility` package.
     name: SPField
     fullName: sp-page-context.SPField
     langs:
@@ -34,10 +36,10 @@ items:
         type:
           - Guid | undefined
   - uid: sp-page-context.SPField.clientSideComponentProperties
-    summary: >-
-      This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string
-      must contain a JSON object with custom initialization properties whose format and meaning are defined by the
-      client-side component.
+    summary: This property is only used when a `ClientSideComponentId` is specified. It is optional.
+    remarks: >-
+      If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning
+      are defined by the client-side component.
     name: clientSideComponentProperties
     fullName: sp-page-context.SPField.clientSideComponentProperties
     langs:

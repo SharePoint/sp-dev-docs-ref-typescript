@@ -20,9 +20,17 @@ items:
       fixup on them.
 
 
-      Example: { 'myRichDescription': '&lt;div&gt;Some standard &lt;b&gt;HTML content&lt;/b&gt;&lt;a
-      href='http://somelink'&gt;A Link&lt;/a&gt;&lt;/div&gt;' 'anotherRichText': &lt;div class='aClass'&gt;&lt;span
-      style='color:red'&gt;Some red text&lt;/div&gt; }
+      Example:
+
+      ```
+
+      {
+        'myRichDescription': '<div>Some standard <b>HTML content</b><a href='http://somelink'>A Link</a></div>'
+        'anotherRichText': <div class='aClass'><span style='color:red'>Some red text</div>
+      }
+
+
+      ```
     name: htmlStrings
     fullName: sp-webpart-base.ISerializedServerProcessedData.htmlStrings
     langs:
@@ -41,7 +49,14 @@ items:
     remarks: |-
       SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
 
-      Example: { 'myImage1': 'http://res.contoso.com/path/to/file' 'myImage2': 'https://res.contoso.com/someName.jpg' }
+      Example:
+      ```
+      {
+        'myImage1': 'http://res.contoso.com/path/to/file'
+        'myImage2': 'https://res.contoso.com/someName.jpg'
+      }
+
+      ```
     name: imageSources
     fullName: sp-webpart-base.ISerializedServerProcessedData.imageSources
     langs:
@@ -60,7 +75,14 @@ items:
     remarks: |-
       SharePoint servers treat the values as links and run services like link fixup on them.
 
-      Example: { 'myWebURL': 'http://contoso.com' 'myFileLink': 'https://res.contoso.com/file.docx' }
+      Example:
+      ```
+      {
+        'myWebURL': 'http://contoso.com'
+        'myFileLink': 'https://res.contoso.com/file.docx'
+      }
+
+      ```
     name: links
     fullName: sp-webpart-base.ISerializedServerProcessedData.links
     langs:
@@ -81,8 +103,17 @@ items:
       but are not treated as valid HTML. So, other services such as link fixup will not run on them.
 
 
-      Example: { 'justSomeText': 'This is some plain text', 'anotherText': 'Can have &lt;any&gt; characters here:
-      "&lt;&gt;&amp;\\'' }
+      Example:
+
+      ```
+
+      {
+       'justSomeText': 'This is some plain text',
+       'anotherText': 'Can have <any> characters here: "<>&\''
+      }
+
+
+      ```
     name: searchablePlainTexts
     fullName: sp-webpart-base.ISerializedServerProcessedData.searchablePlainTexts
     langs:

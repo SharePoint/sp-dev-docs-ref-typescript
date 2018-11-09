@@ -3,12 +3,12 @@ items:
   - uid: sp-core-library.Version
     summary: 'Represents a version number with two, three, or four parts.'
     remarks: >-
-      This class represents versions that follow the string format of MAJOR.MINOR\[.PATCH\[.REVISION\]\] where the
-      MAJOR, MINOR, PATCH and REVISION parts are integers. PATCH and REVISION are optional. Leading zero digits are
-      allowed, but they are discarded. Missing parts are treated as zeroes for comparisons.
+      This class represents versions that follow the string format of `MAJOR.MINOR[.PATCH[.REVISION]]` where the MAJOR,
+      MINOR, PATCH and REVISION parts are integers. PATCH and REVISION are optional. Leading zero digits are allowed,
+      but they are discarded. Missing parts are treated as zeroes for comparisons.
 
 
-      Examples: 1.0, 1.0.0, 1.0.0.0, 1.01, 01.02.03, 001.002.003.004
+      Examples: `1.0`<!-- -->, `1.0.0`<!-- -->, `1.0.0.0`<!-- -->, `1.01`<!-- -->, `01.02.03`<!-- -->, `001.002.003.004`
     name: Version
     fullName: sp-core-library.Version
     langs:
@@ -54,12 +54,15 @@ items:
             - Version
   - uid: sp-core-library.Version.equals
     summary: Tests whether this version is equal to the input parameter.
-    remarks: >-
+    remarks: |-
       Examples:
+      ```
+      1.0.0 equals 1.0.0 -> true;
+      2.0.1 equals 2.0.0 -> false;
+      3.0   equals 3.0.0 -> true;
+      04.01 equals 4.1   -> true
 
-
-      1.0.0 equals 1.0.0 -&gt; true; 2.0.1 equals 2.0.0 -&gt; false; 3.0 equals 3.0.0 -&gt; true; 04.01 equals 4.1 -&gt;
-      true
+      ```
     name: equals(compareWith)
     fullName: sp-core-library.Version.equals
     langs:
@@ -80,8 +83,12 @@ items:
     summary: Tests whether this version is greater than (i.e. newer than) the input parameter.
     remarks: |-
       Examples:
+      ```
+      1.0.0 greaterThan 0.0.9 -> true;
+      2.0   greaterThan 2.0.0 -> false;
+      3.0.1 greaterThan 3.0   -> true
 
-      1.0.0 greaterThan 0.0.9 -&gt; true; 2.0 greaterThan 2.0.0 -&gt; false; 3.0.1 greaterThan 3.0 -&gt; true
+      ```
     name: greaterThan(compareWith)
     fullName: sp-core-library.Version.greaterThan
     langs:
@@ -118,12 +125,15 @@ items:
             - string | undefined | null
   - uid: sp-core-library.Version.lessThan
     summary: Tests whether this version is less than (i.e. older than) the input parameter.
-    remarks: >-
+    remarks: |-
       Examples:
+      ```
+      0.9.9 lessThan 1.0.0 -> true;
+      2.0   lessThan 2.0.0 -> false;
+      3.0   lessThan 3.0.1 -> true;
+      04.01 lessThan 4.1   -> false
 
-
-      0.9.9 lessThan 1.0.0 -&gt; true; 2.0 lessThan 2.0.0 -&gt; false; 3.0 lessThan 3.0.1 -&gt; true; 04.01 lessThan 4.1
-      -&gt; false
+      ```
     name: lessThan(compareWith)
     fullName: sp-core-library.Version.lessThan
     langs:
@@ -227,9 +237,18 @@ items:
 
       Examples:
 
+      ```
 
-      1.0.0 satisfies 1.0.0 -&gt; true; 1.1.0 satisfies 1.0.0 -&gt; true; 2.0.0 satisfies 1.0.0 -&gt; false; 1.0.0
-      satisfies 1.1.0 -&gt; false
+      1.0.0 satisfies 1.0.0 -> true;
+
+      1.1.0 satisfies 1.0.0 -> true;
+
+      2.0.0 satisfies 1.0.0 -> false;
+
+      1.0.0 satisfies 1.1.0 -> false
+
+
+      ```
     name: satisfies(compareWith)
     fullName: sp-core-library.Version.satisfies
     langs:

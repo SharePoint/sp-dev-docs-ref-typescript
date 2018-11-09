@@ -11,10 +11,24 @@ items:
     type: interface
     package: sp-webpart-base
     children:
+      - sp-webpart-base.IPropertyPaneAccessor.close
       - sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
       - sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
       - sp-webpart-base.IPropertyPaneAccessor.open
       - sp-webpart-base.IPropertyPaneAccessor.refresh
+  - uid: sp-webpart-base.IPropertyPaneAccessor.close
+    summary: This API should be used to close the PropertyPane to help configure the web part.
+    name: close()
+    fullName: sp-webpart-base.IPropertyPaneAccessor.close
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'close(): void;'
+      return:
+        type:
+          - void
+        description: ''
   - uid: sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
     summary: Returns true if the PropertyPane is open.
     name: isPropertyPaneOpen()

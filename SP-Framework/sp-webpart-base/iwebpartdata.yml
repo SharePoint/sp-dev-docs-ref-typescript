@@ -1,10 +1,11 @@
 ### YamlMime:UniversalReference
 items:
   - uid: sp-webpart-base.IWebPartData
-    summary: >-
-      This structure represents the serialized state of a web part. When the serialize() API is called on a web part,
-      the output should be this structure. The structure of the 'properties' field is owned by the web part and is
-      specific to the web part. Each web part can decide the set of properties it wants to serialize.
+    summary: This structure represents the serialized state of a web part.
+    remarks: >-
+      When the `serialize()` API is called on a web part, the output should be this structure. The structure of the
+      'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of
+      properties it wants to serialize.
     name: IWebPartData
     fullName: sp-webpart-base.IWebPartData
     langs:
@@ -29,8 +30,10 @@ items:
       serialized data of the web part. Refer to dataVersion field of your web part for more information.
 
 
-      Usage: versioning and evolving the serialized data of the web part Required: yes Type: string Supported values:
-      MAJOR.MINOR Example: "1.0"
+      Supported values: MAJOR.MINOR
+
+
+      Example: `"1.0"`
     name: dataVersion
     fullName: sp-webpart-base.IWebPartData.dataVersion
     langs:
@@ -43,9 +46,12 @@ items:
           - string
   - uid: sp-webpart-base.IWebPartData.description
     summary: Web part description
-    remarks: >-
-      Usage: display the description of the web part. Required: no Type: string Supported values: string with the
-      description. Example: "Text"
+    remarks: |-
+      Used to display the description of the web part.
+
+      Supported values: string with the description.
+
+      Example: `"Text"`
     name: description
     fullName: sp-webpart-base.IWebPartData.description
     langs:
@@ -57,14 +63,25 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IWebPartData.dynamicDataPaths
-    summary: >-
-      Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part.
-      The key is the path within the web part properties, and the value is the dynamic data internal id.
+    summary: Paths for the dynamic data.
+    remarks: >-
+      This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within
+      the web part properties, and the value is the dynamic data internal id.
 
 
-      Required: no Supported values: Map from string to string Example: { 'pageContextUser': 'PageContext:user',
-      'anotherWebPartProperty':
-      'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty' }
+      Example:
+
+      ```
+
+      {
+        'pageContextUser':
+          'PageContext:user',
+        'anotherWebPartProperty':
+          'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty'
+      }
+
+
+      ```
     isPreview: true
     name: dynamicDataPaths
     fullName: sp-webpart-base.IWebPartData.dynamicDataPaths
@@ -82,11 +99,18 @@ items:
   - uid: sp-webpart-base.IWebPartData.dynamicDataValues
     summary: >-
       Static values for the dynamic data.This is used to reconstruct the dynamic data objects when deserializing the web
-      part. The key is the path within the web part properties, and the value is the dynamic data static value.
+      part.
+    remarks: |-
+      The key is the path within the web part properties, and the value is the dynamic data static value.
 
+      Example:
+      ```
+      {
+        'aStringProperty': 'thisIsAString',
+        'aBooleanProperty': true
+      }
 
-      Required: no Supported values: Map from string to string Example: { 'aStringProperty': 'thisIsAString',
-      'aBooleanProperty': true }
+      ```
     isPreview: true
     name: dynamicDataValues
     fullName: sp-webpart-base.IWebPartData.dynamicDataValues
@@ -103,9 +127,7 @@ items:
                 }
   - uid: sp-webpart-base.IWebPartData.id
     summary: Universally unique web part Type id.
-    remarks: >-
-      Usage: uniquely identify a web part. Required: yes Type: GUID Supported values: any GUID Example:
-      "dbef608d-3ad5-4f8f-b139-d916f2f0a294"
+    remarks: 'Example: `"dbef608d-3ad5-4f8f-b139-d916f2f0a294"`'
     name: id
     fullName: sp-webpart-base.IWebPartData.id
     langs:
@@ -120,10 +142,10 @@ items:
     summary: >-
       Universally unique instance id of the web part. A web part can have multiple instances on a page. This id is
       expected to be universally unique across time and page boundaries.
-    remarks: >-
-      how used: used by the framework to uniquely identify an instance of a web part. mandatory: yes type: string
-      supported values: a unique string. Could be GUID or other uniquely identifiable formats. example:
-      \["dbef608d-3ad5-4f8f-b139-d916f2f0a294"\] experimental: yes
+    remarks: |-
+      supported values: a unique string. Could be GUID or other uniquely identifiable formats.
+
+      example: `["dbef608d-3ad5-4f8f-b139-d916f2f0a294"]`
     name: instanceId
     fullName: sp-webpart-base.IWebPartData.instanceId
     langs:
@@ -137,9 +159,14 @@ items:
   - uid: sp-webpart-base.IWebPartData.properties
     summary: Web part specific properties. The individual web part owns the definition of these properties.
     remarks: >-
-      Usage: used by the web part to manage its internal metadata and config data. The framework code never touches
-      these properties. Required: yes Type: any Supported values: any JSON stringifiable object hierarchy. Example: {
-      'value': 'text value' }
+      Used by the web part to manage its internal metadata and config data. The framework code never touches these
+      properties.
+
+
+      Supported values: any object hierarchy that can be serialized using `JSON.stringify()`<!-- -->.
+
+
+      Example: `{ 'value': 'text value' }`
     name: properties
     fullName: sp-webpart-base.IWebPartData.properties
     langs:
@@ -151,9 +178,7 @@ items:
         type:
           - any
   - uid: sp-webpart-base.IWebPartData.serverProcessedContent
-    summary: >-
-      Definition: The collections of data that can be processed by server side services like search index and link fixup
-      Required: no
+    summary: The collections of data that can be processed by server side services like search index and link fixup
     name: serverProcessedContent
     fullName: sp-webpart-base.IWebPartData.serverProcessedContent
     langs:
@@ -166,9 +191,12 @@ items:
           - ISerializedServerProcessedData
   - uid: sp-webpart-base.IWebPartData.title
     summary: Web part title
-    remarks: >-
-      Usage: display the name of the web part in the toolbox, web part gallery and the page. Required: yes Type: string
-      Supported values: string less than 100 characters Example: "Text"
+    remarks: |-
+      Used to display the name of the web part in the toolbox, web part gallery and the page.
+
+      Supported values: string less than 100 characters
+
+      Example: `"Text"`
     name: title
     fullName: sp-webpart-base.IWebPartData.title
     langs:

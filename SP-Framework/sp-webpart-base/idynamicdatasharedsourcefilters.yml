@@ -1,0 +1,65 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-webpart-base.IDynamicDataSharedSourceFilters
+    summary: Property pane dynamic data source filters.
+    name: IDynamicDataSharedSourceFilters
+    fullName: sp-webpart-base.IDynamicDataSharedSourceFilters
+    langs:
+      - typeScript
+    type: interface
+    package: sp-webpart-base
+    children:
+      - sp-webpart-base.IDynamicDataSharedSourceFilters.componentId
+      - sp-webpart-base.IDynamicDataSharedSourceFilters.sourceId
+  - uid: sp-webpart-base.IDynamicDataSharedSourceFilters.componentId
+    summary: |-
+      Component Id.
+
+      Usage: Use this filter when the author should only be able to connect to a specific type of source.
+    remarks: >-
+      This is to filter what type of source needs to be shown in the data sources dropdown (first level) on the dynamic
+      data widget.
+
+
+      When provided, the dynamic data sources dropdown in the dynamic data widget is filtered to only show the sources
+      matching the given component id.
+
+
+      Example - If the document library web part component id is supplied, then the dynamic data sources dropdown only
+      shows document library web parts on the page which are registered dynamic sources.
+    name: componentId
+    fullName: sp-webpart-base.IDynamicDataSharedSourceFilters.componentId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'componentId?: Guid;'
+      return:
+        type:
+          - Guid
+  - uid: sp-webpart-base.IDynamicDataSharedSourceFilters.sourceId
+    summary: |-
+      Source Id
+
+      Usage: Use this filter, when the author can only to connect to a specific data source.
+    remarks: >-
+      This is to filter which specific source is to be pre-selected in the data sources dropdown (first level) on the
+      dynamic data widget.
+
+
+      When provided, the dynamic data sources dropdown is pre-selected to show the source with the provided id, if
+      available. Otherwise the dropdown will fall back to show all the existing data sources on the page. If a source is
+      pre-selected, the control will be disabled to ensure that authors can not change it.
+
+
+      The source id for a web part will be of the form WebPart.<ComponentId>.<InstanceId>
+    name: sourceId
+    fullName: sp-webpart-base.IDynamicDataSharedSourceFilters.sourceId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'sourceId?: string;'
+      return:
+        type:
+          - string

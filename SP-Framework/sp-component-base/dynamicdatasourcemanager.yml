@@ -5,7 +5,6 @@ items:
       The Dynamic Data Source Manager is responsible for: - Constructing the dynamic data source - Allowing
       initialization of the dynamic data source by a component - Allowing data source to update its metadata and notify
       when data has been updated.
-    isPreview: true
     name: DynamicDataSourceManager
     fullName: sp-component-base.DynamicDataSourceManager
     langs:
@@ -20,10 +19,10 @@ items:
       - sp-component-base.DynamicDataSourceManager.isDisposed
       - sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
       - sp-component-base.DynamicDataSourceManager.notifySourceChanged
+      - sp-component-base.DynamicDataSourceManager.sourceId
       - sp-component-base.DynamicDataSourceManager.updateMetadata
   - uid: sp-component-base.DynamicDataSourceManager.dispose
     summary: Disposes the resources held by the Dynamic Data source.
-    isPreview: true
     name: dispose()
     fullName: sp-component-base.DynamicDataSourceManager.dispose
     langs:
@@ -37,7 +36,6 @@ items:
         description: ''
   - uid: sp-component-base.DynamicDataSourceManager.initializeSource
     summary: Initializes the Dynamic Data Source for the component.
-    isPreview: true
     name: initializeSource(callableFunctions)
     fullName: sp-component-base.DynamicDataSourceManager.initializeSource
     langs:
@@ -51,14 +49,11 @@ items:
         description: ''
       parameters:
         - id: callableFunctions
-          description: >-
-            Set of methods exposed by the Dynamic Data Source to get the data. These apis are called by the consumer to
-            retrieve properties, their values etc.,
+          description: Set of methods that are exposed through the Dynamic Data Source
           type:
             - IDynamicDataCallables
   - uid: sp-component-base.DynamicDataSourceManager.isDisposed
     summary: Returns true if the DynamicDataSourceManager is disposed.
-    isPreview: true
     name: isDisposed
     fullName: sp-component-base.DynamicDataSourceManager.isDisposed
     langs:
@@ -76,7 +71,6 @@ items:
 
       When invoked, it enables to broadcast the notification to all the consumers who have registered to this
       notification from this source.
-    isPreview: true
     name: notifyPropertyChanged(propertyId)
     fullName: sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
     langs:
@@ -95,12 +89,11 @@ items:
             - string
   - uid: sp-component-base.DynamicDataSourceManager.notifySourceChanged
     summary: >-
-      Notifies that this source has updated its data.
+      Notifies that this source has updated its properties.
 
 
       When invoked, it enables to broadcast the notification to all the consumers who have registered to this
       notification from this source.
-    isPreview: true
     name: notifySourceChanged()
     fullName: sp-component-base.DynamicDataSourceManager.notifySourceChanged
     langs:
@@ -112,11 +105,22 @@ items:
         type:
           - void
         description: ''
+  - uid: sp-component-base.DynamicDataSourceManager.sourceId
+    summary: Returns the Id of the current DataSource.
+    name: sourceId
+    fullName: sp-component-base.DynamicDataSourceManager.sourceId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly sourceId: string;'
+      return:
+        type:
+          - string
   - uid: sp-component-base.DynamicDataSourceManager.updateMetadata
     summary: >-
       Updates the metadata of the Dynamic Data Source. It allows to update fields like title or description.
       Auto-generated fields like alias, componentId or instanceId cannot be updated.
-    isPreview: true
     name: updateMetadata(metadata)
     fullName: sp-component-base.DynamicDataSourceManager.updateMetadata
     langs:

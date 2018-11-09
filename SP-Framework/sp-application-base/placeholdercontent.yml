@@ -22,6 +22,7 @@ items:
       - sp-application-base.PlaceholderContent.dispose
       - sp-application-base.PlaceholderContent.domElement
       - sp-application-base.PlaceholderContent.isDisposed
+      - sp-application-base.PlaceholderContent.isVisible
       - sp-application-base.PlaceholderContent.name
   - uid: sp-application-base.PlaceholderContent.dispose
     summary: Disposes the PlaceholderContent object and removes its attached DOM element from the page.
@@ -65,6 +66,20 @@ items:
     type: property
     syntax:
       content: 'readonly isDisposed: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: sp-application-base.PlaceholderContent.isVisible
+    summary: >-
+      Return true if this PlacholderContent object is visible. If you create a placeholder and the host page isn't
+      displaying it, this will return false.
+    name: isVisible
+    fullName: sp-application-base.PlaceholderContent.isVisible
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly isVisible: boolean;'
       return:
         type:
           - boolean

@@ -72,7 +72,6 @@ items:
         description: ''
   - uid: sp-component-base.BaseComponentContext.dynamicDataProvider
     summary: Returns the Dynamic Data Provider associated with the component.
-    isPreview: true
     name: dynamicDataProvider
     fullName: sp-component-base.BaseComponentContext.dynamicDataProvider
     langs:
@@ -85,7 +84,6 @@ items:
           - DynamicDataProvider
   - uid: sp-component-base.BaseComponentContext.dynamicDataSourceManager
     summary: Returns the Dynamic Data Source Manager associated with the component.
-    isPreview: true
     name: dynamicDataSourceManager
     fullName: sp-component-base.BaseComponentContext.dynamicDataSourceManager
     langs:
@@ -99,7 +97,10 @@ items:
   - uid: sp-component-base.BaseComponentContext.graphHttpClient
     summary: The instance of GraphHttpClient created for this instance of component
     deprecated:
-      content: ''
+      content: >-
+        Use
+        [BaseComponentContext.msGraphClientFactory](xref:sp-component-base.BaseComponentContext.msGraphClientFactory)
+        instead
     isPreview: true
     name: graphHttpClient
     fullName: sp-component-base.BaseComponentContext.graphHttpClient
@@ -152,7 +153,7 @@ items:
         type:
           - boolean
   - uid: sp-component-base.BaseComponentContext.manifest
-    summary: Manifest for the client side component.
+    summary: Manifest for the client-side component.
     name: manifest
     fullName: sp-component-base.BaseComponentContext.manifest
     langs:
@@ -190,7 +191,7 @@ items:
         type:
           - PageContext
   - uid: sp-component-base.BaseComponentContext.serviceScope
-    summary: 'The associated [@microsoft/sp-core-library:ServiceScope](xref:sp-core-library.ServiceScope) for this component.'
+    summary: 'The associated [ServiceScope](xref:sp-core-library.ServiceScope) for this component.'
     remarks: A child service scope is created for each client-side component.
     name: serviceScope
     fullName: sp-component-base.BaseComponentContext.serviceScope

@@ -39,7 +39,7 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.deferredValidationTime
-    summary: Text field will start to validate after users stop typing for \`deferredValidationTime\` milliseconds.
+    summary: Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds.
     remarks: The default value is 200.
     name: deferredValidationTime
     fullName: sp-webpart-base.IPropertyPaneTextFieldProps.deferredValidationTime
@@ -106,12 +106,28 @@ items:
         type:
           - string
   - uid: sp-webpart-base.IPropertyPaneTextFieldProps.logName
-    summary: Engagement name to log PropertyPaneTextField value change.
+    summary: Name used to log `PropertyPaneTextField` value changes for engagement tracking.
     remarks: >-
-      It will be logged format as &lt;moduleName&gt;.&lt;controlName&gt;. E.g. {moduleName: 'ImageWebPart', controlName:
-      'OverlayText'}, it will log: 1. action type, including 'Add', 'Clear' and 'Edit'. Clear: reset the content of
-      caption element to initial/unset state. Add: change from initial/unset state to customized content. (first edit)
-      Edit: any edition that changes the content apart from add and clear 2. text length after each edit.
+      The messages will be logged with a format such as `<moduleName>.<controlName>`<!-- -->.
+
+
+      For example, if `{moduleName: 'ImageWebPart', controlName: 'OverlayText'}` is specified, the engagement log might
+      contain:
+
+
+      1. The action type:
+
+
+      `Add`<!-- -->: change from initial/unset state to customized content. (first edit)
+
+
+      `Clear`<!-- -->: reset the content of caption element to initial/unset state.
+
+
+      `Edit`<!-- -->: any edition that changes the content apart from add and clear
+
+
+      2. The text length after each edit
     name: logName
     fullName: sp-webpart-base.IPropertyPaneTextFieldProps.logName
     langs:
@@ -161,7 +177,7 @@ items:
 
       - If invalid, it returns the error message string and an error message is displayed below the text field.
 
-      When it returns Promise&lt;string&gt;:
+      When it returns `Promise<string>`<!-- -->:
 
       - The resolved value is display as error message.
 

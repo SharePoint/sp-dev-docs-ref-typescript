@@ -2,7 +2,7 @@
 items:
   - uid: sp-webpart-base.BaseWebPart
     summary: >-
-      This abstract class implements the UI-agnostic base functionality for a client side web part. The purpose is to
+      This abstract class implements the UI-agnostic base functionality for a client-side web part. The purpose is to
       allow a common core between 2D and MR WebParts.
     name: BaseWebPart
     fullName: sp-webpart-base.BaseWebPart
@@ -38,15 +38,11 @@ items:
       - sp-webpart-base.BaseWebPart.propertiesMetadata
       - sp-webpart-base.BaseWebPart.title
   - uid: sp-webpart-base.BaseWebPart.constructor
-    summary: Constructor for the BaseWebPart class.
+    summary: Constructor for the `BaseWebPart` class.
     remarks: >-
-      If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is
-      highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of
-      the web part features like this.context and this.properties are not available to be used before the the onInit
-      part of the web part loading lifecycle.
-
-
-      e.g. constructor() { super(); . . class specific constructor code .. }
+      It is highly recommended that the web part use the OnInit API to perform any web part specific initialization.
+      Most of the web part features like this.context and this.properties are not available to be used before the the
+      onInit part of the web part loading lifecycle.
     name: constructor()
     fullName: sp-webpart-base.BaseWebPart.constructor
     langs:
@@ -112,7 +108,7 @@ items:
         type:
           - string
   - uid: sp-webpart-base.BaseWebPart.disableReactivePropertyChanges
-    summary: This property is used to change the web part's PropertyPane interaction from Reactive to NonReactive.
+    summary: This property is used to change the web part's property pane interaction from Reactive to NonReactive.
     remarks: >-
       The default behavior is Reactive.
 
@@ -179,7 +175,7 @@ items:
       An important scenario to use deserialize is upgrading. An upgraded web part may load the data that was serialized
       by an older version of the web part that supported a different schema of the property bag, resulting the
       deserialized object to be incosistent with the current schema of the property bag. The developer can use
-      onAfterDeserialize to check the dataVersion and fix the property bag.
+      `onAfterDeserialize` to check the dataVersion and fix the property bag.
     name: 'onAfterDeserialize(deserializedObject, dataVersion)'
     fullName: sp-webpart-base.BaseWebPart.onAfterDeserialize
     langs:
@@ -282,7 +278,8 @@ items:
           - void
         description: ''
   - uid: sp-webpart-base.BaseWebPart.onInit
-    summary: >-
+    summary: This event method is called when the web part is initialized.
+    remarks: >-
       This API should be overridden to perform long running operations e.g. data fetching from a remote service before
       the initial rendering of the web part. The loading indicator is displayed during the lifetime of this method. This
       API is called only once during the lifecycle of a web part.
@@ -304,9 +301,9 @@ items:
 
       - When the CONFIGURATION\_COMPLETE\_TIMEOUT((currently the value is 5 secs) elapses after the last change.
 
-      - When user clicks 'x'(close) button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
+      - When user clicks the "X" (close) button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
 
-      - When user clciks 'Apply' button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
+      - When user clicks the 'Apply' button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
 
       - When the user switches web parts then the current web part gets this event.
     name: onPropertyPaneConfigurationComplete()
@@ -358,8 +355,8 @@ items:
         - id: propertyPath
           description: >-
             JSON path of the property in the property bag. In the case of custom field, if no target property is
-            provided then a custom value is assigned, which will be in the form of '\_\_CustomField\_&lt;key provided
-            when the custom field is created&gt;'.
+            provided then a custom value is assigned, which will be in the form of `__CustomField_<key provided when the
+            custom field is created>`<!-- -->.
           type:
             - string
         - id: oldValue
@@ -414,7 +411,9 @@ items:
     summary: >-
       This property defines metadata for the web part property bag. The metadata can help SharePoint understand the
       content of the properties better and perform relevant services on the data.
-    remarks: See IWebPartPropertiesMetadata for more information about how to define metadata
+    remarks: >-
+      See [IWebPartPropertiesMetadata](xref:sp-webpart-base.IWebPartPropertiesMetadata) for more information about how
+      to define metadata
     name: propertiesMetadata
     fullName: sp-webpart-base.BaseWebPart.propertiesMetadata
     langs:

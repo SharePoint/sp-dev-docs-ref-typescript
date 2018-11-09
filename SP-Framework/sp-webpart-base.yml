@@ -15,7 +15,12 @@ items:
       - sp-webpart-base.BaseClientSideWebPart
       - sp-webpart-base.BaseWebPart
       - sp-webpart-base.BaseWebPartContext
+      - sp-webpart-base.DynamicDataSharedDepth
       - sp-webpart-base.IClientSideWebPartStatusRenderer
+      - sp-webpart-base.IDynamicDataSharedPropertyConfiguration
+      - sp-webpart-base.IDynamicDataSharedPropertyFilters
+      - sp-webpart-base.IDynamicDataSharedSourceConfiguration
+      - sp-webpart-base.IDynamicDataSharedSourceFilters
       - sp-webpart-base.IPlaceholderSpinnerProps
       - sp-webpart-base.IPropertyPaneAccessor
       - sp-webpart-base.IPropertyPaneButtonProps
@@ -23,11 +28,14 @@ items:
       - sp-webpart-base.IPropertyPaneChoiceGroupOption
       - sp-webpart-base.IPropertyPaneChoiceGroupOptionIconProps
       - sp-webpart-base.IPropertyPaneChoiceGroupProps
+      - sp-webpart-base.IPropertyPaneConditionalGroup
       - sp-webpart-base.IPropertyPaneConfiguration
       - sp-webpart-base.IPropertyPaneCustomFieldProps
       - sp-webpart-base.IPropertyPaneDropdownCalloutProps
       - sp-webpart-base.IPropertyPaneDropdownOption
       - sp-webpart-base.IPropertyPaneDropdownProps
+      - sp-webpart-base.IPropertyPaneDynamicFieldProps
+      - sp-webpart-base.IPropertyPaneDynamicFieldSetProps
       - sp-webpart-base.IPropertyPaneDynamicTextFieldProps
       - sp-webpart-base.IPropertyPaneField
       - sp-webpart-base.IPropertyPaneGroup
@@ -51,6 +59,8 @@ items:
       - sp-webpart-base.PropertyPaneCustomField
       - sp-webpart-base.PropertyPaneDropdown
       - sp-webpart-base.PropertyPaneDropdownOptionType
+      - sp-webpart-base.PropertyPaneDynamicField
+      - sp-webpart-base.PropertyPaneDynamicFieldSet
       - sp-webpart-base.PropertyPaneDynamicTextField
       - sp-webpart-base.PropertyPaneFieldType
       - sp-webpart-base.PropertyPaneHorizontalRule
@@ -60,6 +70,7 @@ items:
       - sp-webpart-base.PropertyPaneTextField
       - sp-webpart-base.PropertyPaneToggle
       - sp-webpart-base.WebPartContext
+      - sp-webpart-base.WebPartFormFactor
   - uid: sp-webpart-base.PropertyPaneButton
     summary: Helper method to create a Button on the PropertyPane.
     name: 'PropertyPaneButton(targetProperty, properties)'
@@ -182,8 +193,62 @@ items:
           description: Strongly typed Dropdown properties.
           type:
             - IPropertyPaneDropdownProps
+  - uid: sp-webpart-base.PropertyPaneDynamicField
+    summary: Helper method to create a Dynamic Data widget on the PropertyPane for a dynamic field.
+    name: 'PropertyPaneDynamicField(targetProperty, properties)'
+    fullName: sp-webpart-base.PropertyPaneDynamicField
+    langs:
+      - typeScript
+    type: function
+    syntax:
+      content: >-
+        export function PropertyPaneDynamicField(targetProperty: string, properties: IPropertyPaneDynamicFieldProps):
+        IPropertyPaneField<IPropertyPaneDynamicFieldProps>;
+      return:
+        type:
+          - IPropertyPaneField<IPropertyPaneDynamicFieldProps>
+        description: ''
+      parameters:
+        - id: targetProperty
+          description: Target property the Dynamic Data widget is associated to.
+          type:
+            - string
+        - id: properties
+          description: ''
+          type:
+            - IPropertyPaneDynamicFieldProps
+  - uid: sp-webpart-base.PropertyPaneDynamicFieldSet
+    summary: >-
+      Helper method to create a Dynamic Data widget on the Property Pane for a set of dynamic fields with a common data
+      source.
+
+
+      These fields can possibly share the same property based on the associated filters.
+    name: PropertyPaneDynamicFieldSet(properties)
+    fullName: sp-webpart-base.PropertyPaneDynamicFieldSet
+    langs:
+      - typeScript
+    type: function
+    syntax:
+      content: >-
+        export function PropertyPaneDynamicFieldSet(properties: IPropertyPaneDynamicFieldSetProps):
+        IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>;
+      return:
+        type:
+          - IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>
+        description: ''
+      parameters:
+        - id: properties
+          description: >-
+            Contains entries and options, described as below: entries - A set of entries to be configured by the widget.
+            Each entry includes the target property and, optionally, the label to show. options - Options enabling
+            customized values for callback, filters etc., for the given set of dynamic fields.
+          type:
+            - IPropertyPaneDynamicFieldSetProps
   - uid: sp-webpart-base.PropertyPaneDynamicTextField
     summary: Helper method to create a Dynamic TextField on the PropertyPane.
+    deprecated:
+      content: '- This has been replaced by PropertyPaneDynamicField'
     isPreview: true
     name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
     fullName: sp-webpart-base.PropertyPaneDynamicTextField
@@ -347,8 +412,18 @@ references:
     name: BaseWebPart
   - uid: sp-webpart-base.BaseWebPartContext
     name: BaseWebPartContext
+  - uid: sp-webpart-base.DynamicDataSharedDepth
+    name: DynamicDataSharedDepth
   - uid: sp-webpart-base.IClientSideWebPartStatusRenderer
     name: IClientSideWebPartStatusRenderer
+  - uid: sp-webpart-base.IDynamicDataSharedPropertyConfiguration
+    name: IDynamicDataSharedPropertyConfiguration
+  - uid: sp-webpart-base.IDynamicDataSharedPropertyFilters
+    name: IDynamicDataSharedPropertyFilters
+  - uid: sp-webpart-base.IDynamicDataSharedSourceConfiguration
+    name: IDynamicDataSharedSourceConfiguration
+  - uid: sp-webpart-base.IDynamicDataSharedSourceFilters
+    name: IDynamicDataSharedSourceFilters
   - uid: sp-webpart-base.IPlaceholderSpinnerProps
     name: IPlaceholderSpinnerProps
   - uid: sp-webpart-base.IPropertyPaneAccessor
@@ -363,6 +438,8 @@ references:
     name: IPropertyPaneChoiceGroupOptionIconProps
   - uid: sp-webpart-base.IPropertyPaneChoiceGroupProps
     name: IPropertyPaneChoiceGroupProps
+  - uid: sp-webpart-base.IPropertyPaneConditionalGroup
+    name: IPropertyPaneConditionalGroup
   - uid: sp-webpart-base.IPropertyPaneConfiguration
     name: IPropertyPaneConfiguration
   - uid: sp-webpart-base.IPropertyPaneCustomFieldProps
@@ -373,6 +450,10 @@ references:
     name: IPropertyPaneDropdownOption
   - uid: sp-webpart-base.IPropertyPaneDropdownProps
     name: IPropertyPaneDropdownProps
+  - uid: sp-webpart-base.IPropertyPaneDynamicFieldProps
+    name: IPropertyPaneDynamicFieldProps
+  - uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps
+    name: IPropertyPaneDynamicFieldSetProps
   - uid: sp-webpart-base.IPropertyPaneDynamicTextFieldProps
     name: IPropertyPaneDynamicTextFieldProps
   - uid: sp-webpart-base.IPropertyPaneField
@@ -413,3 +494,5 @@ references:
     name: PropertyPaneFieldType
   - uid: sp-webpart-base.WebPartContext
     name: WebPartContext
+  - uid: sp-webpart-base.WebPartFormFactor
+    name: WebPartFormFactor

@@ -2,7 +2,7 @@
 items:
   - uid: sp-webpart-base.BaseClientSideWebPart
     summary: >-
-      This abstract class implements the the base functionality for a client side web part. Every client side web part
+      This abstract class implements the the base functionality for a client-side web part. Every client-side web part
       needs to inherit from this class.
     remarks: >-
       Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall
@@ -42,13 +42,9 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart.constructor
     summary: Constructor for the BaseClientSideWebPart class.
     remarks: >-
-      If a sub class overrides the constructor, it needs to call super() as the first line of its constructor. It is
-      highly recommended that the web part use the OnInit API to perform any web part specific initialization. Most of
-      the web part features like this.context and this.properties are not available to be used before the the onInit
-      part of the web part loading lifecycle.
-
-
-      e.g. constructor() { super(); . . class specific constructor code .. }
+      It is highly recommended that the web part use the `onInit()` API to perform any web part specific initialization.
+      Most of the web part features like this.context and `this.properties` are not available to be used before the the
+      `onInit()` part of the web part loading lifecycle.
     name: constructor()
     fullName: sp-webpart-base.BaseClientSideWebPart.constructor
     langs:
@@ -59,12 +55,15 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
     summary: This property indicates whether a web part can open a popup on initial render.
     remarks: >-
-      In some environments the host re-renders the web parts frequently, and therefor, opening popups during render will
-      cause popups to open repeatedly and hence poor user experience. As an example, the classic SharePoint pages
-      perform postbacks and hence page re-render on all button clicks. If a web part needs to open a popup on render, it
-      should use this API before opening the popup. If this API returns false, the web part should not open popup on
-      initial render. Some web parts that open popups during render are the document embed web part that pops up the
-      file picker on initial render, embedded video web part that pops up the PropertyPane on initial render.
+      In some environments the host re-renders the web parts frequently, and therefore opening popups during render will
+      cause popups to open repeatedly, which is a poor user experience. As an example, the classic SharePoint pages
+      perform postbacks causing the page to re-render on all button clicks.
+
+
+      If a web part needs to open a popup on render, it should use this API before opening the popup. If this API
+      returns false, the web part should not open popup on initial render. Some web parts that open popups during render
+      are the document embed web part that pops up the file picker on initial render, embedded video web part that pops
+      up the PropertyPane on initial render.
     name: canOpenPopupOnRender
     fullName: sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
     langs:
@@ -119,16 +118,22 @@ items:
         type:
           - HTMLElement
   - uid: sp-webpart-base.BaseClientSideWebPart.isRenderAsync
-    summary: >-
-      Indicates whether the web part is rendering in Async mode. Default value is false. If the web part overrides this
-      field to return true, then it needs to call renderCompleted API after the web part rendering is complete.
+    summary: Indicates whether the web part is rendering in Async mode.
+    remarks: >-
+      If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part
+      rendering is complete.
+
+
+      The default value is false.
     name: isRenderAsync
     fullName: sp-webpart-base.BaseClientSideWebPart.isRenderAsync
     langs:
       - typeScript
     type: property
     syntax:
-      content: 'protected readonly isRenderAsync: boolean;'
+      content: |-
+        /** @virtual */
+        protected readonly isRenderAsync: boolean;
       return:
         type:
           - boolean
@@ -144,7 +149,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;'
+      content: |-
+        /** @virtual */
+        protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;
       return:
         type:
           - void
@@ -167,7 +174,9 @@ items:
       - typeScript
     type: method
     syntax:
-      content: 'protected onDispose(): void;'
+      content: |-
+        /** @virtual */
+        protected onDispose(): void;
       return:
         type:
           - void
@@ -191,7 +200,7 @@ items:
     summary: >-
       This API should be called by web parts that perform Async rendering. Those web part are required to override the
       isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part
-      initiates the IFrame rendering in the render() API but the actual rendering is complete only after the iframe
+      initiates the IFrame rendering in the `render()` API but the actual rendering is complete only after the iframe
       loading completes.
     name: renderCompleted()
     fullName: sp-webpart-base.BaseClientSideWebPart.renderCompleted
@@ -222,7 +231,7 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart.renderedOnce
     summary: >-
       This property indicates whether the web part has been rendered once or not. After the first time rendering, the
-      value of this property is always true. Till a full re-render of the web part happens.
+      value of this property is always true until a full re-render of the web part happens.
     name: renderedOnce
     fullName: sp-webpart-base.BaseClientSideWebPart.renderedOnce
     langs:

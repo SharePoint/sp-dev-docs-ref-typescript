@@ -4,14 +4,10 @@ items:
     summary: >-
       Class that contains the Dynamic Data reference. This includes the source, property, and property path (if
       applicable) of Dynamic Data
-    remarks: >-
-      The reference string is of the form &lt;sourceId&gt;:&lt;property&gt; or
-      &lt;sourceId&gt;:&lt;property&gt;:&lt;propertyPath&gt;
+    remarks: |-
+      The reference string is of the form `<sourceId>:<property>` or `<sourceId>:<property>:<propertyPath>`
 
-
-      Examples of references are: PageContext:user
-      WebPart.&lt;componentId&gt;.&lt;instanceId&gt;:myComplexProperty:myArray\[0\].lastName
-    isPreview: true
+      Examples of references are: `WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName`
     name: DynamicDataReference
     fullName: sp-dynamic-data.DynamicDataReference
     langs:
@@ -40,7 +36,6 @@ items:
             - string
   - uid: sp-dynamic-data.DynamicDataReference.property
     summary: Returns the referred property of the Dynamic Data.
-    isPreview: true
     name: property
     fullName: sp-dynamic-data.DynamicDataReference.property
     langs:
@@ -53,7 +48,6 @@ items:
           - string
   - uid: sp-dynamic-data.DynamicDataReference.propertyPath
     summary: Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path.
-    isPreview: true
     name: propertyPath
     fullName: sp-dynamic-data.DynamicDataReference.propertyPath
     langs:
@@ -66,7 +60,6 @@ items:
           - string | undefined
   - uid: sp-dynamic-data.DynamicDataReference.reference
     summary: Returns the full reference of the Dynamic Data object as a string.
-    isPreview: true
     name: reference
     fullName: sp-dynamic-data.DynamicDataReference.reference
     langs:
@@ -79,7 +72,6 @@ items:
           - string
   - uid: sp-dynamic-data.DynamicDataReference.sourceId
     summary: Returns the referred id of the Dynamic Data Source.
-    isPreview: true
     name: sourceId
     fullName: sp-dynamic-data.DynamicDataReference.sourceId
     langs:

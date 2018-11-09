@@ -4,14 +4,21 @@ items:
     summary: >-
       It provides timezone information from SharePoint. A conversion from UTC to local time can be calculated by using
       the following formula.
-
-
-      isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the StandardDate LocalTime = UTCTime -
-      Offset - (isDaylightSavingsTime ? daylightOffset : standardOffset) June 11, 2 A.M. PST = June 11, 9 A.M. - (480
-      minutes) - (-60 minutes)
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
       create subclasses that extend the SPTimeZone class.
+
+
+      ```
+
+      isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the StandardDate
+
+      LocalTime = UTCTime - Offset - (isDaylightSavingsTime ? daylightOffset : standardOffset)
+
+      June 11, 2 A.M. PST = June 11, 9 A.M. - (480 minutes) - (-60  minutes)
+
+
+      ```
     isPreview: true
     name: SPTimeZone
     fullName: sp-page-context.SPTimeZone

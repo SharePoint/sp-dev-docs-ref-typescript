@@ -19,11 +19,28 @@ items:
       - BaseComponentContext
     package: sp-webpart-base
     children:
+      - sp-webpart-base.BaseWebPartContext.formFactor
       - sp-webpart-base.BaseWebPartContext.manifest
       - sp-webpart-base.BaseWebPartContext.propertyPane
       - sp-webpart-base.BaseWebPartContext.webPartTag
+  - uid: sp-webpart-base.BaseWebPartContext.formFactor
+    summary: Form factor of the web part.
+    remarks: >-
+      Web parts may behave differently based on its form factor. E.g. a web part rendering as full size may want to set
+      up different margins that when rendering in a canvas.
+    isPreview: true
+    name: formFactor
+    fullName: sp-webpart-base.BaseWebPartContext.formFactor
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly formFactor: WebPartFormFactor;'
+      return:
+        type:
+          - WebPartFormFactor
   - uid: sp-webpart-base.BaseWebPartContext.manifest
-    summary: Manifest for the client side component.
+    summary: Manifest for the client-side component.
     name: manifest
     fullName: sp-webpart-base.BaseWebPartContext.manifest
     langs:
