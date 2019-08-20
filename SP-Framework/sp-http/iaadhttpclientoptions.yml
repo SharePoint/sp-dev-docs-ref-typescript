@@ -11,7 +11,10 @@ items:
     children:
       - sp-http.IAadHttpClientOptions.configuration
       - sp-http.IAadHttpClientOptions.tokenProvider
+      - sp-http.IAadHttpClientOptions.useCachedToken
   - uid: sp-http.IAadHttpClientOptions.configuration
+    deprecated:
+      content: '- AadHttpClient''s configuration cannot be altered'
     name: configuration
     fullName: configuration
     langs:
@@ -21,8 +24,10 @@ items:
       content: 'configuration?: IAadTokenProviderConfiguration;'
       return:
         type:
-          - IAadTokenProviderConfiguration
+          - sp-http.IAadTokenProviderConfiguration
   - uid: sp-http.IAadHttpClientOptions.tokenProvider
+    deprecated:
+      content: '- AadHttpClient does not support a custom tokenProvider.'
     name: tokenProvider
     fullName: tokenProvider
     langs:
@@ -32,4 +37,17 @@ items:
       content: 'tokenProvider?: IAadTokenProvider;'
       return:
         type:
-          - IAadTokenProvider
+          - sp-http.IAadTokenProvider
+  - uid: sp-http.IAadHttpClientOptions.useCachedToken
+    summary: Allows the developer to specify if cached tokens should be use for the current request.
+    isPreview: true
+    name: useCachedToken
+    fullName: useCachedToken
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'useCachedToken?: boolean;'
+      return:
+        type:
+          - boolean

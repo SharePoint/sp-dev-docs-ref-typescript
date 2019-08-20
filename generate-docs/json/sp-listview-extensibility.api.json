@@ -1,1214 +1,1754 @@
 {
-  "kind": "package",
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.1.8",
+    "schemaVersion": 1000
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-listview-extensibility",
+  "docComment": "/**\n * SharePoint Framework support for customizing the list view.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-listview-extensibility",
-  "summary": [
+  "members": [
     {
-      "kind": "text",
-      "text": "SharePoint Framework support for customizing the list view."
-    }
-  ],
-  "remarks": [],
-  "exports": {
-    "BaseFieldCustomizer": {
-      "kind": "class",
-      "extends": "BaseExtension",
-      "implements": "",
-      "typeParameters": [
-        "TProperties"
-      ],
-      "deprecatedMessage": [],
-      "summary": [
+      "kind": "EntryPoint",
+      "canonicalReference": "",
+      "name": "",
+      "members": [
         {
-          "kind": "text",
-          "text": "This is the base class that third parties should extend when implementing a client-side extension that customizes the appearance of fields in a SharePoint ListView."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "In the component manifest, the \"extensionType\" should be set to \"FieldCustomizer\"."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "context": {
-          "kind": "property",
-          "signature": "protected readonly context: FieldCustomizerContext;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "FieldCustomizerContext",
-          "deprecatedMessage": [],
-          "summary": [
+          "kind": "Class",
+          "canonicalReference": "(BaseFieldCustomizer:class)",
+          "docComment": "/**\n * This is the base class that third parties should extend when implementing a client-side extension that customizes the appearance of fields in a SharePoint ListView.\n *\n * In the component manifest, the \"extensionType\" should be set to \"FieldCustomizer\".\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "Use the context object to access common services and state associated with the component."
+              "kind": "Content",
+              "text": "declare abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseFieldCustomizer"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TProperties"
+            },
+            {
+              "kind": "Content",
+              "text": "> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseExtension"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TProperties"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
             }
           ],
-          "remarks": [
+          "releaseTag": "Public",
+          "name": "BaseFieldCustomizer",
+          "members": [
             {
-              "kind": "text",
-              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "onDisposeCell": {
-          "kind": "method",
-          "signature": "onDisposeCell(event: IFieldCustomizerCellEventParameters): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "event": {
-              "name": "event",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IFieldCustomizerCellEventParameters"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "onRenderCell": {
-          "kind": "method",
-          "signature": "onRenderCell(event: IFieldCustomizerCellEventParameters): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "event": {
-              "name": "event",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IFieldCustomizerCellEventParameters"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "BaseListViewCommandSet": {
-      "kind": "class",
-      "extends": "BaseExtension",
-      "implements": "",
-      "typeParameters": [
-        "TProperties"
-      ],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "This is the base class that third parties should extend when implementing a client-side extension that provides a command set for a SharePoint list view."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the BaseListViewCommandSet class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "In the component manifest, the \"extensionType\" should be set to \"ListViewCommandSet\"."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "context": {
-          "kind": "property",
-          "signature": "readonly context: ListViewCommandSetContext;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ListViewCommandSetContext",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Use the context object to access common services and state associated with the component."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "onExecute": {
-          "kind": "method",
-          "signature": "onExecute(event: IListViewCommandSetExecuteEventParameters): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "event": {
-              "name": "event",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IListViewCommandSetExecuteEventParameters"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This event occurs when the command is invoked, e.g. because the user clicked on the toolbar button or menu item."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "onListViewUpdated": {
-          "kind": "method",
-          "signature": "onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "event": {
-              "name": "event",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "IListViewCommandSetListViewUpdatedParameters"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This event occurs whenever the ListView state changes."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This event allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "tryGetCommand": {
-          "kind": "method",
-          "signature": "tryGetCommand(id: string): Command;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "Command",
-            "description": []
-          },
-          "parameters": {
-            "id": {
-              "name": "id",
-              "description": [
+              "kind": "Property",
+              "canonicalReference": "(context:instance)",
+              "docComment": "/**\n * {@inheritDoc @microsoft/sp-component-base#BaseComponent.context}\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "Id of the command"
+                  "kind": "Content",
+                  "text": "protected readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "context"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FieldCustomizerContext"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the command with the given id. Returns undefined if there is not command with the given id."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "ColumnAccessor": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Provides access to a ListView column, which is the visual presentation of a field."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ColumnAccessor class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "A SharePoint \"field\" (SPField) defines the data storage for a property of a list item. (If the list item represents a document, then the field is sometimes called a \"property\".)"
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "A \"column\" is the visual presentation of a field, when displayed by the ListView."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "field": {
-          "kind": "property",
-          "signature": "readonly field: SPField;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "SPField",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The server-side definition of the field. This property is read-only."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "visible": {
-          "kind": "property",
-          "signature": "readonly visible: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Whether to show this column in the list view. This property is read-only."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "Command": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents a command belonging to a command set."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons, context menu items, etc. These commands are initially defined in the extension’s manifest file. At runtime, the corresponding Command object can be obtained by calling "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "BaseListViewCommandSet.tryGetCommand"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-listview-extensibility",
-            "exportName": "BaseListViewCommandSet",
-            "memberName": "tryGetCommand"
-          }
-        },
-        {
-          "kind": "text",
-          "text": ". The command’s appearance can be customized by assigning its properties, for example to hide a command that is not contextually relevant, or to pluralize the title based on the number of selected items."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "ariaLabel": {
-          "kind": "property",
-          "signature": "ariaLabel: string | undefined;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string | undefined",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Custom accessibility text for the browser's \"aria-label\" attribute. If omitted, the title property will be used by default. Example: \"Show information. Press ENTER to select.\""
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "iconImageUrl": {
-          "kind": "property",
-          "signature": "iconImageUrl: string | undefined;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string | undefined",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "An optional URL for an image to be displayed next to the command. The requirements for this image are defined by the type of extension; some extension types may not display the image at all."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This must be a absolute URL."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "id": {
-          "kind": "property",
-          "signature": "id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the command."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "title": {
-          "kind": "property",
-          "signature": "title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "A short label to be displayed by the associated button, menu item, etc."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: \"Show information\""
+              "releaseTag": "Public",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
             },
             {
-              "kind": "paragraph"
+              "kind": "Method",
+              "canonicalReference": "(onDisposeCell:instance,0)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "onDisposeCell"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "event"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IFieldCustomizerCellEventParameters"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "event",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "onDisposeCell"
             },
             {
-              "kind": "text",
-              "text": "Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension."
+              "kind": "Method",
+              "canonicalReference": "(onRenderCell:instance,0)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "onRenderCell"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "event"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IFieldCustomizerCellEventParameters"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "event",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "onRenderCell"
             }
           ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "visible": {
-          "kind": "property",
-          "signature": "visible: boolean;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "True if the command is visible."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "FieldCustomizerContext": {
-      "kind": "class",
-      "extends": "ExtensionContext",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "This object provides contextual information for BaseFieldCustomizer."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the FieldCustomizerContext class."
-        },
-        {
-          "kind": "paragraph"
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "field": {
-          "kind": "property",
-          "signature": "readonly field: SPField;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "SPField",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Provides access to the SharePoint field that the customizer will operate on."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "tryGetListView": {
-          "kind": "method",
-          "signature": "tryGetListView(): ListViewAccessor | undefined;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ListViewAccessor | undefined",
-            "description": [
-              {
-                "kind": "text",
-                "text": "the SharePoint list view, or undefined if there is none."
-              }
-            ]
+          "extendsTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
           },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific functionality; otherwise the value is undefined."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Although the SharePoint list view is the main usage scenario, field customizers can be used by other user interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IFieldCustomizerCellEventParameters": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Event parameters for BaseFieldCustomizer.onRenderCell()"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "domElement": {
-          "kind": "property",
-          "signature": "readonly domElement: HTMLDivElement;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "HTMLDivElement",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The HTML \"div\" element that the extension will take ownership of. This ownership will end when onDisposeCell() is called."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "fieldValue": {
-          "kind": "property",
-          "signature": "readonly fieldValue: any;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "any",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The value of the field being rendered."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "listItem": {
-          "kind": "property",
-          "signature": "readonly listItem: ListItemAccessor;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ListItemAccessor",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The list item being edited."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "userData": {
-          "kind": "property",
-          "signature": "userData: any;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "any",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "An implementation defined storage property."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this property, and then onDisposeCell() can use this key to find the resource to be freed."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IListViewCommandSetExecuteEventParameters": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Parameters for "
+          "implementsTokenRanges": []
         },
         {
-          "kind": "api-link",
-          "elements": [
+          "kind": "Class",
+          "canonicalReference": "(BaseListViewCommandSet:class)",
+          "docComment": "/**\n * This is the base class that third parties should extend when implementing a client-side extension that provides a command set for a SharePoint list view.\n *\n * @remarks\n *\n * In the component manifest, the \"extensionType\" should be set to \"ListViewCommandSet\".\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BaseListViewCommandSet` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "BaseListViewCommandSet.onExecute"
+              "kind": "Content",
+              "text": "declare abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseListViewCommandSet"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TProperties"
+            },
+            {
+              "kind": "Content",
+              "text": "> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseExtension"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TProperties"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
             }
           ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-listview-extensibility",
-            "exportName": "BaseListViewCommandSet",
-            "memberName": "onExecute"
-          }
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "itemId": {
-          "kind": "property",
-          "signature": "readonly itemId: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
+          "releaseTag": "Public",
+          "name": "BaseListViewCommandSet",
+          "members": [
             {
-              "kind": "text",
-              "text": "The unique identifier for the command. This is specified as ICommandDefinition.commandId in the component manifest."
+              "kind": "Property",
+              "canonicalReference": "(context:instance)",
+              "docComment": "/**\n * {@inheritDoc @microsoft/sp-extension-base#BaseExtension.context}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "context"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ListViewCommandSetContext"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(onExecute:instance,0)",
+              "docComment": "/**\n * This event occurs when the command is invoked, e.g. because the user clicked on the toolbar button or menu item.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "onExecute"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "event"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IListViewCommandSetExecuteEventParameters"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "event",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "onExecute"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(onListViewUpdated:instance,0)",
+              "docComment": "/**\n * This event occurs whenever the ListView state changes.\n *\n * @remarks\n *\n * This event allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "onListViewUpdated"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "event"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IListViewCommandSetListViewUpdatedParameters"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "event",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "onListViewUpdated"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(tryGetCommand:instance,0)",
+              "docComment": "/**\n * Returns the command with the given id. Returns undefined if there is not command with the given id.\n *\n * @param id - Id of the command\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "tryGetCommand"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Command"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "tryGetCommand"
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "selectedRows": {
-          "kind": "property",
-          "signature": "readonly selectedRows: ReadonlyArray<RowAccessor>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ReadonlyArray<RowAccessor>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The currently selected ListView rows, at the time when the event occurred."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IListViewCommandSetListViewUpdatedParameters": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Parameters for "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "BaseListViewCommandSet.onListViewUpdated"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-listview-extensibility",
-            "exportName": "BaseListViewCommandSet",
-            "memberName": "onListViewUpdated"
-          }
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "selectedRows": {
-          "kind": "property",
-          "signature": "readonly selectedRows: ReadonlyArray<RowAccessor>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ReadonlyArray<RowAccessor>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The currently selected ListView rows, at the time when the event occurred."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "ListItemAccessor": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "When a field customizer extension is rendering a field, the ListItemAccessor provides access to the associated SharePoint list item."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ListItemAccessor class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "ListItemAccessor allows a field customizer extension to determine which fields are available in the editor and retrieve the current values for those fields. In the future, it may also support validation and editing operations."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether the associated table row is selected or not."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "fields": {
-          "kind": "property",
-          "signature": "readonly fields: ReadonlyArray<SPField>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ReadonlyArray<SPField>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The SharePoint fields that are currently available in the editor for this list item."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "The set of available fields depends on the editing context. For example, if a list view column is hidden, the corresponding field definition may not be loaded. Field customizers should not assume that a given field will be available, even if it is defined in the content type."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "getValue": {
-          "kind": "method",
-          "signature": "abstract getValue(field: SPField): any;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "any",
-            "description": []
+          "extendsTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
           },
-          "parameters": {
-            "field": {
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(ColumnAccessor:class)",
+          "docComment": "/**\n * Provides access to a ListView column, which is the visual presentation of a field.\n *\n * @remarks\n *\n * A SharePoint \"field\" (SPField) defines the data storage for a property of a list item. (If the list item represents a document, then the field is sometimes called a \"property\".)\n *\n * A \"column\" is the visual presentation of a field, when displayed by the ListView.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ColumnAccessor` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "ColumnAccessor"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ColumnAccessor",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(field:instance)",
+              "docComment": "/**\n * The server-side definition of the field. This property is read-only.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "field"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPField"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
               "name": "field",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "SPField"
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(visible:instance)",
+              "docComment": "/**\n * Whether to show this column in the list view. This property is read-only.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "visible"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "visible",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
             }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(Command:class)",
+          "docComment": "/**\n * Represents a command belonging to a command set.\n *\n * @remarks\n *\n * The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons, context menu items, etc. These commands are initially defined in the extension’s manifest file. At runtime, the corresponding Command object can be obtained by calling {@link BaseListViewCommandSet.tryGetCommand}. The command’s appearance can be customized by assigning its properties, for example to hide a command that is not contextually relevant, or to pluralize the title based on the number of selected items.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class "
+            },
+            {
+              "kind": "Reference",
+              "text": "Command"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Command",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(ariaLabel:instance)",
+              "docComment": "/**\n * Custom accessibility text for the browser's \"aria-label\" attribute. If omitted, the title property will be used by default. Example: \"Show information. Press ENTER to select.\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ariaLabel"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ariaLabel",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(iconImageUrl:instance)",
+              "docComment": "/**\n * An optional URL for an image to be displayed next to the command. The requirements for this image are defined by the type of extension; some extension types may not display the image at all.\n *\n * @remarks\n *\n * This must be a absolute URL.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "iconImageUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "iconImageUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(id:instance)",
+              "docComment": "/**\n * Id of the command.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(title:instance)",
+              "docComment": "/**\n * A short label to be displayed by the associated button, menu item, etc.\n *\n * @remarks\n *\n * Example: \"Show information\"\n *\n * Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(visible:instance)",
+              "docComment": "/**\n * True if the command is visible.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "visible"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "visible",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "isStatic": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(FieldCustomizerContext:class)",
+          "docComment": "/**\n * This object provides contextual information for BaseFieldCustomizer.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `FieldCustomizerContext` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class "
+            },
+            {
+              "kind": "Reference",
+              "text": "FieldCustomizerContext"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtensionContext"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "FieldCustomizerContext",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(field:instance)",
+              "docComment": "/**\n * Provides access to the SharePoint field that the customizer will operate on.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "field"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPField"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "field",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(tryGetListView:instance,0)",
+              "docComment": "/**\n * If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific functionality; otherwise the value is undefined.\n *\n * @remarks\n *\n * Although the SharePoint list view is the main usage scenario, field customizers can be used by other user interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.\n *\n * @returns the SharePoint list view, or undefined if there is none.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "tryGetListView"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ListViewAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "tryGetListView"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
           },
-          "deprecatedMessage": [],
-          "summary": [
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IFieldCustomizerCellEventParameters:interface)",
+          "docComment": "/**\n * Event parameters for BaseFieldCustomizer.onRenderCell()\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "Retrieves the current data value for the specified field. The value will be a primitive JavaScript object such as a string, number, etc."
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IFieldCustomizerCellEventParameters"
+            },
+            {
+              "kind": "Content",
+              "text": " "
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "releaseTag": "Public",
+          "name": "IFieldCustomizerCellEventParameters",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "domElement",
+              "docComment": "/**\n * The HTML \"div\" element that the extension will take ownership of. This ownership will end when onDisposeCell() is called.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "domElement"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "HTMLDivElement"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "domElement",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "fieldValue",
+              "docComment": "/**\n * The value of the field being rendered.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "fieldValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "fieldValue",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "listItem",
+              "docComment": "/**\n * The list item being edited.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "listItem"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ListItemAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "listItem",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "userData",
+              "docComment": "/**\n * An implementation defined storage property.\n *\n * @remarks\n *\n * For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this property, and then onDisposeCell() can use this key to find the resource to be freed.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "userData"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "userData",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
-        "getValueByName": {
-          "kind": "method",
-          "signature": "abstract getValueByName(internalName: string): any;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "any",
-            "description": []
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IListViewCommandSetExecuteEventParameters:interface)",
+          "docComment": "/**\n * Parameters for {@link BaseListViewCommandSet.onExecute}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IListViewCommandSetExecuteEventParameters"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IListViewCommandSetExecuteEventParameters",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "itemId",
+              "docComment": "/**\n * The unique identifier for the command. This is specified as ICommandDefinition.commandId in the component manifest.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "itemId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "itemId",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "selectedRows",
+              "docComment": "/**\n * The currently selected ListView rows, at the time when the event occurred.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "selectedRows"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RowAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "selectedRows",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IListViewCommandSetListViewUpdatedParameters:interface)",
+          "docComment": "/**\n * Parameters for {@link BaseListViewCommandSet.onListViewUpdated}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IListViewCommandSetListViewUpdatedParameters"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IListViewCommandSetListViewUpdatedParameters",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "selectedRows",
+              "docComment": "/**\n * The currently selected ListView rows, at the time when the event occurred.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "selectedRows"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RowAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "selectedRows",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(ListItemAccessor:class)",
+          "docComment": "/**\n * When a field customizer extension is rendering a field, the ListItemAccessor provides access to the associated SharePoint list item.\n *\n * @remarks\n *\n * ListItemAccessor allows a field customizer extension to determine which fields are available in the editor and retrieve the current values for those fields. In the future, it may also support validation and editing operations.\n *\n * When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether the associated table row is selected or not.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ListItemAccessor` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "ListItemAccessor"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ListItemAccessor",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(fields:instance)",
+              "docComment": "/**\n * The SharePoint fields that are currently available in the editor for this list item.\n *\n * @remarks\n *\n * The set of available fields depends on the editing context. For example, if a list view column is hidden, the corresponding field definition may not be loaded. Field customizers should not assume that a given field will be available, even if it is defined in the content type.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "fields"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPField"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "fields",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(getValue:instance,0)",
+              "docComment": "/**\n * Retrieves the current data value for the specified field. The value will be a primitive JavaScript object such as a string, number, etc.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "getValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "field"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPField"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "field",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "name": "getValue"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(getValueByName:instance,0)",
+              "docComment": "/**\n * Retrieves the current data value for the field with the specified internal name. The value will be a primitive JavaScript object such as a string, number, etc.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "getValueByName"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "internalName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "internalName",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "name": "getValueByName"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(ListViewAccessor:class)",
+          "docComment": "/**\n * Provides access to a SharePoint ListView control.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ListViewAccessor` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "ListViewAccessor"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ListViewAccessor",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(columns:instance)",
+              "docComment": "/**\n * The columns in associated with this view, including hidden columns.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "columns"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "columns",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(selectedRowsChangedEvent:instance)",
+              "docComment": "/**\n * Event that gets raised every time the selected items in the list view change.\n *\n * @eventproperty\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "selectedRowsChangedEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SelectedRowsChangedEventArgs"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "selectedRowsChangedEvent",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(tryGetColumnByName:instance,0)",
+              "docComment": "/**\n * Returns the list view column corresponding to the field with the specified internal name, or undefined if none is found.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "tryGetColumnByName"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "internalName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ColumnAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "internalName",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "name": "tryGetColumnByName"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(ListViewCommandSetContext:class)",
+          "docComment": "/**\n * This object provides contextual information for BaseListViewCommandSet.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ListViewCommandSetContext` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class "
+            },
+            {
+              "kind": "Reference",
+              "text": "ListViewCommandSetContext"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtensionContext"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ListViewCommandSetContext",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(listView:instance)",
+              "docComment": "/**\n * Provides access to the ListView control that the customizer will operate on.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "listView"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ListViewAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "listView",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(manifest:instance)",
+              "docComment": "/**\n * {@inheritDoc @microsoft/sp-component-base#BaseComponentContext.manifest}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "manifest"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICommandSetExtensionManifest"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "manifest",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
           },
-          "parameters": {
-            "internalName": {
-              "name": "internalName",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(RowAccessor:class)",
+          "docComment": "/**\n * Provides access to a ListView row, which is the visual presentation of a SharePoint list item.\n *\n * @remarks\n *\n * A SharePoint \"list item\" (SPListItem) is a data storage record in the content management system; it stores an array of values for the associated fields.\n *\n * A \"row\" is the visual presentation of a list item, when displayed by the ListView; it stores an array of cell values for the associated columns.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `RowAccessor` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "RowAccessor"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ListItemAccessor"
+            },
+            {
+              "kind": "Content",
+              "text": " "
             }
+          ],
+          "releaseTag": "Public",
+          "name": "RowAccessor",
+          "members": [],
+          "extendsTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
           },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Retrieves the current data value for the field with the specified internal name. The value will be a primitive JavaScript object such as a string, number, etc."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "ListViewAccessor": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Provides access to a SharePoint ListView control."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ListViewAccessor class."
+          "implementsTokenRanges": []
         },
         {
-          "kind": "paragraph"
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "columns": {
-          "kind": "property",
-          "signature": "readonly columns: ReadonlyArray<ColumnAccessor>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ReadonlyArray<ColumnAccessor>",
-          "deprecatedMessage": [],
-          "summary": [
+          "kind": "Class",
+          "canonicalReference": "(SelectedRowsChangedEventArgs:class)",
+          "docComment": "/**\n * Arguments for the selected rows changed event.\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "The columns in associated with this view, including hidden columns."
+              "kind": "Content",
+              "text": "export declare class "
+            },
+            {
+              "kind": "Reference",
+              "text": "SelectedRowsChangedEventArgs"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "SPEventArgs"
+            },
+            {
+              "kind": "Content",
+              "text": " "
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "selectedRowsChangedEvent": {
-          "kind": "property",
-          "signature": "readonly selectedRowsChangedEvent: SPEvent<SelectedRowsChangedEventArgs>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "SPEvent<SelectedRowsChangedEventArgs>",
-          "deprecatedMessage": [],
-          "summary": [
+          "releaseTag": "Public",
+          "name": "SelectedRowsChangedEventArgs",
+          "members": [
             {
-              "kind": "text",
-              "text": "Event that gets raised every time the selected items in the list view change."
+              "kind": "Property",
+              "canonicalReference": "(selectedRows:instance)",
+              "docComment": "/**\n * The list of rows that were selected in the list view at the time when the event was fired.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "selectedRows"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RowAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "selectedRows",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 6
+              },
+              "isStatic": false
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": true
-        },
-        "tryGetColumnByName": {
-          "kind": "method",
-          "signature": "abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ColumnAccessor | undefined",
-            "description": []
+          "extendsTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
           },
-          "parameters": {
-            "internalName": {
-              "name": "internalName",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the list view column corresponding to the field with the specified internal name, or undefined if none is found."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "implementsTokenRanges": []
         }
-      }
-    },
-    "ListViewCommandSetContext": {
-      "kind": "class",
-      "extends": "ExtensionContext",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "This object provides contextual information for BaseListViewCommandSet."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ListViewCommandSetContext class."
-        },
-        {
-          "kind": "paragraph"
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "listView": {
-          "kind": "property",
-          "signature": "readonly listView: ListViewAccessor;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ListViewAccessor",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Provides access to the ListView control that the customizer will operate on."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "manifest": {
-          "kind": "property",
-          "signature": "readonly manifest: ICommandSetExtensionManifest;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ICommandSetExtensionManifest",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Manifest for the client-side component."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "RowAccessor": {
-      "kind": "class",
-      "extends": "ListItemAccessor",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Provides access to a ListView row, which is the visual presentation of a SharePoint list item."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the RowAccessor class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "A SharePoint \"list item\" (SPListItem) is a data storage record in the content management system; it stores an array of values for the associated fields."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "A \"row\" is the visual presentation of a list item, when displayed by the ListView; it stores an array of cell values for the associated columns."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {}
-    },
-    "SelectedRowsChangedEventArgs": {
-      "kind": "class",
-      "extends": "SPEventArgs",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Arguments for the selected rows changed event."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "selectedRows": {
-          "kind": "property",
-          "signature": "selectedRows: ReadonlyArray<RowAccessor>;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "ReadonlyArray<RowAccessor>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The list of rows that were selected in the list view at the time when the event was fired."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
+      ]
     }
-  }
+  ]
 }

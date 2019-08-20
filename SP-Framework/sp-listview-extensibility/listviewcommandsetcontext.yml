@@ -4,14 +4,14 @@ items:
     summary: This object provides contextual information for BaseListViewCommandSet.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the ListViewCommandSetContext class.
+      create subclasses that extend the `ListViewCommandSetContext` class.
     name: ListViewCommandSetContext
     fullName: ListViewCommandSetContext
     langs:
       - typeScript
     type: class
     extends:
-      - ExtensionContext
+      - sp-extension-base.ExtensionContext
     package: sp-listview-extensibility
     children:
       - sp-listview-extensibility.ListViewCommandSetContext.listView
@@ -27,7 +27,7 @@ items:
       content: 'readonly listView: ListViewAccessor;'
       return:
         type:
-          - ListViewAccessor
+          - sp-listview-extensibility.ListViewAccessor
   - uid: sp-listview-extensibility.ListViewCommandSetContext.manifest
     summary: Manifest for the client-side component.
     name: manifest

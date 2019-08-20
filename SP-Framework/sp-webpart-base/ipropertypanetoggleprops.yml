@@ -2,115 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPaneToggleProps
     summary: PropertyPaneToggle component props.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPaneToggleProps
     fullName: IPropertyPaneToggleProps
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPaneToggleProps '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPaneToggleProps.checked
-      - sp-webpart-base.IPropertyPaneToggleProps.disabled
-      - sp-webpart-base.IPropertyPaneToggleProps.key
-      - sp-webpart-base.IPropertyPaneToggleProps.label
-      - sp-webpart-base.IPropertyPaneToggleProps.offAriaLabel
-      - sp-webpart-base.IPropertyPaneToggleProps.offText
-      - sp-webpart-base.IPropertyPaneToggleProps.onAriaLabel
-      - sp-webpart-base.IPropertyPaneToggleProps.onText
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.checked
-    summary: Checked state of the toggle.
-    remarks: 'If you are maintaining state yourself, use this property.'
-    name: checked
-    fullName: checked
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'checked?: boolean;'
-      return:
-        type:
-          - boolean
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.disabled
-    summary: Optional disabled flag.
-    name: disabled
-    fullName: disabled
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'disabled?: boolean;'
-      return:
-        type:
-          - boolean
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.key
-    summary: A key to uniquely identify the field.
-    name: key
-    fullName: key
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'key?: string | number;'
-      return:
-        type:
-          - string | number
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.label
-    summary: A label for the toggle.
-    name: label
-    fullName: label
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'label: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.offAriaLabel
-    summary: Optional offAriaLabel flag. Text for screen-reader to announce when toggle is OFF.
-    name: offAriaLabel
-    fullName: offAriaLabel
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'offAriaLabel?: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.offText
-    summary: Test display when toggle is OFF.
-    name: offText
-    fullName: offText
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'offText?: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.onAriaLabel
-    summary: Optional onAriaLabel flag. Text for screen-reader to announce when toggle is ON.
-    name: onAriaLabel
-    fullName: onAriaLabel
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'onAriaLabel?: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneToggleProps.onText
-    summary: Text to display when toggle is ON.
-    name: onText
-    fullName: onText
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'onText?: string;'
-      return:
-        type:
-          - string

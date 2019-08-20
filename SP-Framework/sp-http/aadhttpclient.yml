@@ -15,15 +15,15 @@ items:
     type: class
     package: sp-http
     children:
-      - sp-http.AadHttpClient.constructor
+      - sp-http.AadHttpClient.(constructor)
       - sp-http.AadHttpClient.configurations
       - sp-http.AadHttpClient.fetch
       - sp-http.AadHttpClient.get
       - sp-http.AadHttpClient.post
-  - uid: sp-http.AadHttpClient.constructor
-    summary: 'Constructs a new instance of the [AadHttpClient](xref:sp-http.AadHttpClient) class'
-    name: 'constructor(serviceScope, resourceEndpoint, options)'
-    fullName: constructor
+  - uid: sp-http.AadHttpClient.(constructor)
+    summary: Constructs a new instance of the `AadHttpClient` class
+    name: '(constructor)(serviceScope, resourceEndpoint, options)'
+    fullName: '(constructor)(serviceScope, resourceEndpoint, options)'
     langs:
       - typeScript
     type: constructor
@@ -33,7 +33,7 @@ items:
         - id: serviceScope
           description: The service scope is needed to retrieve some of the class's internal components.
           type:
-            - ServiceScope
+            - sp-core-library.ServiceScope
         - id: resourceEndpoint
           description: ''
           type:
@@ -41,7 +41,7 @@ items:
         - id: options
           description: Configuration options for the request to get an access token.
           type:
-            - IAadHttpClientOptions
+            - sp-http.IAadHttpClientOptions
   - uid: sp-http.AadHttpClient.configurations
     summary: The standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient class.
     name: configurations
@@ -53,7 +53,7 @@ items:
       content: 'static readonly configurations: IAadHttpClientConfigurations;'
       return:
         type:
-          - IAadHttpClientConfigurations
+          - sp-http.IAadHttpClientConfigurations
   - uid: sp-http.AadHttpClient.fetch
     summary: Performs a REST service call.
     remarks: >-
@@ -61,7 +61,7 @@ items:
       HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
       https://fetch.spec.whatwg.org/
     name: 'fetch(url, configuration, options)'
-    fullName: fetch
+    fullName: 'fetch(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -83,15 +83,15 @@ items:
             Determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations.
           type:
-            - AadHttpClientConfiguration
+            - sp-http.AadHttpClientConfiguration
         - id: options
           description: Additional options that affect the request.
           type:
-            - IHttpClientOptions
+            - sp-http.IHttpClientOptions
   - uid: sp-http.AadHttpClient.get
     summary: 'Calls fetch(), but sets the method to "GET".'
     name: 'get(url, configuration, options)'
-    fullName: get
+    fullName: 'get(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -113,15 +113,15 @@ items:
             Determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations.
           type:
-            - AadHttpClientConfiguration
+            - sp-http.AadHttpClientConfiguration
         - id: options
           description: Additional options that affect the request.
           type:
-            - IHttpClientOptions
+            - sp-http.IHttpClientOptions
   - uid: sp-http.AadHttpClient.post
     summary: 'Calls fetch(), but sets the method to "POST".'
     name: 'post(url, configuration, options)'
-    fullName: post
+    fullName: 'post(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -143,8 +143,8 @@ items:
             Determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations.
           type:
-            - AadHttpClientConfiguration
+            - sp-http.AadHttpClientConfiguration
         - id: options
           description: Additional options that affect the request.
           type:
-            - IHttpClientOptions
+            - sp-http.IHttpClientOptions

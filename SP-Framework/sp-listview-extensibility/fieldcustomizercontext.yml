@@ -4,14 +4,14 @@ items:
     summary: This object provides contextual information for BaseFieldCustomizer.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the FieldCustomizerContext class.
+      create subclasses that extend the `FieldCustomizerContext` class.
     name: FieldCustomizerContext
     fullName: FieldCustomizerContext
     langs:
       - typeScript
     type: class
     extends:
-      - ExtensionContext
+      - sp-extension-base.ExtensionContext
     package: sp-listview-extensibility
     children:
       - sp-listview-extensibility.FieldCustomizerContext.field
@@ -27,7 +27,7 @@ items:
       content: 'readonly field: SPField;'
       return:
         type:
-          - SPField
+          - sp-page-context.SPField
   - uid: sp-listview-extensibility.FieldCustomizerContext.tryGetListView
     summary: >-
       If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific
@@ -36,7 +36,7 @@ items:
       Although the SharePoint list view is the main usage scenario, field customizers can be used by other user
       interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.
     name: tryGetListView()
-    fullName: tryGetListView
+    fullName: tryGetListView()
     langs:
       - typeScript
     type: method

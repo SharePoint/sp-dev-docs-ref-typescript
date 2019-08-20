@@ -2,90 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPaneLinkProps
     summary: PropertyPaneLink component props.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPaneLinkProps
     fullName: IPropertyPaneLinkProps
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPaneLinkProps '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPaneLinkProps.disabled
-      - sp-webpart-base.IPropertyPaneLinkProps.href
-      - sp-webpart-base.IPropertyPaneLinkProps.popupWindowProps
-      - sp-webpart-base.IPropertyPaneLinkProps.target
-      - sp-webpart-base.IPropertyPaneLinkProps.text
-  - uid: sp-webpart-base.IPropertyPaneLinkProps.disabled
-    summary: Whether the property pane link is disabled or not.
-    name: disabled
-    fullName: disabled
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'disabled?: boolean;'
-      return:
-        type:
-          - boolean
-  - uid: sp-webpart-base.IPropertyPaneLinkProps.href
-    summary: Location to which the link is targeted to.
-    name: href
-    fullName: href
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'href: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneLinkProps.popupWindowProps
-    summary: The props of pop up window.
-    name: popupWindowProps
-    fullName: popupWindowProps
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'popupWindowProps?: IPopupWindowProps;'
-      return:
-        type:
-          - IPopupWindowProps
-  - uid: sp-webpart-base.IPropertyPaneLinkProps.target
-    summary: This attribute specifies where to display the linked resource.
-    remarks: >-
-      Following values can be used:
-
-
-      \_self - (default) Load the response in the current page.
-
-
-      \_blank - Load the response into a new unnamed tab.
-
-
-      \_parent - Load the response in the parent of the current page. If no parent exists, then this option behaves same
-      as "\_self"
-
-
-      \_top - Load the response into the original window.
-    name: target
-    fullName: target
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'target?: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneLinkProps.text
-    summary: Display text for the link.
-    name: text
-    fullName: text
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'text: string;'
-      return:
-        type:
-          - string

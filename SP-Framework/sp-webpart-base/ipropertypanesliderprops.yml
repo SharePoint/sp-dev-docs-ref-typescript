@@ -2,118 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPaneSliderProps
     summary: PropertyPaneSliderProps component props.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPaneSliderProps
     fullName: IPropertyPaneSliderProps
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPaneSliderProps '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPaneSliderProps.ariaLabel
-      - sp-webpart-base.IPropertyPaneSliderProps.disabled
-      - sp-webpart-base.IPropertyPaneSliderProps.label
-      - sp-webpart-base.IPropertyPaneSliderProps.max
-      - sp-webpart-base.IPropertyPaneSliderProps.min
-      - sp-webpart-base.IPropertyPaneSliderProps.showValue
-      - sp-webpart-base.IPropertyPaneSliderProps.step
-      - sp-webpart-base.IPropertyPaneSliderProps.value
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.ariaLabel
-    summary: A description of the Slider for the benefit of screen readers.
-    name: ariaLabel
-    fullName: ariaLabel
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'ariaLabel?: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.disabled
-    summary: Whether or not the Slider is disabled.
-    name: disabled
-    fullName: disabled
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'disabled?: boolean;'
-      return:
-        type:
-          - boolean
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.label
-    summary: Description label of the Slider.
-    name: label
-    fullName: label
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'label?: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.max
-    summary: The max value of the Slider.
-    name: max
-    fullName: max
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'max: number;'
-      return:
-        type:
-          - number
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.min
-    summary: The min value of the Slider.
-    name: min
-    fullName: min
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'min: number;'
-      return:
-        type:
-          - number
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.showValue
-    summary: Whether to show the value on the right of the Slider.
-    remarks: 'If you want to show the value by yourself, you may want to set this value to false.'
-    name: showValue
-    fullName: showValue
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'showValue?: boolean;'
-      return:
-        type:
-          - boolean
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.step
-    summary: The difference between the two adjacent values of the Slider. Defaults to 1.
-    name: step
-    fullName: step
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'step?: number;'
-      return:
-        type:
-          - number
-  - uid: sp-webpart-base.IPropertyPaneSliderProps.value
-    summary: |-
-      The initial value of the Slider. Use this if you intend to pass in a new value as a result of onChange events.
-
-      Defaults to min.
-    name: value
-    fullName: value
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'value?: number;'
-      return:
-        type:
-          - number

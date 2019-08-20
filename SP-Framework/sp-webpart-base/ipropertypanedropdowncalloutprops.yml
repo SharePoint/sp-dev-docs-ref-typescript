@@ -2,23 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPaneDropdownCalloutProps
     summary: PropertyPane dropdown callout properties.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPaneDropdownCalloutProps
     fullName: IPropertyPaneDropdownCalloutProps
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPaneDropdownCalloutProps '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPaneDropdownCalloutProps.calloutMaxHeight
-  - uid: sp-webpart-base.IPropertyPaneDropdownCalloutProps.calloutMaxHeight
-    summary: Set max height of callout When not set the callout will expand with contents up to the bottom of the screen
-    name: calloutMaxHeight
-    fullName: calloutMaxHeight
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'calloutMaxHeight?: number;'
-      return:
-        type:
-          - number

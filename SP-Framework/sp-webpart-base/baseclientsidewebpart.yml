@@ -23,10 +23,10 @@ items:
       - typeScript
     type: class
     extends:
-      - BaseWebPart
+      - 'BaseWebPart<TProperties> '
     package: sp-webpart-base
     children:
-      - sp-webpart-base.BaseClientSideWebPart.constructor
+      - sp-webpart-base.BaseClientSideWebPart.(constructor)
       - sp-webpart-base.BaseClientSideWebPart.canOpenPopupOnRender
       - sp-webpart-base.BaseClientSideWebPart.clearError
       - sp-webpart-base.BaseClientSideWebPart.context
@@ -39,14 +39,14 @@ items:
       - sp-webpart-base.BaseClientSideWebPart.renderedFromPersistedData
       - sp-webpart-base.BaseClientSideWebPart.renderedOnce
       - sp-webpart-base.BaseClientSideWebPart.renderError
-  - uid: sp-webpart-base.BaseClientSideWebPart.constructor
+  - uid: sp-webpart-base.BaseClientSideWebPart.(constructor)
     summary: Constructor for the BaseClientSideWebPart class.
     remarks: >-
       It is highly recommended that the web part use the `onInit()` API to perform any web part specific initialization.
       Most of the web part features like this.context and `this.properties` are not available to be used before the the
       `onInit()` part of the web part loading lifecycle.
-    name: constructor()
-    fullName: constructor
+    name: (constructor)()
+    fullName: (constructor)()
     langs:
       - typeScript
     type: constructor
@@ -77,7 +77,7 @@ items:
   - uid: sp-webpart-base.BaseClientSideWebPart.clearError
     summary: This API should be used to clear the error message from the web part display area.
     name: clearError()
-    fullName: clearError
+    fullName: clearError()
     langs:
       - typeScript
     type: method
@@ -102,7 +102,7 @@ items:
       content: 'protected readonly context: WebPartContext;'
       return:
         type:
-          - WebPartContext
+          - sp-webpart-base.WebPartContext
   - uid: sp-webpart-base.BaseClientSideWebPart.domElement
     summary: >-
       This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole
@@ -144,7 +144,7 @@ items:
       display mode. If a web part developer does not want a full re-render to happen on display mode change, they can
       override this API and perform specific updates to the web part DOM to switch its display mode.
     name: onDisplayModeChanged(oldDisplayMode)
-    fullName: onDisplayModeChanged
+    fullName: onDisplayModeChanged(oldDisplayMode)
     langs:
       - typeScript
     type: method
@@ -160,7 +160,7 @@ items:
         - id: oldDisplayMode
           description: The old display mode.
           type:
-            - DisplayMode
+            - sp-core-library.DisplayMode
   - uid: sp-webpart-base.BaseClientSideWebPart.onDispose
     summary: This API should be used to refresh the contents of the PropertyPane.
     remarks: >-
@@ -169,7 +169,7 @@ items:
       like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
       transitioned out.
     name: onDispose()
-    fullName: onDispose
+    fullName: onDispose()
     langs:
       - typeScript
     type: method
@@ -186,7 +186,7 @@ items:
       This API is called to render the web part. There is no base implementation of this API and the web part is
       required to override this API.
     name: render()
-    fullName: render
+    fullName: render()
     langs:
       - typeScript
     type: method
@@ -203,7 +203,7 @@ items:
       initiates the IFrame rendering in the `render()` API but the actual rendering is complete only after the iframe
       loading completes.
     name: renderCompleted()
-    fullName: renderCompleted
+    fullName: renderCompleted()
     langs:
       - typeScript
     type: method
@@ -247,7 +247,7 @@ items:
       This API should be used to render an error message in the web part display area. Also logs the error message using
       the trace logger.
     name: renderError(error)
-    fullName: renderError
+    fullName: renderError(error)
     langs:
       - typeScript
     type: method

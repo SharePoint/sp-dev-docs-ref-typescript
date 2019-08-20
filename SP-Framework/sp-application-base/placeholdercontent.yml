@@ -3,20 +3,20 @@ items:
   - uid: sp-application-base.PlaceholderContent
     summary: Represents custom content that is rendered inside a placeholder on a SharePoint page.
     remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the PlaceholderContent class.
-
-
       This object is returned by
-      [PlaceholderProvider.tryCreateContent](xref:sp-application-base.PlaceholderProvider.tryCreateContent)<!-- -->. It
-      provides access to a Document Object Model (DOM) element where the owner can render its custom content.
+      [PlaceholderProvider.tryCreateContent()](xref:sp-application-base.PlaceholderProvider.tryCreateContent)<!-- -->.
+      It provides access to a Document Object Model (DOM) element where the owner can render its custom content.
+
+
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `PlaceholderContent` class.
     name: PlaceholderContent
     fullName: PlaceholderContent
     langs:
       - typeScript
     type: class
     implements:
-      - IDisposable
+      - sp-core-library.IDisposable
     package: sp-application-base
     children:
       - sp-application-base.PlaceholderContent.dispose
@@ -32,7 +32,7 @@ items:
       [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
       callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object.
     name: dispose()
-    fullName: dispose
+    fullName: dispose()
     langs:
       - typeScript
     type: method
@@ -95,4 +95,4 @@ items:
       content: 'readonly name: PlaceholderName;'
       return:
         type:
-          - PlaceholderName
+          - sp-application-base.PlaceholderName

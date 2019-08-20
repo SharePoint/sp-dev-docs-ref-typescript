@@ -18,9 +18,6 @@ items:
       - sp-http.AadTokenProvider
       - sp-http.AadTokenProviderFactory
       - sp-http.DigestCache
-      - sp-http.GraphHttpClient
-      - sp-http.GraphHttpClientConfiguration
-      - sp-http.GraphHttpClientResponse
       - sp-http.GraphRequest
       - sp-http.HttpClient
       - sp-http.HttpClientConfiguration
@@ -28,9 +25,9 @@ items:
       - sp-http.IAadHttpClientConfiguration
       - sp-http.IAadHttpClientConfigurations
       - sp-http.IAadHttpClientOptions
+      - sp-http.IAadTokenProvider
+      - sp-http.IAadTokenProviderConfiguration
       - sp-http.IDigestCache
-      - sp-http.IGraphHttpClientConfiguration
-      - sp-http.IGraphHttpClientConfigurations
       - sp-http.IGraphHttpClientOptions
       - sp-http.IHttpClientConfiguration
       - sp-http.IHttpClientConfigurations
@@ -43,6 +40,7 @@ items:
       - sp-http.ISPHttpClientConfiguration
       - sp-http.ISPHttpClientConfigurations
       - sp-http.ISPHttpClientOptions
+      - sp-http.ITokenAcquisitionEventArgs
       - sp-http.MSGraphClient
       - sp-http.MSGraphClientFactory
       - sp-http.ODataVersion
@@ -67,12 +65,6 @@ references:
     name: AadTokenProviderFactory
   - uid: sp-http.DigestCache
     name: DigestCache
-  - uid: sp-http.GraphHttpClient
-    name: GraphHttpClient
-  - uid: sp-http.GraphHttpClientConfiguration
-    name: GraphHttpClientConfiguration
-  - uid: sp-http.GraphHttpClientResponse
-    name: GraphHttpClientResponse
   - uid: sp-http.GraphRequest
     name: GraphRequest
   - uid: sp-http.HttpClient
@@ -87,12 +79,12 @@ references:
     name: IAadHttpClientConfigurations
   - uid: sp-http.IAadHttpClientOptions
     name: IAadHttpClientOptions
+  - uid: sp-http.IAadTokenProvider
+    name: IAadTokenProvider
+  - uid: sp-http.IAadTokenProviderConfiguration
+    name: IAadTokenProviderConfiguration
   - uid: sp-http.IDigestCache
     name: IDigestCache
-  - uid: sp-http.IGraphHttpClientConfiguration
-    name: IGraphHttpClientConfiguration
-  - uid: sp-http.IGraphHttpClientConfigurations
-    name: IGraphHttpClientConfigurations
   - uid: sp-http.IGraphHttpClientOptions
     name: IGraphHttpClientOptions
   - uid: sp-http.IHttpClientConfiguration
@@ -117,6 +109,8 @@ references:
     name: ISPHttpClientConfigurations
   - uid: sp-http.ISPHttpClientOptions
     name: ISPHttpClientOptions
+  - uid: sp-http.ITokenAcquisitionEventArgs
+    name: ITokenAcquisitionEventArgs
   - uid: sp-http.MSGraphClient
     name: MSGraphClient
   - uid: sp-http.MSGraphClientFactory

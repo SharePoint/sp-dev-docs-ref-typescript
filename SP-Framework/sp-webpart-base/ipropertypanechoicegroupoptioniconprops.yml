@@ -2,23 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPaneChoiceGroupOptionIconProps
     summary: PropertyPane ChoiceGroup icon props.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPaneChoiceGroupOptionIconProps
     fullName: IPropertyPaneChoiceGroupOptionIconProps
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPaneChoiceGroupOptionIconProps '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPaneChoiceGroupOptionIconProps.officeFabricIconFontName
-  - uid: sp-webpart-base.IPropertyPaneChoiceGroupOptionIconProps.officeFabricIconFontName
-    summary: The name of the icon to use from the Office Fabric icon set.
-    name: officeFabricIconFontName
-    fullName: officeFabricIconFontName
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'officeFabricIconFontName?: string | null;'
-      return:
-        type:
-          - string | null

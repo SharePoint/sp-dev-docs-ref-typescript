@@ -2,36 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPanePageHeader
     summary: PropertyPane header. This header remains same for all the pages.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPanePageHeader
     fullName: IPropertyPanePageHeader
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPanePageHeader '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPanePageHeader.description
-      - sp-webpart-base.IPropertyPanePageHeader.image
-  - uid: sp-webpart-base.IPropertyPanePageHeader.description
-    summary: Header to display.
-    name: description
-    fullName: description
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'description: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPanePageHeader.image
-    summary: Image url for the background image.
-    name: image
-    fullName: image
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'image?: string;'
-      return:
-        type:
-          - string

@@ -24,10 +24,10 @@ items:
       - sp-dialog.ISecondaryDialogProvider.show
   - uid: sp-dialog.ISecondaryDialogProvider.alert
     summary: >-
-      Similar to [Dialog.alert](xref:sp-dialog.Dialog.alert)<!-- -->. The only difference is that the dialog is
+      Similar to [Dialog.alert()](xref:sp-dialog.Dialog.alert)<!-- -->. The only difference is that the dialog is
       immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     name: 'alert(message, options)'
-    fullName: alert
+    fullName: 'alert(message, options)'
     langs:
       - typeScript
     type: method
@@ -45,13 +45,13 @@ items:
         - id: options
           description: 'Dialog showing options. See [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) for more information.'
           type:
-            - IAlertOptions
+            - sp-dialog.IAlertOptions
   - uid: sp-dialog.ISecondaryDialogProvider.prompt
     summary: >-
-      Similar to [Dialog.prompt](xref:sp-dialog.Dialog.prompt)<!-- -->. The only difference is that the dialog is
+      Similar to [Dialog.prompt()](xref:sp-dialog.Dialog.prompt)<!-- -->. The only difference is that the dialog is
       immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     name: 'prompt(message, options)'
-    fullName: prompt
+    fullName: 'prompt(message, options)'
     langs:
       - typeScript
     type: method
@@ -71,13 +71,14 @@ items:
             Dialog showing options. The confirmOpen option will be ignored. See
             [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) for more information.
           type:
-            - IPromptOptions
+            - sp-dialog.IPromptOptions
   - uid: sp-dialog.ISecondaryDialogProvider.show
     summary: >-
-      Similar to [BaseDialog.show](xref:sp-dialog.BaseDialog.show)<!-- -->. The dialog to show is passed in as parameter
-      and the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
+      Similar to [BaseDialog.show()](xref:sp-dialog.BaseDialog.show)<!-- -->. The dialog to show is passed in as
+      parameter and the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise
+      rejects.
     name: 'show(dialog, options)'
-    fullName: show
+    fullName: 'show(dialog, options)'
     langs:
       - typeScript
     type: method
@@ -91,10 +92,10 @@ items:
         - id: dialog
           description: ''
           type:
-            - BaseDialog
+            - sp-dialog.BaseDialog
         - id: options
           description: >-
             Dialog showing options. The confirmOpen option will be ignored. See
             [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) for more information.
           type:
-            - IDialogShowOptions
+            - sp-dialog.IDialogShowOptions

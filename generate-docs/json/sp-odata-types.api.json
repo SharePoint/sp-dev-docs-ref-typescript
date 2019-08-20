@@ -1,2178 +1,2566 @@
 {
-  "kind": "package",
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.1.8",
+    "schemaVersion": 1000
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-odata-types",
+  "docComment": "/**\n * TypeScript interfaces for working with SharePoint REST APIs.\n *\n * @remarks\n *\n * This package defines TypeScript interfaces that describe various ODATA objects returned by SharePoint REST APIs. It is useful when implementing data layers that interpret these types. This package does not contain any runtime code; it consists only of type definitions.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-odata-types",
-  "summary": [
+  "members": [
     {
-      "kind": "text",
-      "text": "TypeScript interfaces for working with SharePoint REST APIs."
+      "kind": "EntryPoint",
+      "canonicalReference": "",
+      "name": "",
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "(_IODataUserId:interface)",
+          "docComment": "/**\n * Represents an OData SP.UserId object. For more information about this object see the MSDN documentation here: {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataUserId"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "_IODataUserId",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "NameId",
+              "docComment": "/**\n * Example: `\"s-1-5-21-2127521184-1604012920-1887927527-2632426\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "NameId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "NameId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "NameIdIssuer",
+              "docComment": "/**\n * Example: `\"urn:office:idp:activedirectory\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "NameIdIssuer"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "NameIdIssuer",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataBasePermission:interface)",
+          "docComment": "/**\n * Data used for creating a SPPermission object.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataBasePermission"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataBasePermission",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "High",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "High"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "High",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Low",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Low"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Low",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataChangeToken:interface)",
+          "docComment": "/**\n * Represents an OData SP.ChangeToken object. For more information about this object, see {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataChangeToken"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataChangeToken",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "StringValue",
+              "docComment": "/**\n * Example: `{ StringValue: \"1;3;9fb9199b-65f2-4a4a-b597-11d1a44422c1;635892156279130000;10721\" }`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "StringValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "StringValue",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataContextWebInformation:interface)",
+          "docComment": "/**\n * Represents an OData SP.ContextWebInformation object. For more information about this object, see {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataContextWebInformation"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataContextWebInformation",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "LibraryVersion",
+              "docComment": "/**\n * Example: `\"16.0.4919.3000\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "LibraryVersion"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "LibraryVersion",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "SiteFullUrl",
+              "docComment": "/**\n * Example: `\"http:\\u002f\\u002fexample.com\\u002fsites\\u002fPubSite\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "SiteFullUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SiteFullUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "SupportedSchemaVersions",
+              "docComment": "/**\n * Example: `[ \"14.0.0.0\", \"15.0.0.0\" ]`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "SupportedSchemaVersions"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SupportedSchemaVersions",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "WebFullUrl",
+              "docComment": "/**\n * Example: `\"http:\\u002f\\u002fexample.com\\u002fsites\\u002fPubSite\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "WebFullUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "WebFullUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataList:interface)",
+          "docComment": "/**\n * Represents an OData SP.List object. For more information about this object see the MSDN documentation here: {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataList"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataList",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "BaseTemplate",
+              "docComment": "/**\n * The list definition type on which the list is based.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "BaseTemplate"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "BaseTemplate",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Created",
+              "docComment": "/**\n * Example: `\"/Date(1453294804000)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Created"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Created",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "CurrentChangeToken",
+              "docComment": "/**\n * The change token that will be used in logging the next change to the list.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "CurrentChangeToken"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataChangeToken"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "CurrentChangeToken",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Description",
+              "docComment": "/**\n * A description of the List.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Description"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Description",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "EntityTypeName",
+              "docComment": "/**\n * Example: `\"MyListTitleList\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "EntityTypeName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "EntityTypeName",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Hidden",
+              "docComment": "/**\n * A hidden list does not appear on the Documents and Lists page, Quick Launch bar, the Modify Site Content page, or the Add Column page as an option for lookup fields.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Hidden"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Hidden",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Id",
+              "docComment": "/**\n * Example: `\"/Guid(9fb9199b-65f2-4a4a-b597-11d1a44422c1)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "LastItemDeletedDate",
+              "docComment": "/**\n * Example: `\"/Date(1453294809000)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "LastItemDeletedDate"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "LastItemDeletedDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "LastItemModifiedDate",
+              "docComment": "/**\n * Example: `\"/Date(1453294809000)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "LastItemModifiedDate"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "LastItemModifiedDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ListItemEntityTypeFullName",
+              "docComment": "/**\n * Example: `\"SP.Data.MyListTitleListItem\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ListItemEntityTypeFullName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ListItemEntityTypeFullName",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ParentWebUrl",
+              "docComment": "/**\n * Example: `\"/sites/PubSite\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ParentWebUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ParentWebUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "TemplateFeatureId",
+              "docComment": "/**\n * Example: `\"/Guid(22a9ef51-737b-4ff2-9346-694633fe4416)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "TemplateFeatureId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "TemplateFeatureId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Title",
+              "docComment": "/**\n * Example: `\"Pages\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataListItem:interface)",
+          "docComment": "/**\n * Represents an OData SP.ListItem object. For more information about this object see the MSDN documentation here: {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataListItem"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataListItem",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ContentTypeId",
+              "docComment": "/**\n * Example: `{ StringValue: \"0x010100C5...\" }`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ContentTypeId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "StringValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ContentTypeId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ID",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ID"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ID",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Title",
+              "docComment": "/**\n * Title of the List Item\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "UniqueId",
+              "docComment": "/**\n * Example: `\"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "UniqueId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "UniqueId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataNavigationNode:interface)",
+          "docComment": "/**\n * Represents an OData SP.NavigationNode object. {@link https://msdn.microsoft.com/en-us/library/office/jj246311.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataNavigationNode"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataNavigationNode",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Children",
+              "docComment": "/**\n * Gets or sets an array of Navigation Nodes that are children to the current node.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Children"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataNavigationNode"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Children",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Id",
+              "docComment": "/**\n * Gets a value that specifies the identifier for the navigation node.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Id"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "IsDocLib",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "IsDocLib"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "IsDocLib",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "IsExternal",
+              "docComment": "/**\n * Gets or sets a value that specifies whether the navigation node URL potentially corresponds to pages outside of the site collection.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "IsExternal"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "IsExternal",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "IsVisible",
+              "docComment": "/**\n * Gets or sets a value that specifies if the node navigation link should be visible.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "IsVisible"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "IsVisible",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Title",
+              "docComment": "/**\n * Gets or sets a value that specifies the anchor text for the node navigation link.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Title"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Url",
+              "docComment": "/**\n * Gets or sets a value that specifies the URL to be stored with the navigation node. It must be a URL of relative form if IsExternal is false. It must be a URL of relative or absolute form.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Url"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Url",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataNavigationNodeCollection:interface)",
+          "docComment": "/**\n * Represents an OData Microsoft.SharePoint.Navigation.SPNavigation object. {@link https://msdn.microsoft.com/en-us/library/office/ee557907.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataNavigationNodeCollection"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataNavigationNodeCollection",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "quickLaunch",
+              "docComment": "/**\n * Gets an SPNavigationNode object that contains the nodes in the Quick Launch area of the site.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "quickLaunch"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataNavigationNode"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "quickLaunch",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 4
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "topNav",
+              "docComment": "/**\n * Gets an SPNavigationNode object that contains the nodes in the top link bar for the website.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "topNav"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataNavigationNode"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "topNav",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataUser:interface)",
+          "docComment": "/**\n * Represents an OData SP.User object. For more information about this object see the MSDN documentation here: {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataUser"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataUser",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Email",
+              "docComment": "/**\n * Example: `\"someone@example.com\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Email"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Email",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Id",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "IsSiteAdmin",
+              "docComment": "/**\n * Boolean value that specifies whether the user is a site collection administrator.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "IsSiteAdmin"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "IsSiteAdmin",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "LoginName",
+              "docComment": "/**\n * Example: `\"i:0#.w|domain\\user\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "LoginName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "LoginName",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "PrincipalType",
+              "docComment": "/**\n * This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.\n *\n * @remarks\n *\n * Values:\n *\n * None: 0\n *\n * User: 1\n *\n * DistributionList: 2\n *\n * SecurityGroup: 4\n *\n * SharePointGroup: 8\n *\n * All: 15\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "PrincipalType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "PrincipalType",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Title",
+              "docComment": "/**\n * Example: `\"DOMAIN\\user\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "UserId",
+              "docComment": "/**\n * Gets the information of the user that contains the user's name identifier and the issuer of the user's name identifier.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "UserId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataUserId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "UserId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataUserCustomAction:interface)",
+          "docComment": "/**\n * Represents an OData SP.UserCustomAction object. For more information about this object see the MSDN documentation here: {@link https://msdn.microsoft.com/en-us/library/office/dn531432.aspx#bk_UserCustomAction}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataUserCustomAction"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataUserCustomAction",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ClientSideComponentId",
+              "docComment": "/**\n * The unique identifier of the client-side component defined with SharePoint Framework\n *\n * @remarks\n *\n * Example: `\"359af2a7-b73c-4aac-874c-60a865da0be7\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ClientSideComponentId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ClientSideComponentId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ClientSideComponentProperties",
+              "docComment": "/**\n * Custom initialization properties for the client-side component.\n *\n * @remarks\n *\n * This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning are defined by the client-side component.\n *\n * Example: `\"{ \\\"maxItemsToShow\\\": 123 }\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ClientSideComponentProperties"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ClientSideComponentProperties",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "CommandUIExtension",
+              "docComment": "/**\n * Gets or sets a value that specifies an implementation specific XML fragment that determines user interface properties of the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "CommandUIExtension"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "CommandUIExtension",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Description",
+              "docComment": "/**\n * Gets or sets the description of the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Description"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Description",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Group",
+              "docComment": "/**\n * Gets or sets a value that specifies an implementation-specific value that determines the position of the custom action in the page.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Group"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Group",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Id",
+              "docComment": "/**\n * Gets a value that specifies the identifier (GUID) of the custom action. Example: `\"48309f28-53aa-43ed-b113-625120e5af6f\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ImageUrl",
+              "docComment": "/**\n * Gets or sets the URL of the image associated with the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ImageUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ImageUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Location",
+              "docComment": "/**\n * Gets or sets the location of the custom action.\n *\n * @remarks\n *\n * Example: `\"ClientSide.Application\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Location"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Location",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "RegistrationId",
+              "docComment": "/**\n * Gets or sets the value that specifies the identifier of the object associated with the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "RegistrationId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "RegistrationId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "RegistrationType",
+              "docComment": "/**\n * Gets or sets the value that specifies the type of object associated with the custom action.\n *\n * @remarks\n *\n * Represents an SP.UserCustomActionRegistrationType value: None = 0; List = 1; ContentType = 2; ProgId = 3; FileType = 4.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "RegistrationType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "RegistrationType",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Rights",
+              "docComment": "/**\n * Gets or sets the value that specifies the permissions needed for the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Rights"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataBasePermission"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Rights",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Scope",
+              "docComment": "/**\n * Gets a value that specifies the scope of the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Scope"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Scope",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ScriptBlock",
+              "docComment": "/**\n * Gets or sets the value that specifies the ECMAScript to be executed when the custom action is performed.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ScriptBlock"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ScriptBlock",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ScriptSrc",
+              "docComment": "/**\n * Gets or sets a value that specifies the URI of a file which contains the ECMAScript to execute on the page.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ScriptSrc"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ScriptSrc",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Sequence",
+              "docComment": "/**\n * Gets or sets the value that specifies an implementation-specific value that determines the order of the custom action that appears on the page.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Sequence"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Sequence",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Title",
+              "docComment": "/**\n * Gets or sets the display title of the custom action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Url",
+              "docComment": "/**\n * Gets or sets the URL, URI, or ECMAScript (JScript, JavaScript) function associated with the action.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Url"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Url",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "VersionOfUserCustomAction",
+              "docComment": "/**\n * Gets a value that specifies an implementation specific version identifier.\n *\n * @remarks\n *\n * Example: `\"16.0.1.0\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "VersionOfUserCustomAction"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "VersionOfUserCustomAction",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IODataWeb:interface)",
+          "docComment": "/**\n * Represents an OData SP.Web object. For more information about this object see the MSDN documentation here: {@link https://msdn.microsoft.com/en-us/library/office/jj860569.aspx}\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IODataWeb"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IODataWeb",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Created",
+              "docComment": "/**\n * Gets a value that specifies when the site was created.\n *\n * Example: `\"/Date(2016,0,20,12,58,7,0)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Created"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Created",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "CurrentChangeToken",
+              "docComment": "/**\n * Represents the unique sequential location of a change within the change log.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "CurrentChangeToken"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IODataChangeToken"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "CurrentChangeToken",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "CustomMasterUrl",
+              "docComment": "/**\n * Gets or sets the URL for a custom master page file to apply to the website.\n *\n * Example: `\"/sites/PubSite/_catalogs/masterpage/seattle.master\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "CustomMasterUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "CustomMasterUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Description",
+              "docComment": "/**\n * Gets or sets the description for the site.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Description"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Description",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Id",
+              "docComment": "/**\n * Gets a value that specifies the site identifier for the site.\n *\n * Example: `\"/Guid(92ea328e-9f50-49a6-9da5-2f2dd5577041)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Id"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "IsMultilingual",
+              "docComment": "/**\n * Value that represents if the web was\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "IsMultilingual"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "IsMultilingual",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Language",
+              "docComment": "/**\n * Gets a value that specifies the LCID for the language that is used on the site.\n *\n * Example: `1033`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Language"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Language",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "LastItemModifiedDate",
+              "docComment": "/**\n * Gets a value that specifies when an item was last modified in the site.\n *\n * Example: `\"/Date(1453618828000)/\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "LastItemModifiedDate"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "LastItemModifiedDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "MasterUrl",
+              "docComment": "/**\n * Gets or sets the URL of the master page that is used for the website.\n *\n * Example: `\"/sites/PubSite/_catalogs/masterpage/seattle.master\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "MasterUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "MasterUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "NoCrawl",
+              "docComment": "/**\n * Determines if a particular web will be crawled by search or not.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "NoCrawl"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "NoCrawl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "QuickLaunchEnabled",
+              "docComment": "/**\n * Gets or sets a value that specifies whether the Quick Launch area is enabled on the site.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "QuickLaunchEnabled"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "QuickLaunchEnabled",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "RecycleBinEnabled",
+              "docComment": "/**\n * Gets or sets a value that determines whether the recycle bin is enabled for the website.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "RecycleBinEnabled"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "RecycleBinEnabled",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ServerRelativeUrl",
+              "docComment": "/**\n * Gets or sets the server-relative URL for the Web site.\n *\n * Example: `\"/sites/PubSite\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "ServerRelativeUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ServerRelativeUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "SiteLogoUrl",
+              "docComment": "/**\n * Gets the url for the logo of this particular site.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "SiteLogoUrl"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "SiteLogoUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Title",
+              "docComment": "/**\n * The title of the web.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Title"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "UIVersion",
+              "docComment": "/**\n * Gets or sets the user interface (UI) version of the Web site.\n *\n * Example: `15`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "UIVersion"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "UIVersion",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "Url",
+              "docComment": "/**\n * Gets the absolute URL for the website.\n *\n * Example: `\"http://example.com/sites/PubSite\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Url"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Url",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "WebTemplate",
+              "docComment": "/**\n * Gets the name of the site definition or site template that was used to create the site.\n *\n * Example: `\"BLANKINTERNET\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "WebTemplate"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "WebTemplate",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        }
+      ]
     }
-  ],
-  "remarks": [
-    {
-      "kind": "text",
-      "text": "This package defines TypeScript interfaces that describe various ODATA objects returned by SharePoint REST APIs. It is useful when implementing data layers that interpret these types. This package does not contain any runtime code; it consists only of type definitions."
-    }
-  ],
-  "exports": {
-    "IODataBasePermission": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Data used for creating a SPPermission object."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "High": {
-          "kind": "property",
-          "signature": "High: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Low": {
-          "kind": "property",
-          "signature": "Low: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataChangeToken": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.ChangeToken object. For more information about this object, see "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "StringValue": {
-          "kind": "property",
-          "signature": "StringValue: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "{ StringValue: \"1;3;9fb9199b-65f2-4a4a-b597-11d1a44422c1;635892156279130000;10721\" }",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataContextWebInformation": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.ContextWebInformation object. For more information about this object, see "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "LibraryVersion": {
-          "kind": "property",
-          "signature": "LibraryVersion: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"16.0.4919.3000\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "SiteFullUrl": {
-          "kind": "property",
-          "signature": "SiteFullUrl: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"http:\\u002f\\u002fexample.com\\u002fsites\\u002fPubSite\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "SupportedSchemaVersions": {
-          "kind": "property",
-          "signature": "SupportedSchemaVersions: string[];",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string[]",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "[ \"14.0.0.0\", \"15.0.0.0\" ]",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "WebFullUrl": {
-          "kind": "property",
-          "signature": "WebFullUrl: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"http:\\u002f\\u002fexample.com\\u002fsites\\u002fPubSite\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataList": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.List object. For more information about this object see the MSDN documentation here: "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "BaseTemplate": {
-          "kind": "property",
-          "signature": "BaseTemplate: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The list definition type on which the list is based."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Created": {
-          "kind": "property",
-          "signature": "Created: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Date(1453294804000)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "CurrentChangeToken": {
-          "kind": "property",
-          "signature": "CurrentChangeToken: IODataChangeToken;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataChangeToken",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The change token that will be used in logging the next change to the list."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Description": {
-          "kind": "property",
-          "signature": "Description: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "A description of the List."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "EntityTypeName": {
-          "kind": "property",
-          "signature": "EntityTypeName: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"MyListTitleList\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Hidden": {
-          "kind": "property",
-          "signature": "Hidden: boolean;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "A hidden list does not appear on the Documents and Lists page, Quick Launch bar, the Modify Site Content page, or the Add Column page as an option for lookup fields."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Id": {
-          "kind": "property",
-          "signature": "Id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Guid(9fb9199b-65f2-4a4a-b597-11d1a44422c1)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "LastItemDeletedDate": {
-          "kind": "property",
-          "signature": "LastItemDeletedDate: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Date(1453294809000)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "LastItemModifiedDate": {
-          "kind": "property",
-          "signature": "LastItemModifiedDate: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Date(1453294809000)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ListItemEntityTypeFullName": {
-          "kind": "property",
-          "signature": "ListItemEntityTypeFullName: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"SP.Data.MyListTitleListItem\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ParentWebUrl": {
-          "kind": "property",
-          "signature": "ParentWebUrl: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/sites/PubSite\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "TemplateFeatureId": {
-          "kind": "property",
-          "signature": "TemplateFeatureId: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Guid(22a9ef51-737b-4ff2-9346-694633fe4416)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Title": {
-          "kind": "property",
-          "signature": "Title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"Pages\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataListItem": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.ListItem object. For more information about this object see the MSDN documentation here: "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "ContentTypeId": {
-          "kind": "property",
-          "signature": "ContentTypeId:",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "{\n        StringValue: string;\n    }",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "{ StringValue: \"0x010100C5...\" }",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ID": {
-          "kind": "property",
-          "signature": "ID: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Title": {
-          "kind": "property",
-          "signature": "Title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Title of the List Item"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "UniqueId": {
-          "kind": "property",
-          "signature": "UniqueId: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataNavigationNode": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.NavigationNode object. "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj246311.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj246311.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "Children": {
-          "kind": "property",
-          "signature": "Children?: IODataNavigationNode[];",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataNavigationNode[]",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets an array of Navigation Nodes that are children to the current node."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Id": {
-          "kind": "property",
-          "signature": "Id?: number;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies the identifier for the navigation node."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "IsDocLib": {
-          "kind": "property",
-          "signature": "IsDocLib?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "IsExternal": {
-          "kind": "property",
-          "signature": "IsExternal?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies whether the navigation node URL potentially corresponds to pages outside of the site collection."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "IsVisible": {
-          "kind": "property",
-          "signature": "IsVisible?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies if the node navigation link should be visible."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Title": {
-          "kind": "property",
-          "signature": "Title?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies the anchor text for the node navigation link."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Url": {
-          "kind": "property",
-          "signature": "Url?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies the URL to be stored with the navigation node. It must be a URL of relative form if IsExternal is false. It must be a URL of relative or absolute form."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataNavigationNodeCollection": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData Microsoft.SharePoint.Navigation.SPNavigation object. "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/ee557907.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/ee557907.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "quickLaunch": {
-          "kind": "property",
-          "signature": "quickLaunch: IODataNavigationNode[];",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataNavigationNode[]",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets an SPNavigationNode object that contains the nodes in the Quick Launch area of the site."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "topNav": {
-          "kind": "property",
-          "signature": "topNav: IODataNavigationNode[];",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataNavigationNode[]",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets an SPNavigationNode object that contains the nodes in the top link bar for the website."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataUser": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.User object. For more information about this object see the MSDN documentation here: "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "Email": {
-          "kind": "property",
-          "signature": "Email: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"someone@example.com\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Id": {
-          "kind": "property",
-          "signature": "Id: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "IsSiteAdmin": {
-          "kind": "property",
-          "signature": "IsSiteAdmin: boolean;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Boolean value that specifies whether the user is a site collection administrator."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "LoginName": {
-          "kind": "property",
-          "signature": "LoginName: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"i:0#.w|domain\\user\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "PrincipalType": {
-          "kind": "property",
-          "signature": "PrincipalType: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Values:"
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "None: 0"
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "User: 1"
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "DistributionList: 2"
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "SecurityGroup: 4"
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "SharePointGroup: 8"
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "All: 15"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Title": {
-          "kind": "property",
-          "signature": "Title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"DOMAIN\\user\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "UserId": {
-          "kind": "property",
-          "signature": "UserId: IODataUserId;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataUserId",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets the information of the user that contains the user's name identifier and the issuer of the user's name identifier."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataUserCustomAction": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.UserCustomAction object. For more information about this object see the MSDN documentation here: "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/dn531432.aspx#bk_UserCustomAction"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/dn531432.aspx#bk_UserCustomAction"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "ClientSideComponentId": {
-          "kind": "property",
-          "signature": "ClientSideComponentId: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The unique identifier of the client-side component defined with SharePoint Framework"
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"359af2a7-b73c-4aac-874c-60a865da0be7\"",
-              "highlighter": "plain"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ClientSideComponentProperties": {
-          "kind": "property",
-          "signature": "ClientSideComponentProperties: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Custom initialization properties for the client-side component."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This property is only used when a ClientSideComponentId is specified. It is optional. If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning are defined by the client-side component."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"{ \\\"maxItemsToShow\\\": 123 }\"",
-              "highlighter": "plain"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "CommandUIExtension": {
-          "kind": "property",
-          "signature": "CommandUIExtension: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies an implementation specific XML fragment that determines user interface properties of the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Description": {
-          "kind": "property",
-          "signature": "Description: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the description of the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Group": {
-          "kind": "property",
-          "signature": "Group: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies an implementation-specific value that determines the position of the custom action in the page."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Id": {
-          "kind": "property",
-          "signature": "Id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies the identifier (GUID) of the custom action. Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"48309f28-53aa-43ed-b113-625120e5af6f\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ImageUrl": {
-          "kind": "property",
-          "signature": "ImageUrl: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the URL of the image associated with the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Location": {
-          "kind": "property",
-          "signature": "Location: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the location of the custom action."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"ClientSide.Application\"",
-              "highlighter": "plain"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "RegistrationId": {
-          "kind": "property",
-          "signature": "RegistrationId: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the value that specifies the identifier of the object associated with the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "RegistrationType": {
-          "kind": "property",
-          "signature": "RegistrationType: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the value that specifies the type of object associated with the custom action."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Represents an SP.UserCustomActionRegistrationType value: None = 0; List = 1; ContentType = 2; ProgId = 3; FileType = 4."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Rights": {
-          "kind": "property",
-          "signature": "Rights: IODataBasePermission;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataBasePermission",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the value that specifies the permissions needed for the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Scope": {
-          "kind": "property",
-          "signature": "Scope: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies the scope of the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ScriptBlock": {
-          "kind": "property",
-          "signature": "ScriptBlock: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the value that specifies the ECMAScript to be executed when the custom action is performed."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ScriptSrc": {
-          "kind": "property",
-          "signature": "ScriptSrc: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies the URI of a file which contains the ECMAScript to execute on the page."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Sequence": {
-          "kind": "property",
-          "signature": "Sequence: number;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the value that specifies an implementation-specific value that determines the order of the custom action that appears on the page."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Title": {
-          "kind": "property",
-          "signature": "Title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the display title of the custom action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Url": {
-          "kind": "property",
-          "signature": "Url: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the URL, URI, or ECMAScript (JScript, JavaScript) function associated with the action."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "VersionOfUserCustomAction": {
-          "kind": "property",
-          "signature": "VersionOfUserCustomAction: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies an implementation specific version identifier."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"16.0.1.0\"",
-              "highlighter": "plain"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IODataWeb": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents an OData SP.Web object. For more information about this object see the MSDN documentation here: "
-        },
-        {
-          "kind": "web-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-            }
-          ],
-          "targetUrl": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "Created": {
-          "kind": "property",
-          "signature": "Created?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies when the site was created."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Date(2016,0,20,12,58,7,0)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "CurrentChangeToken": {
-          "kind": "property",
-          "signature": "CurrentChangeToken?: IODataChangeToken;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IODataChangeToken",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Represents the unique sequential location of a change within the change log."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "CustomMasterUrl": {
-          "kind": "property",
-          "signature": "CustomMasterUrl?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the URL for a custom master page file to apply to the website."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/sites/PubSite/_catalogs/masterpage/seattle.master\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Description": {
-          "kind": "property",
-          "signature": "Description?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the description for the site."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Id": {
-          "kind": "property",
-          "signature": "Id?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies the site identifier for the site."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Guid(92ea328e-9f50-49a6-9da5-2f2dd5577041)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "IsMultilingual": {
-          "kind": "property",
-          "signature": "IsMultilingual?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Value that represents if the web was"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Language": {
-          "kind": "property",
-          "signature": "Language?: number;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies the LCID for the language that is used on the site."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "1033",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "LastItemModifiedDate": {
-          "kind": "property",
-          "signature": "LastItemModifiedDate?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets a value that specifies when an item was last modified in the site."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/Date(1453618828000)/\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "MasterUrl": {
-          "kind": "property",
-          "signature": "MasterUrl?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the URL of the master page that is used for the website."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/sites/PubSite/_catalogs/masterpage/seattle.master\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "NoCrawl": {
-          "kind": "property",
-          "signature": "NoCrawl?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Determines if a particular web will be crawled by search or not."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "QuickLaunchEnabled": {
-          "kind": "property",
-          "signature": "QuickLaunchEnabled?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that specifies whether the Quick Launch area is enabled on the site."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "RecycleBinEnabled": {
-          "kind": "property",
-          "signature": "RecycleBinEnabled?: boolean;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets a value that determines whether the recycle bin is enabled for the website."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "ServerRelativeUrl": {
-          "kind": "property",
-          "signature": "ServerRelativeUrl?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the server-relative URL for the Web site."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"/sites/PubSite\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "SiteLogoUrl": {
-          "kind": "property",
-          "signature": "SiteLogoUrl?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets the url for the logo of this particular site."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Title": {
-          "kind": "property",
-          "signature": "Title?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The title of the web."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "UIVersion": {
-          "kind": "property",
-          "signature": "UIVersion?: number;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "number",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets or sets the user interface (UI) version of the Web site."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "15",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "Url": {
-          "kind": "property",
-          "signature": "Url?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets the absolute URL for the website."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"http://example.com/sites/PubSite\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "WebTemplate": {
-          "kind": "property",
-          "signature": "WebTemplate?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Gets the name of the site definition or site template that was used to create the site."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Example: "
-            },
-            {
-              "kind": "code",
-              "text": "\"BLANKINTERNET\"",
-              "highlighter": "plain"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    }
-  }
+  ]
 }

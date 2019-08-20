@@ -11,7 +11,7 @@ items:
       - typeScript
     type: class
     implements:
-      - IDisposable
+      - sp-core-library.IDisposable
     package: sp-component-base
     children:
       - sp-component-base.DynamicDataSourceManager.dispose
@@ -24,7 +24,7 @@ items:
   - uid: sp-component-base.DynamicDataSourceManager.dispose
     summary: Disposes the resources held by the Dynamic Data source.
     name: dispose()
-    fullName: dispose
+    fullName: dispose()
     langs:
       - typeScript
     type: method
@@ -37,7 +37,7 @@ items:
   - uid: sp-component-base.DynamicDataSourceManager.initializeSource
     summary: Initializes the Dynamic Data Source for the component.
     name: initializeSource(callableFunctions)
-    fullName: initializeSource
+    fullName: initializeSource(callableFunctions)
     langs:
       - typeScript
     type: method
@@ -51,7 +51,7 @@ items:
         - id: callableFunctions
           description: Set of methods that are exposed through the Dynamic Data Source
           type:
-            - IDynamicDataCallables
+            - sp-dynamic-data.IDynamicDataCallables
   - uid: sp-component-base.DynamicDataSourceManager.isDisposed
     summary: Returns true if the DynamicDataSourceManager is disposed.
     name: isDisposed
@@ -72,7 +72,7 @@ items:
       When invoked, it enables to broadcast the notification to all the consumers who have registered to this
       notification from this source.
     name: notifyPropertyChanged(propertyId)
-    fullName: notifyPropertyChanged
+    fullName: notifyPropertyChanged(propertyId)
     langs:
       - typeScript
     type: method
@@ -95,7 +95,7 @@ items:
       When invoked, it enables to broadcast the notification to all the consumers who have registered to this
       notification from this source.
     name: notifySourceChanged()
-    fullName: notifySourceChanged
+    fullName: notifySourceChanged()
     langs:
       - typeScript
     type: method
@@ -122,7 +122,7 @@ items:
       Updates the metadata of the Dynamic Data Source. It allows to update fields like title or description.
       Auto-generated fields like alias, componentId or instanceId cannot be updated.
     name: updateMetadata(metadata)
-    fullName: updateMetadata
+    fullName: updateMetadata(metadata)
     langs:
       - typeScript
     type: method

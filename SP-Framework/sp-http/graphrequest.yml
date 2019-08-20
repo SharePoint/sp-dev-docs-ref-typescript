@@ -8,14 +8,13 @@ items:
     fullName: GraphRequest
     langs:
       - typeScript
-    type: class
+    type: interface
     package: sp-http
     children:
-      - sp-http.GraphRequest.constructor
       - sp-http.GraphRequest._headers
       - sp-http.GraphRequest._responseType
       - sp-http.GraphRequest.buildFullUrl
-      - sp-http.GraphRequest.config
+      - sp-http.GraphRequest.constructor
       - sp-http.GraphRequest.count
       - sp-http.GraphRequest.create
       - sp-http.GraphRequest.del
@@ -39,26 +38,9 @@ items:
       - sp-http.GraphRequest.skipToken
       - sp-http.GraphRequest.top
       - sp-http.GraphRequest.update
-      - sp-http.GraphRequest.urlComponents
       - sp-http.GraphRequest.version
-  - uid: sp-http.GraphRequest.constructor
-    summary: 'Constructs a new instance of the [GraphRequest](xref:sp-http.GraphRequest) class'
-    name: 'constructor(config, path)'
-    fullName: constructor
-    langs:
-      - typeScript
-    type: constructor
-    syntax:
-      content: 'constructor(config: Options, path: string);'
-      parameters:
-        - id: config
-          description: ''
-          type:
-            - Options
-        - id: path
-          description: ''
-          type:
-            - string
+      - sp-http.GraphRequest.config
+      - sp-http.GraphRequest.urlComponents
   - uid: sp-http.GraphRequest._headers
     name: _headers
     fullName: _headers
@@ -66,7 +48,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: '_headers:'
+      content: |-
+        _headers: {
+                [key: string]: string | number;
+            };
       return:
         type:
           - |-
@@ -86,7 +71,7 @@ items:
           - string
   - uid: sp-http.GraphRequest.buildFullUrl
     name: buildFullUrl()
-    fullName: buildFullUrl
+    fullName: buildFullUrl()
     langs:
       - typeScript
     type: method
@@ -96,28 +81,38 @@ items:
         type:
           - string
         description: ''
-  - uid: sp-http.GraphRequest.config
-    name: config
-    fullName: config
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'config: Options;'
-      return:
-        type:
-          - Options
-  - uid: sp-http.GraphRequest.count
-    name: count(count)
-    fullName: count
+  - uid: sp-http.GraphRequest.constructor
+    name: 'constructor(config, path)'
+    fullName: 'constructor(config, path)'
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'count(count: boolean): GraphRequest;'
+      content: 'constructor(config: Options, path: string): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
+        description: ''
+      parameters:
+        - id: config
+          description: ''
+          type:
+            - Options
+        - id: path
+          description: ''
+          type:
+            - string
+  - uid: sp-http.GraphRequest.count
+    name: count(count)
+    fullName: count(count)
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'count(count: boolean): IGraphRequest;'
+      return:
+        type:
+          - IGraphRequest
         description: ''
       parameters:
         - id: count
@@ -126,7 +121,7 @@ items:
             - boolean
   - uid: sp-http.GraphRequest.create
     name: 'create(content, callback)'
-    fullName: create
+    fullName: 'create(content, callback)'
     langs:
       - typeScript
     type: method
@@ -147,7 +142,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.del
     name: del(callback)
-    fullName: del
+    fullName: del(callback)
     langs:
       - typeScript
     type: method
@@ -164,7 +159,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.delete
     name: delete(callback)
-    fullName: delete
+    fullName: delete(callback)
     langs:
       - typeScript
     type: method
@@ -181,15 +176,15 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.expand
     name: expand(properties)
-    fullName: expand
+    fullName: expand(properties)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'expand(properties: string | string[]): GraphRequest;'
+      content: 'expand(properties: string | string[]): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: properties
@@ -198,15 +193,15 @@ items:
             - 'string | string[]'
   - uid: sp-http.GraphRequest.filter
     name: filter(filterStr)
-    fullName: filter
+    fullName: filter(filterStr)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'filter(filterStr: string): GraphRequest;'
+      content: 'filter(filterStr: string): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: filterStr
@@ -215,7 +210,7 @@ items:
             - string
   - uid: sp-http.GraphRequest.get
     name: get(callback)
-    fullName: get
+    fullName: get(callback)
     langs:
       - typeScript
     type: method
@@ -232,7 +227,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.getStream
     name: getStream(callback)
-    fullName: getStream
+    fullName: getStream(callback)
     langs:
       - typeScript
     type: method
@@ -249,7 +244,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.header
     name: 'header(headerKey, headerValue)'
-    fullName: header
+    fullName: 'header(headerKey, headerValue)'
     langs:
       - typeScript
     type: method
@@ -270,7 +265,7 @@ items:
             - string
   - uid: sp-http.GraphRequest.headers
     name: headers(headers)
-    fullName: headers
+    fullName: headers(headers)
     langs:
       - typeScript
     type: method
@@ -293,15 +288,15 @@ items:
                   }
   - uid: sp-http.GraphRequest.orderby
     name: orderby(properties)
-    fullName: orderby
+    fullName: orderby(properties)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'orderby(properties: string | string[]): GraphRequest;'
+      content: 'orderby(properties: string | string[]): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: properties
@@ -310,7 +305,7 @@ items:
             - 'string | string[]'
   - uid: sp-http.GraphRequest.parsePath
     name: parsePath(rawPath)
-    fullName: parsePath
+    fullName: parsePath(rawPath)
     langs:
       - typeScript
     type: method
@@ -327,7 +322,7 @@ items:
             - string
   - uid: sp-http.GraphRequest.patch
     name: 'patch(content, callback)'
-    fullName: patch
+    fullName: 'patch(content, callback)'
     langs:
       - typeScript
     type: method
@@ -348,7 +343,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.post
     name: 'post(content, callback)'
-    fullName: post
+    fullName: 'post(content, callback)'
     langs:
       - typeScript
     type: method
@@ -369,7 +364,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.put
     name: 'put(content, callback)'
-    fullName: put
+    fullName: 'put(content, callback)'
     langs:
       - typeScript
     type: method
@@ -390,7 +385,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.putStream
     name: 'putStream(stream, callback)'
-    fullName: putStream
+    fullName: 'putStream(stream, callback)'
     langs:
       - typeScript
     type: method
@@ -411,7 +406,7 @@ items:
             - GraphRequestCallback
   - uid: sp-http.GraphRequest.query
     name: query(queryDictionaryOrString)
-    fullName: query
+    fullName: query(queryDictionaryOrString)
     langs:
       - typeScript
     type: method
@@ -419,10 +414,10 @@ items:
       content: |-
         query(queryDictionaryOrString: string | {
                 [key: string]: string | number;
-            }): GraphRequest;
+            }): IGraphRequest;
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: queryDictionaryOrString
@@ -434,15 +429,15 @@ items:
                   }
   - uid: sp-http.GraphRequest.responseType
     name: responseType(responseType)
-    fullName: responseType
+    fullName: responseType(responseType)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'responseType(responseType: string): GraphRequest;'
+      content: 'responseType(responseType: string): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: responseType
@@ -451,15 +446,15 @@ items:
             - string
   - uid: sp-http.GraphRequest.select
     name: select(properties)
-    fullName: select
+    fullName: select(properties)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'select(properties: string | string[]): GraphRequest;'
+      content: 'select(properties: string | string[]): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: properties
@@ -468,15 +463,15 @@ items:
             - 'string | string[]'
   - uid: sp-http.GraphRequest.skip
     name: skip(n)
-    fullName: skip
+    fullName: skip(n)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'skip(n: number): GraphRequest;'
+      content: 'skip(n: number): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: 'n'
@@ -485,15 +480,15 @@ items:
             - number
   - uid: sp-http.GraphRequest.skipToken
     name: skipToken(token)
-    fullName: skipToken
+    fullName: skipToken(token)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'skipToken(token: string): GraphRequest;'
+      content: 'skipToken(token: string): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: token
@@ -502,15 +497,15 @@ items:
             - string
   - uid: sp-http.GraphRequest.top
     name: top(n)
-    fullName: top
+    fullName: top(n)
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'top(n: number): GraphRequest;'
+      content: 'top(n: number): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: 'n'
@@ -519,7 +514,7 @@ items:
             - number
   - uid: sp-http.GraphRequest.update
     name: 'update(content, callback)'
-    fullName: update
+    fullName: 'update(content, callback)'
     langs:
       - typeScript
     type: method
@@ -538,6 +533,34 @@ items:
           description: ''
           type:
             - GraphRequestCallback
+  - uid: sp-http.GraphRequest.version
+    name: version(v)
+    fullName: version(v)
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'version(v: string): IGraphRequest;'
+      return:
+        type:
+          - IGraphRequest
+        description: ''
+      parameters:
+        - id: v
+          description: ''
+          type:
+            - string
+  - uid: sp-http.GraphRequest.config
+    name: config
+    fullName: config
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'config: Options;'
+      return:
+        type:
+          - Options
   - uid: sp-http.GraphRequest.urlComponents
     name: urlComponents
     fullName: urlComponents
@@ -549,20 +572,3 @@ items:
       return:
         type:
           - URLComponents
-  - uid: sp-http.GraphRequest.version
-    name: version(v)
-    fullName: version
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'version(v: string): GraphRequest;'
-      return:
-        type:
-          - GraphRequest
-        description: ''
-      parameters:
-        - id: v
-          description: ''
-          type:
-            - string

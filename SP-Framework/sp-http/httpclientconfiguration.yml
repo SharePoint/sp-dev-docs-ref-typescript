@@ -13,19 +13,19 @@ items:
       - typeScript
     type: class
     implements:
-      - IHttpClientConfiguration
+      - sp-http.IHttpClientConfiguration
     package: sp-http
     children:
-      - sp-http.HttpClientConfiguration.constructor
+      - sp-http.HttpClientConfiguration.(constructor)
       - sp-http.HttpClientConfiguration.flags
       - sp-http.HttpClientConfiguration.initializeFlags
       - sp-http.HttpClientConfiguration.overrideWith
-  - uid: sp-http.HttpClientConfiguration.constructor
+  - uid: sp-http.HttpClientConfiguration.(constructor)
     summary: >-
       Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
       any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: 'constructor(flags, overrideFlags)'
-    fullName: constructor
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
     langs:
       - typeScript
     type: constructor
@@ -35,11 +35,11 @@ items:
         - id: flags
           description: ''
           type:
-            - IHttpClientConfiguration
+            - sp-http.IHttpClientConfiguration
         - id: overrideFlags
           description: ''
           type:
-            - IHttpClientConfiguration
+            - sp-http.IHttpClientConfiguration
   - uid: sp-http.HttpClientConfiguration.flags
     name: flags
     fullName: flags
@@ -50,11 +50,11 @@ items:
       content: 'protected flags: IHttpClientConfiguration;'
       return:
         type:
-          - IHttpClientConfiguration
+          - sp-http.IHttpClientConfiguration
   - uid: sp-http.HttpClientConfiguration.initializeFlags
     summary: Child classes should override this method to initialize the flags object.
     name: initializeFlags()
-    fullName: initializeFlags
+    fullName: initializeFlags()
     langs:
       - typeScript
     type: method
@@ -69,7 +69,7 @@ items:
   - uid: sp-http.HttpClientConfiguration.overrideWith
     summary: 'Child classes should override this method to construct the child class type, rather than the base class type.'
     name: overrideWith(sourceFlags)
-    fullName: overrideWith
+    fullName: overrideWith(sourceFlags)
     langs:
       - typeScript
     type: method
@@ -79,10 +79,10 @@ items:
         overrideWith(sourceFlags: IHttpClientConfiguration): HttpClientConfiguration;
       return:
         type:
-          - HttpClientConfiguration
+          - sp-http.HttpClientConfiguration
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - IHttpClientConfiguration
+            - sp-http.IHttpClientConfiguration

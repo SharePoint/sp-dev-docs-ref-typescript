@@ -21,16 +21,16 @@ items:
     type: class
     package: sp-application-base
     children:
-      - sp-application-base.ApplicationAccessor.constructor
+      - sp-application-base.ApplicationAccessor.(constructor)
       - sp-application-base.ApplicationAccessor.navigatedEvent
-  - uid: sp-application-base.ApplicationAccessor.constructor
+  - uid: sp-application-base.ApplicationAccessor.(constructor)
     summary: 'Constructs a new instance of the [ApplicationAccessor](xref:sp-application-base.ApplicationAccessor) class.'
     remarks: >-
       Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component
       context, for example
       [BaseApplicationCustomizer.context](xref:sp-application-base.BaseApplicationCustomizer.context)<!-- -->.
-    name: constructor(serviceScope)
-    fullName: constructor
+    name: (constructor)(serviceScope)
+    fullName: (constructor)(serviceScope)
     langs:
       - typeScript
     type: constructor
@@ -40,7 +40,7 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - ServiceScope
+            - sp-core-library.ServiceScope
   - uid: sp-application-base.ApplicationAccessor.navigatedEvent
     summary: An event that is fired when the application's top-level page context navigates to a new page.
     remarks: 'This event fires after the top-level [PageContext](xref:sp-page-context.PageContext) has navigated to a new page.'

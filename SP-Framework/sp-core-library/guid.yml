@@ -22,6 +22,7 @@ items:
       - sp-core-library.Guid.isValid
       - sp-core-library.Guid.newGuid
       - sp-core-library.Guid.parse
+      - sp-core-library.Guid.toString
       - sp-core-library.Guid.tryParse
   - uid: sp-core-library.Guid.empty
     summary: Returns a new empty Guid instance.
@@ -34,11 +35,11 @@ items:
       content: 'static readonly empty: Guid;'
       return:
         type:
-          - Guid
+          - sp-core-library.Guid
   - uid: sp-core-library.Guid.equals
     summary: Compare this instance to another Guid instance
     name: equals(guid)
-    fullName: equals
+    fullName: equals(guid)
     langs:
       - typeScript
     type: method
@@ -52,13 +53,13 @@ items:
         - id: guid
           description: ''
           type:
-            - Guid
+            - sp-core-library.Guid
   - uid: sp-core-library.Guid.isValid
     summary: >-
       Indicates whether a GUID is valid, i.e. whether it would be successfully parsed by `Guid.tryParse()`<!-- -->. This
       function is cheaper than `Guid.tryParse()` because it does not construct a Guid object.
     name: isValid(guid)
-    fullName: isValid
+    fullName: isValid(guid)
     langs:
       - typeScript
     type: method
@@ -78,7 +79,7 @@ items:
       Returns a new Guid instance with a pseudo-randomly generated GUID, according to the version 4 UUID algorithm from
       RFC 4122.
     name: newGuid(randomNumberGenerator)
-    fullName: newGuid
+    fullName: newGuid(randomNumberGenerator)
     langs:
       - typeScript
     type: method
@@ -86,17 +87,19 @@ items:
       content: 'static newGuid(randomNumberGenerator?: IRandomNumberGenerator): Guid;'
       return:
         type:
-          - Guid
+          - sp-core-library.Guid
         description: A new unique Guid object
       parameters:
         - id: randomNumberGenerator
           description: ''
           type:
-            - IRandomNumberGenerator
+            - sp-core-library.IRandomNumberGenerator
   - uid: sp-core-library.Guid.parse
     summary: 'Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.'
     remarks: |-
       Example syntaxes accepted by this function:
+
+      - `"d5369f3bbd7a412a9c0f7f0650bb5489"`
 
       - `"d5369f3b-bd7a-412a-9c0f-7f0650bb5489"`
 
@@ -104,7 +107,7 @@ items:
 
       - `"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/"`
     name: parse(guidString)
-    fullName: parse
+    fullName: parse(guidString)
     langs:
       - typeScript
     type: method
@@ -112,13 +115,29 @@ items:
       content: 'static parse(guidString: string | undefined | null): Guid;'
       return:
         type:
-          - Guid
+          - sp-core-library.Guid
         description: A valid Guid object
       parameters:
         - id: guidString
           description: ''
           type:
             - string | undefined | null
+  - uid: sp-core-library.Guid.toString
+    summary: Returns a string representation of the GUID
+    name: toString()
+    fullName: toString()
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'toString(): string;'
+      return:
+        type:
+          - string
+        description: |-
+          The GUID value in lowercase hexadecimal without braces.
+
+          Example: `'d5369f3b-bd7a-412a-9c0f-7f0650bb5489'`
   - uid: sp-core-library.Guid.tryParse
     summary: >-
       Attempts to parse the input string to construct a new Guid object. If the string cannot be parsed, then undefined
@@ -126,13 +145,15 @@ items:
     remarks: |-
       Example syntaxes accepted by this function:
 
+      - `"d5369f3bbd7a412a9c0f7f0650bb5489"`
+
       - `"d5369f3b-bd7a-412a-9c0f-7f0650bb5489"`
 
       - `"{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}"`
 
       - `"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/"`
     name: tryParse(guid)
-    fullName: tryParse
+    fullName: tryParse(guid)
     langs:
       - typeScript
     type: method

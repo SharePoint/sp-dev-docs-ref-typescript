@@ -27,11 +27,12 @@ items:
       - sp-core-library.Version.patch
       - sp-core-library.Version.revision
       - sp-core-library.Version.satisfies
+      - sp-core-library.Version.toString
       - sp-core-library.Version.tryParse
   - uid: sp-core-library.Version.compare
     summary: Compares two Version objects to determine which version is newer.
     name: 'compare(v1, v2)'
-    fullName: compare
+    fullName: 'compare(v1, v2)'
     langs:
       - typeScript
     type: method
@@ -47,15 +48,16 @@ items:
         - id: v1
           description: The first version class for comparison
           type:
-            - Version
+            - sp-core-library.Version
         - id: v2
           description: The second version class for comparison
           type:
-            - Version
+            - sp-core-library.Version
   - uid: sp-core-library.Version.equals
     summary: Tests whether this version is equal to the input parameter.
     remarks: |-
       Examples:
+
       ```
       1.0.0 equals 1.0.0 -> true;
       2.0.1 equals 2.0.0 -> false;
@@ -64,7 +66,7 @@ items:
 
       ```
     name: equals(compareWith)
-    fullName: equals
+    fullName: equals(compareWith)
     langs:
       - typeScript
     type: method
@@ -78,11 +80,12 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - Version
+            - sp-core-library.Version
   - uid: sp-core-library.Version.greaterThan
     summary: Tests whether this version is greater than (i.e. newer than) the input parameter.
     remarks: |-
       Examples:
+
       ```
       1.0.0 greaterThan 0.0.9 -> true;
       2.0   greaterThan 2.0.0 -> false;
@@ -90,7 +93,7 @@ items:
 
       ```
     name: greaterThan(compareWith)
-    fullName: greaterThan
+    fullName: greaterThan(compareWith)
     langs:
       - typeScript
     type: method
@@ -104,11 +107,11 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - Version
+            - sp-core-library.Version
   - uid: sp-core-library.Version.isValid
     summary: Test whether a string is a valid version specifier.
     name: isValid(versionString)
-    fullName: isValid
+    fullName: isValid(versionString)
     langs:
       - typeScript
     type: method
@@ -127,6 +130,7 @@ items:
     summary: Tests whether this version is less than (i.e. older than) the input parameter.
     remarks: |-
       Examples:
+
       ```
       0.9.9 lessThan 1.0.0 -> true;
       2.0   lessThan 2.0.0 -> false;
@@ -135,7 +139,7 @@ items:
 
       ```
     name: lessThan(compareWith)
-    fullName: lessThan
+    fullName: lessThan(compareWith)
     langs:
       - typeScript
     type: method
@@ -149,7 +153,7 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - Version
+            - sp-core-library.Version
   - uid: sp-core-library.Version.major
     summary: Returns the first component of the version string.
     remarks: Typically a change in the major version number indicates a compatibility break with previous versions.
@@ -181,7 +185,7 @@ items:
   - uid: sp-core-library.Version.parse
     summary: Constructs a new Version instance using the version string. An exception is thrown if the string cannot be parsed.
     name: parse(versionString)
-    fullName: parse
+    fullName: parse(versionString)
     langs:
       - typeScript
     type: method
@@ -189,7 +193,7 @@ items:
       content: 'static parse(versionString: string | undefined | null): Version;'
       return:
         type:
-          - Version
+          - sp-core-library.Version
         description: a new Version object
       parameters:
         - id: versionString
@@ -237,6 +241,7 @@ items:
 
       Examples:
 
+
       ```
 
       1.0.0 satisfies 1.0.0 -> true;
@@ -250,7 +255,7 @@ items:
 
       ```
     name: satisfies(compareWith)
-    fullName: satisfies
+    fullName: satisfies(compareWith)
     langs:
       - typeScript
     type: method
@@ -264,13 +269,29 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - Version
+            - sp-core-library.Version
+  - uid: sp-core-library.Version.toString
+    summary: Returns a string representation of the version.
+    remarks: >-
+      The value is normalized and may be different from the original string (e.g. leading zeroes may be removed).
+      However, the number of version parts will be unchanged.
+    name: toString()
+    fullName: toString()
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'toString(): string;'
+      return:
+        type:
+          - string
+        description: ''
   - uid: sp-core-library.Version.tryParse
     summary: >-
       Attempts to parse the input string to construct a new Version object. If the string cannot be parsed, then
       undefined is returned.
     name: tryParse(versionString)
-    fullName: tryParse
+    fullName: tryParse(versionString)
     langs:
       - typeScript
     type: method

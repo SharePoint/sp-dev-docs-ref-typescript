@@ -9,14 +9,14 @@ items:
       This base is to be extended by UI-specific WebPart's base.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the BaseWebPartContext class.
+      create subclasses that extend the `BaseWebPartContext` class.
     name: BaseWebPartContext
     fullName: BaseWebPartContext
     langs:
       - typeScript
     type: class
     extends:
-      - BaseComponentContext
+      - sp-component-base.BaseComponentContext
     package: sp-webpart-base
     children:
       - sp-webpart-base.BaseWebPartContext.formFactor
@@ -38,7 +38,7 @@ items:
       content: 'readonly formFactor: WebPartFormFactor;'
       return:
         type:
-          - WebPartFormFactor
+          - sp-webpart-base.WebPartFormFactor
   - uid: sp-webpart-base.BaseWebPartContext.manifest
     summary: Manifest for the client-side component.
     name: manifest
@@ -62,7 +62,7 @@ items:
       content: 'readonly propertyPane: IPropertyPaneAccessor;'
       return:
         type:
-          - IPropertyPaneAccessor
+          - sp-webpart-base.IPropertyPaneAccessor
   - uid: sp-webpart-base.BaseWebPartContext.webPartTag
     summary: Web part tag to be used for logging and telemetry.
     name: webPartTag

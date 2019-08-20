@@ -2,64 +2,15 @@
 items:
   - uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps
     summary: PropertyPane DynamicFieldSet props.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IPropertyPaneDynamicFieldSetProps
     fullName: IPropertyPaneDynamicFieldSetProps
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IPropertyPaneDynamicFieldSetProps '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IPropertyPaneDynamicFieldSetProps.fields
-      - sp-webpart-base.IPropertyPaneDynamicFieldSetProps.label
-      - sp-webpart-base.IPropertyPaneDynamicFieldSetProps.sharedConfiguration
-  - uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps.fields
-    summary: List of property pane dynamic fields to be configured on the Dynamic Data Widget.
-    name: fields
-    fullName: fields
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'fields: IPropertyPaneField<IPropertyPaneDynamicFieldProps>[];'
-      return:
-        type:
-          - 'IPropertyPaneField<IPropertyPaneDynamicFieldProps>[]'
-  - uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps.label
-    summary: 'User-friendly, localized label to identify the property.'
-    name: label
-    fullName: label
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'label: string;'
-      return:
-        type:
-          - string
-  - uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps.sharedConfiguration
-    summary: Configuration shared between all the entries of the set.
-    name: sharedConfiguration
-    fullName: sharedConfiguration
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'sharedConfiguration?:'
-      return:
-        type:
-          - |-
-            {
-                    /**
-                     * Indicates to what depth the dynamic reference is shared between the set of fields
-                     * of the dynamic field set.
-                     */
-                    depth: DynamicDataSharedDepth;
-                    /**
-                     * Shared source configuration
-                     */
-                    source?: IDynamicDataSharedSourceConfiguration;
-                    /**
-                     * Shared property configuration
-                     */
-                    property?: IDynamicDataSharedPropertyConfiguration;
-                }

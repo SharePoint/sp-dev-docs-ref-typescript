@@ -22,6 +22,7 @@ items:
 
       Example:
 
+
       ```
 
       {
@@ -37,7 +38,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'htmlStrings?:'
+      content: |-
+        htmlStrings?: {
+                [key: string]: string;
+            };
       return:
         type:
           - |-
@@ -50,6 +54,7 @@ items:
       SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
 
       Example:
+
       ```
       {
         'myImage1': 'http://res.contoso.com/path/to/file'
@@ -63,7 +68,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'imageSources?:'
+      content: |-
+        imageSources?: {
+                [key: string]: string;
+            };
       return:
         type:
           - |-
@@ -76,6 +84,7 @@ items:
       SharePoint servers treat the values as links and run services like link fixup on them.
 
       Example:
+
       ```
       {
         'myWebURL': 'http://contoso.com'
@@ -89,7 +98,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'links?:'
+      content: |-
+        links?: {
+                [key: string]: string;
+            };
       return:
         type:
           - |-
@@ -104,6 +116,7 @@ items:
 
 
       Example:
+
 
       ```
 
@@ -120,7 +133,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'searchablePlainTexts?:'
+      content: |-
+        searchablePlainTexts?: {
+                [key: string]: string;
+            };
       return:
         type:
           - |-

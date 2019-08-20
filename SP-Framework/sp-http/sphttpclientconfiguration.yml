@@ -13,24 +13,24 @@ items:
       - typeScript
     type: class
     extends:
-      - SPHttpClientCommonConfiguration
+      - sp-http.SPHttpClientCommonConfiguration
     implements:
-      - ISPHttpClientConfiguration
+      - sp-http.ISPHttpClientConfiguration
     package: sp-http
     children:
-      - sp-http.SPHttpClientConfiguration.constructor
+      - sp-http.SPHttpClientConfiguration.(constructor)
       - sp-http.SPHttpClientConfiguration.defaultODataVersion
       - sp-http.SPHttpClientConfiguration.defaultSameOriginCredentials
       - sp-http.SPHttpClientConfiguration.flags
       - sp-http.SPHttpClientConfiguration.initializeFlags
       - sp-http.SPHttpClientConfiguration.overrideWith
       - sp-http.SPHttpClientConfiguration.requestDigest
-  - uid: sp-http.SPHttpClientConfiguration.constructor
+  - uid: sp-http.SPHttpClientConfiguration.(constructor)
     summary: >-
       Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used
       for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: 'constructor(flags, overrideFlags)'
-    fullName: constructor
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
     langs:
       - typeScript
     type: constructor
@@ -40,11 +40,11 @@ items:
         - id: flags
           description: ''
           type:
-            - ISPHttpClientConfiguration
+            - sp-http.ISPHttpClientConfiguration
         - id: overrideFlags
           description: ''
           type:
-            - ISPHttpClientConfiguration
+            - sp-http.ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.defaultODataVersion
     summary: Automatically configure the "OData-Version" header.
     remarks: >-
@@ -63,7 +63,7 @@ items:
       content: 'readonly defaultODataVersion: ODataVersion;'
       return:
         type:
-          - ODataVersion
+          - sp-http.ODataVersion
   - uid: sp-http.SPHttpClientConfiguration.defaultSameOriginCredentials
     summary: Automatically configure the RequestInit.credentials.
     remarks: >-
@@ -95,10 +95,10 @@ items:
       content: 'protected flags: ISPHttpClientConfiguration;'
       return:
         type:
-          - ISPHttpClientConfiguration
+          - sp-http.ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.initializeFlags
     name: initializeFlags()
-    fullName: initializeFlags
+    fullName: initializeFlags()
     langs:
       - typeScript
     type: method
@@ -112,7 +112,7 @@ items:
         description: ''
   - uid: sp-http.SPHttpClientConfiguration.overrideWith
     name: overrideWith(sourceFlags)
-    fullName: overrideWith
+    fullName: overrideWith(sourceFlags)
     langs:
       - typeScript
     type: method
@@ -122,13 +122,13 @@ items:
         overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;
       return:
         type:
-          - SPHttpClientConfiguration
+          - sp-http.SPHttpClientConfiguration
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - ISPHttpClientConfiguration
+            - sp-http.ISPHttpClientConfiguration
   - uid: sp-http.SPHttpClientConfiguration.requestDigest
     summary: Automatically provide an "X-RequestDigest" header for authentication.
     remarks: >-

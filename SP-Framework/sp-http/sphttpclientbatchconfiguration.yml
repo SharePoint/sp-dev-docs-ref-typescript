@@ -14,21 +14,22 @@ items:
       - typeScript
     type: class
     extends:
-      - SPHttpClientCommonConfiguration
+      - sp-http.SPHttpClientCommonConfiguration
     implements:
-      - ISPHttpClientBatchConfiguration
+      - sp-http.ISPHttpClientBatchConfiguration
     package: sp-http
     children:
-      - sp-http.SPHttpClientBatchConfiguration.constructor
+      - sp-http.SPHttpClientBatchConfiguration.(constructor)
       - sp-http.SPHttpClientBatchConfiguration.flags
       - sp-http.SPHttpClientBatchConfiguration.initializeFlags
       - sp-http.SPHttpClientBatchConfiguration.overrideWith
-  - uid: sp-http.SPHttpClientBatchConfiguration.constructor
+  - uid: sp-http.SPHttpClientBatchConfiguration.(constructor)
     summary: >-
       Constructs a new instance of SPHttpClientBatchConfiguration with the specified flags. The default values will be
       used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: 'constructor(flags, overrideFlags)'
-    fullName: constructor
+    isPreview: true
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
     langs:
       - typeScript
     type: constructor
@@ -38,11 +39,11 @@ items:
         - id: flags
           description: ''
           type:
-            - ISPHttpClientBatchConfiguration
+            - sp-http.ISPHttpClientBatchConfiguration
         - id: overrideFlags
           description: ''
           type:
-            - ISPHttpClientBatchConfiguration
+            - sp-http.ISPHttpClientBatchConfiguration
   - uid: sp-http.SPHttpClientBatchConfiguration.flags
     isPreview: true
     name: flags
@@ -54,11 +55,11 @@ items:
       content: 'protected flags: ISPHttpClientBatchConfiguration;'
       return:
         type:
-          - ISPHttpClientBatchConfiguration
+          - sp-http.ISPHttpClientBatchConfiguration
   - uid: sp-http.SPHttpClientBatchConfiguration.initializeFlags
     isPreview: true
     name: initializeFlags()
-    fullName: initializeFlags
+    fullName: initializeFlags()
     langs:
       - typeScript
     type: method
@@ -73,7 +74,7 @@ items:
   - uid: sp-http.SPHttpClientBatchConfiguration.overrideWith
     isPreview: true
     name: overrideWith(sourceFlags)
-    fullName: overrideWith
+    fullName: overrideWith(sourceFlags)
     langs:
       - typeScript
     type: method
@@ -83,10 +84,10 @@ items:
         overrideWith(sourceFlags: ISPHttpClientBatchConfiguration): SPHttpClientBatchConfiguration;
       return:
         type:
-          - SPHttpClientBatchConfiguration
+          - sp-http.SPHttpClientBatchConfiguration
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - ISPHttpClientBatchConfiguration
+            - sp-http.ISPHttpClientBatchConfiguration

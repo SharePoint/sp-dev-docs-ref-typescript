@@ -12,10 +12,10 @@ items:
       - typeScript
     type: class
     implements:
-      - IDisposable
+      - sp-core-library.IDisposable
     package: sp-component-base
     children:
-      - sp-component-base.DynamicProperty.constructor
+      - sp-component-base.DynamicProperty.(constructor)
       - sp-component-base.DynamicProperty.dispose
       - sp-component-base.DynamicProperty.hasDefaultCallback
       - sp-component-base.DynamicProperty.isDisposed
@@ -28,10 +28,10 @@ items:
       - sp-component-base.DynamicProperty.tryGetValue
       - sp-component-base.DynamicProperty.tryGetValues
       - sp-component-base.DynamicProperty.unregister
-  - uid: sp-component-base.DynamicProperty.constructor
+  - uid: sp-component-base.DynamicProperty.(constructor)
     summary: Create a new DynamicProperty object.
-    name: 'constructor(provider, callback)'
-    fullName: constructor
+    name: '(constructor)(provider, callback)'
+    fullName: '(constructor)(provider, callback)'
     langs:
       - typeScript
     type: constructor
@@ -41,7 +41,7 @@ items:
         - id: provider
           description: DynamicDataProvider.
           type:
-            - DynamicDataProvider
+            - sp-component-base.DynamicDataProvider
         - id: callback
           description: Optional. Default callback to be registered for updates in the DynamicDataSource.
           type:
@@ -50,7 +50,7 @@ items:
     summary: This method is called to permanently dispose the object.
     remarks: 'After the object has been disposed, do not call its methods or access its properties.'
     name: dispose()
-    fullName: dispose
+    fullName: dispose()
     langs:
       - typeScript
     type: method
@@ -63,7 +63,7 @@ items:
   - uid: sp-component-base.DynamicProperty.hasDefaultCallback
     summary: Returns true if the object has a default callback.
     name: hasDefaultCallback()
-    fullName: hasDefaultCallback
+    fullName: hasDefaultCallback()
     langs:
       - typeScript
     type: method
@@ -106,7 +106,7 @@ items:
   - uid: sp-component-base.DynamicProperty.register
     summary: Registers a callback function for updates on the associated DynamicDataSource.
     name: register(callback)
-    fullName: register
+    fullName: register(callback)
     langs:
       - typeScript
     type: method
@@ -125,7 +125,7 @@ items:
     summary: Removes the registration for the default callback.
     remarks: This can be useful for advanced users who only want their custom callbacks.
     name: removeDefaultCallback()
-    fullName: removeDefaultCallback
+    fullName: removeDefaultCallback()
     langs:
       - typeScript
     type: method
@@ -140,7 +140,7 @@ items:
       Sets the value of the DynamicProperty to be a reference to a DynamicDynamicSource and property. The reference is
       of the form `<source>:<property>:<path>`<!-- -->.
     name: setReference(reference)
-    fullName: setReference
+    fullName: setReference(reference)
     langs:
       - typeScript
     type: method
@@ -158,7 +158,7 @@ items:
   - uid: sp-component-base.DynamicProperty.setValue
     summary: Sets a static value in the DynamicProperty.
     name: setValue(value)
-    fullName: setValue
+    fullName: setValue(value)
     langs:
       - typeScript
     type: method
@@ -178,7 +178,7 @@ items:
       Returns the DynamicDataSource that the DynamicProperty object refers to. Returns undefined if the source doesn't
       exist.
     name: tryGetSource()
-    fullName: tryGetSource
+    fullName: tryGetSource()
     langs:
       - typeScript
     type: method
@@ -196,9 +196,9 @@ items:
 
 
       NOTE: This api will never return an array. To retrieve an array value, use the
-      [DynamicProperty.tryGetValues](xref:sp-component-base.DynamicProperty.tryGetValues) API.
+      [DynamicProperty.tryGetValues()](xref:sp-component-base.DynamicProperty.tryGetValues) API.
     name: tryGetValue()
-    fullName: tryGetValue
+    fullName: tryGetValue()
     langs:
       - typeScript
     type: method
@@ -216,9 +216,9 @@ items:
 
 
       NOTE: This api will always return an array and it assumes that the array is homogeneous. To retrieve a non-array
-      value, use the [DynamicProperty.tryGetValue](xref:sp-component-base.DynamicProperty.tryGetValue) API.
+      value, use the [DynamicProperty.tryGetValue()](xref:sp-component-base.DynamicProperty.tryGetValue) API.
     name: tryGetValues()
-    fullName: tryGetValues
+    fullName: tryGetValues()
     langs:
       - typeScript
     type: method
@@ -233,7 +233,7 @@ items:
       Unregisters a callback function for updates on the associated DynamicDataSource. The callback function must be the
       same it was registered with.
     name: unregister(callback)
-    fullName: unregister
+    fullName: unregister(callback)
     langs:
       - typeScript
     type: method

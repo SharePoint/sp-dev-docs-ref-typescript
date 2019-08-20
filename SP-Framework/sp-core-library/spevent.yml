@@ -3,10 +3,6 @@ items:
   - uid: sp-core-library.SPEvent
     summary: Represents a framework event that components can subscribe to.
     remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the SPEvent class.
-
-
       Examples of events in a web application might include: the user clicking a button, the system navigating to
       another page, or an item being added/removed from an abstract collection. The SharePoint Framework represents
       events using instances of the SPEvent object, one for each kind of event. The SPEvent object is typically exposed
@@ -22,6 +18,10 @@ items:
       unspecified. The event handler callback must catch any exceptions that occur during processing; an uncaught
       exception will not prevent other handlers from executing, but it will be reported as a problem with the associated
       component.
+
+
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `SPEvent` class.
     name: SPEvent
     fullName: SPEvent
     langs:
@@ -38,7 +38,7 @@ items:
       ISPEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event
       handler to be automatically unsubscribed when the web part or extension is disposed.
     name: 'add(observer, eventHandler)'
-    fullName: add
+    fullName: 'add(observer, eventHandler)'
     langs:
       - typeScript
     type: method
@@ -55,7 +55,7 @@ items:
             be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event
             handler failed to catch an exception.
           type:
-            - ISPEventObserver
+            - sp-core-library.ISPEventObserver
         - id: eventHandler
           description: A callback function that will be invoked whenever the event occurs
           type:
@@ -64,7 +64,7 @@ items:
     summary: Unregisters a callback that was registered using add().
     remarks: 'If the event handler has already been removed, or if it was never added, then this method has no effect.'
     name: 'remove(observer, eventHandler)'
-    fullName: remove
+    fullName: 'remove(observer, eventHandler)'
     langs:
       - typeScript
     type: method
@@ -78,7 +78,7 @@ items:
         - id: observer
           description: This must be the same observer that was passed to the add() function.
           type:
-            - ISPEventObserver
+            - sp-core-library.ISPEventObserver
         - id: eventHandler
           description: The event handler to remove; this must be the same object instance that was passed to the add() function.
           type:

@@ -51,7 +51,7 @@ items:
     type: class
     package: sp-core-library
     children:
-      - sp-core-library.ServiceScope.constructor
+      - sp-core-library.ServiceScope.(constructor)
       - sp-core-library.ServiceScope.consume
       - sp-core-library.ServiceScope.createAndProvide
       - sp-core-library.ServiceScope.createDefaultAndProvide
@@ -61,10 +61,10 @@ items:
       - sp-core-library.ServiceScope.startNewChild
       - sp-core-library.ServiceScope.startNewRoot
       - sp-core-library.ServiceScope.whenFinished
-  - uid: sp-core-library.ServiceScope.constructor
-    summary: 'Constructs a new instance of the [ServiceScope](xref:sp-core-library.ServiceScope) class'
-    name: constructor(parent)
-    fullName: constructor
+  - uid: sp-core-library.ServiceScope.(constructor)
+    summary: Constructs a new instance of the `ServiceScope` class
+    name: (constructor)(parent)
+    fullName: (constructor)(parent)
     langs:
       - typeScript
     type: constructor
@@ -82,7 +82,7 @@ items:
       registered service instance. If the instance cannot be found, then a default instance will be automatically
       created and registered with the root ServiceScope.
     name: consume(serviceKey)
-    fullName: consume
+    fullName: consume(serviceKey)
     langs:
       - typeScript
     type: method
@@ -102,14 +102,14 @@ items:
       This is a shorthand function that is equivalent to constructing a new instance of the simpleServiceClass, then
       registering it by calling ServiceScope.provide().
     name: 'createAndProvide(serviceKey, simpleServiceClass)'
-    fullName: createAndProvide
+    fullName: 'createAndProvide(serviceKey, simpleServiceClass)'
     langs:
       - typeScript
     type: method
     syntax:
       content: |-
         createAndProvide<T>(serviceKey: ServiceKey<T>, simpleServiceClass: {
-                new (serviceScope: ServiceScope);
+                new (serviceScope: ServiceScope): T;
             }): T;
       return:
         type:
@@ -125,14 +125,14 @@ items:
           type:
             - |-
               {
-                      new (serviceScope: ServiceScope);
+                      new (serviceScope: ServiceScope): T;
                   }
   - uid: sp-core-library.ServiceScope.createDefaultAndProvide
     summary: >-
       This is a shorthand function that constructs the default implementation of the specified serviceKey, and then
       registers it by calling ServiceScope.provide().
     name: createDefaultAndProvide(serviceKey)
-    fullName: createDefaultAndProvide
+    fullName: createDefaultAndProvide(serviceKey)
     langs:
       - typeScript
     type: method
@@ -160,7 +160,7 @@ items:
       different result than the previous call. This nondeterminism could cause unpredictable results that are difficult
       to diagnose.
     name: finish()
-    fullName: finish
+    fullName: finish()
     langs:
       - typeScript
     type: method
@@ -173,7 +173,7 @@ items:
   - uid: sp-core-library.ServiceScope.getParent
     summary: 'Returns the parent of the current ServiceScope, or undefined if this is a root scope.'
     name: getParent()
-    fullName: getParent
+    fullName: getParent()
     langs:
       - typeScript
     type: method
@@ -189,7 +189,7 @@ items:
       ServiceScope.provide() is used to register an implementation of the given serviceKey for the current scope. It may
       only be used when the ServiceScope is in an "unfinished" state, i.e. before finish() has been called.
     name: 'provide(serviceKey, service)'
-    fullName: provide
+    fullName: 'provide(serviceKey, service)'
     langs:
       - typeScript
     type: method
@@ -214,7 +214,7 @@ items:
       The service scopes form a tree structure, such that when consuming a service, if the key is not explicitly
       provided by a child scope, the parent hierarchy will be consulted.
     name: startNewChild()
-    fullName: startNewChild
+    fullName: startNewChild()
     langs:
       - typeScript
     type: method
@@ -222,14 +222,14 @@ items:
       content: 'startNewChild(): ServiceScope;'
       return:
         type:
-          - ServiceScope
+          - sp-core-library.ServiceScope
         description: the newly created root ServiceScope
   - uid: sp-core-library.ServiceScope.startNewRoot
     summary: >-
       Create a new root-level ServiceScope. Only root-level scopes have the ability to autocreate default
       implementations of ServiceKeys.
     name: startNewRoot()
-    fullName: startNewRoot
+    fullName: startNewRoot()
     langs:
       - typeScript
     type: method
@@ -237,10 +237,10 @@ items:
       content: 'static startNewRoot(): ServiceScope;'
       return:
         type:
-          - ServiceScope
+          - sp-core-library.ServiceScope
         description: the newly created root ServiceScope
   - uid: sp-core-library.ServiceScope.whenFinished
-    summary: 'Defer an operation until after [ServiceScope.finish](xref:sp-core-library.ServiceScope.finish) has completed.'
+    summary: 'Defer an operation until after [ServiceScope.finish()](xref:sp-core-library.ServiceScope.finish) has completed.'
     remarks: >-
       It is an error to call ServiceScope.consume() before finish() has been called. The most reliable way to protect
       your component against this error is to perform the consume() calls inside a whenFinished() callback. If the
@@ -252,7 +252,7 @@ items:
       However, the control flow often threads through numerous constructors and base classes, which can be simplified
       using whenFinished().
     name: whenFinished(callback)
-    fullName: whenFinished
+    fullName: whenFinished(callback)
     langs:
       - typeScript
     type: method

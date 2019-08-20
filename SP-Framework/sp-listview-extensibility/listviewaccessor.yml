@@ -4,7 +4,7 @@ items:
     summary: Provides access to a SharePoint ListView control.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the ListViewAccessor class.
+      create subclasses that extend the `ListViewAccessor` class.
     name: ListViewAccessor
     fullName: ListViewAccessor
     langs:
@@ -23,7 +23,7 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'readonly columns: ReadonlyArray<ColumnAccessor>;'
+      content: 'abstract readonly columns: ReadonlyArray<ColumnAccessor>;'
       return:
         type:
           - ReadonlyArray<ColumnAccessor>
@@ -44,7 +44,7 @@ items:
       Returns the list view column corresponding to the field with the specified internal name, or undefined if none is
       found.
     name: tryGetColumnByName(internalName)
-    fullName: tryGetColumnByName
+    fullName: tryGetColumnByName(internalName)
     langs:
       - typeScript
     type: method

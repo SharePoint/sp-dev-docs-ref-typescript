@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.ITokenAcquisitionEventArgs
+    summary: Represents arguments used for raising a token acquisiton failure event.
+    name: ITokenAcquisitionEventArgs
+    fullName: ITokenAcquisitionEventArgs
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - sp-core-library.SPEventArgs
+    package: sp-http
+    children:
+      - sp-http.ITokenAcquisitionEventArgs.message
+      - sp-http.ITokenAcquisitionEventArgs.redirectUrl
+  - uid: sp-http.ITokenAcquisitionEventArgs.message
+    summary: The message returned from ADAL fails to retrieve a token from Azure AD.
+    name: message
+    fullName: message
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'message: string;'
+      return:
+        type:
+          - string
+  - uid: sp-http.ITokenAcquisitionEventArgs.redirectUrl
+    summary: The url of the page for the end user to interact with Azure AD.
+    name: redirectUrl
+    fullName: redirectUrl
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'redirectUrl?: string;'
+      return:
+        type:
+          - string

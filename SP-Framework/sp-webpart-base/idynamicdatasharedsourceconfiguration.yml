@@ -2,39 +2,15 @@
 items:
   - uid: sp-webpart-base.IDynamicDataSharedSourceConfiguration
     summary: Configuration related to a shared source.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IDynamicDataSharedSourceConfiguration
     fullName: IDynamicDataSharedSourceConfiguration
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IDynamicDataSharedSourceConfiguration '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IDynamicDataSharedSourceConfiguration.filters
-      - sp-webpart-base.IDynamicDataSharedSourceConfiguration.sourcesLabel
-  - uid: sp-webpart-base.IDynamicDataSharedSourceConfiguration.filters
-    summary: Filters for the shared source.
-    name: filters
-    fullName: filters
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'filters?: IDynamicDataSharedSourceFilters;'
-      return:
-        type:
-          - IDynamicDataSharedSourceFilters
-  - uid: sp-webpart-base.IDynamicDataSharedSourceConfiguration.sourcesLabel
-    summary: |-
-      User-friendly, localized label for the sources dropdown.
-
-      default value - 'Connect to source'
-    name: sourcesLabel
-    fullName: sourcesLabel
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'sourcesLabel?: string;'
-      return:
-        type:
-          - string

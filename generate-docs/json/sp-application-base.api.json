@@ -1,963 +1,1067 @@
 {
-  "kind": "package",
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.1.8",
+    "schemaVersion": 1000
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-application-base",
+  "docComment": "/**\n * SharePoint Framework support for building and extending client-side applications.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-application-base",
-  "summary": [
+  "members": [
     {
-      "kind": "text",
-      "text": "SharePoint Framework support for building and extending client-side applications."
-    }
-  ],
-  "remarks": [],
-  "exports": {
-    "ApplicationAccessor": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
+      "kind": "EntryPoint",
+      "canonicalReference": "",
+      "name": "",
+      "members": [
         {
-          "kind": "text",
-          "text": "Provides access to the client-side application that is currently running."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The client-side application determines the user experience for an entire web page. (It is a client-side component with a manifest; however, the SharePoint Framework does not enable third parties to create their own client-side applications at this time.) Within a web page, at most one client-side application will be running at a time. Certain in-place navigation transitions can cause the application to be unloaded and replaced by a different application."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently running application. It acts as a proxy for the real application object (the BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "__constructor": {
-          "kind": "constructor",
-          "signature": "constructor(serviceScope: ServiceScope);",
-          "parameters": {
-            "serviceScope": {
-              "name": "serviceScope",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "ServiceScope"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
+          "kind": "Class",
+          "canonicalReference": "(ApplicationAccessor:class)",
+          "docComment": "/**\n * Provides access to the client-side application that is currently running.\n *\n * @remarks\n *\n * The client-side application determines the user experience for an entire web page. (It is a client-side component with a manifest; however, the SharePoint Framework does not enable third parties to create their own client-side applications at this time.) Within a web page, at most one client-side application will be running at a time. Certain in-place navigation transitions can cause the application to be unloaded and replaced by a different application.\n *\n * The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the currently running application. It acts as a proxy for the real application object (the BaseApplication subclass), to ensure that extensibility components only rely on interactions that would be portable across all applications.\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "Constructs a new instance of the "
+              "kind": "Content",
+              "text": "export default class "
             },
             {
-              "kind": "api-link",
-              "elements": [
-                {
-                  "kind": "text",
-                  "text": "ApplicationAccessor"
-                }
-              ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-application-base",
-                "exportName": "ApplicationAccessor",
-                "memberName": ""
-              }
+              "kind": "Reference",
+              "text": "ApplicationAccessor"
             },
             {
-              "kind": "text",
-              "text": " class."
+              "kind": "Content",
+              "text": " "
             }
           ],
-          "remarks": [
+          "releaseTag": "Public",
+          "name": "ApplicationAccessor",
+          "members": [
             {
-              "kind": "text",
-              "text": "Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component context, for example "
-            },
-            {
-              "kind": "api-link",
-              "elements": [
+              "kind": "Constructor",
+              "canonicalReference": "(:constructor,0)",
+              "docComment": "/**\n * Constructs a new instance of the {@link ApplicationAccessor} class.\n *\n * @remarks\n *\n * Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component context, for example {@link BaseApplicationCustomizer.context}.\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "BaseApplicationCustomizer.context"
+                  "kind": "Content",
+                  "text": "constructor("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "serviceScope"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ServiceScope"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
                 }
               ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-application-base",
-                "exportName": "BaseApplicationCustomizer",
-                "memberName": "context"
-              }
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "serviceScope",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ]
             },
             {
-              "kind": "text",
-              "text": "."
+              "kind": "Property",
+              "canonicalReference": "(navigatedEvent:instance)",
+              "docComment": "/**\n * An event that is fired when the application's top-level page context navigates to a new page.\n *\n * @remarks\n *\n * This event fires after the top-level {@link @microsoft/sp-page-context#PageContext} has navigated to a new page.\n *\n * @eventproperty\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "navigatedEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPEventArgs"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "navigatedEvent",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isStatic": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(ApplicationCustomizerContext:class)",
+          "docComment": "/**\n * The component context for {@link BaseApplicationCustomizer}.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ApplicationCustomizerContext` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class "
+            },
+            {
+              "kind": "Reference",
+              "text": "ApplicationCustomizerContext"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ExtensionContext"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ApplicationCustomizerContext",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(application:instance)",
+              "docComment": "/**\n * Provides access to the client-side application that is currently running.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "application"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ApplicationAccessor"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "application",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(dispose:instance,0)",
+              "docComment": "/**\n * @override\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "dispose"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "dispose"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(placeholderProvider:instance)",
+              "docComment": "/**\n * Exposes a collection of content placeholders for use by third parties.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "placeholderProvider"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderProvider"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "placeholderProvider",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(BaseApplicationCustomizer:class)",
+          "docComment": "/**\n * This is the base class that third parties should extend when implementing a client-side extension that runs when an application is first starting.\n *\n * @remarks\n *\n * In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\".\n *\n * Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default abstract class "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseApplicationCustomizer"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TProperties"
+            },
+            {
+              "kind": "Content",
+              "text": "> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "BaseExtension"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "TProperties"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "BaseApplicationCustomizer",
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "(context:instance)",
+              "docComment": "/**\n * {@inheritDoc @microsoft/sp-extension-base#BaseExtension.context}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "context"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ApplicationCustomizerContext"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(dispose:instance,0)",
+              "docComment": "/**\n * {@inheritDoc @microsoft/sp-component-base#BaseComponent.dispose}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "dispose"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "dispose"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(onPlaceholdersChanged:instance,0)",
+              "docComment": "/**\n * This event method is called when the placeholders of the host application change, come into existence, or disappear.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "protected "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "onPlaceholdersChanged"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "placeholderProvider"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderProvider"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "placeholderProvider",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "name": "onPlaceholdersChanged"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IPlaceholderCreateContentOptions:interface)",
+          "docComment": "/**\n * Options for the {@link PlaceholderProvider.tryCreateContent} method.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IPlaceholderCreateContentOptions"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IPlaceholderCreateContentOptions",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "onDispose",
+              "docComment": "/**\n * An optional callback that will be invoked when the PlaceholderContent object is disposed.\n *\n * @remarks\n *\n * To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "onDispose"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "placeholderContent"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderContent"
+                },
+                {
+                  "kind": "Content",
+                  "text": ") => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "onDispose",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 7
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(PlaceholderContent:class)",
+          "docComment": "/**\n * Represents custom content that is rendered inside a placeholder on a SharePoint page.\n *\n * @remarks\n *\n * This object is returned by {@link PlaceholderProvider.tryCreateContent}. It provides access to a Document Object Model (DOM) element where the owner can render its custom content.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlaceholderContent` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class "
+            },
+            {
+              "kind": "Reference",
+              "text": "PlaceholderContent"
+            },
+            {
+              "kind": "Content",
+              "text": " implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDisposable"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "PlaceholderContent",
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "(dispose:instance,0)",
+              "docComment": "/**\n * Disposes the PlaceholderContent object and removes its attached DOM element from the page.\n *\n * @remarks\n *\n * This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the application when the containing placeholder is disposed. Calling dispose() invokes the {@link IPlaceholderCreateContentOptions.onDispose} callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "dispose"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "dispose"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(domElement:instance)",
+              "docComment": "/**\n * The Document Object Model (DOM) element where the owner should render its custom content.\n *\n * @remarks\n *\n * If the caller needs to be notified when the DOM element is disposed, use the {@link IPlaceholderCreateContentOptions.onDispose} callback.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "domElement"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "HTMLDivElement"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "domElement",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(isDisposed:instance)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "isDisposed"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "isDisposed",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(isVisible:instance)",
+              "docComment": "/**\n * Return true if this PlacholderContent object is visible. If you create a placeholder and the host page isn't displaying it, this will return false.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "isVisible"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "isVisible",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(name:instance)",
+              "docComment": "/**\n * Identifies the placeholder that this content was added to.\n *\n * @remarks\n *\n * Example: PlaceholderName.Top\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "name"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 5
             }
           ]
         },
-        "navigatedEvent": {
-          "kind": "property",
-          "signature": "readonly navigatedEvent: SPEvent<SPEventArgs>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "SPEvent<SPEventArgs>",
-          "deprecatedMessage": [],
-          "summary": [
+        {
+          "kind": "Enum",
+          "canonicalReference": "(PlaceholderName:enum)",
+          "docComment": "/**\n * The identifier for a content placeholder, which is a region on the page where third-party extensibility components can render custom content.\n *\n * @remarks\n *\n * For more information about placeholders, see {@link PlaceholderProvider}.\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "An event that is fired when the application's top-level page context navigates to a new page."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This event fires after the top-level "
+              "kind": "Content",
+              "text": "declare enum "
             },
             {
-              "kind": "api-link",
-              "elements": [
-                {
-                  "kind": "text",
-                  "text": "PageContext"
-                }
-              ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-page-context",
-                "exportName": "PageContext",
-                "memberName": ""
-              }
-            },
-            {
-              "kind": "text",
-              "text": " has navigated to a new page."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": true
-        }
-      }
-    },
-    "ApplicationCustomizerContext": {
-      "kind": "class",
-      "extends": "ExtensionContext",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "The component context for "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "BaseApplicationCustomizer"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "BaseApplicationCustomizer",
-            "memberName": ""
-          }
-        },
-        {
-          "kind": "text",
-          "text": "."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the ApplicationCustomizerContext class."
-        },
-        {
-          "kind": "paragraph"
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "application": {
-          "kind": "property",
-          "signature": "readonly application: ApplicationAccessor;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ApplicationAccessor",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Provides access to the client-side application that is currently running."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "dispose": {
-          "kind": "method",
-          "signature": "dispose(): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": true
-        },
-        "placeholderProvider": {
-          "kind": "property",
-          "signature": "readonly placeholderProvider: PlaceholderProvider;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "PlaceholderProvider",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Exposes a collection of content placeholders for use by third parties."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "BaseApplicationCustomizer": {
-      "kind": "class",
-      "extends": "BaseExtension",
-      "implements": "",
-      "typeParameters": [
-        "TProperties"
-      ],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "This is the base class that third parties should extend when implementing a client-side extension that runs when an application is first starting."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "In the component manifest, the \"extensionType\" should be set to \"ApplicationCustomizer\"."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "context": {
-          "kind": "property",
-          "signature": "protected readonly context: ApplicationCustomizerContext;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ApplicationCustomizerContext",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Use the context object to access common services and state associated with the component."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside the constructor), but child classes should redeclare it as readonly."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "dispose": {
-          "kind": "method",
-          "signature": "dispose(): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Disposes the component."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends for a web part or extension. To perform custom cleanup when your component is disposed, override the "
-            },
-            {
-              "kind": "api-link",
-              "elements": [
-                {
-                  "kind": "text",
-                  "text": "BaseComponent.onDispose"
-                }
-              ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-component-base",
-                "exportName": "BaseComponent",
-                "memberName": "onDispose"
-              }
-            },
-            {
-              "kind": "text",
-              "text": " method."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "onPlaceholdersChanged": {
-          "kind": "method",
-          "signature": "protected onPlaceholdersChanged(placeholderProvider: PlaceholderProvider): void;",
-          "accessModifier": "protected",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "placeholderProvider": {
-              "name": "placeholderProvider",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "PlaceholderProvider"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This event method is called when the placeholders of the host application change, come into existence, or disappear."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IPlaceholderCreateContentOptions": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Options for the "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "PlaceholderProvider.tryCreateContent"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "PlaceholderProvider",
-            "memberName": "tryCreateContent"
-          }
-        },
-        {
-          "kind": "text",
-          "text": " method."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "onDispose": {
-          "kind": "property",
-          "signature": "onDispose?: (placeholderContent: PlaceholderContent) => void;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "(placeholderContent: PlaceholderContent) => void",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "An optional callback that will be invoked when the PlaceholderContent object is disposed."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler might call ReactDOM.unmountComponentAtNode() to unmount it."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "PlaceholderContent": {
-      "kind": "class",
-      "extends": "",
-      "implements": "IDisposable",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Represents custom content that is rendered inside a placeholder on a SharePoint page."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the PlaceholderContent class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "This object is returned by "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "PlaceholderProvider.tryCreateContent"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "PlaceholderProvider",
-            "memberName": "tryCreateContent"
-          }
-        },
-        {
-          "kind": "text",
-          "text": ". It provides access to a Document Object Model (DOM) element where the owner can render its custom content."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "dispose": {
-          "kind": "method",
-          "signature": "dispose(): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Disposes the PlaceholderContent object and removes its attached DOM element from the page."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the application when the containing placeholder is disposed. Calling dispose() invokes the "
-            },
-            {
-              "kind": "api-link",
-              "elements": [
-                {
-                  "kind": "text",
-                  "text": "IPlaceholderCreateContentOptions.onDispose"
-                }
-              ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-application-base",
-                "exportName": "IPlaceholderCreateContentOptions",
-                "memberName": "onDispose"
-              }
-            },
-            {
-              "kind": "text",
-              "text": " callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "domElement": {
-          "kind": "property",
-          "signature": "readonly domElement: HTMLDivElement;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "HTMLDivElement",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "The Document Object Model (DOM) element where the owner should render its custom content."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "If the caller needs to be notified when the DOM element is disposed, use the "
-            },
-            {
-              "kind": "api-link",
-              "elements": [
-                {
-                  "kind": "text",
-                  "text": "IPlaceholderCreateContentOptions.onDispose"
-                }
-              ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-application-base",
-                "exportName": "IPlaceholderCreateContentOptions",
-                "memberName": "onDispose"
-              }
-            },
-            {
-              "kind": "text",
-              "text": " callback."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "isDisposed": {
-          "kind": "property",
-          "signature": "readonly isDisposed: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "isVisible": {
-          "kind": "property",
-          "signature": "readonly isVisible: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Return true if this PlacholderContent object is visible. If you create a placeholder and the host page isn't displaying it, this will return false."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "name": {
-          "kind": "property",
-          "signature": "readonly name: PlaceholderName;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "PlaceholderName",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Identifies the placeholder that this content was added to."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "Example: PlaceholderName.Top"
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "PlaceholderName": {
-      "kind": "enum",
-      "values": {
-        "Bottom": {
-          "kind": "enum value",
-          "value": "2",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "A region at the bottom of the page."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false
-        },
-        "Top": {
-          "kind": "enum value",
-          "value": "1",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "A region at the top of the page."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false
-        }
-      },
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "The identifier for a content placeholder, which is a region on the page where third-party extensibility components can render custom content."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "For more information about placeholders, see "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "PlaceholderProvider"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "PlaceholderProvider",
-            "memberName": ""
-          }
-        },
-        {
-          "kind": "text",
-          "text": "."
-        }
-      ],
-      "isBeta": false
-    },
-    "PlaceholderProvider": {
-      "kind": "class",
-      "extends": "",
-      "implements": "IDisposable",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party components to render custom content into designated regions on the page."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the PlaceholderProvider class."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "Placeholders are designated regions on the page, identified by one of the predefined "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
+              "kind": "Reference",
               "text": "PlaceholderName"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "PlaceholderName",
-            "memberName": ""
-          }
-        },
-        {
-          "kind": "text",
-          "text": " constants. Different applications and pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with the page, for example via in-place navigation. Third-party components should not assume that a given placeholder will always be available."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "Use "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "PlaceholderProvider.tryCreateContent"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "PlaceholderProvider",
-            "memberName": "tryCreateContent"
-          }
-        },
-        {
-          "kind": "text",
-          "text": " to test whether a placeholder is available and add content to it. Use the "
-        },
-        {
-          "kind": "api-link",
-          "elements": [
-            {
-              "kind": "text",
-              "text": "PlaceholderProvider.changedEvent"
-            }
-          ],
-          "target": {
-            "scopeName": "@microsoft",
-            "packageName": "sp-application-base",
-            "exportName": "PlaceholderProvider",
-            "memberName": "changedEvent"
-          }
-        },
-        {
-          "kind": "text",
-          "text": " event to discover when new placeholders appear."
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "changedEvent": {
-          "kind": "property",
-          "signature": "readonly changedEvent: SPEvent<SPEventArgs>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "SPEvent<SPEventArgs>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "This event is raised when the list of currently available placeholders is changed."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "The application can change its list of available placeholders at any time. This means that the existing placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when they appear."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": true
-        },
-        "dispose": {
-          "kind": "method",
-          "signature": "dispose(): void;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "isDisposed": {
-          "kind": "property",
-          "signature": "readonly isDisposed: boolean;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "boolean",
-          "deprecatedMessage": [],
-          "summary": [],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "placeholderNames": {
-          "kind": "property",
-          "signature": "readonly placeholderNames: ReadonlyArray<PlaceholderName>;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "ReadonlyArray<PlaceholderName>",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the names of the currently available placeholders."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "tryCreateContent": {
-          "kind": "method",
-          "signature": "tryCreateContent(name: PlaceholderName, options?: IPlaceholderCreateContentOptions): PlaceholderContent | undefined;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "PlaceholderContent | undefined",
-            "description": [
-              {
-                "kind": "text",
-                "text": "A new PlaceholderContent object, or undefined if the requested placeholder does not exist."
-              }
-            ]
-          },
-          "parameters": {
-            "name": {
-              "name": "name",
-              "description": [
-                {
-                  "kind": "text",
-                  "text": "The requested placeholder"
-                }
-              ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "PlaceholderName"
             },
-            "options": {
-              "name": "options",
-              "description": [
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "PlaceholderName",
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "Bottom",
+              "docComment": "/**\n * A region at the bottom of the page.\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "Additional options, for example to detect when the placeholder is disposed."
+                  "kind": "Reference",
+                  "text": "Bottom"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
                 }
               ],
-              "isOptional": true,
-              "isSpread": false,
-              "type": "IPlaceholderCreateContentOptions"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
+              "releaseTag": "Public",
+              "name": "Bottom",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
             {
-              "kind": "text",
-              "text": "Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created, which allows the caller to render custom content inside the placeholder."
+              "kind": "EnumMember",
+              "canonicalReference": "Top",
+              "docComment": "/**\n * A region at the top of the page.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "Top"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "Top",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ]
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "(PlaceholderProvider:class)",
+          "docComment": "/**\n * Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party components to render custom content into designated regions on the page.\n *\n * @remarks\n *\n * Placeholders are designated regions on the page, identified by one of the predefined {@link PlaceholderName} constants. Different applications and pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with the page, for example via in-place navigation. Third-party components should not assume that a given placeholder will always be available.\n *\n * Use {@link PlaceholderProvider.tryCreateContent} to test whether a placeholder is available and add content to it. Use the {@link PlaceholderProvider.changedEvent} event to discover when new placeholders appear.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `PlaceholderProvider` class.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default class "
+            },
+            {
+              "kind": "Reference",
+              "text": "PlaceholderProvider"
+            },
+            {
+              "kind": "Content",
+              "text": " implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDisposable"
+            },
+            {
+              "kind": "Content",
+              "text": " "
             }
           ],
-          "remarks": [
+          "releaseTag": "Public",
+          "name": "PlaceholderProvider",
+          "members": [
             {
-              "kind": "text",
-              "text": "The host application makes no guarantees about the availability of a given placeholder. In situations where an expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering anything, or by choosing an alternative placeholder."
+              "kind": "Property",
+              "canonicalReference": "(changedEvent:instance)",
+              "docComment": "/**\n * This event is raised when the list of currently available placeholders is changed.\n *\n * @remarks\n *\n * The application can change its list of available placeholders at any time. This means that the existing placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when they appear.\n *\n * @eventproperty\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "changedEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SPEventArgs"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "changedEvent",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(dispose:instance,0)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "dispose"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "dispose"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(isDisposed:instance)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "isDisposed"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "isDisposed",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(placeholderNames:instance)",
+              "docComment": "/**\n * Returns the names of the currently available placeholders.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "placeholderNames"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "placeholderNames",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "(tryCreateContent:instance,0)",
+              "docComment": "/**\n * Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created, which allows the caller to render custom content inside the placeholder.\n *\n * @remarks\n *\n * The host application makes no guarantees about the availability of a given placeholder. In situations where an expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering anything, or by choosing an alternative placeholder.\n *\n * @param name - The requested placeholder\n *\n * @param options - Additional options, for example to detect when the placeholder is disposed.\n *\n * @returns A new PlaceholderContent object, or undefined if the requested placeholder does not exist.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "tryCreateContent"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "name"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "options"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPlaceholderCreateContentOptions"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PlaceholderContent"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 12
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "name",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 8,
+                    "endIndex": 9
+                  }
+                }
+              ],
+              "name": "tryCreateContent"
             }
           ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "implementsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 5
+            }
+          ]
         }
-      }
+      ]
     }
-  }
+  ]
 }

@@ -37,13 +37,14 @@ items:
       content: 'dataVersion: Version;'
       return:
         type:
-          - Version
+          - sp-core-library.Version
   - uid: sp-webpart-base.ISerializedWebPartData.dynamicDataPaths
     summary: Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part.
     remarks: |-
       The key is the path within the web part properties, and the value is the dynamic data internal id.
 
       Example:
+
       ```
       {
         'pageContextUser':
@@ -60,7 +61,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'dynamicDataPaths?:'
+      content: |-
+        dynamicDataPaths?: {
+                [path: string]: string;
+            };
       return:
         type:
           - |-
@@ -75,6 +79,7 @@ items:
       The key is the path within the web part properties, and the value is the dynamic data static value.
 
       Example:
+
       ```
       {
         'aStringProperty': 'thisIsAString',
@@ -89,7 +94,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'dynamicDataValues?:'
+      content: |-
+        dynamicDataValues?: {
+                [path: string]: any;
+            };
       return:
         type:
           - |-
@@ -128,4 +136,4 @@ items:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
         type:
-          - ISerializedServerProcessedData
+          - sp-webpart-base.ISerializedServerProcessedData

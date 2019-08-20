@@ -4,7 +4,6 @@ items:
     summary: >-
       The ThemeProvider class provides the capability to get different themes from the Framework. Themes can be provided
       in different contexts, e.g. Canvas sections may provide a variant of the global theme in some contexts.
-    isPreview: true
     name: ThemeProvider
     fullName: ThemeProvider
     langs:
@@ -12,14 +11,14 @@ items:
     type: class
     package: sp-component-base
     children:
-      - sp-component-base.ThemeProvider.constructor
+      - sp-component-base.ThemeProvider.(constructor)
       - sp-component-base.ThemeProvider.serviceKey
       - sp-component-base.ThemeProvider.themeChangedEvent
       - sp-component-base.ThemeProvider.tryGetTheme
-  - uid: sp-component-base.ThemeProvider.constructor
-    summary: 'Constructs a new instance of the [ThemeProvider](xref:sp-component-base.ThemeProvider) class'
-    name: 'constructor(serviceScope, theme)'
-    fullName: constructor
+  - uid: sp-component-base.ThemeProvider.(constructor)
+    summary: Construct a new instance of the ThemeProvider class.
+    name: '(constructor)(serviceScope, theme)'
+    fullName: '(constructor)(serviceScope, theme)'
     langs:
       - typeScript
     type: constructor
@@ -27,16 +26,15 @@ items:
       content: 'constructor(serviceScope: ServiceScope, theme?: ITheme);'
       parameters:
         - id: serviceScope
-          description: ''
+          description: The current service scope.
           type:
-            - ServiceScope
+            - sp-core-library.ServiceScope
         - id: theme
-          description: ''
+          description: Theme to provide.
           type:
-            - ITheme
+            - sp-component-base.ITheme
   - uid: sp-component-base.ThemeProvider.serviceKey
     summary: The service key for ThemeProvider.
-    isPreview: true
     name: serviceKey
     fullName: serviceKey
     langs:
@@ -49,7 +47,6 @@ items:
           - ServiceKey<ThemeProvider>
   - uid: sp-component-base.ThemeProvider.themeChangedEvent
     summary: Raised when the theme changes with the new theme as an argument.
-    isPreview: true
     name: themeChangedEvent
     fullName: themeChangedEvent
     langs:
@@ -62,9 +59,8 @@ items:
           - SPEvent<ThemeChangedEventArgs>
   - uid: sp-component-base.ThemeProvider.tryGetTheme
     summary: 'If set, get the current scoped theme.'
-    isPreview: true
     name: tryGetTheme()
-    fullName: tryGetTheme
+    fullName: tryGetTheme()
     langs:
       - typeScript
     type: method

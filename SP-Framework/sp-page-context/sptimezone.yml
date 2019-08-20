@@ -5,10 +5,6 @@ items:
       It provides timezone information from SharePoint. A conversion from UTC to local time can be calculated by using
       the following formula.
     remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the SPTimeZone class.
-
-
       ```
 
       isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the StandardDate
@@ -19,6 +15,9 @@ items:
 
 
       ```
+
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `SPTimeZone` class.
     isPreview: true
     name: SPTimeZone
     fullName: SPTimeZone
@@ -46,7 +45,7 @@ items:
       content: 'readonly daylightDate: ISPSystemTime;'
       return:
         type:
-          - ISPSystemTime
+          - sp-page-context.ISPSystemTime
   - uid: sp-page-context.SPTimeZone.daylightOffset
     summary: >-
       Gets the offset in the number of minutes that daylight time for the time zone differs from Coordinated Universal
@@ -113,7 +112,7 @@ items:
       content: 'readonly standardDate: ISPSystemTime;'
       return:
         type:
-          - ISPSystemTime
+          - sp-page-context.ISPSystemTime
   - uid: sp-page-context.SPTimeZone.standardOffset
     summary: >-
       Gets the offset in the number of minutes that standard time for the time zone differs from coordinated universal

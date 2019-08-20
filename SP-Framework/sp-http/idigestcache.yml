@@ -27,7 +27,7 @@ items:
       automatically issue a REST request to fetch the digest when necessary; however, in advanced scenarios
       addDigestToCache() can be used to avoid the overhead of the REST call.
     name: 'addDigestToCache(webUrl, digestValue, expirationTimestamp)'
-    fullName: addDigestToCache
+    fullName: 'addDigestToCache(webUrl, digestValue, expirationTimestamp)'
     langs:
       - typeScript
     type: method
@@ -58,7 +58,7 @@ items:
   - uid: sp-http.IDigestCache.clearAllDigests
     summary: Clears all values from the cache.
     name: clearAllDigests()
-    fullName: clearAllDigests
+    fullName: clearAllDigests()
     langs:
       - typeScript
     type: method
@@ -73,7 +73,7 @@ items:
       Clears the cached digest for the specified SPWeb URL. This operation is useful e.g. if an error indicates that a
       digest was invalidated prior to its expiration time.
     name: clearDigest(webUrl)
-    fullName: clearDigest
+    fullName: clearDigest(webUrl)
     langs:
       - typeScript
     type: method
@@ -94,7 +94,7 @@ items:
       fulfilled immediately. Otherwise, the promise will be pending and resolve after an HTTP request obtains the
       digest, which will be added to the cache.
     name: fetchDigest(webUrl)
-    fullName: fetchDigest
+    fullName: fetchDigest(webUrl)
     langs:
       - typeScript
     type: method

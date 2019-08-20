@@ -18,16 +18,17 @@ items:
   - uid: decorators.override
     summary: >-
       This decorator is applied to a class's member function or property. It indicates that the definition overrides
-      another defintion (of the same name) from the base class. The base class definition must be marked as @virtual.
-      This decorator is currently used for documentation purposes only. In the future, it may be enforced at runtime.
+      another defintion (of the same name) from the base class. The base class definition must be marked as @<!--
+      -->virtual. This decorator is currently used for documentation purposes only. In the future, it may be enforced at
+      runtime.
     name: 'override(target, propertyKey, descriptor)'
-    fullName: override
+    fullName: 'override(target, propertyKey, descriptor)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function override(target: Object, propertyKey: string | symbol, descriptor:
+        export declare function override(target: Object, propertyKey: string | symbol, descriptor:
         TypedPropertyDescriptor<any>): void;
       return:
         type:
@@ -52,12 +53,12 @@ items:
       inherit from this class. This decorator is currently used for documentation purposes only. In the future, it may
       be enforced at runtime.
     name: sealed(target)
-    fullName: sealed
+    fullName: sealed(target)
     langs:
       - typeScript
     type: function
     syntax:
-      content: 'export function sealed(target: Function): void;'
+      content: 'export declare function sealed(target: Function): void;'
       return:
         type:
           - void
@@ -70,18 +71,18 @@ items:
   - uid: decorators.virtual
     summary: >-
       This decorator is applied to a class's member function or property. It indicates that the definition may
-      optionally be overridden in a child class. Conversely, if the @virtual decorator is NOT applied to a definition,
-      then child classes may NOT override it. This decorator is currently used for documentation purposes only. In the
-      future, it may be enforced at runtime.
+      optionally be overridden in a child class. Conversely, if the @<!-- -->virtual decorator is NOT applied to a
+      definition, then child classes may NOT override it. This decorator is currently used for documentation purposes
+      only. In the future, it may be enforced at runtime.
     name: 'virtual(target, propertyKey, descriptor)'
-    fullName: virtual
+    fullName: 'virtual(target, propertyKey, descriptor)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function virtual(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<any>):
-        void;
+        export declare function virtual(target: Object, propertyKey: string | symbol, descriptor:
+        TypedPropertyDescriptor<any>): void;
       return:
         type:
           - void
