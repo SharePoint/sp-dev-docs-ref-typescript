@@ -10,12 +10,12 @@ items:
       - typeScript
     type: class
     extends:
-      - BaseComponent
+      - sp-component-base.BaseComponent
     implements:
-      - IPropertyPaneConsumer
+      - 'IPropertyPaneConsumer '
     package: sp-webpart-base
     children:
-      - sp-webpart-base.BaseWebPart.constructor
+      - sp-webpart-base.BaseWebPart.(constructor)
       - sp-webpart-base.BaseWebPart.accessibleTitle
       - sp-webpart-base.BaseWebPart.context
       - sp-webpart-base.BaseWebPart.dataVersion
@@ -37,14 +37,14 @@ items:
       - sp-webpart-base.BaseWebPart.properties
       - sp-webpart-base.BaseWebPart.propertiesMetadata
       - sp-webpart-base.BaseWebPart.title
-  - uid: sp-webpart-base.BaseWebPart.constructor
+  - uid: sp-webpart-base.BaseWebPart.(constructor)
     summary: Constructor for the `BaseWebPart` class.
     remarks: >-
       It is highly recommended that the web part use the OnInit API to perform any web part specific initialization.
       Most of the web part features like this.context and this.properties are not available to be used before the the
       onInit part of the web part loading lifecycle.
-    name: constructor()
-    fullName: constructor
+    name: (constructor)()
+    fullName: (constructor)()
     langs:
       - typeScript
     type: constructor
@@ -80,7 +80,7 @@ items:
       content: 'protected readonly context: BaseWebPartContext;'
       return:
         type:
-          - BaseWebPartContext
+          - sp-webpart-base.BaseWebPartContext
   - uid: sp-webpart-base.BaseWebPart.dataVersion
     summary: >-
       The value of this property is stored in the serialized data of the web part to allow developers to manage
@@ -94,7 +94,7 @@ items:
       content: 'protected readonly dataVersion: Version;'
       return:
         type:
-          - Version
+          - sp-core-library.Version
   - uid: sp-webpart-base.BaseWebPart.description
     summary: Description of the WebPart
     name: description
@@ -141,7 +141,7 @@ items:
       content: 'protected readonly displayMode: DisplayMode;'
       return:
         type:
-          - DisplayMode
+          - sp-core-library.DisplayMode
   - uid: sp-webpart-base.BaseWebPart.getPropertyPaneConfiguration
     summary: >-
       This API is used to ger the configuration to build the property pane for the web part. If the web part wants to
@@ -154,7 +154,7 @@ items:
 
       See IPropertyPane and other PropertyPane integration wiki documentation for more details.
     name: getPropertyPaneConfiguration()
-    fullName: getPropertyPaneConfiguration
+    fullName: getPropertyPaneConfiguration()
     langs:
       - typeScript
     type: method
@@ -162,7 +162,7 @@ items:
       content: 'protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
       return:
         type:
-          - IPropertyPaneConfiguration
+          - sp-webpart-base.IPropertyPaneConfiguration
         description: ''
   - uid: sp-webpart-base.BaseWebPart.onAfterDeserialize
     summary: 'This API is called after the web part is deserialized to an object, right before the property bag is populated.'
@@ -177,7 +177,7 @@ items:
       deserialized object to be incosistent with the current schema of the property bag. The developer can use
       `onAfterDeserialize` to check the dataVersion and fix the property bag.
     name: 'onAfterDeserialize(deserializedObject, dataVersion)'
-    fullName: onAfterDeserialize
+    fullName: 'onAfterDeserialize(deserializedObject, dataVersion)'
     langs:
       - typeScript
     type: method
@@ -201,13 +201,13 @@ items:
             serialized by an older web part. Web parts can define their data version by overriding the dataVersion
             property.
           type:
-            - Version
+            - sp-core-library.Version
   - uid: sp-webpart-base.BaseWebPart.onAfterPropertyPaneChangesApplied
     summary: >-
       This API is invoked after the changes made on the PropertyPane are applied when the PropertyPane is used in
       Non-Reactive mode. This API is not invoked when the PropertyPane is used in Reactive mode.
     name: onAfterPropertyPaneChangesApplied()
-    fullName: onAfterPropertyPaneChangesApplied
+    fullName: onAfterPropertyPaneChangesApplied()
     langs:
       - typeScript
     type: method
@@ -227,7 +227,7 @@ items:
       web part updates the property bag with invalid property values, those will get persisted. So that should be
       avoided. The web part property bag should always contain valid property values.
     name: onBeforeSerialize()
-    fullName: onBeforeSerialize
+    fullName: onBeforeSerialize()
     langs:
       - typeScript
     type: method
@@ -244,7 +244,7 @@ items:
       display mode. If a web part developer does not want a full re-render to happen on display mode change, they can
       override this API and perform specific updates to the web part DOM to switch its display mode.
     name: onDisplayModeChanged(oldDisplayMode)
-    fullName: onDisplayModeChanged
+    fullName: onDisplayModeChanged(oldDisplayMode)
     langs:
       - typeScript
     type: method
@@ -258,7 +258,7 @@ items:
         - id: oldDisplayMode
           description: The old display mode.
           type:
-            - DisplayMode
+            - sp-core-library.DisplayMode
   - uid: sp-webpart-base.BaseWebPart.onDispose
     summary: This API should be used to refresh the contents of the PropertyPane.
     remarks: >-
@@ -267,7 +267,7 @@ items:
       like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
       transitioned out.
     name: onDispose()
-    fullName: onDispose
+    fullName: onDispose()
     langs:
       - typeScript
     type: method
@@ -284,7 +284,7 @@ items:
       the initial rendering of the web part. The loading indicator is displayed during the lifetime of this method. This
       API is called only once during the lifecycle of a web part.
     name: onInit()
-    fullName: onInit
+    fullName: onInit()
     langs:
       - typeScript
     type: method
@@ -307,7 +307,7 @@ items:
 
       - When the user switches web parts then the current web part gets this event.
     name: onPropertyPaneConfigurationComplete()
-    fullName: onPropertyPaneConfigurationComplete
+    fullName: onPropertyPaneConfigurationComplete()
     langs:
       - typeScript
     type: method
@@ -326,7 +326,7 @@ items:
 
       - When the user switches web parts then the new web part gets this event.
     name: onPropertyPaneConfigurationStart()
-    fullName: onPropertyPaneConfigurationStart
+    fullName: onPropertyPaneConfigurationStart()
     langs:
       - typeScript
     type: method
@@ -341,7 +341,7 @@ items:
       This API is invoked after updating the new value of the property in the property bag when the PropertyPane is
       being used in Reactive mode.
     name: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
-    fullName: onPropertyPaneFieldChanged
+    fullName: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
     langs:
       - typeScript
     type: method
@@ -370,7 +370,7 @@ items:
   - uid: sp-webpart-base.BaseWebPart.onPropertyPaneRendered
     summary: This API is invoked when the PropertyPane is rendered.
     name: onPropertyPaneRendered()
-    fullName: onPropertyPaneRendered
+    fullName: onPropertyPaneRendered()
     langs:
       - typeScript
     type: method

@@ -1,0 +1,45 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-component-base.IRawStyle
+    summary: 'IStyleObject extends a raw style objects, but allows selectors to be defined under the selectors node.'
+    name: IRawStyle
+    fullName: IRawStyle
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - 'IRawStyleBase '
+    package: sp-component-base
+    children:
+      - sp-component-base.IRawStyle.displayName
+      - sp-component-base.IRawStyle.selectors
+  - uid: sp-component-base.IRawStyle.displayName
+    summary: Display name for the style.
+    name: displayName
+    fullName: displayName
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'displayName?: string;'
+      return:
+        type:
+          - string
+  - uid: sp-component-base.IRawStyle.selectors
+    summary: Custom selectors for the style.
+    name: selectors
+    fullName: selectors
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: |-
+        selectors?: {
+                [key: string]: IStyle;
+            };
+      return:
+        type:
+          - |-
+            {
+                    [key: string]: IStyle;
+                }

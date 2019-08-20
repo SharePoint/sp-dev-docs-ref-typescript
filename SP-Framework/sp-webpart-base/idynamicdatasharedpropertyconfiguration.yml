@@ -2,23 +2,15 @@
 items:
   - uid: sp-webpart-base.IDynamicDataSharedPropertyConfiguration
     summary: Configuration related to a shared property.
+    deprecated:
+      content: >-
+        This is obsolete now. This interface has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: IDynamicDataSharedPropertyConfiguration
     fullName: IDynamicDataSharedPropertyConfiguration
     langs:
       - typeScript
     type: interface
+    extends:
+      - 'SPPropertyPane.IDynamicDataSharedPropertyConfiguration '
     package: sp-webpart-base
-    children:
-      - sp-webpart-base.IDynamicDataSharedPropertyConfiguration.filters
-  - uid: sp-webpart-base.IDynamicDataSharedPropertyConfiguration.filters
-    summary: Filters for the shared property.
-    name: filters
-    fullName: filters
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'filters?: IDynamicDataSharedPropertyFilters;'
-      return:
-        type:
-          - IDynamicDataSharedPropertyFilters

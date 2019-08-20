@@ -1,1110 +1,1497 @@
 {
-  "kind": "package",
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.1.8",
+    "schemaVersion": 1000
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-dynamic-data",
+  "docComment": "/**\n * SharePoint Framework support for dynamic data bindings.\n *\n * @remarks\n *\n * This package provides the necessary infrastructure classes and public APIs necessary to run dynamic data, and implement components that use it.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-dynamic-data",
-  "summary": [
+  "members": [
     {
-      "kind": "text",
-      "text": "SharePoint Framework support for dynamic data bindings."
-    }
-  ],
-  "remarks": [
-    {
-      "kind": "text",
-      "text": "This package provides the necessary infrastructure classes and public APIs necessary to run dynamic data, and implement components that use it."
-    }
-  ],
-  "exports": {
-    "DynamicDataReference": {
-      "kind": "class",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
+      "kind": "EntryPoint",
+      "canonicalReference": "",
+      "name": "",
+      "members": [
         {
-          "kind": "text",
-          "text": "Class that contains the Dynamic Data reference. This includes the source, property, and property path (if applicable) of Dynamic Data"
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "The reference string is of the form "
-        },
-        {
-          "kind": "code",
-          "text": "<sourceId>:<property>",
-          "highlighter": "plain"
-        },
-        {
-          "kind": "text",
-          "text": " or "
-        },
-        {
-          "kind": "code",
-          "text": "<sourceId>:<property>:<propertyPath>",
-          "highlighter": "plain"
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "Examples of references are: "
-        },
-        {
-          "kind": "code",
-          "text": "WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName",
-          "highlighter": "plain"
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "__constructor": {
-          "kind": "constructor",
-          "signature": "constructor(reference: string);",
-          "parameters": {
-            "reference": {
-              "name": "reference",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
+          "kind": "Class",
+          "canonicalReference": "(DynamicDataReference:class)",
+          "docComment": "/**\n * Class that contains the Dynamic Data reference. This includes the source, property, and property path (if applicable) of Dynamic Data\n *\n * @remarks\n *\n * The reference string is of the form `<sourceId>:<property>` or `<sourceId>:<property>:<propertyPath>`\n *\n * Examples of references are: `WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName`\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "Constructs a new instance of the "
+              "kind": "Content",
+              "text": "export default class "
             },
             {
-              "kind": "api-link",
-              "elements": [
+              "kind": "Reference",
+              "text": "DynamicDataReference"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "DynamicDataReference",
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "(:constructor,0)",
+              "docComment": "/**\n * Constructs a new instance of the `DynamicDataReference` class\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "DynamicDataReference"
+                  "kind": "Content",
+                  "text": "constructor("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "reference"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
                 }
               ],
-              "target": {
-                "scopeName": "@microsoft",
-                "packageName": "sp-dynamic-data",
-                "exportName": "DynamicDataReference",
-                "memberName": ""
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "reference",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(property:instance)",
+              "docComment": "/**\n * Returns the referred property of the Dynamic Data.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "property"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "property",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(propertyPath:instance)",
+              "docComment": "/**\n * Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "propertyPath"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "propertyPath",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(reference:instance)",
+              "docComment": "/**\n * Returns the full reference of the Dynamic Data object as a string.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "reference"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "reference",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "(sourceId:instance)",
+              "docComment": "/**\n * Returns the referred id of the Dynamic Data Source.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "sourceId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "sourceId",
+              "propertyTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isStatic": false
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataAnnotatedPropertyValue:interface)",
+          "docComment": "/**\n * Describes the value and the structure of a property value. It contains sample value of the property and the metadata describing the structure of that value.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataAnnotatedPropertyValue"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataAnnotatedPropertyValue",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "metadata",
+              "docComment": "/**\n * Metadata describing the sample value of the property.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "metadata"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataPropertyValueMetadataCollection"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "metadata",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
               }
             },
             {
-              "kind": "text",
-              "text": " class"
-            }
-          ],
-          "remarks": []
-        },
-        "property": {
-          "kind": "property",
-          "signature": "readonly property: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the referred property of the Dynamic Data."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "propertyPath": {
-          "kind": "property",
-          "signature": "readonly propertyPath: string | undefined;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string | undefined",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "reference": {
-          "kind": "property",
-          "signature": "readonly reference: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the full reference of the Dynamic Data object as a string."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "sourceId": {
-          "kind": "property",
-          "signature": "readonly sourceId: string;",
-          "isOptional": false,
-          "isReadOnly": true,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns the referred id of the Dynamic Data Source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IDynamicDataAnnotatedPropertyValue": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Describes the value and the structure of a property value. It contains sample value of the property and the metadata describing the structure of that value."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "metadata": {
-          "kind": "property",
-          "signature": "metadata?: IDynamicDataPropertyValueMetadataCollection;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IDynamicDataPropertyValueMetadataCollection",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Metadata describing the sample value of the property."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "sampleValue": {
-          "kind": "property",
-          "signature": "sampleValue: any;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "any",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Sample value of a property"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IDynamicDataCallables": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Interface for components to implement in order to be dynamic data sources. This can be implemented as an object with state, or a set of loose functions that returns the data."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "allowedEvents": {
-          "kind": "method",
-          "signature": "allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;",
-          "accessModifier": "",
-          "isOptional": true,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ReadonlyArray<IDynamicDataEventDefinition>",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns list of allowed events on the dynamic data source."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "When this function returns a non-empty result, then source must define 'sendEvent' api."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "If this api is not defined or returns an empty array, then no consumer will be able to talk to this source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "getAnnotatedPropertyValue": {
-          "kind": "method",
-          "signature": "getAnnotatedPropertyValue?(propertyId: string): IDynamicDataAnnotatedPropertyValue | undefined;",
-          "accessModifier": "",
-          "isOptional": true,
-          "isStatic": false,
-          "returnValue": {
-            "type": "IDynamicDataAnnotatedPropertyValue | undefined",
-            "description": []
-          },
-          "parameters": {
-            "propertyId": {
-              "name": "propertyId",
-              "description": [
+              "kind": "PropertySignature",
+              "canonicalReference": "sampleValue",
+              "docComment": "/**\n * Sample value of a property\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "One of the property ids exposed from the dynamic data source."
+                  "kind": "Reference",
+                  "text": "sampleValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined."
+              "releaseTag": "Public",
+              "name": "sampleValue",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
+          "extendsTokenRanges": []
         },
-        "getPropertyDefinitions": {
-          "kind": "method",
-          "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ReadonlyArray<IDynamicDataPropertyDefinition>",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataCallables:interface)",
+          "docComment": "/**\n * Interface for components to implement in order to be dynamic data sources. This can be implemented as an object with state, or a set of loose functions that returns the data.\n *\n * @public\n */\n",
+          "excerptTokens": [
             {
-              "kind": "text",
-              "text": "Returns all the property definitions that the DataSource will provide."
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataCallables"
+            },
+            {
+              "kind": "Content",
+              "text": " "
             }
           ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "getPropertyValue": {
-          "kind": "method",
-          "signature": "getPropertyValue(propertyId: string): any;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "any",
-            "description": []
-          },
-          "parameters": {
-            "propertyId": {
-              "name": "propertyId",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
+          "releaseTag": "Public",
+          "name": "IDynamicDataCallables",
+          "members": [
             {
-              "kind": "text",
-              "text": "Given a property id, returns the value of the property."
-            }
-          ],
-          "remarks": [
-            {
-              "kind": "text",
-              "text": "It is assumed that when this function returns an array, it is homogeneous."
-            }
-          ],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "sendEvent": {
-          "kind": "method",
-          "signature": "sendEvent?(eventName: string, data: any): void;",
-          "accessModifier": "",
-          "isOptional": true,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "eventName": {
-              "name": "eventName",
-              "description": [
+              "kind": "MethodSignature",
+              "canonicalReference": "(allowedEvents:0)",
+              "docComment": "/**\n * Returns list of allowed events on the dynamic data source.\n *\n * When this function returns a non-empty result, then source must define 'sendEvent' api.\n *\n * If this api is not defined or returns an empty array, then no consumer will be able to talk to this source.\n *\n * @beta\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "A case-sensitive string representing the name of the event."
+                  "kind": "Reference",
+                  "text": "allowedEvents"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataEventDefinition"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 6
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "allowedEvents"
             },
-            "data": {
-              "name": "data",
-              "description": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(getAnnotatedPropertyValue:0)",
+              "docComment": "/**\n * Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined.\n *\n * @param propertyId - One of the property ids exposed from the dynamic data source.\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "Data to be sent to the dynamic data source."
+                  "kind": "Reference",
+                  "text": "getAnnotatedPropertyValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "propertyId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataAnnotatedPropertyValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "any"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "If defined, enables the consumer to send data to the associated dynamic data source. Then source can act accordingly."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IDynamicDataEventDefinition": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Definition of an event which a dynamic data source accepts."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "It includes the name of the event and description to be seen and used by end users."
-        }
-      ],
-      "remarks": [],
-      "isBeta": true,
-      "isSealed": false,
-      "members": {
-        "description": {
-          "kind": "property",
-          "signature": "description?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized description of the event."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "name": {
-          "kind": "property",
-          "signature": "name: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Event name"
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IDynamicDataPropertyDefinition": {
-      "kind": "interface",
-      "extends": "IDynamicDataPropertyMetadata",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly, localized title and description to be seen and used by end users."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "id": {
-          "kind": "property",
-          "signature": "id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the property. This can only contains letters, numbers, dashes and underscores. Example: \"myFiles\" or \"time_in_24-hour_clock\""
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IDynamicDataPropertyMetadata": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Metadata of a property"
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "description": {
-          "kind": "property",
-          "signature": "description?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized description of the property. Example: \"Contains a list of ids with the files of the current user\""
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "title": {
-          "kind": "property",
-          "signature": "title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized title of the property. Example: \"My files\" / \"Mis archivos\" (depending of current language)"
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IDynamicDataPropertyValueMetadata": {
-      "kind": "interface",
-      "extends": "IDynamicDataPropertyMetadata",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Metadata describing the sample value of the property."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "metadata": {
-          "kind": "property",
-          "signature": "metadata?: IDynamicDataPropertyValueMetadataCollection;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IDynamicDataPropertyValueMetadataCollection",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Metadata describing the sample value of the property."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
-    },
-    "IDynamicDataPropertyValueMetadataCollection": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "A collection of key value pairs, where 'key' is one of the keys from the property value object and 'value' is the metadata describing the 'key' and its value."
-        }
-      ],
-      "remarks": [
-        {
-          "kind": "text",
-          "text": "Important note:"
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "1. Key in the metadata should match the key in the sample value object."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "2. For arrays, metadataCollection would be same as describing the element of the array, only once. See below example for more details."
-        },
-        {
-          "kind": "paragraph"
-        },
-        {
-          "kind": "text",
-          "text": "For example:"
-        },
-        {
-          "kind": "code-box",
-          "text": "case 1: With simple values\n Sample Property Id value - {\n   firstName: 'Bob',\n   lastName: 'Smith',\n   age: 30\n }\n\n MetadataCollection for the above object would be -\n metadataCollection: {\n   'firstName': { title: 'First Name' },\n   'lastName': { title: 'Last Name' },\n   'age': { title: 'Age' }\n }\n\nCase 2: With complex values\n Sample Property Id value - {\n   person: {\n     firstName: 'Bob',\n     lastName: 'Smith',\n     age: 30\n   },\n   visitedLocations: [\n     {\n       city: 'Redmond',\n       state: 'WA'\n     },\n     {\n       city: 'New York City',\n       state: 'NY'\n     }\n   ]\n }\n\n MetadataCollection for the above object would be -\n metadataCollection: {\n   'person': {\n     title: 'Person',\n     metadataCollection: {\n       'firstName': { title: 'First Name' },\n       'lastName': { title: 'Last Name' },\n       'age': { title: 'Age' }\n     }\n   },\n   'vistedLocations': {\n     title: 'Visted Locations',\n     metadataCollection: {\n       'city': { title: 'City' },\n       'state': { title: 'State' }\n     }\n   }\n }\n",
-          "highlighter": "plain"
-        }
-      ],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "__index": {
-          "kind": "method",
-          "signature": "[key: string]: IDynamicDataPropertyValueMetadata;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "IDynamicDataPropertyValueMetadata",
-            "description": []
-          },
-          "parameters": {
-            "key": {
-              "name": "key",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Key-Value pair where 'key' is one of the keys from the property value object and 'value' is the metadata describing the 'key' and its value."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IDynamicDataSource": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
-        {
-          "kind": "text",
-          "text": "Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API to get the data."
-        }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "allowedEvents": {
-          "kind": "method",
-          "signature": "allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;",
-          "accessModifier": "",
-          "isOptional": true,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ReadonlyArray<IDynamicDataEventDefinition>",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns list of allowed events on the dynamic data source. When this api returns a non-empty result, then source must define 'sendData' api."
-            },
-            {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "If this api is not defined or returns an empty map, then no consumer will be able to talk to this source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "getAnnotatedPropertyValue": {
-          "kind": "method",
-          "signature": "getAnnotatedPropertyValue(propertyId: string): IDynamicDataAnnotatedPropertyValue;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "IDynamicDataAnnotatedPropertyValue",
-            "description": []
-          },
-          "parameters": {
-            "propertyId": {
-              "name": "propertyId",
-              "description": [
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
                 {
-                  "kind": "text",
-                  "text": "One of the property ids exposed from the dynamic data source."
+                  "parameterName": "propertyId",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
+              "name": "getAnnotatedPropertyValue"
+            },
             {
-              "kind": "text",
-              "text": "Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls back to whatever 'getPropertyValue' as the sample value and metadata would be undefined."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "getPropertyDefinitions": {
-          "kind": "method",
-          "signature": "getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "ReadonlyArray<IDynamicDataPropertyDefinition>",
-            "description": []
-          },
-          "parameters": {},
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the component."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "getPropertyValue": {
-          "kind": "method",
-          "signature": "getPropertyValue(propertyId: string): any;",
-          "accessModifier": "",
-          "isOptional": false,
-          "isStatic": false,
-          "returnValue": {
-            "type": "any",
-            "description": []
-          },
-          "parameters": {
-            "propertyId": {
-              "name": "propertyId",
-              "description": [],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Given a property id, returns the value of the property. This needs to be overriden by the implementation of the component."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        },
-        "id": {
-          "kind": "property",
-          "signature": "id: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the Dynamic Data Source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "metadata": {
-          "kind": "property",
-          "signature": "metadata: IDynamicDataSourceMetadata;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "IDynamicDataSourceMetadata",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Metadata of the Dynamic Data Source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "sendEvent": {
-          "kind": "method",
-          "signature": "sendEvent?(eventName: string, data: any): void;",
-          "accessModifier": "",
-          "isOptional": true,
-          "isStatic": false,
-          "returnValue": {
-            "type": "void",
-            "description": []
-          },
-          "parameters": {
-            "eventName": {
-              "name": "eventName",
-              "description": [
+              "kind": "MethodSignature",
+              "canonicalReference": "(getPropertyDefinitions:0)",
+              "docComment": "/**\n * Returns all the property definitions that the DataSource will provide.\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "A case-sensitive string representing the name of the event."
+                  "kind": "Reference",
+                  "text": "getPropertyDefinitions"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataPropertyDefinition"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "string"
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "getPropertyDefinitions"
             },
-            "data": {
-              "name": "data",
-              "description": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(getPropertyValue:0)",
+              "docComment": "/**\n * Given a property id, returns the value of the property.\n *\n * @remarks\n *\n * It is assumed that when this function returns an array, it is homogeneous.\n */\n",
+              "excerptTokens": [
                 {
-                  "kind": "text",
-                  "text": "Data to be sent to the dynamic data source."
+                  "kind": "Reference",
+                  "text": "getPropertyValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "propertyId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
                 }
               ],
-              "isOptional": false,
-              "isSpread": false,
-              "type": "any"
-            }
-          },
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "If defined, enables the consumer to send data to the associated dynamic data source. Then source can act accordingly."
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "propertyId",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "getPropertyValue"
             },
             {
-              "kind": "paragraph"
-            },
-            {
-              "kind": "text",
-              "text": "Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source."
+              "kind": "MethodSignature",
+              "canonicalReference": "(sendEvent:0)",
+              "docComment": "/**\n * If defined, enables the consumer to send data to the associated dynamic data source. Then source can act accordingly.\n *\n * Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.\n *\n * @param eventName - A case-sensitive string representing the name of the event.\n *\n * @param data - Data to be sent to the dynamic data source.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "sendEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "eventName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "data"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "eventName",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                },
+                {
+                  "parameterName": "data",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 8,
+                    "endIndex": 9
+                  }
+                }
+              ],
+              "name": "sendEvent"
             }
           ],
-          "remarks": [],
-          "isBeta": true,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false
-        }
-      }
-    },
-    "IDynamicDataSourceMetadata": {
-      "kind": "interface",
-      "extends": "",
-      "implements": "",
-      "typeParameters": [],
-      "deprecatedMessage": [],
-      "summary": [
+          "extendsTokenRanges": []
+        },
         {
-          "kind": "text",
-          "text": "Metadata of the Dynamic Data Source. It allows consumers to easily distinguish Dynamic Data Sources."
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataEventDefinition:interface)",
+          "docComment": "/**\n * Definition of an event which a dynamic data source accepts.\n *\n * It includes the name of the event and description to be seen and used by end users.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataEventDefinition"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "IDynamicDataEventDefinition",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "description",
+              "docComment": "/**\n * User-friendly, localized description of the event.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "description"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "name",
+              "docComment": "/**\n * Event name\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "name"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataPropertyDefinition:interface)",
+          "docComment": "/**\n * Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly, localized title and description to be seen and used by end users.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataPropertyDefinition"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataPropertyMetadata"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataPropertyDefinition",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "id",
+              "docComment": "/**\n * Id of the property. This can only contains letters, numbers, dashes and underscores. Example: \"myFiles\" or \"time_in_24-hour_clock\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 5
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataPropertyMetadata:interface)",
+          "docComment": "/**\n * Metadata of a property\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataPropertyMetadata"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataPropertyMetadata",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "description",
+              "docComment": "/**\n * User-friendly, localized description of the property. Example: \"Contains a list of ids with the files of the current user\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "description"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "title",
+              "docComment": "/**\n * User-friendly, localized title of the property. Example: \"My files\" / \"Mis archivos\" (depending of current language)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataPropertyValueMetadata:interface)",
+          "docComment": "/**\n * Metadata describing the sample value of the property.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataPropertyValueMetadata"
+            },
+            {
+              "kind": "Content",
+              "text": " extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataPropertyMetadata"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataPropertyValueMetadata",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "metadata",
+              "docComment": "/**\n * Metadata describing the sample value of the property.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "metadata"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataPropertyValueMetadataCollection"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "metadata",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 5
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataPropertyValueMetadataCollection:interface)",
+          "docComment": "/**\n * A collection of key value pairs, where 'key' is one of the keys from the property value object and 'value' is the metadata describing the 'key' and its value.\n *\n * @remarks\n *\n * Important note:\n *\n * 1. Key in the metadata should match the key in the sample value object.\n *\n * 2. For arrays, metadataCollection would be same as describing the element of the array, only once. See below example for more details.\n *\n * For example:\n * ```\n * case 1: With simple values\n *  Sample Property Id value - {\n *    firstName: 'Bob',\n *    lastName: 'Smith',\n *    age: 30\n *  }\n *\n *  MetadataCollection for the above object would be -\n *  metadataCollection: {\n *    'firstName': { title: 'First Name' },\n *    'lastName': { title: 'Last Name' },\n *    'age': { title: 'Age' }\n *  }\n *\n * Case 2: With complex values\n *  Sample Property Id value - {\n *    person: {\n *      firstName: 'Bob',\n *      lastName: 'Smith',\n *      age: 30\n *    },\n *    visitedLocations: [\n *      {\n *        city: 'Redmond',\n *        state: 'WA'\n *      },\n *      {\n *        city: 'New York City',\n *        state: 'NY'\n *      }\n *    ]\n *  }\n *\n *  MetadataCollection for the above object would be -\n *  metadataCollection: {\n *    'person': {\n *      title: 'Person',\n *      metadataCollection: {\n *        'firstName': { title: 'First Name' },\n *        'lastName': { title: 'Last Name' },\n *        'age': { title: 'Age' }\n *      }\n *    },\n *    'vistedLocations': {\n *      title: 'Visted Locations',\n *      metadataCollection: {\n *        'city': { title: 'City' },\n *        'state': { title: 'State' }\n *      }\n *    }\n *  }\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataPropertyValueMetadataCollection"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataPropertyValueMetadataCollection",
+          "members": [
+            {
+              "kind": "IndexSignature",
+              "canonicalReference": "(:index,0)",
+              "docComment": "/**\n * Key-Value pair where 'key' is one of the keys from the property value object and 'value' is the metadata describing the 'key' and its value.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "["
+                },
+                {
+                  "kind": "Reference",
+                  "text": "key"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataPropertyValueMetadata"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ]
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataSource:interface)",
+          "docComment": "/**\n * Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API to get the data.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataSource"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataSource",
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(allowedEvents:0)",
+              "docComment": "/**\n * Returns list of allowed events on the dynamic data source. When this api returns a non-empty result, then source must define 'sendData' api.\n *\n * If this api is not defined or returns an empty map, then no consumer will be able to talk to this source.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "allowedEvents"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataEventDefinition"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 6
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "allowedEvents"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(getAnnotatedPropertyValue:0)",
+              "docComment": "/**\n * Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.\n *\n * @param propertyId - One of the property ids exposed from the dynamic data source.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "getAnnotatedPropertyValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "propertyId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataAnnotatedPropertyValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "propertyId",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "getAnnotatedPropertyValue"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(getPropertyDefinitions:0)",
+              "docComment": "/**\n * Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the component.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "getPropertyDefinitions"
+                },
+                {
+                  "kind": "Content",
+                  "text": "(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReadonlyArray"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataPropertyDefinition"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [],
+              "name": "getPropertyDefinitions"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(getPropertyValue:0)",
+              "docComment": "/**\n * Given a property id, returns the value of the property. This needs to be overriden by the implementation of the component.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "getPropertyValue"
+                },
+                {
+                  "kind": "Content",
+                  "text": "("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "propertyId"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "propertyId",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "name": "getPropertyValue"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "(sendEvent:0)",
+              "docComment": "/**\n * If defined, enables the consumer to send data to the associated dynamic data source. Then source can act accordingly.\n *\n * Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.\n *\n * @param eventName - A case-sensitive string representing the name of the event.\n *\n * @param data - Data to be sent to the dynamic data source.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "sendEvent"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?("
+                },
+                {
+                  "kind": "Reference",
+                  "text": "eventName"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "data"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 0,
+              "parameters": [
+                {
+                  "parameterName": "eventName",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                },
+                {
+                  "parameterName": "data",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 8,
+                    "endIndex": 9
+                  }
+                }
+              ],
+              "name": "sendEvent"
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "id",
+              "docComment": "/**\n * Id of the Dynamic Data Source.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "id"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "metadata",
+              "docComment": "/**\n * Metadata of the Dynamic Data Source.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "metadata"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDynamicDataSourceMetadata"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "metadata",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "(IDynamicDataSourceMetadata:interface)",
+          "docComment": "/**\n * Metadata of the Dynamic Data Source. It allows consumers to easily distinguish Dynamic Data Sources.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface "
+            },
+            {
+              "kind": "Reference",
+              "text": "IDynamicDataSourceMetadata"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IDynamicDataSourceMetadata",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "alias",
+              "docComment": "/**\n * Alias of the component that the Dynamic Data Source refers to. It can be undefined when the sources doesn't come from a component, for example framework level data sources.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "alias"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "alias",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "componentId",
+              "docComment": "/**\n * Id of the component that the Dynamic Data Source refers to. It can be undefined when the sources doesn't come from a component, for example framework level data sources.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "componentId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "componentId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "description",
+              "docComment": "/**\n * User-friendly, localized description of the Dynamic Data Source.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "description"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "instanceId",
+              "docComment": "/**\n * Id of the instance of the component that the Dynamic Data Source refers to. This allows to distinguish, for example, between two web parts with the same type. It can be undefined when the sources doesn't come from a component, for example framework level data sources.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "instanceId"
+                },
+                {
+                  "kind": "Content",
+                  "text": "?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "instanceId",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "title",
+              "docComment": "/**\n * User-friendly, localized title of the Dynamic Data Source. This can be customized by the component it refers to. By default it's the alias of the component.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "title"
+                },
+                {
+                  "kind": "Content",
+                  "text": ": "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "title",
+              "propertyTypeTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         }
-      ],
-      "remarks": [],
-      "isBeta": false,
-      "isSealed": false,
-      "members": {
-        "alias": {
-          "kind": "property",
-          "signature": "alias?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Alias of the component that the Dynamic Data Source refers to. It can be undefined when the sources doesn't come from a component, for example framework level data sources."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "componentId": {
-          "kind": "property",
-          "signature": "componentId?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the component that the Dynamic Data Source refers to. It can be undefined when the sources doesn't come from a component, for example framework level data sources."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "description": {
-          "kind": "property",
-          "signature": "description?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized description of the Dynamic Data Source."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "instanceId": {
-          "kind": "property",
-          "signature": "instanceId?: string;",
-          "isOptional": true,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "Id of the instance of the component that the Dynamic Data Source refers to. This allows to distinguish, for example, between two web parts with the same type. It can be undefined when the sources doesn't come from a component, for example framework level data sources."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        },
-        "title": {
-          "kind": "property",
-          "signature": "title: string;",
-          "isOptional": false,
-          "isReadOnly": false,
-          "isStatic": false,
-          "type": "string",
-          "deprecatedMessage": [],
-          "summary": [
-            {
-              "kind": "text",
-              "text": "User-friendly, localized title of the Dynamic Data Source. This can be customized by the component it refers to. By default it's the alias of the component."
-            }
-          ],
-          "remarks": [],
-          "isBeta": false,
-          "isSealed": false,
-          "isVirtual": false,
-          "isOverride": false,
-          "isEventProperty": false
-        }
-      }
+      ]
     }
-  }
+  ]
 }

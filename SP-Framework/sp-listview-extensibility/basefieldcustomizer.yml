@@ -13,7 +13,7 @@ items:
       - typeScript
     type: class
     extends:
-      - BaseExtension
+      - 'BaseExtension<TProperties> '
     package: sp-listview-extensibility
     children:
       - sp-listview-extensibility.BaseFieldCustomizer.context
@@ -34,10 +34,10 @@ items:
       content: 'protected readonly context: FieldCustomizerContext;'
       return:
         type:
-          - FieldCustomizerContext
+          - sp-listview-extensibility.FieldCustomizerContext
   - uid: sp-listview-extensibility.BaseFieldCustomizer.onDisposeCell
     name: onDisposeCell(event)
-    fullName: onDisposeCell
+    fullName: onDisposeCell(event)
     langs:
       - typeScript
     type: method
@@ -51,10 +51,10 @@ items:
         - id: event
           description: ''
           type:
-            - IFieldCustomizerCellEventParameters
+            - sp-listview-extensibility.IFieldCustomizerCellEventParameters
   - uid: sp-listview-extensibility.BaseFieldCustomizer.onRenderCell
     name: onRenderCell(event)
-    fullName: onRenderCell
+    fullName: onRenderCell(event)
     langs:
       - typeScript
     type: method
@@ -68,4 +68,4 @@ items:
         - id: event
           description: ''
           type:
-            - IFieldCustomizerCellEventParameters
+            - sp-listview-extensibility.IFieldCustomizerCellEventParameters

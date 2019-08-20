@@ -71,6 +71,7 @@ items:
 
       Example:
 
+
       ```
 
       {
@@ -89,7 +90,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'dynamicDataPaths?:'
+      content: |-
+        dynamicDataPaths?: {
+                [path: string]: string;
+            };
       return:
         type:
           - |-
@@ -104,6 +108,7 @@ items:
       The key is the path within the web part properties, and the value is the dynamic data static value.
 
       Example:
+
       ```
       {
         'aStringProperty': 'thisIsAString',
@@ -118,7 +123,10 @@ items:
       - typeScript
     type: property
     syntax:
-      content: 'dynamicDataValues?:'
+      content: |-
+        dynamicDataValues?: {
+                [path: string]: any;
+            };
       return:
         type:
           - |-
@@ -188,7 +196,7 @@ items:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
         type:
-          - ISerializedServerProcessedData
+          - sp-webpart-base.ISerializedServerProcessedData
   - uid: sp-webpart-base.IWebPartData.title
     summary: Web part title
     remarks: |-

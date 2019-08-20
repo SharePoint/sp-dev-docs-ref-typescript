@@ -12,7 +12,7 @@ items:
       SPHttpClientResponse object for that particular request.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the SPHttpClientBatch class.
+      create subclasses that extend the `SPHttpClientBatch` class.
     isPreview: true
     name: SPHttpClientBatch
     fullName: SPHttpClientBatch
@@ -38,12 +38,12 @@ items:
       content: 'static readonly configurations: ISPHttpClientBatchConfigurations;'
       return:
         type:
-          - ISPHttpClientBatchConfigurations
+          - sp-http.ISPHttpClientBatchConfigurations
   - uid: sp-http.SPHttpClientBatch.execute
     summary: Executes the batched queries that were queued using SPHttpClientBatch.fetch().
     isPreview: true
     name: execute()
-    fullName: execute
+    fullName: execute()
     langs:
       - typeScript
     type: method
@@ -74,7 +74,7 @@ items:
       explicitly.
     isPreview: true
     name: 'fetch(url, configuration, options)'
-    fullName: fetch
+    fullName: 'fetch(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -100,16 +100,16 @@ items:
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
           type:
-            - SPHttpClientBatchConfiguration
+            - sp-http.SPHttpClientBatchConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - ISPHttpClientBatchOptions
+            - sp-http.ISPHttpClientBatchOptions
   - uid: sp-http.SPHttpClientBatch.get
     summary: 'Calls fetch(), but sets the method to ''GET''.'
     isPreview: true
     name: 'get(url, configuration, options)'
-    fullName: get
+    fullName: 'get(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -135,16 +135,16 @@ items:
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
           type:
-            - SPHttpClientBatchConfiguration
+            - sp-http.SPHttpClientBatchConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - ISPHttpClientBatchOptions
+            - sp-http.ISPHttpClientBatchOptions
   - uid: sp-http.SPHttpClientBatch.post
     summary: 'Calls fetch(), but sets the method to ''POST''.'
     isPreview: true
     name: 'post(url, configuration, options)'
-    fullName: post
+    fullName: 'post(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -170,8 +170,8 @@ items:
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
           type:
-            - SPHttpClientBatchConfiguration
+            - sp-http.SPHttpClientBatchConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - ISPHttpClientBatchOptions
+            - sp-http.ISPHttpClientBatchOptions

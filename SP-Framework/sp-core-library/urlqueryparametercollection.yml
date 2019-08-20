@@ -23,17 +23,13 @@ items:
     type: class
     package: sp-core-library
     children:
-      - sp-core-library.UrlQueryParameterCollection.constructor
+      - sp-core-library.UrlQueryParameterCollection.(constructor)
       - sp-core-library.UrlQueryParameterCollection.getValue
       - sp-core-library.UrlQueryParameterCollection.getValues
-  - uid: sp-core-library.UrlQueryParameterCollection.constructor
-    summary: >-
-      Constructs a new instance of the [UrlQueryParameterCollection](xref:sp-core-library.UrlQueryParameterCollection)
-      class
-    deprecated:
-      content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
-    name: constructor(url)
-    fullName: constructor
+  - uid: sp-core-library.UrlQueryParameterCollection.(constructor)
+    summary: Constructs a new instance of the `UrlQueryParameterCollection` class
+    name: (constructor)(url)
+    fullName: (constructor)(url)
     langs:
       - typeScript
     type: constructor
@@ -48,6 +44,7 @@ items:
     summary: Returns the value of the first matching query parameter or undefined if the key doesn't exist.
     remarks: |-
       Examples:
+
       ```
       this._queryParameterList = [
       {key: TEST, value: done},
@@ -58,10 +55,8 @@ items:
         getValue('lost')  ---> undefined
 
       ```
-    deprecated:
-      content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
     name: getValue(param)
-    fullName: getValue
+    fullName: getValue(param)
     langs:
       - typeScript
     type: method
@@ -80,6 +75,7 @@ items:
     summary: Returns the values of all of the matching query parameters or undefined if the key doesn't exist.
     remarks: |-
       Examples:
+
       ```
       this._queryParameterList = [
       {key: TEST, value: done},
@@ -90,10 +86,8 @@ items:
         getValues('lost')  ---> undefined
 
       ```
-    deprecated:
-      content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
     name: getValues(param)
-    fullName: getValues
+    fullName: getValues(param)
     langs:
       - typeScript
     type: method

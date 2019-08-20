@@ -2,14 +2,13 @@
 items:
   - uid: sp-component-base.IReadonlyTheme
     summary: Immutable ITheme.
-    isPreview: true
     name: IReadonlyTheme
     fullName: IReadonlyTheme
     langs:
       - typeScript
     type: interface
     extends:
-      - Readonly
+      - 'Readonly<ITheme> '
     package: sp-component-base
     children:
       - sp-component-base.IReadonlyTheme.fonts
@@ -17,7 +16,6 @@ items:
       - sp-component-base.IReadonlyTheme.semanticColors
   - uid: sp-component-base.IReadonlyTheme.fonts
     summary: Font styles for different sizes.
-    isPreview: true
     name: fonts
     fullName: fonts
     langs:
@@ -30,7 +28,6 @@ items:
           - Readonly<IReadonlyFontStyles>
   - uid: sp-component-base.IReadonlyTheme.palette
     summary: Color palette.
-    isPreview: true
     name: palette
     fullName: palette
     langs:
@@ -43,7 +40,6 @@ items:
           - Readonly<IPalette>
   - uid: sp-component-base.IReadonlyTheme.semanticColors
     summary: The collection of all semantic slots for colors used in themes.
-    isPreview: true
     name: semanticColors
     fullName: semanticColors
     langs:

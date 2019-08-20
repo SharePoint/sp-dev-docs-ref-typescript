@@ -3,10 +3,6 @@ items:
   - uid: sp-http.MSGraphClient
     summary: MSGraphClient is used to perform REST calls against Microsoft Graph.
     remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the MSGraphClient class.
-
-
       The Microsoft Graph JavaScript client library is a lightweight wrapper around the Microsoft Graph API. This class
       allows developers to start making REST calls to MSGraph without needing to initialize the the MSGraph client
       library. If a custom configuration is desired, the MSGraphClient api function needs to be provided with that
@@ -15,6 +11,10 @@ items:
 
       For more information:
       [https://github.com/microsoftgraph/msgraph-sdk-javascript](https://github.com/microsoftgraph/msgraph-sdk-javascript)
+
+
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `MSGraphClient` class.
     name: MSGraphClient
     fullName: MSGraphClient
     langs:
@@ -33,15 +33,15 @@ items:
       The authProvider and baseUrl option should not be used, as they have already been provided by the framework. See
       the official documentation here: https://github.com/microsoftgraph/msgraph-sdk-javascript
     name: 'api(path, config)'
-    fullName: api
+    fullName: 'api(path, config)'
     langs:
       - typeScript
     type: method
     syntax:
-      content: 'api(path: string, config?: Options): GraphRequest;'
+      content: 'api(path: string, config?: Options): IGraphRequest;'
       return:
         type:
-          - GraphRequest
+          - IGraphRequest
         description: ''
       parameters:
         - id: path

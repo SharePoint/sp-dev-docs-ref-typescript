@@ -13,20 +13,20 @@ items:
       - typeScript
     type: class
     extends:
-      - HttpClientConfiguration
+      - sp-http.HttpClientConfiguration
     implements:
-      - IAadHttpClientConfiguration
+      - sp-http.IAadHttpClientConfiguration
     package: sp-http
     children:
-      - sp-http.AadHttpClientConfiguration.constructor
+      - sp-http.AadHttpClientConfiguration.(constructor)
       - sp-http.AadHttpClientConfiguration.flags
       - sp-http.AadHttpClientConfiguration.overrideWith
-  - uid: sp-http.AadHttpClientConfiguration.constructor
+  - uid: sp-http.AadHttpClientConfiguration.(constructor)
     summary: >-
       Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
       any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    name: 'constructor(flags, overrideFlags)'
-    fullName: constructor
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
     langs:
       - typeScript
     type: constructor
@@ -36,11 +36,11 @@ items:
         - id: flags
           description: ''
           type:
-            - IAadHttpClientConfiguration
+            - sp-http.IAadHttpClientConfiguration
         - id: overrideFlags
           description: ''
           type:
-            - IAadHttpClientConfiguration
+            - sp-http.IAadHttpClientConfiguration
   - uid: sp-http.AadHttpClientConfiguration.flags
     name: flags
     fullName: flags
@@ -51,10 +51,10 @@ items:
       content: 'protected flags: IAadHttpClientConfiguration;'
       return:
         type:
-          - IAadHttpClientConfiguration
+          - sp-http.IAadHttpClientConfiguration
   - uid: sp-http.AadHttpClientConfiguration.overrideWith
     name: overrideWith(sourceFlags)
-    fullName: overrideWith
+    fullName: overrideWith(sourceFlags)
     langs:
       - typeScript
     type: method
@@ -64,10 +64,10 @@ items:
         overrideWith(sourceFlags: IAadHttpClientConfiguration): AadHttpClientConfiguration;
       return:
         type:
-          - AadHttpClientConfiguration
+          - sp-http.AadHttpClientConfiguration
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - IAadHttpClientConfiguration
+            - sp-http.IAadHttpClientConfiguration

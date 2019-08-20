@@ -1,0 +1,61 @@
+### YamlMime:UniversalReference
+items:
+  - uid: sp-http.IAadTokenProvider
+    summary: >-
+      This class allows a developer to obtain OAuth2 tokens from Azure AD.
+
+
+      OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway,
+      Exchange, Yammer, etc.
+    remarks: >-
+      AadTokenProvider is replacing the /\_api.SP.OAuth.Token/Acquire endpoint for authentication with ADAL.js. At some
+      point in the near future, when Azure AD v2.0 can support the same scenarios as the original version, we will
+      switch to MSAL.
+    name: IAadTokenProvider
+    fullName: IAadTokenProvider
+    langs:
+      - typeScript
+    type: interface
+    package: sp-http
+    children:
+      - sp-http.IAadTokenProvider.getToken
+      - sp-http.IAadTokenProvider.tokenAcquisitionEvent
+  - uid: sp-http.IAadTokenProvider.getToken
+    summary: |-
+      Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
+
+      The OAuth2 token SHOULD NOT be cached by the caller since it is already cached by the method itself.
+
+      An example of a resourceEndpoint would be https://sdfpilot.outlook.com
+    name: 'getToken(resourceEndpoint, useCachedToken)'
+    fullName: 'getToken(resourceEndpoint, useCachedToken)'
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'getToken(resourceEndpoint: string, useCachedToken?: boolean): Promise<string>;'
+      return:
+        type:
+          - Promise<string>
+        description: A promise that will be fullfiled with the token or that will reject with an error message
+      parameters:
+        - id: resourceEndpoint
+          description: the resource for which the token should be obtained
+          type:
+            - string
+        - id: useCachedToken
+          description: Allows the developer to specify if cached tokens should be returned.
+          type:
+            - boolean
+  - uid: sp-http.IAadTokenProvider.tokenAcquisitionEvent
+    summary: Notifies the developer when Token Acquistion requires user action.
+    name: tokenAcquisitionEvent
+    fullName: tokenAcquisitionEvent
+    langs:
+      - typeScript
+    type: event
+    syntax:
+      content: 'readonly tokenAcquisitionEvent: SPEvent<ITokenAcquisitionEventArgs>;'
+      return:
+        type:
+          - SPEvent<ITokenAcquisitionEventArgs>

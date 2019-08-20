@@ -3,21 +3,21 @@ items:
   - uid: sp-listview-extensibility.RowAccessor
     summary: 'Provides access to a ListView row, which is the visual presentation of a SharePoint list item.'
     remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the RowAccessor class.
-
-
       A SharePoint "list item" (SPListItem) is a data storage record in the content management system; it stores an
       array of values for the associated fields.
 
 
       A "row" is the visual presentation of a list item, when displayed by the ListView; it stores an array of cell
       values for the associated columns.
+
+
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `RowAccessor` class.
     name: RowAccessor
     fullName: RowAccessor
     langs:
       - typeScript
     type: class
     extends:
-      - ListItemAccessor
+      - sp-listview-extensibility.ListItemAccessor
     package: sp-listview-extensibility

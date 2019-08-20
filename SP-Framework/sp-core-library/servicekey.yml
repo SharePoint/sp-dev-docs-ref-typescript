@@ -3,7 +3,7 @@ items:
   - uid: sp-core-library.ServiceKey
     summary: >-
       The ServiceKey is a lookup key that is used when calling
-      [ServiceScope.consume](xref:sp-core-library.ServiceScope.consume) to fetch a dependency.
+      [ServiceScope.consume()](xref:sp-core-library.ServiceScope.consume) to fetch a dependency.
     remarks: >-
       Every service key also provides a default implementation of the dependency, which will be automatically created in
       the root scope if the dependency is not found. Providing a default implementation ensures that new dependencies
@@ -27,16 +27,16 @@ items:
       the standard constructor parameter.
     remarks: >-
       If you want to specify custom constructor parameters, use
-      [ServiceKey.createCustom](xref:sp-core-library.ServiceKey.createCustom) instead.
+      [ServiceKey.createCustom()](xref:sp-core-library.ServiceKey.createCustom) instead.
     name: 'create(name, serviceClass)'
-    fullName: create
+    fullName: 'create(name, serviceClass)'
     langs:
       - typeScript
     type: method
     syntax:
       content: |-
         static create<TKey>(name: string, serviceClass: {
-                new (serviceScope: ServiceScope);
+                new (serviceScope: ServiceScope): TKey;
             }): ServiceKey<TKey>;
       return:
         type:
@@ -52,12 +52,12 @@ items:
           type:
             - |-
               {
-                      new (serviceScope: ServiceScope);
+                      new (serviceScope: ServiceScope): TKey;
                   }
   - uid: sp-core-library.ServiceKey.createCustom
     summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
     name: 'createCustom(name, defaultCreator)'
-    fullName: createCustom
+    fullName: 'createCustom(name, defaultCreator)'
     langs:
       - typeScript
     type: method

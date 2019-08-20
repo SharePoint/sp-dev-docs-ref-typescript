@@ -21,7 +21,7 @@ items:
       - sp-webpart-base.IDynamicDataSharedPropertyFilters
       - sp-webpart-base.IDynamicDataSharedSourceConfiguration
       - sp-webpart-base.IDynamicDataSharedSourceFilters
-      - sp-webpart-base.IPlaceholderSpinnerProps
+      - sp-webpart-base.IMicrosoftTeams
       - sp-webpart-base.IPropertyPaneAccessor
       - sp-webpart-base.IPropertyPaneButtonProps
       - sp-webpart-base.IPropertyPaneCheckboxProps
@@ -34,6 +34,7 @@ items:
       - sp-webpart-base.IPropertyPaneDropdownCalloutProps
       - sp-webpart-base.IPropertyPaneDropdownOption
       - sp-webpart-base.IPropertyPaneDropdownProps
+      - sp-webpart-base.IPropertyPaneDynamicFieldFilters
       - sp-webpart-base.IPropertyPaneDynamicFieldProps
       - sp-webpart-base.IPropertyPaneDynamicFieldSetProps
       - sp-webpart-base.IPropertyPaneDynamicTextFieldProps
@@ -46,6 +47,7 @@ items:
       - sp-webpart-base.IPropertyPaneSliderProps
       - sp-webpart-base.IPropertyPaneTextFieldProps
       - sp-webpart-base.IPropertyPaneToggleProps
+      - sp-webpart-base.ISDKs
       - sp-webpart-base.ISerializedServerProcessedData
       - sp-webpart-base.ISerializedWebPartData
       - sp-webpart-base.IWebPartContext
@@ -73,14 +75,18 @@ items:
       - sp-webpart-base.WebPartFormFactor
   - uid: sp-webpart-base.PropertyPaneButton
     summary: Helper method to create a Button on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneButton(targetProperty, properties)'
-    fullName: PropertyPaneButton
+    fullName: 'PropertyPaneButton(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneButton(targetProperty: string, properties: IPropertyPaneButtonProps):
+        export declare function PropertyPaneButton(targetProperty: string, properties: IPropertyPaneButtonProps):
         IPropertyPaneField<IPropertyPaneButtonProps>;
       return:
         type:
@@ -94,17 +100,21 @@ items:
         - id: properties
           description: Strongly typed Button properties.
           type:
-            - IPropertyPaneButtonProps
+            - sp-webpart-base.IPropertyPaneButtonProps
   - uid: sp-webpart-base.PropertyPaneCheckbox
     summary: Helper method to create a Checkbox on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneCheckbox(targetProperty, properties)'
-    fullName: PropertyPaneCheckbox
+    fullName: 'PropertyPaneCheckbox(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneCheckbox(targetProperty: string, properties: IPropertyPaneCheckboxProps):
+        export declare function PropertyPaneCheckbox(targetProperty: string, properties: IPropertyPaneCheckboxProps):
         IPropertyPaneField<IPropertyPaneCheckboxProps>;
       return:
         type:
@@ -118,18 +128,22 @@ items:
         - id: properties
           description: Strongly typed Checkbox properties.
           type:
-            - IPropertyPaneCheckboxProps
+            - sp-webpart-base.IPropertyPaneCheckboxProps
   - uid: sp-webpart-base.PropertyPaneChoiceGroup
     summary: Helper method to create a Choice Group on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneChoiceGroup(targetProperty, properties)'
-    fullName: PropertyPaneChoiceGroup
+    fullName: 'PropertyPaneChoiceGroup(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneChoiceGroup(targetProperty: string, properties: IPropertyPaneChoiceGroupProps):
-        IPropertyPaneField<IPropertyPaneChoiceGroupProps>;
+        export declare function PropertyPaneChoiceGroup(targetProperty: string, properties:
+        IPropertyPaneChoiceGroupProps): IPropertyPaneField<IPropertyPaneChoiceGroupProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneChoiceGroupProps>
@@ -142,7 +156,7 @@ items:
         - id: properties
           description: Strongly typed Choice Group properties.
           type:
-            - IPropertyPaneChoiceGroupProps
+            - sp-webpart-base.IPropertyPaneChoiceGroupProps
   - uid: sp-webpart-base.PropertyPaneCustomField
     summary: Helper method to create a custom field on the PropertyPane.
     remarks: >-
@@ -150,15 +164,19 @@ items:
       PropertyPane supports a host of inbuilt field types. While this list meets the demands of most web parts, but
       there are exceptional cases when web parts have special needs and need a special control. The custom field helps
       fill that gap.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     isPreview: true
     name: PropertyPaneCustomField(properties)
-    fullName: PropertyPaneCustomField
+    fullName: PropertyPaneCustomField(properties)
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneCustomField(properties: IPropertyPaneCustomFieldProps):
+        export declare function PropertyPaneCustomField(properties: IPropertyPaneCustomFieldProps):
         IPropertyPaneField<IPropertyPaneCustomFieldProps>;
       return:
         type:
@@ -168,17 +186,21 @@ items:
         - id: properties
           description: Strongly typed Custom field properties.
           type:
-            - IPropertyPaneCustomFieldProps
+            - sp-webpart-base.IPropertyPaneCustomFieldProps
   - uid: sp-webpart-base.PropertyPaneDropdown
     summary: Helper method to create a Dropdown on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneDropdown(targetProperty, properties)'
-    fullName: PropertyPaneDropdown
+    fullName: 'PropertyPaneDropdown(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneDropdown(targetProperty: string, properties: IPropertyPaneDropdownProps):
+        export declare function PropertyPaneDropdown(targetProperty: string, properties: IPropertyPaneDropdownProps):
         IPropertyPaneField<IPropertyPaneDropdownProps>;
       return:
         type:
@@ -192,18 +214,22 @@ items:
         - id: properties
           description: Strongly typed Dropdown properties.
           type:
-            - IPropertyPaneDropdownProps
+            - sp-webpart-base.IPropertyPaneDropdownProps
   - uid: sp-webpart-base.PropertyPaneDynamicField
     summary: Helper method to create a Dynamic Data widget on the PropertyPane for a dynamic field.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneDynamicField(targetProperty, properties)'
-    fullName: PropertyPaneDynamicField
+    fullName: 'PropertyPaneDynamicField(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneDynamicField(targetProperty: string, properties: IPropertyPaneDynamicFieldProps):
-        IPropertyPaneField<IPropertyPaneDynamicFieldProps>;
+        export declare function PropertyPaneDynamicField(targetProperty: string, properties:
+        IPropertyPaneDynamicFieldProps): IPropertyPaneField<IPropertyPaneDynamicFieldProps>;
       return:
         type:
           - IPropertyPaneField<IPropertyPaneDynamicFieldProps>
@@ -216,7 +242,7 @@ items:
         - id: properties
           description: ''
           type:
-            - IPropertyPaneDynamicFieldProps
+            - sp-webpart-base.IPropertyPaneDynamicFieldProps
   - uid: sp-webpart-base.PropertyPaneDynamicFieldSet
     summary: >-
       Helper method to create a Dynamic Data widget on the Property Pane for a set of dynamic fields with a common data
@@ -224,14 +250,18 @@ items:
 
 
       These fields can possibly share the same property based on the associated filters.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: PropertyPaneDynamicFieldSet(properties)
-    fullName: PropertyPaneDynamicFieldSet
+    fullName: PropertyPaneDynamicFieldSet(properties)
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneDynamicFieldSet(properties: IPropertyPaneDynamicFieldSetProps):
+        export declare function PropertyPaneDynamicFieldSet(properties: IPropertyPaneDynamicFieldSetProps):
         IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>;
       return:
         type:
@@ -244,20 +274,22 @@ items:
             Each entry includes the target property and, optionally, the label to show. options - Options enabling
             customized values for callback, filters etc., for the given set of dynamic fields.
           type:
-            - IPropertyPaneDynamicFieldSetProps
+            - sp-webpart-base.IPropertyPaneDynamicFieldSetProps
   - uid: sp-webpart-base.PropertyPaneDynamicTextField
     summary: Helper method to create a Dynamic TextField on the PropertyPane.
     deprecated:
-      content: '- This has been replaced by PropertyPaneDynamicField'
+      content: >-
+        This has been replaced by PropertyPaneDynamicField and moved to `@microsoft/sp-property-pane`<!-- -->. Please
+        consume it from there.
     isPreview: true
     name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
-    fullName: PropertyPaneDynamicTextField
+    fullName: 'PropertyPaneDynamicTextField(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneDynamicTextField(targetProperty: string, properties:
+        export declare function PropertyPaneDynamicTextField(targetProperty: string, properties:
         IPropertyPaneDynamicTextFieldProps): IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>;
       return:
         type:
@@ -271,30 +303,38 @@ items:
         - id: properties
           description: Properties of the PropertyPaneDynamicTextField.
           type:
-            - IPropertyPaneDynamicTextFieldProps
+            - sp-webpart-base.IPropertyPaneDynamicTextFieldProps
   - uid: sp-webpart-base.PropertyPaneHorizontalRule
     summary: Helper method to create a Horizontal Rule on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: PropertyPaneHorizontalRule()
-    fullName: PropertyPaneHorizontalRule
+    fullName: PropertyPaneHorizontalRule()
     langs:
       - typeScript
     type: function
     syntax:
-      content: 'export function PropertyPaneHorizontalRule(): IPropertyPaneField<void>;'
+      content: 'export declare function PropertyPaneHorizontalRule(): IPropertyPaneField<void>;'
       return:
         type:
           - IPropertyPaneField<void>
         description: ''
   - uid: sp-webpart-base.PropertyPaneLabel
     summary: Helper method to create a Label on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneLabel(targetProperty, properties)'
-    fullName: PropertyPaneLabel
+    fullName: 'PropertyPaneLabel(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneLabel(targetProperty: string, properties: IPropertyPaneLabelProps):
+        export declare function PropertyPaneLabel(targetProperty: string, properties: IPropertyPaneLabelProps):
         IPropertyPaneField<IPropertyPaneLabelProps>;
       return:
         type:
@@ -308,17 +348,21 @@ items:
         - id: properties
           description: Strongly typed Label properties.
           type:
-            - IPropertyPaneLabelProps
+            - sp-webpart-base.IPropertyPaneLabelProps
   - uid: sp-webpart-base.PropertyPaneLink
     summary: Helper method to create a Link on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneLink(targetProperty, properties)'
-    fullName: PropertyPaneLink
+    fullName: 'PropertyPaneLink(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneLink(targetProperty: string, properties: IPropertyPaneLinkProps):
+        export declare function PropertyPaneLink(targetProperty: string, properties: IPropertyPaneLinkProps):
         IPropertyPaneField<IPropertyPaneLinkProps>;
       return:
         type:
@@ -332,17 +376,21 @@ items:
         - id: properties
           description: Strongly typed Link properties.
           type:
-            - IPropertyPaneLinkProps
+            - sp-webpart-base.IPropertyPaneLinkProps
   - uid: sp-webpart-base.PropertyPaneSlider
     summary: Helper method to create a Slider on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneSlider(targetProperty, properties)'
-    fullName: PropertyPaneSlider
+    fullName: 'PropertyPaneSlider(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneSlider(targetProperty: string, properties: IPropertyPaneSliderProps):
+        export declare function PropertyPaneSlider(targetProperty: string, properties: IPropertyPaneSliderProps):
         IPropertyPaneField<IPropertyPaneSliderProps>;
       return:
         type:
@@ -356,17 +404,21 @@ items:
         - id: properties
           description: Strongly typed Slider properties.
           type:
-            - IPropertyPaneSliderProps
+            - sp-webpart-base.IPropertyPaneSliderProps
   - uid: sp-webpart-base.PropertyPaneTextField
     summary: Helper method to create a TextField on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneTextField(targetProperty, properties)'
-    fullName: PropertyPaneTextField
+    fullName: 'PropertyPaneTextField(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneTextField(targetProperty: string, properties: IPropertyPaneTextFieldProps):
+        export declare function PropertyPaneTextField(targetProperty: string, properties: IPropertyPaneTextFieldProps):
         IPropertyPaneField<IPropertyPaneTextFieldProps>;
       return:
         type:
@@ -380,17 +432,21 @@ items:
         - id: properties
           description: Strongly typed TextField properties.
           type:
-            - IPropertyPaneTextFieldProps
+            - sp-webpart-base.IPropertyPaneTextFieldProps
   - uid: sp-webpart-base.PropertyPaneToggle
     summary: Helper method to create a Toggle on the PropertyPane.
+    deprecated:
+      content: >-
+        This is obsolete now. This function has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it
+        from there.
     name: 'PropertyPaneToggle(targetProperty, properties)'
-    fullName: PropertyPaneToggle
+    fullName: 'PropertyPaneToggle(targetProperty, properties)'
     langs:
       - typeScript
     type: function
     syntax:
       content: >-
-        export function PropertyPaneToggle(targetProperty: string, properties: IPropertyPaneToggleProps):
+        export declare function PropertyPaneToggle(targetProperty: string, properties: IPropertyPaneToggleProps):
         IPropertyPaneField<IPropertyPaneToggleProps>;
       return:
         type:
@@ -404,7 +460,7 @@ items:
         - id: properties
           description: Strongly typed Toggle properties.
           type:
-            - IPropertyPaneToggleProps
+            - sp-webpart-base.IPropertyPaneToggleProps
 references:
   - uid: sp-webpart-base.BaseClientSideWebPart
     name: BaseClientSideWebPart
@@ -424,8 +480,8 @@ references:
     name: IDynamicDataSharedSourceConfiguration
   - uid: sp-webpart-base.IDynamicDataSharedSourceFilters
     name: IDynamicDataSharedSourceFilters
-  - uid: sp-webpart-base.IPlaceholderSpinnerProps
-    name: IPlaceholderSpinnerProps
+  - uid: sp-webpart-base.IMicrosoftTeams
+    name: IMicrosoftTeams
   - uid: sp-webpart-base.IPropertyPaneAccessor
     name: IPropertyPaneAccessor
   - uid: sp-webpart-base.IPropertyPaneButtonProps
@@ -450,6 +506,8 @@ references:
     name: IPropertyPaneDropdownOption
   - uid: sp-webpart-base.IPropertyPaneDropdownProps
     name: IPropertyPaneDropdownProps
+  - uid: sp-webpart-base.IPropertyPaneDynamicFieldFilters
+    name: IPropertyPaneDynamicFieldFilters
   - uid: sp-webpart-base.IPropertyPaneDynamicFieldProps
     name: IPropertyPaneDynamicFieldProps
   - uid: sp-webpart-base.IPropertyPaneDynamicFieldSetProps
@@ -474,6 +532,8 @@ references:
     name: IPropertyPaneTextFieldProps
   - uid: sp-webpart-base.IPropertyPaneToggleProps
     name: IPropertyPaneToggleProps
+  - uid: sp-webpart-base.ISDKs
+    name: ISDKs
   - uid: sp-webpart-base.ISerializedServerProcessedData
     name: ISerializedServerProcessedData
   - uid: sp-webpart-base.ISerializedWebPartData

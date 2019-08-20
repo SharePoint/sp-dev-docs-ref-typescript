@@ -4,14 +4,14 @@ items:
     summary: 'The component context for [BaseApplicationCustomizer](xref:sp-application-base.BaseApplicationCustomizer)<!-- -->.'
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the ApplicationCustomizerContext class.
+      create subclasses that extend the `ApplicationCustomizerContext` class.
     name: ApplicationCustomizerContext
     fullName: ApplicationCustomizerContext
     langs:
       - typeScript
     type: class
     extends:
-      - ExtensionContext
+      - sp-extension-base.ExtensionContext
     package: sp-application-base
     children:
       - sp-application-base.ApplicationCustomizerContext.application
@@ -28,10 +28,10 @@ items:
       content: 'readonly application: ApplicationAccessor;'
       return:
         type:
-          - ApplicationAccessor
+          - sp-application-base.ApplicationAccessor
   - uid: sp-application-base.ApplicationCustomizerContext.dispose
     name: dispose()
-    fullName: dispose
+    fullName: dispose()
     langs:
       - typeScript
     type: method
@@ -54,4 +54,4 @@ items:
       content: 'readonly placeholderProvider: PlaceholderProvider;'
       return:
         type:
-          - PlaceholderProvider
+          - sp-application-base.PlaceholderProvider

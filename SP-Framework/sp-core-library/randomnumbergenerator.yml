@@ -10,16 +10,16 @@ items:
       - typeScript
     type: class
     implements:
-      - IRandomNumberGenerator
+      - sp-core-library.IRandomNumberGenerator
     package: sp-core-library
     children:
-      - sp-core-library.RandomNumberGenerator.constructor
+      - sp-core-library.RandomNumberGenerator.(constructor)
       - sp-core-library.RandomNumberGenerator.generate
       - sp-core-library.RandomNumberGenerator.serviceKey
-  - uid: sp-core-library.RandomNumberGenerator.constructor
-    summary: 'Constructs a new instance of the [RandomNumberGenerator](xref:sp-core-library.RandomNumberGenerator) class'
-    name: constructor(serviceScope)
-    fullName: constructor
+  - uid: sp-core-library.RandomNumberGenerator.(constructor)
+    summary: Constructs a new instance of the `RandomNumberGenerator` class
+    name: (constructor)(serviceScope)
+    fullName: (constructor)(serviceScope)
     langs:
       - typeScript
     type: constructor
@@ -29,11 +29,11 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - ServiceScope
+            - sp-core-library.ServiceScope
   - uid: sp-core-library.RandomNumberGenerator.generate
     summary: 'Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().'
     name: generate()
-    fullName: generate
+    fullName: generate()
     langs:
       - typeScript
     type: method

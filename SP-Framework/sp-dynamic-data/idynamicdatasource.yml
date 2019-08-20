@@ -15,9 +15,9 @@ items:
       - sp-dynamic-data.IDynamicDataSource.getAnnotatedPropertyValue
       - sp-dynamic-data.IDynamicDataSource.getPropertyDefinitions
       - sp-dynamic-data.IDynamicDataSource.getPropertyValue
+      - sp-dynamic-data.IDynamicDataSource.sendEvent
       - sp-dynamic-data.IDynamicDataSource.id
       - sp-dynamic-data.IDynamicDataSource.metadata
-      - sp-dynamic-data.IDynamicDataSource.sendEvent
   - uid: sp-dynamic-data.IDynamicDataSource.allowedEvents
     summary: >-
       Returns list of allowed events on the dynamic data source. When this api returns a non-empty result, then source
@@ -27,7 +27,7 @@ items:
       If this api is not defined or returns an empty map, then no consumer will be able to talk to this source.
     isPreview: true
     name: allowedEvents()
-    fullName: allowedEvents
+    fullName: allowedEvents()
     langs:
       - typeScript
     type: method
@@ -42,7 +42,7 @@ items:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
     name: getAnnotatedPropertyValue(propertyId)
-    fullName: getAnnotatedPropertyValue
+    fullName: getAnnotatedPropertyValue(propertyId)
     langs:
       - typeScript
     type: method
@@ -50,7 +50,7 @@ items:
       content: 'getAnnotatedPropertyValue(propertyId: string): IDynamicDataAnnotatedPropertyValue;'
       return:
         type:
-          - IDynamicDataAnnotatedPropertyValue
+          - sp-dynamic-data.IDynamicDataAnnotatedPropertyValue
         description: ''
       parameters:
         - id: propertyId
@@ -62,7 +62,7 @@ items:
       Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
       component.
     name: getPropertyDefinitions()
-    fullName: getPropertyDefinitions
+    fullName: getPropertyDefinitions()
     langs:
       - typeScript
     type: method
@@ -77,7 +77,7 @@ items:
       Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
       component.
     name: getPropertyValue(propertyId)
-    fullName: getPropertyValue
+    fullName: getPropertyValue(propertyId)
     langs:
       - typeScript
     type: method
@@ -92,6 +92,34 @@ items:
           description: ''
           type:
             - string
+  - uid: sp-dynamic-data.IDynamicDataSource.sendEvent
+    summary: >-
+      If defined, enables the consumer to send data to the associated dynamic data source. Then source can act
+      accordingly.
+
+
+      Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
+    isPreview: true
+    name: 'sendEvent(eventName, data)'
+    fullName: 'sendEvent(eventName, data)'
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'sendEvent?(eventName: string, data: any): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: eventName
+          description: A case-sensitive string representing the name of the event.
+          type:
+            - string
+        - id: data
+          description: Data to be sent to the dynamic data source.
+          type:
+            - any
   - uid: sp-dynamic-data.IDynamicDataSource.id
     summary: Id of the Dynamic Data Source.
     name: id
@@ -115,32 +143,4 @@ items:
       content: 'metadata: IDynamicDataSourceMetadata;'
       return:
         type:
-          - IDynamicDataSourceMetadata
-  - uid: sp-dynamic-data.IDynamicDataSource.sendEvent
-    summary: >-
-      If defined, enables the consumer to send data to the associated dynamic data source. Then source can act
-      accordingly.
-
-
-      Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
-    isPreview: true
-    name: 'sendEvent(eventName, data)'
-    fullName: sendEvent
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'sendEvent?(eventName: string, data: any): void;'
-      return:
-        type:
-          - void
-        description: ''
-      parameters:
-        - id: eventName
-          description: A case-sensitive string representing the name of the event.
-          type:
-            - string
-        - id: data
-          description: Data to be sent to the dynamic data source.
-          type:
-            - any
+          - sp-dynamic-data.IDynamicDataSourceMetadata

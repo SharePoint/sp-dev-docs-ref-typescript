@@ -15,7 +15,7 @@ items:
     type: class
     package: sp-http
     children:
-      - sp-http.SPHttpClient.constructor
+      - sp-http.SPHttpClient.(constructor)
       - sp-http.SPHttpClient.beginBatch
       - sp-http.SPHttpClient.configurations
       - sp-http.SPHttpClient.fetch
@@ -23,10 +23,10 @@ items:
       - sp-http.SPHttpClient.getWebUrlFromRequestUrl
       - sp-http.SPHttpClient.post
       - sp-http.SPHttpClient.serviceKey
-  - uid: sp-http.SPHttpClient.constructor
-    summary: 'Constructs a new instance of the [SPHttpClient](xref:sp-http.SPHttpClient) class'
-    name: constructor(serviceScope)
-    fullName: constructor
+  - uid: sp-http.SPHttpClient.(constructor)
+    summary: Constructs a new instance of the `SPHttpClient` class
+    name: (constructor)(serviceScope)
+    fullName: (constructor)(serviceScope)
     langs:
       - typeScript
     type: constructor
@@ -36,12 +36,12 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - ServiceScope
+            - sp-core-library.ServiceScope
   - uid: sp-http.SPHttpClient.beginBatch
     summary: 'Begins an ODATA batch, which allows multiple REST queries to be bundled into a single web request.'
     isPreview: true
     name: beginBatch(batchCreationOptions)
-    fullName: beginBatch
+    fullName: beginBatch(batchCreationOptions)
     langs:
       - typeScript
     type: method
@@ -49,13 +49,13 @@ items:
       content: 'beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;'
       return:
         type:
-          - SPHttpClientBatch
+          - sp-http.SPHttpClientBatch
         description: 'An [SPHttpClientBatch](xref:sp-http.SPHttpClientBatch) object used to manage the batch operation.'
       parameters:
         - id: batchCreationOptions
           description: ''
           type:
-            - ISPHttpClientBatchCreationOptions
+            - sp-http.ISPHttpClientBatchCreationOptions
   - uid: sp-http.SPHttpClient.configurations
     summary: The standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class.
     name: configurations
@@ -67,7 +67,7 @@ items:
       content: 'static readonly configurations: ISPHttpClientConfigurations;'
       return:
         type:
-          - ISPHttpClientConfigurations
+          - sp-http.ISPHttpClientConfigurations
   - uid: sp-http.SPHttpClient.fetch
     summary: Perform a REST service call.
     remarks: >-
@@ -93,7 +93,7 @@ items:
       appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as "\_api" in the original URL
       passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly.
     name: 'fetch(url, configuration, options)'
-    fullName: fetch
+    fullName: 'fetch(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -119,15 +119,15 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - SPHttpClientConfiguration
+            - sp-http.SPHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - ISPHttpClientOptions
+            - sp-http.ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.get
     summary: 'Calls fetch(), but sets the method to "GET".'
     name: 'get(url, configuration, options)'
-    fullName: get
+    fullName: 'get(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -153,11 +153,11 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - SPHttpClientConfiguration
+            - sp-http.SPHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - ISPHttpClientOptions
+            - sp-http.ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.getWebUrlFromRequestUrl
     summary: Use a heuristic to infer the base URL for authentication.
     remarks: >-
@@ -173,7 +173,7 @@ items:
 
       If the URL cannot be determined, an exception is thrown.
     name: getWebUrlFromRequestUrl(requestUrl)
-    fullName: getWebUrlFromRequestUrl
+    fullName: getWebUrlFromRequestUrl(requestUrl)
     langs:
       - typeScript
     type: method
@@ -191,7 +191,7 @@ items:
   - uid: sp-http.SPHttpClient.post
     summary: 'Calls fetch(), but sets the method to "POST".'
     name: 'post(url, configuration, options)'
-    fullName: post
+    fullName: 'post(url, configuration, options)'
     langs:
       - typeScript
     type: method
@@ -217,11 +217,11 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - SPHttpClientConfiguration
+            - sp-http.SPHttpClientConfiguration
         - id: options
           description: additional options that affect the request
           type:
-            - ISPHttpClientOptions
+            - sp-http.ISPHttpClientOptions
   - uid: sp-http.SPHttpClient.serviceKey
     summary: The service key for SPHttpClient.
     name: serviceKey

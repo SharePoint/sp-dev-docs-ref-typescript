@@ -8,24 +8,24 @@ items:
       - typeScript
     type: class
     extends:
-      - HttpClientConfiguration
+      - sp-http.HttpClientConfiguration
     implements:
-      - ISPHttpClientCommonConfiguration
+      - sp-http.ISPHttpClientCommonConfiguration
     package: sp-http
     children:
-      - sp-http.SPHttpClientCommonConfiguration.constructor
+      - sp-http.SPHttpClientCommonConfiguration.(constructor)
       - sp-http.SPHttpClientCommonConfiguration.flags
       - sp-http.SPHttpClientCommonConfiguration.initializeFlags
       - sp-http.SPHttpClientCommonConfiguration.jsonRequest
       - sp-http.SPHttpClientCommonConfiguration.jsonResponse
       - sp-http.SPHttpClientCommonConfiguration.overrideWith
-  - uid: sp-http.SPHttpClientCommonConfiguration.constructor
+  - uid: sp-http.SPHttpClientCommonConfiguration.(constructor)
     summary: Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags.
     remarks: >-
       The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it
       takes precedence over flags.
-    name: 'constructor(flags, overrideFlags)'
-    fullName: constructor
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
     langs:
       - typeScript
     type: constructor
@@ -35,11 +35,11 @@ items:
         - id: flags
           description: ''
           type:
-            - ISPHttpClientCommonConfiguration
+            - sp-http.ISPHttpClientCommonConfiguration
         - id: overrideFlags
           description: ''
           type:
-            - ISPHttpClientCommonConfiguration
+            - sp-http.ISPHttpClientCommonConfiguration
   - uid: sp-http.SPHttpClientCommonConfiguration.flags
     name: flags
     fullName: flags
@@ -50,10 +50,10 @@ items:
       content: 'protected flags: ISPHttpClientCommonConfiguration;'
       return:
         type:
-          - ISPHttpClientCommonConfiguration
+          - sp-http.ISPHttpClientCommonConfiguration
   - uid: sp-http.SPHttpClientCommonConfiguration.initializeFlags
     name: initializeFlags()
-    fullName: initializeFlags
+    fullName: initializeFlags()
     langs:
       - typeScript
     type: method
@@ -111,7 +111,7 @@ items:
           - boolean
   - uid: sp-http.SPHttpClientCommonConfiguration.overrideWith
     name: overrideWith(sourceFlags)
-    fullName: overrideWith
+    fullName: overrideWith(sourceFlags)
     langs:
       - typeScript
     type: method
@@ -121,10 +121,10 @@ items:
         overrideWith(sourceFlags: ISPHttpClientCommonConfiguration): SPHttpClientCommonConfiguration;
       return:
         type:
-          - SPHttpClientCommonConfiguration
+          - sp-http.SPHttpClientCommonConfiguration
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - ISPHttpClientCommonConfiguration
+            - sp-http.ISPHttpClientCommonConfiguration

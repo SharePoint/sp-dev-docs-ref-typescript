@@ -4,14 +4,14 @@ items:
     summary: The base class for client-side components such as BaseClientSideWebPart or BaseExtension.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the BaseComponent class.
+      create subclasses that extend the `BaseComponent` class.
     name: BaseComponent
     fullName: BaseComponent
     langs:
       - typeScript
     type: class
     implements:
-      - ISPEventObserver
+      - sp-core-library.ISPEventObserver
     package: sp-component-base
     children:
       - sp-component-base.BaseComponent.componentId
@@ -52,15 +52,15 @@ items:
       content: 'protected context: BaseComponentContext;'
       return:
         type:
-          - BaseComponentContext
+          - sp-component-base.BaseComponentContext
   - uid: sp-component-base.BaseComponent.dispose
     summary: Disposes the component.
     remarks: >-
       Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
       for a web part or extension. To perform custom cleanup when your component is disposed, override the
-      [BaseComponent.onDispose](xref:sp-component-base.BaseComponent.onDispose) method.
+      [BaseComponent.onDispose()](xref:sp-component-base.BaseComponent.onDispose) method.
     name: dispose()
-    fullName: dispose
+    fullName: dispose()
     langs:
       - typeScript
     type: method
@@ -116,7 +116,7 @@ items:
       This event method is called at the end of the component's lifecycle. It provides an opportunity to release any
       associated resources, cancel any outstanding requests, etc.
     name: onDispose()
-    fullName: onDispose
+    fullName: onDispose()
     langs:
       - typeScript
     type: method
