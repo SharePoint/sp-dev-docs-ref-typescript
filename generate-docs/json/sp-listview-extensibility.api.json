@@ -1,84 +1,68 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.1.8",
-    "schemaVersion": 1000
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
   },
   "kind": "Package",
-  "canonicalReference": "@microsoft/sp-listview-extensibility",
+  "canonicalReference": "@microsoft/sp-listview-extensibility!",
   "docComment": "/**\n * SharePoint Framework support for customizing the list view.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-listview-extensibility",
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "",
+      "canonicalReference": "@microsoft/sp-listview-extensibility!",
       "name": "",
       "members": [
         {
           "kind": "Class",
-          "canonicalReference": "(BaseFieldCustomizer:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!BaseFieldCustomizer:class",
           "docComment": "/**\n * This is the base class that third parties should extend when implementing a client-side extension that customizes the appearance of fields in a SharePoint ListView.\n *\n * In the component manifest, the \"extensionType\" should be set to \"FieldCustomizer\".\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "declare abstract class "
+              "text": "declare abstract class BaseFieldCustomizer<TProperties> extends "
             },
             {
               "kind": "Reference",
-              "text": "BaseFieldCustomizer"
+              "text": "BaseExtension",
+              "canonicalReference": "@microsoft/sp-extension-base!BaseExtension:class"
             },
             {
               "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "TProperties"
-            },
-            {
-              "kind": "Content",
-              "text": "> extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseExtension"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "TProperties"
-            },
-            {
-              "kind": "Content",
-              "text": "> "
+              "text": "<TProperties> "
             }
           ],
           "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TProperties",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
           "name": "BaseFieldCustomizer",
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(context:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseFieldCustomizer#context:member",
               "docComment": "/**\n * {@inheritDoc @microsoft/sp-component-base#BaseComponent.context}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected readonly "
+                  "text": "protected readonly context: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "context"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "FieldCustomizerContext"
+                  "text": "FieldCustomizerContext",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!default:class"
                 },
                 {
                   "kind": "Content",
@@ -88,35 +72,24 @@
               "releaseTag": "Public",
               "name": "context",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onDisposeCell:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onDisposeCell:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "onDisposeCell"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "onDisposeCell(event: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "event"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IFieldCustomizerCellEventParameters"
+                  "text": "IFieldCustomizerCellEventParameters",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface"
                 },
                 {
                   "kind": "Content",
@@ -133,17 +106,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "event",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -151,28 +124,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onRenderCell:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onRenderCell:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "onRenderCell"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "onRenderCell(event: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "event"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IFieldCustomizerCellEventParameters"
+                  "text": "IFieldCustomizerCellEventParameters",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface"
                 },
                 {
                   "kind": "Content",
@@ -189,17 +151,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "event",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -207,76 +169,59 @@
             }
           ],
           "extendsTokenRange": {
-            "startIndex": 5,
-            "endIndex": 9
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         },
         {
           "kind": "Class",
-          "canonicalReference": "(BaseListViewCommandSet:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!BaseListViewCommandSet:class",
           "docComment": "/**\n * This is the base class that third parties should extend when implementing a client-side extension that provides a command set for a SharePoint list view.\n *\n * @remarks\n *\n * In the component manifest, the \"extensionType\" should be set to \"ListViewCommandSet\".\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BaseListViewCommandSet` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "declare abstract class "
+              "text": "declare abstract class BaseListViewCommandSet<TProperties> extends "
             },
             {
               "kind": "Reference",
-              "text": "BaseListViewCommandSet"
+              "text": "BaseExtension",
+              "canonicalReference": "@microsoft/sp-extension-base!BaseExtension:class"
             },
             {
               "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "TProperties"
-            },
-            {
-              "kind": "Content",
-              "text": "> extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseExtension"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "TProperties"
-            },
-            {
-              "kind": "Content",
-              "text": "> "
+              "text": "<TProperties> "
             }
           ],
           "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TProperties",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
           "name": "BaseListViewCommandSet",
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(context:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseListViewCommandSet#context:member",
               "docComment": "/**\n * {@inheritDoc @microsoft/sp-extension-base#BaseExtension.context}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly context: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "context"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ListViewCommandSetContext"
+                  "text": "ListViewCommandSetContext",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!default:class"
                 },
                 {
                   "kind": "Content",
@@ -286,35 +231,24 @@
               "releaseTag": "Public",
               "name": "context",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onExecute:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseListViewCommandSet#onExecute:member(1)",
               "docComment": "/**\n * This event occurs when the command is invoked, e.g. because the user clicked on the toolbar button or menu item.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "onExecute"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "onExecute(event: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "event"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IListViewCommandSetExecuteEventParameters"
+                  "text": "IListViewCommandSetExecuteEventParameters",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters:interface"
                 },
                 {
                   "kind": "Content",
@@ -331,17 +265,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "event",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -349,28 +283,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onListViewUpdated:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseListViewCommandSet#onListViewUpdated:member(1)",
               "docComment": "/**\n * This event occurs whenever the ListView state changes.\n *\n * @remarks\n *\n * This event allows the implementor to tailor the appearance of the command. For example, to hide the command, assign its property visible = false. To customize the title, modify the command property title.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "onListViewUpdated"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "onListViewUpdated(event: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "event"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IListViewCommandSetListViewUpdatedParameters"
+                  "text": "IListViewCommandSetListViewUpdatedParameters",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetListViewUpdatedParameters:interface"
                 },
                 {
                   "kind": "Content",
@@ -387,17 +310,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "event",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -405,24 +328,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(tryGetCommand:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!BaseListViewCommandSet#tryGetCommand:member(1)",
               "docComment": "/**\n * Returns the command with the given id. Returns undefined if there is not command with the given id.\n *\n * @param id - Id of the command\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "tryGetCommand"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "id"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "tryGetCommand(id: "
                 },
                 {
                   "kind": "Content",
@@ -434,7 +345,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Command"
+                  "text": "Command",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!default:class"
                 },
                 {
                   "kind": "Content",
@@ -443,17 +355,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "id",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -461,27 +373,19 @@
             }
           ],
           "extendsTokenRange": {
-            "startIndex": 5,
-            "endIndex": 9
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         },
         {
           "kind": "Class",
-          "canonicalReference": "(ColumnAccessor:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!ColumnAccessor:class",
           "docComment": "/**\n * Provides access to a ListView column, which is the visual presentation of a field.\n *\n * @remarks\n *\n * A SharePoint \"field\" (SPField) defines the data storage for a property of a list item. (If the list item represents a document, then the field is sometimes called a \"property\".)\n *\n * A \"column\" is the visual presentation of a field, when displayed by the ListView.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ColumnAccessor` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare abstract class "
-            },
-            {
-              "kind": "Reference",
-              "text": "ColumnAccessor"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export declare abstract class ColumnAccessor "
             }
           ],
           "releaseTag": "Public",
@@ -489,24 +393,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(field:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ColumnAccessor#field:member",
               "docComment": "/**\n * The server-side definition of the field. This property is read-only.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract readonly "
+                  "text": "abstract readonly field: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "field"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SPField"
+                  "text": "SPField",
+                  "canonicalReference": "@microsoft/sp-page-context!SPField:class"
                 },
                 {
                   "kind": "Content",
@@ -516,27 +413,19 @@
               "releaseTag": "Public",
               "name": "field",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(visible:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ColumnAccessor#visible:member",
               "docComment": "/**\n * Whether to show this column in the list view. This property is read-only.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "visible"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "abstract readonly visible: "
                 },
                 {
                   "kind": "Content",
@@ -550,8 +439,8 @@
               "releaseTag": "Public",
               "name": "visible",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             }
@@ -560,20 +449,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Command:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!Command:class",
           "docComment": "/**\n * Represents a command belonging to a command set.\n *\n * @remarks\n *\n * The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons, context menu items, etc. These commands are initially defined in the extension’s manifest file. At runtime, the corresponding Command object can be obtained by calling {@link BaseListViewCommandSet.tryGetCommand}. The command’s appearance can be customized by assigning its properties, for example to hide a command that is not contextually relevant, or to pluralize the title based on the number of selected items.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Command"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Command "
             }
           ],
           "releaseTag": "Public",
@@ -581,16 +462,12 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(ariaLabel:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!Command#ariaLabel:member",
               "docComment": "/**\n * Custom accessibility text for the browser's \"aria-label\" attribute. If omitted, the title property will be used by default. Example: \"Show information. Press ENTER to select.\"\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "ariaLabel"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "ariaLabel: "
                 },
                 {
                   "kind": "Content",
@@ -604,23 +481,19 @@
               "releaseTag": "Public",
               "name": "ariaLabel",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(iconImageUrl:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!Command#iconImageUrl:member",
               "docComment": "/**\n * An optional URL for an image to be displayed next to the command. The requirements for this image are defined by the type of extension; some extension types may not display the image at all.\n *\n * @remarks\n *\n * This must be a absolute URL.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "iconImageUrl"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "iconImageUrl: "
                 },
                 {
                   "kind": "Content",
@@ -634,23 +507,19 @@
               "releaseTag": "Public",
               "name": "iconImageUrl",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(id:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!Command#id:member",
               "docComment": "/**\n * Id of the command.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "id"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "id: "
                 },
                 {
                   "kind": "Content",
@@ -664,23 +533,19 @@
               "releaseTag": "Public",
               "name": "id",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(title:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!Command#title:member",
               "docComment": "/**\n * A short label to be displayed by the associated button, menu item, etc.\n *\n * @remarks\n *\n * Example: \"Show information\"\n *\n * Altering the title property is intended to allow minor changes to the title, e.g. “Submit these 3 items” or toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically alters the meaning of the command, because administrators should be able to examine the extension manifest to understand which commands are being implemented by a given extension.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "title"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "title: "
                 },
                 {
                   "kind": "Content",
@@ -694,23 +559,19 @@
               "releaseTag": "Public",
               "name": "title",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(visible:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!Command#visible:member",
               "docComment": "/**\n * True if the command is visible.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "visible"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "visible: "
                 },
                 {
                   "kind": "Content",
@@ -724,8 +585,8 @@
               "releaseTag": "Public",
               "name": "visible",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             }
@@ -734,24 +595,17 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(FieldCustomizerContext:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!FieldCustomizerContext:class",
           "docComment": "/**\n * This object provides contextual information for BaseFieldCustomizer.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `FieldCustomizerContext` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
+              "text": "export default class FieldCustomizerContext extends "
             },
             {
               "kind": "Reference",
-              "text": "FieldCustomizerContext"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtensionContext"
+              "text": "ExtensionContext",
+              "canonicalReference": "@microsoft/sp-extension-base!ExtensionContext:class"
             },
             {
               "kind": "Content",
@@ -763,24 +617,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(field:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member",
               "docComment": "/**\n * Provides access to the SharePoint field that the customizer will operate on.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly field: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "field"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SPField"
+                  "text": "SPField",
+                  "canonicalReference": "@microsoft/sp-page-context!SPField:class"
                 },
                 {
                   "kind": "Content",
@@ -790,27 +637,24 @@
               "releaseTag": "Public",
               "name": "field",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(tryGetListView:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)",
               "docComment": "/**\n * If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific functionality; otherwise the value is undefined.\n *\n * @remarks\n *\n * Although the SharePoint list view is the main usage scenario, field customizers can be used by other user interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.\n *\n * @returns the SharePoint list view, or undefined if there is none.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "tryGetListView"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "tryGetListView(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ListViewAccessor"
+                  "text": "ListViewAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!~ListViewAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -823,37 +667,29 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 3
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "tryGetListView"
             }
           ],
           "extendsTokenRange": {
-            "startIndex": 3,
-            "endIndex": 5
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IFieldCustomizerCellEventParameters:interface)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface",
           "docComment": "/**\n * Event parameters for BaseFieldCustomizer.onRenderCell()\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IFieldCustomizerCellEventParameters"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IFieldCustomizerCellEventParameters "
             }
           ],
           "releaseTag": "Public",
@@ -861,24 +697,17 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "domElement",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#domElement:member",
               "docComment": "/**\n * The HTML \"div\" element that the extension will take ownership of. This ownership will end when onDisposeCell() is called.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly domElement: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "domElement"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "HTMLDivElement"
+                  "text": "HTMLDivElement",
+                  "canonicalReference": "!HTMLDivElement:interface"
                 },
                 {
                   "kind": "Content",
@@ -888,26 +717,18 @@
               "releaseTag": "Public",
               "name": "domElement",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "fieldValue",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#fieldValue:member",
               "docComment": "/**\n * The value of the field being rendered.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "fieldValue"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly fieldValue: "
                 },
                 {
                   "kind": "Content",
@@ -921,30 +742,23 @@
               "releaseTag": "Public",
               "name": "fieldValue",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "listItem",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#listItem:member",
               "docComment": "/**\n * The list item being edited.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly listItem: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "listItem"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ListItemAccessor"
+                  "text": "ListItemAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!default:class"
                 },
                 {
                   "kind": "Content",
@@ -954,22 +768,18 @@
               "releaseTag": "Public",
               "name": "listItem",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "userData",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#userData:member",
               "docComment": "/**\n * An implementation defined storage property.\n *\n * @remarks\n *\n * For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this property, and then onDisposeCell() can use this key to find the resource to be freed.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "userData"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "userData: "
                 },
                 {
                   "kind": "Content",
@@ -983,8 +793,8 @@
               "releaseTag": "Public",
               "name": "userData",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
@@ -992,20 +802,12 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IListViewCommandSetExecuteEventParameters:interface)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters:interface",
           "docComment": "/**\n * Parameters for {@link BaseListViewCommandSet.onExecute}\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IListViewCommandSetExecuteEventParameters"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IListViewCommandSetExecuteEventParameters "
             }
           ],
           "releaseTag": "Public",
@@ -1013,20 +815,12 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "itemId",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#itemId:member",
               "docComment": "/**\n * The unique identifier for the command. This is specified as ICommandDefinition.commandId in the component manifest.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "itemId"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly itemId: "
                 },
                 {
                   "kind": "Content",
@@ -1040,30 +834,23 @@
               "releaseTag": "Public",
               "name": "itemId",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "selectedRows",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#selectedRows:member",
               "docComment": "/**\n * The currently selected ListView rows, at the time when the event occurred.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly selectedRows: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "selectedRows"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ReadonlyArray"
+                  "text": "ReadonlyArray",
+                  "canonicalReference": "!ReadonlyArray:interface"
                 },
                 {
                   "kind": "Content",
@@ -1071,7 +858,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "RowAccessor"
+                  "text": "RowAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!RowAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -1085,8 +873,8 @@
               "releaseTag": "Public",
               "name": "selectedRows",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               }
             }
           ],
@@ -1094,20 +882,12 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IListViewCommandSetListViewUpdatedParameters:interface)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetListViewUpdatedParameters:interface",
           "docComment": "/**\n * Parameters for {@link BaseListViewCommandSet.onListViewUpdated}\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IListViewCommandSetListViewUpdatedParameters"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IListViewCommandSetListViewUpdatedParameters "
             }
           ],
           "releaseTag": "Public",
@@ -1115,24 +895,17 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "selectedRows",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!IListViewCommandSetListViewUpdatedParameters#selectedRows:member",
               "docComment": "/**\n * The currently selected ListView rows, at the time when the event occurred.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly selectedRows: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "selectedRows"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ReadonlyArray"
+                  "text": "ReadonlyArray",
+                  "canonicalReference": "!ReadonlyArray:interface"
                 },
                 {
                   "kind": "Content",
@@ -1140,7 +913,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "RowAccessor"
+                  "text": "RowAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!RowAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -1154,8 +928,8 @@
               "releaseTag": "Public",
               "name": "selectedRows",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               }
             }
           ],
@@ -1163,20 +937,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(ListItemAccessor:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!ListItemAccessor:class",
           "docComment": "/**\n * When a field customizer extension is rendering a field, the ListItemAccessor provides access to the associated SharePoint list item.\n *\n * @remarks\n *\n * ListItemAccessor allows a field customizer extension to determine which fields are available in the editor and retrieve the current values for those fields. In the future, it may also support validation and editing operations.\n *\n * When the editor is the SharePoint list view, the ListViewAccessor uses the RowAccessor subclass instead of the ListItemAccessor base class. This allows additional functionality to be exposed, for example determining whether the associated table row is selected or not.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ListItemAccessor` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default abstract class "
-            },
-            {
-              "kind": "Reference",
-              "text": "ListItemAccessor"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default abstract class ListItemAccessor "
             }
           ],
           "releaseTag": "Public",
@@ -1184,24 +950,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(fields:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListItemAccessor#fields:member",
               "docComment": "/**\n * The SharePoint fields that are currently available in the editor for this list item.\n *\n * @remarks\n *\n * The set of available fields depends on the editing context. For example, if a list view column is hidden, the corresponding field definition may not be loaded. Field customizers should not assume that a given field will be available, even if it is defined in the content type.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract readonly "
+                  "text": "abstract readonly fields: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "fields"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ReadonlyArray"
+                  "text": "ReadonlyArray",
+                  "canonicalReference": "!ReadonlyArray:interface"
                 },
                 {
                   "kind": "Content",
@@ -1209,7 +968,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "SPField"
+                  "text": "SPField",
+                  "canonicalReference": "@microsoft/sp-page-context!SPField:class"
                 },
                 {
                   "kind": "Content",
@@ -1223,39 +983,24 @@
               "releaseTag": "Public",
               "name": "fields",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getValue:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListItemAccessor#getValue:member(1)",
               "docComment": "/**\n * Retrieves the current data value for the specified field. The value will be a primitive JavaScript object such as a string, number, etc.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract "
+                  "text": "abstract getValue(field: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "getValue"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "field"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SPField"
+                  "text": "SPField",
+                  "canonicalReference": "@microsoft/sp-page-context!SPField:class"
                 },
                 {
                   "kind": "Content",
@@ -1272,17 +1017,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "field",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -1290,28 +1035,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getValueByName:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListItemAccessor#getValueByName:member(1)",
               "docComment": "/**\n * Retrieves the current data value for the field with the specified internal name. The value will be a primitive JavaScript object such as a string, number, etc.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "getValueByName"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "internalName"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "abstract getValueByName(internalName: "
                 },
                 {
                   "kind": "Content",
@@ -1332,17 +1061,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "internalName",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -1353,20 +1082,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(ListViewAccessor:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewAccessor:class",
           "docComment": "/**\n * Provides access to a SharePoint ListView control.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ListViewAccessor` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "declare abstract class "
-            },
-            {
-              "kind": "Reference",
-              "text": "ListViewAccessor"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "declare abstract class ListViewAccessor "
             }
           ],
           "releaseTag": "Public",
@@ -1374,24 +1095,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(columns:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member",
               "docComment": "/**\n * The columns in associated with this view, including hidden columns.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract readonly "
+                  "text": "abstract readonly columns: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "columns"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ReadonlyArray"
+                  "text": "ReadonlyArray",
+                  "canonicalReference": "!ReadonlyArray:interface"
                 },
                 {
                   "kind": "Content",
@@ -1399,7 +1113,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ColumnAccessor"
+                  "text": "ColumnAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!ColumnAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -1413,31 +1128,24 @@
               "releaseTag": "Public",
               "name": "columns",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(selectedRowsChangedEvent:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member",
               "docComment": "/**\n * Event that gets raised every time the selected items in the list view change.\n *\n * @eventproperty\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly selectedRowsChangedEvent: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "selectedRowsChangedEvent"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SPEvent"
+                  "text": "SPEvent",
+                  "canonicalReference": "@microsoft/sp-core-library!SPEvent:class"
                 },
                 {
                   "kind": "Content",
@@ -1445,7 +1153,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "SelectedRowsChangedEventArgs"
+                  "text": "SelectedRowsChangedEventArgs",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class"
                 },
                 {
                   "kind": "Content",
@@ -1459,35 +1168,19 @@
               "releaseTag": "Public",
               "name": "selectedRowsChangedEvent",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(tryGetColumnByName:instance,0)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)",
               "docComment": "/**\n * Returns the list view column corresponding to the field with the specified internal name, or undefined if none is found.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "abstract "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "tryGetColumnByName"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "internalName"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "abstract tryGetColumnByName(internalName: "
                 },
                 {
                   "kind": "Content",
@@ -1499,7 +1192,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ColumnAccessor"
+                  "text": "ColumnAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!ColumnAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -1512,17 +1206,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 9
+                "startIndex": 3,
+                "endIndex": 5
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "internalName",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -1533,24 +1227,17 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(ListViewCommandSetContext:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewCommandSetContext:class",
           "docComment": "/**\n * This object provides contextual information for BaseListViewCommandSet.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ListViewCommandSetContext` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
+              "text": "export default class ListViewCommandSetContext extends "
             },
             {
               "kind": "Reference",
-              "text": "ListViewCommandSetContext"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ExtensionContext"
+              "text": "ExtensionContext",
+              "canonicalReference": "@microsoft/sp-extension-base!ExtensionContext:class"
             },
             {
               "kind": "Content",
@@ -1562,24 +1249,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(listView:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewCommandSetContext#listView:member",
               "docComment": "/**\n * Provides access to the ListView control that the customizer will operate on.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly listView: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "listView"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ListViewAccessor"
+                  "text": "ListViewAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!~ListViewAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -1589,31 +1269,24 @@
               "releaseTag": "Public",
               "name": "listView",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(manifest:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!ListViewCommandSetContext#manifest:member",
               "docComment": "/**\n * {@inheritDoc @microsoft/sp-component-base#BaseComponentContext.manifest}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly manifest: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "manifest"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ICommandSetExtensionManifest"
+                  "text": "ICommandSetExtensionManifest",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface"
                 },
                 {
                   "kind": "Content",
@@ -1623,38 +1296,31 @@
               "releaseTag": "Public",
               "name": "manifest",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             }
           ],
           "extendsTokenRange": {
-            "startIndex": 3,
-            "endIndex": 5
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         },
         {
           "kind": "Class",
-          "canonicalReference": "(RowAccessor:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!RowAccessor:class",
           "docComment": "/**\n * Provides access to a ListView row, which is the visual presentation of a SharePoint list item.\n *\n * @remarks\n *\n * A SharePoint \"list item\" (SPListItem) is a data storage record in the content management system; it stores an array of values for the associated fields.\n *\n * A \"row\" is the visual presentation of a list item, when displayed by the ListView; it stores an array of cell values for the associated columns.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `RowAccessor` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare abstract class "
+              "text": "export declare abstract class RowAccessor extends "
             },
             {
               "kind": "Reference",
-              "text": "RowAccessor"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "ListItemAccessor"
+              "text": "ListItemAccessor",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!default:class"
             },
             {
               "kind": "Content",
@@ -1665,31 +1331,24 @@
           "name": "RowAccessor",
           "members": [],
           "extendsTokenRange": {
-            "startIndex": 3,
-            "endIndex": 5
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         },
         {
           "kind": "Class",
-          "canonicalReference": "(SelectedRowsChangedEventArgs:class)",
+          "canonicalReference": "@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class",
           "docComment": "/**\n * Arguments for the selected rows changed event.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare class "
+              "text": "export declare class SelectedRowsChangedEventArgs extends "
             },
             {
               "kind": "Reference",
-              "text": "SelectedRowsChangedEventArgs"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "SPEventArgs"
+              "text": "SPEventArgs",
+              "canonicalReference": "@microsoft/sp-core-library!SPEventArgs:class"
             },
             {
               "kind": "Content",
@@ -1701,20 +1360,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(selectedRows:instance)",
+              "canonicalReference": "@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs#selectedRows:member",
               "docComment": "/**\n * The list of rows that were selected in the list view at the time when the event was fired.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "selectedRows"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "selectedRows: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ReadonlyArray"
+                  "text": "ReadonlyArray",
+                  "canonicalReference": "!ReadonlyArray:interface"
                 },
                 {
                   "kind": "Content",
@@ -1722,7 +1378,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "RowAccessor"
+                  "text": "RowAccessor",
+                  "canonicalReference": "@microsoft/sp-listview-extensibility!RowAccessor:class"
                 },
                 {
                   "kind": "Content",
@@ -1736,15 +1393,15 @@
               "releaseTag": "Public",
               "name": "selectedRows",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 6
+                "startIndex": 1,
+                "endIndex": 5
               },
               "isStatic": false
             }
           ],
           "extendsTokenRange": {
-            "startIndex": 3,
-            "endIndex": 5
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         }

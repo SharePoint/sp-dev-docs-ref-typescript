@@ -1,35 +1,28 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.1.8",
-    "schemaVersion": 1000
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
   },
   "kind": "Package",
-  "canonicalReference": "@microsoft/sp-core-library",
+  "canonicalReference": "@microsoft/sp-core-library!",
   "docComment": "/**\n * SharePoint Framework core libraries.\n *\n * @remarks\n *\n * This package provides a foundation of core classes that ensure a consistent character across all the other SharePoint Framework APIs. Because this package is a dependency of every other package, its design prioritizes small code size and broad applicability, versus flexibility or richness of features.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-core-library",
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "",
+      "canonicalReference": "@microsoft/sp-core-library!",
       "name": "",
       "members": [
         {
           "kind": "Enum",
-          "canonicalReference": "(DisplayMode:enum)",
+          "canonicalReference": "@microsoft/sp-core-library!DisplayMode:enum",
           "docComment": "/**\n * Indicates whether a visual control should display itself for reading or for editing.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "declare enum "
-            },
-            {
-              "kind": "Reference",
-              "text": "DisplayMode"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "declare enum DisplayMode "
             }
           ],
           "releaseTag": "Public",
@@ -37,16 +30,12 @@
           "members": [
             {
               "kind": "EnumMember",
-              "canonicalReference": "Edit",
+              "canonicalReference": "@microsoft/sp-core-library!DisplayMode.Edit:member",
               "docComment": "/**\n * The page, control, or editing surface is in a mode intended for authoring new content. It may display editing panels or other controls that are not part of the normal reading experience.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "Edit"
-                },
-                {
                   "kind": "Content",
-                  "text": " = "
+                  "text": "Edit = "
                 },
                 {
                   "kind": "Content",
@@ -56,22 +45,18 @@
               "releaseTag": "Public",
               "name": "Edit",
               "initializerTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "Read",
+              "canonicalReference": "@microsoft/sp-core-library!DisplayMode.Read:member",
               "docComment": "/**\n * The page, control, or editing surface is in a mode intended for reading. It may have some interactive features, but the authoring controls are not enabled.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "Read"
-                },
-                {
                   "kind": "Content",
-                  "text": " = "
+                  "text": "Read = "
                 },
                 {
                   "kind": "Content",
@@ -81,28 +66,20 @@
               "releaseTag": "Public",
               "name": "Read",
               "initializerTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ]
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Environment:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Environment:class",
           "docComment": "/**\n * Information about the system environment where the SharePoint Framework is running.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Environment"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Environment "
             }
           ],
           "releaseTag": "Public",
@@ -110,24 +87,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(type:static)",
+              "canonicalReference": "@microsoft/sp-core-library!Environment.type:member",
               "docComment": "/**\n * Indicates the general type of environment where the SharePoint Framework is running.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static readonly "
+                  "text": "static readonly type: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EnvironmentType"
+                  "text": "EnvironmentType",
+                  "canonicalReference": "@microsoft/sp-core-library!EnvironmentType:enum"
                 },
                 {
                   "kind": "Content",
@@ -137,8 +107,8 @@
               "releaseTag": "Public",
               "name": "type",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": true
             }
@@ -147,20 +117,12 @@
         },
         {
           "kind": "Enum",
-          "canonicalReference": "(EnvironmentType:enum)",
+          "canonicalReference": "@microsoft/sp-core-library!EnvironmentType:enum",
           "docComment": "/**\n * Indicates the general type of environment where the SharePoint Framework is running.\n *\n * @remarks\n *\n * This enum is used by the {@link Environment.\"type\"} property. It provides a way to distinguish environments where certain functionality may be limited or disabled.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export declare enum "
-            },
-            {
-              "kind": "Reference",
-              "text": "EnvironmentType"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export declare enum EnvironmentType "
             }
           ],
           "releaseTag": "Public",
@@ -168,16 +130,12 @@
           "members": [
             {
               "kind": "EnumMember",
-              "canonicalReference": "ClassicSharePoint",
+              "canonicalReference": "@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member",
               "docComment": "/**\n * Indicates that the framework was hosted by a classic server-rendered SharePoint page. Some functionality may be limited, e.g. various extensibility APIs may not be supported.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "ClassicSharePoint"
-                },
-                {
                   "kind": "Content",
-                  "text": " = "
+                  "text": "ClassicSharePoint = "
                 },
                 {
                   "kind": "Content",
@@ -187,22 +145,18 @@
               "releaseTag": "Public",
               "name": "ClassicSharePoint",
               "initializerTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "Local",
+              "canonicalReference": "@microsoft/sp-core-library!EnvironmentType.Local:member",
               "docComment": "/**\n * Indicates that the SharePoint Framework is running on a page from a \"localhost\" web server, for example the SharePoint Workbench when hosted via \"gulp serve\". SharePoint REST API calls will not be available, and in general network access may not authenticate properly. Certain page context information may be using mock values for testing.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "Local"
-                },
-                {
                   "kind": "Content",
-                  "text": " = "
+                  "text": "Local = "
                 },
                 {
                   "kind": "Content",
@@ -212,22 +166,18 @@
               "releaseTag": "Public",
               "name": "Local",
               "initializerTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "SharePoint",
+              "canonicalReference": "@microsoft/sp-core-library!EnvironmentType.SharePoint:member",
               "docComment": "/**\n * Indicates that the SharePoint Framework is running on a modern SharePoint web page, with full framework functionality. This is the normal usage scenario.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "SharePoint"
-                },
-                {
                   "kind": "Content",
-                  "text": " = "
+                  "text": "SharePoint = "
                 },
                 {
                   "kind": "Content",
@@ -237,22 +187,18 @@
               "releaseTag": "Public",
               "name": "SharePoint",
               "initializerTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "Test",
+              "canonicalReference": "@microsoft/sp-core-library!EnvironmentType.Test:member",
               "docComment": "/**\n * Indicates that the SharePoint Framework is running inside a test harness, e.g. a unit test. There may be no user interaction at all, and network access in general may be disabled.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "Test"
-                },
-                {
                   "kind": "Content",
-                  "text": " = "
+                  "text": "Test = "
                 },
                 {
                   "kind": "Content",
@@ -262,28 +208,20 @@
               "releaseTag": "Public",
               "name": "Test",
               "initializerTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ]
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Guid:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Guid:class",
           "docComment": "/**\n * This class represents a globally unique identifier, as described by IETF RFC 4122.\n *\n * @remarks\n *\n * The input string is normalized and validated, which provides important guarantees that simplify other code that works with the GUID. This class also provides basic support for generating a pseudo-random GUID; however, be aware that the uniqueness depends on the browser's `Math.random()` function and may be not be suitable for some applications.\n *\n * See {@link https://www.ietf.org/rfc/rfc4122.txt | RFC4122} for more information.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Guid"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Guid "
             }
           ],
           "releaseTag": "Public",
@@ -291,24 +229,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(empty:static)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid.empty:member",
               "docComment": "/**\n * Returns a new empty Guid instance.\n *\n * @returns A new empty Guid object.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static readonly "
+                  "text": "static readonly empty: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "empty"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -318,35 +249,24 @@
               "releaseTag": "Public",
               "name": "empty",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": true
             },
             {
               "kind": "Method",
-              "canonicalReference": "(equals:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid#equals:member(1)",
               "docComment": "/**\n * Compare this instance to another Guid instance\n *\n * @returns True if this instance and the specified Guid object represent the same value.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "equals"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "equals(guid: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "guid"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -363,17 +283,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "guid",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -381,28 +301,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(isValid:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid.isValid:member(1)",
               "docComment": "/**\n * Indicates whether a GUID is valid, i.e. whether it would be successfully parsed by `Guid.tryParse()`. This function is cheaper than `Guid.tryParse()` because it does not construct a Guid object.\n *\n * @param guid - The input string.\n *\n * @returns true, if the Guid is valid.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isValid"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "guid"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static isValid(guid: "
                 },
                 {
                   "kind": "Content",
@@ -423,17 +327,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "guid",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -441,32 +345,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(newGuid:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid.newGuid:member(1)",
               "docComment": "/**\n * Returns a new Guid instance with a pseudo-randomly generated GUID, according to the version 4 UUID algorithm from RFC 4122.\n *\n * @returns A new unique Guid object\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
+                  "text": "static newGuid(randomNumberGenerator?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "newGuid"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "randomNumberGenerator"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IRandomNumberGenerator"
+                  "text": "IRandomNumberGenerator",
+                  "canonicalReference": "@microsoft/sp-core-library!IRandomNumberGenerator:interface"
                 },
                 {
                   "kind": "Content",
@@ -474,7 +363,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -483,17 +373,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "randomNumberGenerator",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -501,28 +391,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(parse:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid.parse:member(1)",
               "docComment": "/**\n * Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.\n *\n * @remarks\n *\n * Example syntaxes accepted by this function:\n *\n * - `\"d5369f3bbd7a412a9c0f7f0650bb5489\"`\n *\n * - `\"d5369f3b-bd7a-412a-9c0f-7f0650bb5489\"`\n *\n * - `\"{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}\"`\n *\n * - `\"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/\"`\n *\n * @param guid - The input string.\n *\n * @returns A valid Guid object\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "parse"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "guidString"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static parse(guidString: "
                 },
                 {
                   "kind": "Content",
@@ -534,7 +408,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -543,17 +418,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "guidString",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -561,16 +436,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(toString:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid#toString:member(1)",
               "docComment": "/**\n * Returns a string representation of the GUID\n *\n * @returns The GUID value in lowercase hexadecimal without braces.\n *\n * Example: `'d5369f3b-bd7a-412a-9c0f-7f0650bb5489'`\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "toString"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "toString(): "
                 },
                 {
                   "kind": "Content",
@@ -583,38 +454,22 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "toString"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(tryParse:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Guid.tryParse:member(1)",
               "docComment": "/**\n * Attempts to parse the input string to construct a new Guid object. If the string cannot be parsed, then undefined is returned.\n *\n * @remarks\n *\n * Example syntaxes accepted by this function:\n *\n * - `\"d5369f3bbd7a412a9c0f7f0650bb5489\"`\n *\n * - `\"d5369f3b-bd7a-412a-9c0f-7f0650bb5489\"`\n *\n * - `\"{d5369f3b-bd7a-412a-9c0f-7f0650bb5489}\"`\n *\n * - `\"/Guid(d5369f3b-bd7a-412a-9c0f-7f0650bb5489)/\"`\n *\n * @param guid - The input string.\n *\n * @returns The Guid object, or undefined if the string could not be parsed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "tryParse"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "guid"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static tryParse(guid: "
                 },
                 {
                   "kind": "Content",
@@ -626,7 +481,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -639,17 +495,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 9
+                "startIndex": 3,
+                "endIndex": 5
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "guid",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -660,20 +516,12 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IDisposable:interface)",
+          "canonicalReference": "@microsoft/sp-core-library!IDisposable:interface",
           "docComment": "/**\n * Implemented by an object that supports a disposal lifecycle.\n *\n * @remarks\n *\n * The dispose event allows an object to free any resources that it allocated before its lifecycle ends.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IDisposable"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IDisposable "
             }
           ],
           "releaseTag": "Public",
@@ -681,16 +529,12 @@
           "members": [
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(dispose:0)",
+              "canonicalReference": "@microsoft/sp-core-library!IDisposable#dispose:member(1)",
               "docComment": "/**\n * This method is called to permanently dispose the object.\n *\n * @remarks\n *\n * After the object has been disposed, do not call its methods or access its properties.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "dispose"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "dispose(): "
                 },
                 {
                   "kind": "Content",
@@ -702,26 +546,22 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "dispose"
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "isDisposed",
+              "canonicalReference": "@microsoft/sp-core-library!IDisposable#isDisposed:member",
               "docComment": "/**\n * Returns true if the dispose() method has been called. Once an object is disposed, it remains in this state permanently.\n *\n * @remarks\n *\n * After the object has been disposed, do not call its methods or access its properties.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "isDisposed"
-                },
-                {
                   "kind": "Content",
-                  "text": ": "
+                  "text": "isDisposed: "
                 },
                 {
                   "kind": "Content",
@@ -735,8 +575,8 @@
               "releaseTag": "Public",
               "name": "isDisposed",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
@@ -744,20 +584,12 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IRandomNumberGenerator:interface)",
+          "canonicalReference": "@microsoft/sp-core-library!IRandomNumberGenerator:interface",
           "docComment": "/**\n * This is a {@link ServiceScope} contract for generating pseudorandom random numbers.\n *\n * @remarks\n *\n * This interface abstracts the functionality of the system Math.random() API for usage with a {@link ServiceScope}. For example, a unit test might replace the default {@link RandomNumberGenerator} service with a mock implementation that always returns the same sequence of random numbers, in order to ensure that test failures are always repeatable.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IRandomNumberGenerator"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IRandomNumberGenerator "
             }
           ],
           "releaseTag": "Public",
@@ -765,16 +597,12 @@
           "members": [
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(generate:0)",
+              "canonicalReference": "@microsoft/sp-core-library!IRandomNumberGenerator#generate:member(1)",
               "docComment": "/**\n * Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "generate"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "generate(): "
                 },
                 {
                   "kind": "Content",
@@ -786,11 +614,11 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "generate"
             }
@@ -799,20 +627,12 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IServiceCollection:interface)",
+          "canonicalReference": "@microsoft/sp-core-library!IServiceCollection:interface",
           "docComment": "/**\n * A shorthand pattern for extracting well-known services from a ServiceScope.\n *\n * @deprecated\n *\n * This pattern has been superceded by the BaseComponentContext pattern. This interface will be removed in a future release.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IServiceCollection"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "interface IServiceCollection "
             }
           ],
           "releaseTag": "Public",
@@ -820,24 +640,17 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "serviceScope",
+              "canonicalReference": "@microsoft/sp-core-library!IServiceCollection#serviceScope:member",
               "docComment": "/**\n * Returns the underlying ServiceScope that the members belong to.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly serviceScope: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceScope"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -847,8 +660,8 @@
               "releaseTag": "Public",
               "name": "serviceScope",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
@@ -856,24 +669,17 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(ISPEventObserver:interface)",
+          "canonicalReference": "@microsoft/sp-core-library!ISPEventObserver:interface",
           "docComment": "/**\n * Used with the {@link SPEvent} system, this interface is implemented by components that can subscribe to events.\n *\n * @remarks\n *\n * ISPEventObserver is an abstraction of the key features that a component must have in order to subscribe to a SharePoint Framework event: It must have instanceId and componentId information for diagnostics reporting, and it must have a way to notify the event system when the component is disposed, so that its handlers can be automatically removed. Other objects may implement this contract, as long as they meet these requirements.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
+              "text": "export interface ISPEventObserver extends "
             },
             {
               "kind": "Reference",
-              "text": "ISPEventObserver"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "IDisposable"
+              "text": "IDisposable",
+              "canonicalReference": "@microsoft/sp-core-library!IDisposable:interface"
             },
             {
               "kind": "Content",
@@ -885,20 +691,12 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "componentId",
+              "canonicalReference": "@microsoft/sp-core-library!ISPEventObserver#componentId:member",
               "docComment": "/**\n * The component identifier, from the component's manifest.\n *\n * @remarks\n *\n * This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "componentId"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly componentId: "
                 },
                 {
                   "kind": "Content",
@@ -912,26 +710,18 @@
               "releaseTag": "Public",
               "name": "componentId",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "instanceId",
+              "canonicalReference": "@microsoft/sp-core-library!ISPEventObserver#instanceId:member",
               "docComment": "/**\n * The instance identifier for the component.\n *\n * @remarks\n *\n * This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "instanceId"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly instanceId: "
                 },
                 {
                   "kind": "Content",
@@ -945,34 +735,26 @@
               "releaseTag": "Public",
               "name": "instanceId",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
           "extendsTokenRanges": [
             {
-              "startIndex": 3,
-              "endIndex": 5
+              "startIndex": 1,
+              "endIndex": 3
             }
           ]
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(ITimeProvider:interface)",
+          "canonicalReference": "@microsoft/sp-core-library!ITimeProvider:interface",
           "docComment": "/**\n * This is a {@link ServiceScope} contract for reading the system clock.\n *\n * @remarks\n *\n * This interface abstracts the functionality of the system time APIs for usage with a {@link ServiceScope}. For example, a unit test might replace the default {@link TimeProvider} service with a mock implementation that follows a manually incremented timeline, in order to ensure that test failures are always repeatable.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "ITimeProvider"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface ITimeProvider "
             }
           ],
           "releaseTag": "Public",
@@ -980,20 +762,17 @@
           "members": [
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(getDate:0)",
+              "canonicalReference": "@microsoft/sp-core-library!ITimeProvider#getDate:member(1)",
               "docComment": "/**\n * Returns the current date/time, similar to the Date class constructor.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getDate"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "getDate(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Date"
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
                 },
                 {
                   "kind": "Content",
@@ -1001,26 +780,22 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "getDate"
             },
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(getTimestamp:0)",
+              "canonicalReference": "@microsoft/sp-core-library!ITimeProvider#getTimestamp:member(1)",
               "docComment": "/**\n * Returns a DOMHighResTimeStamp timing measurement, as defined by the standard performance.now() API.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getTimestamp"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "getTimestamp(): "
                 },
                 {
                   "kind": "Content",
@@ -1032,11 +807,11 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "getTimestamp"
             }
@@ -1045,20 +820,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Log:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Log:class",
           "docComment": "/**\n * A basic redirectable logging system.\n *\n * @remarks\n *\n * The Log class provides static methods for logging messages at different levels (verbose, info, warning, error) and with context information. Context information helps identify which component generated the messages and allows for filtering of log events. In a SharePoint Framework application, these messages will appear on the developer dashboard.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Log"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Log "
             }
           ],
           "releaseTag": "Public",
@@ -1066,28 +833,12 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(error:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Log.error:member(1)",
               "docComment": "/**\n * Logs an error.\n *\n * @param source - the source from where the error is logged, e.g., the class name. The source provides context information for the logged error. If the source's length is more than 20, only the first 20 characters are kept.\n *\n * @param error - the error to be logged\n *\n * @param scope - the service scope that the source uses. A service scope can provide more context information (e.g., web part information) to the logged error.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "error"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "source"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static error(source: "
                 },
                 {
                   "kind": "Content",
@@ -1095,35 +846,21 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", error: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "error"
+                  "text": "Error",
+                  "canonicalReference": "!Error:interface"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
+                  "text": ", scope?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Error"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "scope"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -1140,31 +877,31 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "source",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "error",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 },
                 {
                   "parameterName": "scope",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
+                    "startIndex": 5,
+                    "endIndex": 6
                   }
                 }
               ],
@@ -1172,28 +909,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(info:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Log.info:member(1)",
               "docComment": "/**\n * Logs a general informational message.\n *\n * @param source - the source from where the message is logged, e.g., the class name. The source provides context information for the logged message. If the source's length is more than 20, only the first 20 characters are kept.\n *\n * @param message - the message to be logged If the message's length is more than 100, only the first 100 characters are kept.\n *\n * @param scope - the service scope that the source uses. A service scope can provide more context information (e.g., web part information) to the logged message.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "info"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "source"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static info(source: "
                 },
                 {
                   "kind": "Content",
@@ -1201,15 +922,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", message: "
                 },
                 {
                   "kind": "Content",
@@ -1217,19 +930,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", scope?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "scope"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -1246,31 +952,31 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "source",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 },
                 {
                   "parameterName": "scope",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
+                    "startIndex": 5,
+                    "endIndex": 6
                   }
                 }
               ],
@@ -1278,28 +984,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(verbose:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Log.verbose:member(1)",
               "docComment": "/**\n * Logs a message which contains detailed information that is generally only needed for troubleshooting.\n *\n * @param source - the source from where the message is logged, e.g., the class name. The source provides context information for the logged message. If the source's length is more than 20, only the first 20 characters are kept.\n *\n * @param message - the message to be logged If the message's length is more than 100, only the first 100 characters are kept.\n *\n * @param scope - the service scope that the source uses. A service scope can provide more context information (e.g., web part information) to the logged message.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "verbose"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "source"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static verbose(source: "
                 },
                 {
                   "kind": "Content",
@@ -1307,15 +997,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", message: "
                 },
                 {
                   "kind": "Content",
@@ -1323,19 +1005,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", scope?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "scope"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -1352,31 +1027,31 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "source",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 },
                 {
                   "parameterName": "scope",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
+                    "startIndex": 5,
+                    "endIndex": 6
                   }
                 }
               ],
@@ -1384,28 +1059,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(warn:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Log.warn:member(1)",
               "docComment": "/**\n * Logs a warning.\n *\n * @param source - the source from where the message is logged, e.g., the class name. The source provides context information for the logged message. If the source's length is more than 20, only the first 20 characters are kept.\n *\n * @param message - the message to be logged If the message's length is more than 100, only the first 100 characters are kept.\n *\n * @param scope - the service scope that the source uses. A service scope can provide more context information (e.g., web part information) to the logged message.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "warn"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "source"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static warn(source: "
                 },
                 {
                   "kind": "Content",
@@ -1413,15 +1072,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", message: "
                 },
                 {
                   "kind": "Content",
@@ -1429,19 +1080,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", scope?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "scope"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -1458,31 +1102,31 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "source",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 },
                 {
                   "parameterName": "scope",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
+                    "startIndex": 5,
+                    "endIndex": 6
                   }
                 }
               ],
@@ -1493,24 +1137,17 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(RandomNumberGenerator:class)",
+          "canonicalReference": "@microsoft/sp-core-library!RandomNumberGenerator:class",
           "docComment": "/**\n * This is the default implementation of {@link IRandomNumberGenerator} that simply calls Math.random().\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
+              "text": "export default class RandomNumberGenerator implements "
             },
             {
               "kind": "Reference",
-              "text": "RandomNumberGenerator"
-            },
-            {
-              "kind": "Content",
-              "text": " implements "
-            },
-            {
-              "kind": "Reference",
-              "text": "IRandomNumberGenerator"
+              "text": "IRandomNumberGenerator",
+              "canonicalReference": "@microsoft/sp-core-library!IRandomNumberGenerator:interface"
             },
             {
               "kind": "Content",
@@ -1522,24 +1159,17 @@
           "members": [
             {
               "kind": "Constructor",
-              "canonicalReference": "(:constructor,0)",
+              "canonicalReference": "@microsoft/sp-core-library!RandomNumberGenerator:constructor(1)",
               "docComment": "/**\n * Constructs a new instance of the `RandomNumberGenerator` class\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor("
+                  "text": "constructor(serviceScope: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceScope"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -1547,29 +1177,25 @@
                 }
               ],
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "serviceScope",
                   "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ]
             },
             {
               "kind": "Method",
-              "canonicalReference": "(generate:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!RandomNumberGenerator#generate:member(1)",
               "docComment": "/**\n * Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "generate"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "generate(): "
                 },
                 {
                   "kind": "Content",
@@ -1582,34 +1208,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "generate"
             },
             {
               "kind": "Property",
-              "canonicalReference": "(serviceKey:static)",
+              "canonicalReference": "@microsoft/sp-core-library!RandomNumberGenerator.serviceKey:member",
               "docComment": "/**\n * The service key for IRandomNumberGenerator.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static readonly "
+                  "text": "static readonly serviceKey: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -1617,7 +1236,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "IRandomNumberGenerator"
+                  "text": "IRandomNumberGenerator",
+                  "canonicalReference": "@microsoft/sp-core-library!IRandomNumberGenerator:interface"
                 },
                 {
                   "kind": "Content",
@@ -1631,80 +1251,100 @@
               "releaseTag": "Public",
               "name": "serviceKey",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               },
               "isStatic": true
             }
           ],
           "implementsTokenRanges": [
             {
-              "startIndex": 3,
-              "endIndex": 5
+              "startIndex": 1,
+              "endIndex": 3
             }
           ]
         },
         {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/sp-core-library!ServiceCreator:type",
+          "docComment": "/**\n * This is a callback that is used by ServiceKey.createCustom().\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type ServiceCreator<T> = "
+            },
+            {
+              "kind": "Content",
+              "text": "(serviceScope: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ServiceScope",
+              "canonicalReference": "@microsoft/sp-core-library!default:class"
+            },
+            {
+              "kind": "Content",
+              "text": ") => T"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ServiceCreator",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
           "kind": "Class",
-          "canonicalReference": "(ServiceKey:class)",
+          "canonicalReference": "@microsoft/sp-core-library!ServiceKey:class",
           "docComment": "/**\n * The ServiceKey is a lookup key that is used when calling {@link ServiceScope.consume} to fetch a dependency.\n *\n * @remarks\n *\n * Every service key also provides a default implementation of the dependency, which will be automatically created in the root scope if the dependency is not found. Providing a default implementation ensures that new dependencies can be safely introduced without inadvertently breaking components that are loaded by an older host that does not provide the new dependency.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "ServiceKey"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "T"
-            },
-            {
-              "kind": "Content",
-              "text": "> "
+              "text": "export default class ServiceKey<T> "
             }
           ],
           "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
           "name": "ServiceKey",
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(create:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceKey.create:member(1)",
               "docComment": "/**\n * Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that accepts the standard constructor parameter.\n *\n * @remarks\n *\n * If you want to specify custom constructor parameters, use {@link ServiceKey.createCustom} instead.\n *\n * @param name - A name such as \"my-package.IMyService\" which should be unique across packages.\n *\n * @param serviceClass - the TypeScript class that implements the service.\n *\n * @returns the newly created ServiceKey\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "create"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "name"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static create<TKey>(name: "
                 },
                 {
                   "kind": "Content",
@@ -1712,31 +1352,20 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "serviceClass"
+                  "text": ", serviceClass: "
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Content",
-                  "text": "{\n        new ("
+                  "text": "{\n        new (serviceScope: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "): TKey;\n    }"
                 },
                 {
                   "kind": "Content",
@@ -1744,31 +1373,12 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "TKey"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ";\n    }"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "<TKey>"
                 },
                 {
                   "kind": "Content",
@@ -1777,24 +1387,37 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 19,
-                "endIndex": 23
+                "startIndex": 7,
+                "endIndex": 9
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "name",
                   "parameterTypeTokenRange": {
-                    "startIndex": 7,
-                    "endIndex": 8
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "serviceClass",
                   "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 18
+                    "startIndex": 3,
+                    "endIndex": 6
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TKey",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
                   }
                 }
               ],
@@ -1802,36 +1425,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(createCustom:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceKey.createCustom:member(1)",
               "docComment": "/**\n * Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.\n *\n * @param name - A name such as \"my-package.IMyService\" which should be unique across packages.\n *\n * @param defaultCreator - a callback that returns an object that implements the T interface\n *\n * @returns the newly created service key\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "createCustom"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "name"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static createCustom<TKey>(name: "
                 },
                 {
                   "kind": "Content",
@@ -1839,31 +1438,16 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", defaultCreator: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "defaultCreator"
+                  "text": "ServiceCreator",
+                  "canonicalReference": "@microsoft/sp-core-library!ServiceCreator:type"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceCreator"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "<TKey>"
                 },
                 {
                   "kind": "Content",
@@ -1871,19 +1455,12 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ServiceKey"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "<TKey>"
                 },
                 {
                   "kind": "Content",
@@ -1892,24 +1469,37 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 16,
-                "endIndex": 20
+                "startIndex": 6,
+                "endIndex": 8
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "name",
                   "parameterTypeTokenRange": {
-                    "startIndex": 7,
-                    "endIndex": 8
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "defaultCreator",
                   "parameterTypeTokenRange": {
-                    "startIndex": 11,
-                    "endIndex": 15
+                    "startIndex": 3,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TKey",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
                   }
                 }
               ],
@@ -1917,36 +1507,21 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "(defaultCreator:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceKey#defaultCreator:member",
               "docComment": "/**\n * A callback function that constructs the default instance of this service.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly defaultCreator: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "defaultCreator"
+                  "text": "ServiceCreator",
+                  "canonicalReference": "@microsoft/sp-core-library!ServiceCreator:type"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceCreator"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "T"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "<T>"
                 },
                 {
                   "kind": "Content",
@@ -1956,27 +1531,19 @@
               "releaseTag": "Public",
               "name": "defaultCreator",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 3
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(id:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceKey#id:member",
               "docComment": "/**\n * A unique identifier for this service key.\n *\n * @remarks\n *\n * This identifier is an automatically generated string that will be unique for the lifetime of the page. Callers should not make assumptions about the formatting of this string. It is currently based on a global counter, but this may change in the future.\n *\n * The ServiceScope uses this identifier internally as a dictionary key for finding services. The ServiceKey is meant to be unique, even if multiple instances of the same library are loaded on the same page, even if the same name was passed to ServiceKey.create(). This is because each call to ServiceKey.create() could potentially provide a different defaultCreator implementation, whereas one of the design goals of ServiceScope is that the order in which libraries are loaded should never affect the resulting tree of scopes.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "id"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly id: "
                 },
                 {
                   "kind": "Content",
@@ -1990,27 +1557,19 @@
               "releaseTag": "Public",
               "name": "id",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(name:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceKey#name:member",
               "docComment": "/**\n * The name of the service.\n *\n * @remarks\n *\n * This name is used for logging and diagnostic purposes only. To make it unique, the recommended convention is the package name, followed by a period, followed by the class or interface name.\n *\n * The system does not assume that this string is unique. Instead, the {@link ServiceKey.id} is used wherever a lookup key is needed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "name"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly name: "
                 },
                 {
                   "kind": "Content",
@@ -2024,8 +1583,8 @@
               "releaseTag": "Public",
               "name": "name",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             }
@@ -2034,20 +1593,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(ServiceScope:class)",
+          "canonicalReference": "@microsoft/sp-core-library!ServiceScope:class",
           "docComment": "/**\n * The service locator pattern used by the SharePoint Framework.\n *\n * @remarks\n *\n * ServiceScope provides a formalized way for components to register and consume dependencies (\"services\"), and to enable different implementations to be registered in different scopes. This improves modularity by decoupling components from their dependencies in an extensible way.\n *\n * For example, suppose that various components need access to an IPageManager instance. We could simply make the PageManager a singleton (i.e. global variable), but this will not work e.g. if we need to create a pop-up dialog that requires a second PageManager instance. A better solution would be to add the PageManager as a constructor parameter for each component that requires it, however then we immediately face the problem that any code that calls these constructors also needs a PageManager parameter. In an application with many such dependencies, business logic that ties together many subsystems would eventually pick up a constructor parameter for every possible dependency, which is awkward. A natural solution would be to move all the dependencies into a class with name like \"ApplicationContext\", and then pass this around as our constructor parameter. This enables the PageManager to be passed to classes that need it without cluttering the intermediary classes that don't. However, it still has a design problem that \"ApplicationContext\" has hard-coded dependencies on many unrelated things. A more flexible approach is to make it a dictionary that can look up items for consumers/providers who know the right lookup key (i.e. ServiceKey). This is the popular \"service locator\" design pattern, familiar from the SPContext API in classic SharePoint.\n *\n * ServiceScope takes this idea a step further in two important ways: First, it provides a scoping mechanism so that e.g. if we have two different pages, they can each provide a unique PageManager instance while still sharing other common dependencies. Secondly, it allows for a ServiceKey to provide a default implementation of the dependency. This is important for API stability in our modular client-side environment: For example, suppose that version 2.0 of our application introduced a new IDiagnosticTracing interface that a version 2.0 component will expect to consume. If the version 2.0 component gets loaded by an older 1.0 application, it would fail. We could fix this by requiring each consumer to check for any missing dependencies and handle that case, but it would require a lot of checks. A better solution is to ensure that a default implementation always exists, perhaps just a trivial behavior, so that components can assume that consume() will always return some object that implements the contract.\n *\n * Usage: ServiceScope instances are created by calling either ServiceScope.startNewRoot() or ServiceScope.startNewChild(). They are initially in an \"unfinished\" state, during which provide() can be called to register service keys, but consume() is disallowed. After ServiceScope.finish() is called, consume() is allowed and provide() is now disallowed. These semantics ensure that ServiceScope.consume() always returns the same result for the same key, and does not depend on order of initialization. It also allows us to support circular dependencies without worrying about infinite loops. (Circular dependencies are best avoided, however this is difficult to guarantee when working with components that were contributed by various third parties without any coordination.) To avoid mistakes, it's best to always call consume() inside a callback from serviceScope.whenFinished().\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "ServiceScope"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class ServiceScope "
             }
           ],
           "releaseTag": "Public",
@@ -2055,24 +1606,17 @@
           "members": [
             {
               "kind": "Constructor",
-              "canonicalReference": "(:constructor,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope:constructor(1)",
               "docComment": "/**\n * Constructs a new instance of the `ServiceScope` class\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected constructor("
+                  "text": "protected constructor(parent: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "parent"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -2084,68 +1628,41 @@
                 }
               ],
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "parent",
                   "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 3
                   }
                 }
               ]
             },
             {
               "kind": "Method",
-              "canonicalReference": "(consume:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#consume:member(1)",
               "docComment": "/**\n * Consumes a service from the service scope.\n *\n * @remarks\n *\n * Components should call this function to \"consume\" a dependency, i.e. look up the serviceKey and return the registered service instance. If the instance cannot be found, then a default instance will be automatically created and registered with the root ServiceScope.\n *\n * @param serviceKey - the key that was used when provide() was called to register the service\n *\n * @returns the service instance\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "consume"
-                },
-                {
                   "kind": "Content",
-                  "text": "<"
+                  "text": "consume<T>(serviceKey: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "T"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ">("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "serviceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "T"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "<T>"
                 },
                 {
                   "kind": "Content",
                   "text": "): "
                 },
                 {
-                  "kind": "Reference",
+                  "kind": "Content",
                   "text": "T"
                 },
                 {
@@ -2155,17 +1672,30 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 4,
+                "endIndex": 5
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "serviceKey",
                   "parameterTypeTokenRange": {
-                    "startIndex": 6,
-                    "endIndex": 10
+                    "startIndex": 1,
+                    "endIndex": 3
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
                   }
                 }
               ],
@@ -2173,95 +1703,45 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(createAndProvide:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#createAndProvide:member(1)",
               "docComment": "/**\n * This is a shorthand function that is equivalent to constructing a new instance of the simpleServiceClass, then registering it by calling ServiceScope.provide().\n *\n * @param serviceKey - the key that can be used later to consume the service\n *\n * @param simpleServiceClass - the TypeScript class to be constructed\n *\n * @returns a newly constructed instance of simpleServiceClass\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "createAndProvide"
-                },
-                {
                   "kind": "Content",
-                  "text": "<"
+                  "text": "createAndProvide<T>(serviceKey: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "T"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ">("
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", simpleServiceClass: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        new (serviceScope: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceKey"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "T"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "simpleServiceClass"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Content",
-                  "text": "{\n        new ("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "serviceScope"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "): T;\n    }"
                 },
                 {
                   "kind": "Content",
                   "text": "): "
                 },
                 {
-                  "kind": "Reference",
-                  "text": "T"
-                },
-                {
                   "kind": "Content",
-                  "text": ";\n    }"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
                   "text": "T"
                 },
                 {
@@ -2271,24 +1751,37 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 21,
-                "endIndex": 22
+                "startIndex": 8,
+                "endIndex": 9
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "serviceKey",
                   "parameterTypeTokenRange": {
-                    "startIndex": 6,
-                    "endIndex": 10
+                    "startIndex": 1,
+                    "endIndex": 3
                   }
                 },
                 {
                   "parameterName": "simpleServiceClass",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 20
+                    "startIndex": 4,
+                    "endIndex": 7
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
                   }
                 }
               ],
@@ -2296,55 +1789,28 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(createDefaultAndProvide:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide:member(1)",
               "docComment": "/**\n * This is a shorthand function that constructs the default implementation of the specified serviceKey, and then registers it by calling ServiceScope.provide().\n *\n * @param serviceKey - the key that can be used later to consume the service\n *\n * @returns a service instance that was constructed using ServiceKey.defaultCreator\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "createDefaultAndProvide"
-                },
-                {
                   "kind": "Content",
-                  "text": "<"
+                  "text": "createDefaultAndProvide<T>(serviceKey: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "T"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ">("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "serviceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "T"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
+                  "text": "<T>"
                 },
                 {
                   "kind": "Content",
                   "text": "): "
                 },
                 {
-                  "kind": "Reference",
+                  "kind": "Content",
                   "text": "T"
                 },
                 {
@@ -2354,17 +1820,30 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 4,
+                "endIndex": 5
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "serviceKey",
                   "parameterTypeTokenRange": {
-                    "startIndex": 6,
-                    "endIndex": 10
+                    "startIndex": 1,
+                    "endIndex": 3
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
                   }
                 }
               ],
@@ -2372,16 +1851,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(finish:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#finish:member(1)",
               "docComment": "/**\n * Completes the initialization sequence for a service scope.\n *\n * @remarks\n *\n * When a ServiceScope is first started, it is in an \"unfinished\" state where provide() is allowed but consume() is disallowed. After calling finish(), then consume() is allowed but provide() is disallowed.\n *\n * This formalism prevents a number of complex situations that could lead to bugs. For example, supposed that Scope2 is a child of Scope1, and Scope1 provides instance A1 of interface A. If someone consumes A1 from Scope2 (via inheritance) before Scope2.provide() is called with A2, then a subsequent call to Scope2.consume() might return a different result than the previous call. This nondeterminism could cause unpredictable results that are difficult to diagnose.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "finish"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "finish(): "
                 },
                 {
                   "kind": "Content",
@@ -2394,30 +1869,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "finish"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getParent:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#getParent:member(1)",
               "docComment": "/**\n * Returns the parent of the current ServiceScope, or undefined if this is a root scope.\n *\n * @returns the parent service scope\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getParent"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "getParent(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -2430,73 +1902,38 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 3
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "getParent"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(provide:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#provide:member(1)",
               "docComment": "/**\n * Add a new service to a service scope.\n *\n * @remarks\n *\n * ServiceScope.provide() is used to register an implementation of the given serviceKey for the current scope. It may only be used when the ServiceScope is in an \"unfinished\" state, i.e. before finish() has been called.\n *\n * @param serviceKey - the key that will later be used to consume the service\n *\n * @param service - the service instance that is being registered\n *\n * @returns the same object that was passed as the \"service\" parameter\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "provide"
-                },
-                {
                   "kind": "Content",
-                  "text": "<"
+                  "text": "provide<T>(serviceKey: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "T"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": ">("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "serviceKey"
+                  "text": "<T>"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
+                  "text": ", service: "
                 },
                 {
                   "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "T"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "service"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
                   "text": "T"
                 },
                 {
@@ -2504,7 +1941,7 @@
                   "text": "): "
                 },
                 {
-                  "kind": "Reference",
+                  "kind": "Content",
                   "text": "T"
                 },
                 {
@@ -2514,24 +1951,37 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
+                "startIndex": 6,
+                "endIndex": 7
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "serviceKey",
                   "parameterTypeTokenRange": {
-                    "startIndex": 6,
-                    "endIndex": 10
+                    "startIndex": 1,
+                    "endIndex": 3
                   }
                 },
                 {
                   "parameterName": "service",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
+                    "startIndex": 4,
+                    "endIndex": 5
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
                   }
                 }
               ],
@@ -2539,20 +1989,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(startNewChild:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#startNewChild:member(1)",
               "docComment": "/**\n * Constructs a new ServiceScope that is a child of the current scope.\n *\n * @remarks\n *\n * The service scopes form a tree structure, such that when consuming a service, if the key is not explicitly provided by a child scope, the parent hierarchy will be consulted.\n *\n * @returns the newly created root ServiceScope\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "startNewChild"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "startNewChild(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -2561,34 +2008,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "startNewChild"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(startNewRoot:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope.startNewRoot:member(1)",
               "docComment": "/**\n * Create a new root-level ServiceScope. Only root-level scopes have the ability to autocreate default implementations of ServiceKeys.\n *\n * @returns the newly created root ServiceScope\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
+                  "text": "static startNewRoot(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "startNewRoot"
-                },
-                {
-                  "kind": "Content",
-                  "text": "(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -2597,34 +2037,22 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "startNewRoot"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(whenFinished:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceScope#whenFinished:member(1)",
               "docComment": "/**\n * Defer an operation until after {@link ServiceScope.finish} has completed.\n *\n * @remarks\n *\n * It is an error to call ServiceScope.consume() before finish() has been called. The most reliable way to protect your component against this error is to perform the consume() calls inside a whenFinished() callback. If the service scope is already finished, then the callback will be executed immediately; otherwise, it will be executed later when the scope is finished.\n *\n * NOTE: This is not an asynchronous callback. ServiceScope initialization is typically inexpensive and short lived. However, the control flow often threads through numerous constructors and base classes, which can be simplified using whenFinished().\n *\n * @param callback - A block of code that needs to call ServiceScope.consume()\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "whenFinished"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "callback"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "whenFinished(callback: "
                 },
                 {
                   "kind": "Content",
@@ -2645,17 +2073,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "callback",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -2666,20 +2094,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Session:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Session:class",
           "docComment": "/**\n * Provides access to the application's browser session and active page.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Session"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Session "
             }
           ],
           "releaseTag": "Public",
@@ -2687,24 +2107,17 @@
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(applicationId:static)",
+              "canonicalReference": "@microsoft/sp-core-library!Session.applicationId:member",
               "docComment": "/**\n * A unique identifier for the current instance of the client-side application.\n *\n * @remarks\n *\n * A unique identifier used to correlate logging and other diagnostic information. Its lifetime persists for the duration of the client-side application instance, i.e. it begins with the server request that renders the page, and ends e.g. when the browser tab is closed or F5 is pressed to reload the page. Note that if the application's router supports in-place navigation (via the history.pushState() API), the application session persists across these transitions.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static readonly "
+                  "text": "static readonly applicationId: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "applicationId"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -2714,31 +2127,24 @@
               "releaseTag": "Public",
               "name": "applicationId",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": true
             },
             {
               "kind": "Property",
-              "canonicalReference": "(pageId:static)",
+              "canonicalReference": "@microsoft/sp-core-library!Session.pageId:member",
               "docComment": "/**\n * A unique identifier for the current page within the client-side application.\n *\n * @remarks\n *\n * A unique identifier used to correlate logging and other diagnostic information. Whereas the {@link Session.applicationId} tracks the entire lifetime of the client-side application instance, the pageId tracks an individual \"page\" that is rendered.\n *\n * For example, suppose that the application initially loads PageA, then the user does in-place navigation (via the history.pushState() API) to PageB, then navigates back to PageA, and finally they close the browser tab. During this sequence, the applicationId will remain the same, however the pageId will change on each navigation. The 3 different pageId values are used by the diagnostics e.g. to track success/failure statistics for PageA independently of PageB.\n *\n * The concept of a page is subjective and defined by the router for a particular application.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static readonly "
+                  "text": "static readonly pageId: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "pageId"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Guid"
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -2748,8 +2154,8 @@
               "releaseTag": "Public",
               "name": "pageId",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": true
             }
@@ -2758,32 +2164,17 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(SPEvent:class)",
+          "canonicalReference": "@microsoft/sp-core-library!SPEvent:class",
           "docComment": "/**\n * Represents a framework event that components can subscribe to.\n *\n * @remarks\n *\n * Examples of events in a web application might include: the user clicking a button, the system navigating to another page, or an item being added/removed from an abstract collection. The SharePoint Framework represents events using instances of the SPEvent object, one for each kind of event. The SPEvent object is typically exposed as a property of an associated class (e.g. the button that can be clicked). When a component is interested in an event, it calls add() to register an event handler callback that will be invoked each time the event occurs. The handler receives an SPEventArgs parameter that may provide additional details about what happened. This is analogous to the browser's Document Object Model (DOM) events. The main difference is the ISPEventObserver feature, which tracks which component subscribed to each event, and automatically unsubscribes the handler when the component is disposed.\n *\n * When an event is raised, all handlers are invoked synchronously. The order in which event handlers are called is unspecified. The event handler callback must catch any exceptions that occur during processing; an uncaught exception will not prevent other handlers from executing, but it will be reported as a problem with the associated component.\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `SPEvent` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
+              "text": "export default class SPEvent<TEventArgs extends "
             },
             {
               "kind": "Reference",
-              "text": "SPEvent"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "TEventArgs"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "SPEventArgs"
+              "text": "SPEventArgs",
+              "canonicalReference": "@microsoft/sp-core-library!default:class"
             },
             {
               "kind": "Content",
@@ -2791,64 +2182,42 @@
             }
           ],
           "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TEventArgs",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
           "name": "SPEvent",
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(add:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!SPEvent#add:member(1)",
               "docComment": "/**\n * Registers a callback that will be invoked whenever the event occurs.\n *\n * @remarks\n *\n * The same object can add multiple event handlers to the same event. Since BaseComponent implements the ISPEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event handler to be automatically unsubscribed when the web part or extension is disposed.\n *\n * @param observer - Indicates the object that is subscribing to the event: When the object is disposed, the event handler will be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event handler failed to catch an exception.\n *\n * @param eventHandler - A callback function that will be invoked whenever the event occurs\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "add"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "add(observer: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "observer"
+                  "text": "ISPEventObserver",
+                  "canonicalReference": "@microsoft/sp-core-library!ISPEventObserver:interface"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ISPEventObserver"
+                  "text": ", eventHandler: "
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "eventHandler"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "eventArgs"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TEventArgs"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => void"
+                  "text": "(eventArgs: TEventArgs) => void"
                 },
                 {
                   "kind": "Content",
@@ -2865,24 +2234,24 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 14,
-                "endIndex": 15
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "observer",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "eventHandler",
                   "parameterTypeTokenRange": {
-                    "startIndex": 8,
-                    "endIndex": 13
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -2890,60 +2259,25 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(remove:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!SPEvent#remove:member(1)",
               "docComment": "/**\n * Unregisters a callback that was registered using add().\n *\n * @remarks\n *\n * If the event handler has already been removed, or if it was never added, then this method has no effect.\n *\n * @param observer - This must be the same observer that was passed to the add() function.\n *\n * @param eventHandler - The event handler to remove; this must be the same object instance that was passed to the add() function.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "remove"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "remove(observer: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "observer"
+                  "text": "ISPEventObserver",
+                  "canonicalReference": "@microsoft/sp-core-library!ISPEventObserver:interface"
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ISPEventObserver"
+                  "text": ", eventHandler: "
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "eventHandler"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "eventArgs"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TEventArgs"
-                },
-                {
-                  "kind": "Content",
-                  "text": ") => void"
+                  "text": "(eventArgs: TEventArgs) => void"
                 },
                 {
                   "kind": "Content",
@@ -2960,24 +2294,24 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 14,
-                "endIndex": 15
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "observer",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "eventHandler",
                   "parameterTypeTokenRange": {
-                    "startIndex": 8,
-                    "endIndex": 13
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -2988,20 +2322,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(SPEventArgs:class)",
+          "canonicalReference": "@microsoft/sp-core-library!SPEventArgs:class",
           "docComment": "/**\n * The base class for event arguments used with the {@link SPEvent} class.\n *\n * @remarks\n *\n * If certain event types need to provide additional details, they will define a subclass of SPEventArgs.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "SPEventArgs"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class SPEventArgs "
             }
           ],
           "releaseTag": "Public",
@@ -3011,20 +2337,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Text:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Text:class",
           "docComment": "/**\n * Operations for working with strings that contain text.\n *\n * @remarks\n *\n * The utilities provided by this class are intended to be simple, small, and very broadly applicable.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Text"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Text "
             }
           ],
           "releaseTag": "Public",
@@ -3032,28 +2350,12 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(format:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Text.format:member(1)",
               "docComment": "/**\n * Format a string by substituting parameters.\n *\n * @remarks\n *\n * This function replaces template parameters such as `\"{0}\"` or `\"{1}\"` with the corresponding argument. If the value is null or undefined, it will be replaced by the word `\"null\"` or `\"undefined\"`. The format string s must not be null or undefined.\n *\n * Usage example:\n *\n * `Text.format(\"hello {0}!\", \"world\")` will return `\"hello world!\"`\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "format"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "s"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static format(s: "
                 },
                 {
                   "kind": "Content",
@@ -3061,15 +2363,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", ..."
-                },
-                {
-                  "kind": "Reference",
-                  "text": "values"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", ...values: "
                 },
                 {
                   "kind": "Content",
@@ -3090,24 +2384,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "s",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "values",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -3115,28 +2409,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(replaceAll:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Text.replaceAll:member(1)",
               "docComment": "/**\n * Returns the input string, with all instances of `searchValue` replaced by `replaceValue`.\n *\n * @remarks\n *\n * Note that JavaScript's `string.replace()` only replaces the first match, unless a global RegExp is provided.\n *\n * @param input - The string to be modified\n *\n * @param searchValue - The value to search for\n *\n * @param replaceValue - The replacement text\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "replaceAll"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "input"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static replaceAll(input: "
                 },
                 {
                   "kind": "Content",
@@ -3144,15 +2422,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "searchValue"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", searchValue: "
                 },
                 {
                   "kind": "Content",
@@ -3160,15 +2430,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "replaceValue"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", replaceValue: "
                 },
                 {
                   "kind": "Content",
@@ -3189,31 +2451,31 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 15,
-                "endIndex": 16
+                "startIndex": 7,
+                "endIndex": 8
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "input",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "searchValue",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 },
                 {
                   "parameterName": "replaceValue",
                   "parameterTypeTokenRange": {
-                    "startIndex": 13,
-                    "endIndex": 14
+                    "startIndex": 5,
+                    "endIndex": 6
                   }
                 }
               ],
@@ -3224,24 +2486,17 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(TimeProvider:class)",
+          "canonicalReference": "@microsoft/sp-core-library!TimeProvider:class",
           "docComment": "/**\n * This is the default implementation of {@link ITimeProvider} that simply calls the real browser APIs.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
+              "text": "export default class TimeProvider implements "
             },
             {
               "kind": "Reference",
-              "text": "TimeProvider"
-            },
-            {
-              "kind": "Content",
-              "text": " implements "
-            },
-            {
-              "kind": "Reference",
-              "text": "ITimeProvider"
+              "text": "ITimeProvider",
+              "canonicalReference": "@microsoft/sp-core-library!ITimeProvider:interface"
             },
             {
               "kind": "Content",
@@ -3253,24 +2508,17 @@
           "members": [
             {
               "kind": "Constructor",
-              "canonicalReference": "(:constructor,0)",
+              "canonicalReference": "@microsoft/sp-core-library!TimeProvider:constructor(1)",
               "docComment": "/**\n * Constructs a new instance of the `TimeProvider` class\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor("
+                  "text": "constructor(serviceScope: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceScope"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceScope"
+                  "text": "ServiceScope",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -3278,33 +2526,30 @@
                 }
               ],
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "serviceScope",
                   "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ]
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getDate:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!TimeProvider#getDate:member(1)",
               "docComment": "/**\n * Returns the current date/time, similar to the Date class constructor.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getDate"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "getDate(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Date"
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
                 },
                 {
                   "kind": "Content",
@@ -3313,26 +2558,22 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "getDate"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getTimestamp:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!TimeProvider#getTimestamp:member(1)",
               "docComment": "/**\n * Returns a DOMHighResTimeStamp timing measurement, as defined by the standard performance.now() API.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getTimestamp"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "getTimestamp(): "
                 },
                 {
                   "kind": "Content",
@@ -3345,34 +2586,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "getTimestamp"
             },
             {
               "kind": "Property",
-              "canonicalReference": "(serviceKey:static)",
+              "canonicalReference": "@microsoft/sp-core-library!TimeProvider.serviceKey:member",
               "docComment": "/**\n * The service key for ITimeProvider.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static readonly "
+                  "text": "static readonly serviceKey: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "serviceKey"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ServiceKey"
+                  "text": "ServiceKey",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -3380,7 +2614,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "ITimeProvider"
+                  "text": "ITimeProvider",
+                  "canonicalReference": "@microsoft/sp-core-library!ITimeProvider:interface"
                 },
                 {
                   "kind": "Content",
@@ -3394,35 +2629,27 @@
               "releaseTag": "Public",
               "name": "serviceKey",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
+                "startIndex": 1,
+                "endIndex": 5
               },
               "isStatic": true
             }
           ],
           "implementsTokenRanges": [
             {
-              "startIndex": 3,
-              "endIndex": 5
+              "startIndex": 1,
+              "endIndex": 3
             }
           ]
         },
         {
           "kind": "Class",
-          "canonicalReference": "(UrlQueryParameterCollection:class)",
+          "canonicalReference": "@microsoft/sp-core-library!UrlQueryParameterCollection:class",
           "docComment": "/**\n * Provides features for storing and retrieving URL query parameters.\n *\n * @remarks\n *\n * The URL can be server-relative, and it can also be an empty or null string. The query parameters must start with \"?\" to indicate the first query parameter and use \"&\" for all subsequent parameters. The class also supports fragments.\n *\n * Edge case behavior:\n *\n * Empty value (www.example.com/?test=) stores key and empty value No equals in queryParam (www.example.com/?test) stores key and undefined value Empty queryParam (www.example.com/?&debug=on) stores undefined key and value Query param with only equals (www.example.com/?=&debug=on stores empty string key and value\n *\n * @deprecated\n *\n * Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "UrlQueryParameterCollection"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class UrlQueryParameterCollection "
             }
           ],
           "releaseTag": "Public",
@@ -3430,20 +2657,12 @@
           "members": [
             {
               "kind": "Constructor",
-              "canonicalReference": "(:constructor,0)",
+              "canonicalReference": "@microsoft/sp-core-library!UrlQueryParameterCollection:constructor(1)",
               "docComment": "/**\n * Constructs a new instance of the `UrlQueryParameterCollection` class\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "url"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "constructor(url: "
                 },
                 {
                   "kind": "Content",
@@ -3455,37 +2674,25 @@
                 }
               ],
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "url",
                   "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ]
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getValue:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!UrlQueryParameterCollection#getValue:member(1)",
               "docComment": "/**\n * Returns the value of the first matching query parameter or undefined if the key doesn't exist.\n *\n * @remarks\n *\n * Examples:\n * ```\n * this._queryParameterList = [\n * {key: TEST, value: done},\n * {key: DEBUG, value: false},\n * {key: TEST, value: notdone}]\n *   getValue('TEST') ---> 'done'\n *   getValue('debug')  ---> 'false'\n *   getValue('lost')  ---> undefined\n * ```\n *\n * @param param - the case insensitive key for the desired query parameter value.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getValue"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "param"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "getValue(param: "
                 },
                 {
                   "kind": "Content",
@@ -3506,17 +2713,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "param",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -3524,24 +2731,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(getValues:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!UrlQueryParameterCollection#getValues:member(1)",
               "docComment": "/**\n * Returns the values of all of the matching query parameters or undefined if the key doesn't exist.\n *\n * @remarks\n *\n * Examples:\n * ```\n * this._queryParameterList = [\n * {key: TEST, value: done},\n * {key: DEBUG, value: false},\n * {key: TEST, value: notdone}]\n *   getValues('TEST') ---> ['done', 'notdone']\n *   getValues('debug')  ---> ['false']\n *   getValues('lost')  ---> undefined\n * ```\n *\n * @param param - the case insensitive key for the desired query parameter value.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "getValues"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "param"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "getValues(param: "
                 },
                 {
                   "kind": "Content",
@@ -3562,17 +2757,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "param",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -3583,20 +2778,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Validate:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Validate:class",
           "docComment": "/**\n * Performs common validation tests for properties and function parameters.\n *\n * @remarks\n *\n * This class implements provides a standard way to validate properties and function parameters. Unlike debug assertions, Validate checks are always performed and will always throw an error, even in a production release. As such, be careful not to overuse these checks in a way that might impact performance.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Validate"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Validate "
             }
           ],
           "releaseTag": "Public",
@@ -3604,28 +2791,12 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(isNonemptyString:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Validate.isNonemptyString:member(1)",
               "docComment": "/**\n * Throws an exception if the specified string is null, undefined, or an empty string.\n *\n * @param value - the value to check\n *\n * @param variableName - the program variable name, which will be mentioned in the error message\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isNonemptyString"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "value"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static isNonemptyString(value: "
                 },
                 {
                   "kind": "Content",
@@ -3633,15 +2804,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "variableName"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", variableName: "
                 },
                 {
                   "kind": "Content",
@@ -3662,24 +2825,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "value",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "variableName",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -3687,44 +2850,21 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(isNotDisposed:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Validate.isNotDisposed:member(1)",
               "docComment": "/**\n * Throws an exception if the specified object has been disposed.\n *\n * @param value - the value to check\n *\n * @param className - the class name, which will be mentioned in the error message\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
+                  "text": "static isNotDisposed(value: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "isNotDisposed"
+                  "text": "IDisposable",
+                  "canonicalReference": "@microsoft/sp-core-library!IDisposable:interface"
                 },
                 {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "value"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IDisposable"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "className"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", className: "
                 },
                 {
                   "kind": "Content",
@@ -3745,24 +2885,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "value",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "className",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -3770,28 +2910,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(isNotNullOrUndefined:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Validate.isNotNullOrUndefined:member(1)",
               "docComment": "/**\n * Throws an exception if the specified value is null or undefined.\n *\n * @param value - the value to check\n *\n * @param variableName - the program variable name, which will be mentioned in the error message\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isNotNullOrUndefined"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "value"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static isNotNullOrUndefined(value: "
                 },
                 {
                   "kind": "Content",
@@ -3799,15 +2923,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "variableName"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", variableName: "
                 },
                 {
                   "kind": "Content",
@@ -3828,24 +2944,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "value",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "variableName",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -3853,28 +2969,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(isTrue:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Validate.isTrue:member(1)",
               "docComment": "/**\n * Throws an exception if the specified value is not true.\n *\n * @param value - the value to check\n *\n * @param variableName - the program variable name, which will be mentioned in the error message\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isTrue"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "value"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static isTrue(value: "
                 },
                 {
                   "kind": "Content",
@@ -3882,15 +2982,7 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "variableName"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": ", variableName: "
                 },
                 {
                   "kind": "Content",
@@ -3911,24 +3003,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "value",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "variableName",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -3939,20 +3031,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Version:class)",
+          "canonicalReference": "@microsoft/sp-core-library!Version:class",
           "docComment": "/**\n * Represents a version number with two, three, or four parts.\n *\n * @remarks\n *\n * This class represents versions that follow the string format of `MAJOR.MINOR[.PATCH[.REVISION]]` where the MAJOR, MINOR, PATCH and REVISION parts are integers. PATCH and REVISION are optional. Leading zero digits are allowed, but they are discarded. Missing parts are treated as zeroes for comparisons.\n *\n * Examples: `1.0`, `1.0.0`, `1.0.0.0`, `1.01`, `01.02.03`, `001.002.003.004`\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Version"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Version "
             }
           ],
           "releaseTag": "Public",
@@ -3960,48 +3044,26 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(compare:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version.compare:member(1)",
               "docComment": "/**\n * Compares two Version objects to determine which version is newer.\n *\n * @param v1 - The first version class for comparison\n *\n * @param v2 - The second version class for comparison\n *\n * @returns -1 if the first input is less than the second input; 0 if the first input is equal to the second input; 1 if the first input is greater than the second input.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
+                  "text": "static compare(v1: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "compare"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": "("
+                  "text": ", v2: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "v1"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Version"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "v2"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4018,24 +3080,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 6
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "v1",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "v2",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -4043,28 +3105,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(equals:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#equals:member(1)",
               "docComment": "/**\n * Tests whether this version is equal to the input parameter.\n *\n * @remarks\n *\n * Examples:\n * ```\n * 1.0.0 equals 1.0.0 -> true;\n * 2.0.1 equals 2.0.0 -> false;\n * 3.0   equals 3.0.0 -> true;\n * 04.01 equals 4.1   -> true\n * ```\n *\n * @param compareWith - The version to compare with\n *\n * @returns A boolean indicating if this version is equal to the input parameter\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "equals"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "equals(compareWith: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "compareWith"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4081,17 +3132,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "compareWith",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4099,28 +3150,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(greaterThan:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#greaterThan:member(1)",
               "docComment": "/**\n * Tests whether this version is greater than (i.e. newer than) the input parameter.\n *\n * @remarks\n *\n * Examples:\n * ```\n * 1.0.0 greaterThan 0.0.9 -> true;\n * 2.0   greaterThan 2.0.0 -> false;\n * 3.0.1 greaterThan 3.0   -> true\n * ```\n *\n * @param compareWith - The version to compare with\n *\n * @returns A boolean indicating if this version is greater than the input parameter\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "greaterThan"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "greaterThan(compareWith: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "compareWith"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4137,17 +3177,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "compareWith",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4155,28 +3195,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(isValid:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version.isValid:member(1)",
               "docComment": "/**\n * Test whether a string is a valid version specifier.\n *\n * @param versionString - The version string\n *\n * @returns true if the versionString is a valid version specifier\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isValid"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "versionString"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static isValid(versionString: "
                 },
                 {
                   "kind": "Content",
@@ -4197,17 +3221,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "versionString",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4215,28 +3239,17 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(lessThan:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#lessThan:member(1)",
               "docComment": "/**\n * Tests whether this version is less than (i.e. older than) the input parameter.\n *\n * @remarks\n *\n * Examples:\n * ```\n * 0.9.9 lessThan 1.0.0 -> true;\n * 2.0   lessThan 2.0.0 -> false;\n * 3.0   lessThan 3.0.1 -> true;\n * 04.01 lessThan 4.1   -> false\n * ```\n *\n * @param compareWith - The version to compare with\n *\n * @returns A boolean indicating if this version is less than the input parameter\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "lessThan"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "lessThan(compareWith: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "compareWith"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4253,17 +3266,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "compareWith",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4271,20 +3284,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "(major:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#major:member",
               "docComment": "/**\n * Returns the first component of the version string.\n *\n * @remarks\n *\n * Typically a change in the major version number indicates a compatibility break with previous versions.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "major"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly major: "
                 },
                 {
                   "kind": "Content",
@@ -4298,27 +3303,19 @@
               "releaseTag": "Public",
               "name": "major",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(minor:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#minor:member",
               "docComment": "/**\n * Returns the second component of the version string.\n *\n * @remarks\n *\n * Typically a change in the minor version number indicates that new features were added, while remaining backwards compatible with previous releases.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "minor"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly minor: "
                 },
                 {
                   "kind": "Content",
@@ -4332,35 +3329,19 @@
               "releaseTag": "Public",
               "name": "minor",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(parse:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version.parse:member(1)",
               "docComment": "/**\n * Constructs a new Version instance using the version string. An exception is thrown if the string cannot be parsed.\n *\n * @param versionString - A version string\n *\n * @returns a new Version object\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "parse"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "versionString"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static parse(versionString: "
                 },
                 {
                   "kind": "Content",
@@ -4372,7 +3353,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4381,17 +3363,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "versionString",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4399,20 +3381,12 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "(patch:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#patch:member",
               "docComment": "/**\n * The third number in the version string, or undefined if unspecified.\n *\n * @remarks\n *\n * Typically a change in the patch version number indicates a small fix that does not affect the compatibility contract for the library. For a .NET System.Version object, this is referred to as the \"build\" number.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "patch"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly patch: "
                 },
                 {
                   "kind": "Content",
@@ -4426,27 +3400,19 @@
               "releaseTag": "Public",
               "name": "patch",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(revision:instance)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#revision:member",
               "docComment": "/**\n * The fourth number in the version string, or undefined if unspecified.\n *\n * @remarks\n *\n * This number is not part of the Semantic Versioning (SemVer) standard used in JavaScript, but it is used by .NET version numbers.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "revision"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly revision: "
                 },
                 {
                   "kind": "Content",
@@ -4460,35 +3426,24 @@
               "releaseTag": "Public",
               "name": "revision",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(satisfies:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#satisfies:member(1)",
               "docComment": "/**\n * Tests whether this version satisfies the compatibility requirements of the input version, i.e. is backwards compatible.\n *\n * @remarks\n *\n * In order to satisfy the compatibility requirements, this object must have the same major version number as the input parameter, and it must NOT be older than the input parameter.\n *\n * Examples:\n * ```\n * 1.0.0 satisfies 1.0.0 -> true;\n * 1.1.0 satisfies 1.0.0 -> true;\n * 2.0.0 satisfies 1.0.0 -> false;\n * 1.0.0 satisfies 1.1.0 -> false\n * ```\n *\n * @param compareWith - The version to compare with\n *\n * @returns A boolean indicating if this version is compatible with the input parameter\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "satisfies"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "satisfies(compareWith: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "compareWith"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4505,17 +3460,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 7
+                "startIndex": 3,
+                "endIndex": 4
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "compareWith",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4523,16 +3478,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(toString:instance,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version#toString:member(1)",
               "docComment": "/**\n * Returns a string representation of the version.\n *\n * @remarks\n *\n * The value is normalized and may be different from the original string (e.g. leading zeroes may be removed). However, the number of version parts will be unchanged.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "toString"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "toString(): "
                 },
                 {
                   "kind": "Content",
@@ -4545,38 +3496,22 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "toString"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(tryParse:static,0)",
+              "canonicalReference": "@microsoft/sp-core-library!Version.tryParse:member(1)",
               "docComment": "/**\n * Attempts to parse the input string to construct a new Version object. If the string cannot be parsed, then undefined is returned.\n *\n * @param versionString - A version string\n *\n * @returns The Version object, or undefined if the string could not be parsed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "tryParse"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "versionString"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static tryParse(versionString: "
                 },
                 {
                   "kind": "Content",
@@ -4588,7 +3523,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Version"
+                  "text": "Version",
+                  "canonicalReference": "@microsoft/sp-core-library!default:class"
                 },
                 {
                   "kind": "Content",
@@ -4601,17 +3537,17 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 7,
-                "endIndex": 9
+                "startIndex": 3,
+                "endIndex": 5
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "versionString",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -4619,59 +3555,6 @@
             }
           ],
           "implementsTokenRanges": []
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "ServiceCreator",
-          "docComment": "/**\n * This is a callback that is used by ServiceKey.createCustom().\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export declare type "
-            },
-            {
-              "kind": "Reference",
-              "text": "ServiceCreator"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "T"
-            },
-            {
-              "kind": "Content",
-              "text": "> = ("
-            },
-            {
-              "kind": "Reference",
-              "text": "serviceScope"
-            },
-            {
-              "kind": "Content",
-              "text": ": "
-            },
-            {
-              "kind": "Reference",
-              "text": "ServiceScope"
-            },
-            {
-              "kind": "Content",
-              "text": ") => "
-            },
-            {
-              "kind": "Reference",
-              "text": "T"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "releaseTag": "Public",
-          "name": "ServiceCreator"
         }
       ]
     }

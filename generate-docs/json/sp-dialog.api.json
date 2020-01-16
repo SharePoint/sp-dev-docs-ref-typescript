@@ -1,35 +1,28 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.1.8",
-    "schemaVersion": 1000
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
   },
   "kind": "Package",
-  "canonicalReference": "@microsoft/sp-dialog",
+  "canonicalReference": "@microsoft/sp-dialog!",
   "docComment": "/**\n * SharePoint Framework support for displaying pop-up dialog boxes.\n *\n * @remarks\n *\n * This library provides simple stock dialogs such as {@link Dialog.alert} and {@link Dialog.prompt}, along with a general framework for building custom dialog boxes that participate in the focus management system for SharePoint Framework applications.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-dialog",
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "",
+      "canonicalReference": "@microsoft/sp-dialog!",
       "name": "",
       "members": [
         {
           "kind": "Class",
-          "canonicalReference": "(BaseDialog:class)",
+          "canonicalReference": "@microsoft/sp-dialog!BaseDialog:class",
           "docComment": "/**\n * The base class for implementing dialogs in SharePoint Framework. This provides a supported way for showing dialogs to the user inside SharePoint Framework components.\n *\n * @remarks\n *\n * Extend this class to create dialogs for SharePoint Framework. By following the guidelines in implementation, the framework can ensure that the dialogs are shown in a user-friendly manner. While the content of the dialog is controlled by this class by implementing the render method, the framework can decide when to show the dialog and how to render the overlay and modal. The application on the page can also have control on allowing dialogs to show. Refer to the documentation of the individual methods and properties to learn more about how to extend and use this class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default abstract class "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseDialog"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default abstract class BaseDialog "
             }
           ],
           "releaseTag": "Public",
@@ -37,24 +30,17 @@
           "members": [
             {
               "kind": "Constructor",
-              "canonicalReference": "(:constructor,0)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog:constructor(1)",
               "docComment": "/**\n * Constructor for the `BaseDialog` class.\n *\n * @remarks\n *\n * It is important to keep the constructor lightweight. Use `onBeforeOpen()` for doing heavy-weight initialization that is needed for rendering the dialog such as resource allocations and asynchronous calls to fetch data. You can use the constructor to set initial parameters of your dialog such as references to resources in your application. The reason for this is that dialogs are usually constructed upon a UI event e.g. a button click, but the dialog may not always be shown right after construction. Keeping the constructor lightweight ensures smooth user experience and avoids doing throw-away work in case the dialog is not shown later e.g. if the framework rejects it. Another benefit of doing this is avoiding memory leaks by doing all the allocations and disposals in symmetric `onBeforeOpen()` and `onAfterClose()` events. If you allocate resources in the constructor, you have a memory leak because there is no guarantee onAfterClose() will get called, and onAfterClose() is your only opportunity to dispose.\n *\n * Example:\n * ```\n *   constructor(cacheReference: any) {\n *     super();\n *\n *     this._cache = cacheReference; // This is okay. Keeping a reference to my internal cache.\n *     this._cache.refresh(); // This is bad practice.\n *     // If you need to refresh the cache (or fetch data) for rendering, do it in onBeforeOpen()\n *   }\n * ```\n *\n * @param config - the dialog configuration that affects how the dialog is displayed *\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor("
+                  "text": "constructor(config?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "config"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IDialogConfiguration"
+                  "text": "IDialogConfiguration",
+                  "canonicalReference": "@microsoft/sp-dialog!IDialogConfiguration:interface"
                 },
                 {
                   "kind": "Content",
@@ -62,33 +48,30 @@
                 }
               ],
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "config",
                   "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ]
             },
             {
               "kind": "Method",
-              "canonicalReference": "(close:instance,0)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#close:member(1)",
               "docComment": "/**\n * Close the dialog.\n *\n * @remarks\n *\n * This will void the permission to show for this dialog. Every dialog should have a mechanism to eventually close to avoid blocking the user interface. If called on an inactive dialog it will abort the request to show.\n *\n * @returns A promise that resolves when the dialog is visually closed, or if it was already closed\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "close"
-                },
-                {
                   "kind": "Content",
-                  "text": "(): "
+                  "text": "close(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -101,34 +84,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 3
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "close"
             },
             {
               "kind": "Property",
-              "canonicalReference": "(domElement:instance)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#domElement:member",
               "docComment": "/**\n * Use this property to access the container element provided by the framework for rendering.\n *\n * @remarks\n *\n * See {@link BaseDialog.render} for more information on rendering.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected readonly "
+                  "text": "protected readonly domElement: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "domElement"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "HTMLElement"
+                  "text": "HTMLElement",
+                  "canonicalReference": "!HTMLElement:interface"
                 },
                 {
                   "kind": "Content",
@@ -138,27 +114,19 @@
               "releaseTag": "Public",
               "name": "domElement",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(isHidden:instance)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#isHidden:member",
               "docComment": "/**\n * If the dialog is visually hidden.\n *\n * @remarks\n *\n * This happens when the dialog goes behind a secondary dialog. Note that this is different from closed, because the dialog still has the permission to show and will eventually unhide. This returns false if the dialog is closed.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isHidden"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly isHidden: "
                 },
                 {
                   "kind": "Content",
@@ -172,27 +140,19 @@
               "releaseTag": "Public",
               "name": "isHidden",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(isOpen:instance)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#isOpen:member",
               "docComment": "/**\n * If the dialog is visually open. This returns true during onBeforeOpen() because there is a visual component. It returns false when the dialog is hidden.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isOpen"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly isOpen: "
                 },
                 {
                   "kind": "Content",
@@ -206,27 +166,19 @@
               "releaseTag": "Public",
               "name": "isOpen",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Property",
-              "canonicalReference": "(isSecondary:instance)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#isSecondary:member",
               "docComment": "/**\n * If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "isSecondary"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "readonly isSecondary: "
                 },
                 {
                   "kind": "Content",
@@ -240,27 +192,19 @@
               "releaseTag": "Public",
               "name": "isSecondary",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onAfterClose:instance,0)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#onAfterClose:member(1)",
               "docComment": "/**\n * This method is called after the dialog is visually closed and gives an opportunity for doing clean up.\n *\n * @remarks\n *\n * The dialog lifecycle completes after closing and there should be no resources left inside the object. Even though the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle that should reallocate its own resources. If there are any resources that you would like to keep for multiple lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "onAfterClose"
-                },
-                {
-                  "kind": "Content",
-                  "text": "(): "
+                  "text": "protected onAfterClose(): "
                 },
                 {
                   "kind": "Content",
@@ -273,34 +217,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "onAfterClose"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onBeforeOpen:instance,0)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#onBeforeOpen:member(1)",
               "docComment": "/**\n * This method is called before the render method and can be overridden to make preparations for rendering. The loading indicator is displayed during the lifetime of this method.\n *\n * @remarks\n *\n * All resource allocations in onBeforeOpen() should be properly disposed in `onAfterClose()` to a avoid memory leak.\n *\n * @returns A promise that resolves when the operations are done and the dialog is ready to render. If the promise is rejected, the dialog will not be rendered and `onAfterClose()` will not be called.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected "
+                  "text": "protected onBeforeOpen(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "onBeforeOpen"
-                },
-                {
-                  "kind": "Content",
-                  "text": "(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -313,30 +250,22 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
+                "startIndex": 1,
+                "endIndex": 3
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "onBeforeOpen"
             },
             {
               "kind": "Method",
-              "canonicalReference": "(render:instance,0)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#render:member(1)",
               "docComment": "/**\n * Renders the contents of the dialog.\n *\n * @remarks\n *\n * The `render` method must be implemented to render the content of the dialog in the container element provided by the framework. Use `this.domElement` to access this container. The container is inside a modal rendered in the center of the page on top of a dark overlay.\n *\n * The render method is called once after the modal element is created and opened. It is recommended to use `onBeforeOpen()` for doing non-UI operations for your rendering that might take a long time. This will ensure that the framework can show a friendly UI such as a spinner to let the user know that the dialog is being prepared. If you choose to do your initialization or other costly operations inside render method, make sure to have a friendly UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which is a bad user experience practice.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected abstract "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "render"
-                },
-                {
-                  "kind": "Content",
-                  "text": "(): "
+                  "text": "protected abstract render(): "
                 },
                 {
                   "kind": "Content",
@@ -349,34 +278,27 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "render"
             },
             {
               "kind": "Property",
-              "canonicalReference": "(secondaryDialogProvider:instance)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#secondaryDialogProvider:member",
               "docComment": "/**\n * An active dialog is permitted to show a secondary dialog on top of itself. By design, only two layers of dialogs are permitted.\n *\n * @remarks\n *\n * Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "readonly "
+                  "text": "readonly secondaryDialogProvider: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "secondaryDialogProvider"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ISecondaryDialogProvider"
+                  "text": "ISecondaryDialogProvider",
+                  "canonicalReference": "@microsoft/sp-dialog!ISecondaryDialogProvider:interface"
                 },
                 {
                   "kind": "Content",
@@ -390,35 +312,24 @@
               "releaseTag": "Public",
               "name": "secondaryDialogProvider",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
+                "startIndex": 1,
+                "endIndex": 3
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(show:instance,0)",
+              "canonicalReference": "@microsoft/sp-dialog!BaseDialog#show:member(1)",
               "docComment": "/**\n * Request the framework to show this dialog.\n *\n * @param options - Dialog showing options. See {@link IDialogShowOptions} for more information.\n *\n * @returns A promise that resolves once the dialog is successfully closed (after being shown). The promise rejects if the request is rejected or aborted.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "show"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
+                  "text": "show(options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "options"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IDialogShowOptions"
+                  "text": "IDialogShowOptions",
+                  "canonicalReference": "@microsoft/sp-dialog!IDialogShowOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -426,7 +337,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -439,17 +351,17 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 6,
-                "endIndex": 8
+                "startIndex": 3,
+                "endIndex": 5
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "options",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 }
               ],
@@ -460,20 +372,12 @@
         },
         {
           "kind": "Class",
-          "canonicalReference": "(Dialog:class)",
+          "canonicalReference": "@microsoft/sp-dialog!Dialog:class",
           "docComment": "/**\n * A static class for showing stock dialogs such as an alert or prompt.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
-            },
-            {
-              "kind": "Reference",
-              "text": "Dialog"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export default class Dialog "
             }
           ],
           "releaseTag": "Public",
@@ -481,28 +385,12 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "(alert:static,0)",
+              "canonicalReference": "@microsoft/sp-dialog!Dialog.alert:member(1)",
               "docComment": "/**\n * Alerts a message to the user with a user-friendly interface. Calling this method sends a request to application to show the alert dialog.\n *\n * @remarks\n *\n * There might be a delay until the dialog is approved and shown by the application, for example, if there is another dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The promise rejects if the application rejects the request for any reason.\n *\n * @param message - The message to alert\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "alert"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static alert(message: "
                 },
                 {
                   "kind": "Content",
@@ -510,19 +398,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "options"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IAlertOptions"
+                  "text": "IAlertOptions",
+                  "canonicalReference": "@microsoft/sp-dialog!IAlertOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -530,7 +411,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -543,24 +425,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 13
+                "startIndex": 5,
+                "endIndex": 7
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "options",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -568,28 +450,12 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "(prompt:static,0)",
+              "canonicalReference": "@microsoft/sp-dialog!Dialog.prompt:member(1)",
               "docComment": "/**\n * Prompts the user for a string value with a user-friendly interface. Calling this method sends a request to application to show the dialog.\n *\n * @remarks\n *\n * There might be a delay until the dialog is approved and shown by the application, for example, if there is another dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The promise rejects if the application rejects the request for any reason.\n *\n * @param message - The message for prompt dialog\n *\n * @param defaultValue - The default value for the input text field\n *\n * @returns The input string or undefined if the dialog was canceled\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "static "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "prompt"
-                },
-                {
-                  "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "static prompt(message: "
                 },
                 {
                   "kind": "Content",
@@ -597,19 +463,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "options"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IPromptOptions"
+                  "text": "IPromptOptions",
+                  "canonicalReference": "@microsoft/sp-dialog!IPromptOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -617,7 +476,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -630,24 +490,24 @@
               ],
               "isStatic": true,
               "returnTypeTokenRange": {
-                "startIndex": 11,
-                "endIndex": 13
+                "startIndex": 5,
+                "endIndex": 7
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 5,
-                    "endIndex": 6
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "options",
                   "parameterTypeTokenRange": {
-                    "startIndex": 9,
-                    "endIndex": 10
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -658,24 +518,17 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IAlertOptions:interface)",
+          "canonicalReference": "@microsoft/sp-dialog!IAlertOptions:interface",
           "docComment": "/**\n * Options for showing an alert dialog\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
+              "text": "export interface IAlertOptions extends "
             },
             {
               "kind": "Reference",
-              "text": "IAlertOptions"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "IDialogShowOptions"
+              "text": "IDialogShowOptions",
+              "canonicalReference": "@microsoft/sp-dialog!IDialogShowOptions:interface"
             },
             {
               "kind": "Content",
@@ -687,27 +540,19 @@
           "members": [],
           "extendsTokenRanges": [
             {
-              "startIndex": 3,
-              "endIndex": 5
+              "startIndex": 1,
+              "endIndex": 3
             }
           ]
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IDialogConfiguration:interface)",
+          "canonicalReference": "@microsoft/sp-dialog!IDialogConfiguration:interface",
           "docComment": "/**\n * The interface for dialog configuration\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IDialogConfiguration"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IDialogConfiguration "
             }
           ],
           "releaseTag": "Public",
@@ -715,16 +560,12 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "isBlocking",
+              "canonicalReference": "@microsoft/sp-dialog!IDialogConfiguration#isBlocking:member",
               "docComment": "/**\n * Whether the dialog can be closed by clicking outside the dialog (on the overlay).\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "isBlocking"
-                },
-                {
                   "kind": "Content",
-                  "text": "?: "
+                  "text": "isBlocking?: "
                 },
                 {
                   "kind": "Content",
@@ -738,8 +579,8 @@
               "releaseTag": "Public",
               "name": "isBlocking",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
@@ -747,20 +588,12 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IDialogShowOptions:interface)",
+          "canonicalReference": "@microsoft/sp-dialog!IDialogShowOptions:interface",
           "docComment": "/**\n * Options for showing a dialog\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "IDialogShowOptions"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface IDialogShowOptions "
             }
           ],
           "releaseTag": "Public",
@@ -768,16 +601,12 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "confirmOpen",
+              "canonicalReference": "@microsoft/sp-dialog!IDialogShowOptions#confirmOpen:member",
               "docComment": "/**\n * A callback that is invoked immediately before the dialog receives focus.\n *\n * @remarks\n *\n * Provide this callback if there is a case when you want to abort showing the dialog before it's approved by the framework. For example, you can check if a long time has passed since the request was made or the the component requesting the dialog is disposed and you don't want to show the dialog anymore. It is important to keep this callback lightweight so the framework can resolve it quickly and the user interface does not have to wait a long time for it.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "confirmOpen"
-                },
-                {
                   "kind": "Content",
-                  "text": "?: "
+                  "text": "confirmOpen?: "
                 },
                 {
                   "kind": "Content",
@@ -791,8 +620,8 @@
               "releaseTag": "Public",
               "name": "confirmOpen",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
@@ -800,24 +629,17 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(IPromptOptions:interface)",
+          "canonicalReference": "@microsoft/sp-dialog!IPromptOptions:interface",
           "docComment": "/**\n * Options for showing a prompt dialog\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
+              "text": "export interface IPromptOptions extends "
             },
             {
               "kind": "Reference",
-              "text": "IPromptOptions"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "IDialogShowOptions"
+              "text": "IDialogShowOptions",
+              "canonicalReference": "@microsoft/sp-dialog!IDialogShowOptions:interface"
             },
             {
               "kind": "Content",
@@ -829,16 +651,12 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "defaultValue",
+              "canonicalReference": "@microsoft/sp-dialog!IPromptOptions#defaultValue:member",
               "docComment": "/**\n * The default value for the input text field of prompt dialog\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "defaultValue"
-                },
-                {
                   "kind": "Content",
-                  "text": "?: "
+                  "text": "defaultValue?: "
                 },
                 {
                   "kind": "Content",
@@ -852,34 +670,26 @@
               "releaseTag": "Public",
               "name": "defaultValue",
               "propertyTypeTokenRange": {
-                "startIndex": 2,
-                "endIndex": 3
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
           "extendsTokenRanges": [
             {
-              "startIndex": 3,
-              "endIndex": 5
+              "startIndex": 1,
+              "endIndex": 3
             }
           ]
         },
         {
           "kind": "Interface",
-          "canonicalReference": "(ISecondaryDialogProvider:interface)",
+          "canonicalReference": "@microsoft/sp-dialog!ISecondaryDialogProvider:interface",
           "docComment": "/**\n * This interface handles calls to show a secondary dialog. It's only available by calling this.secondaryManagerProvider inside a dialog.\n *\n * @remarks\n *\n * Secondary dialogs do not need to request permission from dialog manager, because the primary dialog already has permission. Therefore, the secondary dialog will be immediately shown. This causes the primary dialog to hide until the secondary dialog is closed. There can be only one secondary dialog at a time. Additional requests to show more secondary dialogs are rejected.\n *\n * See {@link BaseDialog.secondaryDialogProvider} for how to use this.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export interface "
-            },
-            {
-              "kind": "Reference",
-              "text": "ISecondaryDialogProvider"
-            },
-            {
-              "kind": "Content",
-              "text": " "
+              "text": "export interface ISecondaryDialogProvider "
             }
           ],
           "releaseTag": "Public",
@@ -887,24 +697,12 @@
           "members": [
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(alert:0)",
+              "canonicalReference": "@microsoft/sp-dialog!ISecondaryDialogProvider#alert:member(1)",
               "docComment": "/**\n * Similar to {@link Dialog.alert}. The only difference is that the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.\n *\n * @param options - Dialog showing options. See {@link IDialogShowOptions} for more information.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "alert"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "alert(message: "
                 },
                 {
                   "kind": "Content",
@@ -912,19 +710,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "options"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IAlertOptions"
+                  "text": "IAlertOptions",
+                  "canonicalReference": "@microsoft/sp-dialog!IAlertOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -932,7 +723,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -944,24 +736,24 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 10,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 7
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "options",
                   "parameterTypeTokenRange": {
-                    "startIndex": 8,
-                    "endIndex": 9
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -969,24 +761,12 @@
             },
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(prompt:0)",
+              "canonicalReference": "@microsoft/sp-dialog!ISecondaryDialogProvider#prompt:member(1)",
               "docComment": "/**\n * Similar to {@link Dialog.prompt}. The only difference is that the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.\n *\n * @param options - Dialog showing options. The confirmOpen option will be ignored. See {@link IDialogShowOptions} for more information.\n */\n",
               "excerptTokens": [
                 {
-                  "kind": "Reference",
-                  "text": "prompt"
-                },
-                {
                   "kind": "Content",
-                  "text": "("
-                },
-                {
-                  "kind": "Reference",
-                  "text": "message"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
+                  "text": "prompt(message: "
                 },
                 {
                   "kind": "Content",
@@ -994,19 +774,12 @@
                 },
                 {
                   "kind": "Content",
-                  "text": ", "
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "options"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IPromptOptions"
+                  "text": "IPromptOptions",
+                  "canonicalReference": "@microsoft/sp-dialog!IPromptOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -1014,7 +787,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -1026,24 +800,24 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 10,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 7
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "message",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "options",
                   "parameterTypeTokenRange": {
-                    "startIndex": 8,
-                    "endIndex": 9
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
@@ -1051,44 +825,26 @@
             },
             {
               "kind": "MethodSignature",
-              "canonicalReference": "(show:0)",
+              "canonicalReference": "@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)",
               "docComment": "/**\n * Similar to {@link BaseDialog.show}. The dialog to show is passed in as parameter and the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.\n *\n * @param options - Dialog showing options. The confirmOpen option will be ignored. See {@link IDialogShowOptions} for more information.\n */\n",
               "excerptTokens": [
                 {
+                  "kind": "Content",
+                  "text": "show(dialog: "
+                },
+                {
                   "kind": "Reference",
-                  "text": "show"
+                  "text": "BaseDialog",
+                  "canonicalReference": "@microsoft/sp-dialog!default:class"
                 },
                 {
                   "kind": "Content",
-                  "text": "("
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "dialog"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "BaseDialog"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "options"
-                },
-                {
-                  "kind": "Content",
-                  "text": "?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "IDialogShowOptions"
+                  "text": "IDialogShowOptions",
+                  "canonicalReference": "@microsoft/sp-dialog!IDialogShowOptions:interface"
                 },
                 {
                   "kind": "Content",
@@ -1096,7 +852,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -1108,24 +865,24 @@
                 }
               ],
               "returnTypeTokenRange": {
-                "startIndex": 10,
-                "endIndex": 12
+                "startIndex": 5,
+                "endIndex": 7
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [
                 {
                   "parameterName": "dialog",
                   "parameterTypeTokenRange": {
-                    "startIndex": 4,
-                    "endIndex": 5
+                    "startIndex": 1,
+                    "endIndex": 2
                   }
                 },
                 {
                   "parameterName": "options",
                   "parameterTypeTokenRange": {
-                    "startIndex": 8,
-                    "endIndex": 9
+                    "startIndex": 3,
+                    "endIndex": 4
                   }
                 }
               ],
