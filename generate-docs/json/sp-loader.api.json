@@ -105,7 +105,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)",
-              "docComment": "/**\n * {@inheritDoc ISPComponentLoader.loadComponent}\n */\n",
+              "docComment": "/**\n * Loads a component from a manifest.\n *\n * @param manifest - Manifest of the module to load.\n *\n * @returns A promise containing the loaded module.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -168,7 +168,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)",
-              "docComment": "/**\n * {@inheritDoc ISPComponentLoader.loadComponentById}\n *\n * @public\n */\n",
+              "docComment": "/**\n * Resolve a component id and version, and load it.\n *\n * @param id - The id of the component to load.\n *\n * @param version - The version of the component to load. If version is not defined, the method will load any version of the component.\n *\n * @returns A promise containing the loaded module.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -245,7 +245,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)",
-              "docComment": "/**\n * {@inheritDoc ISPComponentLoader.loadCss}\n */\n",
+              "docComment": "/**\n * Inserts a `<link ... />` tag for a stylesheet.\n *\n * @param url - The CSS file URL.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -289,7 +289,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadScript:member(1)",
-              "docComment": "/**\n * {@inheritDoc ISPComponentLoader.loadScript}\n */\n",
+              "docComment": "/**\n * Given a URL, load a script.\n *\n * @remarks\n *\n * If a script with a global variable is being loaded, the global variable already exists, and the script fails to load (because of a syntax error, for example), the original global variable may be returned and an error may not be propagated.\n *\n * @param url - The script URL.\n *\n * @param options - globalExportsName: If the script isn't an AMD module and loads a global member on the page, specify the global member's name.\n *\n * @returns A promise containing the loaded module.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

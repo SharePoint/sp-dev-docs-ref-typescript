@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-odata-types.IODataUser
+  - uid: '@microsoft/sp-odata-types!IODataUser:interface'
     summary: >-
       Represents an OData SP.User object. For more information about this object see the MSDN documentation here:
       [https://msdn.microsoft.com/en-us/library/office/jj860569.aspx](https://msdn.microsoft.com/en-us/library/office/jj860569.aspx)
@@ -9,16 +9,16 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-odata-types
+    package: '@microsoft/sp-odata-types!'
     children:
-      - sp-odata-types.IODataUser.Email
-      - sp-odata-types.IODataUser.Id
-      - sp-odata-types.IODataUser.IsSiteAdmin
-      - sp-odata-types.IODataUser.LoginName
-      - sp-odata-types.IODataUser.PrincipalType
-      - sp-odata-types.IODataUser.Title
-      - sp-odata-types.IODataUser.UserId
-  - uid: sp-odata-types.IODataUser.Email
+      - '@microsoft/sp-odata-types!IODataUser#Email:member'
+      - '@microsoft/sp-odata-types!IODataUser#Id:member'
+      - '@microsoft/sp-odata-types!IODataUser#IsSiteAdmin:member'
+      - '@microsoft/sp-odata-types!IODataUser#LoginName:member'
+      - '@microsoft/sp-odata-types!IODataUser#PrincipalType:member'
+      - '@microsoft/sp-odata-types!IODataUser#Title:member'
+      - '@microsoft/sp-odata-types!IODataUser#UserId:member'
+  - uid: '@microsoft/sp-odata-types!IODataUser#Email:member'
     summary: 'Example: `"someone@example.com"`'
     name: Email
     fullName: Email
@@ -30,7 +30,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-odata-types.IODataUser.Id
+  - uid: '@microsoft/sp-odata-types!IODataUser#Id:member'
     name: Id
     fullName: Id
     langs:
@@ -41,7 +41,7 @@ items:
       return:
         type:
           - number
-  - uid: sp-odata-types.IODataUser.IsSiteAdmin
+  - uid: '@microsoft/sp-odata-types!IODataUser#IsSiteAdmin:member'
     summary: Boolean value that specifies whether the user is a site collection administrator.
     name: IsSiteAdmin
     fullName: IsSiteAdmin
@@ -53,7 +53,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-odata-types.IODataUser.LoginName
+  - uid: '@microsoft/sp-odata-types!IODataUser#LoginName:member'
     summary: 'Example: `"i:0#.w|domain\user"`'
     name: LoginName
     fullName: LoginName
@@ -65,7 +65,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-odata-types.IODataUser.PrincipalType
+  - uid: '@microsoft/sp-odata-types!IODataUser#PrincipalType:member'
     summary: This enumeration has a FlagsAttribute attribute that allows a bitwise combination of its member values.
     remarks: |-
       Values:
@@ -91,7 +91,7 @@ items:
       return:
         type:
           - number
-  - uid: sp-odata-types.IODataUser.Title
+  - uid: '@microsoft/sp-odata-types!IODataUser#Title:member'
     summary: 'Example: `"DOMAIN\user"`'
     name: Title
     fullName: Title
@@ -103,7 +103,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-odata-types.IODataUser.UserId
+  - uid: '@microsoft/sp-odata-types!IODataUser#UserId:member'
     summary: >-
       Gets the information of the user that contains the user's name identifier and the issuer of the user's name
       identifier.
@@ -116,4 +116,7 @@ items:
       content: 'UserId: IODataUserId;'
       return:
         type:
-          - IODataUserId
+          - '@microsoft/sp-odata-types!IODataUserId:interface'
+references:
+  - uid: '@microsoft/sp-odata-types!IODataUserId:interface'
+    name: IODataUserId

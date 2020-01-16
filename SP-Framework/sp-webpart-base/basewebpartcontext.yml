@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.BaseWebPartContext
+  - uid: '@microsoft/sp-webpart-base!BaseWebPartContext:class'
     summary: >-
       Web part context object. This object contains the contextual services available to a web part. e.g. a contextual
       instance to the http client.
@@ -16,14 +16,16 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-component-base.BaseComponentContext
-    package: sp-webpart-base
+      - '@microsoft/sp-component-base!BaseComponentContext:class'
+    inheritance:
+      - type: '@microsoft/sp-component-base!BaseComponentContext:class'
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.BaseWebPartContext.formFactor
-      - sp-webpart-base.BaseWebPartContext.manifest
-      - sp-webpart-base.BaseWebPartContext.propertyPane
-      - sp-webpart-base.BaseWebPartContext.webPartTag
-  - uid: sp-webpart-base.BaseWebPartContext.formFactor
+      - '@microsoft/sp-webpart-base!BaseWebPartContext#formFactor:member'
+      - '@microsoft/sp-webpart-base!BaseWebPartContext#manifest:member'
+      - '@microsoft/sp-webpart-base!BaseWebPartContext#propertyPane:member'
+      - '@microsoft/sp-webpart-base!BaseWebPartContext#webPartTag:member'
+  - uid: '@microsoft/sp-webpart-base!BaseWebPartContext#formFactor:member'
     summary: Form factor of the web part.
     remarks: >-
       Web parts may behave differently based on its form factor. E.g. a web part rendering as full size may want to set
@@ -38,8 +40,8 @@ items:
       content: 'readonly formFactor: WebPartFormFactor;'
       return:
         type:
-          - sp-webpart-base.WebPartFormFactor
-  - uid: sp-webpart-base.BaseWebPartContext.manifest
+          - '@microsoft/sp-webpart-base!WebPartFormFactor:enum'
+  - uid: '@microsoft/sp-webpart-base!BaseWebPartContext#manifest:member'
     summary: Manifest for the client-side component.
     name: manifest
     fullName: manifest
@@ -50,8 +52,8 @@ items:
       content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
       return:
         type:
-          - IClientSideWebPartManifestInstance<any>
-  - uid: sp-webpart-base.BaseWebPartContext.propertyPane
+          - '@microsoft/sp-webpart-base!BaseWebPartContext#manifest~0:complex'
+  - uid: '@microsoft/sp-webpart-base!BaseWebPartContext#propertyPane:member'
     summary: Accessor for common web part property pane operations.
     name: propertyPane
     fullName: propertyPane
@@ -62,8 +64,8 @@ items:
       content: 'readonly propertyPane: IPropertyPaneAccessor;'
       return:
         type:
-          - sp-webpart-base.IPropertyPaneAccessor
-  - uid: sp-webpart-base.BaseWebPartContext.webPartTag
+          - '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
+  - uid: '@microsoft/sp-webpart-base!BaseWebPartContext#webPartTag:member'
     summary: Web part tag to be used for logging and telemetry.
     name: webPartTag
     fullName: webPartTag
@@ -75,3 +77,19 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext
+  - uid: '@microsoft/sp-webpart-base!WebPartFormFactor:enum'
+    name: WebPartFormFactor
+  - uid: '@microsoft/sp-webpart-base!BaseWebPartContext#manifest~0:complex'
+    name: IClientSideWebPartManifestInstance<any>
+    fullName: IClientSideWebPartManifestInstance<any>
+    spec.typeScript:
+      - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface'
+        name: IClientSideWebPartManifestInstance
+        fullName: IClientSideWebPartManifestInstance
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
+    name: IPropertyPaneAccessor

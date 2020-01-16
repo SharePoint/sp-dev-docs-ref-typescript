@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.SPHttpClientBatchConfiguration
+  - uid: '@microsoft/sp-http!SPHttpClientBatchConfiguration:class'
     summary: Configuration for SPHttpClientBatch.
     remarks: >-
       The SPHttpClientBatchConfiguration object provides a set of switches for enabling/disabling various features of
@@ -14,16 +14,18 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-http.SPHttpClientCommonConfiguration
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
     implements:
-      - sp-http.ISPHttpClientBatchConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.SPHttpClientBatchConfiguration.(constructor)
-      - sp-http.SPHttpClientBatchConfiguration.flags
-      - sp-http.SPHttpClientBatchConfiguration.initializeFlags
-      - sp-http.SPHttpClientBatchConfiguration.overrideWith
-  - uid: sp-http.SPHttpClientBatchConfiguration.(constructor)
+      - '@microsoft/sp-http!SPHttpClientBatchConfiguration:constructor(1)'
+      - '@microsoft/sp-http!SPHttpClientBatchConfiguration#flags:member'
+      - '@microsoft/sp-http!SPHttpClientBatchConfiguration#initializeFlags:member(1)'
+      - '@microsoft/sp-http!SPHttpClientBatchConfiguration#overrideWith:member(1)'
+  - uid: '@microsoft/sp-http!SPHttpClientBatchConfiguration:constructor(1)'
     summary: >-
       Constructs a new instance of SPHttpClientBatchConfiguration with the specified flags. The default values will be
       used for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
@@ -39,12 +41,12 @@ items:
         - id: flags
           description: ''
           type:
-            - sp-http.ISPHttpClientBatchConfiguration
+            - '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
         - id: overrideFlags
           description: ''
           type:
-            - sp-http.ISPHttpClientBatchConfiguration
-  - uid: sp-http.SPHttpClientBatchConfiguration.flags
+            - '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientBatchConfiguration#flags:member'
     isPreview: true
     name: flags
     fullName: flags
@@ -55,8 +57,8 @@ items:
       content: 'protected flags: ISPHttpClientBatchConfiguration;'
       return:
         type:
-          - sp-http.ISPHttpClientBatchConfiguration
-  - uid: sp-http.SPHttpClientBatchConfiguration.initializeFlags
+          - '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientBatchConfiguration#initializeFlags:member(1)'
     isPreview: true
     name: initializeFlags()
     fullName: initializeFlags()
@@ -71,7 +73,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-http.SPHttpClientBatchConfiguration.overrideWith
+  - uid: '@microsoft/sp-http!SPHttpClientBatchConfiguration#overrideWith:member(1)'
     isPreview: true
     name: overrideWith(sourceFlags)
     fullName: overrideWith(sourceFlags)
@@ -84,10 +86,15 @@ items:
         overrideWith(sourceFlags: ISPHttpClientBatchConfiguration): SPHttpClientBatchConfiguration;
       return:
         type:
-          - sp-http.SPHttpClientBatchConfiguration
+          - '@microsoft/sp-http!default:class'
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - sp-http.ISPHttpClientBatchConfiguration
+            - '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: SPHttpClientCommonConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
+    name: ISPHttpClientBatchConfiguration

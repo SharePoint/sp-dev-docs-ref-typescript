@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-listview-extensibility.SelectedRowsChangedEventArgs
+  - uid: '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class'
     summary: Arguments for the selected rows changed event.
     name: SelectedRowsChangedEventArgs
     fullName: SelectedRowsChangedEventArgs
@@ -8,11 +8,13 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-core-library.SPEventArgs
-    package: sp-listview-extensibility
+      - '@microsoft/sp-core-library!SPEventArgs:class'
+    inheritance:
+      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+    package: '@microsoft/sp-listview-extensibility!'
     children:
-      - sp-listview-extensibility.SelectedRowsChangedEventArgs.selectedRows
-  - uid: sp-listview-extensibility.SelectedRowsChangedEventArgs.selectedRows
+      - '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs#selectedRows:member'
+  - uid: '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs#selectedRows:member'
     summary: The list of rows that were selected in the list view at the time when the event was fired.
     name: selectedRows
     fullName: selectedRows
@@ -23,4 +25,21 @@ items:
       content: 'selectedRows: ReadonlyArray<RowAccessor>;'
       return:
         type:
-          - ReadonlyArray<RowAccessor>
+          - '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs#selectedRows~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
+    name: SPEventArgs
+  - uid: '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs#selectedRows~0:complex'
+    name: ReadonlyArray<RowAccessor>
+    fullName: ReadonlyArray<RowAccessor>
+    spec.typeScript:
+      - uid: '!ReadonlyArray:interface'
+        name: ReadonlyArray
+        fullName: ReadonlyArray
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-listview-extensibility!RowAccessor:class'
+        name: RowAccessor
+        fullName: RowAccessor
+      - name: '>'
+        fullName: '>'

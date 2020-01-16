@@ -1,29 +1,31 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.SPHttpClient
+  - uid: '@microsoft/sp-http!SPHttpClient:class'
     summary: >-
       SPHttpClient is used to perform REST calls against SharePoint. It adds default headers, manages the digest needed
       for writes, and collects telemetry that helps the service to monitor the performance of an application.
-    remarks: |-
+    remarks: >-
       This class is marked as `@sealed`. Subclasses should not extend it.
 
-      For communicating with other internet services, use the [HttpClient](xref:sp-http.HttpClient) class.
+
+      For communicating with other internet services, use the [HttpClient](xref:@microsoft/sp-http!HttpClient:class)
+      class.
     name: SPHttpClient
     fullName: SPHttpClient
     langs:
       - typeScript
     type: class
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.SPHttpClient.(constructor)
-      - sp-http.SPHttpClient.beginBatch
-      - sp-http.SPHttpClient.configurations
-      - sp-http.SPHttpClient.fetch
-      - sp-http.SPHttpClient.get
-      - sp-http.SPHttpClient.getWebUrlFromRequestUrl
-      - sp-http.SPHttpClient.post
-      - sp-http.SPHttpClient.serviceKey
-  - uid: sp-http.SPHttpClient.(constructor)
+      - '@microsoft/sp-http!SPHttpClient:constructor(1)'
+      - '@microsoft/sp-http!SPHttpClient#beginBatch:member(1)'
+      - '@microsoft/sp-http!SPHttpClient.configurations:member'
+      - '@microsoft/sp-http!SPHttpClient#fetch:member(1)'
+      - '@microsoft/sp-http!SPHttpClient#get:member(1)'
+      - '@microsoft/sp-http!SPHttpClient.getWebUrlFromRequestUrl:member(1)'
+      - '@microsoft/sp-http!SPHttpClient#post:member(1)'
+      - '@microsoft/sp-http!SPHttpClient.serviceKey:member'
+  - uid: '@microsoft/sp-http!SPHttpClient:constructor(1)'
     summary: Constructs a new instance of the `SPHttpClient` class
     name: (constructor)(serviceScope)
     fullName: (constructor)(serviceScope)
@@ -36,8 +38,8 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
-  - uid: sp-http.SPHttpClient.beginBatch
+            - '@microsoft/sp-core-library!ServiceScope:class'
+  - uid: '@microsoft/sp-http!SPHttpClient#beginBatch:member(1)'
     summary: 'Begins an ODATA batch, which allows multiple REST queries to be bundled into a single web request.'
     isPreview: true
     name: beginBatch(batchCreationOptions)
@@ -49,14 +51,16 @@ items:
       content: 'beginBatch(batchCreationOptions?: ISPHttpClientBatchCreationOptions): SPHttpClientBatch;'
       return:
         type:
-          - sp-http.SPHttpClientBatch
-        description: 'An [SPHttpClientBatch](xref:sp-http.SPHttpClientBatch) object used to manage the batch operation.'
+          - '@microsoft/sp-http!default:class'
+        description: >-
+          An [SPHttpClientBatch](xref:@microsoft/sp-http!SPHttpClientBatch:class) object used to manage the batch
+          operation.
       parameters:
         - id: batchCreationOptions
           description: ''
           type:
-            - sp-http.ISPHttpClientBatchCreationOptions
-  - uid: sp-http.SPHttpClient.configurations
+            - '@microsoft/sp-http!ISPHttpClientBatchCreationOptions:interface'
+  - uid: '@microsoft/sp-http!SPHttpClient.configurations:member'
     summary: The standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class.
     name: configurations
     fullName: configurations
@@ -67,8 +71,8 @@ items:
       content: 'static readonly configurations: ISPHttpClientConfigurations;'
       return:
         type:
-          - sp-http.ISPHttpClientConfigurations
-  - uid: sp-http.SPHttpClient.fetch
+          - '@microsoft/sp-http!ISPHttpClientConfigurations:interface'
+  - uid: '@microsoft/sp-http!SPHttpClient#fetch:member(1)'
     summary: Perform a REST service call.
     remarks: >-
       Generally, the parameters and semantics for SPHttpClient.fetch() are essentially the same as the WHATWG API
@@ -89,7 +93,7 @@ items:
 
 
       For a write operation, SPHttpClient will automatically add the "X-RequestDigest" header, which may need to be
-      obtained by issuing a seperate request such as "https://example.com/sites/sample/\_api/contextinfo". Typically the
+      obtained by issuing a separate request such as "https://example.com/sites/sample/\_api/contextinfo". Typically the
       appropriate SPWeb URL can be guessed by looking for a reserved URL segment such as "\_api" in the original URL
       passed to fetch(); if not, use ISPHttpClientOptions.webUrl to specify it explicitly.
     name: 'fetch(url, configuration, options)'
@@ -103,12 +107,12 @@ items:
         Promise<SPHttpClientResponse>;
       return:
         type:
-          - Promise<SPHttpClientResponse>
+          - '@microsoft/sp-http!SPHttpClient#fetch~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
-          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
-          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
-          the server.
+          [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse#ok:member) being false) for error status
+          codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
+          communication with the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -119,12 +123,12 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - sp-http.SPHttpClientConfiguration
+            - '@microsoft/sp-http!default:class'
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientOptions
-  - uid: sp-http.SPHttpClient.get
+            - '@microsoft/sp-http!ISPHttpClientOptions:interface'
+  - uid: '@microsoft/sp-http!SPHttpClient#get:member(1)'
     summary: 'Calls fetch(), but sets the method to "GET".'
     name: 'get(url, configuration, options)'
     fullName: 'get(url, configuration, options)'
@@ -137,12 +141,12 @@ items:
         Promise<SPHttpClientResponse>;
       return:
         type:
-          - Promise<SPHttpClientResponse>
+          - '@microsoft/sp-http!SPHttpClient#get~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
-          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
-          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
-          the server.
+          [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse#ok:member) being false) for error status
+          codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
+          communication with the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -153,12 +157,12 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - sp-http.SPHttpClientConfiguration
+            - '@microsoft/sp-http!default:class'
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientOptions
-  - uid: sp-http.SPHttpClient.getWebUrlFromRequestUrl
+            - '@microsoft/sp-http!ISPHttpClientOptions:interface'
+  - uid: '@microsoft/sp-http!SPHttpClient.getWebUrlFromRequestUrl:member(1)'
     summary: Use a heuristic to infer the base URL for authentication.
     remarks: >-
       Attempts to infer the SPWeb URL associated with the provided REST URL, by looking for common SharePoint path
@@ -188,7 +192,7 @@ items:
           description: The URL for a SharePoint REST service
           type:
             - string
-  - uid: sp-http.SPHttpClient.post
+  - uid: '@microsoft/sp-http!SPHttpClient#post:member(1)'
     summary: 'Calls fetch(), but sets the method to "POST".'
     name: 'post(url, configuration, options)'
     fullName: 'post(url, configuration, options)'
@@ -201,12 +205,12 @@ items:
         Promise<SPHttpClientResponse>;
       return:
         type:
-          - Promise<SPHttpClientResponse>
+          - '@microsoft/sp-http!SPHttpClient#post~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
-          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
-          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
-          the server.
+          [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse#ok:member) being false) for error status
+          codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
+          communication with the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -217,12 +221,12 @@ items:
             determines the default behavior of SPHttpClient; normally this should be the latest version number from
             SPHttpClientConfigurations
           type:
-            - sp-http.SPHttpClientConfiguration
+            - '@microsoft/sp-http!default:class'
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientOptions
-  - uid: sp-http.SPHttpClient.serviceKey
+            - '@microsoft/sp-http!ISPHttpClientOptions:interface'
+  - uid: '@microsoft/sp-http!SPHttpClient.serviceKey:member'
     summary: The service key for SPHttpClient.
     name: serviceKey
     fullName: serviceKey
@@ -233,4 +237,71 @@ items:
       content: 'static readonly serviceKey: ServiceKey<SPHttpClient>;'
       return:
         type:
-          - ServiceKey<SPHttpClient>
+          - '@microsoft/sp-http!SPHttpClient.serviceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-http!default:class'
+    name: SPHttpClientBatch
+  - uid: '@microsoft/sp-http!ISPHttpClientBatchCreationOptions:interface'
+    name: ISPHttpClientBatchCreationOptions
+  - uid: '@microsoft/sp-http!ISPHttpClientConfigurations:interface'
+    name: ISPHttpClientConfigurations
+  - uid: '@microsoft/sp-http!SPHttpClient#fetch~0:complex'
+    name: Promise<SPHttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!ISPHttpClientOptions:interface'
+    name: ISPHttpClientOptions
+  - uid: '@microsoft/sp-http!SPHttpClient#get~0:complex'
+    name: Promise<SPHttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!SPHttpClient#post~0:complex'
+    name: Promise<SPHttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!SPHttpClient.serviceKey~0:complex'
+    name: ServiceKey<SPHttpClient>
+    fullName: ServiceKey<default>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClient
+        fullName: default
+      - name: '>'
+        fullName: '>'

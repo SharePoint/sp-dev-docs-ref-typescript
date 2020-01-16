@@ -1,0 +1,216 @@
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest:interface'
+    summary: >-
+      The client-side SharePoint framework identifies a Web Part by its manifest. All Web Parts are expected to have a
+      manifest.
+    remarks: >-
+      The manifest is a schematized JSON blob that is used in multiple parts of the SharePoint infrastructure to
+      identify, load and process a Web Part. The schema for this manifest is completely owned and versioned by
+      Microsoft. There are some required properties in the manifest and some optional properties. Optional properties
+      need to be provided only if the Web Part needs the specific functionality. An invalid manifest could lead to
+      issues with Web Part loading and functionality problems.
+    name: IClientSideWebPartManifest
+    fullName: IClientSideWebPartManifest
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    inheritance:
+      - type: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+        inheritance:
+          - type: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+    syntax:
+      typeParameters:
+        - id: TProperties
+    package: '@microsoft/sp-module-interfaces!'
+    children:
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#canUpdateConfiguration:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#disabledOnClassicSharepoint:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#hiddenFromToolbox:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#imagePreviewUrl:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#preconfiguredEntries:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportsFullBleed:member'
+      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportsThemeVariants:member'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#canUpdateConfiguration:member'
+    summary: Indicates whether the web part uses the property pane to update the configuration of the web part.
+    remarks: Default value is `true` if the property is not explicitly defined.
+    name: canUpdateConfiguration
+    fullName: canUpdateConfiguration
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'canUpdateConfiguration?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#disabledOnClassicSharepoint:member'
+    summary: 'If true, this web part is disabled on SharePoint classic pages'
+    remarks: >-
+      Certain web parts may not be required on or apply to SharePoint classic pages. This flag helps control that. If
+      this flag is true, the web part will not appear in the classic page web part gallery.
+    name: disabledOnClassicSharepoint
+    fullName: disabledOnClassicSharepoint
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'disabledOnClassicSharepoint?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#hiddenFromToolbox:member'
+    summary: 'If true, this web part should not be displayed in the modern SharePoint toolbox.'
+    remarks: >-
+      Usage: Use this flag if it is not appropriate to display a web part in the modern toolbox. This property is not
+      used in Classic SharePoint. By default, all web parts are enabled to be displayed in the toolbox. Such web parts
+      can be provisioned on pages though API or be added to the page in a pre configured way.
+    name: hiddenFromToolbox
+    fullName: hiddenFromToolbox
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'hiddenFromToolbox?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#imagePreviewUrl:member'
+    summary: 'Definition: Url of the image image used for preview'
+    remarks: >-
+      Usage: Use this string to specify that a preview image should be used instead of a preview rendering of the web
+      part. This can either be a absolute url or a relative URL which will be resolved based on the internal base module
+      url
+    name: imagePreviewUrl
+    fullName: imagePreviewUrl
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'imagePreviewUrl?: string;'
+      return:
+        type:
+          - string
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#preconfiguredEntries:member'
+    summary: >-
+      A Web Part can have pre-configured properties like the title, description, toolbox group name and Web Part
+      specific custom properties. And there can be multiple instances of these pre-configured properties.
+    remarks: >-
+      This helps support scenarios where an organization may want to present multiple pre-configured entries for a Web
+      Part in the Toolbox. Each entry is expected to configure the Web Part with a different set of pre-configured
+      properties. A developer may decide to seed some initial values for these properties but an organization admin can
+      go ahead and customize these properties per the needs of his/her organization. The properties can also be modified
+      by the author of the page.
+
+
+      Usage: help display a Web Part in the Toolbox, PropertyPane and the initial rendering of the Web Part.
+
+
+      Type: JSON object
+
+
+      Supported values: Array of `IClientSideWebPartManifestEntry` objects.
+
+
+      Example:
+
+
+      ```
+        [{
+           title:"Image Web Part",
+           description: "This Web Part displays an image",
+           group: "Media",
+           iconFontName: "image",
+           properties: {
+             imageSource: "https://contoso.akamaihd.net/files/mountRainier.jpg",
+             captionText: "Mount Rainier"
+           }
+         }]
+
+      ```
+    name: preconfiguredEntries
+    fullName: preconfiguredEntries
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'preconfiguredEntries: IClientSideWebPartManifestEntry<TProperties>[];'
+      return:
+        type:
+          - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#preconfiguredEntries~0:complex'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts:member'
+    summary: 'Definition: An array defining what host types are supported'
+    remarks: >-
+      Usage: Use this array to define all hosts that are supported. The default value is SharePointWebPart if nothing is
+      provided. If SharePointFullPage is added the solution will be available when adding full page apps. If
+      SharePointWebPart is added the solution will be available when adding webparts to a page. If TeamsTab or
+      TeamsPersonalApp is added the solution will be available when using teams.
+    name: supportedHosts
+    fullName: supportedHosts
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'supportedHosts?: Array<''SharePointFullPage'' | ''SharePointWebPart'' | ''TeamsTab'' | ''TeamsPersonalApp''>;'
+      return:
+        type:
+          - '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts~0:complex'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportsFullBleed:member'
+    summary: 'Definition: If true, this web part supports and has been tested for full bleed experience.'
+    remarks: >-
+      Usage: Use this flag if a web part supports full bleed experience and has been tested as such. In this context,
+      full bleed is a term used to denote that the web part takes the whole width of the containing page. Full bleed
+      experiences require special treatment and testing. By default no web parts support full bleed experiences.
+    name: supportsFullBleed
+    fullName: supportsFullBleed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'supportsFullBleed?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportsThemeVariants:member'
+    summary: 'Definition: If true, this web part supports and has been tested for theme variants experience.'
+    remarks: >-
+      Usage: Use this flag if a web part supports theme variants and has been tested as such. In order to support theme
+      variants, web parts must have the capability to render correctly in the context of a theme variant. A web part may
+      or may not need to be updated to support theme variants, but should always be tested before enabling this flag. By
+      default no web parts support theme variants.
+    name: supportsThemeVariants
+    fullName: supportsThemeVariants
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'supportsThemeVariants?: boolean;'
+      return:
+        type:
+          - boolean
+references:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    name: IClientSideComponentManifest
+  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+    name: IClientSideManifestBase
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#preconfiguredEntries~0:complex'
+    name: 'IClientSideWebPartManifestEntry<TProperties>[]'
+    fullName: 'IClientSideWebPartManifestEntry<TProperties>[]'
+    spec.typeScript:
+      - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface'
+        name: IClientSideWebPartManifestEntry
+        fullName: IClientSideWebPartManifestEntry
+      - name: '<TProperties>[]'
+        fullName: '<TProperties>[]'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts~0:complex'
+    name: Array<'SharePointFullPage' | 'SharePointWebPart' | 'TeamsTab' | 'TeamsPersonalApp'>
+    fullName: Array<'SharePointFullPage' | 'SharePointWebPart' | 'TeamsTab' | 'TeamsPersonalApp'>
+    spec.typeScript:
+      - uid: '!Array:interface'
+        name: Array
+        fullName: Array
+      - name: <'SharePointFullPage' | 'SharePointWebPart' | 'TeamsTab' | 'TeamsPersonalApp'>
+        fullName: <'SharePointFullPage' | 'SharePointWebPart' | 'TeamsTab' | 'TeamsPersonalApp'>

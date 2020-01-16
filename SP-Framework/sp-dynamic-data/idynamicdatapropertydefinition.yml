@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-dynamic-data.IDynamicDataPropertyDefinition
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface'
     summary: >-
       Definition of a property. It includes the id of the property to be used with the APIs, along with a user-friendly,
       localized title and description to be seen and used by end users.
@@ -10,11 +10,13 @@ items:
       - typeScript
     type: interface
     extends:
-      - sp-dynamic-data.IDynamicDataPropertyMetadata
-    package: sp-dynamic-data
+      - '@microsoft/sp-dynamic-data!IDynamicDataPropertyMetadata:interface'
+    inheritance:
+      - type: '@microsoft/sp-dynamic-data!IDynamicDataPropertyMetadata:interface'
+    package: '@microsoft/sp-dynamic-data!'
     children:
-      - sp-dynamic-data.IDynamicDataPropertyDefinition.id
-  - uid: sp-dynamic-data.IDynamicDataPropertyDefinition.id
+      - '@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition#id:member'
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition#id:member'
     summary: >-
       Id of the property. This can only contains letters, numbers, dashes and underscores. Example: "myFiles" or
       "time\_in\_24-hour\_clock"
@@ -28,3 +30,6 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyMetadata:interface'
+    name: IDynamicDataPropertyMetadata

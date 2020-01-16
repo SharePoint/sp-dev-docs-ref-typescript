@@ -1,19 +1,19 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.ODataVersion
+  - uid: '@microsoft/sp-http!ODataVersion:class'
     summary: 'Represents supported version of the "OData-Version" header, which is part of the Open Data Protocol standard.'
     name: ODataVersion
     fullName: ODataVersion
     langs:
       - typeScript
     type: class
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.ODataVersion.toString
-      - sp-http.ODataVersion.tryParseFromHeaders
-      - sp-http.ODataVersion.v3
-      - sp-http.ODataVersion.v4
-  - uid: sp-http.ODataVersion.toString
+      - '@microsoft/sp-http!ODataVersion#toString:member(1)'
+      - '@microsoft/sp-http!ODataVersion.tryParseFromHeaders:member(1)'
+      - '@microsoft/sp-http!ODataVersion.v3:member'
+      - '@microsoft/sp-http!ODataVersion.v4:member'
+  - uid: '@microsoft/sp-http!ODataVersion#toString:member(1)'
     summary: 'Returns the "OData-Version" value, for example "4.0".'
     name: toString()
     fullName: toString()
@@ -26,7 +26,7 @@ items:
         type:
           - string
         description: ''
-  - uid: sp-http.ODataVersion.tryParseFromHeaders
+  - uid: '@microsoft/sp-http!ODataVersion.tryParseFromHeaders:member(1)'
     summary: Attempt to parse the "OData-Version" header.
     remarks: >-
       If the "OData-Version" header is present, this returns the corresponding ODataVersion constant. An error is thrown
@@ -40,14 +40,14 @@ items:
       content: 'static tryParseFromHeaders(headers: Headers): ODataVersion | undefined;'
       return:
         type:
-          - ODataVersion | undefined
+          - '@microsoft/sp-http!ODataVersion.tryParseFromHeaders~0:complex'
         description: ''
       parameters:
         - id: headers
           description: ''
           type:
-            - Headers
-  - uid: sp-http.ODataVersion.v3
+            - '!Headers:interface'
+  - uid: '@microsoft/sp-http!ODataVersion.v3:member'
     summary: Represents version 3.0 for the "OData-Version" header
     name: v3
     fullName: v3
@@ -58,8 +58,8 @@ items:
       content: 'static v3: ODataVersion;'
       return:
         type:
-          - sp-http.ODataVersion
-  - uid: sp-http.ODataVersion.v4
+          - '@microsoft/sp-http!default:class'
+  - uid: '@microsoft/sp-http!ODataVersion.v4:member'
     summary: Represents version 4.0 for the "OData-Version" header
     name: v4
     fullName: v4
@@ -70,4 +70,18 @@ items:
       content: 'static v4: ODataVersion;'
       return:
         type:
-          - sp-http.ODataVersion
+          - '@microsoft/sp-http!default:class'
+references:
+  - uid: '@microsoft/sp-http!ODataVersion.tryParseFromHeaders~0:complex'
+    name: ODataVersion | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-http!default:class'
+        name: ODataVersion
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '!Headers:interface'
+    name: Headers
+  - uid: '@microsoft/sp-http!default:class'
+    name: ODataVersion

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library
+  - uid: '@microsoft/sp-core-library!'
     summary: SharePoint Framework core libraries.
     remarks: >-
       This package provides a foundation of core classes that ensure a consistent character across all the other
@@ -12,67 +12,93 @@ items:
       - typeScript
     type: package
     children:
-      - sp-core-library.DisplayMode
-      - sp-core-library.Environment
-      - sp-core-library.EnvironmentType
-      - sp-core-library.Guid
-      - sp-core-library.IDisposable
-      - sp-core-library.IRandomNumberGenerator
-      - sp-core-library.IServiceCollection
-      - sp-core-library.ISPEventObserver
-      - sp-core-library.ITimeProvider
-      - sp-core-library.Log
-      - sp-core-library.RandomNumberGenerator
-      - sp-core-library.ServiceKey
-      - sp-core-library.ServiceScope
-      - sp-core-library.Session
-      - sp-core-library.SPEvent
-      - sp-core-library.SPEventArgs
-      - sp-core-library.Text
-      - sp-core-library.TimeProvider
-      - sp-core-library.UrlQueryParameterCollection
-      - sp-core-library.Validate
-      - sp-core-library.Version
+      - '@microsoft/sp-core-library!DisplayMode:enum'
+      - '@microsoft/sp-core-library!Environment:class'
+      - '@microsoft/sp-core-library!EnvironmentType:enum'
+      - '@microsoft/sp-core-library!Guid:class'
+      - '@microsoft/sp-core-library!IDisposable:interface'
+      - '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
+      - '@microsoft/sp-core-library!IServiceCollection:interface'
+      - '@microsoft/sp-core-library!ISPEventObserver:interface'
+      - '@microsoft/sp-core-library!ITimeProvider:interface'
+      - '@microsoft/sp-core-library!Log:class'
+      - '@microsoft/sp-core-library!RandomNumberGenerator:class'
+      - '@microsoft/sp-core-library!ServiceCreator:type'
+      - '@microsoft/sp-core-library!ServiceKey:class'
+      - '@microsoft/sp-core-library!ServiceScope:class'
+      - '@microsoft/sp-core-library!Session:class'
+      - '@microsoft/sp-core-library!SPEvent:class'
+      - '@microsoft/sp-core-library!SPEventArgs:class'
+      - '@microsoft/sp-core-library!Text:class'
+      - '@microsoft/sp-core-library!TimeProvider:class'
+      - '@microsoft/sp-core-library!UrlQueryParameterCollection:class'
+      - '@microsoft/sp-core-library!Validate:class'
+      - '@microsoft/sp-core-library!Version:class'
+  - uid: '@microsoft/sp-core-library!ServiceCreator:type'
+    summary: This is a callback that is used by ServiceKey.createCustom().
+    name: ServiceCreator
+    fullName: ServiceCreator
+    langs:
+      - typeScript
+    type: typealias
+    syntax:
+      content: 'export declare type ServiceCreator<T> = (serviceScope: ServiceScope) => T;'
+      typeParameters:
+        - id: T
+      return:
+        type:
+          - '@microsoft/sp-core-library!ServiceCreator~0:complex'
 references:
-  - uid: sp-core-library.DisplayMode
+  - uid: '@microsoft/sp-core-library!DisplayMode:enum'
     name: DisplayMode
-  - uid: sp-core-library.Environment
+  - uid: '@microsoft/sp-core-library!Environment:class'
     name: Environment
-  - uid: sp-core-library.EnvironmentType
+  - uid: '@microsoft/sp-core-library!EnvironmentType:enum'
     name: EnvironmentType
-  - uid: sp-core-library.Guid
+  - uid: '@microsoft/sp-core-library!Guid:class'
     name: Guid
-  - uid: sp-core-library.IDisposable
+  - uid: '@microsoft/sp-core-library!IDisposable:interface'
     name: IDisposable
-  - uid: sp-core-library.IRandomNumberGenerator
+  - uid: '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
     name: IRandomNumberGenerator
-  - uid: sp-core-library.IServiceCollection
+  - uid: '@microsoft/sp-core-library!IServiceCollection:interface'
     name: IServiceCollection
-  - uid: sp-core-library.ISPEventObserver
+  - uid: '@microsoft/sp-core-library!ISPEventObserver:interface'
     name: ISPEventObserver
-  - uid: sp-core-library.ITimeProvider
+  - uid: '@microsoft/sp-core-library!ITimeProvider:interface'
     name: ITimeProvider
-  - uid: sp-core-library.Log
+  - uid: '@microsoft/sp-core-library!Log:class'
     name: Log
-  - uid: sp-core-library.RandomNumberGenerator
+  - uid: '@microsoft/sp-core-library!RandomNumberGenerator:class'
     name: RandomNumberGenerator
-  - uid: sp-core-library.ServiceKey
+  - uid: '@microsoft/sp-core-library!ServiceCreator~0:complex'
+    name: '(serviceScope: ServiceScope) => T'
+    fullName: '(serviceScope: default) => T'
+    spec.typeScript:
+      - name: '(serviceScope: '
+        fullName: '(serviceScope: '
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceScope
+        fullName: default
+      - name: ) => T
+        fullName: ) => T
+  - uid: '@microsoft/sp-core-library!ServiceKey:class'
     name: ServiceKey
-  - uid: sp-core-library.ServiceScope
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
     name: ServiceScope
-  - uid: sp-core-library.Session
+  - uid: '@microsoft/sp-core-library!Session:class'
     name: Session
-  - uid: sp-core-library.SPEvent
+  - uid: '@microsoft/sp-core-library!SPEvent:class'
     name: SPEvent
-  - uid: sp-core-library.SPEventArgs
+  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
     name: SPEventArgs
-  - uid: sp-core-library.Text
+  - uid: '@microsoft/sp-core-library!Text:class'
     name: Text
-  - uid: sp-core-library.TimeProvider
+  - uid: '@microsoft/sp-core-library!TimeProvider:class'
     name: TimeProvider
-  - uid: sp-core-library.UrlQueryParameterCollection
+  - uid: '@microsoft/sp-core-library!UrlQueryParameterCollection:class'
     name: UrlQueryParameterCollection
-  - uid: sp-core-library.Validate
+  - uid: '@microsoft/sp-core-library!Validate:class'
     name: Validate
-  - uid: sp-core-library.Version
+  - uid: '@microsoft/sp-core-library!Version:class'
     name: Version

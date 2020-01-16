@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-page-context.SPWeb
+  - uid: '@microsoft/sp-page-context!SPWeb:class'
     summary: >-
       This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
       site ("SPWeb") that hosts the page.
@@ -12,21 +12,22 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-page-context
+    package: '@microsoft/sp-page-context!'
     children:
-      - sp-page-context.SPWeb.absoluteUrl
-      - sp-page-context.SPWeb.description
-      - sp-page-context.SPWeb.firstDayOfWeek
-      - sp-page-context.SPWeb.id
-      - sp-page-context.SPWeb.isAppWeb
-      - sp-page-context.SPWeb.language
-      - sp-page-context.SPWeb.logoUrl
-      - sp-page-context.SPWeb.permissions
-      - sp-page-context.SPWeb.serverRelativeUrl
-      - sp-page-context.SPWeb.templateName
-      - sp-page-context.SPWeb.timeZoneInfo
-      - sp-page-context.SPWeb.title
-  - uid: sp-page-context.SPWeb.absoluteUrl
+      - '@microsoft/sp-page-context!SPWeb#absoluteUrl:member'
+      - '@microsoft/sp-page-context!SPWeb#description:member'
+      - '@microsoft/sp-page-context!SPWeb#firstDayOfWeek:member'
+      - '@microsoft/sp-page-context!SPWeb#id:member'
+      - '@microsoft/sp-page-context!SPWeb#isAppWeb:member'
+      - '@microsoft/sp-page-context!SPWeb#language:member'
+      - '@microsoft/sp-page-context!SPWeb#languageName:member'
+      - '@microsoft/sp-page-context!SPWeb#logoUrl:member'
+      - '@microsoft/sp-page-context!SPWeb#permissions:member'
+      - '@microsoft/sp-page-context!SPWeb#serverRelativeUrl:member'
+      - '@microsoft/sp-page-context!SPWeb#templateName:member'
+      - '@microsoft/sp-page-context!SPWeb#timeZoneInfo:member'
+      - '@microsoft/sp-page-context!SPWeb#title:member'
+  - uid: '@microsoft/sp-page-context!SPWeb#absoluteUrl:member'
     summary: 'Returns the absolute URL for this SPWeb. Example: `"https://example.com/sites/PubSite/SubWeb"`'
     name: absoluteUrl
     fullName: absoluteUrl
@@ -38,7 +39,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPWeb.description
+  - uid: '@microsoft/sp-page-context!SPWeb#description:member'
     summary: Returns the description of the current SPWeb.
     name: description
     fullName: description
@@ -50,7 +51,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPWeb.firstDayOfWeek
+  - uid: '@microsoft/sp-page-context!SPWeb#firstDayOfWeek:member'
     summary: Returns the web's regional first day of week setting or undefined if it hasn't been set.
     isPreview: true
     name: firstDayOfWeek
@@ -62,8 +63,8 @@ items:
       content: 'readonly firstDayOfWeek: SPDayOfWeek | undefined;'
       return:
         type:
-          - SPDayOfWeek | undefined
-  - uid: sp-page-context.SPWeb.id
+          - '@microsoft/sp-page-context!SPWeb#firstDayOfWeek~0:complex'
+  - uid: '@microsoft/sp-page-context!SPWeb#id:member'
     summary: The GUID that identifies the SPWeb on the server.
     name: id
     fullName: id
@@ -74,8 +75,8 @@ items:
       content: 'readonly id: Guid;'
       return:
         type:
-          - sp-core-library.Guid
-  - uid: sp-page-context.SPWeb.isAppWeb
+          - '@microsoft/sp-core-library!Guid:class'
+  - uid: '@microsoft/sp-page-context!SPWeb#isAppWeb:member'
     summary: Returns true if this `SPWeb` the container web for an `SPApp`<!-- -->.
     name: isAppWeb
     fullName: isAppWeb
@@ -87,7 +88,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-page-context.SPWeb.language
+  - uid: '@microsoft/sp-page-context!SPWeb#language:member'
     summary: Returns the locale identifier (LCID) for the default language of the website.
     remarks: 'Example: 1033 represents the locale identifier for en-US.'
     name: language
@@ -100,7 +101,20 @@ items:
       return:
         type:
           - number
-  - uid: sp-page-context.SPWeb.logoUrl
+  - uid: '@microsoft/sp-page-context!SPWeb#languageName:member'
+    summary: Returns the language name for the default language of the website.
+    remarks: 'Example: en-US represents the English language in the US locale.'
+    name: languageName
+    fullName: languageName
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'readonly languageName: string;'
+      return:
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#logoUrl:member'
     summary: Returns the absolute URL of the website logo.
     remarks: 'Example:` https://example.com/sites/PubSite/SubWeb/logo.jpg`'
     name: logoUrl
@@ -113,7 +127,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPWeb.permissions
+  - uid: '@microsoft/sp-page-context!SPWeb#permissions:member'
     summary: >-
       Return the SPPermission object that represents the set of permissions that the current user has for interacting
       with the web.
@@ -126,8 +140,8 @@ items:
       content: 'readonly permissions: SPPermission;'
       return:
         type:
-          - sp-page-context.SPPermission
-  - uid: sp-page-context.SPWeb.serverRelativeUrl
+          - '@microsoft/sp-page-context!default:class'
+  - uid: '@microsoft/sp-page-context!SPWeb#serverRelativeUrl:member'
     summary: Returns the server-relative URL for this SPWeb.
     remarks: 'Example: `"/sites/PubSite/SubWeb"`'
     name: serverRelativeUrl
@@ -140,7 +154,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPWeb.templateName
+  - uid: '@microsoft/sp-page-context!SPWeb#templateName:member'
     summary: >-
       Returns the string representing the numeric identifier for the site definition or site template that was used to
       create the site.
@@ -155,7 +169,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPWeb.timeZoneInfo
+  - uid: '@microsoft/sp-page-context!SPWeb#timeZoneInfo:member'
     summary: Returns the web's regional timezone settings or undefined if they haven't been set.
     isPreview: true
     name: timeZoneInfo
@@ -167,8 +181,8 @@ items:
       content: 'readonly timeZoneInfo: SPTimeZone | undefined;'
       return:
         type:
-          - SPTimeZone | undefined
-  - uid: sp-page-context.SPWeb.title
+          - '@microsoft/sp-page-context!SPWeb#timeZoneInfo~0:complex'
+  - uid: '@microsoft/sp-page-context!SPWeb#title:member'
     summary: Returns the title of the current SPWeb.
     name: title
     fullName: title
@@ -180,3 +194,26 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-page-context!SPWeb#firstDayOfWeek~0:complex'
+    name: SPDayOfWeek | undefined
+    fullName: SPDayOfWeek | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!SPDayOfWeek:enum'
+        name: SPDayOfWeek
+        fullName: SPDayOfWeek
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-core-library!Guid:class'
+    name: Guid
+  - uid: '@microsoft/sp-page-context!default:class'
+    name: SPPermission
+  - uid: '@microsoft/sp-page-context!SPWeb#timeZoneInfo~0:complex'
+    name: SPTimeZone | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: SPTimeZone
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'

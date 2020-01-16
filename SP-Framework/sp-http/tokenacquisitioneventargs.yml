@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.TokenAcquisitionEventArgs
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:class'
     summary: Arguments for a token acquisition failure event.
     name: TokenAcquisitionEventArgs
     fullName: TokenAcquisitionEventArgs
@@ -8,13 +8,15 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-core-library.SPEventArgs
-    package: sp-http
+      - '@microsoft/sp-core-library!SPEventArgs:class'
+    inheritance:
+      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.TokenAcquisitionEventArgs.(constructor)
-      - sp-http.TokenAcquisitionEventArgs.message
-      - sp-http.TokenAcquisitionEventArgs.redirectUrl
-  - uid: sp-http.TokenAcquisitionEventArgs.(constructor)
+      - '@microsoft/sp-http!TokenAcquisitionEventArgs:constructor(1)'
+      - '@microsoft/sp-http!TokenAcquisitionEventArgs#message:member'
+      - '@microsoft/sp-http!TokenAcquisitionEventArgs#redirectUrl:member'
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:constructor(1)'
     summary: Constructs a new instance of the `TokenAcquisitionEventArgs` class
     name: '(constructor)(message, redirectUrl)'
     fullName: '(constructor)(message, redirectUrl)'
@@ -32,7 +34,7 @@ items:
           description: ''
           type:
             - string
-  - uid: sp-http.TokenAcquisitionEventArgs.message
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs#message:member'
     summary: The message returned from ADAL fails to retrieve a token from Azure AD.
     name: message
     fullName: message
@@ -44,7 +46,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-http.TokenAcquisitionEventArgs.redirectUrl
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs#redirectUrl:member'
     summary: The url of the page for the end user to perform Multi Factor Authentication
     name: redirectUrl
     fullName: redirectUrl
@@ -56,3 +58,6 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
+    name: SPEventArgs

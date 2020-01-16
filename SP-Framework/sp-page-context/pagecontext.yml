@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-page-context.PageContext
+  - uid: '@microsoft/sp-page-context!PageContext:class'
     summary: The SharePoint page context object.
     remarks: >-
       The page context provides standard definitions for common SharePoint objects that need to be shared between the
@@ -12,20 +12,20 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-page-context
+    package: '@microsoft/sp-page-context!'
     children:
-      - sp-page-context.PageContext.(constructor)
-      - sp-page-context.PageContext.aadInfo
-      - sp-page-context.PageContext.cultureInfo
-      - sp-page-context.PageContext.isInitialized
-      - sp-page-context.PageContext.legacyPageContext
-      - sp-page-context.PageContext.list
-      - sp-page-context.PageContext.listItem
-      - sp-page-context.PageContext.serviceKey
-      - sp-page-context.PageContext.site
-      - sp-page-context.PageContext.user
-      - sp-page-context.PageContext.web
-  - uid: sp-page-context.PageContext.(constructor)
+      - '@microsoft/sp-page-context!PageContext:constructor(1)'
+      - '@microsoft/sp-page-context!PageContext#aadInfo:member'
+      - '@microsoft/sp-page-context!PageContext#cultureInfo:member'
+      - '@microsoft/sp-page-context!PageContext#isInitialized:member'
+      - '@microsoft/sp-page-context!PageContext#legacyPageContext:member'
+      - '@microsoft/sp-page-context!PageContext#list:member'
+      - '@microsoft/sp-page-context!PageContext#listItem:member'
+      - '@microsoft/sp-page-context!PageContext.serviceKey:member'
+      - '@microsoft/sp-page-context!PageContext#site:member'
+      - '@microsoft/sp-page-context!PageContext#user:member'
+      - '@microsoft/sp-page-context!PageContext#web:member'
+  - uid: '@microsoft/sp-page-context!PageContext:constructor(1)'
     summary: Constructs a new instance of the `PageContext` class
     name: (constructor)(serviceScope)
     fullName: (constructor)(serviceScope)
@@ -38,8 +38,8 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
-  - uid: sp-page-context.PageContext.aadInfo
+            - '@microsoft/sp-core-library!ServiceScope:class'
+  - uid: '@microsoft/sp-page-context!PageContext#aadInfo:member'
     summary: >-
       Contextual information for communicating with Azure Active Directory. If the current page doesn't have an
       associated Azure Active Directory tenant, this property will be undefined.
@@ -52,8 +52,8 @@ items:
       content: 'readonly aadInfo: AzureActiveDirectoryInfo | undefined;'
       return:
         type:
-          - AzureActiveDirectoryInfo | undefined
-  - uid: sp-page-context.PageContext.cultureInfo
+          - '@microsoft/sp-page-context!PageContext#aadInfo~0:complex'
+  - uid: '@microsoft/sp-page-context!PageContext#cultureInfo:member'
     summary: >-
       It provides culture info for the current user of the application. This class is primarily used with the
       `PageContext` class.
@@ -66,8 +66,8 @@ items:
       content: 'readonly cultureInfo: CultureInfo;'
       return:
         type:
-          - sp-page-context.CultureInfo
-  - uid: sp-page-context.PageContext.isInitialized
+          - '@microsoft/sp-page-context!default:class'
+  - uid: '@microsoft/sp-page-context!PageContext#isInitialized:member'
     summary: Returns whether the `PageContext` has been initialized.
     name: isInitialized
     fullName: isInitialized
@@ -79,7 +79,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-page-context.PageContext.legacyPageContext
+  - uid: '@microsoft/sp-page-context!PageContext#legacyPageContext:member'
     summary: An object providing classic SharePoint properties that may be required by certain legacy scripts.
     remarks: >-
       This property is provided to facilitate migration of legacy code. It returns a JavaScript object whose contents
@@ -102,7 +102,7 @@ items:
       return:
         type:
           - any
-  - uid: sp-page-context.PageContext.list
+  - uid: '@microsoft/sp-page-context!PageContext#list:member'
     summary: >-
       Contextual information for the SharePoint list that is hosting the page. If there is no list associated to the
       current page, this property will be undefined.
@@ -115,8 +115,8 @@ items:
       content: 'readonly list: SPList | undefined;'
       return:
         type:
-          - SPList | undefined
-  - uid: sp-page-context.PageContext.listItem
+          - '@microsoft/sp-page-context!PageContext#list~0:complex'
+  - uid: '@microsoft/sp-page-context!PageContext#listItem:member'
     summary: >-
       Contextual information for the SharePoint list item that is hosting the page. If there is no list item associated
       to the current page, this property will be undefined.
@@ -129,8 +129,8 @@ items:
       content: 'readonly listItem: SPListItem | undefined;'
       return:
         type:
-          - SPListItem | undefined
-  - uid: sp-page-context.PageContext.serviceKey
+          - '@microsoft/sp-page-context!PageContext#listItem~0:complex'
+  - uid: '@microsoft/sp-page-context!PageContext.serviceKey:member'
     summary: The service key for PageContext.
     name: serviceKey
     fullName: serviceKey
@@ -141,8 +141,8 @@ items:
       content: 'static readonly serviceKey: ServiceKey<PageContext>;'
       return:
         type:
-          - ServiceKey<PageContext>
-  - uid: sp-page-context.PageContext.site
+          - '@microsoft/sp-page-context!PageContext.serviceKey~0:complex'
+  - uid: '@microsoft/sp-page-context!PageContext#site:member'
     summary: Contextual information for the SharePoint site collection ("SPSite") that is hosting the page.
     name: site
     fullName: site
@@ -153,8 +153,8 @@ items:
       content: 'readonly site: SPSite;'
       return:
         type:
-          - sp-page-context.SPSite
-  - uid: sp-page-context.PageContext.user
+          - '@microsoft/sp-page-context!default:class'
+  - uid: '@microsoft/sp-page-context!PageContext#user:member'
     summary: >-
       It provides contextual information for the SharePoint user that is accessing the page. This class is primarily
       used with the `PageContext` class.
@@ -167,8 +167,8 @@ items:
       content: 'readonly user: SPUser;'
       return:
         type:
-          - sp-page-context.SPUser
-  - uid: sp-page-context.PageContext.web
+          - '@microsoft/sp-page-context!default:class'
+  - uid: '@microsoft/sp-page-context!PageContext#web:member'
     summary: Contextual information for the SharePoint site ("SPWeb") that is hosting the page.
     name: web
     fullName: web
@@ -179,4 +179,50 @@ items:
       content: 'readonly web: SPWeb;'
       return:
         type:
-          - sp-page-context.SPWeb
+          - '@microsoft/sp-page-context!default:class'
+references:
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-page-context!PageContext#aadInfo~0:complex'
+    name: AzureActiveDirectoryInfo | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: AzureActiveDirectoryInfo
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-page-context!default:class'
+    name: CultureInfo
+  - uid: '@microsoft/sp-page-context!PageContext#list~0:complex'
+    name: SPList | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: SPList
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-page-context!PageContext#listItem~0:complex'
+    name: SPListItem | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: SPListItem
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-page-context!PageContext.serviceKey~0:complex'
+    name: ServiceKey<PageContext>
+    fullName: ServiceKey<default>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: PageContext
+        fullName: default
+      - name: '>'
+        fullName: '>'

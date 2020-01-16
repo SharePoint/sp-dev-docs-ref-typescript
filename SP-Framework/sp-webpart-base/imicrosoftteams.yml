@@ -1,18 +1,21 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.IMicrosoftTeams
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
     summary: Provides access to the Teams SDK and Teams context. Only provided when the web part is loaded in Teams.
     name: IMicrosoftTeams
     fullName: IMicrosoftTeams
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.IMicrosoftTeams.context
-      - sp-webpart-base.IMicrosoftTeams.teamsJs
-  - uid: sp-webpart-base.IMicrosoftTeams.context
-    summary: Microsoft Teams Context.
+      - '@microsoft/sp-webpart-base!IMicrosoftTeams#context:member'
+      - '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs:member'
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#context:member'
+    summary: Microsoft Teams' Context.
+    remarks: >-
+      For more information, please see:
+      [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest)
     name: context
     fullName: context
     langs:
@@ -22,8 +25,8 @@ items:
       content: 'context: microsoftTeams.Context;'
       return:
         type:
-          - microsoftTeams.Context
-  - uid: sp-webpart-base.IMicrosoftTeams.teamsJs
+          - '@microsoft/sp-webpart-base!IMicrosoftTeams#context~0:complex'
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs:member'
     summary: Microsoft Teams SDK.
     name: teamsJs
     fullName: teamsJs
@@ -35,3 +38,13 @@ items:
       return:
         type:
           - typeof microsoftTeams
+references:
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#context~0:complex'
+    name: microsoftTeams.Context
+    fullName: microsoftTeams.Context
+    spec.typeScript:
+      - name: microsoftTeams.
+        fullName: microsoftTeams.
+      - uid: '@microsoft/teams-js!Context:interface'
+        name: Context
+        fullName: Context

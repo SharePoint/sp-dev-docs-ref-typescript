@@ -1,16 +1,17 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.ISDKs
+  - uid: '@microsoft/sp-webpart-base!ISDKs:interface'
     summary: Conditional set of SDKs provided by SPFx dependent on the environment.
     name: ISDKs
     fullName: ISDKs
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.ISDKs.microsoftTeams
-  - uid: sp-webpart-base.ISDKs.microsoftTeams
+      - '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
+      - '@microsoft/sp-webpart-base!ISDKs#office:member'
+  - uid: '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
     summary: >-
       Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
       being hosted in Microsoft Teams.
@@ -26,4 +27,27 @@ items:
       content: 'microsoftTeams?: IMicrosoftTeams;'
       return:
         type:
-          - sp-webpart-base.IMicrosoftTeams
+          - '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
+  - uid: '@microsoft/sp-webpart-base!ISDKs#office:member'
+    summary: >-
+      Contextual information about the current Office app. This object will only be defined if a component is being
+      hosted in an Office app.
+    remarks: >-
+      For more information, please see:
+      [https://docs.microsoft.com/en-us/office/dev/add-ins/develop/understanding-the-javascript-api-for-office](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)
+    isPreview: true
+    name: office
+    fullName: office
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'office?: IOffice;'
+      return:
+        type:
+          - '@microsoft/sp-webpart-base!IOffice:interface'
+references:
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
+    name: IMicrosoftTeams
+  - uid: '@microsoft/sp-webpart-base!IOffice:interface'
+    name: IOffice

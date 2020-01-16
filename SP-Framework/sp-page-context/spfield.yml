@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-page-context.SPField
+  - uid: '@microsoft/sp-page-context!SPField:class'
     summary: A field represents the data model for a column in SharePoint list view.
     remarks: >-
       This is the client-side equivalent for SharePoint `SPField` class. It is used with the
@@ -14,16 +14,16 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-page-context
+    package: '@microsoft/sp-page-context!'
     children:
-      - sp-page-context.SPField.clientSideComponentId
-      - sp-page-context.SPField.clientSideComponentProperties
-      - sp-page-context.SPField.displayName
-      - sp-page-context.SPField.fieldType
-      - sp-page-context.SPField.id
-      - sp-page-context.SPField.internalName
-      - sp-page-context.SPField.isRequired
-  - uid: sp-page-context.SPField.clientSideComponentId
+      - '@microsoft/sp-page-context!SPField#clientSideComponentId:member'
+      - '@microsoft/sp-page-context!SPField#clientSideComponentProperties:member'
+      - '@microsoft/sp-page-context!SPField#displayName:member'
+      - '@microsoft/sp-page-context!SPField#fieldType:member'
+      - '@microsoft/sp-page-context!SPField#id:member'
+      - '@microsoft/sp-page-context!SPField#internalName:member'
+      - '@microsoft/sp-page-context!SPField#isRequired:member'
+  - uid: '@microsoft/sp-page-context!SPField#clientSideComponentId:member'
     summary: The unique identifier of the client-side component associated with the field.
     name: clientSideComponentId
     fullName: clientSideComponentId
@@ -34,8 +34,8 @@ items:
       content: 'readonly clientSideComponentId: Guid | undefined;'
       return:
         type:
-          - Guid | undefined
-  - uid: sp-page-context.SPField.clientSideComponentProperties
+          - '@microsoft/sp-page-context!SPField#clientSideComponentId~0:complex'
+  - uid: '@microsoft/sp-page-context!SPField#clientSideComponentProperties:member'
     summary: This property is only used when a `ClientSideComponentId` is specified. It is optional.
     remarks: >-
       If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning
@@ -50,7 +50,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPField.displayName
+  - uid: '@microsoft/sp-page-context!SPField#displayName:member'
     summary: The display name of the field. This name is shown as column name in UI.
     name: displayName
     fullName: displayName
@@ -62,7 +62,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPField.fieldType
+  - uid: '@microsoft/sp-page-context!SPField#fieldType:member'
     summary: The type of the field represented as a string
     name: fieldType
     fullName: fieldType
@@ -74,7 +74,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPField.id
+  - uid: '@microsoft/sp-page-context!SPField#id:member'
     summary: The GUID identifier for this field.
     name: id
     fullName: id
@@ -85,8 +85,8 @@ items:
       content: 'readonly id: Guid;'
       return:
         type:
-          - sp-core-library.Guid
-  - uid: sp-page-context.SPField.internalName
+          - '@microsoft/sp-core-library!Guid:class'
+  - uid: '@microsoft/sp-page-context!SPField#internalName:member'
     summary: The internal name of the field. This name is usually used to find the field.
     name: internalName
     fullName: internalName
@@ -98,7 +98,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPField.isRequired
+  - uid: '@microsoft/sp-page-context!SPField#isRequired:member'
     summary: Whether the field is required for each list item in the list
     name: isRequired
     fullName: isRequired
@@ -110,3 +110,15 @@ items:
       return:
         type:
           - boolean
+references:
+  - uid: '@microsoft/sp-page-context!SPField#clientSideComponentId~0:complex'
+    name: Guid | undefined
+    fullName: Guid | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!Guid:class'
+        name: Guid
+        fullName: Guid
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-core-library!Guid:class'
+    name: Guid

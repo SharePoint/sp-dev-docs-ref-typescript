@@ -1,22 +1,22 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library.EnvironmentType
+  - uid: '@microsoft/sp-core-library!EnvironmentType:enum'
     summary: Indicates the general type of environment where the SharePoint Framework is running.
     remarks: >-
-      This enum is used by the [Environment.type](xref:sp-core-library.Environment.type) property. It provides a way to
-      distinguish environments where certain functionality may be limited or disabled.
+      This enum is used by the [Environment.type](xref:@microsoft/sp-core-library!Environment.type:member) property. It
+      provides a way to distinguish environments where certain functionality may be limited or disabled.
     name: EnvironmentType
     fullName: EnvironmentType
     langs:
       - typeScript
     type: enum
-    package: sp-core-library
+    package: '@microsoft/sp-core-library!'
     children:
-      - sp-core-library.EnvironmentType.ClassicSharePoint
-      - sp-core-library.EnvironmentType.Local
-      - sp-core-library.EnvironmentType.SharePoint
-      - sp-core-library.EnvironmentType.Test
-  - uid: sp-core-library.EnvironmentType.ClassicSharePoint
+      - '@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member'
+      - '@microsoft/sp-core-library!EnvironmentType.Local:member'
+      - '@microsoft/sp-core-library!EnvironmentType.SharePoint:member'
+      - '@microsoft/sp-core-library!EnvironmentType.Test:member'
+  - uid: '@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member'
     summary: >-
       Indicates that the framework was hosted by a classic server-rendered SharePoint page. Some functionality may be
       limited, e.g. various extensibility APIs may not be supported.
@@ -26,7 +26,7 @@ items:
       - typeScript
     type: field
     numericValue: '3'
-  - uid: sp-core-library.EnvironmentType.Local
+  - uid: '@microsoft/sp-core-library!EnvironmentType.Local:member'
     summary: >-
       Indicates that the SharePoint Framework is running on a page from a "localhost" web server, for example the
       SharePoint Workbench when hosted via "gulp serve". SharePoint REST API calls will not be available, and in general
@@ -38,7 +38,7 @@ items:
       - typeScript
     type: field
     numericValue: '1'
-  - uid: sp-core-library.EnvironmentType.SharePoint
+  - uid: '@microsoft/sp-core-library!EnvironmentType.SharePoint:member'
     summary: >-
       Indicates that the SharePoint Framework is running on a modern SharePoint web page, with full framework
       functionality. This is the normal usage scenario.
@@ -48,7 +48,7 @@ items:
       - typeScript
     type: field
     numericValue: '2'
-  - uid: sp-core-library.EnvironmentType.Test
+  - uid: '@microsoft/sp-core-library!EnvironmentType.Test:member'
     summary: >-
       Indicates that the SharePoint Framework is running inside a test harness, e.g. a unit test. There may be no user
       interaction at all, and network access in general may be disabled.

@@ -1,20 +1,20 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.ITheme
+  - uid: '@microsoft/sp-component-base!ITheme:interface'
     summary: 'Collection of theme values, which can be used to programatically style components.'
     name: ITheme
     fullName: ITheme
     langs:
       - typeScript
     type: interface
-    package: sp-component-base
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.ITheme.disableGlobalClassNames
-      - sp-component-base.ITheme.fonts
-      - sp-component-base.ITheme.isInverted
-      - sp-component-base.ITheme.palette
-      - sp-component-base.ITheme.semanticColors
-  - uid: sp-component-base.ITheme.disableGlobalClassNames
+      - '@microsoft/sp-component-base!ITheme#disableGlobalClassNames:member'
+      - '@microsoft/sp-component-base!ITheme#fonts:member'
+      - '@microsoft/sp-component-base!ITheme#isInverted:member'
+      - '@microsoft/sp-component-base!ITheme#palette:member'
+      - '@microsoft/sp-component-base!ITheme#semanticColors:member'
+  - uid: '@microsoft/sp-component-base!ITheme#disableGlobalClassNames:member'
     summary: >-
       Disables global styles on Fabric components. This will prevent global overrides that might have been set by other
       Fabric users from applying to your components.
@@ -29,7 +29,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-component-base.ITheme.fonts
+  - uid: '@microsoft/sp-component-base!ITheme#fonts:member'
     summary: Font styles for different sizes.
     name: fonts
     fullName: fonts
@@ -40,8 +40,8 @@ items:
       content: 'fonts: IFontStyles;'
       return:
         type:
-          - sp-component-base.IFontStyles
-  - uid: sp-component-base.ITheme.isInverted
+          - '@microsoft/sp-component-base!IFontStyles:interface'
+  - uid: '@microsoft/sp-component-base!ITheme#isInverted:member'
     summary: Indicates whether the theme is inverted.
     name: isInverted
     fullName: isInverted
@@ -53,7 +53,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-component-base.ITheme.palette
+  - uid: '@microsoft/sp-component-base!ITheme#palette:member'
     summary: Color palette.
     name: palette
     fullName: palette
@@ -64,8 +64,8 @@ items:
       content: 'palette: IPalette;'
       return:
         type:
-          - sp-component-base.IPalette
-  - uid: sp-component-base.ITheme.semanticColors
+          - '@microsoft/sp-component-base!IPalette:interface'
+  - uid: '@microsoft/sp-component-base!ITheme#semanticColors:member'
     summary: The collection of all semantic slots for colors used in themes.
     name: semanticColors
     fullName: semanticColors
@@ -76,4 +76,11 @@ items:
       content: 'semanticColors: ISemanticColors;'
       return:
         type:
-          - sp-component-base.ISemanticColors
+          - '@microsoft/sp-component-base!ISemanticColors:interface'
+references:
+  - uid: '@microsoft/sp-component-base!IFontStyles:interface'
+    name: IFontStyles
+  - uid: '@microsoft/sp-component-base!IPalette:interface'
+    name: IPalette
+  - uid: '@microsoft/sp-component-base!ISemanticColors:interface'
+    name: ISemanticColors

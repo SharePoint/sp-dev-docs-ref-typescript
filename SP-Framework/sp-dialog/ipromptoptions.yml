@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-dialog.IPromptOptions
+  - uid: '@microsoft/sp-dialog!IPromptOptions:interface'
     summary: Options for showing a prompt dialog
     name: IPromptOptions
     fullName: IPromptOptions
@@ -8,11 +8,13 @@ items:
       - typeScript
     type: interface
     extends:
-      - sp-dialog.IDialogShowOptions
-    package: sp-dialog
+      - '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    inheritance:
+      - type: '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    package: '@microsoft/sp-dialog!'
     children:
-      - sp-dialog.IPromptOptions.defaultValue
-  - uid: sp-dialog.IPromptOptions.defaultValue
+      - '@microsoft/sp-dialog!IPromptOptions#defaultValue:member'
+  - uid: '@microsoft/sp-dialog!IPromptOptions#defaultValue:member'
     summary: The default value for the input text field of prompt dialog
     name: defaultValue
     fullName: defaultValue
@@ -24,3 +26,6 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    name: IDialogShowOptions

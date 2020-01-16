@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-extension-base.BaseExtension
+  - uid: '@microsoft/sp-extension-base!BaseExtension:class'
     summary: The base class for all client-side extensions.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
@@ -11,13 +11,15 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-component-base.BaseComponent
-    package: sp-extension-base
+      - '@microsoft/sp-component-base!BaseComponent:class'
+    inheritance:
+      - type: '@microsoft/sp-component-base!BaseComponent:class'
+    package: '@microsoft/sp-extension-base!'
     children:
-      - sp-extension-base.BaseExtension.context
-      - sp-extension-base.BaseExtension.onInit
-      - sp-extension-base.BaseExtension.properties
-  - uid: sp-extension-base.BaseExtension.context
+      - '@microsoft/sp-extension-base!BaseExtension#context:member'
+      - '@microsoft/sp-extension-base!BaseExtension#onInit:member(1)'
+      - '@microsoft/sp-extension-base!BaseExtension#properties:member'
+  - uid: '@microsoft/sp-extension-base!BaseExtension#context:member'
     summary: Use the context object to access common services and state associated with the component.
     remarks: >-
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
@@ -32,8 +34,8 @@ items:
       content: 'protected readonly context: ExtensionContext;'
       return:
         type:
-          - sp-extension-base.ExtensionContext
-  - uid: sp-extension-base.BaseExtension.onInit
+          - '@microsoft/sp-extension-base!default:class'
+  - uid: '@microsoft/sp-extension-base!BaseExtension#onInit:member(1)'
     summary: This event method is called when the client-side extension is first activated on the page.
     name: onInit()
     fullName: onInit()
@@ -44,9 +46,9 @@ items:
       content: 'protected onInit(): Promise<void>;'
       return:
         type:
-          - Promise<void>
+          - '@microsoft/sp-extension-base!BaseExtension#onInit~0:complex'
         description: ''
-  - uid: sp-extension-base.BaseExtension.properties
+  - uid: '@microsoft/sp-extension-base!BaseExtension#properties:member'
     summary: Extension properties is a JavaScript object that are passed in by the application that initializes the extension.
     remarks: >-
       Properties can be used in the extension code to define configurable behaviors. The application has control over
@@ -62,3 +64,17 @@ items:
       return:
         type:
           - TProperties
+references:
+  - uid: '@microsoft/sp-component-base!BaseComponent:class'
+    name: BaseComponent
+  - uid: '@microsoft/sp-extension-base!default:class'
+    name: ExtensionContext
+  - uid: '@microsoft/sp-extension-base!BaseExtension#onInit~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>

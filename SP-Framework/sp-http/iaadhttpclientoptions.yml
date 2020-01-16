@@ -1,18 +1,18 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.IAadHttpClientOptions
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions:interface'
     summary: Interface for overriding the default behavior of AadHttpClient.
     name: IAadHttpClientOptions
     fullName: IAadHttpClientOptions
     langs:
       - typeScript
     type: interface
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.IAadHttpClientOptions.configuration
-      - sp-http.IAadHttpClientOptions.tokenProvider
-      - sp-http.IAadHttpClientOptions.useCachedToken
-  - uid: sp-http.IAadHttpClientOptions.configuration
+      - '@microsoft/sp-http!IAadHttpClientOptions#configuration:member'
+      - '@microsoft/sp-http!IAadHttpClientOptions#tokenProvider:member'
+      - '@microsoft/sp-http!IAadHttpClientOptions#useCachedToken:member'
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions#configuration:member'
     deprecated:
       content: '- AadHttpClient''s configuration cannot be altered'
     name: configuration
@@ -24,8 +24,8 @@ items:
       content: 'configuration?: IAadTokenProviderConfiguration;'
       return:
         type:
-          - sp-http.IAadTokenProviderConfiguration
-  - uid: sp-http.IAadHttpClientOptions.tokenProvider
+          - '@microsoft/sp-http!IAadTokenProviderConfiguration:interface'
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions#tokenProvider:member'
     deprecated:
       content: '- AadHttpClient does not support a custom tokenProvider.'
     name: tokenProvider
@@ -37,8 +37,8 @@ items:
       content: 'tokenProvider?: IAadTokenProvider;'
       return:
         type:
-          - sp-http.IAadTokenProvider
-  - uid: sp-http.IAadHttpClientOptions.useCachedToken
+          - '@microsoft/sp-http!IAadTokenProvider:interface'
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions#useCachedToken:member'
     summary: Allows the developer to specify if cached tokens should be use for the current request.
     isPreview: true
     name: useCachedToken
@@ -51,3 +51,8 @@ items:
       return:
         type:
           - boolean
+references:
+  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration:interface'
+    name: IAadTokenProviderConfiguration
+  - uid: '@microsoft/sp-http!IAadTokenProvider:interface'
+    name: IAadTokenProvider

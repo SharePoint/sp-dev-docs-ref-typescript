@@ -1,11 +1,11 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-application-base.PlaceholderContent
+  - uid: '@microsoft/sp-application-base!PlaceholderContent:class'
     summary: Represents custom content that is rendered inside a placeholder on a SharePoint page.
     remarks: >-
       This object is returned by
-      [PlaceholderProvider.tryCreateContent()](xref:sp-application-base.PlaceholderProvider.tryCreateContent)<!-- -->.
-      It provides access to a Document Object Model (DOM) element where the owner can render its custom content.
+      [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1))<!--
+      -->. It provides access to a Document Object Model (DOM) element where the owner can render its custom content.
 
 
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
@@ -16,20 +16,20 @@ items:
       - typeScript
     type: class
     implements:
-      - sp-core-library.IDisposable
-    package: sp-application-base
+      - '@microsoft/sp-core-library!IDisposable:interface'
+    package: '@microsoft/sp-application-base!'
     children:
-      - sp-application-base.PlaceholderContent.dispose
-      - sp-application-base.PlaceholderContent.domElement
-      - sp-application-base.PlaceholderContent.isDisposed
-      - sp-application-base.PlaceholderContent.isVisible
-      - sp-application-base.PlaceholderContent.name
-  - uid: sp-application-base.PlaceholderContent.dispose
+      - '@microsoft/sp-application-base!PlaceholderContent#dispose:member(1)'
+      - '@microsoft/sp-application-base!PlaceholderContent#domElement:member'
+      - '@microsoft/sp-application-base!PlaceholderContent#isDisposed:member'
+      - '@microsoft/sp-application-base!PlaceholderContent#isVisible:member'
+      - '@microsoft/sp-application-base!PlaceholderContent#name:member'
+  - uid: '@microsoft/sp-application-base!PlaceholderContent#dispose:member(1)'
     summary: Disposes the PlaceholderContent object and removes its attached DOM element from the page.
     remarks: >-
       This method can be called to immediately dispose the attached DOM element. Otherwise, it will be disposed by the
       application when the containing placeholder is disposed. Calling dispose() invokes the
-      [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
+      [IPlaceholderCreateContentOptions.onDispose](xref:@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member)
       callback, removes the associated DOM element from the page, and disposes the PlaceholderContent object.
     name: dispose()
     fullName: dispose()
@@ -42,11 +42,11 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-application-base.PlaceholderContent.domElement
+  - uid: '@microsoft/sp-application-base!PlaceholderContent#domElement:member'
     summary: The Document Object Model (DOM) element where the owner should render its custom content.
     remarks: >-
       If the caller needs to be notified when the DOM element is disposed, use the
-      [IPlaceholderCreateContentOptions.onDispose](xref:sp-application-base.IPlaceholderCreateContentOptions.onDispose)
+      [IPlaceholderCreateContentOptions.onDispose](xref:@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member)
       callback.
     name: domElement
     fullName: domElement
@@ -57,8 +57,8 @@ items:
       content: 'readonly domElement: HTMLDivElement;'
       return:
         type:
-          - HTMLDivElement
-  - uid: sp-application-base.PlaceholderContent.isDisposed
+          - '!HTMLDivElement:interface'
+  - uid: '@microsoft/sp-application-base!PlaceholderContent#isDisposed:member'
     name: isDisposed
     fullName: isDisposed
     langs:
@@ -69,7 +69,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-application-base.PlaceholderContent.isVisible
+  - uid: '@microsoft/sp-application-base!PlaceholderContent#isVisible:member'
     summary: >-
       Return true if this PlacholderContent object is visible. If you create a placeholder and the host page isn't
       displaying it, this will return false.
@@ -83,7 +83,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-application-base.PlaceholderContent.name
+  - uid: '@microsoft/sp-application-base!PlaceholderContent#name:member'
     summary: Identifies the placeholder that this content was added to.
     remarks: 'Example: PlaceholderName.Top'
     name: name
@@ -95,4 +95,11 @@ items:
       content: 'readonly name: PlaceholderName;'
       return:
         type:
-          - sp-application-base.PlaceholderName
+          - '@microsoft/sp-application-base!~PlaceholderName:enum'
+references:
+  - uid: '@microsoft/sp-core-library!IDisposable:interface'
+    name: IDisposable
+  - uid: '!HTMLDivElement:interface'
+    name: HTMLDivElement
+  - uid: '@microsoft/sp-application-base!~PlaceholderName:enum'
+    name: PlaceholderName
