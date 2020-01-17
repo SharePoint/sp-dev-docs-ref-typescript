@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.ISPHttpClientConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
     summary: Flags interface for SPHttpClientConfiguration.
     name: ISPHttpClientConfiguration
     fullName: ISPHttpClientConfiguration
@@ -8,13 +8,17 @@ items:
       - typeScript
     type: interface
     extends:
-      - sp-http.ISPHttpClientCommonConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    inheritance:
+      - type: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+        inheritance:
+          - type: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.ISPHttpClientConfiguration.defaultODataVersion
-      - sp-http.ISPHttpClientConfiguration.defaultSameOriginCredentials
-      - sp-http.ISPHttpClientConfiguration.requestDigest
-  - uid: sp-http.ISPHttpClientConfiguration.defaultODataVersion
+      - '@microsoft/sp-http!ISPHttpClientConfiguration#defaultODataVersion:member'
+      - '@microsoft/sp-http!ISPHttpClientConfiguration#defaultSameOriginCredentials:member'
+      - '@microsoft/sp-http!ISPHttpClientConfiguration#requestDigest:member'
+  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration#defaultODataVersion:member'
     summary: Automatically configure the "OData-Version" header.
     remarks: >-
       When this switch is specified (i.e. not undefined): If the "OData-Version" header was not explicitly added for the
@@ -32,8 +36,8 @@ items:
       content: 'defaultODataVersion?: ODataVersion;'
       return:
         type:
-          - sp-http.ODataVersion
-  - uid: sp-http.ISPHttpClientConfiguration.defaultSameOriginCredentials
+          - '@microsoft/sp-http!default:class'
+  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration#defaultSameOriginCredentials:member'
     summary: Automatically configure the RequestInit.credentials.
     remarks: >-
       When this switch is true:
@@ -54,7 +58,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-http.ISPHttpClientConfiguration.requestDigest
+  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration#requestDigest:member'
     summary: Automatically provide an "X-RequestDigest" header for authentication.
     remarks: >-
       When this switch is true:
@@ -73,3 +77,10 @@ items:
       return:
         type:
           - boolean
+references:
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    name: ISPHttpClientCommonConfiguration
+  - uid: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    name: IHttpClientConfiguration
+  - uid: '@microsoft/sp-http!default:class'
+    name: ODataVersion

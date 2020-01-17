@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: decorators
+  - uid: '@microsoft/decorators!'
     summary: A conservative set of decorators intended for use in both NodeJS and web browser projects.
     remarks: >-
       This package provides a small set of decorators that enable more rigorous specification of API contracts when
@@ -12,10 +12,10 @@ items:
       - typeScript
     type: package
     children:
-      - decorators.override
-      - decorators.sealed
-      - decorators.virtual
-  - uid: decorators.override
+      - '@microsoft/decorators!override:function(1)'
+      - '@microsoft/decorators!sealed:function(1)'
+      - '@microsoft/decorators!virtual:function(1)'
+  - uid: '@microsoft/decorators!override:function(1)'
     summary: >-
       This decorator is applied to a class's member function or property. It indicates that the definition overrides
       another defintion (of the same name) from the base class. The base class definition must be marked as @<!--
@@ -38,7 +38,7 @@ items:
         - id: target
           description: ''
           type:
-            - Object
+            - '!Object:interface'
         - id: propertyKey
           description: ''
           type:
@@ -46,8 +46,8 @@ items:
         - id: descriptor
           description: ''
           type:
-            - TypedPropertyDescriptor<any>
-  - uid: decorators.sealed
+            - '@microsoft/decorators!override~0:complex'
+  - uid: '@microsoft/decorators!sealed:function(1)'
     summary: >-
       This decorator is applied to a class (but NOT member function or property). It indicates that subclasses must not
       inherit from this class. This decorator is currently used for documentation purposes only. In the future, it may
@@ -67,8 +67,8 @@ items:
         - id: target
           description: ''
           type:
-            - Function
-  - uid: decorators.virtual
+            - '!Function:interface'
+  - uid: '@microsoft/decorators!virtual:function(1)'
     summary: >-
       This decorator is applied to a class's member function or property. It indicates that the definition may
       optionally be overridden in a child class. Conversely, if the @<!-- -->virtual decorator is NOT applied to a
@@ -91,7 +91,7 @@ items:
         - id: target
           description: ''
           type:
-            - Object
+            - '!Object:interface'
         - id: propertyKey
           description: ''
           type:
@@ -99,4 +99,27 @@ items:
         - id: descriptor
           description: ''
           type:
-            - TypedPropertyDescriptor<any>
+            - '@microsoft/decorators!virtual~0:complex'
+references:
+  - uid: '!Object:interface'
+    name: Object
+  - uid: '@microsoft/decorators!override~0:complex'
+    name: TypedPropertyDescriptor<any>
+    fullName: TypedPropertyDescriptor<any>
+    spec.typeScript:
+      - uid: '!TypedPropertyDescriptor:interface'
+        name: TypedPropertyDescriptor
+        fullName: TypedPropertyDescriptor
+      - name: <any>
+        fullName: <any>
+  - uid: '!Function:interface'
+    name: Function
+  - uid: '@microsoft/decorators!virtual~0:complex'
+    name: TypedPropertyDescriptor<any>
+    fullName: TypedPropertyDescriptor<any>
+    spec.typeScript:
+      - uid: '!TypedPropertyDescriptor:interface'
+        name: TypedPropertyDescriptor
+        fullName: TypedPropertyDescriptor
+      - name: <any>
+        fullName: <any>

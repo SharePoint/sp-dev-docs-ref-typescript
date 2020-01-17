@@ -1,7 +1,7 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.SPHttpClientConfiguration
-    summary: 'Configuration for [SPHttpClient](xref:sp-http.SPHttpClient)<!-- -->.'
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration:class'
+    summary: 'Configuration for [SPHttpClient](xref:@microsoft/sp-http!SPHttpClient:class)<!-- -->.'
     remarks: >-
       The SPHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
       SPHttpClient class. Normally these switches are set (e.g. when calling SPHttpClient.fetch()) by providing one of
@@ -13,19 +13,21 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-http.SPHttpClientCommonConfiguration
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
     implements:
-      - sp-http.ISPHttpClientConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.SPHttpClientConfiguration.(constructor)
-      - sp-http.SPHttpClientConfiguration.defaultODataVersion
-      - sp-http.SPHttpClientConfiguration.defaultSameOriginCredentials
-      - sp-http.SPHttpClientConfiguration.flags
-      - sp-http.SPHttpClientConfiguration.initializeFlags
-      - sp-http.SPHttpClientConfiguration.overrideWith
-      - sp-http.SPHttpClientConfiguration.requestDigest
-  - uid: sp-http.SPHttpClientConfiguration.(constructor)
+      - '@microsoft/sp-http!SPHttpClientConfiguration:constructor(1)'
+      - '@microsoft/sp-http!SPHttpClientConfiguration#defaultODataVersion:member'
+      - '@microsoft/sp-http!SPHttpClientConfiguration#defaultSameOriginCredentials:member'
+      - '@microsoft/sp-http!SPHttpClientConfiguration#flags:member'
+      - '@microsoft/sp-http!SPHttpClientConfiguration#initializeFlags:member(1)'
+      - '@microsoft/sp-http!SPHttpClientConfiguration#overrideWith:member(1)'
+      - '@microsoft/sp-http!SPHttpClientConfiguration#requestDigest:member'
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration:constructor(1)'
     summary: >-
       Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used
       for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
@@ -40,12 +42,12 @@ items:
         - id: flags
           description: ''
           type:
-            - sp-http.ISPHttpClientConfiguration
+            - '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
         - id: overrideFlags
           description: ''
           type:
-            - sp-http.ISPHttpClientConfiguration
-  - uid: sp-http.SPHttpClientConfiguration.defaultODataVersion
+            - '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration#defaultODataVersion:member'
     summary: Automatically configure the "OData-Version" header.
     remarks: >-
       When this switch is specified (i.e. not undefined): If the "OData-Version" header was not explicitly added for the
@@ -63,8 +65,8 @@ items:
       content: 'readonly defaultODataVersion: ODataVersion;'
       return:
         type:
-          - sp-http.ODataVersion
-  - uid: sp-http.SPHttpClientConfiguration.defaultSameOriginCredentials
+          - '@microsoft/sp-http!default:class'
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration#defaultSameOriginCredentials:member'
     summary: Automatically configure the RequestInit.credentials.
     remarks: >-
       When this switch is true:
@@ -85,7 +87,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-http.SPHttpClientConfiguration.flags
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration#flags:member'
     name: flags
     fullName: flags
     langs:
@@ -95,8 +97,8 @@ items:
       content: 'protected flags: ISPHttpClientConfiguration;'
       return:
         type:
-          - sp-http.ISPHttpClientConfiguration
-  - uid: sp-http.SPHttpClientConfiguration.initializeFlags
+          - '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration#initializeFlags:member(1)'
     name: initializeFlags()
     fullName: initializeFlags()
     langs:
@@ -110,7 +112,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-http.SPHttpClientConfiguration.overrideWith
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration#overrideWith:member(1)'
     name: overrideWith(sourceFlags)
     fullName: overrideWith(sourceFlags)
     langs:
@@ -122,14 +124,14 @@ items:
         overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;
       return:
         type:
-          - sp-http.SPHttpClientConfiguration
+          - '@microsoft/sp-http!default:class'
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - sp-http.ISPHttpClientConfiguration
-  - uid: sp-http.SPHttpClientConfiguration.requestDigest
+            - '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientConfiguration#requestDigest:member'
     summary: Automatically provide an "X-RequestDigest" header for authentication.
     remarks: >-
       When this switch is true:
@@ -148,3 +150,8 @@ items:
       return:
         type:
           - boolean
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: SPHttpClientCommonConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
+    name: ISPHttpClientConfiguration

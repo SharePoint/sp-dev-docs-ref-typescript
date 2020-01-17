@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-page-context.SPUser
+  - uid: '@microsoft/sp-page-context!SPUser:class'
     summary: >-
       This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
       user that is accessing the page.
@@ -12,17 +12,17 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-page-context
+    package: '@microsoft/sp-page-context!'
     children:
-      - sp-page-context.SPUser.displayName
-      - sp-page-context.SPUser.email
-      - sp-page-context.SPUser.firstDayOfWeek
-      - sp-page-context.SPUser.isAnonymousGuestUser
-      - sp-page-context.SPUser.isExternalGuestUser
-      - sp-page-context.SPUser.loginName
-      - sp-page-context.SPUser.preferUserTimeZone
-      - sp-page-context.SPUser.timeZoneInfo
-  - uid: sp-page-context.SPUser.displayName
+      - '@microsoft/sp-page-context!SPUser#displayName:member'
+      - '@microsoft/sp-page-context!SPUser#email:member'
+      - '@microsoft/sp-page-context!SPUser#firstDayOfWeek:member'
+      - '@microsoft/sp-page-context!SPUser#isAnonymousGuestUser:member'
+      - '@microsoft/sp-page-context!SPUser#isExternalGuestUser:member'
+      - '@microsoft/sp-page-context!SPUser#loginName:member'
+      - '@microsoft/sp-page-context!SPUser#preferUserTimeZone:member'
+      - '@microsoft/sp-page-context!SPUser#timeZoneInfo:member'
+  - uid: '@microsoft/sp-page-context!SPUser#displayName:member'
     summary: The display name for the current user.
     remarks: 'Example: `"John Doe"`'
     name: displayName
@@ -35,7 +35,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPUser.email
+  - uid: '@microsoft/sp-page-context!SPUser#email:member'
     summary: The email address for the current user.
     remarks: 'Example: `"example@contoso.com"`'
     name: email
@@ -48,7 +48,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPUser.firstDayOfWeek
+  - uid: '@microsoft/sp-page-context!SPUser#firstDayOfWeek:member'
     summary: Returns the user's regional first day of week setting or undefined if it hasn't been set.
     isPreview: true
     name: firstDayOfWeek
@@ -60,8 +60,8 @@ items:
       content: 'readonly firstDayOfWeek: SPDayOfWeek | undefined;'
       return:
         type:
-          - SPDayOfWeek | undefined
-  - uid: sp-page-context.SPUser.isAnonymousGuestUser
+          - '@microsoft/sp-page-context!SPUser#firstDayOfWeek~0:complex'
+  - uid: '@microsoft/sp-page-context!SPUser#isAnonymousGuestUser:member'
     summary: Returns if the current user is an anonymous guest.
     name: isAnonymousGuestUser
     fullName: isAnonymousGuestUser
@@ -73,7 +73,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-page-context.SPUser.isExternalGuestUser
+  - uid: '@microsoft/sp-page-context!SPUser#isExternalGuestUser:member'
     summary: Returns true if the current user is an external guest.
     name: isExternalGuestUser
     fullName: isExternalGuestUser
@@ -85,7 +85,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-page-context.SPUser.loginName
+  - uid: '@microsoft/sp-page-context!SPUser#loginName:member'
     summary: The login name for current user.
     remarks: 'Example: on-premise user: `"domain\user"`<!-- -->, online user: `"user@domain.com"`'
     name: loginName
@@ -98,7 +98,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPUser.preferUserTimeZone
+  - uid: '@microsoft/sp-page-context!SPUser#preferUserTimeZone:member'
     summary: This boolean represents if a the user or web's time zone settings should be used to display the current time.
     name: preferUserTimeZone
     fullName: preferUserTimeZone
@@ -110,7 +110,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-page-context.SPUser.timeZoneInfo
+  - uid: '@microsoft/sp-page-context!SPUser#timeZoneInfo:member'
     summary: Returns the user's regional timezone settings or undefined if they haven't been set.
     isPreview: true
     name: timeZoneInfo
@@ -122,4 +122,23 @@ items:
       content: 'readonly timeZoneInfo: SPTimeZone | undefined;'
       return:
         type:
-          - SPTimeZone | undefined
+          - '@microsoft/sp-page-context!SPUser#timeZoneInfo~0:complex'
+references:
+  - uid: '@microsoft/sp-page-context!SPUser#firstDayOfWeek~0:complex'
+    name: SPDayOfWeek | undefined
+    fullName: SPDayOfWeek | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!SPDayOfWeek:enum'
+        name: SPDayOfWeek
+        fullName: SPDayOfWeek
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-page-context!SPUser#timeZoneInfo~0:complex'
+    name: SPTimeZone | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: SPTimeZone
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'

@@ -1,18 +1,19 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-application-base.IPlaceholderCreateContentOptions
+  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface'
     summary: >-
       Options for the
-      [PlaceholderProvider.tryCreateContent()](xref:sp-application-base.PlaceholderProvider.tryCreateContent) method.
+      [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1))
+      method.
     name: IPlaceholderCreateContentOptions
     fullName: IPlaceholderCreateContentOptions
     langs:
       - typeScript
     type: interface
-    package: sp-application-base
+    package: '@microsoft/sp-application-base!'
     children:
-      - sp-application-base.IPlaceholderCreateContentOptions.onDispose
-  - uid: sp-application-base.IPlaceholderCreateContentOptions.onDispose
+      - '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member'
+  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member'
     summary: An optional callback that will be invoked when the PlaceholderContent object is disposed.
     remarks: >-
       To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content
@@ -27,4 +28,16 @@ items:
       content: 'onDispose?: (placeholderContent: PlaceholderContent) => void;'
       return:
         type:
-          - '(placeholderContent: PlaceholderContent) => void'
+          - '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose~0:complex'
+references:
+  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose~0:complex'
+    name: '(placeholderContent: PlaceholderContent) => void'
+    fullName: '(placeholderContent: default) => void'
+    spec.typeScript:
+      - name: '(placeholderContent: '
+        fullName: '(placeholderContent: '
+      - uid: '@microsoft/sp-application-base!default:class'
+        name: PlaceholderContent
+        fullName: default
+      - name: ) => void
+        fullName: ) => void

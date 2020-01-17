@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-application-base.ApplicationAccessor
+  - uid: '@microsoft/sp-application-base!ApplicationAccessor:class'
     summary: Provides access to the client-side application that is currently running.
     remarks: >-
       The client-side application determines the user experience for an entire web page. (It is a client-side component
@@ -19,16 +19,19 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-application-base
+    package: '@microsoft/sp-application-base!'
     children:
-      - sp-application-base.ApplicationAccessor.(constructor)
-      - sp-application-base.ApplicationAccessor.navigatedEvent
-  - uid: sp-application-base.ApplicationAccessor.(constructor)
-    summary: 'Constructs a new instance of the [ApplicationAccessor](xref:sp-application-base.ApplicationAccessor) class.'
+      - '@microsoft/sp-application-base!ApplicationAccessor:constructor(1)'
+      - '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent:member'
+  - uid: '@microsoft/sp-application-base!ApplicationAccessor:constructor(1)'
+    summary: >-
+      Constructs a new instance of the
+      [ApplicationAccessor](xref:@microsoft/sp-application-base!ApplicationAccessor:class) class.
     remarks: >-
       Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component
       context, for example
-      [BaseApplicationCustomizer.context](xref:sp-application-base.BaseApplicationCustomizer.context)<!-- -->.
+      [BaseApplicationCustomizer.context](xref:@microsoft/sp-application-base!BaseApplicationCustomizer#context:member)<!--
+      -->.
     name: (constructor)(serviceScope)
     fullName: (constructor)(serviceScope)
     langs:
@@ -40,10 +43,12 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
-  - uid: sp-application-base.ApplicationAccessor.navigatedEvent
+            - '@microsoft/sp-core-library!ServiceScope:class'
+  - uid: '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent:member'
     summary: An event that is fired when the application's top-level page context navigates to a new page.
-    remarks: 'This event fires after the top-level [PageContext](xref:sp-page-context.PageContext) has navigated to a new page.'
+    remarks: >-
+      This event fires after the top-level [PageContext](xref:@microsoft/sp-page-context!PageContext:class) has
+      navigated to a new page.
     name: navigatedEvent
     fullName: navigatedEvent
     langs:
@@ -53,4 +58,21 @@ items:
       content: 'readonly navigatedEvent: SPEvent<SPEventArgs>;'
       return:
         type:
-          - SPEvent<SPEventArgs>
+          - '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent~0:complex'
+    name: SPEvent<SPEventArgs>
+    fullName: SPEvent<SPEventArgs>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!SPEvent:class'
+        name: SPEvent
+        fullName: SPEvent
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-core-library!SPEventArgs:class'
+        name: SPEventArgs
+        fullName: SPEventArgs
+      - name: '>'
+        fullName: '>'

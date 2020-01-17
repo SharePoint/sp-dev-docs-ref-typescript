@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.DigestCache
+  - uid: '@microsoft/sp-http!DigestCache:class'
     summary: >-
       IDigestCache is an internal service used by SPHttpClient to maintain a cache of request digests for each SPWeb
       URL. A request digest is a security token that the SharePoint server requires for for any REST write operation,
@@ -16,16 +16,16 @@ items:
       - typeScript
     type: class
     implements:
-      - sp-http.IDigestCache
-    package: sp-http
+      - '@microsoft/sp-http!IDigestCache:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.DigestCache.(constructor)
-      - sp-http.DigestCache.addDigestToCache
-      - sp-http.DigestCache.clearAllDigests
-      - sp-http.DigestCache.clearDigest
-      - sp-http.DigestCache.fetchDigest
-      - sp-http.DigestCache.serviceKey
-  - uid: sp-http.DigestCache.(constructor)
+      - '@microsoft/sp-http!DigestCache:constructor(1)'
+      - '@microsoft/sp-http!DigestCache#addDigestToCache:member(1)'
+      - '@microsoft/sp-http!DigestCache#clearAllDigests:member(1)'
+      - '@microsoft/sp-http!DigestCache#clearDigest:member(1)'
+      - '@microsoft/sp-http!DigestCache#fetchDigest:member(1)'
+      - '@microsoft/sp-http!DigestCache.serviceKey:member'
+  - uid: '@microsoft/sp-http!DigestCache:constructor(1)'
     summary: Constructs a new instance of the `DigestCache` class
     name: (constructor)(serviceScope)
     fullName: (constructor)(serviceScope)
@@ -38,8 +38,8 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
-  - uid: sp-http.DigestCache.addDigestToCache
+            - '@microsoft/sp-core-library!ServiceScope:class'
+  - uid: '@microsoft/sp-http!DigestCache#addDigestToCache:member(1)'
     summary: >-
       Inserts a specific request digest value into the cache. Normally this is unnecessary because the framework will
       automatically issue a REST request to fetch the digest when necessary; however, in advanced scenarios
@@ -73,7 +73,7 @@ items:
             example, to specify an expiration "5 seconds from right now", use performance.now()+5000.
           type:
             - number
-  - uid: sp-http.DigestCache.clearAllDigests
+  - uid: '@microsoft/sp-http!DigestCache#clearAllDigests:member(1)'
     summary: Clears all values from the cache.
     name: clearAllDigests()
     fullName: clearAllDigests()
@@ -86,7 +86,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-http.DigestCache.clearDigest
+  - uid: '@microsoft/sp-http!DigestCache#clearDigest:member(1)'
     summary: >-
       Clears the cached digest for the specified SPWeb URL. This operation is useful e.g. if an error indicates that a
       digest was invalidated prior to its expiration time.
@@ -106,7 +106,7 @@ items:
           description: The URL of the SPWeb whose digest should be cleared. This may be a server-relative or absolute URL.
           type:
             - string
-  - uid: sp-http.DigestCache.fetchDigest
+  - uid: '@microsoft/sp-http!DigestCache#fetchDigest:member(1)'
     summary: >-
       Returns a digest string for the specified SPWeb URL. If the cache already contains a usable value, the promise is
       fulfilled immediately. Otherwise, the promise will be pending and resolve after an HTTP request obtains the
@@ -120,14 +120,14 @@ items:
       content: 'fetchDigest(webUrl: string): Promise<string>;'
       return:
         type:
-          - Promise<string>
+          - '@microsoft/sp-http!DigestCache#fetchDigest~0:complex'
         description: A promise that is fulfilled with the digest value.
       parameters:
         - id: webUrl
           description: The URL of the SPWeb that the API call will be issued to. This may be a server-relative or absolute URL.
           type:
             - string
-  - uid: sp-http.DigestCache.serviceKey
+  - uid: '@microsoft/sp-http!DigestCache.serviceKey:member'
     summary: The service key for IDigestCache.
     name: serviceKey
     fullName: serviceKey
@@ -138,4 +138,32 @@ items:
       content: 'static readonly serviceKey: ServiceKey<IDigestCache>;'
       return:
         type:
-          - ServiceKey<IDigestCache>
+          - '@microsoft/sp-http!DigestCache.serviceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-http!IDigestCache:interface'
+    name: IDigestCache
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-http!DigestCache#fetchDigest~0:complex'
+    name: Promise<string>
+    fullName: Promise<string>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <string>
+        fullName: <string>
+  - uid: '@microsoft/sp-http!DigestCache.serviceKey~0:complex'
+    name: ServiceKey<IDigestCache>
+    fullName: ServiceKey<IDigestCache>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!IDigestCache:interface'
+        name: IDigestCache
+        fullName: IDigestCache
+      - name: '>'
+        fullName: '>'

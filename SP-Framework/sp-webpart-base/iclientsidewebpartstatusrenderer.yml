@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer
+  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer:interface'
     summary: >-
       Interface to be implemented by a component that should display the loading indicator and error messages for a web
       part.
@@ -9,13 +9,13 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
-      - sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
-      - sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
-      - sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
-  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.clearError
+      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)'
+      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)'
+      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)'
+      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)'
+  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)'
     summary: Clear the webpart error message.
     name: clearError(domElement)
     fullName: clearError(domElement)
@@ -32,8 +32,8 @@ items:
         - id: domElement
           description: the web part container div.
           type:
-            - HTMLElement
-  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.clearLoadingIndicator
+            - '!HTMLElement:interface'
+  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)'
     summary: Clear the loading indicator.
     name: clearLoadingIndicator(domElement)
     fullName: clearLoadingIndicator(domElement)
@@ -50,8 +50,8 @@ items:
         - id: domElement
           description: the web part container div.
           type:
-            - Element
-  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.displayLoadingIndicator
+            - '!Element:interface'
+  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)'
     summary: Display a loading spinner.
     name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
     fullName: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
@@ -68,7 +68,7 @@ items:
         - id: domElement
           description: the web part container div.
           type:
-            - Element
+            - '!Element:interface'
         - id: loadingMessage
           description: the message to be displayed when the loading spinner id displayed.
           type:
@@ -77,7 +77,7 @@ items:
           description: timeout to render the loading indicator. Default is 1500ms.
           type:
             - number
-  - uid: sp-webpart-base.IClientSideWebPartStatusRenderer.renderError
+  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)'
     summary: Render the provided error message in the webpart container div.
     name: 'renderError(domElement, error)'
     fullName: 'renderError(domElement, error)'
@@ -94,8 +94,22 @@ items:
         - id: domElement
           description: the web part container div.
           type:
-            - HTMLElement
+            - '!HTMLElement:interface'
         - id: error
           description: the error message.
           type:
-            - Error | string
+            - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError~0:complex'
+references:
+  - uid: '!HTMLElement:interface'
+    name: HTMLElement
+  - uid: '!Element:interface'
+    name: Element
+  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError~0:complex'
+    name: Error | string
+    fullName: Error | string
+    spec.typeScript:
+      - uid: '!Error:interface'
+        name: Error
+        fullName: Error
+      - name: ' | string'
+        fullName: ' | string'

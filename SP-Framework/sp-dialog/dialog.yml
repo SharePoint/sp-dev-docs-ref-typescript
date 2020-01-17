@@ -1,17 +1,17 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-dialog.Dialog
+  - uid: '@microsoft/sp-dialog!Dialog:class'
     summary: A static class for showing stock dialogs such as an alert or prompt.
     name: Dialog
     fullName: Dialog
     langs:
       - typeScript
     type: class
-    package: sp-dialog
+    package: '@microsoft/sp-dialog!'
     children:
-      - sp-dialog.Dialog.alert
-      - sp-dialog.Dialog.prompt
-  - uid: sp-dialog.Dialog.alert
+      - '@microsoft/sp-dialog!Dialog.alert:member(1)'
+      - '@microsoft/sp-dialog!Dialog.prompt:member(1)'
+  - uid: '@microsoft/sp-dialog!Dialog.alert:member(1)'
     summary: >-
       Alerts a message to the user with a user-friendly interface. Calling this method sends a request to application to
       show the alert dialog.
@@ -28,7 +28,7 @@ items:
       content: 'static alert(message: string, options?: IAlertOptions): Promise<void>;'
       return:
         type:
-          - Promise<void>
+          - '@microsoft/sp-dialog!Dialog.alert~0:complex'
         description: ''
       parameters:
         - id: message
@@ -38,8 +38,8 @@ items:
         - id: options
           description: ''
           type:
-            - sp-dialog.IAlertOptions
-  - uid: sp-dialog.Dialog.prompt
+            - '@microsoft/sp-dialog!IAlertOptions:interface'
+  - uid: '@microsoft/sp-dialog!Dialog.prompt:member(1)'
     summary: >-
       Prompts the user for a string value with a user-friendly interface. Calling this method sends a request to
       application to show the dialog.
@@ -56,7 +56,7 @@ items:
       content: 'static prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;'
       return:
         type:
-          - Promise<string | undefined>
+          - '@microsoft/sp-dialog!Dialog.prompt~0:complex'
         description: The input string or undefined if the dialog was canceled
       parameters:
         - id: message
@@ -66,4 +66,27 @@ items:
         - id: options
           description: ''
           type:
-            - sp-dialog.IPromptOptions
+            - '@microsoft/sp-dialog!IPromptOptions:interface'
+references:
+  - uid: '@microsoft/sp-dialog!Dialog.alert~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '@microsoft/sp-dialog!IAlertOptions:interface'
+    name: IAlertOptions
+  - uid: '@microsoft/sp-dialog!Dialog.prompt~0:complex'
+    name: Promise<string | undefined>
+    fullName: Promise<string | undefined>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <string | undefined>
+        fullName: <string | undefined>
+  - uid: '@microsoft/sp-dialog!IPromptOptions:interface'
+    name: IPromptOptions

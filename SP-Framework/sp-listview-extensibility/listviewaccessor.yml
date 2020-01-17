@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-listview-extensibility.ListViewAccessor
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor:class'
     summary: Provides access to a SharePoint ListView control.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
@@ -10,12 +10,12 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-listview-extensibility
+    package: '@microsoft/sp-listview-extensibility!'
     children:
-      - sp-listview-extensibility.ListViewAccessor.columns
-      - sp-listview-extensibility.ListViewAccessor.selectedRowsChangedEvent
-      - sp-listview-extensibility.ListViewAccessor.tryGetColumnByName
-  - uid: sp-listview-extensibility.ListViewAccessor.columns
+      - '@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member'
+      - '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member'
+      - '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member'
     summary: 'The columns in associated with this view, including hidden columns.'
     name: columns
     fullName: columns
@@ -26,8 +26,8 @@ items:
       content: 'abstract readonly columns: ReadonlyArray<ColumnAccessor>;'
       return:
         type:
-          - ReadonlyArray<ColumnAccessor>
-  - uid: sp-listview-extensibility.ListViewAccessor.selectedRowsChangedEvent
+          - '@microsoft/sp-listview-extensibility!ListViewAccessor#columns~0:complex'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member'
     summary: Event that gets raised every time the selected items in the list view change.
     name: selectedRowsChangedEvent
     fullName: selectedRowsChangedEvent
@@ -38,8 +38,8 @@ items:
       content: 'readonly selectedRowsChangedEvent: SPEvent<SelectedRowsChangedEventArgs>;'
       return:
         type:
-          - SPEvent<SelectedRowsChangedEventArgs>
-  - uid: sp-listview-extensibility.ListViewAccessor.tryGetColumnByName
+          - '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent~0:complex'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)'
     summary: >-
       Returns the list view column corresponding to the field with the specified internal name, or undefined if none is
       found.
@@ -52,10 +52,48 @@ items:
       content: 'abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;'
       return:
         type:
-          - ColumnAccessor | undefined
+          - '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName~0:complex'
         description: ''
       parameters:
         - id: internalName
           description: ''
           type:
             - string
+references:
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#columns~0:complex'
+    name: ReadonlyArray<ColumnAccessor>
+    fullName: ReadonlyArray<ColumnAccessor>
+    spec.typeScript:
+      - uid: '!ReadonlyArray:interface'
+        name: ReadonlyArray
+        fullName: ReadonlyArray
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
+        name: ColumnAccessor
+        fullName: ColumnAccessor
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent~0:complex'
+    name: SPEvent<SelectedRowsChangedEventArgs>
+    fullName: SPEvent<SelectedRowsChangedEventArgs>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!SPEvent:class'
+        name: SPEvent
+        fullName: SPEvent
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class'
+        name: SelectedRowsChangedEventArgs
+        fullName: SelectedRowsChangedEventArgs
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName~0:complex'
+    name: ColumnAccessor | undefined
+    fullName: ColumnAccessor | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
+        name: ColumnAccessor
+        fullName: ColumnAccessor
+      - name: ' | undefined'
+        fullName: ' | undefined'

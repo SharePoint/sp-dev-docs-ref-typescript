@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.IHttpClientOptions
+  - uid: '@microsoft/sp-http!IHttpClientOptions:interface'
     summary: Options for HttpClient
     remarks: >-
       This interface defines the options for the HttpClient operations such as get(), post(), fetch(), etc. It is based
@@ -11,5 +11,10 @@ items:
       - typeScript
     type: interface
     extends:
-      - 'RequestInit '
-    package: sp-http
+      - '!RequestInit:interface'
+    inheritance:
+      - type: '!RequestInit:interface'
+    package: '@microsoft/sp-http!'
+references:
+  - uid: '!RequestInit:interface'
+    name: RequestInit

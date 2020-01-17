@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.AadHttpClientConfiguration
+  - uid: '@microsoft/sp-http!AadHttpClientConfiguration:class'
     summary: Configuration for HttpClient.
     remarks: >-
       The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
@@ -13,15 +13,17 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-http.HttpClientConfiguration
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
     implements:
-      - sp-http.IAadHttpClientConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!IAadHttpClientConfiguration:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.AadHttpClientConfiguration.(constructor)
-      - sp-http.AadHttpClientConfiguration.flags
-      - sp-http.AadHttpClientConfiguration.overrideWith
-  - uid: sp-http.AadHttpClientConfiguration.(constructor)
+      - '@microsoft/sp-http!AadHttpClientConfiguration:constructor(1)'
+      - '@microsoft/sp-http!AadHttpClientConfiguration#flags:member'
+      - '@microsoft/sp-http!AadHttpClientConfiguration#overrideWith:member(1)'
+  - uid: '@microsoft/sp-http!AadHttpClientConfiguration:constructor(1)'
     summary: >-
       Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
       any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
@@ -36,12 +38,12 @@ items:
         - id: flags
           description: ''
           type:
-            - sp-http.IAadHttpClientConfiguration
+            - '@microsoft/sp-http!IAadHttpClientConfiguration:interface'
         - id: overrideFlags
           description: ''
           type:
-            - sp-http.IAadHttpClientConfiguration
-  - uid: sp-http.AadHttpClientConfiguration.flags
+            - '@microsoft/sp-http!IAadHttpClientConfiguration:interface'
+  - uid: '@microsoft/sp-http!AadHttpClientConfiguration#flags:member'
     name: flags
     fullName: flags
     langs:
@@ -51,8 +53,8 @@ items:
       content: 'protected flags: IAadHttpClientConfiguration;'
       return:
         type:
-          - sp-http.IAadHttpClientConfiguration
-  - uid: sp-http.AadHttpClientConfiguration.overrideWith
+          - '@microsoft/sp-http!IAadHttpClientConfiguration:interface'
+  - uid: '@microsoft/sp-http!AadHttpClientConfiguration#overrideWith:member(1)'
     name: overrideWith(sourceFlags)
     fullName: overrideWith(sourceFlags)
     langs:
@@ -64,10 +66,15 @@ items:
         overrideWith(sourceFlags: IAadHttpClientConfiguration): AadHttpClientConfiguration;
       return:
         type:
-          - sp-http.AadHttpClientConfiguration
+          - '@microsoft/sp-http!default:class'
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - sp-http.IAadHttpClientConfiguration
+            - '@microsoft/sp-http!IAadHttpClientConfiguration:interface'
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientConfiguration
+  - uid: '@microsoft/sp-http!IAadHttpClientConfiguration:interface'
+    name: IAadHttpClientConfiguration

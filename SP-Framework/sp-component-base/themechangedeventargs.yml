@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.ThemeChangedEventArgs
+  - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs:class'
     summary: The object passed when the IThemeProvider.themeChangedEvent is raised.
     name: ThemeChangedEventArgs
     fullName: ThemeChangedEventArgs
@@ -8,11 +8,13 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-core-library.SPEventArgs
-    package: sp-component-base
+      - '@microsoft/sp-core-library!SPEventArgs:class'
+    inheritance:
+      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.ThemeChangedEventArgs.theme
-  - uid: sp-component-base.ThemeChangedEventArgs.theme
+      - '@microsoft/sp-component-base!ThemeChangedEventArgs#theme:member'
+  - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs#theme:member'
     summary: 'The new theme. If the value is undefined, then the theme was cleared.'
     name: theme
     fullName: theme
@@ -23,4 +25,16 @@ items:
       content: 'readonly theme: ITheme | undefined;'
       return:
         type:
-          - ITheme | undefined
+          - '@microsoft/sp-component-base!ThemeChangedEventArgs#theme~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
+    name: SPEventArgs
+  - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs#theme~0:complex'
+    name: ITheme | undefined
+    fullName: ITheme | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-component-base!ITheme:interface'
+        name: ITheme
+        fullName: ITheme
+      - name: ' | undefined'
+        fullName: ' | undefined'

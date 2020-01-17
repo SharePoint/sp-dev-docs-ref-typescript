@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library.Version
+  - uid: '@microsoft/sp-core-library!Version:class'
     summary: 'Represents a version number with two, three, or four parts.'
     remarks: >-
       This class represents versions that follow the string format of `MAJOR.MINOR[.PATCH[.REVISION]]` where the MAJOR,
@@ -14,22 +14,22 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-core-library
+    package: '@microsoft/sp-core-library!'
     children:
-      - sp-core-library.Version.compare
-      - sp-core-library.Version.equals
-      - sp-core-library.Version.greaterThan
-      - sp-core-library.Version.isValid
-      - sp-core-library.Version.lessThan
-      - sp-core-library.Version.major
-      - sp-core-library.Version.minor
-      - sp-core-library.Version.parse
-      - sp-core-library.Version.patch
-      - sp-core-library.Version.revision
-      - sp-core-library.Version.satisfies
-      - sp-core-library.Version.toString
-      - sp-core-library.Version.tryParse
-  - uid: sp-core-library.Version.compare
+      - '@microsoft/sp-core-library!Version.compare:member(1)'
+      - '@microsoft/sp-core-library!Version#equals:member(1)'
+      - '@microsoft/sp-core-library!Version#greaterThan:member(1)'
+      - '@microsoft/sp-core-library!Version.isValid:member(1)'
+      - '@microsoft/sp-core-library!Version#lessThan:member(1)'
+      - '@microsoft/sp-core-library!Version#major:member'
+      - '@microsoft/sp-core-library!Version#minor:member'
+      - '@microsoft/sp-core-library!Version.parse:member(1)'
+      - '@microsoft/sp-core-library!Version#patch:member'
+      - '@microsoft/sp-core-library!Version#revision:member'
+      - '@microsoft/sp-core-library!Version#satisfies:member(1)'
+      - '@microsoft/sp-core-library!Version#toString:member(1)'
+      - '@microsoft/sp-core-library!Version.tryParse:member(1)'
+  - uid: '@microsoft/sp-core-library!Version.compare:member(1)'
     summary: Compares two Version objects to determine which version is newer.
     name: 'compare(v1, v2)'
     fullName: 'compare(v1, v2)'
@@ -48,12 +48,12 @@ items:
         - id: v1
           description: The first version class for comparison
           type:
-            - sp-core-library.Version
+            - '@microsoft/sp-core-library!default:class'
         - id: v2
           description: The second version class for comparison
           type:
-            - sp-core-library.Version
-  - uid: sp-core-library.Version.equals
+            - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!Version#equals:member(1)'
     summary: Tests whether this version is equal to the input parameter.
     remarks: |-
       Examples:
@@ -80,8 +80,8 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
-  - uid: sp-core-library.Version.greaterThan
+            - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!Version#greaterThan:member(1)'
     summary: Tests whether this version is greater than (i.e. newer than) the input parameter.
     remarks: |-
       Examples:
@@ -107,8 +107,8 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
-  - uid: sp-core-library.Version.isValid
+            - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!Version.isValid:member(1)'
     summary: Test whether a string is a valid version specifier.
     name: isValid(versionString)
     fullName: isValid(versionString)
@@ -126,7 +126,7 @@ items:
           description: The version string
           type:
             - string | undefined | null
-  - uid: sp-core-library.Version.lessThan
+  - uid: '@microsoft/sp-core-library!Version#lessThan:member(1)'
     summary: Tests whether this version is less than (i.e. older than) the input parameter.
     remarks: |-
       Examples:
@@ -153,8 +153,8 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
-  - uid: sp-core-library.Version.major
+            - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!Version#major:member'
     summary: Returns the first component of the version string.
     remarks: Typically a change in the major version number indicates a compatibility break with previous versions.
     name: major
@@ -167,7 +167,7 @@ items:
       return:
         type:
           - number
-  - uid: sp-core-library.Version.minor
+  - uid: '@microsoft/sp-core-library!Version#minor:member'
     summary: Returns the second component of the version string.
     remarks: >-
       Typically a change in the minor version number indicates that new features were added, while remaining backwards
@@ -182,7 +182,7 @@ items:
       return:
         type:
           - number
-  - uid: sp-core-library.Version.parse
+  - uid: '@microsoft/sp-core-library!Version.parse:member(1)'
     summary: Constructs a new Version instance using the version string. An exception is thrown if the string cannot be parsed.
     name: parse(versionString)
     fullName: parse(versionString)
@@ -193,14 +193,14 @@ items:
       content: 'static parse(versionString: string | undefined | null): Version;'
       return:
         type:
-          - sp-core-library.Version
+          - '@microsoft/sp-core-library!default:class'
         description: a new Version object
       parameters:
         - id: versionString
           description: A version string
           type:
             - string | undefined | null
-  - uid: sp-core-library.Version.patch
+  - uid: '@microsoft/sp-core-library!Version#patch:member'
     summary: 'The third number in the version string, or undefined if unspecified.'
     remarks: >-
       Typically a change in the patch version number indicates a small fix that does not affect the compatibility
@@ -215,7 +215,7 @@ items:
       return:
         type:
           - number | undefined
-  - uid: sp-core-library.Version.revision
+  - uid: '@microsoft/sp-core-library!Version#revision:member'
     summary: 'The fourth number in the version string, or undefined if unspecified.'
     remarks: >-
       This number is not part of the Semantic Versioning (SemVer) standard used in JavaScript, but it is used by .NET
@@ -230,7 +230,7 @@ items:
       return:
         type:
           - number | undefined
-  - uid: sp-core-library.Version.satisfies
+  - uid: '@microsoft/sp-core-library!Version#satisfies:member(1)'
     summary: >-
       Tests whether this version satisfies the compatibility requirements of the input version, i.e. is backwards
       compatible.
@@ -269,8 +269,8 @@ items:
         - id: compareWith
           description: The version to compare with
           type:
-            - sp-core-library.Version
-  - uid: sp-core-library.Version.toString
+            - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!Version#toString:member(1)'
     summary: Returns a string representation of the version.
     remarks: >-
       The value is normalized and may be different from the original string (e.g. leading zeroes may be removed).
@@ -286,7 +286,7 @@ items:
         type:
           - string
         description: ''
-  - uid: sp-core-library.Version.tryParse
+  - uid: '@microsoft/sp-core-library!Version.tryParse:member(1)'
     summary: >-
       Attempts to parse the input string to construct a new Version object. If the string cannot be parsed, then
       undefined is returned.
@@ -299,10 +299,22 @@ items:
       content: 'static tryParse(versionString: string | undefined | null): Version | undefined;'
       return:
         type:
-          - Version | undefined
+          - '@microsoft/sp-core-library!Version.tryParse~0:complex'
         description: 'The Version object, or undefined if the string could not be parsed.'
       parameters:
         - id: versionString
           description: A version string
           type:
             - string | undefined | null
+references:
+  - uid: '@microsoft/sp-core-library!default:class'
+    name: Version
+  - uid: '@microsoft/sp-core-library!Version.tryParse~0:complex'
+    name: Version | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: Version
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'

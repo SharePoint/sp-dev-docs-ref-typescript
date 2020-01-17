@@ -1,17 +1,17 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library.Session
+  - uid: '@microsoft/sp-core-library!Session:class'
     summary: Provides access to the application's browser session and active page.
     name: Session
     fullName: Session
     langs:
       - typeScript
     type: class
-    package: sp-core-library
+    package: '@microsoft/sp-core-library!'
     children:
-      - sp-core-library.Session.applicationId
-      - sp-core-library.Session.pageId
-  - uid: sp-core-library.Session.applicationId
+      - '@microsoft/sp-core-library!Session.applicationId:member'
+      - '@microsoft/sp-core-library!Session.pageId:member'
+  - uid: '@microsoft/sp-core-library!Session.applicationId:member'
     summary: A unique identifier for the current instance of the client-side application.
     remarks: >-
       A unique identifier used to correlate logging and other diagnostic information. Its lifetime persists for the
@@ -28,13 +28,13 @@ items:
       content: 'static readonly applicationId: Guid;'
       return:
         type:
-          - sp-core-library.Guid
-  - uid: sp-core-library.Session.pageId
+          - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!Session.pageId:member'
     summary: A unique identifier for the current page within the client-side application.
     remarks: >-
       A unique identifier used to correlate logging and other diagnostic information. Whereas the
-      [Session.applicationId](xref:sp-core-library.Session.applicationId) tracks the entire lifetime of the client-side
-      application instance, the pageId tracks an individual "page" that is rendered.
+      [Session.applicationId](xref:@microsoft/sp-core-library!Session.applicationId:member) tracks the entire lifetime
+      of the client-side application instance, the pageId tracks an individual "page" that is rendered.
 
 
       For example, suppose that the application initially loads PageA, then the user does in-place navigation (via the
@@ -54,4 +54,7 @@ items:
       content: 'static readonly pageId: Guid;'
       return:
         type:
-          - sp-core-library.Guid
+          - '@microsoft/sp-core-library!default:class'
+references:
+  - uid: '@microsoft/sp-core-library!default:class'
+    name: Guid

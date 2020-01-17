@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-page-context.SPList
+  - uid: '@microsoft/sp-page-context!SPList:class'
     summary: >-
       This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
       list that hosts the page.
@@ -12,13 +12,13 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-page-context
+    package: '@microsoft/sp-page-context!'
     children:
-      - sp-page-context.SPList.id
-      - sp-page-context.SPList.permissions
-      - sp-page-context.SPList.serverRelativeUrl
-      - sp-page-context.SPList.title
-  - uid: sp-page-context.SPList.id
+      - '@microsoft/sp-page-context!SPList#id:member'
+      - '@microsoft/sp-page-context!SPList#permissions:member'
+      - '@microsoft/sp-page-context!SPList#serverRelativeUrl:member'
+      - '@microsoft/sp-page-context!SPList#title:member'
+  - uid: '@microsoft/sp-page-context!SPList#id:member'
     summary: >-
       The GUID that identifies the SPList on the server. This property could be undefined if the information isn't
       available.
@@ -31,8 +31,8 @@ items:
       content: 'readonly id: Guid;'
       return:
         type:
-          - sp-core-library.Guid
-  - uid: sp-page-context.SPList.permissions
+          - '@microsoft/sp-core-library!Guid:class'
+  - uid: '@microsoft/sp-page-context!SPList#permissions:member'
     summary: >-
       Return the SPPermission object that represents the set of permissions that the current user has for interacting
       with the list.
@@ -45,8 +45,8 @@ items:
       content: 'readonly permissions: SPPermission;'
       return:
         type:
-          - sp-page-context.SPPermission
-  - uid: sp-page-context.SPList.serverRelativeUrl
+          - '@microsoft/sp-page-context!default:class'
+  - uid: '@microsoft/sp-page-context!SPList#serverRelativeUrl:member'
     summary: Returns the server-relative URL for this `SPList`<!-- -->.
     remarks: 'Example: "/sites/PubSite"'
     name: serverRelativeUrl
@@ -59,7 +59,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-page-context.SPList.title
+  - uid: '@microsoft/sp-page-context!SPList#title:member'
     summary: Returns the title for this `SPList`<!-- -->.
     name: title
     fullName: title
@@ -71,3 +71,8 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-core-library!Guid:class'
+    name: Guid
+  - uid: '@microsoft/sp-page-context!default:class'
+    name: SPPermission

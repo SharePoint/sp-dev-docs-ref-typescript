@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-odata-types.IODataNavigationNode
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode:interface'
     summary: >-
       Represents an OData SP.NavigationNode object.
       [https://msdn.microsoft.com/en-us/library/office/jj246311.aspx](https://msdn.microsoft.com/en-us/library/office/jj246311.aspx)
@@ -9,16 +9,16 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-odata-types
+    package: '@microsoft/sp-odata-types!'
     children:
-      - sp-odata-types.IODataNavigationNode.Children
-      - sp-odata-types.IODataNavigationNode.Id
-      - sp-odata-types.IODataNavigationNode.IsDocLib
-      - sp-odata-types.IODataNavigationNode.IsExternal
-      - sp-odata-types.IODataNavigationNode.IsVisible
-      - sp-odata-types.IODataNavigationNode.Title
-      - sp-odata-types.IODataNavigationNode.Url
-  - uid: sp-odata-types.IODataNavigationNode.Children
+      - '@microsoft/sp-odata-types!IODataNavigationNode#Children:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNode#Id:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNode#IsDocLib:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNode#IsExternal:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNode#IsVisible:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNode#Title:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNode#Url:member'
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#Children:member'
     summary: Gets or sets an array of Navigation Nodes that are children to the current node.
     name: Children
     fullName: Children
@@ -29,8 +29,8 @@ items:
       content: 'Children?: IODataNavigationNode[];'
       return:
         type:
-          - 'IODataNavigationNode[]'
-  - uid: sp-odata-types.IODataNavigationNode.Id
+          - '@microsoft/sp-odata-types!IODataNavigationNode#Children~0:complex'
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#Id:member'
     summary: Gets a value that specifies the identifier for the navigation node.
     name: Id
     fullName: Id
@@ -42,7 +42,7 @@ items:
       return:
         type:
           - number
-  - uid: sp-odata-types.IODataNavigationNode.IsDocLib
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#IsDocLib:member'
     name: IsDocLib
     fullName: IsDocLib
     langs:
@@ -53,7 +53,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-odata-types.IODataNavigationNode.IsExternal
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#IsExternal:member'
     summary: >-
       Gets or sets a value that specifies whether the navigation node URL potentially corresponds to pages outside of
       the site collection.
@@ -67,7 +67,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-odata-types.IODataNavigationNode.IsVisible
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#IsVisible:member'
     summary: Gets or sets a value that specifies if the node navigation link should be visible.
     name: IsVisible
     fullName: IsVisible
@@ -79,7 +79,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-odata-types.IODataNavigationNode.Title
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#Title:member'
     summary: Gets or sets a value that specifies the anchor text for the node navigation link.
     name: Title
     fullName: Title
@@ -91,7 +91,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-odata-types.IODataNavigationNode.Url
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#Url:member'
     summary: >-
       Gets or sets a value that specifies the URL to be stored with the navigation node. It must be a URL of relative
       form if IsExternal is false. It must be a URL of relative or absolute form.
@@ -105,3 +105,13 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNode#Children~0:complex'
+    name: 'IODataNavigationNode[]'
+    fullName: 'IODataNavigationNode[]'
+    spec.typeScript:
+      - uid: '@microsoft/sp-odata-types!IODataNavigationNode:interface'
+        name: IODataNavigationNode
+        fullName: IODataNavigationNode
+      - name: '[]'
+        fullName: '[]'

@@ -1,21 +1,21 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.IWebPartPropertyMetadata
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata:interface'
     summary: This is the structure used for map values in `IWebPartPropertiesMetadata`
     name: IWebPartPropertyMetadata
     fullName: IWebPartPropertyMetadata
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.IWebPartPropertyMetadata.dynamicPropertyType
-      - sp-webpart-base.IWebPartPropertyMetadata.isHtmlString
-      - sp-webpart-base.IWebPartPropertyMetadata.isImageSource
-      - sp-webpart-base.IWebPartPropertyMetadata.isLink
-      - sp-webpart-base.IWebPartPropertyMetadata.isSearchablePlainText
-      - sp-webpart-base.IWebPartPropertyMetadata.shouldNotPersist
-  - uid: sp-webpart-base.IWebPartPropertyMetadata.dynamicPropertyType
+      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#dynamicPropertyType:member'
+      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isHtmlString:member'
+      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isImageSource:member'
+      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isLink:member'
+      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isSearchablePlainText:member'
+      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#shouldNotPersist:member'
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#dynamicPropertyType:member'
     summary: 'If specified, indicates that the property is a dynamic property and the type of the dynamic property.'
     remarks: >-
       If a web part has properties that are dynamically configurable, then use this flag to declare the property as a
@@ -41,7 +41,7 @@ items:
       return:
         type:
           - '''boolean'' | ''number'' | ''string'' | ''array'' | ''object'''
-  - uid: sp-webpart-base.IWebPartPropertyMetadata.isHtmlString
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isHtmlString:member'
     summary: Indicates whether the property should be serialized as HTML.
     remarks: >-
       This flag instructs framework to store the value as HTML, so that SharePoint can perform the following services on
@@ -73,7 +73,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-webpart-base.IWebPartPropertyMetadata.isImageSource
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isImageSource:member'
     summary: >-
       Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
       services like link fix-up, search indexing, loading from CDN, etc.
@@ -87,7 +87,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-webpart-base.IWebPartPropertyMetadata.isLink
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isLink:member'
     summary: >-
       Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
       services like search indexing, link fix-up, loading from CDN, etc.
@@ -101,7 +101,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-webpart-base.IWebPartPropertyMetadata.isSearchablePlainText
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#isSearchablePlainText:member'
     summary: Indicates if the property contains plain text that should be search-indexed by SharePoint.
     remarks: >-
       This flag instructs the framework to store the property in a representation that supports search indexing. The
@@ -121,7 +121,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-webpart-base.IWebPartPropertyMetadata.shouldNotPersist
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#shouldNotPersist:member'
     summary: Indicates if the framework should persist the property on the server.
     remarks: >-
       Use this for properties that are only important in run-time, and do not need to persist on the server. This can

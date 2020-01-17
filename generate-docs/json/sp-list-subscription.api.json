@@ -1,0 +1,450 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-list-subscription!",
+  "docComment": "/**\n * This package provides developer support for subscribing to changes in a SharePoint document library.\n *\n * @remarks\n *\n * This package creates and manages subscriptions to SharePoint document libraries. It registers callbacks provided by the developer with the subscription to handle subscription events.\n *\n * @packagedocumentation\n */\n",
+  "name": "@microsoft/sp-list-subscription",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@microsoft/sp-list-subscription!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface",
+          "docComment": "/**\n * A list subscription requires at least a site ID and list ID. If the list is not contained in the root site of a web, you need to pass in the subweb id. If the domain you are accessing is different than the current domain, you will need to provide it as well.\n *\n * In the simple case (say a teamsite document library) in the current site, you can simply provide the library ID, and the current domain, site and web will be used.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICreateSubscriptionSettings "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ICreateSubscriptionSettings",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings#callbacks:member",
+              "docComment": "/**\n * the list of callbacks\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "callbacks: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ISubscriptionCallbacks",
+                  "canonicalReference": "@microsoft/sp-list-subscription!ISubscriptionCallbacks:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "callbacks",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings#domain:member",
+              "docComment": "/**\n * In the case of a multi-geography tenancy, you need to provide the domain that the site collection lives in.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "domain?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "domain",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings#listId:member",
+              "docComment": "/**\n * The Guid of the Sharepoint List. At this point, it needs to be a document library, and not just a list.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listId?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!Guid:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "listId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings#siteId:member",
+              "docComment": "/**\n * The SharePoint Site Id (assuming it is not the current site) If the siteId parameter is not provided, the current site will be used.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "siteId?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!Guid:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "siteId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings#webId:member",
+              "docComment": "/**\n * The SharePoint Web Id (assuming it is not the current web) If the webId parameter is not provided, the current web will be used.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "webId?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!Guid:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "webId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-list-subscription!IListSubscription:interface",
+          "docComment": "/**\n * A subscription to a SharePoint list resource. Contains the id of the subscription.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IListSubscription "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IListSubscription",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!IListSubscription#id:member",
+              "docComment": "/**\n * The id of the subscription.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Guid",
+                  "canonicalReference": "@microsoft/sp-core-library!Guid:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-list-subscription!ISubscriptionCallbacks:interface",
+          "docComment": "/**\n * The callbacks that can be triggered by a subscription event.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ISubscriptionCallbacks "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ISubscriptionCallbacks",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ISubscriptionCallbacks#connect:member",
+              "docComment": "/**\n * The callback to invoke when a connection has been made to the list.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "connect?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "connect",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ISubscriptionCallbacks#disconnect:member",
+              "docComment": "/**\n * The callback to invoke when the subscription is disconnected from the list.\n *\n * @param reason - either 'io server disconnect' or 'io client disconnect'\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "disconnect?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(reason: string) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "disconnect",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-list-subscription!ISubscriptionCallbacks#notification:member",
+              "docComment": "/**\n * The callback to invoke when a change occurs in the list.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "notification: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "() => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "notification",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@microsoft/sp-list-subscription!ListSubscriptionFactory:class",
+          "docComment": "/**\n * Creates and manages subscriptions to list resources. Registers callbacks provided by the developer with the subscription to handle subscription events.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class ListSubscriptionFactory "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ListSubscriptionFactory",
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@microsoft/sp-list-subscription!ListSubscriptionFactory:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `ListSubscriptionFactory` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(component: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BaseComponent",
+                  "canonicalReference": "@microsoft/sp-component-base!BaseComponent:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "component",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription:member(1)",
+              "docComment": "/**\n * Creates a connection to the list specified by the site id and list id.\n *\n * @param settings - The various parameters\n *\n * @returns Promise of the subscription to the list.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createSubscription(settings: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICreateSubscriptionSettings",
+                  "canonicalReference": "@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IListSubscription",
+                  "canonicalReference": "@microsoft/sp-list-subscription!IListSubscription:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "settings",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "createSubscription"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-list-subscription!ListSubscriptionFactory#deleteSubscription:member(1)",
+              "docComment": "/**\n * Deletes the subscription's connection to the resource.\n *\n * @param subscription - The subscription to delete.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteSubscription(subscription: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IListSubscription",
+                  "canonicalReference": "@microsoft/sp-list-subscription!IListSubscription:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "subscription",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "deleteSubscription"
+            }
+          ],
+          "implementsTokenRanges": []
+        }
+      ]
+    }
+  ]
+}

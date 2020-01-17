@@ -1,0 +1,2094 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-module-interfaces!",
+  "docComment": "",
+  "name": "@microsoft/sp-module-interfaces",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@microsoft/sp-module-interfaces!",
+      "name": "",
+      "members": [
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/sp-module-interfaces!ComponentType:type",
+          "docComment": "/**\n * Type of client-side component.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type ComponentType = "
+            },
+            {
+              "kind": "Content",
+              "text": "'Application' | 'WebPart' | 'Library' | 'Extension'"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ComponentType",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@microsoft/sp-module-interfaces!ExtensionType:type",
+          "docComment": "/**\n * The type of client-side extension. Used by IClientSideExtensionManifest.extensionType.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare type ExtensionType = "
+            },
+            {
+              "kind": "Content",
+              "text": "'Unknown' | 'ApplicationCustomizer' | 'FieldCustomizer' | 'ListViewCommandSet' | 'SearchQueryModifier'"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ExtensionType",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideAssemblyManifest:interface",
+          "docComment": "/**\n * A library is defined by this manifest. Libraries currently do not have any additional properties.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideAssemblyManifest extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideComponentManifest",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IClientSideAssemblyManifest",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideAssemblyManifest#rootComponentId:member",
+              "docComment": "/**\n * The ID of the component from which the assembly is built.\n *\n * @remarks\n *\n * Supported values: any GUID\n *\n * Example: \"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "rootComponentId: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "rootComponentId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface",
+          "docComment": "/**\n * This interface describes how a client-side component is to be loaded and initialized by a SharePoint client framework. It contains all data for loading an entrypoint script and its dependency scripts.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideComponentLoaderConfiguration "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "IClientSideComponentLoaderConfiguration",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member",
+              "docComment": "/**\n * This is the ID of one of the entries in the \"scriptResources\" dictionary.\n *\n * @remarks\n *\n * The loader will download and evaluate the script resource referenced in this field, resolve all dependencies against the keys in the \"scriptResources\", and return the exported object to the loader's calling function. The entry referenced in the \"scriptResources\" dictionary must be of the \"internal\" or the \"localized\" type.\n *\n * Supported values: An entry in the \"scriptResources\" dictionary that defines the base exported module of the component.\n *\n * Example: `\"myApplication.bundle\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "entryModuleId: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "entryModuleId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member",
+              "docComment": "/**\n * The module referenced by the \"entryModuleId\" field may export an object with several fields.\n *\n * @remarks\n *\n * This value optionally references the name of a field on the object exported by the module referenced by the `entryModuleId` field. When this field has a value, the value of the referenced field on the object exported by the module referenced by the `entryModuleId` field is returned when this manifest is loaded instead of the base exported object. For example, if entryModuleId refers to a module with with a top-level export of `{ foo: 'bar', baz: 123 }` and:\n *\n * - if this field is unset, the value returned by the module loader is `{ foo: 'bar', baz: 123 }`\n *\n * - if this field is set to `foo`, the value returned by the module loader is `bar`\n *\n * - if this field is set to `bar`, the value returned by the module loader is undefined (as `bar` is not a key in the top-level export).\n *\n * Example: `mySpWebpart`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "exportName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "exportName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member",
+              "docComment": "/**\n * This is an array of fully-qualified paths to be prepended to each of the script resource paths with the \"internal\" or \"localized\" type. If one fails to load, the loader will attempt to load from the next until there are no base paths remaining.\n *\n * @remarks\n *\n * All \"internal\" and \"localized\" script resources that do not have fully-qualified URLs as their \"path\" field values must be hosted under each of the paths listed in this property. For example, if an internal module's \"path\" field value is `\"master_2015-04-20/my-application.bundle_1928f8a0.js\"` and this field's value is `[ \"https://contoso.akamaihd.net/files/\", \"https://contoso.msecnd.net/files/\" ]`, the loader will first attempt to load this script resource from the URL `\"https://contoso.akamaihd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js\"`. If loading from that URL fails, the loader will then attempt to load this script resource from `\"https://contoso.msecnd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js\"`. If that URL fails to load, the component will fail to load and an error will be returned. It is important to note that the support for multiple base URLs is purely for failover support. This means that all files must be present on all hosts listed in this field.\n *\n * Usage: Base URLs for script resources with the \"internal\" or \"localized\" type.\n *\n * Supported values: Any URL that contains all internal scripts referenced in the \"scriptResources\" dictionary.\n *\n * Example: `[ \"https://contoso.akamaihd.net/files/\", \"https://contoso.msecnd.net/files/\" ]`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "internalModuleBaseUrls: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "internalModuleBaseUrls",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member",
+              "docComment": "/**\n * This is a dictionary of named script resources. `path` and `localizedPath` modules may reference each other and `manifest` modules are expected to be provided by the framework runtime. The resource named in the `entryModuleId` must contain the component's exported object.\n *\n * @remarks\n *\n * Supported values: A dictionary of named script resources.\n *\n * Example:\n * ```\n *  {\n *    \"myApplication.bundle\": {\n *      \"type\": \"path\",\n *      \"path\": \"master_2015-04-20/my-application.bundle_1928f8a0.js\"\n *    },\n *    \"@microsoft/sp-client-base\": {\n *      \"type\": \"component\",\n *      \"id\": \"af59c2b3-2da7-41fd-8b72-3939817960af\",\n *      \"version\": \"latest\"\n *    },\n *    \"@microsoft/sp-client-preview\": {\n *      \"type\": \"component\",\n *      \"id\": \"4d5eb168-6729-49a8-aec7-0e397f486b6e\",\n *      \"version\": \"latest\"\n *    },\n *    \"jQuery\": {\n *      \"type\": \"component\",\n *      \"id\": \"00000000-0000-0000-0000-000000000000\",\n *      \"version\": \"2.2.4\",\n *      \"path\": \"https://code.jquery.com/jquery-2.2.4.min.js\"\n *    },\n *    \"myApplication_strings\": {\n *      \"type\": \"localizedPath\",\n *      \"defaultPath\": \"master_2015-04-20/my-application_strings_default_af378e0d.js\",\n *      \"paths\": {\n *        \"en-us\": \"master_2015-04-20/my-application_strings_en-us_d38ff012.js\",\n *        \"fr-fr\": \"master_2015-04-20/my-application_strings_fr-fr_138af7e4.js\"\n *      }\n *    }\n *  }\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "scriptResources: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        [name: string]: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IModuleConfiguration",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "scriptResources",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface",
+          "docComment": "/**\n * All client-side components built on the SharePoint framework need a valid component manifest. This interface represents properties that are required by all types of client-side components like Applications and Web Parts. Component specific manifests will extend this interface to add properties required by that component type.\n *\n * @remarks\n *\n * The schema of this manifest is owned and versioned by Microsoft. Following rules should be followed while changing this schema. This set of rules can also be called the \"manifest upgrade rules\".\n *\n * - For minor changes, new properties can be added to this schema in a backwards-compatible way. i.e. the code that processes the manifest should be able to handle the absence of those new properties.\n *\n * - Try to model your changes as minor SemVer increments. Major version changes should be avoided because they impose a migration cost on developers.\n *\n * - The `'manifestVersion'` should be bumped for all small or big changes.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideComponentManifest extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideManifestBase",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideManifestBase:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IClientSideComponentManifest",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#alias:member",
+              "docComment": "/**\n * A short name usually given by developer. It does not need to be localized and is expected to stay the same through the lifetime of the component. If an application overrides the `ClientSideApplication.alias` property, `ClientSideApplication.alias` is given precedence over the value provided in the manifest.\n *\n * @remarks\n *\n * Usage: A short name to identify a client-side component by developer.\n *\n * Supported values: Allowed characters are a-z, A-Z, and '-'. Not longer than 40 characters.\n *\n * Example: `\"NewFeed\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "alias: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "alias",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#componentType:member",
+              "docComment": "/**\n * Type of client-side component. Components with the \"Application\" type are defined by the \"IClientSideApplicationManifest\" interface. Components with the \"WebPart\" type are defined by the \"IClientSideWebPartManifest\" interface. Components with the \"Library\" type are defined by the \"IClientSideLibraryManifest\" interface.\n *\n * @remarks\n *\n * Usage: To help bundling, loading, enumeration, and initialization of components based on their contents.\n *\n * Supported values: `\"Application\"`, `\"WebPart\"`, `\"Library\"`, `\"Extension\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "componentType: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ComponentType",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ComponentType:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "componentType",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#loaderConfig:member",
+              "docComment": "/**\n * This portion of the configuration describes how the component is to be loaded and initialized by a client. It contains an enumeration of scripts that the component requires along with a single entry point script.\n *\n * @remarks\n *\n * Usage: Loading a component.\n *\n * See `IClientSideComponentLoaderConfiguration` for more information and examples.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "loaderConfig: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IClientSideComponentLoaderConfiguration",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "loaderConfig",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#loadLegacyFabricCss:member",
+              "docComment": "/**\n * This property is used to keep older components that don't explicitly use fabric CSS. For the most part, webparts build after using spfx 1.1 don't need this.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "loadLegacyFabricCss?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "loadLegacyFabricCss",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#requiresCustomScript:member",
+              "docComment": "/**\n * If true, the component can only be installed on sites where Custom Script is enabled. This should be set to true if the component allows authors to execute arbitrary scripts on the page.\n *\n * @remarks\n *\n * Defaults to false. See https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f for more information.\n *\n * Usage: Requires Custom Script to be allowed in order for this component to be installed and run.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requiresCustomScript?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "requiresCustomScript",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#safeWithCustomScriptDisabled:member",
+              "docComment": "/**\n * This property is provided for backwards compatibility. It no longer has any effect.\n *\n * @deprecated\n *\n * Use requiresCustomScript instead of safeWithCustomScriptDisabled.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "safeWithCustomScriptDisabled?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "safeWithCustomScriptDisabled",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest#version:member",
+              "docComment": "/**\n * Client-side component version. The value of this field is expected to be controlled by the developer of the client-side component.\n *\n * @remarks\n *\n * The purpose of this field is to help client-side component developers upgrade their client-side components in a managed way. This helps the consumers of the client-side component make decisions about when and how to upgrade the client-side component. As the developer evolves the code for their client-side component, they can decide to bump the MAJOR, MINOR or PATCH version of the component.\n *\n * All incompatible API changes should result in a MAJOR version bump. Backwards compatible functionality changes should result in a MINOR version bump, and backwards compatible bug fixes should result in a PATCH version bump. Please see {@link http://semver.org} for more details on how to manage the version of your components.\n *\n * Usage: Versioning and evolving a client-side component safely in a controlled way.\n *\n * Supported values: string representing a {@link http://semver.org | semantic version} i.e. MAJOR.MINOR.PATCH\n *\n * Example: `\"1.0.0\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "version: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "version",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface",
+          "docComment": "/**\n * This is the manifest for a client-side extension.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideExtensionManifest extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideComponentManifest",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IClientSideExtensionManifest",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideExtensionManifest#extensionType:member",
+              "docComment": "/**\n * Specifies the type of client-side extension. Some extension types support additional manifest fields beyond SPClientSideExtensionManifest.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "extensionType: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ExtensionType",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ExtensionType:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "extensionType",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideLibraryManifest:interface",
+          "docComment": "/**\n * A library is defined by this manifest. Libraries currently do not have any additional properties.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideLibraryManifest extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideComponentManifest",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IClientSideLibraryManifest",
+          "members": [],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideManifestBase:interface",
+          "docComment": "/**\n * This interface defines members that are common between all deployable manifests.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideManifestBase "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "IClientSideManifestBase",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideManifestBase#id:member",
+              "docComment": "/**\n * A universally unique component id. Each client-side component is required to have this id. Once an id has been used for a component, it cannot be changed. A change in this value is treated same as the creation of a new component. Two components are never expected to have the same id.\n *\n * Usage: Uniquely identify a client-side component.\n *\n * Supported values: a GUID string\n *\n * Example: `\"dbef608d-3ad5-4f8f-b139-d916f2f0a294\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideManifestBase#manifestVersion:member",
+              "docComment": "/**\n * Version of the component manifest schema. The value of this field is controlled by Microsoft. The purpose of this field is to help manage upgrades of the component manifest schema.\n *\n * @remarks\n *\n * A component developer needs to only confirm that they are using the correct value per the manifest schema. Please read the \"manifest upgrade rules\" for more details on when the schema could change. Note, manifest schema version upgrade will be considered a big API change event and will be advertised broadly.\n *\n * Usage: To help support multiple manifest schema versions.\n *\n * Supported values: A positive integer.\n *\n * Example: `1`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "manifestVersion: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "manifestVersion",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest:interface",
+          "docComment": "/**\n * The client-side SharePoint framework identifies a Web Part by its manifest. All Web Parts are expected to have a manifest.\n *\n * @remarks\n *\n * The manifest is a schematized JSON blob that is used in multiple parts of the SharePoint infrastructure to identify, load and process a Web Part. The schema for this manifest is completely owned and versioned by Microsoft. There are some required properties in the manifest and some optional properties. Optional properties need to be provided only if the Web Part needs the specific functionality. An invalid manifest could lead to issues with Web Part loading and functionality problems.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideWebPartManifest<TProperties> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideComponentManifest",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TProperties",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IClientSideWebPartManifest",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#canUpdateConfiguration:member",
+              "docComment": "/**\n * Indicates whether the web part uses the property pane to update the configuration of the web part.\n *\n * @remarks\n *\n * Default value is `true` if the property is not explicitly defined.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canUpdateConfiguration?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "canUpdateConfiguration",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#disabledOnClassicSharepoint:member",
+              "docComment": "/**\n * If true, this web part is disabled on SharePoint classic pages\n *\n * @remarks\n *\n * Certain web parts may not be required on or apply to SharePoint classic pages. This flag helps control that. If this flag is true, the web part will not appear in the classic page web part gallery.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "disabledOnClassicSharepoint?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "disabledOnClassicSharepoint",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#hiddenFromToolbox:member",
+              "docComment": "/**\n * If true, this web part should not be displayed in the modern SharePoint toolbox.\n *\n * @remarks\n *\n * Usage: Use this flag if it is not appropriate to display a web part in the modern toolbox. This property is not used in Classic SharePoint. By default, all web parts are enabled to be displayed in the toolbox. Such web parts can be provisioned on pages though API or be added to the page in a pre configured way.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "hiddenFromToolbox?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "hiddenFromToolbox",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#imagePreviewUrl:member",
+              "docComment": "/**\n * Definition: Url of the image image used for preview\n *\n * @remarks\n *\n * Usage: Use this string to specify that a preview image should be used instead of a preview rendering of the web part. This can either be a absolute url or a relative URL which will be resolved based on the internal base module url\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "imagePreviewUrl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "imagePreviewUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#preconfiguredEntries:member",
+              "docComment": "/**\n * A Web Part can have pre-configured properties like the title, description, toolbox group name and Web Part specific custom properties. And there can be multiple instances of these pre-configured properties.\n *\n * @remarks\n *\n * This helps support scenarios where an organization may want to present multiple pre-configured entries for a Web Part in the Toolbox. Each entry is expected to configure the Web Part with a different set of pre-configured properties. A developer may decide to seed some initial values for these properties but an organization admin can go ahead and customize these properties per the needs of his/her organization. The properties can also be modified by the author of the page.\n *\n * Usage: help display a Web Part in the Toolbox, PropertyPane and the initial rendering of the Web Part.\n *\n * Type: JSON object\n *\n * Supported values: Array of `IClientSideWebPartManifestEntry` objects.\n *\n * Example:\n * ```\n *   [{\n *      title:\"Image Web Part\",\n *      description: \"This Web Part displays an image\",\n *      group: \"Media\",\n *      iconFontName: \"image\",\n *      properties: {\n *        imageSource: \"https://contoso.akamaihd.net/files/mountRainier.jpg\",\n *        captionText: \"Mount Rainier\"\n *      }\n *    }]\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "preconfiguredEntries: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IClientSideWebPartManifestEntry",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TProperties>[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "preconfiguredEntries",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts:member",
+              "docComment": "/**\n * Definition: An array defining what host types are supported\n *\n * @remarks\n *\n * Usage: Use this array to define all hosts that are supported. The default value is SharePointWebPart if nothing is provided. If SharePointFullPage is added the solution will be available when adding full page apps. If SharePointWebPart is added the solution will be available when adding webparts to a page. If TeamsTab or TeamsPersonalApp is added the solution will be available when using teams.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "supportedHosts?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<'SharePointFullPage' | 'SharePointWebPart' | 'TeamsTab' | 'TeamsPersonalApp'>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "supportedHosts",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportsFullBleed:member",
+              "docComment": "/**\n * Definition: If true, this web part supports and has been tested for full bleed experience.\n *\n * @remarks\n *\n * Usage: Use this flag if a web part supports full bleed experience and has been tested as such. In this context, full bleed is a term used to denote that the web part takes the whole width of the containing page. Full bleed experiences require special treatment and testing. By default no web parts support full bleed experiences.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "supportsFullBleed?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "supportsFullBleed",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportsThemeVariants:member",
+              "docComment": "/**\n * Definition: If true, this web part supports and has been tested for theme variants experience.\n *\n * @remarks\n *\n * Usage: Use this flag if a web part supports theme variants and has been tested as such. In order to support theme variants, web parts must have the capability to render correctly in the context of a theme variant. A web part may or may not need to be updated to support theme variants, but should always be tested before enabling this flag. By default no web parts support theme variants.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "supportsThemeVariants?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "supportsThemeVariants",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface",
+          "docComment": "/**\n * This interface specifies the set of properties that can be pre-configured by a Web Part developer. Each pre-configured instance of the Web Part will need a copy of these properties. Organization admins and content authors can modify these properties on a need basis.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideWebPartManifestEntry<TProperties> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TProperties",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IClientSideWebPartManifestEntry",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#dataVersion:member",
+              "docComment": "/**\n * Definition: Use this field to specify the data version of the pre-configured data provided to the web part. Note that data version is different from the version field in the manifest.\n *\n * @remarks\n *\n * The manifest version is used to control the versioning of the web part code, while data version is used to control the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more information.\n *\n * Usage: versioning and evolving the serialized data of the web part\n *\n * Type: string representing a {@link http://semver.org | semantic version} with only two parts\n *\n * Supported values: MAJOR.MINOR\n *\n * Example: `\"1.0\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataVersion?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "dataVersion",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#description:member",
+              "docComment": "/**\n * Description of the web part represented as a dictionary of locale keys to description values. This value will be displayed to the user in the toolbox. This description should be used in the Toolbox tooltip and other display areas.\n *\n * @remarks\n *\n * The Web Part developer may give an initial description to the web part. The organization admin and page author will have the ability to change this description as per need.\n *\n * Usage: display the description of the web part in the toolbox tooltip, web part gallery and the page.\n *\n * Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.\n *\n * Example: `\"A tool for displaying neat information.\"`\n * ```\n *          {\n *            \"default\": \"A tool for displaying neat information.\",\n *            \"en-us\": \"A tool for displaying neat information.\",\n *            \"fr-fr\": \"Un outil d’affichage des informations soignées.\",\n *            \"zh\": \"用於顯示整潔資訊的工具。\"\n *          }\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "description: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILocalizedString",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "description",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#group:member",
+              "docComment": "/**\n * The group name in web part picker to contain the web part in the classic page. If no value is provided, then the web part will be displayed in the Miscellaneous group.\n *\n * @remarks\n *\n * Example: `{ \"default\": \"Media and Content\" }`\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "group?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILocalizedString",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "group",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#groupId:member",
+              "docComment": "/**\n * The group id to determine which modern group contains the web part in modern site page. The SharePoint Framework reserves group ids for predefined groups. The developer can pick one from those groups. If the developer fills an id not in the predefined groups, it falls back to Other group.\n *\n * @remarks\n *\n * Supported values: the GUID from PredefinedGroup list\n *\n * Example: `\"cf066440-0614-43d6-98ae-0b31cf14c7c3\"`\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "groupId: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PredefinedGroup",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup:enum"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "groupId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#iconImageUrl:member",
+              "docComment": "/**\n * The icon for the web part, to be displayed in the toolbox, represented an image URL. The image at the URL must be exactly 40x28 px (SPPPLAT VSO#218660 to fix the size of the icon image).\n *\n * @remarks\n *\n * If the {@link IClientSideWebPartManifestEntry.officeFabricIconFontName} field does not have a value, this field must have a value. This value can be an absolute URL (e.g. `\"http://example.com/icons/my-icon.png\"`) or a relative file path (e.g. `\"./icons/my-icon.png\"`). In the latter case, the path will be resolved relative to the folder containing the input manifest. The icon file will be copied to the deployment folder like an asset, and the output manifest’s iconImageUrl will be replaced with a URL relative to the URL used to load all other assets (the loaderConfig.internalModuleBaseUrls property).\n *\n * Supported values: Any absolute URL.\n *\n * Example: `\"https://contoso.akamaihd.net/files/myWebpartIcon.png\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "iconImageUrl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "iconImageUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#officeFabricIconFontName:member",
+              "docComment": "/**\n * The icon for the Web Part, to be displayed in the toolbox, represented as a character name in the Office 365 icon font file.\n *\n * @remarks\n *\n * The icon font is specified here: {@link https://aka.ms/uifabric-icons} If this field has a value, the {@link IClientSideWebPartManifestEntry.iconImageUrl} field will be ignored.\n *\n * Supported values: Any character name in the Office 365 Icon Font.\n *\n * Example: \"graph\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "officeFabricIconFontName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "officeFabricIconFontName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#properties:member",
+              "docComment": "/**\n * Every web part is expected to have some custom properties. For example, an image web part might define properties for the image URL and caption text. A list web part may have the list ID and list title as its properties, and so on.\n *\n * @remarks\n *\n * The SharePoint Framework passes these properties to the web parts when they are loaded. The web part developer fully controls the schema for these properties. The web part developer should follow versioning rules when updating the properties.\n *\n * Usage: rendering of the web part\n *\n * Example: `{\"imageSource\": \"https://contoso.akamaihd.net/files/contosoLogo.jpg\", \"captionText\": \"Contoso logo\"}\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "properties: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "TProperties"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "properties",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#tags:member",
+              "docComment": "/**\n * This field is used to tag a web part with keywords that are different from the web part group name. Tags can be used for categorization and searching of web parts. For example, in the web part toolbox.\n *\n * @remarks\n *\n * Example `[{ \"default\": \"image\" }, { \"default\": \"media\" }, { \"default\": \"picture\" }, ...]`\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tags?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILocalizedString",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "tags",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#title:member",
+              "docComment": "/**\n * Title of the web part represented as a single a dictionary of locale keys to title values. This value will be displayed to the user in the toolbox.\n *\n * @remarks\n *\n * This title should be used in the Toolbox and other display areas. The Web Part developer may give an initial title to the web part. The organization admin and page author will have the ability to change this title as per need.\n *\n * Usage: display the name of the web part in the toolbox, web part gallery and the page.\n *\n * Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.\n *\n * Example: `\"My Webpart\"`\n * ```\n *          {\n *            \"default\": \"My WebPart\"\n *            \"en-us\": \"My WebPart\",\n *            \"fr-fr\": \"Ma WebPart\",\n *            \"zh\": \"我的 web 部件\"\n *          }\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "title: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILocalizedString",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "title",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface",
+          "docComment": "/**\n * Manifest that is relevant to a Web Part instance.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IClientSideWebPartManifestInstance<TProperties> extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideComponentManifest",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TProperties",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IClientSideWebPartManifestInstance",
+          "members": [],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!ICommandDefinition:interface",
+          "docComment": "/**\n * Used by ICommandSetExtensionManifest, this defines a command to be displayed by a UI surface such as a menu, tool bar, etc.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICommandDefinition "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ICommandDefinition",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ICommandDefinition#ariaLabel:member",
+              "docComment": "/**\n * Custom accessibility text for the browser's \"aria-label\" attribute. If omitted, the title property will be used by default. Example: \"Show information. Press ENTER to select.\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "ariaLabel?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILocalizedString",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "ariaLabel",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ICommandDefinition#iconImageUrl:member",
+              "docComment": "/**\n * An optional URL for an image to be displayed next to the command. The requirements for this image are defined by the type of extension; some extension types may not display the image at all.\n *\n * @remarks\n *\n * This value can be an absolute URL (e.g. \"http://example.com/icons/my-icon.png\") or a relative file path (e.g. \"./icons/my-icon.png\"). In the latter case, the path will be resolved relative to the folder containing the input manifest. The icon file will be copied to the deployment folder like an asset, and the output manifest’s iconImageUrl will be replaced with a URL relative to the URL used to load all other assets (the loaderConfig.internalModuleBaseUrls property).\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "iconImageUrl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "iconImageUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ICommandDefinition#title:member",
+              "docComment": "/**\n * A short label to be displayed by the associated button, menu item, etc. Example: \"Show information\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "title: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILocalizedString",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "title",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ICommandDefinition#type:member",
+              "docComment": "/**\n * Type of the item. Currently only \"command\" is allowed.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "'command'"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface",
+          "docComment": "/**\n * This is the manifest for a client-side extension that defines a set of custom commands that can be shown in a menu, tool bar, etc.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICommandSetExtensionManifest extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IClientSideExtensionManifest",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ICommandSetExtensionManifest",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#extensionType:member",
+              "docComment": "/**\n * Specifies the type of client-side extension. Some extension types support additional manifest fields beyond SPClientSideExtensionManifest.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "extensionType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "'ListViewCommandSet'"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "extensionType",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#items:member",
+              "docComment": "/**\n * A table of items defined by this command set. The object key is the Item ID.\n *\n * @remarks\n *\n * The Item ID is a unique identifier that event handlers use to recognize the command The identifier must consist of upper-case letters, numbers, and underscores. Example: \"SHOW_INFO\"\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "items: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        [itemId: string]: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICommandDefinition",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!ICommandDefinition:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "items",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface",
+          "docComment": "/**\n * This is the interface for a script module with the \"component\" type. Modules of this type will be provided via manifests. In order for the dependency to be loaded, the manifest must be available on the site.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IComponentModuleConfiguration extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IModuleConfiguration",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "IComponentModuleConfiguration",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member",
+              "docComment": "/**\n * A path to the framework-supplied component in case the framework fails to load the requested version.\n *\n * @remarks\n *\n * This must be either a fully-qualified URL, or a path under the paths specified in the `internalModuleBaseUrls` field. If this field is not specified and the version is not available in the framework runtime, the closest matching version of the component will be provided instead.\n *\n * Supported values: The path to the component either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field.\n *\n * Example: `\"https://code.jquery.com/jquery-2.2.4.min.js\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "failoverPath?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPath",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IPath:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "failoverPath",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member",
+              "docComment": "/**\n * The ID of the framework-supplied component to be loaded.\n *\n * @remarks\n *\n * Supported values: string representing a component's ID.\n *\n * Example: `\"0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member",
+              "docComment": "/**\n * The version of the framework-supplied component to be loaded. For framework runtime component such as `@microsoft/sp-client-base`, it is recommended the version of the framework component the component was developed against be specified.\n *\n * @remarks\n *\n * Supported values: string representing a {@link http://semver.org | semantic version}, or \"latest\".\n *\n * Example: `\"2.2.4\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "version: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "version",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface",
+          "docComment": "/**\n * This is the interface for a script module with the \"localizedPath\" type.\n *\n * @remarks\n *\n * Modules of this type must be provided by the component developer. These script resources are similar to those of the \"path\" type, but they may be present at a number of different paths, to be selected by the user's locale. Paths in this module type are loaded exactly the same way as \"internal\" modules are.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ILocalizedPathModuleConfiguration extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IModuleConfiguration",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "ILocalizedPathModuleConfiguration",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member",
+              "docComment": "/**\n * A path to this module's default locale javascript resource either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field.\n *\n * @remarks\n *\n * If the user's locale does not resolve to one of the paths specified in the \"paths\" field, the path in this field is used. Paths in this module type are treated exactly the same way paths in modules of the \"internal\" type are treated.\n *\n * Supported values: The path to the default locale version of the module either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field.\n *\n * Example: `\"master_2015-04-20/my-application_strings_default_af378e0d.js\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "defaultPath: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPath",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IPath:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "defaultPath",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member",
+              "docComment": "/**\n * This is a dictionary of locale keys (in the `\"ll-cc\"` format) to paths to this module's locale javascript resource either as a fully-qualified URL or as a path under the paths provided in the `\"internalModuleBaseUrls\"` field.\n *\n * @remarks\n *\n * The loader will attempt to resolve the user's locale to one of the paths provided by this field, and will load the script resource under that path. If the user's locale does not resolve to one of the paths specified in this field, the path in `\"defaultPath\"` field is used. For example, if the user's locale is `\"en-gb\"`, and this field's value contains the keys `[ \"en-us\", \"en-gb\", \"fr-fr\" ]`, the path specified by the `\"en-gb\"` key will be used. If the user's locale is \"en-gb\", and this field's value contains the keys `[ \"en-us\", \"fr-fr\" ]`, the path specified by the `\"en-us\"` key will be used. If the user's locale is `\"en-gb\"`, and this field's value contains the keys `[ \"es-es\", \"fr-fr\" ]`, the path specified by the \"defaultPath\" field will be used. Paths in this module type are treated exactly the same way paths in modules of the \"internal\" type are treated.\n *\n * Supported values: A dictionary of locale-to-path mappings.\n *\n * Example:\n * ```\n *  {\n *    \"en-us\": \"master_2015-04-20/my-application_strings_en-us_d38ff012.js\",\n *    \"fr-fr\": \"master_2015-04-20/my-application_strings_fr-fr_138af7e4.js\"\n *  }\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "paths?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        [locale: string]: string | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPath",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IPath:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "paths",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:interface",
+          "docComment": "/**\n * A set of localized strings.\n *\n * @remarks\n *\n * Supported values:\n *\n * - An Id referring to a localized resource. In this case it requires an 'id' key.\n *\n * - A dictionary of locale keys to strings. In this case it requires a 'default' key.\n * ```\n * Example 1: \"My Application\"\n *          {\n *            \"id\": \"$myStrings:myStrings.MyApplication;\"\n *          }\n * Example 2: \"My Application\"\n *          {\n *            \"default\": \"My Application\"\n *            \"en-us\": \"My Application\",\n *            \"fr-fr\": \"Ma demande\",\n *            \"zh\": \"我的應用程式\"\n *          }\n * ```\n *\n * Notes on string ids:\n *\n * - Ids have the following structure: `$<resourceName>:<expression>;`\n *\n * - `resourceName` needs to be a `localizedResource` in the config.json.\n *\n * - `expression` is an expression that will be evaluated to access the string from the resource module.\n *\n * If your resource is a dictionary, access it through `\"$resource:resource.MyString;\"` or `\"$resource:resource[\\\"MyString\\\"];\"`\n *\n * For more complex cases, run an appropriate expression to access your resource and return the string.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ILocalizedString "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ILocalizedString",
+          "members": [
+            {
+              "kind": "IndexSignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString:index(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "[locale: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "locale",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString#default:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "default?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "default",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!ILocalizedString#id:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration:interface",
+          "docComment": "/**\n * This is the base interface for a script module's definition.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IModuleConfiguration "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "IModuleConfiguration",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration#shouldNotPreload:member",
+              "docComment": "/**\n * If set to `true`, this module should not be preloaded when loading the component.\n *\n * @remarks\n *\n * The most common case for setting this property to \"true\" is when a module is defined in a manifest, but is not required for the module referenced in \"entryModuleId\" to load. Modules may be defined that are loaded asynchronously, and these modules do not need to be preloaded. This field implicitly defaults to `false`.\n *\n * Usage: Instructs the module loader to not preload this module.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "shouldNotPreload?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "shouldNotPreload",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration#type:member",
+              "docComment": "/**\n * The type of the script block. `\"component\"` modules come from a component, `\"path\"` and `\"localizedPath\"` modules must be available on the paths provided in the `\"internalModuleBaseUrls\"` field.\n *\n * @remarks\n *\n * Modules with the `\"path\"` type use the `IPathModuleConfiguration` interface.\n *\n * Modules with the `\"component\"` type use the `IComponentModuleConfiguration` interface. Modules with the \"localizedPath\" type use the `ILocalizedPathModuleConfiguration` interface.\n *\n * Supported values: `\"component\"`, `\"path\"`, `\"localizedPath\"`\n *\n * Example: `\"localized\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "'component' | 'path' | 'localizedPath'"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IPath:interface",
+          "docComment": "/**\n * This is the base interface for a set of debug and non-debug/minimized paths. The paths in this object are loaded in exactly the same way as any other internal path.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IPath "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "IPath",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IPath#debug:member",
+              "docComment": "/**\n * A path to this module's debug javascript resource either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field. The script referenced by this field is only loaded if it is present and debug scripts are explicitly requested.\n *\n * @remarks\n *\n * Supported values: The path to the debug script either as a fully-qualified URL or as a path under the paths provided in the `\"internalModuleBaseUrls\"` field.\n *\n * Example: `\"master_2015-04-20/my-application.bundle_18182c39.debug.js\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "debug?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "debug",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IPath#default:member",
+              "docComment": "/**\n * A path to this module's javascript resource either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field. The script referenced by this field is loaded by default unless a debug version of the script is provided and explicitly requested.\n *\n * @remarks\n *\n * Supported values: The path to the default/non-debug script either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field.\n *\n * Example: `\"master_2015-04-20/my-application.bundle_1928f8a0.js\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "default: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "default",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-module-interfaces!IPathModuleConfiguration:interface",
+          "docComment": "/**\n * This is the interface for a script module with the \"path\" type. Modules of this type must be provided by the component developer.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IPathModuleConfiguration extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IModuleConfiguration",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IModuleConfiguration:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "IPathModuleConfiguration",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalDependencies:member",
+              "docComment": "/**\n * For non-AMD/module-pattern scripts that have dependencies (for example, jQuery plugins), the module loader will ensure that those dependencies are already loaded.\n *\n * @remarks\n *\n * Entries in the array specified in this field must refer to other non-AMD modules in this component. This field is not required to have a value for non-AMD modules. If any values are specified that do not refer to other modules in the same component manifest that this module is specified, the module loader will throw an exception and the component will fail to load.\n *\n * Supported values: Names of other non-AMD-pattern modules in this loader configuration, as specified by the key `IClientSideComponentLoaderConfiguration.scriptResources[]`\n *\n * Example: `[\"jquery\"]`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "globalDependencies?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "globalDependencies",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalName:member",
+              "docComment": "/**\n * If this property is specified, this module is considered non-AMD and the module loader will not expect \"define\" or \"require\" to be called.\n *\n * @remarks\n *\n * In order to load scripts that don't follow the AMD/module-pattern where \"define\" or \"require\" is called and dependencies are explicitly listed and exports are explicitly returned, the module loader needs to know which global variable must be examined. If this property is specified, this module is considered non-AMD and the module loader will not expect \"define\" or \"require\" to be called. Instead, it will wait for the script to finish loading and examine the global variable specified in this field.\n *\n * Supported values: Variable names that are expected to be populated after this module is loaded. For example, if this module is describing jQuery, this value should probably be \"$\". If an empty string is specified, the module loader will throw an exception and the component will fail to load.\n *\n * Example: `\"$\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "globalName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "globalName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-module-interfaces!IPathModuleConfiguration#path:member",
+              "docComment": "/**\n * A path to this module's javascript resource either as a fully-qualified URL or as a path under the paths provided in the `internalModuleBaseUrls` field.\n *\n * @remarks\n *\n * For example, if this field's value is `\"master_2015-04-20/my-application.bundle_1928f8a0.js\"` and the `\"internalModuleBaseUrls\"` field's value is `[ \"https://contoso.akamaihd.net/files/\", \"https://contoso.msecnd.net/files/\" ]`, the loader will first attempt to load this script resource from the URL `\"https://contoso.akamaihd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js\"`. If loading from that URL fails, the loader will then attempt to load this script resource from `\"https://contoso.msecnd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js\"`. If that URL fails to load, the component will fail to load and an error will be returned.\n *\n * Supported values: The path to the module either as a fully-qualified URL or as a path under the paths provided in the \"internalModuleBaseUrls\" field.\n *\n * Example: `\"master_2015-04-20/my-application.bundle_1928f8a0.js\"`\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "path: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPath",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IPath:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "path",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 3
+            }
+          ]
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup:enum",
+          "docComment": "/**\n * Predefined web part group.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare const enum PredefinedGroup "
+            }
+          ],
+          "releaseTag": "Beta",
+          "name": "PredefinedGroup",
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.BusinessAndIntelligence:member",
+              "docComment": "/**\n * Business and intelligence.\n *\n * This group includes web parts for tracking and analyzing data, and for integrating business flow with pages.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "BusinessAndIntelligence = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"4aca9e90-eff5-4fa1-bac7-728f5f157b66\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "BusinessAndIntelligence",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.CommunicationAndCollaboration:member",
+              "docComment": "/**\n * Communication and collaboration.\n *\n * This group includes web parts that facilitate information sharing, team work, and social interactions.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "CommunicationAndCollaboration = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"75e22ed5-fa14-4829-850a-c890608aca2d\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "CommunicationAndCollaboration",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.Discovery:member",
+              "docComment": "/**\n * Discovery.\n *\n * This group includes web parts that organize, group, and filter content to help users discover information.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Discovery = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"1edbd9a8-0bfb-4aa2-9afd-14b8c45dd489\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "Discovery",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.Other:member",
+              "docComment": "/**\n * Other.\n *\n * This group includes web parts not in other groups.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Other = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"5c03119e-3074-46fd-976b-c60198311f70\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "Other",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.PlanningAndProcess:member",
+              "docComment": "/**\n * Planning and process.\n *\n * This group includes web parts that empower team productivity with the use of planning and process tools.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "PlanningAndProcess = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"1bc7927e-4a5e-4520-b540-71305c79c20a\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "PlanningAndProcess",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.SiteTools:member",
+              "docComment": "/**\n * Site tools.\n *\n * This group includes web parts for site information and management.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "SiteTools = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"070951d7-94da-4db8-b06e-9d581f1f55b1\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "SiteTools",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@microsoft/sp-module-interfaces!PredefinedGroup.TextMediaAndContent:member",
+              "docComment": "/**\n * Text, media and content.\n *\n * This group includes web parts that display text, multi-media, documents, information from the web, and other rich content.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "TextMediaAndContent = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"cf066440-0614-43d6-98ae-0b31cf14c7c3\""
+                }
+              ],
+              "releaseTag": "Beta",
+              "name": "TextMediaAndContent",
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

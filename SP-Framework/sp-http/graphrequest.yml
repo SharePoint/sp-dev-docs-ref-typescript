@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.GraphRequest
+  - uid: '@microsoft/sp-http!GraphRequest:interface'
     summary: >-
       Typings for the GraphRequest Object For more information:
       [https://github.com/microsoftgraph/msgraph-sdk-javascript](https://github.com/microsoftgraph/msgraph-sdk-javascript)
@@ -9,39 +9,39 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.GraphRequest._headers
-      - sp-http.GraphRequest._responseType
-      - sp-http.GraphRequest.buildFullUrl
-      - sp-http.GraphRequest.constructor
-      - sp-http.GraphRequest.count
-      - sp-http.GraphRequest.create
-      - sp-http.GraphRequest.del
-      - sp-http.GraphRequest.delete
-      - sp-http.GraphRequest.expand
-      - sp-http.GraphRequest.filter
-      - sp-http.GraphRequest.get
-      - sp-http.GraphRequest.getStream
-      - sp-http.GraphRequest.header
-      - sp-http.GraphRequest.headers
-      - sp-http.GraphRequest.orderby
-      - sp-http.GraphRequest.parsePath
-      - sp-http.GraphRequest.patch
-      - sp-http.GraphRequest.post
-      - sp-http.GraphRequest.put
-      - sp-http.GraphRequest.putStream
-      - sp-http.GraphRequest.query
-      - sp-http.GraphRequest.responseType
-      - sp-http.GraphRequest.select
-      - sp-http.GraphRequest.skip
-      - sp-http.GraphRequest.skipToken
-      - sp-http.GraphRequest.top
-      - sp-http.GraphRequest.update
-      - sp-http.GraphRequest.version
-      - sp-http.GraphRequest.config
-      - sp-http.GraphRequest.urlComponents
-  - uid: sp-http.GraphRequest._headers
+      - '@microsoft/sp-http!GraphRequest#_headers:member'
+      - '@microsoft/sp-http!GraphRequest#_responseType:member'
+      - '@microsoft/sp-http!GraphRequest#buildFullUrl:member(1)'
+      - '@microsoft/sp-http!GraphRequest#config:member'
+      - '@microsoft/sp-http!GraphRequest#constructor:member(1)'
+      - '@microsoft/sp-http!GraphRequest#count:member(1)'
+      - '@microsoft/sp-http!GraphRequest#create:member(1)'
+      - '@microsoft/sp-http!GraphRequest#del:member(1)'
+      - '@microsoft/sp-http!GraphRequest#delete:member(1)'
+      - '@microsoft/sp-http!GraphRequest#expand:member(1)'
+      - '@microsoft/sp-http!GraphRequest#filter:member(1)'
+      - '@microsoft/sp-http!GraphRequest#get:member(1)'
+      - '@microsoft/sp-http!GraphRequest#getStream:member(1)'
+      - '@microsoft/sp-http!GraphRequest#header:member(1)'
+      - '@microsoft/sp-http!GraphRequest#headers:member(1)'
+      - '@microsoft/sp-http!GraphRequest#orderby:member(1)'
+      - '@microsoft/sp-http!GraphRequest#parsePath:member(1)'
+      - '@microsoft/sp-http!GraphRequest#patch:member(1)'
+      - '@microsoft/sp-http!GraphRequest#post:member(1)'
+      - '@microsoft/sp-http!GraphRequest#put:member(1)'
+      - '@microsoft/sp-http!GraphRequest#putStream:member(1)'
+      - '@microsoft/sp-http!GraphRequest#query:member(1)'
+      - '@microsoft/sp-http!GraphRequest#responseType:member(1)'
+      - '@microsoft/sp-http!GraphRequest#select:member(1)'
+      - '@microsoft/sp-http!GraphRequest#skip:member(1)'
+      - '@microsoft/sp-http!GraphRequest#skipToken:member(1)'
+      - '@microsoft/sp-http!GraphRequest#top:member(1)'
+      - '@microsoft/sp-http!GraphRequest#update:member(1)'
+      - '@microsoft/sp-http!GraphRequest#urlComponents:member'
+      - '@microsoft/sp-http!GraphRequest#version:member(1)'
+  - uid: '@microsoft/sp-http!GraphRequest#_headers:member'
     name: _headers
     fullName: _headers
     langs:
@@ -58,7 +58,7 @@ items:
             {
                     [key: string]: string | number;
                 }
-  - uid: sp-http.GraphRequest._responseType
+  - uid: '@microsoft/sp-http!GraphRequest#_responseType:member'
     name: _responseType
     fullName: _responseType
     langs:
@@ -69,7 +69,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-http.GraphRequest.buildFullUrl
+  - uid: '@microsoft/sp-http!GraphRequest#buildFullUrl:member(1)'
     name: buildFullUrl()
     fullName: buildFullUrl()
     langs:
@@ -81,7 +81,18 @@ items:
         type:
           - string
         description: ''
-  - uid: sp-http.GraphRequest.constructor
+  - uid: '@microsoft/sp-http!GraphRequest#config:member'
+    name: config
+    fullName: config
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'config: Options;'
+      return:
+        type:
+          - '@microsoft/microsoft-graph-client!Options:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#constructor:member(1)'
     name: 'constructor(config, path)'
     fullName: 'constructor(config, path)'
     langs:
@@ -91,18 +102,18 @@ items:
       content: 'constructor(config: Options, path: string): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: config
           description: ''
           type:
-            - Options
+            - '@microsoft/microsoft-graph-client!Options:interface'
         - id: path
           description: ''
           type:
             - string
-  - uid: sp-http.GraphRequest.count
+  - uid: '@microsoft/sp-http!GraphRequest#count:member(1)'
     name: count(count)
     fullName: count(count)
     langs:
@@ -112,14 +123,14 @@ items:
       content: 'count(count: boolean): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: count
           description: ''
           type:
             - boolean
-  - uid: sp-http.GraphRequest.create
+  - uid: '@microsoft/sp-http!GraphRequest#create:member(1)'
     name: 'create(content, callback)'
     fullName: 'create(content, callback)'
     langs:
@@ -129,7 +140,7 @@ items:
       content: 'create(content: any, callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#create~0:complex'
         description: ''
       parameters:
         - id: content
@@ -139,8 +150,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.del
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#del:member(1)'
     name: del(callback)
     fullName: del(callback)
     langs:
@@ -150,14 +161,14 @@ items:
       content: 'del(callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#del~0:complex'
         description: ''
       parameters:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.delete
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#delete:member(1)'
     name: delete(callback)
     fullName: delete(callback)
     langs:
@@ -167,14 +178,14 @@ items:
       content: 'delete(callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#delete~0:complex'
         description: ''
       parameters:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.expand
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#expand:member(1)'
     name: expand(properties)
     fullName: expand(properties)
     langs:
@@ -184,14 +195,14 @@ items:
       content: 'expand(properties: string | string[]): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: properties
           description: ''
           type:
             - 'string | string[]'
-  - uid: sp-http.GraphRequest.filter
+  - uid: '@microsoft/sp-http!GraphRequest#filter:member(1)'
     name: filter(filterStr)
     fullName: filter(filterStr)
     langs:
@@ -201,14 +212,14 @@ items:
       content: 'filter(filterStr: string): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: filterStr
           description: ''
           type:
             - string
-  - uid: sp-http.GraphRequest.get
+  - uid: '@microsoft/sp-http!GraphRequest#get:member(1)'
     name: get(callback)
     fullName: get(callback)
     langs:
@@ -218,14 +229,14 @@ items:
       content: 'get(callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#get~0:complex'
         description: ''
       parameters:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.getStream
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#getStream:member(1)'
     name: getStream(callback)
     fullName: getStream(callback)
     langs:
@@ -241,8 +252,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.header
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#header:member(1)'
     name: 'header(headerKey, headerValue)'
     fullName: 'header(headerKey, headerValue)'
     langs:
@@ -263,7 +274,7 @@ items:
           description: ''
           type:
             - string
-  - uid: sp-http.GraphRequest.headers
+  - uid: '@microsoft/sp-http!GraphRequest#headers:member(1)'
     name: headers(headers)
     fullName: headers(headers)
     langs:
@@ -286,7 +297,7 @@ items:
               {
                       [key: string]: string | number;
                   }
-  - uid: sp-http.GraphRequest.orderby
+  - uid: '@microsoft/sp-http!GraphRequest#orderby:member(1)'
     name: orderby(properties)
     fullName: orderby(properties)
     langs:
@@ -296,14 +307,14 @@ items:
       content: 'orderby(properties: string | string[]): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: properties
           description: ''
           type:
             - 'string | string[]'
-  - uid: sp-http.GraphRequest.parsePath
+  - uid: '@microsoft/sp-http!GraphRequest#parsePath:member(1)'
     name: parsePath(rawPath)
     fullName: parsePath(rawPath)
     langs:
@@ -320,7 +331,7 @@ items:
           description: ''
           type:
             - string
-  - uid: sp-http.GraphRequest.patch
+  - uid: '@microsoft/sp-http!GraphRequest#patch:member(1)'
     name: 'patch(content, callback)'
     fullName: 'patch(content, callback)'
     langs:
@@ -330,7 +341,7 @@ items:
       content: 'patch(content: any, callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#patch~0:complex'
         description: ''
       parameters:
         - id: content
@@ -340,8 +351,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.post
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#post:member(1)'
     name: 'post(content, callback)'
     fullName: 'post(content, callback)'
     langs:
@@ -351,7 +362,7 @@ items:
       content: 'post(content: any, callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#post~0:complex'
         description: ''
       parameters:
         - id: content
@@ -361,8 +372,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.put
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#put:member(1)'
     name: 'put(content, callback)'
     fullName: 'put(content, callback)'
     langs:
@@ -372,7 +383,7 @@ items:
       content: 'put(content: any, callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#put~0:complex'
         description: ''
       parameters:
         - id: content
@@ -382,8 +393,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.putStream
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#putStream:member(1)'
     name: 'putStream(stream, callback)'
     fullName: 'putStream(stream, callback)'
     langs:
@@ -403,8 +414,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.query
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#query:member(1)'
     name: query(queryDictionaryOrString)
     fullName: query(queryDictionaryOrString)
     langs:
@@ -417,7 +428,7 @@ items:
             }): IGraphRequest;
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: queryDictionaryOrString
@@ -427,7 +438,7 @@ items:
               string | {
                       [key: string]: string | number;
                   }
-  - uid: sp-http.GraphRequest.responseType
+  - uid: '@microsoft/sp-http!GraphRequest#responseType:member(1)'
     name: responseType(responseType)
     fullName: responseType(responseType)
     langs:
@@ -437,14 +448,14 @@ items:
       content: 'responseType(responseType: string): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: responseType
           description: ''
           type:
             - string
-  - uid: sp-http.GraphRequest.select
+  - uid: '@microsoft/sp-http!GraphRequest#select:member(1)'
     name: select(properties)
     fullName: select(properties)
     langs:
@@ -454,14 +465,14 @@ items:
       content: 'select(properties: string | string[]): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: properties
           description: ''
           type:
             - 'string | string[]'
-  - uid: sp-http.GraphRequest.skip
+  - uid: '@microsoft/sp-http!GraphRequest#skip:member(1)'
     name: skip(n)
     fullName: skip(n)
     langs:
@@ -471,14 +482,14 @@ items:
       content: 'skip(n: number): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: 'n'
           description: ''
           type:
             - number
-  - uid: sp-http.GraphRequest.skipToken
+  - uid: '@microsoft/sp-http!GraphRequest#skipToken:member(1)'
     name: skipToken(token)
     fullName: skipToken(token)
     langs:
@@ -488,14 +499,14 @@ items:
       content: 'skipToken(token: string): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: token
           description: ''
           type:
             - string
-  - uid: sp-http.GraphRequest.top
+  - uid: '@microsoft/sp-http!GraphRequest#top:member(1)'
     name: top(n)
     fullName: top(n)
     langs:
@@ -505,14 +516,14 @@ items:
       content: 'top(n: number): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: 'n'
           description: ''
           type:
             - number
-  - uid: sp-http.GraphRequest.update
+  - uid: '@microsoft/sp-http!GraphRequest#update:member(1)'
     name: 'update(content, callback)'
     fullName: 'update(content, callback)'
     langs:
@@ -522,7 +533,7 @@ items:
       content: 'update(content: any, callback?: GraphRequestCallback): Promise<any>;'
       return:
         type:
-          - Promise<any>
+          - '@microsoft/sp-http!GraphRequest#update~0:complex'
         description: ''
       parameters:
         - id: content
@@ -532,36 +543,8 @@ items:
         - id: callback
           description: ''
           type:
-            - GraphRequestCallback
-  - uid: sp-http.GraphRequest.version
-    name: version(v)
-    fullName: version(v)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'version(v: string): IGraphRequest;'
-      return:
-        type:
-          - IGraphRequest
-        description: ''
-      parameters:
-        - id: v
-          description: ''
-          type:
-            - string
-  - uid: sp-http.GraphRequest.config
-    name: config
-    fullName: config
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'config: Options;'
-      return:
-        type:
-          - Options
-  - uid: sp-http.GraphRequest.urlComponents
+            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#urlComponents:member'
     name: urlComponents
     fullName: urlComponents
     langs:
@@ -571,4 +554,102 @@ items:
       content: 'urlComponents: URLComponents;'
       return:
         type:
-          - URLComponents
+          - '@microsoft/microsoft-graph-client!URLComponents:interface'
+  - uid: '@microsoft/sp-http!GraphRequest#version:member(1)'
+    name: version(v)
+    fullName: version(v)
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'version(v: string): IGraphRequest;'
+      return:
+        type:
+          - '@microsoft/sp-http!IGraphRequest:interface'
+        description: ''
+      parameters:
+        - id: v
+          description: ''
+          type:
+            - string
+references:
+  - uid: '@microsoft/microsoft-graph-client!Options:interface'
+    name: Options
+  - uid: '@microsoft/sp-http!IGraphRequest:interface'
+    name: IGraphRequest
+  - uid: '@microsoft/sp-http!GraphRequest#create~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
+    name: GraphRequestCallback
+  - uid: '@microsoft/sp-http!GraphRequest#del~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!GraphRequest#delete~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!GraphRequest#get~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!GraphRequest#patch~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!GraphRequest#post~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!GraphRequest#put~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!GraphRequest#update~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/microsoft-graph-client!URLComponents:interface'
+    name: URLComponents

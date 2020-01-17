@@ -1,35 +1,33 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.1.8",
-    "schemaVersion": 1000
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
   },
   "kind": "Package",
-  "canonicalReference": "@microsoft/sp-diagnostics",
+  "canonicalReference": "@microsoft/sp-diagnostics!",
   "docComment": "/**\n * This package defines the internal diagnostics tools for the SharePoint Framework, including monitoring, trace, user engagement and performance logging.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-diagnostics",
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "",
+      "canonicalReference": "@microsoft/sp-diagnostics!",
       "name": "",
       "members": [
         {
           "kind": "Variable",
-          "canonicalReference": "_logSourceServiceKey",
+          "canonicalReference": "@microsoft/sp-diagnostics!_logSourceServiceKey:var",
           "docComment": "/**\n * @public\n */\n",
           "excerptTokens": [
             {
-              "kind": "Reference",
-              "text": "logSourceServiceKey"
-            },
-            {
               "kind": "Content",
-              "text": ": "
+              "text": "logSourceServiceKey: "
             },
             {
               "kind": "Reference",
-              "text": "ServiceKey"
+              "text": "ServiceKey",
+              "canonicalReference": "@microsoft/sp-core-library!ServiceKey:class"
             },
             {
               "kind": "Content",
@@ -37,7 +35,8 @@
             },
             {
               "kind": "Reference",
-              "text": "LogSource"
+              "text": "LogSource",
+              "canonicalReference": "@microsoft/sp-diagnostics!default:class"
             },
             {
               "kind": "Content",
@@ -47,8 +46,8 @@
           "releaseTag": "Public",
           "name": "_logSourceServiceKey",
           "variableTypeTokenRange": {
-            "startIndex": 2,
-            "endIndex": 6
+            "startIndex": 1,
+            "endIndex": 5
           }
         }
       ]

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-dialog.BaseDialog
+  - uid: '@microsoft/sp-dialog!BaseDialog:class'
     summary: >-
       The base class for implementing dialogs in SharePoint Framework. This provides a supported way for showing dialogs
       to the user inside SharePoint Framework components.
@@ -16,20 +16,20 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-dialog
+    package: '@microsoft/sp-dialog!'
     children:
-      - sp-dialog.BaseDialog.(constructor)
-      - sp-dialog.BaseDialog.close
-      - sp-dialog.BaseDialog.domElement
-      - sp-dialog.BaseDialog.isHidden
-      - sp-dialog.BaseDialog.isOpen
-      - sp-dialog.BaseDialog.isSecondary
-      - sp-dialog.BaseDialog.onAfterClose
-      - sp-dialog.BaseDialog.onBeforeOpen
-      - sp-dialog.BaseDialog.render
-      - sp-dialog.BaseDialog.secondaryDialogProvider
-      - sp-dialog.BaseDialog.show
-  - uid: sp-dialog.BaseDialog.(constructor)
+      - '@microsoft/sp-dialog!BaseDialog:constructor(1)'
+      - '@microsoft/sp-dialog!BaseDialog#close:member(1)'
+      - '@microsoft/sp-dialog!BaseDialog#domElement:member'
+      - '@microsoft/sp-dialog!BaseDialog#isHidden:member'
+      - '@microsoft/sp-dialog!BaseDialog#isOpen:member'
+      - '@microsoft/sp-dialog!BaseDialog#isSecondary:member'
+      - '@microsoft/sp-dialog!BaseDialog#onAfterClose:member(1)'
+      - '@microsoft/sp-dialog!BaseDialog#onBeforeOpen:member(1)'
+      - '@microsoft/sp-dialog!BaseDialog#render:member(1)'
+      - '@microsoft/sp-dialog!BaseDialog#secondaryDialogProvider:member'
+      - '@microsoft/sp-dialog!BaseDialog#show:member(1)'
+  - uid: '@microsoft/sp-dialog!BaseDialog:constructor(1)'
     summary: Constructor for the `BaseDialog` class.
     remarks: >-
       It is important to keep the constructor lightweight. Use `onBeforeOpen()` for doing heavy-weight initialization
@@ -68,8 +68,8 @@ items:
         - id: config
           description: the dialog configuration that affects how the dialog is displayed \*
           type:
-            - sp-dialog.IDialogConfiguration
-  - uid: sp-dialog.BaseDialog.close
+            - '@microsoft/sp-dialog!IDialogConfiguration:interface'
+  - uid: '@microsoft/sp-dialog!BaseDialog#close:member(1)'
     summary: Close the dialog.
     remarks: >-
       This will void the permission to show for this dialog. Every dialog should have a mechanism to eventually close to
@@ -83,11 +83,13 @@ items:
       content: 'close(): Promise<void>;'
       return:
         type:
-          - Promise<void>
+          - '@microsoft/sp-dialog!BaseDialog#close~0:complex'
         description: 'A promise that resolves when the dialog is visually closed, or if it was already closed'
-  - uid: sp-dialog.BaseDialog.domElement
+  - uid: '@microsoft/sp-dialog!BaseDialog#domElement:member'
     summary: Use this property to access the container element provided by the framework for rendering.
-    remarks: 'See [BaseDialog.render()](xref:sp-dialog.BaseDialog.render) for more information on rendering.'
+    remarks: >-
+      See [BaseDialog.render()](xref:@microsoft/sp-dialog!BaseDialog#render:member(1)) for more information on
+      rendering.
     name: domElement
     fullName: domElement
     langs:
@@ -97,8 +99,8 @@ items:
       content: 'protected readonly domElement: HTMLElement;'
       return:
         type:
-          - HTMLElement
-  - uid: sp-dialog.BaseDialog.isHidden
+          - '!HTMLElement:interface'
+  - uid: '@microsoft/sp-dialog!BaseDialog#isHidden:member'
     summary: If the dialog is visually hidden.
     remarks: >-
       This happens when the dialog goes behind a secondary dialog. Note that this is different from closed, because the
@@ -113,7 +115,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-dialog.BaseDialog.isOpen
+  - uid: '@microsoft/sp-dialog!BaseDialog#isOpen:member'
     summary: >-
       If the dialog is visually open. This returns true during onBeforeOpen() because there is a visual component. It
       returns false when the dialog is hidden.
@@ -127,7 +129,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-dialog.BaseDialog.isSecondary
+  - uid: '@microsoft/sp-dialog!BaseDialog#isSecondary:member'
     summary: If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.
     name: isSecondary
     fullName: isSecondary
@@ -139,7 +141,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-dialog.BaseDialog.onAfterClose
+  - uid: '@microsoft/sp-dialog!BaseDialog#onAfterClose:member(1)'
     summary: This method is called after the dialog is visually closed and gives an opportunity for doing clean up.
     remarks: >-
       The dialog lifecycle completes after closing and there should be no resources left inside the object. Even though
@@ -157,7 +159,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-dialog.BaseDialog.onBeforeOpen
+  - uid: '@microsoft/sp-dialog!BaseDialog#onBeforeOpen:member(1)'
     summary: >-
       This method is called before the render method and can be overridden to make preparations for rendering. The
       loading indicator is displayed during the lifetime of this method.
@@ -171,11 +173,11 @@ items:
       content: 'protected onBeforeOpen(): Promise<void>;'
       return:
         type:
-          - Promise<void>
+          - '@microsoft/sp-dialog!BaseDialog#onBeforeOpen~0:complex'
         description: >-
           A promise that resolves when the operations are done and the dialog is ready to render. If the promise is
           rejected, the dialog will not be rendered and `onAfterClose()` will not be called.
-  - uid: sp-dialog.BaseDialog.render
+  - uid: '@microsoft/sp-dialog!BaseDialog#render:member(1)'
     summary: Renders the contents of the dialog.
     remarks: >-
       The `render` method must be implemented to render the content of the dialog in the container element provided by
@@ -200,7 +202,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-dialog.BaseDialog.secondaryDialogProvider
+  - uid: '@microsoft/sp-dialog!BaseDialog#secondaryDialogProvider:member'
     summary: >-
       An active dialog is permitted to show a secondary dialog on top of itself. By design, only two layers of dialogs
       are permitted.
@@ -217,8 +219,8 @@ items:
       content: 'readonly secondaryDialogProvider: ISecondaryDialogProvider | undefined;'
       return:
         type:
-          - ISecondaryDialogProvider | undefined
-  - uid: sp-dialog.BaseDialog.show
+          - '@microsoft/sp-dialog!BaseDialog#secondaryDialogProvider~0:complex'
+  - uid: '@microsoft/sp-dialog!BaseDialog#show:member(1)'
     summary: Request the framework to show this dialog.
     name: show(options)
     fullName: show(options)
@@ -229,12 +231,57 @@ items:
       content: 'show(options?: IDialogShowOptions): Promise<void>;'
       return:
         type:
-          - Promise<void>
+          - '@microsoft/sp-dialog!BaseDialog#show~0:complex'
         description: >-
           A promise that resolves once the dialog is successfully closed (after being shown). The promise rejects if the
           request is rejected or aborted.
       parameters:
         - id: options
-          description: 'Dialog showing options. See [IDialogShowOptions](xref:sp-dialog.IDialogShowOptions) for more information.'
+          description: >-
+            Dialog showing options. See [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for
+            more information.
           type:
-            - sp-dialog.IDialogShowOptions
+            - '@microsoft/sp-dialog!IDialogShowOptions:interface'
+references:
+  - uid: '@microsoft/sp-dialog!IDialogConfiguration:interface'
+    name: IDialogConfiguration
+  - uid: '@microsoft/sp-dialog!BaseDialog#close~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '!HTMLElement:interface'
+    name: HTMLElement
+  - uid: '@microsoft/sp-dialog!BaseDialog#onBeforeOpen~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '@microsoft/sp-dialog!BaseDialog#secondaryDialogProvider~0:complex'
+    name: ISecondaryDialogProvider | undefined
+    fullName: ISecondaryDialogProvider | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider:interface'
+        name: ISecondaryDialogProvider
+        fullName: ISecondaryDialogProvider
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-dialog!BaseDialog#show~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    name: IDialogShowOptions

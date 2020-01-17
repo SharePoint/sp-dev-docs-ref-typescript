@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library.SPEvent
+  - uid: '@microsoft/sp-core-library!SPEvent:class'
     summary: Represents a framework event that components can subscribe to.
     remarks: >-
       Examples of events in a web application might include: the user clicking a button, the system navigating to
@@ -27,11 +27,11 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-core-library
+    package: '@microsoft/sp-core-library!'
     children:
-      - sp-core-library.SPEvent.add
-      - sp-core-library.SPEvent.remove
-  - uid: sp-core-library.SPEvent.add
+      - '@microsoft/sp-core-library!SPEvent#add:member(1)'
+      - '@microsoft/sp-core-library!SPEvent#remove:member(1)'
+  - uid: '@microsoft/sp-core-library!SPEvent#add:member(1)'
     summary: Registers a callback that will be invoked whenever the event occurs.
     remarks: >-
       The same object can add multiple event handlers to the same event. Since BaseComponent implements the
@@ -55,12 +55,12 @@ items:
             be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event
             handler failed to catch an exception.
           type:
-            - sp-core-library.ISPEventObserver
+            - '@microsoft/sp-core-library!ISPEventObserver:interface'
         - id: eventHandler
           description: A callback function that will be invoked whenever the event occurs
           type:
             - '(eventArgs: TEventArgs) => void'
-  - uid: sp-core-library.SPEvent.remove
+  - uid: '@microsoft/sp-core-library!SPEvent#remove:member(1)'
     summary: Unregisters a callback that was registered using add().
     remarks: 'If the event handler has already been removed, or if it was never added, then this method has no effect.'
     name: 'remove(observer, eventHandler)'
@@ -78,8 +78,11 @@ items:
         - id: observer
           description: This must be the same observer that was passed to the add() function.
           type:
-            - sp-core-library.ISPEventObserver
+            - '@microsoft/sp-core-library!ISPEventObserver:interface'
         - id: eventHandler
           description: The event handler to remove; this must be the same object instance that was passed to the add() function.
           type:
             - '(eventArgs: TEventArgs) => void'
+references:
+  - uid: '@microsoft/sp-core-library!ISPEventObserver:interface'
+    name: ISPEventObserver

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-listview-extensibility.BaseFieldCustomizer
+  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer:class'
     summary: >-
       This is the base class that third parties should extend when implementing a client-side extension that customizes
       the appearance of fields in a SharePoint ListView.
@@ -13,13 +13,15 @@ items:
       - typeScript
     type: class
     extends:
-      - 'BaseExtension<TProperties> '
-    package: sp-listview-extensibility
+      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~1:complex'
+    package: '@microsoft/sp-listview-extensibility!'
     children:
-      - sp-listview-extensibility.BaseFieldCustomizer.context
-      - sp-listview-extensibility.BaseFieldCustomizer.onDisposeCell
-      - sp-listview-extensibility.BaseFieldCustomizer.onRenderCell
-  - uid: sp-listview-extensibility.BaseFieldCustomizer.context
+      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#context:member'
+      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onDisposeCell:member(1)'
+      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onRenderCell:member(1)'
+  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#context:member'
     summary: Use the context object to access common services and state associated with the component.
     remarks: >-
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
@@ -34,8 +36,8 @@ items:
       content: 'protected readonly context: FieldCustomizerContext;'
       return:
         type:
-          - sp-listview-extensibility.FieldCustomizerContext
-  - uid: sp-listview-extensibility.BaseFieldCustomizer.onDisposeCell
+          - '@microsoft/sp-listview-extensibility!default:class'
+  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onDisposeCell:member(1)'
     name: onDisposeCell(event)
     fullName: onDisposeCell(event)
     langs:
@@ -51,8 +53,8 @@ items:
         - id: event
           description: ''
           type:
-            - sp-listview-extensibility.IFieldCustomizerCellEventParameters
-  - uid: sp-listview-extensibility.BaseFieldCustomizer.onRenderCell
+            - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
+  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onRenderCell:member(1)'
     name: onRenderCell(event)
     fullName: onRenderCell(event)
     langs:
@@ -68,4 +70,27 @@ items:
         - id: event
           description: ''
           type:
-            - sp-listview-extensibility.IFieldCustomizerCellEventParameters
+            - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
+references:
+  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~0:complex'
+    name: BaseExtension<TProperties>
+    fullName: BaseExtension<TProperties>
+    spec.typeScript:
+      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
+        name: BaseExtension
+        fullName: BaseExtension
+      - name: '<TProperties> '
+        fullName: '<TProperties> '
+  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~1:complex'
+    name: BaseExtension<TProperties>
+    fullName: BaseExtension<TProperties>
+    spec.typeScript:
+      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
+        name: BaseExtension
+        fullName: BaseExtension
+      - name: '<TProperties> '
+        fullName: '<TProperties> '
+  - uid: '@microsoft/sp-listview-extensibility!default:class'
+    name: FieldCustomizerContext
+  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
+    name: IFieldCustomizerCellEventParameters

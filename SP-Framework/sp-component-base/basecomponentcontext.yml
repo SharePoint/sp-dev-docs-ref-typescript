@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.BaseComponentContext
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
     summary: The base class for context objects for client-side components.
     remarks: >-
       A "context" object is a collection of well-known services and other objects that are likely to be needed by
@@ -16,23 +16,23 @@ items:
       - typeScript
     type: class
     implements:
-      - sp-core-library.IDisposable
-    package: sp-component-base
+      - '@microsoft/sp-core-library!IDisposable:interface'
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.BaseComponentContext.aadHttpClientFactory
-      - sp-component-base.BaseComponentContext.aadTokenProviderFactory
-      - sp-component-base.BaseComponentContext.dispose
-      - sp-component-base.BaseComponentContext.dynamicDataProvider
-      - sp-component-base.BaseComponentContext.dynamicDataSourceManager
-      - sp-component-base.BaseComponentContext.httpClient
-      - sp-component-base.BaseComponentContext.instanceId
-      - sp-component-base.BaseComponentContext.isDisposed
-      - sp-component-base.BaseComponentContext.manifest
-      - sp-component-base.BaseComponentContext.msGraphClientFactory
-      - sp-component-base.BaseComponentContext.pageContext
-      - sp-component-base.BaseComponentContext.serviceScope
-      - sp-component-base.BaseComponentContext.spHttpClient
-  - uid: sp-component-base.BaseComponentContext.aadHttpClientFactory
+      - '@microsoft/sp-component-base!BaseComponentContext#aadHttpClientFactory:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#aadTokenProviderFactory:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#dispose:member(1)'
+      - '@microsoft/sp-component-base!BaseComponentContext#dynamicDataProvider:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#dynamicDataSourceManager:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#httpClient:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#instanceId:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#isDisposed:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#manifest:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#msGraphClientFactory:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#pageContext:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#serviceScope:member'
+      - '@microsoft/sp-component-base!BaseComponentContext#spHttpClient:member'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#aadHttpClientFactory:member'
     summary: The instance of AadHttpClientFactory created for this instance of component
     name: aadHttpClientFactory
     fullName: aadHttpClientFactory
@@ -43,8 +43,8 @@ items:
       content: 'readonly aadHttpClientFactory: AadHttpClientFactory;'
       return:
         type:
-          - sp-http.AadHttpClientFactory
-  - uid: sp-component-base.BaseComponentContext.aadTokenProviderFactory
+          - '@microsoft/sp-http!AadHttpClientFactory:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#aadTokenProviderFactory:member'
     summary: The instance of AadTokenProviderFactory created for this instance of component
     name: aadTokenProviderFactory
     fullName: aadTokenProviderFactory
@@ -55,8 +55,8 @@ items:
       content: 'readonly aadTokenProviderFactory: AadTokenProviderFactory;'
       return:
         type:
-          - sp-http.AadTokenProviderFactory
-  - uid: sp-component-base.BaseComponentContext.dispose
+          - '@microsoft/sp-http!AadTokenProviderFactory:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#dispose:member(1)'
     summary: Disposes the base component context.
     name: dispose()
     fullName: dispose()
@@ -69,7 +69,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-component-base.BaseComponentContext.dynamicDataProvider
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#dynamicDataProvider:member'
     summary: Returns the Dynamic Data Provider associated with the component.
     name: dynamicDataProvider
     fullName: dynamicDataProvider
@@ -80,8 +80,8 @@ items:
       content: 'readonly dynamicDataProvider: DynamicDataProvider;'
       return:
         type:
-          - sp-component-base.DynamicDataProvider
-  - uid: sp-component-base.BaseComponentContext.dynamicDataSourceManager
+          - '@microsoft/sp-component-base!default:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#dynamicDataSourceManager:member'
     summary: Returns the Dynamic Data Source Manager associated with the component.
     name: dynamicDataSourceManager
     fullName: dynamicDataSourceManager
@@ -92,8 +92,8 @@ items:
       content: 'readonly dynamicDataSourceManager: DynamicDataSourceManager;'
       return:
         type:
-          - sp-component-base.DynamicDataSourceManager
-  - uid: sp-component-base.BaseComponentContext.httpClient
+          - '@microsoft/sp-component-base!default:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#httpClient:member'
     summary: The instance of HttpClient created for this instance of component
     name: httpClient
     fullName: httpClient
@@ -104,8 +104,8 @@ items:
       content: 'readonly httpClient: HttpClient;'
       return:
         type:
-          - sp-http.HttpClient
-  - uid: sp-component-base.BaseComponentContext.instanceId
+          - '@microsoft/sp-http!HttpClient:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#instanceId:member'
     summary: A unique identifier for the instance of the component.
     remarks: >-
       A component implementation can be loaded multiple times on the page. For example, if the component is a charting
@@ -121,7 +121,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-component-base.BaseComponentContext.isDisposed
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#isDisposed:member'
     summary: Returns true if the context is disposed.
     name: isDisposed
     fullName: isDisposed
@@ -133,7 +133,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-component-base.BaseComponentContext.manifest
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#manifest:member'
     summary: Manifest for the client-side component.
     name: manifest
     fullName: manifest
@@ -144,8 +144,8 @@ items:
       content: 'readonly manifest: IClientSideComponentManifest;'
       return:
         type:
-          - IClientSideComponentManifest
-  - uid: sp-component-base.BaseComponentContext.msGraphClientFactory
+          - '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#msGraphClientFactory:member'
     summary: The instance of MSGraphClientFactory created for this instance of component
     name: msGraphClientFactory
     fullName: msGraphClientFactory
@@ -156,8 +156,8 @@ items:
       content: 'readonly msGraphClientFactory: MSGraphClientFactory;'
       return:
         type:
-          - sp-http.MSGraphClientFactory
-  - uid: sp-component-base.BaseComponentContext.pageContext
+          - '@microsoft/sp-http!MSGraphClientFactory:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#pageContext:member'
     summary: >-
       The page context provides standard definitions for common SharePoint objects that need to be shared between the
       client-side application, web parts, and other components.
@@ -170,9 +170,9 @@ items:
       content: 'readonly pageContext: PageContext;'
       return:
         type:
-          - sp-page-context.PageContext
-  - uid: sp-component-base.BaseComponentContext.serviceScope
-    summary: 'The associated [ServiceScope](xref:sp-core-library.ServiceScope) for this component.'
+          - '@microsoft/sp-page-context!PageContext:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#serviceScope:member'
+    summary: 'The associated [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class) for this component.'
     remarks: A child service scope is created for each client-side component.
     name: serviceScope
     fullName: serviceScope
@@ -183,8 +183,8 @@ items:
       content: 'readonly serviceScope: ServiceScope;'
       return:
         type:
-          - sp-core-library.ServiceScope
-  - uid: sp-component-base.BaseComponentContext.spHttpClient
+          - '@microsoft/sp-core-library!ServiceScope:class'
+  - uid: '@microsoft/sp-component-base!BaseComponentContext#spHttpClient:member'
     summary: The instance of SpHttpClient created for this instance of component
     name: spHttpClient
     fullName: spHttpClient
@@ -195,4 +195,25 @@ items:
       content: 'readonly spHttpClient: SPHttpClient;'
       return:
         type:
-          - sp-http.SPHttpClient
+          - '@microsoft/sp-http!SPHttpClient:class'
+references:
+  - uid: '@microsoft/sp-core-library!IDisposable:interface'
+    name: IDisposable
+  - uid: '@microsoft/sp-http!AadHttpClientFactory:class'
+    name: AadHttpClientFactory
+  - uid: '@microsoft/sp-http!AadTokenProviderFactory:class'
+    name: AadTokenProviderFactory
+  - uid: '@microsoft/sp-component-base!default:class'
+    name: DynamicDataProvider
+  - uid: '@microsoft/sp-http!HttpClient:class'
+    name: HttpClient
+  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    name: IClientSideComponentManifest
+  - uid: '@microsoft/sp-http!MSGraphClientFactory:class'
+    name: MSGraphClientFactory
+  - uid: '@microsoft/sp-page-context!PageContext:class'
+    name: PageContext
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-http!SPHttpClient:class'
+    name: SPHttpClient

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.AadHttpClientFactory
+  - uid: '@microsoft/sp-http!AadHttpClientFactory:class'
     summary: >-
       Returns a preinitialized version of the AadHttpClient for a given resource url. For more information:
       [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
@@ -12,11 +12,11 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.AadHttpClientFactory.getClient
-      - sp-http.AadHttpClientFactory.serviceKey
-  - uid: sp-http.AadHttpClientFactory.getClient
+      - '@microsoft/sp-http!AadHttpClientFactory#getClient:member(1)'
+      - '@microsoft/sp-http!AadHttpClientFactory.serviceKey:member'
+  - uid: '@microsoft/sp-http!AadHttpClientFactory#getClient:member(1)'
     summary: >-
       Returns an instance of the AadHttpClient that communicates with the current tenant's configurable Service
       Principal.
@@ -29,14 +29,14 @@ items:
       content: 'getClient(resourceEndpoint: string): Promise<AadHttpClient>;'
       return:
         type:
-          - Promise<AadHttpClient>
+          - '@microsoft/sp-http!AadHttpClientFactory#getClient~0:complex'
         description: ''
       parameters:
         - id: resourceEndpoint
           description: The target AAD application's resource endpoint.
           type:
             - string
-  - uid: sp-http.AadHttpClientFactory.serviceKey
+  - uid: '@microsoft/sp-http!AadHttpClientFactory.serviceKey:member'
     summary: The service key for AadHttpClientFactory.
     name: serviceKey
     fullName: serviceKey
@@ -47,4 +47,33 @@ items:
       content: 'static readonly serviceKey: ServiceKey<AadHttpClientFactory>;'
       return:
         type:
-          - ServiceKey<AadHttpClientFactory>
+          - '@microsoft/sp-http!AadHttpClientFactory.serviceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-http!AadHttpClientFactory#getClient~0:complex'
+    name: Promise<AadHttpClient>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: AadHttpClient
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!AadHttpClientFactory.serviceKey~0:complex'
+    name: ServiceKey<AadHttpClientFactory>
+    fullName: ServiceKey<default>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: AadHttpClientFactory
+        fullName: default
+      - name: '>'
+        fullName: '>'

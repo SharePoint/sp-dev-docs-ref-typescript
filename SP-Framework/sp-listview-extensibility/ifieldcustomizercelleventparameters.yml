@@ -1,19 +1,19 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters
+  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
     summary: Event parameters for BaseFieldCustomizer.onRenderCell()
     name: IFieldCustomizerCellEventParameters
     fullName: IFieldCustomizerCellEventParameters
     langs:
       - typeScript
     type: interface
-    package: sp-listview-extensibility
+    package: '@microsoft/sp-listview-extensibility!'
     children:
-      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.domElement
-      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.fieldValue
-      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.listItem
-      - sp-listview-extensibility.IFieldCustomizerCellEventParameters.userData
-  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.domElement
+      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#domElement:member'
+      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#fieldValue:member'
+      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#listItem:member'
+      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#userData:member'
+  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#domElement:member'
     summary: >-
       The HTML "div" element that the extension will take ownership of. This ownership will end when onDisposeCell() is
       called.
@@ -26,8 +26,8 @@ items:
       content: 'readonly domElement: HTMLDivElement;'
       return:
         type:
-          - HTMLDivElement
-  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.fieldValue
+          - '!HTMLDivElement:interface'
+  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#fieldValue:member'
     summary: The value of the field being rendered.
     name: fieldValue
     fullName: fieldValue
@@ -39,7 +39,7 @@ items:
       return:
         type:
           - any
-  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.listItem
+  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#listItem:member'
     summary: The list item being edited.
     name: listItem
     fullName: listItem
@@ -50,8 +50,8 @@ items:
       content: 'readonly listItem: ListItemAccessor;'
       return:
         type:
-          - sp-listview-extensibility.ListItemAccessor
-  - uid: sp-listview-extensibility.IFieldCustomizerCellEventParameters.userData
+          - '@microsoft/sp-listview-extensibility!default:class'
+  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#userData:member'
     summary: An implementation defined storage property.
     remarks: >-
       For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request
@@ -67,3 +67,8 @@ items:
       return:
         type:
           - any
+references:
+  - uid: '!HTMLDivElement:interface'
+    name: HTMLDivElement
+  - uid: '@microsoft/sp-listview-extensibility!default:class'
+    name: ListItemAccessor

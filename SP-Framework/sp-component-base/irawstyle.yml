@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.IRawStyle
+  - uid: '@microsoft/sp-component-base!IRawStyle:interface'
     summary: 'IStyleObject extends a raw style objects, but allows selectors to be defined under the selectors node.'
     name: IRawStyle
     fullName: IRawStyle
@@ -8,12 +8,14 @@ items:
       - typeScript
     type: interface
     extends:
-      - 'IRawStyleBase '
-    package: sp-component-base
+      - '@microsoft/sp-component-base!IRawStyleBase:interface'
+    inheritance:
+      - type: '@microsoft/sp-component-base!IRawStyleBase:interface'
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.IRawStyle.displayName
-      - sp-component-base.IRawStyle.selectors
-  - uid: sp-component-base.IRawStyle.displayName
+      - '@microsoft/sp-component-base!IRawStyle#displayName:member'
+      - '@microsoft/sp-component-base!IRawStyle#selectors:member'
+  - uid: '@microsoft/sp-component-base!IRawStyle#displayName:member'
     summary: Display name for the style.
     name: displayName
     fullName: displayName
@@ -25,7 +27,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-component-base.IRawStyle.selectors
+  - uid: '@microsoft/sp-component-base!IRawStyle#selectors:member'
     summary: Custom selectors for the style.
     name: selectors
     fullName: selectors
@@ -39,7 +41,32 @@ items:
             };
       return:
         type:
-          - |-
-            {
-                    [key: string]: IStyle;
-                }
+          - '@microsoft/sp-component-base!IRawStyle#selectors~0:complex'
+references:
+  - uid: '@microsoft/sp-component-base!IRawStyleBase:interface'
+    name: IRawStyleBase
+  - uid: '@microsoft/sp-component-base!IRawStyle#selectors~0:complex'
+    name: |-
+      {
+              [key: string]: IStyle;
+          }
+    fullName: |-
+      {
+              [key: string]: IStyle;
+          }
+    spec.typeScript:
+      - name: |-
+          {
+                  [key: string]: 
+        fullName: |-
+          {
+                  [key: string]: 
+      - uid: '@microsoft/sp-component-base!IStyle:type'
+        name: IStyle
+        fullName: IStyle
+      - name: |-
+          ;
+              }
+        fullName: |-
+          ;
+              }

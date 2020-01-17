@@ -1,0 +1,71 @@
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
+    summary: PropertyPane field.
+    name: IPropertyPaneField
+    fullName: IPropertyPaneField
+    langs:
+      - typeScript
+    type: interface
+    syntax:
+      typeParameters:
+        - id: TProperties
+    package: '@microsoft/sp-property-pane!'
+    children:
+      - '@microsoft/sp-property-pane!IPropertyPaneField#properties:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneField#shouldFocus:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneField#targetProperty:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneField#type:member'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneField#properties:member'
+    summary: Strongly typed properties object. Specific to each field type.
+    remarks: 'Example: Checkbox has ICheckboxProps, TextField has ITextField props.'
+    name: properties
+    fullName: properties
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'properties: TProperties;'
+      return:
+        type:
+          - TProperties
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneField#shouldFocus:member'
+    summary: Whether this control should be focused.
+    remarks: The default value is false.
+    name: shouldFocus
+    fullName: shouldFocus
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'shouldFocus?: boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneField#targetProperty:member'
+    summary: Target property from the web part's property bag.
+    name: targetProperty
+    fullName: targetProperty
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'targetProperty: string;'
+      return:
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneField#type:member'
+    summary: Type of the PropertyPane field.
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'type: PropertyPaneFieldType;'
+      return:
+        type:
+          - '@microsoft/sp-property-pane!PropertyPaneFieldType:enum'
+references:
+  - uid: '@microsoft/sp-property-pane!PropertyPaneFieldType:enum'
+    name: PropertyPaneFieldType
