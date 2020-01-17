@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-application-base.BaseApplicationCustomizer
+  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer:class'
     summary: >-
       This is the base class that third parties should extend when implementing a client-side extension that runs when
       an application is first starting.
@@ -17,13 +17,15 @@ items:
       - typeScript
     type: class
     extends:
-      - 'BaseExtension<TProperties> '
-    package: sp-application-base
+      - '@microsoft/sp-application-base!BaseApplicationCustomizer~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-application-base!BaseApplicationCustomizer~1:complex'
+    package: '@microsoft/sp-application-base!'
     children:
-      - sp-application-base.BaseApplicationCustomizer.context
-      - sp-application-base.BaseApplicationCustomizer.dispose
-      - sp-application-base.BaseApplicationCustomizer.onPlaceholdersChanged
-  - uid: sp-application-base.BaseApplicationCustomizer.context
+      - '@microsoft/sp-application-base!BaseApplicationCustomizer#context:member'
+      - '@microsoft/sp-application-base!BaseApplicationCustomizer#dispose:member(1)'
+      - '@microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)'
+  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#context:member'
     name: context
     fullName: context
     langs:
@@ -33,8 +35,8 @@ items:
       content: 'protected readonly context: ApplicationCustomizerContext;'
       return:
         type:
-          - sp-application-base.ApplicationCustomizerContext
-  - uid: sp-application-base.BaseApplicationCustomizer.dispose
+          - '@microsoft/sp-application-base!default:class'
+  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#dispose:member(1)'
     summary: Disposes the component.
     remarks: >-
       Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
@@ -50,7 +52,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-application-base.BaseApplicationCustomizer.onPlaceholdersChanged
+  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)'
     summary: >-
       This event method is called when the placeholders of the host application change, come into existence, or
       disappear.
@@ -69,4 +71,25 @@ items:
         - id: placeholderProvider
           description: ''
           type:
-            - sp-application-base.PlaceholderProvider
+            - '@microsoft/sp-application-base!default:class'
+references:
+  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer~0:complex'
+    name: BaseExtension<TProperties>
+    fullName: BaseExtension<TProperties>
+    spec.typeScript:
+      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
+        name: BaseExtension
+        fullName: BaseExtension
+      - name: '<TProperties> '
+        fullName: '<TProperties> '
+  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer~1:complex'
+    name: BaseExtension<TProperties>
+    fullName: BaseExtension<TProperties>
+    spec.typeScript:
+      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
+        name: BaseExtension
+        fullName: BaseExtension
+      - name: '<TProperties> '
+        fullName: '<TProperties> '
+  - uid: '@microsoft/sp-application-base!default:class'
+    name: ApplicationCustomizerContext

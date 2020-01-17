@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.MSGraphClientFactory
+  - uid: '@microsoft/sp-http!MSGraphClientFactory:class'
     summary: >-
       Returns a preinitialized version of the MSGraphClient. For more information:
       [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph)
@@ -12,11 +12,11 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.MSGraphClientFactory.getClient
-      - sp-http.MSGraphClientFactory.serviceKey
-  - uid: sp-http.MSGraphClientFactory.getClient
+      - '@microsoft/sp-http!MSGraphClientFactory#getClient:member(1)'
+      - '@microsoft/sp-http!MSGraphClientFactory.serviceKey:member'
+  - uid: '@microsoft/sp-http!MSGraphClientFactory#getClient:member(1)'
     summary: >-
       Returns an instance of the MSGraphClient that communicates with the current tenant's configurable Service
       Principal.
@@ -29,9 +29,9 @@ items:
       content: 'getClient(): Promise<MSGraphClient>;'
       return:
         type:
-          - Promise<MSGraphClient>
+          - '@microsoft/sp-http!MSGraphClientFactory#getClient~0:complex'
         description: ''
-  - uid: sp-http.MSGraphClientFactory.serviceKey
+  - uid: '@microsoft/sp-http!MSGraphClientFactory.serviceKey:member'
     summary: The service key for MSGraphClientFactory.
     name: serviceKey
     fullName: serviceKey
@@ -42,4 +42,33 @@ items:
       content: 'static readonly serviceKey: ServiceKey<MSGraphClientFactory>;'
       return:
         type:
-          - ServiceKey<MSGraphClientFactory>
+          - '@microsoft/sp-http!MSGraphClientFactory.serviceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-http!MSGraphClientFactory#getClient~0:complex'
+    name: Promise<MSGraphClient>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: MSGraphClient
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!MSGraphClientFactory.serviceKey~0:complex'
+    name: ServiceKey<MSGraphClientFactory>
+    fullName: ServiceKey<default>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: MSGraphClientFactory
+        fullName: default
+      - name: '>'
+        fullName: '>'

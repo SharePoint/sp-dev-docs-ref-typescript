@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "@microsoft/sp-loader!",
+  "docComment": "/**\n * The SharePoint Framework loader\n *\n * @remarks\n *\n * Built on familiar standards such as RequireJS and WebPack, the loader is the first part of the SharePoint Framework to load on a page. It manages versioning and loading of client-side components.\n *\n * @packagedocumentation\n */\n",
+  "name": "@microsoft/sp-loader",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@microsoft/sp-loader!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "@microsoft/sp-loader!ILoadScriptOptions:interface",
+          "docComment": "/**\n * Options for the loadScript() method in ISPComponentLoader\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ILoadScriptOptions "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "ILoadScriptOptions",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@microsoft/sp-loader!ILoadScriptOptions#globalExportsName:member",
+              "docComment": "/**\n * If set, the loaded script will be stored in a global variable under this name.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "globalExportsName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "globalExportsName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@microsoft/sp-loader!SPComponentLoader:class",
+          "docComment": "/**\n * Component loader. Needs to be initialized with an implemented `ISPComponentLoader`.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class SPComponentLoader "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "SPComponentLoader",
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.getManifests:member(1)",
+              "docComment": "/**\n * Returns static copies of all the manifests.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static getManifests(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IClientSideComponentManifest",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getManifests"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)",
+              "docComment": "/**\n * Loads a component from a manifest.\n *\n * @param manifest - Manifest of the module to load.\n *\n * @returns A promise containing the loaded module.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static loadComponent<TComponent>(manifest: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IClientSideComponentManifest",
+                  "canonicalReference": "@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TComponent>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "manifest",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TComponent",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "loadComponent"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)",
+              "docComment": "/**\n * Resolve a component id and version, and load it.\n *\n * @param id - The id of the component to load.\n *\n * @param version - The version of the component to load. If version is not defined, the method will load any version of the component.\n *\n * @returns A promise containing the loaded module.\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static loadComponentById<TComponent>(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", version?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TComponent>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "version",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TComponent",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "loadComponentById"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)",
+              "docComment": "/**\n * Inserts a `<link ... />` tag for a stylesheet.\n *\n * @param url - The CSS file URL.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static loadCss(url: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "url",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "loadCss"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@microsoft/sp-loader!SPComponentLoader.loadScript:member(1)",
+              "docComment": "/**\n * Given a URL, load a script.\n *\n * @remarks\n *\n * If a script with a global variable is being loaded, the global variable already exists, and the script fails to load (because of a syntax error, for example), the original global variable may be returned and an error may not be propagated.\n *\n * @param url - The script URL.\n *\n * @param options - globalExportsName: If the script isn't an AMD module and loads a global member on the page, specify the global member's name.\n *\n * @returns A promise containing the loaded module.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static loadScript<TModule>(url: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ILoadScriptOptions",
+                  "canonicalReference": "@microsoft/sp-loader!ILoadScriptOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<TModule>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "url",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  }
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "TModule",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  }
+                }
+              ],
+              "name": "loadScript"
+            }
+          ],
+          "implementsTokenRanges": []
+        }
+      ]
+    }
+  ]
+}

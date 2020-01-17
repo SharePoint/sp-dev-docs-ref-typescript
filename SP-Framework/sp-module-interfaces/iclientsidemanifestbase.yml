@@ -1,0 +1,64 @@
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+    summary: This interface defines members that are common between all deployable manifests.
+    name: IClientSideManifestBase
+    fullName: IClientSideManifestBase
+    langs:
+      - typeScript
+    type: interface
+    package: '@microsoft/sp-module-interfaces!'
+    children:
+      - '@microsoft/sp-module-interfaces!IClientSideManifestBase#id:member'
+      - '@microsoft/sp-module-interfaces!IClientSideManifestBase#manifestVersion:member'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase#id:member'
+    summary: >-
+      A universally unique component id. Each client-side component is required to have this id. Once an id has been
+      used for a component, it cannot be changed. A change in this value is treated same as the creation of a new
+      component. Two components are never expected to have the same id.
+
+
+      Usage: Uniquely identify a client-side component.
+
+
+      Supported values: a GUID string
+
+
+      Example: `"dbef608d-3ad5-4f8f-b139-d916f2f0a294"`
+    name: id
+    fullName: id
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'id: string;'
+      return:
+        type:
+          - string
+  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase#manifestVersion:member'
+    summary: >-
+      Version of the component manifest schema. The value of this field is controlled by Microsoft. The purpose of this
+      field is to help manage upgrades of the component manifest schema.
+    remarks: >-
+      A component developer needs to only confirm that they are using the correct value per the manifest schema. Please
+      read the "manifest upgrade rules" for more details on when the schema could change. Note, manifest schema version
+      upgrade will be considered a big API change event and will be advertised broadly.
+
+
+      Usage: To help support multiple manifest schema versions.
+
+
+      Supported values: A positive integer.
+
+
+      Example: `1`
+    name: manifestVersion
+    fullName: manifestVersion
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'manifestVersion: number;'
+      return:
+        type:
+          - number

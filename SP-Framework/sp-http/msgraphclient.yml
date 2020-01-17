@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.MSGraphClient
+  - uid: '@microsoft/sp-http!MSGraphClient:class'
     summary: MSGraphClient is used to perform REST calls against Microsoft Graph.
     remarks: >-
       The Microsoft Graph JavaScript client library is a lightweight wrapper around the Microsoft Graph API. This class
@@ -20,10 +20,10 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.MSGraphClient.api
-  - uid: sp-http.MSGraphClient.api
+      - '@microsoft/sp-http!MSGraphClient#api:member(1)'
+  - uid: '@microsoft/sp-http!MSGraphClient#api:member(1)'
     summary: All calls to Microsoft Graph are chained together starting with the api function.
     remarks: >-
       Path supports the following formats: \* me \* /me \* https://graph.microsoft.com/v1.0/me \*
@@ -41,7 +41,7 @@ items:
       content: 'api(path: string, config?: Options): IGraphRequest;'
       return:
         type:
-          - IGraphRequest
+          - '@microsoft/sp-http!IGraphRequest:interface'
         description: ''
       parameters:
         - id: path
@@ -51,4 +51,9 @@ items:
         - id: config
           description: Sets the configuration for this request.
           type:
-            - Options
+            - '@microsoft/microsoft-graph-client!Options:interface'
+references:
+  - uid: '@microsoft/sp-http!IGraphRequest:interface'
+    name: IGraphRequest
+  - uid: '@microsoft/microsoft-graph-client!Options:interface'
+    name: Options

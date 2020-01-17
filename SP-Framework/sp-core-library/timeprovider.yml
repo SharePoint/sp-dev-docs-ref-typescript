@@ -1,23 +1,23 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library.TimeProvider
+  - uid: '@microsoft/sp-core-library!TimeProvider:class'
     summary: >-
-      This is the default implementation of [ITimeProvider](xref:sp-core-library.ITimeProvider) that simply calls the
-      real browser APIs.
+      This is the default implementation of [ITimeProvider](xref:@microsoft/sp-core-library!ITimeProvider:interface)
+      that simply calls the real browser APIs.
     name: TimeProvider
     fullName: TimeProvider
     langs:
       - typeScript
     type: class
     implements:
-      - sp-core-library.ITimeProvider
-    package: sp-core-library
+      - '@microsoft/sp-core-library!ITimeProvider:interface'
+    package: '@microsoft/sp-core-library!'
     children:
-      - sp-core-library.TimeProvider.(constructor)
-      - sp-core-library.TimeProvider.getDate
-      - sp-core-library.TimeProvider.getTimestamp
-      - sp-core-library.TimeProvider.serviceKey
-  - uid: sp-core-library.TimeProvider.(constructor)
+      - '@microsoft/sp-core-library!TimeProvider:constructor(1)'
+      - '@microsoft/sp-core-library!TimeProvider#getDate:member(1)'
+      - '@microsoft/sp-core-library!TimeProvider#getTimestamp:member(1)'
+      - '@microsoft/sp-core-library!TimeProvider.serviceKey:member'
+  - uid: '@microsoft/sp-core-library!TimeProvider:constructor(1)'
     summary: Constructs a new instance of the `TimeProvider` class
     name: (constructor)(serviceScope)
     fullName: (constructor)(serviceScope)
@@ -30,8 +30,8 @@ items:
         - id: serviceScope
           description: ''
           type:
-            - sp-core-library.ServiceScope
-  - uid: sp-core-library.TimeProvider.getDate
+            - '@microsoft/sp-core-library!default:class'
+  - uid: '@microsoft/sp-core-library!TimeProvider#getDate:member(1)'
     summary: 'Returns the current date/time, similar to the Date class constructor.'
     name: getDate()
     fullName: getDate()
@@ -42,9 +42,9 @@ items:
       content: 'getDate(): Date;'
       return:
         type:
-          - Date
+          - '!Date:interface'
         description: ''
-  - uid: sp-core-library.TimeProvider.getTimestamp
+  - uid: '@microsoft/sp-core-library!TimeProvider#getTimestamp:member(1)'
     summary: 'Returns a DOMHighResTimeStamp timing measurement, as defined by the standard performance.now() API.'
     name: getTimestamp()
     fullName: getTimestamp()
@@ -57,7 +57,7 @@ items:
         type:
           - number
         description: ''
-  - uid: sp-core-library.TimeProvider.serviceKey
+  - uid: '@microsoft/sp-core-library!TimeProvider.serviceKey:member'
     summary: The service key for ITimeProvider.
     name: serviceKey
     fullName: serviceKey
@@ -68,4 +68,25 @@ items:
       content: 'static readonly serviceKey: ServiceKey<ITimeProvider>;'
       return:
         type:
-          - ServiceKey<ITimeProvider>
+          - '@microsoft/sp-core-library!TimeProvider.serviceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!ITimeProvider:interface'
+    name: ITimeProvider
+  - uid: '@microsoft/sp-core-library!default:class'
+    name: ServiceScope
+  - uid: '!Date:interface'
+    name: Date
+  - uid: '@microsoft/sp-core-library!TimeProvider.serviceKey~0:complex'
+    name: ServiceKey<ITimeProvider>
+    fullName: default<ITimeProvider>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceKey
+        fullName: default
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-core-library!ITimeProvider:interface'
+        name: ITimeProvider
+        fullName: ITimeProvider
+      - name: '>'
+        fullName: '>'

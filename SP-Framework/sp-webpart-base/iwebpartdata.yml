@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.IWebPartData
+  - uid: '@microsoft/sp-webpart-base!IWebPartData:interface'
     summary: This structure represents the serialized state of a web part.
     remarks: >-
       When the `serialize()` API is called on a web part, the output should be this structure. The structure of the
@@ -11,18 +11,18 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.IWebPartData.dataVersion
-      - sp-webpart-base.IWebPartData.description
-      - sp-webpart-base.IWebPartData.dynamicDataPaths
-      - sp-webpart-base.IWebPartData.dynamicDataValues
-      - sp-webpart-base.IWebPartData.id
-      - sp-webpart-base.IWebPartData.instanceId
-      - sp-webpart-base.IWebPartData.properties
-      - sp-webpart-base.IWebPartData.serverProcessedContent
-      - sp-webpart-base.IWebPartData.title
-  - uid: sp-webpart-base.IWebPartData.dataVersion
+      - '@microsoft/sp-webpart-base!IWebPartData#dataVersion:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#description:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#dynamicDataPaths:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#dynamicDataValues:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#id:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#instanceId:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#properties:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#serverProcessedContent:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#title:member'
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#dataVersion:member'
     summary: Web part data version
     remarks: >-
       Note that data version is different from the version field in the manifest. The manifest version is used to
@@ -44,7 +44,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-webpart-base.IWebPartData.description
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#description:member'
     summary: Web part description
     remarks: |-
       Used to display the description of the web part.
@@ -62,7 +62,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-webpart-base.IWebPartData.dynamicDataPaths
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#dynamicDataPaths:member'
     summary: Paths for the dynamic data.
     remarks: >-
       This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within
@@ -100,7 +100,7 @@ items:
             {
                     [path: string]: string;
                 }
-  - uid: sp-webpart-base.IWebPartData.dynamicDataValues
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#dynamicDataValues:member'
     summary: >-
       Static values for the dynamic data.This is used to reconstruct the dynamic data objects when deserializing the web
       part.
@@ -133,7 +133,7 @@ items:
             {
                     [path: string]: any;
                 }
-  - uid: sp-webpart-base.IWebPartData.id
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#id:member'
     summary: Universally unique web part Type id.
     remarks: 'Example: `"dbef608d-3ad5-4f8f-b139-d916f2f0a294"`'
     name: id
@@ -146,7 +146,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-webpart-base.IWebPartData.instanceId
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#instanceId:member'
     summary: >-
       Universally unique instance id of the web part. A web part can have multiple instances on a page. This id is
       expected to be universally unique across time and page boundaries.
@@ -164,7 +164,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-webpart-base.IWebPartData.properties
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#properties:member'
     summary: Web part specific properties. The individual web part owns the definition of these properties.
     remarks: >-
       Used by the web part to manage its internal metadata and config data. The framework code never touches these
@@ -185,7 +185,7 @@ items:
       return:
         type:
           - any
-  - uid: sp-webpart-base.IWebPartData.serverProcessedContent
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#serverProcessedContent:member'
     summary: The collections of data that can be processed by server side services like search index and link fixup
     name: serverProcessedContent
     fullName: serverProcessedContent
@@ -196,8 +196,8 @@ items:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
         type:
-          - sp-webpart-base.ISerializedServerProcessedData
-  - uid: sp-webpart-base.IWebPartData.title
+          - '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#title:member'
     summary: Web part title
     remarks: |-
       Used to display the name of the web part in the toolbox, web part gallery and the page.
@@ -215,3 +215,6 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
+    name: ISerializedServerProcessedData

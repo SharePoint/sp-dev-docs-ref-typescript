@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.IReadonlyTheme
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme:interface'
     summary: Immutable ITheme.
     name: IReadonlyTheme
     fullName: IReadonlyTheme
@@ -8,13 +8,15 @@ items:
       - typeScript
     type: interface
     extends:
-      - 'Readonly<ITheme> '
-    package: sp-component-base
+      - '@microsoft/sp-component-base!IReadonlyTheme~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-component-base!IReadonlyTheme~1:complex'
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.IReadonlyTheme.fonts
-      - sp-component-base.IReadonlyTheme.palette
-      - sp-component-base.IReadonlyTheme.semanticColors
-  - uid: sp-component-base.IReadonlyTheme.fonts
+      - '@microsoft/sp-component-base!IReadonlyTheme#fonts:member'
+      - '@microsoft/sp-component-base!IReadonlyTheme#palette:member'
+      - '@microsoft/sp-component-base!IReadonlyTheme#semanticColors:member'
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme#fonts:member'
     summary: Font styles for different sizes.
     name: fonts
     fullName: fonts
@@ -25,8 +27,8 @@ items:
       content: 'readonly fonts: Readonly<IReadonlyFontStyles>;'
       return:
         type:
-          - Readonly<IReadonlyFontStyles>
-  - uid: sp-component-base.IReadonlyTheme.palette
+          - '@microsoft/sp-component-base!IReadonlyTheme#fonts~0:complex'
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme#palette:member'
     summary: Color palette.
     name: palette
     fullName: palette
@@ -37,8 +39,8 @@ items:
       content: 'readonly palette: Readonly<IPalette>;'
       return:
         type:
-          - Readonly<IPalette>
-  - uid: sp-component-base.IReadonlyTheme.semanticColors
+          - '@microsoft/sp-component-base!IReadonlyTheme#palette~0:complex'
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme#semanticColors:member'
     summary: The collection of all semantic slots for colors used in themes.
     name: semanticColors
     fullName: semanticColors
@@ -49,4 +51,75 @@ items:
       content: 'readonly semanticColors: Readonly<ISemanticColors>;'
       return:
         type:
-          - Readonly<ISemanticColors>
+          - '@microsoft/sp-component-base!IReadonlyTheme#semanticColors~0:complex'
+references:
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme~0:complex'
+    name: Readonly<ITheme>
+    fullName: Readonly<ITheme>
+    spec.typeScript:
+      - uid: '!Readonly:type'
+        name: Readonly
+        fullName: Readonly
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!ITheme:interface'
+        name: ITheme
+        fullName: ITheme
+      - name: '> '
+        fullName: '> '
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme~1:complex'
+    name: Readonly<ITheme>
+    fullName: Readonly<ITheme>
+    spec.typeScript:
+      - uid: '!Readonly:type'
+        name: Readonly
+        fullName: Readonly
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!ITheme:interface'
+        name: ITheme
+        fullName: ITheme
+      - name: '> '
+        fullName: '> '
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme#fonts~0:complex'
+    name: Readonly<IReadonlyFontStyles>
+    fullName: Readonly<IReadonlyFontStyles>
+    spec.typeScript:
+      - uid: '!Readonly:type'
+        name: Readonly
+        fullName: Readonly
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!IReadonlyFontStyles:interface'
+        name: IReadonlyFontStyles
+        fullName: IReadonlyFontStyles
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme#palette~0:complex'
+    name: Readonly<IPalette>
+    fullName: Readonly<IPalette>
+    spec.typeScript:
+      - uid: '!Readonly:type'
+        name: Readonly
+        fullName: Readonly
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!IPalette:interface'
+        name: IPalette
+        fullName: IPalette
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-component-base!IReadonlyTheme#semanticColors~0:complex'
+    name: Readonly<ISemanticColors>
+    fullName: Readonly<ISemanticColors>
+    spec.typeScript:
+      - uid: '!Readonly:type'
+        name: Readonly
+        fullName: Readonly
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!ISemanticColors:interface'
+        name: ISemanticColors
+        fullName: ISemanticColors
+      - name: '>'
+        fullName: '>'

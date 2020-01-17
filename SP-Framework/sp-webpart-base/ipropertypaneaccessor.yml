@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.IPropertyPaneAccessor
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
     summary: >-
       Web part context property pane accessor interface. Provides some most commonly used operations to access the
       property pane.
@@ -9,14 +9,15 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.IPropertyPaneAccessor.close
-      - sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
-      - sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
-      - sp-webpart-base.IPropertyPaneAccessor.open
-      - sp-webpart-base.IPropertyPaneAccessor.refresh
-  - uid: sp-webpart-base.IPropertyPaneAccessor.close
+      - '@microsoft/sp-webpart-base!IPropertyPaneAccessor#close:member(1)'
+      - '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isPropertyPaneOpen:member(1)'
+      - '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isRenderedByWebPart:member(1)'
+      - '@microsoft/sp-webpart-base!IPropertyPaneAccessor#open:member(1)'
+      - '@microsoft/sp-webpart-base!IPropertyPaneAccessor#openDetails:member(1)'
+      - '@microsoft/sp-webpart-base!IPropertyPaneAccessor#refresh:member(1)'
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#close:member(1)'
     summary: This API should be used to close the PropertyPane to help configure the web part.
     name: close()
     fullName: close()
@@ -29,7 +30,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-webpart-base.IPropertyPaneAccessor.isPropertyPaneOpen
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isPropertyPaneOpen:member(1)'
     summary: Returns true if the PropertyPane is open.
     name: isPropertyPaneOpen()
     fullName: isPropertyPaneOpen()
@@ -42,7 +43,7 @@ items:
         type:
           - boolean
         description: ''
-  - uid: sp-webpart-base.IPropertyPaneAccessor.isRenderedByWebPart
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isRenderedByWebPart:member(1)'
     summary: Indicates whether the PropertyPane was initially opened by the web part.
     remarks: >-
       For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if
@@ -58,7 +59,7 @@ items:
         type:
           - boolean
         description: ''
-  - uid: sp-webpart-base.IPropertyPaneAccessor.open
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#open:member(1)'
     summary: This API should be used to open the PropertyPane to help configure the web part.
     name: open()
     fullName: open()
@@ -71,7 +72,26 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-webpart-base.IPropertyPaneAccessor.refresh
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#openDetails:member(1)'
+    summary: This API should be used to open the Details PropertyPane to help configure the items in the web part.
+    remarks: 'This API is mainly used for configuring Details, which is different from configuring the web part itself.'
+    name: openDetails(context)
+    fullName: openDetails(context)
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'openDetails(context?: any): void;'
+      return:
+        type:
+          - void
+        description: ''
+      parameters:
+        - id: context
+          description: Add additional context for property pane
+          type:
+            - any
+  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#refresh:member(1)'
     summary: This API should be used to invoke the PropertyPane to help configure the web part.
     remarks: >-
       This operation only works when the PropertyPane is already open for the currently active web part. If the

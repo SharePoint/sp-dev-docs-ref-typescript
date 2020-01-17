@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.ISPHttpClientBatchConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientBatchConfiguration:interface'
     summary: Flags interface for SPHttpClientBatchConfiguration.
     isPreview: true
     name: ISPHttpClientBatchConfiguration
@@ -9,5 +9,14 @@ items:
       - typeScript
     type: interface
     extends:
-      - sp-http.ISPHttpClientCommonConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    inheritance:
+      - type: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+        inheritance:
+          - type: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    package: '@microsoft/sp-http!'
+references:
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    name: ISPHttpClientCommonConfiguration
+  - uid: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    name: IHttpClientConfiguration

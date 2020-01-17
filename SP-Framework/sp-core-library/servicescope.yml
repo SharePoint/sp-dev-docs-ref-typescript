@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-core-library.ServiceScope
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
     summary: The service locator pattern used by the SharePoint Framework.
     remarks: >-
       ServiceScope provides a formalized way for components to register and consume dependencies ("services"), and to
@@ -49,19 +49,19 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-core-library
+    package: '@microsoft/sp-core-library!'
     children:
-      - sp-core-library.ServiceScope.(constructor)
-      - sp-core-library.ServiceScope.consume
-      - sp-core-library.ServiceScope.createAndProvide
-      - sp-core-library.ServiceScope.createDefaultAndProvide
-      - sp-core-library.ServiceScope.finish
-      - sp-core-library.ServiceScope.getParent
-      - sp-core-library.ServiceScope.provide
-      - sp-core-library.ServiceScope.startNewChild
-      - sp-core-library.ServiceScope.startNewRoot
-      - sp-core-library.ServiceScope.whenFinished
-  - uid: sp-core-library.ServiceScope.(constructor)
+      - '@microsoft/sp-core-library!ServiceScope:constructor(1)'
+      - '@microsoft/sp-core-library!ServiceScope#consume:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#createAndProvide:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#finish:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#getParent:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#provide:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#startNewChild:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope.startNewRoot:member(1)'
+      - '@microsoft/sp-core-library!ServiceScope#whenFinished:member(1)'
+  - uid: '@microsoft/sp-core-library!ServiceScope:constructor(1)'
     summary: Constructs a new instance of the `ServiceScope` class
     name: (constructor)(parent)
     fullName: (constructor)(parent)
@@ -74,8 +74,8 @@ items:
         - id: parent
           description: ''
           type:
-            - ServiceScope | undefined
-  - uid: sp-core-library.ServiceScope.consume
+            - '@microsoft/sp-core-library!ServiceScope~0:complex'
+  - uid: '@microsoft/sp-core-library!ServiceScope#consume:member(1)'
     summary: Consumes a service from the service scope.
     remarks: >-
       Components should call this function to "consume" a dependency, i.e. look up the serviceKey and return the
@@ -96,8 +96,10 @@ items:
         - id: serviceKey
           description: the key that was used when provide() was called to register the service
           type:
-            - ServiceKey<T>
-  - uid: sp-core-library.ServiceScope.createAndProvide
+            - '@microsoft/sp-core-library!ServiceScope#consume~0:complex'
+      typeParameters:
+        - id: T
+  - uid: '@microsoft/sp-core-library!ServiceScope#createAndProvide:member(1)'
     summary: >-
       This is a shorthand function that is equivalent to constructing a new instance of the simpleServiceClass, then
       registering it by calling ServiceScope.provide().
@@ -119,15 +121,14 @@ items:
         - id: serviceKey
           description: the key that can be used later to consume the service
           type:
-            - ServiceKey<T>
+            - '@microsoft/sp-core-library!ServiceScope#createAndProvide~0:complex'
         - id: simpleServiceClass
           description: the TypeScript class to be constructed
           type:
-            - |-
-              {
-                      new (serviceScope: ServiceScope): T;
-                  }
-  - uid: sp-core-library.ServiceScope.createDefaultAndProvide
+            - '@microsoft/sp-core-library!ServiceScope#createAndProvide~1:complex'
+      typeParameters:
+        - id: T
+  - uid: '@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide:member(1)'
     summary: >-
       This is a shorthand function that constructs the default implementation of the specified serviceKey, and then
       registers it by calling ServiceScope.provide().
@@ -146,8 +147,10 @@ items:
         - id: serviceKey
           description: the key that can be used later to consume the service
           type:
-            - ServiceKey<T>
-  - uid: sp-core-library.ServiceScope.finish
+            - '@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide~0:complex'
+      typeParameters:
+        - id: T
+  - uid: '@microsoft/sp-core-library!ServiceScope#finish:member(1)'
     summary: Completes the initialization sequence for a service scope.
     remarks: >-
       When a ServiceScope is first started, it is in an "unfinished" state where provide() is allowed but consume() is
@@ -170,7 +173,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-core-library.ServiceScope.getParent
+  - uid: '@microsoft/sp-core-library!ServiceScope#getParent:member(1)'
     summary: 'Returns the parent of the current ServiceScope, or undefined if this is a root scope.'
     name: getParent()
     fullName: getParent()
@@ -181,9 +184,9 @@ items:
       content: 'getParent(): ServiceScope | undefined;'
       return:
         type:
-          - ServiceScope | undefined
+          - '@microsoft/sp-core-library!ServiceScope#getParent~0:complex'
         description: the parent service scope
-  - uid: sp-core-library.ServiceScope.provide
+  - uid: '@microsoft/sp-core-library!ServiceScope#provide:member(1)'
     summary: Add a new service to a service scope.
     remarks: >-
       ServiceScope.provide() is used to register an implementation of the given serviceKey for the current scope. It may
@@ -203,12 +206,14 @@ items:
         - id: serviceKey
           description: the key that will later be used to consume the service
           type:
-            - ServiceKey<T>
+            - '@microsoft/sp-core-library!ServiceScope#provide~0:complex'
         - id: service
           description: the service instance that is being registered
           type:
             - T
-  - uid: sp-core-library.ServiceScope.startNewChild
+      typeParameters:
+        - id: T
+  - uid: '@microsoft/sp-core-library!ServiceScope#startNewChild:member(1)'
     summary: Constructs a new ServiceScope that is a child of the current scope.
     remarks: >-
       The service scopes form a tree structure, such that when consuming a service, if the key is not explicitly
@@ -222,9 +227,9 @@ items:
       content: 'startNewChild(): ServiceScope;'
       return:
         type:
-          - sp-core-library.ServiceScope
+          - '@microsoft/sp-core-library!default:class'
         description: the newly created root ServiceScope
-  - uid: sp-core-library.ServiceScope.startNewRoot
+  - uid: '@microsoft/sp-core-library!ServiceScope.startNewRoot:member(1)'
     summary: >-
       Create a new root-level ServiceScope. Only root-level scopes have the ability to autocreate default
       implementations of ServiceKeys.
@@ -237,10 +242,12 @@ items:
       content: 'static startNewRoot(): ServiceScope;'
       return:
         type:
-          - sp-core-library.ServiceScope
+          - '@microsoft/sp-core-library!default:class'
         description: the newly created root ServiceScope
-  - uid: sp-core-library.ServiceScope.whenFinished
-    summary: 'Defer an operation until after [ServiceScope.finish()](xref:sp-core-library.ServiceScope.finish) has completed.'
+  - uid: '@microsoft/sp-core-library!ServiceScope#whenFinished:member(1)'
+    summary: >-
+      Defer an operation until after
+      [ServiceScope.finish()](xref:@microsoft/sp-core-library!ServiceScope#finish:member(1)) has completed.
     remarks: >-
       It is an error to call ServiceScope.consume() before finish() has been called. The most reliable way to protect
       your component against this error is to perform the consume() calls inside a whenFinished() callback. If the
@@ -267,3 +274,85 @@ items:
           description: A block of code that needs to call ServiceScope.consume()
           type:
             - () => void
+references:
+  - uid: '@microsoft/sp-core-library!ServiceScope~0:complex'
+    name: ServiceScope | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceScope
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-core-library!ServiceScope#consume~0:complex'
+    name: ServiceKey<T>
+    fullName: default<T>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceKey
+        fullName: default
+      - name: <T>
+        fullName: <T>
+  - uid: '@microsoft/sp-core-library!ServiceScope#createAndProvide~0:complex'
+    name: ServiceKey<T>
+    fullName: default<T>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceKey
+        fullName: default
+      - name: <T>
+        fullName: <T>
+  - uid: '@microsoft/sp-core-library!ServiceScope#createAndProvide~1:complex'
+    name: |-
+      {
+              new (serviceScope: ServiceScope): T;
+          }
+    fullName: |-
+      {
+              new (serviceScope: default): T;
+          }
+    spec.typeScript:
+      - name: |-
+          {
+                  new (serviceScope: 
+        fullName: |-
+          {
+                  new (serviceScope: 
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceScope
+        fullName: default
+      - name: |-
+          ): T;
+              }
+        fullName: |-
+          ): T;
+              }
+  - uid: '@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide~0:complex'
+    name: ServiceKey<T>
+    fullName: default<T>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceKey
+        fullName: default
+      - name: <T>
+        fullName: <T>
+  - uid: '@microsoft/sp-core-library!ServiceScope#getParent~0:complex'
+    name: ServiceScope | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceScope
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-core-library!ServiceScope#provide~0:complex'
+    name: ServiceKey<T>
+    fullName: default<T>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!default:class'
+        name: ServiceKey
+        fullName: default
+      - name: <T>
+        fullName: <T>
+  - uid: '@microsoft/sp-core-library!default:class'
+    name: ServiceScope

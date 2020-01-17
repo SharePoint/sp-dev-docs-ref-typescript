@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.IDigestCache
+  - uid: '@microsoft/sp-http!IDigestCache:interface'
     summary: >-
       IDigestCache is an internal service used by SPHttpClient to maintain a cache of request digests for each SPWeb
       URL. A request digest is a security token that the SharePoint server requires for for any REST write operation,
@@ -15,13 +15,13 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.IDigestCache.addDigestToCache
-      - sp-http.IDigestCache.clearAllDigests
-      - sp-http.IDigestCache.clearDigest
-      - sp-http.IDigestCache.fetchDigest
-  - uid: sp-http.IDigestCache.addDigestToCache
+      - '@microsoft/sp-http!IDigestCache#addDigestToCache:member(1)'
+      - '@microsoft/sp-http!IDigestCache#clearAllDigests:member(1)'
+      - '@microsoft/sp-http!IDigestCache#clearDigest:member(1)'
+      - '@microsoft/sp-http!IDigestCache#fetchDigest:member(1)'
+  - uid: '@microsoft/sp-http!IDigestCache#addDigestToCache:member(1)'
     summary: >-
       Inserts a specific request digest value into the cache. Normally this is unnecessary because the framework will
       automatically issue a REST request to fetch the digest when necessary; however, in advanced scenarios
@@ -55,7 +55,7 @@ items:
             example, to specify an expiration "5 seconds from right now", use performance.now()+5000.
           type:
             - number
-  - uid: sp-http.IDigestCache.clearAllDigests
+  - uid: '@microsoft/sp-http!IDigestCache#clearAllDigests:member(1)'
     summary: Clears all values from the cache.
     name: clearAllDigests()
     fullName: clearAllDigests()
@@ -68,7 +68,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-http.IDigestCache.clearDigest
+  - uid: '@microsoft/sp-http!IDigestCache#clearDigest:member(1)'
     summary: >-
       Clears the cached digest for the specified SPWeb URL. This operation is useful e.g. if an error indicates that a
       digest was invalidated prior to its expiration time.
@@ -88,7 +88,7 @@ items:
           description: The URL of the SPWeb whose digest should be cleared. This may be a server-relative or absolute URL.
           type:
             - string
-  - uid: sp-http.IDigestCache.fetchDigest
+  - uid: '@microsoft/sp-http!IDigestCache#fetchDigest:member(1)'
     summary: >-
       Returns a digest string for the specified SPWeb URL. If the cache already contains a usable value, the promise is
       fulfilled immediately. Otherwise, the promise will be pending and resolve after an HTTP request obtains the
@@ -102,10 +102,20 @@ items:
       content: 'fetchDigest(webUrl: string): Promise<string>;'
       return:
         type:
-          - Promise<string>
+          - '@microsoft/sp-http!IDigestCache#fetchDigest~0:complex'
         description: A promise that is fulfilled with the digest value.
       parameters:
         - id: webUrl
           description: The URL of the SPWeb that the API call will be issued to. This may be a server-relative or absolute URL.
           type:
             - string
+references:
+  - uid: '@microsoft/sp-http!IDigestCache#fetchDigest~0:complex'
+    name: Promise<string>
+    fullName: Promise<string>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <string>
+        fullName: <string>

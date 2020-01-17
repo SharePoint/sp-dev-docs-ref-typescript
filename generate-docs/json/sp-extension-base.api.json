@@ -1,47 +1,33 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.1.8",
-    "schemaVersion": 1000
+    "toolVersion": "7.5.0",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
   },
   "kind": "Package",
-  "canonicalReference": "@microsoft/sp-extension-base",
+  "canonicalReference": "@microsoft/sp-extension-base!",
   "docComment": "/**\n * SharePoint Framework support for building client-side extensions.\n *\n * @packagedocumentation\n */\n",
   "name": "@microsoft/sp-extension-base",
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "",
+      "canonicalReference": "@microsoft/sp-extension-base!",
       "name": "",
       "members": [
         {
           "kind": "Class",
-          "canonicalReference": "(BaseExtension:class)",
+          "canonicalReference": "@microsoft/sp-extension-base!BaseExtension:class",
           "docComment": "/**\n * The base class for all client-side extensions.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `BaseExtension` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default abstract class "
+              "text": "export default abstract class BaseExtension<TProperties> extends "
             },
             {
               "kind": "Reference",
-              "text": "BaseExtension"
-            },
-            {
-              "kind": "Content",
-              "text": "<"
-            },
-            {
-              "kind": "Reference",
-              "text": "TProperties"
-            },
-            {
-              "kind": "Content",
-              "text": "> extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseComponent"
+              "text": "BaseComponent",
+              "canonicalReference": "@microsoft/sp-component-base!BaseComponent:class"
             },
             {
               "kind": "Content",
@@ -49,28 +35,34 @@
             }
           ],
           "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "TProperties",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
           "name": "BaseExtension",
           "members": [
             {
               "kind": "Property",
-              "canonicalReference": "(context:instance)",
+              "canonicalReference": "@microsoft/sp-extension-base!BaseExtension#context:member",
               "docComment": "/**\n * {@inheritDoc @microsoft/sp-component-base#BaseComponent.context}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected readonly "
+                  "text": "protected readonly context: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "context"
-                },
-                {
-                  "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ExtensionContext"
+                  "text": "ExtensionContext",
+                  "canonicalReference": "@microsoft/sp-extension-base!default:class"
                 },
                 {
                   "kind": "Content",
@@ -80,31 +72,24 @@
               "releaseTag": "Public",
               "name": "context",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             },
             {
               "kind": "Method",
-              "canonicalReference": "(onInit:instance,0)",
+              "canonicalReference": "@microsoft/sp-extension-base!BaseExtension#onInit:member(1)",
               "docComment": "/**\n * This event method is called when the client-side extension is first activated on the page.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected "
+                  "text": "protected onInit(): "
                 },
                 {
                   "kind": "Reference",
-                  "text": "onInit"
-                },
-                {
-                  "kind": "Content",
-                  "text": "(): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise"
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:class"
                 },
                 {
                   "kind": "Content",
@@ -117,33 +102,25 @@
               ],
               "isStatic": false,
               "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 5
+                "startIndex": 1,
+                "endIndex": 3
               },
               "releaseTag": "Public",
-              "overloadIndex": 0,
+              "overloadIndex": 1,
               "parameters": [],
               "name": "onInit"
             },
             {
               "kind": "Property",
-              "canonicalReference": "(properties:instance)",
+              "canonicalReference": "@microsoft/sp-extension-base!BaseExtension#properties:member",
               "docComment": "/**\n * Extension properties is a JavaScript object that are passed in by the application that initializes the extension.\n *\n * @remarks\n *\n * Properties can be used in the extension code to define configurable behaviors. The application has control over what properties to provide to an instance of the extension, however the most common way would be to have it stored on the server as JSON and pass it as is to the extension on initialization.\n *\n * @readonly\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "protected readonly "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "properties"
+                  "text": "protected readonly properties: "
                 },
                 {
                   "kind": "Content",
-                  "text": ": "
-                },
-                {
-                  "kind": "Reference",
                   "text": "TProperties"
                 },
                 {
@@ -154,38 +131,31 @@
               "releaseTag": "Public",
               "name": "properties",
               "propertyTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 4
+                "startIndex": 1,
+                "endIndex": 2
               },
               "isStatic": false
             }
           ],
           "extendsTokenRange": {
-            "startIndex": 5,
-            "endIndex": 7
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         },
         {
           "kind": "Class",
-          "canonicalReference": "(ExtensionContext:class)",
+          "canonicalReference": "@microsoft/sp-extension-base!ExtensionContext:class",
           "docComment": "/**\n * The base class for context objects for client-side extensions.\n *\n * @remarks\n *\n * The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ExtensionContext` class.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "export default class "
+              "text": "export default class ExtensionContext extends "
             },
             {
               "kind": "Reference",
-              "text": "ExtensionContext"
-            },
-            {
-              "kind": "Content",
-              "text": " extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "BaseComponentContext"
+              "text": "BaseComponentContext",
+              "canonicalReference": "@microsoft/sp-component-base!BaseComponentContext:class"
             },
             {
               "kind": "Content",
@@ -196,8 +166,8 @@
           "name": "ExtensionContext",
           "members": [],
           "extendsTokenRange": {
-            "startIndex": 3,
-            "endIndex": 5
+            "startIndex": 1,
+            "endIndex": 3
           },
           "implementsTokenRanges": []
         }

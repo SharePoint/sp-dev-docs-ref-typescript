@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-listview-extensibility.FieldCustomizerContext
+  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext:class'
     summary: This object provides contextual information for BaseFieldCustomizer.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
@@ -11,12 +11,16 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-extension-base.ExtensionContext
-    package: sp-listview-extensibility
+      - '@microsoft/sp-extension-base!ExtensionContext:class'
+    inheritance:
+      - type: '@microsoft/sp-extension-base!ExtensionContext:class'
+        inheritance:
+          - type: '@microsoft/sp-component-base!BaseComponentContext:class'
+    package: '@microsoft/sp-listview-extensibility!'
     children:
-      - sp-listview-extensibility.FieldCustomizerContext.field
-      - sp-listview-extensibility.FieldCustomizerContext.tryGetListView
-  - uid: sp-listview-extensibility.FieldCustomizerContext.field
+      - '@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member'
+      - '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)'
+  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member'
     summary: Provides access to the SharePoint field that the customizer will operate on.
     name: field
     fullName: field
@@ -27,8 +31,8 @@ items:
       content: 'readonly field: SPField;'
       return:
         type:
-          - sp-page-context.SPField
-  - uid: sp-listview-extensibility.FieldCustomizerContext.tryGetListView
+          - '@microsoft/sp-page-context!SPField:class'
+  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)'
     summary: >-
       If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific
       functionality; otherwise the value is undefined.
@@ -44,5 +48,21 @@ items:
       content: 'tryGetListView(): ListViewAccessor | undefined;'
       return:
         type:
-          - ListViewAccessor | undefined
+          - '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView~0:complex'
         description: 'the SharePoint list view, or undefined if there is none.'
+references:
+  - uid: '@microsoft/sp-extension-base!ExtensionContext:class'
+    name: ExtensionContext
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext
+  - uid: '@microsoft/sp-page-context!SPField:class'
+    name: SPField
+  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView~0:complex'
+    name: ListViewAccessor | undefined
+    fullName: ListViewAccessor | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-listview-extensibility!~ListViewAccessor:class'
+        name: ListViewAccessor
+        fullName: ListViewAccessor
+      - name: ' | undefined'
+        fullName: ' | undefined'

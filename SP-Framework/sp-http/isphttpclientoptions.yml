@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.ISPHttpClientOptions
+  - uid: '@microsoft/sp-http!ISPHttpClientOptions:interface'
     summary: >-
       This interface defines the options for the SPHttpClient operations such as get(), post(), fetch(), etc. It is
       based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/
@@ -10,11 +10,15 @@ items:
       - typeScript
     type: interface
     extends:
-      - sp-http.IHttpClientOptions
-    package: sp-http
+      - '@microsoft/sp-http!IHttpClientOptions:interface'
+    inheritance:
+      - type: '@microsoft/sp-http!IHttpClientOptions:interface'
+        inheritance:
+          - type: '!RequestInit:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.ISPHttpClientOptions.webUrl
-  - uid: sp-http.ISPHttpClientOptions.webUrl
+      - '@microsoft/sp-http!ISPHttpClientOptions#webUrl:member'
+  - uid: '@microsoft/sp-http!ISPHttpClientOptions#webUrl:member'
     summary: Configure the SPWeb URL for authentication.
     remarks: >-
       For a write operation, SPHttpClient will automatically add the "X-RequestDigest" header, which may need to be
@@ -32,3 +36,8 @@ items:
       return:
         type:
           - string
+references:
+  - uid: '@microsoft/sp-http!IHttpClientOptions:interface'
+    name: IHttpClientOptions
+  - uid: '!RequestInit:interface'
+    name: RequestInit

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.IAadTokenProvider
+  - uid: '@microsoft/sp-http!IAadTokenProvider:interface'
     summary: >-
       This class allows a developer to obtain OAuth2 tokens from Azure AD.
 
@@ -16,11 +16,11 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.IAadTokenProvider.getToken
-      - sp-http.IAadTokenProvider.tokenAcquisitionEvent
-  - uid: sp-http.IAadTokenProvider.getToken
+      - '@microsoft/sp-http!IAadTokenProvider#getToken:member(1)'
+      - '@microsoft/sp-http!IAadTokenProvider#tokenAcquisitionEvent:member'
+  - uid: '@microsoft/sp-http!IAadTokenProvider#getToken:member(1)'
     summary: |-
       Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
 
@@ -36,7 +36,7 @@ items:
       content: 'getToken(resourceEndpoint: string, useCachedToken?: boolean): Promise<string>;'
       return:
         type:
-          - Promise<string>
+          - '@microsoft/sp-http!IAadTokenProvider#getToken~0:complex'
         description: A promise that will be fullfiled with the token or that will reject with an error message
       parameters:
         - id: resourceEndpoint
@@ -47,7 +47,7 @@ items:
           description: Allows the developer to specify if cached tokens should be returned.
           type:
             - boolean
-  - uid: sp-http.IAadTokenProvider.tokenAcquisitionEvent
+  - uid: '@microsoft/sp-http!IAadTokenProvider#tokenAcquisitionEvent:member'
     summary: Notifies the developer when Token Acquistion requires user action.
     name: tokenAcquisitionEvent
     fullName: tokenAcquisitionEvent
@@ -58,4 +58,28 @@ items:
       content: 'readonly tokenAcquisitionEvent: SPEvent<ITokenAcquisitionEventArgs>;'
       return:
         type:
-          - SPEvent<ITokenAcquisitionEventArgs>
+          - '@microsoft/sp-http!IAadTokenProvider#tokenAcquisitionEvent~0:complex'
+references:
+  - uid: '@microsoft/sp-http!IAadTokenProvider#getToken~0:complex'
+    name: Promise<string>
+    fullName: Promise<string>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <string>
+        fullName: <string>
+  - uid: '@microsoft/sp-http!IAadTokenProvider#tokenAcquisitionEvent~0:complex'
+    name: SPEvent<ITokenAcquisitionEventArgs>
+    fullName: SPEvent<ITokenAcquisitionEventArgs>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!SPEvent:class'
+        name: SPEvent
+        fullName: SPEvent
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs:interface'
+        name: ITokenAcquisitionEventArgs
+        fullName: ITokenAcquisitionEventArgs
+      - name: '>'
+        fullName: '>'

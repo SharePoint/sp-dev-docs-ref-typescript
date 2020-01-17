@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.ThemeProvider
+  - uid: '@microsoft/sp-component-base!ThemeProvider:class'
     summary: >-
       The ThemeProvider class provides the capability to get different themes from the Framework. Themes can be provided
       in different contexts, e.g. Canvas sections may provide a variant of the global theme in some contexts.
@@ -9,13 +9,13 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-component-base
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.ThemeProvider.(constructor)
-      - sp-component-base.ThemeProvider.serviceKey
-      - sp-component-base.ThemeProvider.themeChangedEvent
-      - sp-component-base.ThemeProvider.tryGetTheme
-  - uid: sp-component-base.ThemeProvider.(constructor)
+      - '@microsoft/sp-component-base!ThemeProvider:constructor(1)'
+      - '@microsoft/sp-component-base!ThemeProvider.serviceKey:member'
+      - '@microsoft/sp-component-base!ThemeProvider#themeChangedEvent:member'
+      - '@microsoft/sp-component-base!ThemeProvider#tryGetTheme:member(1)'
+  - uid: '@microsoft/sp-component-base!ThemeProvider:constructor(1)'
     summary: Construct a new instance of the ThemeProvider class.
     name: '(constructor)(serviceScope, theme)'
     fullName: '(constructor)(serviceScope, theme)'
@@ -28,12 +28,12 @@ items:
         - id: serviceScope
           description: The current service scope.
           type:
-            - sp-core-library.ServiceScope
+            - '@microsoft/sp-core-library!ServiceScope:class'
         - id: theme
           description: Theme to provide.
           type:
-            - sp-component-base.ITheme
-  - uid: sp-component-base.ThemeProvider.serviceKey
+            - '@microsoft/sp-component-base!ITheme:interface'
+  - uid: '@microsoft/sp-component-base!ThemeProvider.serviceKey:member'
     summary: The service key for ThemeProvider.
     name: serviceKey
     fullName: serviceKey
@@ -44,8 +44,8 @@ items:
       content: 'static readonly serviceKey: ServiceKey<ThemeProvider>;'
       return:
         type:
-          - ServiceKey<ThemeProvider>
-  - uid: sp-component-base.ThemeProvider.themeChangedEvent
+          - '@microsoft/sp-component-base!ThemeProvider.serviceKey~0:complex'
+  - uid: '@microsoft/sp-component-base!ThemeProvider#themeChangedEvent:member'
     summary: Raised when the theme changes with the new theme as an argument.
     name: themeChangedEvent
     fullName: themeChangedEvent
@@ -56,8 +56,8 @@ items:
       content: 'readonly themeChangedEvent: SPEvent<ThemeChangedEventArgs>;'
       return:
         type:
-          - SPEvent<ThemeChangedEventArgs>
-  - uid: sp-component-base.ThemeProvider.tryGetTheme
+          - '@microsoft/sp-component-base!ThemeProvider#themeChangedEvent~0:complex'
+  - uid: '@microsoft/sp-component-base!ThemeProvider#tryGetTheme:member(1)'
     summary: 'If set, get the current scoped theme.'
     name: tryGetTheme()
     fullName: tryGetTheme()
@@ -68,5 +68,47 @@ items:
       content: 'tryGetTheme(): IReadonlyTheme | undefined;'
       return:
         type:
-          - IReadonlyTheme | undefined
+          - '@microsoft/sp-component-base!ThemeProvider#tryGetTheme~0:complex'
         description: ''
+references:
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-component-base!ITheme:interface'
+    name: ITheme
+  - uid: '@microsoft/sp-component-base!ThemeProvider.serviceKey~0:complex'
+    name: ServiceKey<ThemeProvider>
+    fullName: ServiceKey<ThemeProvider>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!ThemeProvider:class'
+        name: ThemeProvider
+        fullName: ThemeProvider
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-component-base!ThemeProvider#themeChangedEvent~0:complex'
+    name: SPEvent<ThemeChangedEventArgs>
+    fullName: SPEvent<ThemeChangedEventArgs>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!SPEvent:class'
+        name: SPEvent
+        fullName: SPEvent
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs:class'
+        name: ThemeChangedEventArgs
+        fullName: ThemeChangedEventArgs
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-component-base!ThemeProvider#tryGetTheme~0:complex'
+    name: IReadonlyTheme | undefined
+    fullName: IReadonlyTheme | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-component-base!IReadonlyTheme:interface'
+        name: IReadonlyTheme
+        fullName: IReadonlyTheme
+      - name: ' | undefined'
+        fullName: ' | undefined'

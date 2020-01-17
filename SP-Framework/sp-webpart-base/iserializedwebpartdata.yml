@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.ISerializedWebPartData
+  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData:interface'
     summary: >-
       This structure represents the part of the serialized state of a web part which is controlled by the web part. It
       is extended by IWebPartData which contains additional data added by the framework to the serialized data.
@@ -9,14 +9,14 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-webpart-base
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.ISerializedWebPartData.dataVersion
-      - sp-webpart-base.ISerializedWebPartData.dynamicDataPaths
-      - sp-webpart-base.ISerializedWebPartData.dynamicDataValues
-      - sp-webpart-base.ISerializedWebPartData.properties
-      - sp-webpart-base.ISerializedWebPartData.serverProcessedContent
-  - uid: sp-webpart-base.ISerializedWebPartData.dataVersion
+      - '@microsoft/sp-webpart-base!ISerializedWebPartData#dataVersion:member'
+      - '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataPaths:member'
+      - '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataValues:member'
+      - '@microsoft/sp-webpart-base!ISerializedWebPartData#properties:member'
+      - '@microsoft/sp-webpart-base!ISerializedWebPartData#serverProcessedContent:member'
+  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dataVersion:member'
     summary: Web part data version.
     remarks: >-
       Note that data version is different from the version field in the manifest. The manifest version is used to
@@ -37,8 +37,8 @@ items:
       content: 'dataVersion: Version;'
       return:
         type:
-          - sp-core-library.Version
-  - uid: sp-webpart-base.ISerializedWebPartData.dynamicDataPaths
+          - '@microsoft/sp-core-library!Version:class'
+  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataPaths:member'
     summary: Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part.
     remarks: |-
       The key is the path within the web part properties, and the value is the dynamic data internal id.
@@ -71,7 +71,7 @@ items:
             {
                     [path: string]: string;
                 }
-  - uid: sp-webpart-base.ISerializedWebPartData.dynamicDataValues
+  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataValues:member'
     summary: >-
       Static values for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the
       web part.
@@ -104,7 +104,7 @@ items:
             {
                     [path: string]: any;
                 }
-  - uid: sp-webpart-base.ISerializedWebPartData.properties
+  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#properties:member'
     summary: Web part specific properties. The individual web part owns the definition of these properties.
     remarks: >-
       Used by the web part to manage its internal metadata and config data. The framework code never touches these
@@ -125,7 +125,7 @@ items:
       return:
         type:
           - any
-  - uid: sp-webpart-base.ISerializedWebPartData.serverProcessedContent
+  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#serverProcessedContent:member'
     summary: The collections of data that can be processed by server side services like search index and link fixup.
     name: serverProcessedContent
     fullName: serverProcessedContent
@@ -136,4 +136,9 @@ items:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
         type:
-          - sp-webpart-base.ISerializedServerProcessedData
+          - '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
+references:
+  - uid: '@microsoft/sp-core-library!Version:class'
+    name: Version
+  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
+    name: ISerializedServerProcessedData

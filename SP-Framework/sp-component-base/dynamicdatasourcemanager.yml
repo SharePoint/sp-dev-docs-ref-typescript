@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-component-base.DynamicDataSourceManager
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager:class'
     summary: >-
       The Dynamic Data Source Manager is responsible for: - Constructing the dynamic data source - Allowing
       initialization of the dynamic data source by a component - Allowing data source to update its metadata and notify
@@ -11,17 +11,17 @@ items:
       - typeScript
     type: class
     implements:
-      - sp-core-library.IDisposable
-    package: sp-component-base
+      - '@microsoft/sp-core-library!IDisposable:interface'
+    package: '@microsoft/sp-component-base!'
     children:
-      - sp-component-base.DynamicDataSourceManager.dispose
-      - sp-component-base.DynamicDataSourceManager.initializeSource
-      - sp-component-base.DynamicDataSourceManager.isDisposed
-      - sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
-      - sp-component-base.DynamicDataSourceManager.notifySourceChanged
-      - sp-component-base.DynamicDataSourceManager.sourceId
-      - sp-component-base.DynamicDataSourceManager.updateMetadata
-  - uid: sp-component-base.DynamicDataSourceManager.dispose
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#dispose:member(1)'
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#initializeSource:member(1)'
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#isDisposed:member'
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#notifyPropertyChanged:member(1)'
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#notifySourceChanged:member(1)'
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#sourceId:member'
+      - '@microsoft/sp-component-base!DynamicDataSourceManager#updateMetadata:member(1)'
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#dispose:member(1)'
     summary: Disposes the resources held by the Dynamic Data source.
     name: dispose()
     fullName: dispose()
@@ -34,7 +34,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-component-base.DynamicDataSourceManager.initializeSource
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#initializeSource:member(1)'
     summary: Initializes the Dynamic Data Source for the component.
     name: initializeSource(callableFunctions)
     fullName: initializeSource(callableFunctions)
@@ -51,8 +51,8 @@ items:
         - id: callableFunctions
           description: Set of methods that are exposed through the Dynamic Data Source
           type:
-            - sp-dynamic-data.IDynamicDataCallables
-  - uid: sp-component-base.DynamicDataSourceManager.isDisposed
+            - '@microsoft/sp-dynamic-data!IDynamicDataCallables:interface'
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#isDisposed:member'
     summary: Returns true if the DynamicDataSourceManager is disposed.
     name: isDisposed
     fullName: isDisposed
@@ -64,7 +64,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-component-base.DynamicDataSourceManager.notifyPropertyChanged
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#notifyPropertyChanged:member(1)'
     summary: >-
       Notifies that this source has updated a specific property.
 
@@ -87,7 +87,7 @@ items:
           description: Id of the updated property in the source.
           type:
             - string
-  - uid: sp-component-base.DynamicDataSourceManager.notifySourceChanged
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#notifySourceChanged:member(1)'
     summary: >-
       Notifies that this source has updated its properties.
 
@@ -105,8 +105,10 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-component-base.DynamicDataSourceManager.sourceId
-    summary: Returns the Id of the current DataSource.
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#sourceId:member'
+    summary: >-
+      Returns the Id of the current DataSource. If the component did not initialize as a dynamic data source, then it
+      returns an empty string.
     name: sourceId
     fullName: sourceId
     langs:
@@ -117,7 +119,7 @@ items:
       return:
         type:
           - string
-  - uid: sp-component-base.DynamicDataSourceManager.updateMetadata
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#updateMetadata:member(1)'
     summary: >-
       Updates the metadata of the Dynamic Data Source. It allows to update fields like title or description.
       Auto-generated fields like alias, componentId or instanceId cannot be updated.
@@ -136,4 +138,23 @@ items:
         - id: metadata
           description: Partial of the metadata.
           type:
-            - Partial<IDynamicDataSourceMetadata>
+            - '@microsoft/sp-component-base!DynamicDataSourceManager#updateMetadata~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!IDisposable:interface'
+    name: IDisposable
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables:interface'
+    name: IDynamicDataCallables
+  - uid: '@microsoft/sp-component-base!DynamicDataSourceManager#updateMetadata~0:complex'
+    name: Partial<IDynamicDataSourceMetadata>
+    fullName: Partial<IDynamicDataSourceMetadata>
+    spec.typeScript:
+      - uid: '!Partial:type'
+        name: Partial
+        fullName: Partial
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-dynamic-data!IDynamicDataSourceMetadata:interface'
+        name: IDynamicDataSourceMetadata
+        fullName: IDynamicDataSourceMetadata
+      - name: '>'
+        fullName: '>'

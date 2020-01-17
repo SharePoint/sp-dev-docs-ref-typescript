@@ -1,0 +1,122 @@
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier:class'
+    summary: >-
+      This is the base class that third parties should extend when implementing a client-side extension that can modify
+      the search query.
+
+
+      In the component manifest, the "extensionType" should be set to "SearchQueryModifier".
+    isPreview: true
+    name: BaseSearchQueryModifier
+    fullName: BaseSearchQueryModifier
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-search-extensibility!BaseSearchQueryModifier~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier~1:complex'
+    package: '@microsoft/sp-search-extensibility!'
+    children:
+      - '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#context:member'
+      - '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#modifySearchQuery:member(1)'
+      - '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#timeout:member'
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#context:member'
+    summary: Use the context object to access common services and state associated with the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    isPreview: true
+    name: context
+    fullName: context
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected readonly context: SearchQueryModifierContext;'
+      return:
+        type:
+          - '@microsoft/sp-search-extensibility!default:class'
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#modifySearchQuery:member(1)'
+    summary: Returns a modified search query.
+    isPreview: true
+    name: 'modifySearchQuery(query, scenario)'
+    fullName: 'modifySearchQuery(query, scenario)'
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: |-
+        /** @virtual */
+        modifySearchQuery(query: IQuery, scenario: SearchQueryScenario): Promise<IQuery>;
+      return:
+        type:
+          - '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#modifySearchQuery~0:complex'
+        description: Modified query.
+      parameters:
+        - id: query
+          description: Query to modify.
+          type:
+            - '@microsoft/sp-search-extensibility!IQuery:interface'
+        - id: scenario
+          description: Search scenario.
+          type:
+            - '@microsoft/sp-search-extensibility!SearchQueryScenario:enum'
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#timeout:member'
+    summary: >-
+      Timeout for the search query modifier in milliseconds. If the execution takes longer than the timeout, the
+      original query will be used instead of the modified one.
+    isPreview: true
+    name: timeout
+    fullName: timeout
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: |-
+        /** @virtual */
+        readonly timeout: number;
+      return:
+        type:
+          - number
+references:
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier~0:complex'
+    name: BaseExtension<TProperties>
+    fullName: BaseExtension<TProperties>
+    spec.typeScript:
+      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
+        name: BaseExtension
+        fullName: BaseExtension
+      - name: '<TProperties> '
+        fullName: '<TProperties> '
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier~1:complex'
+    name: BaseExtension<TProperties>
+    fullName: BaseExtension<TProperties>
+    spec.typeScript:
+      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
+        name: BaseExtension
+        fullName: BaseExtension
+      - name: '<TProperties> '
+        fullName: '<TProperties> '
+  - uid: '@microsoft/sp-search-extensibility!default:class'
+    name: SearchQueryModifierContext
+  - uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#modifySearchQuery~0:complex'
+    name: Promise<IQuery>
+    fullName: Promise<IQuery>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-search-extensibility!IQuery:interface'
+        name: IQuery
+        fullName: IQuery
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-search-extensibility!IQuery:interface'
+    name: IQuery
+  - uid: '@microsoft/sp-search-extensibility!SearchQueryScenario:enum'
+    name: SearchQueryScenario

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-webpart-base.WebPartContext
+  - uid: '@microsoft/sp-webpart-base!WebPartContext:class'
     summary: >-
       Web part context object. This object contains the contextual services available to a web part. e.g. a contextual
       instance to the http client.
@@ -13,14 +13,16 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-webpart-base.BaseWebPartContext
-    package: sp-webpart-base
+      - '@microsoft/sp-webpart-base!default:class'
+    inheritance:
+      - type: '@microsoft/sp-webpart-base!default:class'
+    package: '@microsoft/sp-webpart-base!'
     children:
-      - sp-webpart-base.WebPartContext.domElement
-      - sp-webpart-base.WebPartContext.microsoftTeams
-      - sp-webpart-base.WebPartContext.sdks
-      - sp-webpart-base.WebPartContext.statusRenderer
-  - uid: sp-webpart-base.WebPartContext.domElement
+      - '@microsoft/sp-webpart-base!WebPartContext#domElement:member'
+      - '@microsoft/sp-webpart-base!WebPartContext#microsoftTeams:member'
+      - '@microsoft/sp-webpart-base!WebPartContext#sdks:member'
+      - '@microsoft/sp-webpart-base!WebPartContext#statusRenderer:member'
+  - uid: '@microsoft/sp-webpart-base!WebPartContext#domElement:member'
     summary: Reference to the DOM element that hosts this client-side component.
     name: domElement
     fullName: domElement
@@ -31,14 +33,16 @@ items:
       content: 'readonly domElement: HTMLElement;'
       return:
         type:
-          - HTMLElement
-  - uid: sp-webpart-base.WebPartContext.microsoftTeams
+          - '!HTMLElement:interface'
+  - uid: '@microsoft/sp-webpart-base!WebPartContext#microsoftTeams:member'
     summary: >-
       Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
       being hosted in Microsoft Teams.
     remarks: >-
       For more information, please see:
       [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
+    deprecated:
+      content: '- This function has been deprecated'
     name: microsoftTeams
     fullName: microsoftTeams
     langs:
@@ -49,7 +53,7 @@ items:
       return:
         type:
           - typeof microsoftTeams | undefined
-  - uid: sp-webpart-base.WebPartContext.sdks
+  - uid: '@microsoft/sp-webpart-base!WebPartContext#sdks:member'
     summary: Conditional set of SDKs provided by SPFx dependent on the environment.
     name: sdks
     fullName: sdks
@@ -60,8 +64,8 @@ items:
       content: 'readonly sdks: ISDKs;'
       return:
         type:
-          - sp-webpart-base.ISDKs
-  - uid: sp-webpart-base.WebPartContext.statusRenderer
+          - '@microsoft/sp-webpart-base!ISDKs:interface'
+  - uid: '@microsoft/sp-webpart-base!WebPartContext#statusRenderer:member'
     summary: Web part status renderer.
     name: statusRenderer
     fullName: statusRenderer
@@ -72,4 +76,13 @@ items:
       content: 'readonly statusRenderer: IClientSideWebPartStatusRenderer;'
       return:
         type:
-          - sp-webpart-base.IClientSideWebPartStatusRenderer
+          - '@microsoft/sp-webpart-base!default:interface'
+references:
+  - uid: '@microsoft/sp-webpart-base!default:class'
+    name: BaseWebPartContext
+  - uid: '!HTMLElement:interface'
+    name: HTMLElement
+  - uid: '@microsoft/sp-webpart-base!ISDKs:interface'
+    name: ISDKs
+  - uid: '@microsoft/sp-webpart-base!default:interface'
+    name: IClientSideWebPartStatusRenderer

@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-extension-base.ExtensionContext
+  - uid: '@microsoft/sp-extension-base!ExtensionContext:class'
     summary: The base class for context objects for client-side extensions.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
@@ -11,5 +11,10 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-component-base.BaseComponentContext
-    package: sp-extension-base
+      - '@microsoft/sp-component-base!BaseComponentContext:class'
+    inheritance:
+      - type: '@microsoft/sp-component-base!BaseComponentContext:class'
+    package: '@microsoft/sp-extension-base!'
+references:
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext

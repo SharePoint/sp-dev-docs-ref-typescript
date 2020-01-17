@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.IAadHttpClientConfigurations
+  - uid: '@microsoft/sp-http!IAadHttpClientConfigurations:interface'
     summary: Standard configurations for AadHttpClient.
     remarks: >-
       This interface provides standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient
@@ -13,10 +13,10 @@ items:
     langs:
       - typeScript
     type: interface
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.IAadHttpClientConfigurations.v1
-  - uid: sp-http.IAadHttpClientConfigurations.v1
+      - '@microsoft/sp-http!IAadHttpClientConfigurations#v1:member'
+  - uid: '@microsoft/sp-http!IAadHttpClientConfigurations#v1:member'
     summary: >-
       This configuration turns off every feature switch for AadHttpClient. The fetch() behavior will be essentially
       identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/
@@ -29,4 +29,7 @@ items:
       content: 'readonly v1: AadHttpClientConfiguration;'
       return:
         type:
-          - sp-http.AadHttpClientConfiguration
+          - '@microsoft/sp-http!default:class'
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: AadHttpClientConfiguration

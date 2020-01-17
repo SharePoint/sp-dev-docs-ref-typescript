@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.ISPHttpClientCommonConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
     summary: Flags interface for SPHttpClientCommonConfiguration
     name: ISPHttpClientCommonConfiguration
     fullName: ISPHttpClientCommonConfiguration
@@ -8,12 +8,14 @@ items:
       - typeScript
     type: interface
     extends:
-      - sp-http.IHttpClientConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    inheritance:
+      - type: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.ISPHttpClientCommonConfiguration.jsonRequest
-      - sp-http.ISPHttpClientCommonConfiguration.jsonResponse
-  - uid: sp-http.ISPHttpClientCommonConfiguration.jsonRequest
+      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonRequest:member'
+      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonResponse:member'
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonRequest:member'
     summary: Automatically configure the "Content-Type" header for a JSON payload.
     remarks: >-
       When this switch is true:
@@ -37,7 +39,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-http.ISPHttpClientCommonConfiguration.jsonResponse
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonResponse:member'
     summary: Automatically configure the "Accept" header for a JSON payload.
     remarks: |-
       When this switch is true:
@@ -57,3 +59,6 @@ items:
       return:
         type:
           - boolean
+references:
+  - uid: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    name: IHttpClientConfiguration

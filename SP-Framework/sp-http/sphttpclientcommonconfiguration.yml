@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.SPHttpClientCommonConfiguration
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:class'
     summary: Common base class for SPHttpClientConfiguration and SPHttpClientBatchConfiguration.
     name: SPHttpClientCommonConfiguration
     fullName: SPHttpClientCommonConfiguration
@@ -8,18 +8,20 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-http.HttpClientConfiguration
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
     implements:
-      - sp-http.ISPHttpClientCommonConfiguration
-    package: sp-http
+      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.SPHttpClientCommonConfiguration.(constructor)
-      - sp-http.SPHttpClientCommonConfiguration.flags
-      - sp-http.SPHttpClientCommonConfiguration.initializeFlags
-      - sp-http.SPHttpClientCommonConfiguration.jsonRequest
-      - sp-http.SPHttpClientCommonConfiguration.jsonResponse
-      - sp-http.SPHttpClientCommonConfiguration.overrideWith
-  - uid: sp-http.SPHttpClientCommonConfiguration.(constructor)
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration:constructor(1)'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#flags:member'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonRequest:member'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonResponse:member'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#overrideWith:member(1)'
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:constructor(1)'
     summary: Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags.
     remarks: >-
       The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it
@@ -35,12 +37,12 @@ items:
         - id: flags
           description: ''
           type:
-            - sp-http.ISPHttpClientCommonConfiguration
+            - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
         - id: overrideFlags
           description: ''
           type:
-            - sp-http.ISPHttpClientCommonConfiguration
-  - uid: sp-http.SPHttpClientCommonConfiguration.flags
+            - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#flags:member'
     name: flags
     fullName: flags
     langs:
@@ -50,8 +52,8 @@ items:
       content: 'protected flags: ISPHttpClientCommonConfiguration;'
       return:
         type:
-          - sp-http.ISPHttpClientCommonConfiguration
-  - uid: sp-http.SPHttpClientCommonConfiguration.initializeFlags
+          - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)'
     name: initializeFlags()
     fullName: initializeFlags()
     langs:
@@ -65,7 +67,7 @@ items:
         type:
           - void
         description: ''
-  - uid: sp-http.SPHttpClientCommonConfiguration.jsonRequest
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonRequest:member'
     summary: Automatically configure the "Content-Type" header for a JSON payload.
     remarks: >-
       When this switch is true:
@@ -89,7 +91,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-http.SPHttpClientCommonConfiguration.jsonResponse
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonResponse:member'
     summary: Automatically configure the "Accept" header for a JSON payload.
     remarks: |-
       When this switch is true:
@@ -109,7 +111,7 @@ items:
       return:
         type:
           - boolean
-  - uid: sp-http.SPHttpClientCommonConfiguration.overrideWith
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#overrideWith:member(1)'
     name: overrideWith(sourceFlags)
     fullName: overrideWith(sourceFlags)
     langs:
@@ -121,10 +123,15 @@ items:
         overrideWith(sourceFlags: ISPHttpClientCommonConfiguration): SPHttpClientCommonConfiguration;
       return:
         type:
-          - sp-http.SPHttpClientCommonConfiguration
+          - '@microsoft/sp-http!default:class'
         description: ''
       parameters:
         - id: sourceFlags
           description: ''
           type:
-            - sp-http.ISPHttpClientCommonConfiguration
+            - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    name: ISPHttpClientCommonConfiguration

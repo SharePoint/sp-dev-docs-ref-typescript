@@ -1,0 +1,39 @@
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideAssemblyManifest:interface'
+    summary: A library is defined by this manifest. Libraries currently do not have any additional properties.
+    name: IClientSideAssemblyManifest
+    fullName: IClientSideAssemblyManifest
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    inheritance:
+      - type: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+        inheritance:
+          - type: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+    package: '@microsoft/sp-module-interfaces!'
+    children:
+      - '@microsoft/sp-module-interfaces!IClientSideAssemblyManifest#rootComponentId:member'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideAssemblyManifest#rootComponentId:member'
+    summary: The ID of the component from which the assembly is built.
+    remarks: |-
+      Supported values: any GUID
+
+      Example: "dbef608d-3ad5-4f8f-b139-d916f2f0a294"
+    name: rootComponentId
+    fullName: rootComponentId
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'rootComponentId: string;'
+      return:
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    name: IClientSideComponentManifest
+  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+    name: IClientSideManifestBase

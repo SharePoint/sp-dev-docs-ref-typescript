@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.SPHttpClientResponse
+  - uid: '@microsoft/sp-http!SPHttpClientResponse:class'
     summary: The Response subclass returned by methods such as SPHttpClient.fetch().
     remarks: |-
       This class is marked as `@sealed`. Subclasses should not extend it.
@@ -12,13 +12,15 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-http.HttpClientResponse
-    package: sp-http
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.SPHttpClientResponse.(constructor)
-      - sp-http.SPHttpClientResponse.clone
-      - sp-http.SPHttpClientResponse.correlationId
-  - uid: sp-http.SPHttpClientResponse.(constructor)
+      - '@microsoft/sp-http!SPHttpClientResponse:constructor(1)'
+      - '@microsoft/sp-http!SPHttpClientResponse#clone:member(1)'
+      - '@microsoft/sp-http!SPHttpClientResponse#correlationId:member'
+  - uid: '@microsoft/sp-http!SPHttpClientResponse:constructor(1)'
     summary: Constructs a new instance of the `SPHttpClientResponse` class
     name: (constructor)(response)
     fullName: (constructor)(response)
@@ -31,8 +33,8 @@ items:
         - id: response
           description: ''
           type:
-            - Response
-  - uid: sp-http.SPHttpClientResponse.clone
+            - '!Response:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientResponse#clone:member(1)'
     name: clone()
     fullName: clone()
     langs:
@@ -44,9 +46,9 @@ items:
         clone(): SPHttpClientResponse;
       return:
         type:
-          - sp-http.SPHttpClientResponse
+          - '@microsoft/sp-http!default:class'
         description: ''
-  - uid: sp-http.SPHttpClientResponse.correlationId
+  - uid: '@microsoft/sp-http!SPHttpClientResponse#correlationId:member'
     summary: Returns the SharePoint correlation ID.
     remarks: >-
       The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation,
@@ -62,4 +64,18 @@ items:
       content: 'readonly correlationId: Guid | undefined;'
       return:
         type:
-          - Guid | undefined
+          - '@microsoft/sp-http!SPHttpClientResponse#correlationId~0:complex'
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientResponse
+  - uid: '!Response:interface'
+    name: Response
+  - uid: '@microsoft/sp-http!SPHttpClientResponse#correlationId~0:complex'
+    name: Guid | undefined
+    fullName: Guid | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!Guid:class'
+        name: Guid
+        fullName: Guid
+      - name: ' | undefined'
+        fullName: ' | undefined'

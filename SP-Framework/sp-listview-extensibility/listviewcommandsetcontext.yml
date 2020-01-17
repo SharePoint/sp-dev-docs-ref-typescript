@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-listview-extensibility.ListViewCommandSetContext
+  - uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext:class'
     summary: This object provides contextual information for BaseListViewCommandSet.
     remarks: >-
       The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
@@ -11,12 +11,16 @@ items:
       - typeScript
     type: class
     extends:
-      - sp-extension-base.ExtensionContext
-    package: sp-listview-extensibility
+      - '@microsoft/sp-extension-base!ExtensionContext:class'
+    inheritance:
+      - type: '@microsoft/sp-extension-base!ExtensionContext:class'
+        inheritance:
+          - type: '@microsoft/sp-component-base!BaseComponentContext:class'
+    package: '@microsoft/sp-listview-extensibility!'
     children:
-      - sp-listview-extensibility.ListViewCommandSetContext.listView
-      - sp-listview-extensibility.ListViewCommandSetContext.manifest
-  - uid: sp-listview-extensibility.ListViewCommandSetContext.listView
+      - '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#listView:member'
+      - '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#manifest:member'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#listView:member'
     summary: Provides access to the ListView control that the customizer will operate on.
     name: listView
     fullName: listView
@@ -27,8 +31,8 @@ items:
       content: 'readonly listView: ListViewAccessor;'
       return:
         type:
-          - sp-listview-extensibility.ListViewAccessor
-  - uid: sp-listview-extensibility.ListViewCommandSetContext.manifest
+          - '@microsoft/sp-listview-extensibility!~ListViewAccessor:class'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#manifest:member'
     summary: Manifest for the client-side component.
     name: manifest
     fullName: manifest
@@ -39,4 +43,13 @@ items:
       content: 'readonly manifest: ICommandSetExtensionManifest;'
       return:
         type:
-          - ICommandSetExtensionManifest
+          - '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
+references:
+  - uid: '@microsoft/sp-extension-base!ExtensionContext:class'
+    name: ExtensionContext
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext
+  - uid: '@microsoft/sp-listview-extensibility!~ListViewAccessor:class'
+    name: ListViewAccessor
+  - uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
+    name: ICommandSetExtensionManifest

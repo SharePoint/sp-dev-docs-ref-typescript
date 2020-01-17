@@ -1,6 +1,6 @@
 ### YamlMime:UniversalReference
 items:
-  - uid: sp-http.SPHttpClientBatch
+  - uid: '@microsoft/sp-http!SPHttpClientBatch:class'
     summary: >-
       The SPHttpClientBatch class accumulates a number of REST service calls and transmits them as a single ODATA batch.
       This protocol is documented here: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html
@@ -19,14 +19,14 @@ items:
     langs:
       - typeScript
     type: class
-    package: sp-http
+    package: '@microsoft/sp-http!'
     children:
-      - sp-http.SPHttpClientBatch.configurations
-      - sp-http.SPHttpClientBatch.execute
-      - sp-http.SPHttpClientBatch.fetch
-      - sp-http.SPHttpClientBatch.get
-      - sp-http.SPHttpClientBatch.post
-  - uid: sp-http.SPHttpClientBatch.configurations
+      - '@microsoft/sp-http!SPHttpClientBatch.configurations:member'
+      - '@microsoft/sp-http!SPHttpClientBatch#execute:member(1)'
+      - '@microsoft/sp-http!SPHttpClientBatch#fetch:member(1)'
+      - '@microsoft/sp-http!SPHttpClientBatch#get:member(1)'
+      - '@microsoft/sp-http!SPHttpClientBatch#post:member(1)'
+  - uid: '@microsoft/sp-http!SPHttpClientBatch.configurations:member'
     summary: The standard predefined SPHttpClientBatchConfigurations objects for use with the SPHttpClientBatch class.
     isPreview: true
     name: configurations
@@ -38,8 +38,8 @@ items:
       content: 'static readonly configurations: ISPHttpClientBatchConfigurations;'
       return:
         type:
-          - sp-http.ISPHttpClientBatchConfigurations
-  - uid: sp-http.SPHttpClientBatch.execute
+          - '@microsoft/sp-http!ISPHttpClientBatchConfigurations:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#execute:member(1)'
     summary: Executes the batched queries that were queued using SPHttpClientBatch.fetch().
     isPreview: true
     name: execute()
@@ -51,9 +51,9 @@ items:
       content: 'execute(): Promise<SPHttpClientBatch>;'
       return:
         type:
-          - Promise<SPHttpClientBatch>
+          - '@microsoft/sp-http!SPHttpClientBatch#execute~0:complex'
         description: ''
-  - uid: sp-http.SPHttpClientBatch.fetch
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#fetch:member(1)'
     summary: >-
       Queues a new request, and returns a promise that can be used to access the server response (after execute() has
       completed).
@@ -84,12 +84,12 @@ items:
         Promise<SPHttpClientResponse>;
       return:
         type:
-          - Promise<SPHttpClientResponse>
+          - '@microsoft/sp-http!SPHttpClientBatch#fetch~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
-          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
-          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
-          the server.
+          [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse#ok:member) being false) for error status
+          codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
+          communication with the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -100,12 +100,12 @@ items:
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
           type:
-            - sp-http.SPHttpClientBatchConfiguration
+            - '@microsoft/sp-http!default:class'
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientBatchOptions
-  - uid: sp-http.SPHttpClientBatch.get
+            - '@microsoft/sp-http!ISPHttpClientBatchOptions:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#get:member(1)'
     summary: 'Calls fetch(), but sets the method to ''GET''.'
     isPreview: true
     name: 'get(url, configuration, options)'
@@ -119,12 +119,12 @@ items:
         Promise<SPHttpClientResponse>;
       return:
         type:
-          - Promise<SPHttpClientResponse>
+          - '@microsoft/sp-http!SPHttpClientBatch#get~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
-          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
-          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
-          the server.
+          [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse#ok:member) being false) for error status
+          codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
+          communication with the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -135,12 +135,12 @@ items:
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
           type:
-            - sp-http.SPHttpClientBatchConfiguration
+            - '@microsoft/sp-http!default:class'
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientBatchOptions
-  - uid: sp-http.SPHttpClientBatch.post
+            - '@microsoft/sp-http!ISPHttpClientBatchOptions:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#post:member(1)'
     summary: 'Calls fetch(), but sets the method to ''POST''.'
     isPreview: true
     name: 'post(url, configuration, options)'
@@ -154,12 +154,12 @@ items:
         Promise<SPHttpClientResponse>;
       return:
         type:
-          - Promise<SPHttpClientResponse>
+          - '@microsoft/sp-http!SPHttpClientBatch#post~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
-          [HttpClientResponse.ok](xref:sp-http.HttpClientResponse.ok) being false) for error status codes such as HTTP
-          404 or 500. The promise will only reject for network failures or other errors that prevent communication with
-          the server.
+          [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse#ok:member) being false) for error status
+          codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
+          communication with the server.
       parameters:
         - id: url
           description: the URL to fetch
@@ -170,8 +170,71 @@ items:
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
           type:
-            - sp-http.SPHttpClientBatchConfiguration
+            - '@microsoft/sp-http!default:class'
         - id: options
           description: additional options that affect the request
           type:
-            - sp-http.ISPHttpClientBatchOptions
+            - '@microsoft/sp-http!ISPHttpClientBatchOptions:interface'
+references:
+  - uid: '@microsoft/sp-http!ISPHttpClientBatchConfigurations:interface'
+    name: ISPHttpClientBatchConfigurations
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#execute~0:complex'
+    name: Promise<SPHttpClientBatch>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientBatch
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#fetch~0:complex'
+    name: Promise<SPHttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!default:class'
+    name: SPHttpClientBatchConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientBatchOptions:interface'
+    name: ISPHttpClientBatchOptions
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#get~0:complex'
+    name: Promise<SPHttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!SPHttpClientBatch#post~0:complex'
+    name: Promise<SPHttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:class'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: SPHttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
