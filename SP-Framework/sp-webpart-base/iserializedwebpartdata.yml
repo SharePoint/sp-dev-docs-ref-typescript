@@ -1,51 +1,57 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData:interface'
-    summary: >-
-      This structure represents the part of the serialized state of a web part which is controlled by the web part. It
-      is extended by IWebPartData which contains additional data added by the framework to the serialized data.
-    name: ISerializedWebPartData
-    fullName: ISerializedWebPartData
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ISerializedWebPartData
+uid: '@microsoft/sp-webpart-base!ISerializedWebPartData:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: ISerializedWebPartData
+summary: >-
+  This structure represents the part of the serialized state of a web part which
+  is controlled by the web part. It is extended by IWebPartData which contains
+  additional data added by the framework to the serialized data.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: dataVersion
+    uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dataVersion:member'
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!ISerializedWebPartData#dataVersion:member'
-      - '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataPaths:member'
-      - '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataValues:member'
-      - '@microsoft/sp-webpart-base!ISerializedWebPartData#properties:member'
-      - '@microsoft/sp-webpart-base!ISerializedWebPartData#serverProcessedContent:member'
-  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dataVersion:member'
+    fullName: dataVersion
     summary: Web part data version.
     remarks: >-
-      Note that data version is different from the version field in the manifest. The manifest version is used to
-      control the versioning of the web part code, while data version is used to control the versioning of the
-      serialized data of the web part. Refer to dataVersion field of your web part for more information.
+      Note that data version is different from the version field in the
+      manifest. The manifest version is used to control the versioning of the
+      web part code, while data version is used to control the versioning of the
+      serialized data of the web part. Refer to dataVersion field of your web
+      part for more information.
 
 
       Supported values: MAJOR.MINOR
 
 
       Example: `"1.0"`
-    name: dataVersion
-    fullName: dataVersion
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'dataVersion: Version;'
       return:
-        type:
-          - '@microsoft/sp-core-library!Version:class'
-  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataPaths:member'
-    summary: Paths for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the web part.
-    remarks: |-
-      The key is the path within the web part properties, and the value is the dynamic data internal id.
+        type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+  - name: dynamicDataPaths
+    uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataPaths:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: dynamicDataPaths
+    summary: >-
+      Paths for the dynamic data. This is used to reconstruct the dynamic data
+      objects when deserializing the web part.
+    remarks: >-
+      The key is the path within the web part properties, and the value is the
+      dynamic data internal id.
+
 
       Example:
 
+
       ```
+
       {
         'pageContextUser':
           'PageContext:user',
@@ -53,92 +59,93 @@ items:
           'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty'
       }
 
+
       ```
     isPreview: true
-    name: dynamicDataPaths
-    fullName: dynamicDataPaths
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: |-
         dynamicDataPaths?: {
                 [path: string]: string;
             };
       return:
-        type:
-          - |-
-            {
-                    [path: string]: string;
-                }
-  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataValues:member'
+        type: |-
+          {
+                  [path: string]: string;
+              }
+  - name: dynamicDataValues
+    uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#dynamicDataValues:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: dynamicDataValues
     summary: >-
-      Static values for the dynamic data. This is used to reconstruct the dynamic data objects when deserializing the
-      web part.
-    remarks: |-
-      The key is the path within the web part properties, and the value is the dynamic data static value.
+      Static values for the dynamic data. This is used to reconstruct the
+      dynamic data objects when deserializing the web part.
+    remarks: >-
+      The key is the path within the web part properties, and the value is the
+      dynamic data static value.
+
 
       Example:
 
+
       ```
+
       {
         'aStringProperty': 'thisIsAString',
         'aBooleanProperty': true
       }
 
+
       ```
     isPreview: true
-    name: dynamicDataValues
-    fullName: dynamicDataValues
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: |-
         dynamicDataValues?: {
                 [path: string]: any;
             };
       return:
-        type:
-          - |-
-            {
-                    [path: string]: any;
-                }
-  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#properties:member'
-    summary: Web part specific properties. The individual web part owns the definition of these properties.
+        type: |-
+          {
+                  [path: string]: any;
+              }
+  - name: properties
+    uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#properties:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: properties
+    summary: >-
+      Web part specific properties. The individual web part owns the definition
+      of these properties.
     remarks: >-
-      Used by the web part to manage its internal metadata and config data. The framework code never touches these
-      properties.
+      Used by the web part to manage its internal metadata and config data. The
+      framework code never touches these properties.
 
 
       Supported values: any JSON stringifiable object hierarchy.
 
 
       Example: `{ 'value': 'text value' }`
-    name: properties
-    fullName: properties
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'properties?: any;'
       return:
-        type:
-          - any
-  - uid: '@microsoft/sp-webpart-base!ISerializedWebPartData#serverProcessedContent:member'
-    summary: The collections of data that can be processed by server side services like search index and link fixup.
-    name: serverProcessedContent
+        type: any
+  - name: serverProcessedContent
+    uid: >-
+      @microsoft/sp-webpart-base!ISerializedWebPartData#serverProcessedContent:member
+    package: '@microsoft/sp-webpart-base!'
     fullName: serverProcessedContent
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      The collections of data that can be processed by server side services like
+      search index and link fixup.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
-references:
-  - uid: '@microsoft/sp-core-library!Version:class'
-    name: Version
-  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
-    name: ISerializedServerProcessedData
+        type: >-
+          <xref
+          uid="@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface"
+          />

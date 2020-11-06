@@ -1,87 +1,54 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
-    summary: >-
-      This is the manifest for a client-side extension that defines a set of custom commands that can be shown in a
-      menu, tool bar, etc.
-    name: ICommandSetExtensionManifest
-    fullName: ICommandSetExtensionManifest
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
-    inheritance:
-      - type: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
-        inheritance:
-          - type: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-            inheritance:
-              - type: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+### YamlMime:TSType
+name: ICommandSetExtensionManifest
+uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: ICommandSetExtensionManifest
+summary: >-
+  This is the manifest for a client-side extension that defines a set of custom
+  commands that can be shown in a menu, tool bar, etc.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: extensionType
+    uid: >-
+      @microsoft/sp-module-interfaces!ICommandSetExtensionManifest#extensionType:member
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#extensionType:member'
-      - '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#items:member'
-  - uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#extensionType:member'
-    summary: >-
-      Specifies the type of client-side extension. Some extension types support additional manifest fields beyond
-      SPClientSideExtensionManifest.
-    name: extensionType
     fullName: extensionType
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Specifies the type of client-side extension. Some extension types support
+      additional manifest fields beyond SPClientSideExtensionManifest.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'extensionType: ''ListViewCommandSet'';'
       return:
-        type:
-          - '''ListViewCommandSet'''
-  - uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#items:member'
-    summary: A table of items defined by this command set. The object key is the Item ID.
-    remarks: >-
-      The Item ID is a unique identifier that event handlers use to recognize the command The identifier must consist of
-      upper-case letters, numbers, and underscores. Example: "SHOW\_INFO"
-    name: items
+        type: '''ListViewCommandSet'''
+  - name: items
+    uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#items:member'
+    package: '@microsoft/sp-module-interfaces!'
     fullName: items
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      A table of items defined by this command set. The object key is the Item
+      ID.
+    remarks: >-
+      The Item ID is a unique identifier that event handlers use to recognize
+      the command The identifier must consist of upper-case letters, numbers,
+      and underscores. Example: "SHOW\_INFO"
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         items: {
                 [itemId: string]: ICommandDefinition;
             };
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#items~0:complex'
-references:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
-    name: IClientSideExtensionManifest
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-    name: IClientSideComponentManifest
-  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
-    name: IClientSideManifestBase
-  - uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest#items~0:complex'
-    name: |-
-      {
-              [itemId: string]: ICommandDefinition;
-          }
-    fullName: |-
-      {
-              [itemId: string]: ICommandDefinition;
-          }
-    spec.typeScript:
-      - name: |-
-          {
-                  [itemId: string]: 
-        fullName: |-
-          {
-                  [itemId: string]: 
-      - uid: '@microsoft/sp-module-interfaces!ICommandDefinition:interface'
-        name: ICommandDefinition
-        fullName: ICommandDefinition
-      - name: |-
-          ;
-              }
-        fullName: |-
-          ;
-              }
+        type: >-
+          @microsoft/sp-module-interfaces!ICommandSetExtensionManifest#<xref
+          uid="items~0:complex" />
+extends: >-
+  <xref
+  uid="@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface"
+  />

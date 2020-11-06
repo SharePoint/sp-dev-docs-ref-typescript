@@ -1,60 +1,50 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!EnvironmentType:enum'
-    summary: Indicates the general type of environment where the SharePoint Framework is running.
-    remarks: >-
-      This enum is used by the [Environment.type](xref:@microsoft/sp-core-library!Environment.type:member) property. It
-      provides a way to distinguish environments where certain functionality may be limited or disabled.
-    name: EnvironmentType
-    fullName: EnvironmentType
-    langs:
-      - typeScript
-    type: enum
+### YamlMime:TSEnum
+name: EnvironmentType
+uid: '@microsoft/sp-core-library!EnvironmentType:enum'
+package: '@microsoft/sp-core-library!'
+fullName: EnvironmentType
+summary: >-
+  Indicates the general type of environment where the SharePoint Framework is
+  running.
+remarks: >-
+  This enum is used by the
+  [Environment.type](xref:@microsoft/sp-core-library!Environment.type:member)
+  property. It provides a way to distinguish environments where certain
+  functionality may be limited or disabled.
+isPreview: false
+isDeprecated: false
+fields:
+  - name: ClassicSharePoint
+    uid: '@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member'
-      - '@microsoft/sp-core-library!EnvironmentType.Local:member'
-      - '@microsoft/sp-core-library!EnvironmentType.SharePoint:member'
-      - '@microsoft/sp-core-library!EnvironmentType.Test:member'
-  - uid: '@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member'
     summary: >-
-      Indicates that the framework was hosted by a classic server-rendered SharePoint page. Some functionality may be
-      limited, e.g. various extensibility APIs may not be supported.
-    name: ClassicSharePoint
-    fullName: ClassicSharePoint
-    langs:
-      - typeScript
-    type: field
+      Indicates that the framework was hosted by a classic server-rendered
+      SharePoint page. Some functionality may be limited, e.g. various
+      extensibility APIs may not be supported.
     numericValue: '3'
-  - uid: '@microsoft/sp-core-library!EnvironmentType.Local:member'
+  - name: Local
+    uid: '@microsoft/sp-core-library!EnvironmentType.Local:member'
+    package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the SharePoint Framework is running on a page from a "localhost" web server, for example the
-      SharePoint Workbench when hosted via "gulp serve". SharePoint REST API calls will not be available, and in general
-      network access may not authenticate properly. Certain page context information may be using mock values for
-      testing.
-    name: Local
-    fullName: Local
-    langs:
-      - typeScript
-    type: field
+      Indicates that the SharePoint Framework is running on a page from a
+      "localhost" web server, for example the SharePoint Workbench when hosted
+      via "gulp serve". SharePoint REST API calls will not be available, and in
+      general network access may not authenticate properly. Certain page context
+      information may be using mock values for testing.
     numericValue: '1'
-  - uid: '@microsoft/sp-core-library!EnvironmentType.SharePoint:member'
+  - name: SharePoint
+    uid: '@microsoft/sp-core-library!EnvironmentType.SharePoint:member'
+    package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the SharePoint Framework is running on a modern SharePoint web page, with full framework
-      functionality. This is the normal usage scenario.
-    name: SharePoint
-    fullName: SharePoint
-    langs:
-      - typeScript
-    type: field
+      Indicates that the SharePoint Framework is running on a modern SharePoint
+      web page, with full framework functionality. This is the normal usage
+      scenario.
     numericValue: '2'
-  - uid: '@microsoft/sp-core-library!EnvironmentType.Test:member'
+  - name: Test
+    uid: '@microsoft/sp-core-library!EnvironmentType.Test:member'
+    package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the SharePoint Framework is running inside a test harness, e.g. a unit test. There may be no user
-      interaction at all, and network access in general may be disabled.
-    name: Test
-    fullName: Test
-    langs:
-      - typeScript
-    type: field
+      Indicates that the SharePoint Framework is running inside a test harness,
+      e.g. a unit test. There may be no user interaction at all, and network
+      access in general may be disabled.
     numericValue: '0'

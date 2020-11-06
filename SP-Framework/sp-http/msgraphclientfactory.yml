@@ -1,74 +1,50 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!MSGraphClientFactory:class'
-    summary: >-
-      Returns a preinitialized version of the MSGraphClient. For more information:
-      [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph)
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `MSGraphClientFactory` class.
-    name: MSGraphClientFactory
-    fullName: MSGraphClientFactory
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: MSGraphClientFactory
+uid: '@microsoft/sp-http!MSGraphClientFactory:class'
+package: '@microsoft/sp-http!'
+fullName: MSGraphClientFactory
+summary: >-
+  Returns a preinitialized version of the MSGraphClient. For more information:
+  [<xref uid="https://docs"
+  />.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph](<xref
+  uid="https://docs" />.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph)
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `MSGraphClientFactory` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: serviceKey
+    uid: '@microsoft/sp-http!MSGraphClientFactory.serviceKey:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!MSGraphClientFactory#getClient:member(1)'
-      - '@microsoft/sp-http!MSGraphClientFactory.serviceKey:member'
-  - uid: '@microsoft/sp-http!MSGraphClientFactory#getClient:member(1)'
-    summary: >-
-      Returns an instance of the MSGraphClient that communicates with the current tenant's configurable Service
-      Principal.
-    name: getClient()
-    fullName: getClient()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getClient(): Promise<MSGraphClient>;'
-      return:
-        type:
-          - '@microsoft/sp-http!MSGraphClientFactory#getClient~0:complex'
-        description: ''
-  - uid: '@microsoft/sp-http!MSGraphClientFactory.serviceKey:member'
-    summary: The service key for MSGraphClientFactory.
-    name: serviceKey
     fullName: serviceKey
-    langs:
-      - typeScript
-    type: property
+    summary: The service key for MSGraphClientFactory.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly serviceKey: ServiceKey<MSGraphClientFactory>;'
       return:
-        type:
-          - '@microsoft/sp-http!MSGraphClientFactory.serviceKey~0:complex'
-references:
-  - uid: '@microsoft/sp-http!MSGraphClientFactory#getClient~0:complex'
-    name: Promise<MSGraphClient>
-    fullName: Promise<default>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: MSGraphClient
-        fullName: default
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-http!MSGraphClientFactory.serviceKey~0:complex'
-    name: ServiceKey<MSGraphClientFactory>
-    fullName: ServiceKey<default>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!ServiceKey:class'
-        name: ServiceKey
-        fullName: ServiceKey
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: MSGraphClientFactory
-        fullName: default
-      - name: '>'
-        fullName: '>'
+        type: >-
+          @microsoft/sp-http!MSGraphClientFactory.<xref
+          uid="serviceKey~0:complex" />
+methods:
+  - name: getClient()
+    uid: '@microsoft/sp-http!MSGraphClientFactory#getClient:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: getClient()
+    summary: >-
+      Returns an instance of the MSGraphClient that communicates with the
+      current tenant's configurable Service Principal.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getClient(): Promise<MSGraphClient>;'
+      return:
+        type: >-
+          @microsoft/sp-http!MSGraphClientFactory#<xref
+          uid="getClient~0:complex" />
+        description: ''

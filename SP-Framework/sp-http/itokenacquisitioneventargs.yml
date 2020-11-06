@@ -1,44 +1,36 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs:interface'
-    summary: Represents arguments used for raising a token acquisiton failure event.
-    name: ITokenAcquisitionEventArgs
-    fullName: ITokenAcquisitionEventArgs
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-core-library!SPEventArgs:class'
-    inheritance:
-      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+### YamlMime:TSType
+name: ITokenAcquisitionEventArgs
+uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs:interface'
+package: '@microsoft/sp-http!'
+fullName: ITokenAcquisitionEventArgs
+summary: Represents arguments used for raising a token acquisiton failure event.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: message
+    uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs#message:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!ITokenAcquisitionEventArgs#message:member'
-      - '@microsoft/sp-http!ITokenAcquisitionEventArgs#redirectUrl:member'
-  - uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs#message:member'
-    summary: The message returned from ADAL fails to retrieve a token from Azure AD.
-    name: message
     fullName: message
-    langs:
-      - typeScript
-    type: property
+    summary: The message returned from ADAL fails to retrieve a token from Azure AD.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'message: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs#redirectUrl:member'
-    summary: The url of the page for the end user to interact with Azure AD.
-    name: redirectUrl
+        type: string
+  - name: redirectUrl
+    uid: '@microsoft/sp-http!ITokenAcquisitionEventArgs#redirectUrl:member'
+    package: '@microsoft/sp-http!'
     fullName: redirectUrl
-    langs:
-      - typeScript
-    type: property
+    summary: The url of the page for the end user to interact with Azure AD.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'redirectUrl?: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
-    name: SPEventArgs
+        type: string
+extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'

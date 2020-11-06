@@ -1,188 +1,174 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
-    summary: '`PropertyPaneDynamicData` component props.'
-    deprecated:
-      content: '- This has been replaced by IPropertyPaneDynamicFieldProps'
-    isPreview: true
-    name: IPropertyPaneDynamicTextFieldProps
-    fullName: IPropertyPaneDynamicTextFieldProps
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IPropertyPaneDynamicTextFieldProps
+uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
+package: '@microsoft/sp-property-pane!'
+fullName: IPropertyPaneDynamicTextFieldProps
+summary: '`PropertyPaneDynamicData` component props.'
+remarks: ''
+isPreview: true
+isDeprecated: true
+customDeprecatedMessage: '- This has been replaced by IPropertyPaneDynamicFieldProps'
+type: interface
+properties:
+  - name: ariaLabel
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#ariaLabel:member
     package: '@microsoft/sp-property-pane!'
-    children:
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#ariaLabel:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#description:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#disabled:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#errorMessage:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#label:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#onGetErrorMessage:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#placeholder:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#validateOnFocusIn:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#validateOnFocusOut:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#value:member'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#ariaLabel:member'
-    summary: 'ARIA Label for text field, if any.'
-    isPreview: true
-    name: ariaLabel
     fullName: ariaLabel
-    langs:
-      - typeScript
-    type: property
+    summary: 'ARIA Label for text field, if any.'
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'ariaLabel?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#description:member'
-    summary: The text field input description.
-    isPreview: true
-    name: description
+        type: string
+  - name: description
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#description:member
+    package: '@microsoft/sp-property-pane!'
     fullName: description
-    langs:
-      - typeScript
-    type: property
+    summary: The text field input description.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'description?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#disabled:member'
-    summary: Whether the property pane text field is enabled or not.
-    isPreview: true
-    name: disabled
+        type: string
+  - name: disabled
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#disabled:member
+    package: '@microsoft/sp-property-pane!'
     fullName: disabled
-    langs:
-      - typeScript
-    type: property
+    summary: Whether the property pane text field is enabled or not.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'disabled?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#errorMessage:member'
+        type: boolean
+  - name: errorMessage
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#errorMessage:member
+    package: '@microsoft/sp-property-pane!'
+    fullName: errorMessage
     summary: 'If set, this will be displayed as an error message.'
     remarks: >-
-      When `onGetErrorMessage` returns empty string, if this property has a value set then this will be displayed as the
-      error message.
+      When `onGetErrorMessage` returns empty string, if this property has a
+      value set then this will be displayed as the error message.
 
 
-      Make sure to set this only if you want to see an error message displayed for the text field.
+      Make sure to set this only if you want to see an error message displayed
+      for the text field.
     isPreview: true
-    name: errorMessage
-    fullName: errorMessage
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'errorMessage?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#label:member'
-    summary: Label for the text field.
-    isPreview: true
-    name: label
+        type: string
+  - name: label
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#label:member
+    package: '@microsoft/sp-property-pane!'
     fullName: label
-    langs:
-      - typeScript
-    type: property
+    summary: Label for the text field.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'label?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#onGetErrorMessage:member'
-    summary: This method is used to get the validation error message and determine whether the input value is valid or not.
-    remarks: |-
+        type: string
+  - name: onGetErrorMessage
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#onGetErrorMessage:member
+    package: '@microsoft/sp-property-pane!'
+    fullName: onGetErrorMessage
+    summary: >-
+      This method is used to get the validation error message and determine
+      whether the input value is valid or not.
+    remarks: >-
       When it returns string:
+
 
       - If valid, it returns empty string.
 
-      - If invalid, it returns the error message string and an error message is displayed below the text field.
+
+      - If invalid, it returns the error message string and an error message is
+      displayed below the text field.
+
 
       When it returns `Promise<string>`<!-- -->:
 
+
       - The resolved value is display as error message.
+
 
       - The rejected, the value is thrown away.
     isPreview: true
-    name: onGetErrorMessage
-    fullName: onGetErrorMessage
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'onGetErrorMessage?: (value: string) => string | Promise<string>;'
       return:
-        type:
-          - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#onGetErrorMessage~0:complex'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#placeholder:member'
-    summary: Placeholder text to be displayed in the text field.
-    isPreview: true
-    name: placeholder
+        type: >-
+          @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#<xref
+          uid="onGetErrorMessage~0:complex" />
+  - name: placeholder
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#placeholder:member
+    package: '@microsoft/sp-property-pane!'
     fullName: placeholder
-    langs:
-      - typeScript
-    type: property
+    summary: Placeholder text to be displayed in the text field.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'placeholder?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#validateOnFocusIn:member'
+        type: string
+  - name: validateOnFocusIn
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#validateOnFocusIn:member
+    package: '@microsoft/sp-property-pane!'
+    fullName: validateOnFocusIn
     summary: Run validation when the PropertyPaneTextField is focused.
     remarks: The default value is false.
     isPreview: true
-    name: validateOnFocusIn
-    fullName: validateOnFocusIn
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'validateOnFocusIn?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#validateOnFocusOut:member'
-    summary: Run validation when the `PropertyPaneTextField` is out of focus or on blur.
+        type: boolean
+  - name: validateOnFocusOut
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#validateOnFocusOut:member
+    package: '@microsoft/sp-property-pane!'
+    fullName: validateOnFocusOut
+    summary: >-
+      Run validation when the `PropertyPaneTextField` is out of focus or on
+      blur.
     remarks: The default value is false.
     isPreview: true
-    name: validateOnFocusOut
-    fullName: validateOnFocusOut
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'validateOnFocusOut?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#value:member'
-    summary: >-
-      Value to be displayed in the text field when the value of the targetProperty in the manifest's property bag is
-      empty or contains null value.
-    isPreview: true
-    name: value
+        type: boolean
+  - name: value
+    uid: >-
+      @microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#value:member
+    package: '@microsoft/sp-property-pane!'
     fullName: value
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Value to be displayed in the text field when the value of the
+      targetProperty in the manifest's property bag is empty or contains null
+      value.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'value?: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps#onGetErrorMessage~0:complex'
-    name: '(value: string) => string | Promise<string>'
-    fullName: '(value: string) => string | Promise<string>'
-    spec.typeScript:
-      - name: '(value: string) => string | '
-        fullName: '(value: string) => string | '
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <string>
-        fullName: <string>
+        type: string

@@ -1,49 +1,48 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!ITimeProvider:interface'
-    summary: >-
-      This is a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class) contract for reading the system
-      clock.
-    remarks: >-
-      This interface abstracts the functionality of the system time APIs for usage with a
-      [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)<!-- -->. For example, a unit test might replace
-      the default [TimeProvider](xref:@microsoft/sp-core-library!TimeProvider:class) service with a mock implementation
-      that follows a manually incremented timeline, in order to ensure that test failures are always repeatable.
-    name: ITimeProvider
-    fullName: ITimeProvider
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ITimeProvider
+uid: '@microsoft/sp-core-library!ITimeProvider:interface'
+package: '@microsoft/sp-core-library!'
+fullName: ITimeProvider
+summary: >-
+  This is a [ServiceScope](xref:<xref
+  uid="@microsoft/sp-core-library!ServiceScope:class" />) contract for reading
+  the system clock.
+remarks: >-
+  This interface abstracts the functionality of the system time APIs for usage
+  with a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)<!--
+  -->. For example, a unit test might replace the default
+  [TimeProvider](xref:@microsoft/sp-core-library!TimeProvider:class) service
+  with a mock implementation that follows a manually incremented timeline, in
+  order to ensure that test failures are always repeatable.
+isPreview: false
+isDeprecated: false
+type: interface
+methods:
+  - name: getDate()
+    uid: '@microsoft/sp-core-library!ITimeProvider#getDate:member(1)'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!ITimeProvider#getDate:member(1)'
-      - '@microsoft/sp-core-library!ITimeProvider#getTimestamp:member(1)'
-  - uid: '@microsoft/sp-core-library!ITimeProvider#getDate:member(1)'
-    summary: 'Returns the current date/time, similar to the Date class constructor.'
-    name: getDate()
     fullName: getDate()
-    langs:
-      - typeScript
-    type: method
+    summary: 'Returns the current date/time, similar to the Date class constructor.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'getDate(): Date;'
       return:
-        type:
-          - '!Date:interface'
+        type: '<xref uid="!Date:interface" />'
         description: ''
-  - uid: '@microsoft/sp-core-library!ITimeProvider#getTimestamp:member(1)'
-    summary: 'Returns a DOMHighResTimeStamp timing measurement, as defined by the standard performance.now() API.'
-    name: getTimestamp()
+  - name: getTimestamp()
+    uid: '@microsoft/sp-core-library!ITimeProvider#getTimestamp:member(1)'
+    package: '@microsoft/sp-core-library!'
     fullName: getTimestamp()
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      Returns a DOMHighResTimeStamp timing measurement, as defined by the
+      standard performance.now() API.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'getTimestamp(): number;'
       return:
-        type:
-          - number
+        type: number
         description: ''
-references:
-  - uid: '!Date:interface'
-    name: Date

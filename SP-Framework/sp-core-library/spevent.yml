@@ -1,88 +1,95 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!SPEvent:class'
-    summary: Represents a framework event that components can subscribe to.
-    remarks: >-
-      Examples of events in a web application might include: the user clicking a button, the system navigating to
-      another page, or an item being added/removed from an abstract collection. The SharePoint Framework represents
-      events using instances of the SPEvent object, one for each kind of event. The SPEvent object is typically exposed
-      as a property of an associated class (e.g. the button that can be clicked). When a component is interested in an
-      event, it calls add() to register an event handler callback that will be invoked each time the event occurs. The
-      handler receives an SPEventArgs parameter that may provide additional details about what happened. This is
-      analogous to the browser's Document Object Model (DOM) events. The main difference is the ISPEventObserver
-      feature, which tracks which component subscribed to each event, and automatically unsubscribes the handler when
-      the component is disposed.
+### YamlMime:TSType
+name: SPEvent
+uid: '@microsoft/sp-core-library!SPEvent:class'
+package: '@microsoft/sp-core-library!'
+fullName: SPEvent
+summary: Represents a framework event that components can subscribe to.
+remarks: >-
+  Examples of events in a web application might include: the user clicking a
+  button, the system navigating to another page, or an item being added/removed
+  from an abstract collection. The SharePoint Framework represents events using
+  instances of the SPEvent object, one for each kind of event. The SPEvent
+  object is typically exposed as a property of an associated class (e.g. the
+  button that can be clicked). When a component is interested in an event, it
+  calls add() to register an event handler callback that will be invoked each
+  time the event occurs. The handler receives an SPEventArgs parameter that may
+  provide additional details about what happened. This is analogous to the
+  browser's Document Object Model (DOM) events. The main difference is the
+  ISPEventObserver feature, which tracks which component subscribed to each
+  event, and automatically unsubscribes the handler when the component is
+  disposed.
 
 
-      When an event is raised, all handlers are invoked synchronously. The order in which event handlers are called is
-      unspecified. The event handler callback must catch any exceptions that occur during processing; an uncaught
-      exception will not prevent other handlers from executing, but it will be reported as a problem with the associated
-      component.
+  When an event is raised, all handlers are invoked synchronously. The order in
+  which event handlers are called is unspecified. The event handler callback
+  must catch any exceptions that occur during processing; an uncaught exception
+  will not prevent other handlers from executing, but it will be reported as a
+  problem with the associated component.
 
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `SPEvent` class.
-    name: SPEvent
-    fullName: SPEvent
-    langs:
-      - typeScript
-    type: class
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `SPEvent` class.
+isPreview: false
+isDeprecated: false
+type: class
+methods:
+  - name: 'add(observer, eventHandler)'
+    uid: '@microsoft/sp-core-library!SPEvent#add:member(1)'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!SPEvent#add:member(1)'
-      - '@microsoft/sp-core-library!SPEvent#remove:member(1)'
-  - uid: '@microsoft/sp-core-library!SPEvent#add:member(1)'
+    fullName: 'add(observer, eventHandler)'
     summary: Registers a callback that will be invoked whenever the event occurs.
     remarks: >-
-      The same object can add multiple event handlers to the same event. Since BaseComponent implements the
-      ISPEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event
-      handler to be automatically unsubscribed when the web part or extension is disposed.
-    name: 'add(observer, eventHandler)'
-    fullName: 'add(observer, eventHandler)'
-    langs:
-      - typeScript
-    type: method
+      The same object can add multiple event handlers to the same event. Since
+      BaseComponent implements the ISPEventObserver interface, a web part or
+      extension can pass itself as the observer. This will cause the event
+      handler to be automatically unsubscribed when the web part or extension is
+      disposed.
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'add(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;'
-      return:
-        type:
-          - void
-        description: ''
+      content: >-
+        add(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) =>
+        void): void;
       parameters:
         - id: observer
           description: >-
-            Indicates the object that is subscribing to the event: When the object is disposed, the event handler will
-            be automatically removed. This object is also used for diagnostic purposes, e.g. detecting if the event
-            handler failed to catch an exception.
-          type:
-            - '@microsoft/sp-core-library!ISPEventObserver:interface'
+            Indicates the object that is subscribing to the event: When the
+            object is disposed, the event handler will be automatically removed.
+            This object is also used for diagnostic purposes, e.g. detecting if
+            the event handler failed to catch an exception.
+          type: '<xref uid="@microsoft/sp-core-library!ISPEventObserver:interface" />'
         - id: eventHandler
           description: A callback function that will be invoked whenever the event occurs
-          type:
-            - '(eventArgs: TEventArgs) => void'
-  - uid: '@microsoft/sp-core-library!SPEvent#remove:member(1)'
-    summary: Unregisters a callback that was registered using add().
-    remarks: 'If the event handler has already been removed, or if it was never added, then this method has no effect.'
-    name: 'remove(observer, eventHandler)'
-    fullName: 'remove(observer, eventHandler)'
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'remove(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;'
+          type: '(eventArgs: TEventArgs) =&gt; void'
       return:
-        type:
-          - void
+        type: void
         description: ''
+  - name: 'remove(observer, eventHandler)'
+    uid: '@microsoft/sp-core-library!SPEvent#remove:member(1)'
+    package: '@microsoft/sp-core-library!'
+    fullName: 'remove(observer, eventHandler)'
+    summary: Unregisters a callback that was registered using add().
+    remarks: >-
+      If the event handler has already been removed, or if it was never added,
+      then this method has no effect.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        remove(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs)
+        => void): void;
       parameters:
         - id: observer
-          description: This must be the same observer that was passed to the add() function.
-          type:
-            - '@microsoft/sp-core-library!ISPEventObserver:interface'
+          description: >-
+            This must be the same observer that was passed to the add()
+            function.
+          type: '<xref uid="@microsoft/sp-core-library!ISPEventObserver:interface" />'
         - id: eventHandler
-          description: The event handler to remove; this must be the same object instance that was passed to the add() function.
-          type:
-            - '(eventArgs: TEventArgs) => void'
-references:
-  - uid: '@microsoft/sp-core-library!ISPEventObserver:interface'
-    name: ISPEventObserver
+          description: >-
+            The event handler to remove; this must be the same object instance
+            that was passed to the add() function.
+          type: '(eventArgs: TEventArgs) =&gt; void'
+      return:
+        type: void
+        description: ''

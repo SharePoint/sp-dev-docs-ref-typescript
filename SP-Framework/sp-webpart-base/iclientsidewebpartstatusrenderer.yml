@@ -1,115 +1,98 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer:interface'
-    summary: >-
-      Interface to be implemented by a component that should display the loading indicator and error messages for a web
-      part.
-    name: IClientSideWebPartStatusRenderer
-    fullName: IClientSideWebPartStatusRenderer
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IClientSideWebPartStatusRenderer
+uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: IClientSideWebPartStatusRenderer
+summary: >-
+  Interface to be implemented by a component that should display the loading
+  indicator and error messages for a web part.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+methods:
+  - name: clearError(domElement)
+    uid: >-
+      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)'
-      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)'
-      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)'
-      - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)'
-  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)'
-    summary: Clear the webpart error message.
-    name: clearError(domElement)
     fullName: clearError(domElement)
-    langs:
-      - typeScript
-    type: method
+    summary: Clear the webpart error message.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'clearError(domElement: HTMLElement): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: domElement
           description: the web part container div.
-          type:
-            - '!HTMLElement:interface'
-  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)'
-    summary: Clear the loading indicator.
-    name: clearLoadingIndicator(domElement)
+          type: '<xref uid="!HTMLElement:interface" />'
+      return:
+        type: void
+        description: ''
+  - name: clearLoadingIndicator(domElement)
+    uid: >-
+      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)
+    package: '@microsoft/sp-webpart-base!'
     fullName: clearLoadingIndicator(domElement)
-    langs:
-      - typeScript
-    type: method
+    summary: Clear the loading indicator.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'clearLoadingIndicator(domElement: Element): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: domElement
           description: the web part container div.
-          type:
-            - '!Element:interface'
-  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)'
-    summary: Display a loading spinner.
-    name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
+          type: '<xref uid="!Element:interface" />'
+      return:
+        type: void
+        description: ''
+  - name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
+    uid: >-
+      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)
+    package: '@microsoft/sp-webpart-base!'
     fullName: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
-    langs:
-      - typeScript
-    type: method
+    summary: Display a loading spinner.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'displayLoadingIndicator(domElement: Element, loadingMessage: string, timeout?: number): void;'
-      return:
-        type:
-          - void
-        description: ''
+      content: >-
+        displayLoadingIndicator(domElement: Element, loadingMessage: string,
+        timeout?: number): void;
       parameters:
         - id: domElement
           description: the web part container div.
-          type:
-            - '!Element:interface'
+          type: '<xref uid="!Element:interface" />'
         - id: loadingMessage
           description: the message to be displayed when the loading spinner id displayed.
-          type:
-            - string
+          type: string
         - id: timeout
           description: timeout to render the loading indicator. Default is 1500ms.
-          type:
-            - number
-  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)'
-    summary: Render the provided error message in the webpart container div.
-    name: 'renderError(domElement, error)'
+          type: number
+      return:
+        type: void
+        description: ''
+  - name: 'renderError(domElement, error)'
+    uid: >-
+      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)
+    package: '@microsoft/sp-webpart-base!'
     fullName: 'renderError(domElement, error)'
-    langs:
-      - typeScript
-    type: method
+    summary: Render the provided error message in the webpart container div.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'renderError(domElement: HTMLElement, error: Error | string): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: domElement
           description: the web part container div.
-          type:
-            - '!HTMLElement:interface'
+          type: '<xref uid="!HTMLElement:interface" />'
         - id: error
           description: the error message.
-          type:
-            - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError~0:complex'
-references:
-  - uid: '!HTMLElement:interface'
-    name: HTMLElement
-  - uid: '!Element:interface'
-    name: Element
-  - uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError~0:complex'
-    name: Error | string
-    fullName: Error | string
-    spec.typeScript:
-      - uid: '!Error:interface'
-        name: Error
-        fullName: Error
-      - name: ' | string'
-        fullName: ' | string'
+          type: >-
+            @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#<xref
+            uid="renderError~0:complex" />
+      return:
+        type: void
+        description: ''

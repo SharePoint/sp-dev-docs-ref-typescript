@@ -1,94 +1,81 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface'
-    summary: >-
-      This is the interface for a script module with the "component" type. Modules of this type will be provided via
-      manifests. In order for the dependency to be loaded, the manifest must be available on the site.
-    isPreview: true
-    name: IComponentModuleConfiguration
-    fullName: IComponentModuleConfiguration
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
-    inheritance:
-      - type: '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
+### YamlMime:TSType
+name: IComponentModuleConfiguration
+uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IComponentModuleConfiguration
+summary: >-
+  This is the interface for a script module with the "component" type. Modules
+  of this type will be provided via manifests. In order for the dependency to be
+  loaded, the manifest must be available on the site.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: failoverPath
+    uid: >-
+      @microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member'
-      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
-      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member'
-  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member'
-    summary: A path to the framework-supplied component in case the framework fails to load the requested version.
+    fullName: failoverPath
+    summary: >-
+      A path to the framework-supplied component in case the framework fails to
+      load the requested version.
     remarks: >-
-      This must be either a fully-qualified URL, or a path under the paths specified in the `internalModuleBaseUrls`
-      field. If this field is not specified and the version is not available in the framework runtime, the closest
-      matching version of the component will be provided instead.
+      This must be either a fully-qualified URL, or a path under the paths
+      specified in the `internalModuleBaseUrls` field. If this field is not
+      specified and the version is not available in the framework runtime, the
+      closest matching version of the component will be provided instead.
 
 
-      Supported values: The path to the component either as a fully-qualified URL or as a path under the paths provided
-      in the "internalModuleBaseUrls" field.
+      Supported values: The path to the component either as a fully-qualified
+      URL or as a path under the paths provided in the "internalModuleBaseUrls"
+      field.
 
 
       Example: `"https://code.jquery.com/jquery-2.2.4.min.js"`
     isPreview: true
-    name: failoverPath
-    fullName: failoverPath
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'failoverPath?: string | IPath;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
+        type: >-
+          @microsoft/sp-module-interfaces!IComponentModuleConfiguration#<xref
+          uid="failoverPath~0:complex" />
+  - name: id
+    uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: id
     summary: The ID of the framework-supplied component to be loaded.
     remarks: |-
       Supported values: string representing a component's ID.
 
       Example: `"0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d"`
     isPreview: true
-    name: id
-    fullName: id
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'id: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member'
+        type: string
+  - name: version
+    uid: >-
+      @microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: version
     summary: >-
-      The version of the framework-supplied component to be loaded. For framework runtime component such as
-      `@microsoft/sp-client-base`<!-- -->, it is recommended the version of the framework component the component was
-      developed against be specified.
-    remarks: |-
-      Supported values: string representing a [semantic version](http://semver.org)<!-- -->, or "latest".
+      The version of the framework-supplied component to be loaded. For
+      framework runtime component such as `@microsoft/sp-client-base`&lt;!--
+      --&gt;, it is recommended the version of the framework component the
+      component was developed against be specified.
+    remarks: >-
+      Supported values: string representing a [semantic
+      version](http://semver.org)<!-- -->, or "latest".
+
 
       Example: `"2.2.4"`
     isPreview: true
-    name: version
-    fullName: version
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'version: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
-    name: IModuleConfiguration
-  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath~0:complex'
-    name: string | IPath
-    fullName: string | IPath
-    spec.typeScript:
-      - name: 'string | '
-        fullName: 'string | '
-      - uid: '@microsoft/sp-module-interfaces!IPath:interface'
-        name: IPath
-        fullName: IPath
+        type: string
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'

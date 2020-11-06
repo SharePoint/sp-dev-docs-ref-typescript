@@ -1,38 +1,35 @@
-### YamlMime:UniversalReference
-items:
-  - uid: sp-http.IGraphHttpClientConfigurations
-    summary: Standard configurations for GraphHttpClient.
-    remarks: >-
-      This interface provides standard predefined GraphHttpClientConfiguration objects for use with the GraphHttpClient
-      class. In general, clients should choose the latest available version number, which enables all the switches that
-      are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be
-      introduced, which ensures that existing code will continue to function the way it did at the time when it was
-      tested.)
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    isPreview: true
-    name: IGraphHttpClientConfigurations
-    fullName: IGraphHttpClientConfigurations
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IGraphHttpClientConfigurations
+uid: sp-http.IGraphHttpClientConfigurations
+package: sp-http
+fullName: IGraphHttpClientConfigurations
+summary: Standard configurations for GraphHttpClient.
+remarks: >-
+  This interface provides standard predefined GraphHttpClientConfiguration
+  objects for use with the GraphHttpClient class. In general, clients should
+  choose the latest available version number, which enables all the switches
+  that are recommended for typical scenarios. (If new switches are introduced in
+  the future, a new version number will be introduced, which ensures that
+  existing code will continue to function the way it did at the time when it was
+  tested.)
+isPreview: true
+isDeprecated: true
+customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
+type: interface
+properties:
+  - name: v1
+    uid: sp-http.IGraphHttpClientConfigurations.v1
     package: sp-http
-    children:
-      - sp-http.IGraphHttpClientConfigurations.v1
-  - uid: sp-http.IGraphHttpClientConfigurations.v1
-    summary: >-
-      This configuration turns off every feature switch for HttpClient. The fetch() behavior will be essentially
-      identical to the WHATWG standard API that is documented here: https://fetch.spec.whatwg.org/
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    isPreview: true
-    name: v1
     fullName: v1
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      This configuration turns off every feature switch for HttpClient. The
+      fetch() behavior will be essentially identical to the WHATWG standard API
+      that is documented here: <xref uid="https://fetch" />.spec.whatwg.org/
+    remarks: ''
+    isPreview: true
+    isDeprecated: true
+    customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
     syntax:
       content: 'readonly v1: GraphHttpClientConfiguration;'
       return:
-        type:
-          - GraphHttpClientConfiguration
+        type: GraphHttpClientConfiguration

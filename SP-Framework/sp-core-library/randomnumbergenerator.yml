@@ -1,77 +1,59 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!RandomNumberGenerator:class'
-    summary: >-
-      This is the default implementation of
-      [IRandomNumberGenerator](xref:@microsoft/sp-core-library!IRandomNumberGenerator:interface) that simply calls
-      Math.random().
-    name: RandomNumberGenerator
-    fullName: RandomNumberGenerator
-    langs:
-      - typeScript
-    type: class
-    implements:
-      - '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
+### YamlMime:TSType
+name: RandomNumberGenerator
+uid: '@microsoft/sp-core-library!RandomNumberGenerator:class'
+package: '@microsoft/sp-core-library!'
+fullName: RandomNumberGenerator
+summary: >-
+  This is the default implementation of [IRandomNumberGenerator](xref:<xref
+  uid="@microsoft/sp-core-library!IRandomNumberGenerator:interface" />) that
+  simply calls Math.random().
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)(serviceScope)
+    uid: '@microsoft/sp-core-library!RandomNumberGenerator:constructor(1)'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!RandomNumberGenerator:constructor(1)'
-      - '@microsoft/sp-core-library!RandomNumberGenerator#generate:member(1)'
-      - '@microsoft/sp-core-library!RandomNumberGenerator.serviceKey:member'
-  - uid: '@microsoft/sp-core-library!RandomNumberGenerator:constructor(1)'
-    summary: Constructs a new instance of the `RandomNumberGenerator` class
-    name: (constructor)(serviceScope)
     fullName: (constructor)(serviceScope)
-    langs:
-      - typeScript
-    type: constructor
+    summary: Constructs a new instance of the `RandomNumberGenerator` class
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
       parameters:
         - id: serviceScope
           description: ''
-          type:
-            - '@microsoft/sp-core-library!default:class'
-  - uid: '@microsoft/sp-core-library!RandomNumberGenerator#generate:member(1)'
-    summary: 'Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().'
-    name: generate()
-    fullName: generate()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'generate(): number;'
-      return:
-        type:
-          - number
-        description: ''
-  - uid: '@microsoft/sp-core-library!RandomNumberGenerator.serviceKey:member'
-    summary: The service key for IRandomNumberGenerator.
-    name: serviceKey
+          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+properties:
+  - name: serviceKey
+    uid: '@microsoft/sp-core-library!RandomNumberGenerator.serviceKey:member'
+    package: '@microsoft/sp-core-library!'
     fullName: serviceKey
-    langs:
-      - typeScript
-    type: property
+    summary: The service key for IRandomNumberGenerator.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly serviceKey: ServiceKey<IRandomNumberGenerator>;'
       return:
-        type:
-          - '@microsoft/sp-core-library!RandomNumberGenerator.serviceKey~0:complex'
-references:
-  - uid: '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
-    name: IRandomNumberGenerator
-  - uid: '@microsoft/sp-core-library!default:class'
-    name: ServiceScope
-  - uid: '@microsoft/sp-core-library!RandomNumberGenerator.serviceKey~0:complex'
-    name: ServiceKey<IRandomNumberGenerator>
-    fullName: default<IRandomNumberGenerator>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!default:class'
-        name: ServiceKey
-        fullName: default
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
-        name: IRandomNumberGenerator
-        fullName: IRandomNumberGenerator
-      - name: '>'
-        fullName: '>'
+        type: >-
+          @microsoft/sp-core-library!RandomNumberGenerator.<xref
+          uid="serviceKey~0:complex" />
+methods:
+  - name: generate()
+    uid: '@microsoft/sp-core-library!RandomNumberGenerator#generate:member(1)'
+    package: '@microsoft/sp-core-library!'
+    fullName: generate()
+    summary: >-
+      Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive),
+      following the contract of Math.random().
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'generate(): number;'
+      return:
+        type: number
+        description: ''

@@ -1,265 +1,251 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-component-base!DynamicProperty:class'
-    summary: Serializable object that simplifies usage of a DynamicProperty.
-    remarks: >-
-      This is built for usage in web part properties, and modified through the property pane. Can be initialized with a
-      default callback. Web parts initialize with the render method so if the 3rd party developer does nothing, a change
-      in the DynamicProperty will re-render the web part automatically.
-    name: DynamicProperty
-    fullName: DynamicProperty
-    langs:
-      - typeScript
-    type: class
-    implements:
-      - '@microsoft/sp-core-library!IDisposable:interface'
+### YamlMime:TSType
+name: DynamicProperty
+uid: '@microsoft/sp-component-base!DynamicProperty:class'
+package: '@microsoft/sp-component-base!'
+fullName: DynamicProperty
+summary: Serializable object that simplifies usage of a DynamicProperty.
+remarks: >-
+  This is built for usage in web part properties, and modified through the
+  property pane. Can be initialized with a default callback. Web parts
+  initialize with the render method so if the 3rd party developer does nothing,
+  a change in the DynamicProperty will re-render the web part automatically.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: '(constructor)(provider, callback)'
+    uid: '@microsoft/sp-component-base!DynamicProperty:constructor(1)'
     package: '@microsoft/sp-component-base!'
-    children:
-      - '@microsoft/sp-component-base!DynamicProperty:constructor(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#dispose:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#hasDefaultCallback:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#isDisposed:member'
-      - '@microsoft/sp-component-base!DynamicProperty#reference:member'
-      - '@microsoft/sp-component-base!DynamicProperty#register:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#removeDefaultCallback:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#setReference:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#setValue:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#tryGetSource:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#tryGetValue:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#tryGetValues:member(1)'
-      - '@microsoft/sp-component-base!DynamicProperty#unregister:member(1)'
-  - uid: '@microsoft/sp-component-base!DynamicProperty:constructor(1)'
-    summary: Create a new DynamicProperty object.
-    name: '(constructor)(provider, callback)'
     fullName: '(constructor)(provider, callback)'
-    langs:
-      - typeScript
-    type: constructor
+    summary: Create a new DynamicProperty object.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'constructor(provider: DynamicDataProvider, callback?: () => void);'
       parameters:
         - id: provider
           description: DynamicDataProvider.
-          type:
-            - '@microsoft/sp-component-base!default:class'
+          type: '<xref uid="@microsoft/sp-component-base!default:class" />'
         - id: callback
-          description: Optional. Default callback to be registered for updates in the DynamicDataSource.
-          type:
-            - () => void
-  - uid: '@microsoft/sp-component-base!DynamicProperty#dispose:member(1)'
-    summary: This method is called to permanently dispose the object.
-    remarks: 'After the object has been disposed, do not call its methods or access its properties.'
-    name: dispose()
-    fullName: dispose()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'dispose(): void;'
-      return:
-        type:
-          - void
-        description: ''
-  - uid: '@microsoft/sp-component-base!DynamicProperty#hasDefaultCallback:member(1)'
-    summary: Returns true if the object has a default callback.
-    name: hasDefaultCallback()
-    fullName: hasDefaultCallback()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'hasDefaultCallback(): boolean;'
-      return:
-        type:
-          - boolean
-        description: ''
-  - uid: '@microsoft/sp-component-base!DynamicProperty#isDisposed:member'
-    summary: >-
-      Returns true if the dispose() method has been called. Once an object is disposed, it remains in this state
-      permanently.
-    remarks: 'After the object has been disposed, do not call its methods or access its properties.'
-    name: isDisposed
+          description: >-
+            Optional. Default callback to be registered for updates in the
+            DynamicDataSource.
+          type: () =&gt; void
+properties:
+  - name: isDisposed
+    uid: '@microsoft/sp-component-base!DynamicProperty#isDisposed:member'
+    package: '@microsoft/sp-component-base!'
     fullName: isDisposed
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Returns true if the dispose() method has been called. Once an object is
+      disposed, it remains in this state permanently.
+    remarks: >-
+      After the object has been disposed, do not call its methods or access its
+      properties.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly isDisposed: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-component-base!DynamicProperty#reference:member'
-    summary: >-
-      DynamicDataReference string that the DynamicProperty object points to. The reference is of the form
-      `<source>:<property>:<path>`<!-- -->.
-    remarks: 'If the DynamicProperty is set up with static data, this returns undefined.'
-    name: reference
+        type: boolean
+  - name: reference
+    uid: '@microsoft/sp-component-base!DynamicProperty#reference:member'
+    package: '@microsoft/sp-component-base!'
     fullName: reference
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      DynamicDataReference string that the DynamicProperty object points to. The
+      reference is of the form
+      `&lt;source&gt;:&lt;property&gt;:&lt;path&gt;`&lt;!-- --&gt;.
+    remarks: 'If the DynamicProperty is set up with static data, this returns undefined.'
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly reference: string | undefined;'
       return:
-        type:
-          - string | undefined
-  - uid: '@microsoft/sp-component-base!DynamicProperty#register:member(1)'
-    summary: Registers a callback function for updates on the associated DynamicDataSource.
-    name: register(callback)
+        type: string | undefined
+methods:
+  - name: dispose()
+    uid: '@microsoft/sp-component-base!DynamicProperty#dispose:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: dispose()
+    summary: This method is called to permanently dispose the object.
+    remarks: >-
+      After the object has been disposed, do not call its methods or access its
+      properties.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type: void
+        description: ''
+  - name: hasDefaultCallback()
+    uid: '@microsoft/sp-component-base!DynamicProperty#hasDefaultCallback:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: hasDefaultCallback()
+    summary: Returns true if the object has a default callback.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'hasDefaultCallback(): boolean;'
+      return:
+        type: boolean
+        description: ''
+  - name: register(callback)
+    uid: '@microsoft/sp-component-base!DynamicProperty#register:member(1)'
+    package: '@microsoft/sp-component-base!'
     fullName: register(callback)
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      Registers a callback function for updates on the associated
+      DynamicDataSource.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'register(callback: () => void): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: callback
           description: Callback function to register.
-          type:
-            - () => void
-  - uid: '@microsoft/sp-component-base!DynamicProperty#removeDefaultCallback:member(1)'
-    summary: Removes the registration for the default callback.
-    remarks: This can be useful for advanced users who only want their custom callbacks.
-    name: removeDefaultCallback()
+          type: () =&gt; void
+      return:
+        type: void
+        description: ''
+  - name: removeDefaultCallback()
+    uid: >-
+      @microsoft/sp-component-base!DynamicProperty#removeDefaultCallback:member(1)
+    package: '@microsoft/sp-component-base!'
     fullName: removeDefaultCallback()
-    langs:
-      - typeScript
-    type: method
+    summary: Removes the registration for the default callback.
+    remarks: >-
+      This can be useful for advanced users who only want their custom
+      callbacks.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'removeDefaultCallback(): void;'
       return:
-        type:
-          - void
+        type: void
         description: ''
-  - uid: '@microsoft/sp-component-base!DynamicProperty#setReference:member(1)'
-    summary: >-
-      Sets the value of the DynamicProperty to be a reference to a DynamicDynamicSource and property. The reference is
-      of the form `<source>:<property>:<path>`<!-- -->.
-    name: setReference(reference)
+  - name: setReference(reference)
+    uid: '@microsoft/sp-component-base!DynamicProperty#setReference:member(1)'
+    package: '@microsoft/sp-component-base!'
     fullName: setReference(reference)
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      Sets the value of the DynamicProperty to be a reference to a
+      DynamicDynamicSource and property. The reference is of the form
+      `&lt;source&gt;:&lt;property&gt;:&lt;path&gt;`&lt;!-- --&gt;.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'setReference(reference: string): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: reference
           description: Id of the DynamicDataSource and property.
-          type:
-            - string
-  - uid: '@microsoft/sp-component-base!DynamicProperty#setValue:member(1)'
-    summary: Sets a static value in the DynamicProperty.
-    name: setValue(value)
+          type: string
+      return:
+        type: void
+        description: ''
+  - name: setValue(value)
+    uid: '@microsoft/sp-component-base!DynamicProperty#setValue:member(1)'
+    package: '@microsoft/sp-component-base!'
     fullName: setValue(value)
-    langs:
-      - typeScript
-    type: method
+    summary: Sets a static value in the DynamicProperty.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'setValue(value: TValue): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: value
           description: Value for the DynamicProperty.
-          type:
-            - TValue
-  - uid: '@microsoft/sp-component-base!DynamicProperty#tryGetSource:member(1)'
-    summary: >-
-      Returns the DynamicDataSource that the DynamicProperty object refers to. Returns undefined if the source doesn't
-      exist.
-    name: tryGetSource()
+          type: TValue
+      return:
+        type: void
+        description: ''
+  - name: tryGetSource()
+    uid: '@microsoft/sp-component-base!DynamicProperty#tryGetSource:member(1)'
+    package: '@microsoft/sp-component-base!'
     fullName: tryGetSource()
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      Returns the DynamicDataSource that the DynamicProperty object refers to.
+      Returns undefined if the source doesn't exist.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'tryGetSource(): IDynamicDataSource | undefined;'
       return:
-        type:
-          - '@microsoft/sp-component-base!DynamicProperty#tryGetSource~0:complex'
+        type: >-
+          @microsoft/sp-component-base!DynamicProperty#<xref
+          uid="tryGetSource~0:complex" />
         description: ''
-  - uid: '@microsoft/sp-component-base!DynamicProperty#tryGetValue:member(1)'
+  - name: tryGetValue()
+    uid: '@microsoft/sp-component-base!DynamicProperty#tryGetValue:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: tryGetValue()
     summary: Returns the value of the object.
     remarks: >-
-      If the value is an array, then the first element of the array is returned; otherwise, the value itself is
-      returned.
+      If the value is an array, then the first element of the array is returned;
+      otherwise, the value itself is returned.
 
 
-      NOTE: This api will never return an array. To retrieve an array value, use the
-      [DynamicProperty.tryGetValues()](xref:@microsoft/sp-component-base!DynamicProperty#tryGetValues:member(1)) API.
-    name: tryGetValue()
-    fullName: tryGetValue()
-    langs:
-      - typeScript
-    type: method
+      NOTE: This api will never return an array. To retrieve an array value, use
+      the
+      [DynamicProperty.tryGetValues()](xref:@microsoft/sp-component-base!DynamicProperty#tryGetValues:member(1))
+      API.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'tryGetValue(): TValue | undefined;'
       return:
-        type:
-          - TValue | undefined
-        description: the value associated with the dynamic property or undefined if the source or the data doesn't exist.
-  - uid: '@microsoft/sp-component-base!DynamicProperty#tryGetValues:member(1)'
+        type: TValue | undefined
+        description: >-
+          the value associated with the dynamic property or undefined if the
+          source or the data doesn't exist.
+  - name: tryGetValues()
+    uid: '@microsoft/sp-component-base!DynamicProperty#tryGetValues:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: tryGetValues()
     summary: Returns the value of the object.
     remarks: >-
-      If the value is NOT an array, then an array is returned with the value being the single entry; otherwise, the
-      value itself is returned. If the property is undefined or cannot be found, an empty array will be returned.
+      If the value is NOT an array, then an array is returned with the value
+      being the single entry; otherwise, the value itself is returned. If the
+      property is undefined or cannot be found, an empty array will be returned.
 
 
-      NOTE: This api will always return an array and it assumes that the array is homogeneous. To retrieve a non-array
-      value, use the
-      [DynamicProperty.tryGetValue()](xref:@microsoft/sp-component-base!DynamicProperty#tryGetValue:member(1)) API.
-    name: tryGetValues()
-    fullName: tryGetValues()
-    langs:
-      - typeScript
-    type: method
+      NOTE: This api will always return an array and it assumes that the array
+      is homogeneous. To retrieve a non-array value, use the
+      [DynamicProperty.tryGetValue()](xref:@microsoft/sp-component-base!DynamicProperty#tryGetValue:member(1))
+      API.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'tryGetValues(): TValue[];'
       return:
-        type:
-          - 'TValue[]'
-        description: the value associated with the dynamic property or an empty array if the source or the data doesn't exist.
-  - uid: '@microsoft/sp-component-base!DynamicProperty#unregister:member(1)'
-    summary: >-
-      Unregisters a callback function for updates on the associated DynamicDataSource. The callback function must be the
-      same it was registered with.
-    name: unregister(callback)
+        type: 'TValue[]'
+        description: >-
+          the value associated with the dynamic property or an empty array if
+          the source or the data doesn't exist.
+  - name: unregister(callback)
+    uid: '@microsoft/sp-component-base!DynamicProperty#unregister:member(1)'
+    package: '@microsoft/sp-component-base!'
     fullName: unregister(callback)
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      Unregisters a callback function for updates on the associated
+      DynamicDataSource. The callback function must be the same it was
+      registered with.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'unregister(callback: () => void): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: callback
           description: Callback function to unregister.
-          type:
-            - () => void
-references:
-  - uid: '@microsoft/sp-core-library!IDisposable:interface'
-    name: IDisposable
-  - uid: '@microsoft/sp-component-base!default:class'
-    name: DynamicDataProvider
-  - uid: '@microsoft/sp-component-base!DynamicProperty#tryGetSource~0:complex'
-    name: IDynamicDataSource | undefined
-    fullName: IDynamicDataSource | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource:interface'
-        name: IDynamicDataSource
-        fullName: IDynamicDataSource
-      - name: ' | undefined'
-        fullName: ' | undefined'
+          type: () =&gt; void
+      return:
+        type: void
+        description: ''

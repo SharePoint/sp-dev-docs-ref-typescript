@@ -1,164 +1,125 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-loader!SPComponentLoader:class'
-    summary: Component loader. Needs to be initialized with an implemented `ISPComponentLoader`<!-- -->.
-    name: SPComponentLoader
-    fullName: SPComponentLoader
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: SPComponentLoader
+uid: '@microsoft/sp-loader!SPComponentLoader:class'
+package: '@microsoft/sp-loader!'
+fullName: SPComponentLoader
+summary: >-
+  Component loader. Needs to be initialized with an implemented
+  `ISPComponentLoader`&lt;!-- --&gt;.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+methods:
+  - name: getManifests()
+    uid: '@microsoft/sp-loader!SPComponentLoader.getManifests:member(1)'
     package: '@microsoft/sp-loader!'
-    children:
-      - '@microsoft/sp-loader!SPComponentLoader.getManifests:member(1)'
-      - '@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)'
-      - '@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)'
-      - '@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)'
-      - '@microsoft/sp-loader!SPComponentLoader.loadScript:member(1)'
-  - uid: '@microsoft/sp-loader!SPComponentLoader.getManifests:member(1)'
-    summary: Returns static copies of all the manifests.
-    name: getManifests()
     fullName: getManifests()
-    langs:
-      - typeScript
-    type: method
+    summary: Returns static copies of all the manifests.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static getManifests(): IClientSideComponentManifest[];'
       return:
-        type:
-          - '@microsoft/sp-loader!SPComponentLoader.getManifests~0:complex'
+        type: >-
+          @microsoft/sp-loader!SPComponentLoader.<xref
+          uid="getManifests~0:complex" />
         description: ''
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)'
-    summary: Loads a component from a manifest.
-    name: loadComponent(manifest)
+  - name: loadComponent(manifest)
+    uid: '@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)'
+    package: '@microsoft/sp-loader!'
     fullName: loadComponent(manifest)
-    langs:
-      - typeScript
-    type: method
+    summary: Loads a component from a manifest.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'static loadComponent<TComponent>(manifest: IClientSideComponentManifest): Promise<TComponent>;'
-      return:
-        type:
-          - '@microsoft/sp-loader!SPComponentLoader.loadComponent~0:complex'
-        description: A promise containing the loaded module.
+      content: >-
+        static loadComponent<TComponent>(manifest:
+        IClientSideComponentManifest): Promise<TComponent>;
       parameters:
         - id: manifest
           description: Manifest of the module to load.
-          type:
-            - '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-      typeParameters:
-        - id: TComponent
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)'
-    summary: 'Resolve a component id and version, and load it.'
-    name: 'loadComponentById(id, version)'
-    fullName: 'loadComponentById(id, version)'
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'static loadComponentById<TComponent>(id: string, version?: string): Promise<TComponent>;'
+          type: >-
+            <xref
+            uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+            />
       return:
-        type:
-          - '@microsoft/sp-loader!SPComponentLoader.loadComponentById~0:complex'
+        type: >-
+          @microsoft/sp-loader!SPComponentLoader.<xref
+          uid="loadComponent~0:complex" />
         description: A promise containing the loaded module.
+  - name: 'loadComponentById(id, version)'
+    uid: '@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)'
+    package: '@microsoft/sp-loader!'
+    fullName: 'loadComponentById(id, version)'
+    summary: 'Resolve a component id and version, and load it.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        static loadComponentById<TComponent>(id: string, version?: string):
+        Promise<TComponent>;
       parameters:
         - id: id
           description: The id of the component to load.
-          type:
-            - string
+          type: string
         - id: version
           description: >-
-            The version of the component to load. If version is not defined, the method will load any version of the
-            component.
-          type:
-            - string
-      typeParameters:
-        - id: TComponent
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)'
-    summary: Inserts a `<link ... />` tag for a stylesheet.
-    name: loadCss(url)
+            The version of the component to load. If version is not defined, the
+            method will load any version of the component.
+          type: string
+      return:
+        type: >-
+          @microsoft/sp-loader!SPComponentLoader.<xref
+          uid="loadComponentById~0:complex" />
+        description: A promise containing the loaded module.
+  - name: loadCss(url)
+    uid: '@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)'
+    package: '@microsoft/sp-loader!'
     fullName: loadCss(url)
-    langs:
-      - typeScript
-    type: method
+    summary: Inserts a `&lt;link ... /&gt;` tag for a stylesheet.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static loadCss(url: string): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: url
           description: The CSS file URL.
-          type:
-            - string
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadScript:member(1)'
+          type: string
+      return:
+        type: void
+        description: ''
+  - name: 'loadScript(url, options)'
+    uid: '@microsoft/sp-loader!SPComponentLoader.loadScript:member(1)'
+    package: '@microsoft/sp-loader!'
+    fullName: 'loadScript(url, options)'
     summary: 'Given a URL, load a script.'
     remarks: >-
-      If a script with a global variable is being loaded, the global variable already exists, and the script fails to
-      load (because of a syntax error, for example), the original global variable may be returned and an error may not
-      be propagated.
-    name: 'loadScript(url, options)'
-    fullName: 'loadScript(url, options)'
-    langs:
-      - typeScript
-    type: method
+      If a script with a global variable is being loaded, the global variable
+      already exists, and the script fails to load (because of a syntax error,
+      for example), the original global variable may be returned and an error
+      may not be propagated.
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'static loadScript<TModule>(url: string, options?: ILoadScriptOptions): Promise<TModule>;'
-      return:
-        type:
-          - '@microsoft/sp-loader!SPComponentLoader.loadScript~0:complex'
-        description: A promise containing the loaded module.
+      content: >-
+        static loadScript<TModule>(url: string, options?: ILoadScriptOptions):
+        Promise<TModule>;
       parameters:
         - id: url
           description: The script URL.
-          type:
-            - string
+          type: string
         - id: options
           description: >-
-            globalExportsName: If the script isn't an AMD module and loads a global member on the page, specify the
-            global member's name.
-          type:
-            - '@microsoft/sp-loader!ILoadScriptOptions:interface'
-      typeParameters:
-        - id: TModule
-references:
-  - uid: '@microsoft/sp-loader!SPComponentLoader.getManifests~0:complex'
-    name: 'IClientSideComponentManifest[]'
-    fullName: 'IClientSideComponentManifest[]'
-    spec.typeScript:
-      - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-        name: IClientSideComponentManifest
-        fullName: IClientSideComponentManifest
-      - name: '[]'
-        fullName: '[]'
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadComponent~0:complex'
-    name: Promise<TComponent>
-    fullName: Promise<TComponent>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <TComponent>
-        fullName: <TComponent>
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-    name: IClientSideComponentManifest
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadComponentById~0:complex'
-    name: Promise<TComponent>
-    fullName: Promise<TComponent>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <TComponent>
-        fullName: <TComponent>
-  - uid: '@microsoft/sp-loader!SPComponentLoader.loadScript~0:complex'
-    name: Promise<TModule>
-    fullName: Promise<TModule>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <TModule>
-        fullName: <TModule>
-  - uid: '@microsoft/sp-loader!ILoadScriptOptions:interface'
-    name: ILoadScriptOptions
+            globalExportsName: If the script isn't an AMD module and loads a
+            global member on the page, specify the global member's name.
+          type: '<xref uid="@microsoft/sp-loader!ILoadScriptOptions:interface" />'
+      return:
+        type: >-
+          @microsoft/sp-loader!SPComponentLoader.<xref
+          uid="loadScript~0:complex" />
+        description: A promise containing the loaded module.

@@ -1,53 +1,43 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!ISDKs:interface'
-    summary: Conditional set of SDKs provided by SPFx dependent on the environment.
-    name: ISDKs
-    fullName: ISDKs
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ISDKs
+uid: '@microsoft/sp-webpart-base!ISDKs:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: ISDKs
+summary: Conditional set of SDKs provided by SPFx dependent on the environment.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: microsoftTeams
+    uid: '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
-      - '@microsoft/sp-webpart-base!ISDKs#office:member'
-  - uid: '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
+    fullName: microsoftTeams
     summary: >-
-      Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
-      being hosted in Microsoft Teams.
+      Contextual information about the current Microsoft Teams tab. This object
+      will only be defined if a component is being hosted in Microsoft Teams.
     remarks: >-
       For more information, please see:
       [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
-    name: microsoftTeams
-    fullName: microsoftTeams
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'microsoftTeams?: IMicrosoftTeams;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
-  - uid: '@microsoft/sp-webpart-base!ISDKs#office:member'
+        type: '<xref uid="@microsoft/sp-webpart-base!IMicrosoftTeams:interface" />'
+  - name: office
+    uid: '@microsoft/sp-webpart-base!ISDKs#office:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: office
     summary: >-
-      Contextual information about the current Office app. This object will only be defined if a component is being
-      hosted in an Office app.
+      Contextual information about the current Office app. This object will only
+      be defined if a component is being hosted in an Office app.
     remarks: >-
       For more information, please see:
       [https://docs.microsoft.com/en-us/office/dev/add-ins/develop/understanding-the-javascript-api-for-office](https://docs.microsoft.com/en-us/office/dev/add-ins/develop/understanding-the-javascript-api-for-office)
     isPreview: true
-    name: office
-    fullName: office
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'office?: IOffice;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!IOffice:interface'
-references:
-  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
-    name: IMicrosoftTeams
-  - uid: '@microsoft/sp-webpart-base!IOffice:interface'
-    name: IOffice
+        type: '<xref uid="@microsoft/sp-webpart-base!IOffice:interface" />'

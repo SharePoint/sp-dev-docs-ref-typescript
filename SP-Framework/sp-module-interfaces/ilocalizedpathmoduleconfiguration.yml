@@ -1,65 +1,72 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface'
-    summary: This is the interface for a script module with the "localizedPath" type.
-    remarks: >-
-      Modules of this type must be provided by the component developer. These script resources are similar to those of
-      the "path" type, but they may be present at a number of different paths, to be selected by the user's locale.
-      Paths in this module type are loaded exactly the same way as "internal" modules are.
-    isPreview: true
-    name: ILocalizedPathModuleConfiguration
-    fullName: ILocalizedPathModuleConfiguration
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
-    inheritance:
-      - type: '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
+### YamlMime:TSType
+name: ILocalizedPathModuleConfiguration
+uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: ILocalizedPathModuleConfiguration
+summary: This is the interface for a script module with the "localizedPath" type.
+remarks: >-
+  Modules of this type must be provided by the component developer. These script
+  resources are similar to those of the "path" type, but they may be present at
+  a number of different paths, to be selected by the user's locale. Paths in
+  this module type are loaded exactly the same way as "internal" modules are.
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: defaultPath
+    uid: >-
+      @microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member'
-      - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member'
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member'
+    fullName: defaultPath
     summary: >-
-      A path to this module's default locale javascript resource either as a fully-qualified URL or as a path under the
-      paths provided in the "internalModuleBaseUrls" field.
+      A path to this module's default locale javascript resource either as a
+      fully-qualified URL or as a path under the paths provided in the
+      "internalModuleBaseUrls" field.
     remarks: >-
-      If the user's locale does not resolve to one of the paths specified in the "paths" field, the path in this field
-      is used. Paths in this module type are treated exactly the same way paths in modules of the "internal" type are
-      treated.
+      If the user's locale does not resolve to one of the paths specified in the
+      "paths" field, the path in this field is used. Paths in this module type
+      are treated exactly the same way paths in modules of the "internal" type
+      are treated.
 
 
-      Supported values: The path to the default locale version of the module either as a fully-qualified URL or as a
-      path under the paths provided in the "internalModuleBaseUrls" field.
+      Supported values: The path to the default locale version of the module
+      either as a fully-qualified URL or as a path under the paths provided in
+      the "internalModuleBaseUrls" field.
 
 
       Example: `"master_2015-04-20/my-application_strings_default_af378e0d.js"`
     isPreview: true
-    name: defaultPath
-    fullName: defaultPath
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'defaultPath: string | IPath;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member'
+        type: >-
+          @microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#<xref
+          uid="defaultPath~0:complex" />
+  - name: paths
+    uid: >-
+      @microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: paths
     summary: >-
-      This is a dictionary of locale keys (in the `"ll-cc"` format) to paths to this module's locale javascript resource
-      either as a fully-qualified URL or as a path under the paths provided in the `"internalModuleBaseUrls"` field.
+      This is a dictionary of locale keys (in the `"ll-cc"` format) to paths to
+      this module's locale javascript resource either as a fully-qualified URL
+      or as a path under the paths provided in the `"internalModuleBaseUrls"`
+      field.
     remarks: >-
-      The loader will attempt to resolve the user's locale to one of the paths provided by this field, and will load the
-      script resource under that path. If the user's locale does not resolve to one of the paths specified in this
-      field, the path in `"defaultPath"` field is used. For example, if the user's locale is `"en-gb"`<!-- -->, and this
-      field's value contains the keys `[ "en-us", "en-gb", "fr-fr" ]`<!-- -->, the path specified by the `"en-gb"` key
-      will be used. If the user's locale is "en-gb", and this field's value contains the keys `[ "en-us", "fr-fr" ]`<!--
-      -->, the path specified by the `"en-us"` key will be used. If the user's locale is `"en-gb"`<!-- -->, and this
-      field's value contains the keys `[ "es-es", "fr-fr" ]`<!-- -->, the path specified by the "defaultPath" field will
-      be used. Paths in this module type are treated exactly the same way paths in modules of the "internal" type are
-      treated.
+      The loader will attempt to resolve the user's locale to one of the paths
+      provided by this field, and will load the script resource under that path.
+      If the user's locale does not resolve to one of the paths specified in
+      this field, the path in `"defaultPath"` field is used. For example, if the
+      user's locale is `"en-gb"`<!-- -->, and this field's value contains the
+      keys `[ "en-us", "en-gb", "fr-fr" ]`<!-- -->, the path specified by the
+      `"en-gb"` key will be used. If the user's locale is "en-gb", and this
+      field's value contains the keys `[ "en-us", "fr-fr" ]`<!-- -->, the path
+      specified by the `"en-us"` key will be used. If the user's locale is
+      `"en-gb"`<!-- -->, and this field's value contains the keys `[ "es-es",
+      "fr-fr" ]`<!-- -->, the path specified by the "defaultPath" field will be
+      used. Paths in this module type are treated exactly the same way paths in
+      modules of the "internal" type are treated.
 
 
       Supported values: A dictionary of locale-to-path mappings.
@@ -76,53 +83,14 @@ items:
 
       ```
     isPreview: true
-    name: paths
-    fullName: paths
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: |-
         paths?: {
                 [locale: string]: string | IPath;
             };
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths~0:complex'
-references:
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
-    name: IModuleConfiguration
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath~0:complex'
-    name: string | IPath
-    fullName: string | IPath
-    spec.typeScript:
-      - name: 'string | '
-        fullName: 'string | '
-      - uid: '@microsoft/sp-module-interfaces!IPath:interface'
-        name: IPath
-        fullName: IPath
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths~0:complex'
-    name: |-
-      {
-              [locale: string]: string | IPath;
-          }
-    fullName: |-
-      {
-              [locale: string]: string | IPath;
-          }
-    spec.typeScript:
-      - name: |-
-          {
-                  [locale: string]: string | 
-        fullName: |-
-          {
-                  [locale: string]: string | 
-      - uid: '@microsoft/sp-module-interfaces!IPath:interface'
-        name: IPath
-        fullName: IPath
-      - name: |-
-          ;
-              }
-        fullName: |-
-          ;
-              }
+        type: >-
+          @microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#<xref
+          uid="paths~0:complex" />
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'

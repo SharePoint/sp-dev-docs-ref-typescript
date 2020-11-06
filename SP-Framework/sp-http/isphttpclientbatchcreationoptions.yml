@@ -1,30 +1,31 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!ISPHttpClientBatchCreationOptions:interface'
-    summary: This interface is passed to the SPHttpClientBatch constructor. It specifies options that affect the entire batch.
-    isPreview: true
-    name: ISPHttpClientBatchCreationOptions
-    fullName: ISPHttpClientBatchCreationOptions
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ISPHttpClientBatchCreationOptions
+uid: '@microsoft/sp-http!ISPHttpClientBatchCreationOptions:interface'
+package: '@microsoft/sp-http!'
+fullName: ISPHttpClientBatchCreationOptions
+summary: >-
+  This interface is passed to the SPHttpClientBatch constructor. It specifies
+  options that affect the entire batch.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: webUrl
+    uid: '@microsoft/sp-http!ISPHttpClientBatchCreationOptions#webUrl:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!ISPHttpClientBatchCreationOptions#webUrl:member'
-  - uid: '@microsoft/sp-http!ISPHttpClientBatchCreationOptions#webUrl:member'
+    fullName: webUrl
     summary: >-
       SPHttpClientBatch will need to perform its POST to an endpoint such as
-      "http://example.com/sites/sample/\_api/$batch". Typically the SPWeb URL ("https://example.com/sites/sample" in
-      this example) can be guessed by looking for a reserved URL segment such as "\_api" in the first URL passed to
-      fetch(), but if not, the webUrl can be explicitly specified using this option.
+      "<xref uid="http://example" />.com/sites/sample/\_api/$batch". Typically
+      the SPWeb URL ("<xref uid="https://example" />.com/sites/sample" in this
+      example) can be guessed by looking for a reserved URL segment such as
+      "\_api" in the first URL passed to fetch(), but if not, the webUrl can be
+      explicitly specified using this option.
+    remarks: ''
     isPreview: true
-    name: webUrl
-    fullName: webUrl
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'webUrl?: string;'
       return:
-        type:
-          - string
+        type: string

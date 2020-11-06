@@ -1,91 +1,70 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!AadTokenProvider:class'
-    summary: >-
-      This class allows a developer to obtain OAuth2 tokens from Azure AD.
+### YamlMime:TSType
+name: AadTokenProvider
+uid: '@microsoft/sp-http!AadTokenProvider:class'
+package: '@microsoft/sp-http!'
+fullName: AadTokenProvider
+summary: >-
+  This class allows a developer to obtain OAuth2 tokens from Azure AD.
 
 
-      OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway,
-      Exchange, Yammer, etc.
-    remarks: >-
-      This class is marked as `@sealed`. Subclasses should not extend it.
+  OAuth2 tokens are used to authenticate the user from the SharePoint page to
+  other services such as PowerBI, Sway, Exchange, Yammer, etc.
+remarks: >-
+  This class is marked as `@sealed`. Subclasses should not extend it.
 
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `AadTokenProvider` class.
-    name: AadTokenProvider
-    fullName: AadTokenProvider
-    langs:
-      - typeScript
-    type: class
-    implements:
-      - '@microsoft/sp-http!IAadTokenProvider:interface'
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `AadTokenProvider` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: tokenAcquisitionEvent
+    uid: '@microsoft/sp-http!AadTokenProvider#tokenAcquisitionEvent:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!AadTokenProvider#getToken:member(1)'
-      - '@microsoft/sp-http!AadTokenProvider#tokenAcquisitionEvent:member'
-  - uid: '@microsoft/sp-http!AadTokenProvider#getToken:member(1)'
-    summary: |-
-      Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
-
-      The OAuth2 token should not be cached by the caller since it is already cached by the method itself.
-    name: 'getToken(resourceEndpoint, useCachedToken)'
-    fullName: 'getToken(resourceEndpoint, useCachedToken)'
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getToken(resourceEndpoint: string, useCachedToken?: boolean): Promise<string>;'
-      return:
-        type:
-          - '@microsoft/sp-http!AadTokenProvider#getToken~0:complex'
-        description: A promise that will be fullfiled with the token or that will reject with an error message
-      parameters:
-        - id: resourceEndpoint
-          description: the resource for which the token should be obtained
-          type:
-            - string
-        - id: useCachedToken
-          description: >-
-            Allows the developer to specify if cached tokens should be returned. An example of a resourceEndpoint would
-            be https://graph.microsoft.com
-          type:
-            - boolean
-  - uid: '@microsoft/sp-http!AadTokenProvider#tokenAcquisitionEvent:member'
-    summary: Notifies the developer when Token Acquisition requires user action.
-    name: tokenAcquisitionEvent
     fullName: tokenAcquisitionEvent
-    langs:
-      - typeScript
-    type: event
+    summary: Notifies the developer when Token Acquisition requires user action.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly tokenAcquisitionEvent: SPEvent<TokenAcquisitionEventArgs>;'
       return:
-        type:
-          - '@microsoft/sp-http!AadTokenProvider#tokenAcquisitionEvent~0:complex'
-references:
-  - uid: '@microsoft/sp-http!IAadTokenProvider:interface'
-    name: IAadTokenProvider
-  - uid: '@microsoft/sp-http!AadTokenProvider#getToken~0:complex'
-    name: Promise<string>
-    fullName: Promise<string>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <string>
-        fullName: <string>
-  - uid: '@microsoft/sp-http!AadTokenProvider#tokenAcquisitionEvent~0:complex'
-    name: SPEvent<TokenAcquisitionEventArgs>
-    fullName: SPEvent<TokenAcquisitionEventArgs>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!SPEvent:class'
-        name: SPEvent
-        fullName: SPEvent
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:class'
-        name: TokenAcquisitionEventArgs
-        fullName: TokenAcquisitionEventArgs
-      - name: '>'
-        fullName: '>'
+        type: >-
+          @microsoft/sp-http!AadTokenProvider#<xref
+          uid="tokenAcquisitionEvent~0:complex" />
+methods:
+  - name: 'getToken(resourceEndpoint, useCachedToken)'
+    uid: '@microsoft/sp-http!AadTokenProvider#getToken:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: 'getToken(resourceEndpoint, useCachedToken)'
+    summary: >-
+      Fetches the AAD OAuth2 token for a resource if the user that's currently
+      logged in has access to that resource.
+
+
+      The OAuth2 token should not be cached by the caller since it is already
+      cached by the method itself.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        getToken(resourceEndpoint: string, useCachedToken?: boolean):
+        Promise<string>;
+      parameters:
+        - id: resourceEndpoint
+          description: the resource for which the token should be obtained
+          type: string
+        - id: useCachedToken
+          description: >-
+            Allows the developer to specify if cached tokens should be returned.
+            An example of a resourceEndpoint would be
+            https://graph.microsoft.com
+          type: boolean
+      return:
+        type: '@microsoft/sp-http!AadTokenProvider#<xref uid="getToken~0:complex" />'
+        description: >-
+          A promise that will be fullfiled with the token or that will reject
+          with an error message

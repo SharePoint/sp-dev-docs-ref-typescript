@@ -1,40 +1,26 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs:class'
-    summary: The object passed when the IThemeProvider.themeChangedEvent is raised.
-    name: ThemeChangedEventArgs
-    fullName: ThemeChangedEventArgs
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-core-library!SPEventArgs:class'
-    inheritance:
-      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+### YamlMime:TSType
+name: ThemeChangedEventArgs
+uid: '@microsoft/sp-component-base!ThemeChangedEventArgs:class'
+package: '@microsoft/sp-component-base!'
+fullName: ThemeChangedEventArgs
+summary: The object passed when the IThemeProvider.themeChangedEvent is raised.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: theme
+    uid: '@microsoft/sp-component-base!ThemeChangedEventArgs#theme:member'
     package: '@microsoft/sp-component-base!'
-    children:
-      - '@microsoft/sp-component-base!ThemeChangedEventArgs#theme:member'
-  - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs#theme:member'
-    summary: 'The new theme. If the value is undefined, then the theme was cleared.'
-    name: theme
     fullName: theme
-    langs:
-      - typeScript
-    type: property
+    summary: 'The new theme. If the value is undefined, then the theme was cleared.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly theme: ITheme | undefined;'
       return:
-        type:
-          - '@microsoft/sp-component-base!ThemeChangedEventArgs#theme~0:complex'
-references:
-  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
-    name: SPEventArgs
-  - uid: '@microsoft/sp-component-base!ThemeChangedEventArgs#theme~0:complex'
-    name: ITheme | undefined
-    fullName: ITheme | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-component-base!ITheme:interface'
-        name: ITheme
-        fullName: ITheme
-      - name: ' | undefined'
-        fullName: ' | undefined'
+        type: >-
+          @microsoft/sp-component-base!ThemeChangedEventArgs#<xref
+          uid="theme~0:complex" />
+extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'

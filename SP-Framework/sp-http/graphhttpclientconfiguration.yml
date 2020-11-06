@@ -1,62 +1,59 @@
-### YamlMime:UniversalReference
-items:
-  - uid: sp-http.GraphHttpClientConfiguration
-    summary: 'Configuration for [GraphHttpClient](xref:sp-http.GraphHttpClient)<!-- -->.'
-    remarks: >-
-      The GraphHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
-      GraphHttpClient class. Normally these switches are set (e.g. when calling GraphHttpClient.fetch()) by providing
-      one of the predefined defaults from GraphHttpClientConfigurations, however switches can also be changed via the
-      GraphHttpClientConfiguration.overrideWith() method.
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    isPreview: true
-    name: GraphHttpClientConfiguration
-    fullName: GraphHttpClientConfiguration
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - HttpClientConfiguration
-    implements:
-      - IGraphHttpClientConfiguration
+### YamlMime:TSType
+name: GraphHttpClientConfiguration
+uid: sp-http.GraphHttpClientConfiguration
+package: sp-http
+fullName: GraphHttpClientConfiguration
+summary: >-
+  Configuration for [GraphHttpClient](<xref uid="xref:sp-http"
+  />.GraphHttpClient)&lt;!-- --&gt;.
+remarks: >-
+  The GraphHttpClientConfiguration object provides a set of switches for
+  enabling/disabling various features of the GraphHttpClient class. Normally
+  these switches are set (e.g. when calling GraphHttpClient.fetch()) by
+  providing one of the predefined defaults from GraphHttpClientConfigurations,
+  however switches can also be changed via the
+  GraphHttpClientConfiguration.overrideWith() method.
+isPreview: true
+isDeprecated: true
+customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
+type: class
+constructors:
+  - name: 'constructor(flags, overrideFlags)'
+    uid: sp-http.GraphHttpClientConfiguration.constructor
     package: sp-http
-    children:
-      - sp-http.GraphHttpClientConfiguration.constructor
-      - sp-http.GraphHttpClientConfiguration.flags
-  - uid: sp-http.GraphHttpClientConfiguration.constructor
-    summary: Constructs a new instance of GraphHttpClientCommonConfiguration with the specified flags.
-    remarks: >-
-      The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it
-      takes precedence over flags.
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    name: 'constructor(flags, overrideFlags)'
     fullName: constructor
-    langs:
-      - typeScript
-    type: constructor
+    summary: >-
+      Constructs a new instance of GraphHttpClientCommonConfiguration with the
+      specified flags.
+    remarks: >-
+      The default values will be used for any flags that are missing or
+      undefined. If overrideFlags is specified, it takes precedence over flags.
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
     syntax:
-      content: 'constructor(flags: IGraphHttpClientConfiguration, overrideFlags?: IGraphHttpClientConfiguration);'
+      content: >-
+        constructor(flags: IGraphHttpClientConfiguration, overrideFlags?:
+        IGraphHttpClientConfiguration);
       parameters:
         - id: flags
           description: ''
-          type:
-            - IGraphHttpClientConfiguration
+          type: IGraphHttpClientConfiguration
         - id: overrideFlags
           description: ''
-          type:
-            - IGraphHttpClientConfiguration
-  - uid: sp-http.GraphHttpClientConfiguration.flags
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    isPreview: true
-    name: flags
+          type: IGraphHttpClientConfiguration
+properties:
+  - name: flags
+    uid: sp-http.GraphHttpClientConfiguration.flags
+    package: sp-http
     fullName: flags
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    isPreview: true
+    isDeprecated: true
+    customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
     syntax:
       content: 'protected flags: IGraphHttpClientConfiguration;'
       return:
-        type:
-          - IGraphHttpClientConfiguration
+        type: IGraphHttpClientConfiguration
+extends: HttpClientConfiguration

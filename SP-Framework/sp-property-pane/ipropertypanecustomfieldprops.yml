@@ -1,104 +1,82 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
-    summary: PropertyPane CustomPropertyField props.
-    name: IPropertyPaneCustomFieldProps
-    fullName: IPropertyPaneCustomFieldProps
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IPropertyPaneCustomFieldProps
+uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
+package: '@microsoft/sp-property-pane!'
+fullName: IPropertyPaneCustomFieldProps
+summary: PropertyPane CustomPropertyField props.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: context
+    uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#context:member'
     package: '@microsoft/sp-property-pane!'
-    children:
-      - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#context:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#key:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onDispose:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onRender:member'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#context:member'
-    summary: >-
-      Instance specific context. This context is passed back to the web part in the onRender and onDispose APIs. The web
-      part can use this context to manage state information.
-    name: context
     fullName: context
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Instance specific context. This context is passed back to the web part in
+      the onRender and onDispose APIs. The web part can use this context to
+      manage state information.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'context?: any;'
       return:
-        type:
-          - any
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#key:member'
+        type: any
+  - name: key
+    uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#key:member'
+    package: '@microsoft/sp-property-pane!'
+    fullName: key
     summary: >-
       An UNIQUE key indicates the identity of this contorl.
 
 
-      The PropertyPane uses ReactJS to render its components. ReactJS uses keys to identify a component and if it should
-      be re-rendered or not. This is a performance feature in ReactJS. Please read the following link to understand how
-      to pick the value of the key.
+      The PropertyPane uses ReactJS to render its components. ReactJS uses keys
+      to identify a component and if it should be re-rendered or not. This is a
+      performance feature in ReactJS. Please read the following link to
+      understand how to pick the value of the key.
 
 
-      For more information, see the [React
-      documentation](https://facebook.github.io/react/docs/lists-and-keys.html#keys)<!-- -->.
-    name: key
-    fullName: key
-    langs:
-      - typeScript
-    type: property
+      For more information, see the [React documentation](<xref
+      uid="https://facebook"
+      />.github.io/react/docs/lists-and-keys.html#keys)&lt;!-- --&gt;.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'key: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onDispose:member'
-    summary: This API is called when the component is unmounted from the host element.
-    name: onDispose
+        type: string
+  - name: onDispose
+    uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onDispose:member'
+    package: '@microsoft/sp-property-pane!'
     fullName: onDispose
-    langs:
-      - typeScript
-    type: property
+    summary: This API is called when the component is unmounted from the host element.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'onDispose?: (domElement: HTMLElement, context?: any) => void;'
       return:
-        type:
-          - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onDispose~0:complex'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onRender:member'
-    summary: This API will be called once the custom field is mounted on the host element.
-    name: onRender
+        type: >-
+          @microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#<xref
+          uid="onDispose~0:complex" />
+  - name: onRender
+    uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onRender:member'
+    package: '@microsoft/sp-property-pane!'
     fullName: onRender
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      This API will be called once the custom field is mounted on the host
+      element.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        onRender: (domElement: HTMLElement, context?: any, changeCallback?: (targetProperty?: string, newValue?: any) =>
-        void) => void;
+        onRender: (domElement: HTMLElement, context?: any, changeCallback?:
+        (targetProperty?: string, newValue?: any) => void) => void;
       return:
-        type:
-          - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onRender~0:complex'
-references:
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onDispose~0:complex'
-    name: '(domElement: HTMLElement, context?: any) => void'
-    fullName: '(domElement: HTMLElement, context?: any) => void'
-    spec.typeScript:
-      - name: '(domElement: '
-        fullName: '(domElement: '
-      - uid: '!HTMLElement:interface'
-        name: HTMLElement
-        fullName: HTMLElement
-      - name: ', context?: any) => void'
-        fullName: ', context?: any) => void'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onRender~0:complex'
-    name: >-
-      (domElement: HTMLElement, context?: any, changeCallback?: (targetProperty?: string, newValue?: any) => void) =>
-      void
-    fullName: >-
-      (domElement: HTMLElement, context?: any, changeCallback?: (targetProperty?: string, newValue?: any) => void) =>
-      void
-    spec.typeScript:
-      - name: '(domElement: '
-        fullName: '(domElement: '
-      - uid: '!HTMLElement:interface'
-        name: HTMLElement
-        fullName: HTMLElement
-      - name: ', context?: any, changeCallback?: (targetProperty?: string, newValue?: any) => void) => void'
-        fullName: ', context?: any, changeCallback?: (targetProperty?: string, newValue?: any) => void) => void'
+        type: >-
+          @microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#<xref
+          uid="onRender~0:complex" />

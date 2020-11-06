@@ -1,69 +1,43 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!AadTokenProviderFactory:class'
-    summary: Returns a preinitialized version of the AadTokenProviderFactory.
-    name: AadTokenProviderFactory
-    fullName: AadTokenProviderFactory
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: AadTokenProviderFactory
+uid: '@microsoft/sp-http!AadTokenProviderFactory:class'
+package: '@microsoft/sp-http!'
+fullName: AadTokenProviderFactory
+summary: Returns a preinitialized version of the AadTokenProviderFactory.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: serviceKey
+    uid: '@microsoft/sp-http!AadTokenProviderFactory.serviceKey:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!AadTokenProviderFactory#getTokenProvider:member(1)'
-      - '@microsoft/sp-http!AadTokenProviderFactory.serviceKey:member'
-  - uid: '@microsoft/sp-http!AadTokenProviderFactory#getTokenProvider:member(1)'
-    summary: >-
-      Returns an instance of the AadTokenProvider that communicates with the current tenant's configurable Service
-      Principal.
-    name: getTokenProvider()
-    fullName: getTokenProvider()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getTokenProvider(): Promise<AadTokenProvider>;'
-      return:
-        type:
-          - '@microsoft/sp-http!AadTokenProviderFactory#getTokenProvider~0:complex'
-        description: ''
-  - uid: '@microsoft/sp-http!AadTokenProviderFactory.serviceKey:member'
-    summary: The service key for AadTokenProviderFactory.
-    name: serviceKey
     fullName: serviceKey
-    langs:
-      - typeScript
-    type: property
+    summary: The service key for AadTokenProviderFactory.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly serviceKey: ServiceKey<AadTokenProviderFactory>;'
       return:
-        type:
-          - '@microsoft/sp-http!AadTokenProviderFactory.serviceKey~0:complex'
-references:
-  - uid: '@microsoft/sp-http!AadTokenProviderFactory#getTokenProvider~0:complex'
-    name: Promise<AadTokenProvider>
-    fullName: Promise<default>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: AadTokenProvider
-        fullName: default
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-http!AadTokenProviderFactory.serviceKey~0:complex'
-    name: ServiceKey<AadTokenProviderFactory>
-    fullName: ServiceKey<default>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!ServiceKey:class'
-        name: ServiceKey
-        fullName: ServiceKey
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: AadTokenProviderFactory
-        fullName: default
-      - name: '>'
-        fullName: '>'
+        type: >-
+          @microsoft/sp-http!AadTokenProviderFactory.<xref
+          uid="serviceKey~0:complex" />
+methods:
+  - name: getTokenProvider()
+    uid: '@microsoft/sp-http!AadTokenProviderFactory#getTokenProvider:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: getTokenProvider()
+    summary: >-
+      Returns an instance of the AadTokenProvider that communicates with the
+      current tenant's configurable Service Principal.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getTokenProvider(): Promise<AadTokenProvider>;'
+      return:
+        type: >-
+          @microsoft/sp-http!AadTokenProviderFactory#<xref
+          uid="getTokenProvider~0:complex" />
+        description: ''

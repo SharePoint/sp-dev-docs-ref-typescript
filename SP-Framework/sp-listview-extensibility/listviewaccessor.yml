@@ -1,99 +1,72 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor:class'
-    summary: Provides access to a SharePoint ListView control.
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `ListViewAccessor` class.
-    name: ListViewAccessor
-    fullName: ListViewAccessor
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: ListViewAccessor
+uid: '@microsoft/sp-listview-extensibility!ListViewAccessor:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: ListViewAccessor
+summary: Provides access to a SharePoint ListView control.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `ListViewAccessor` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: columns
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member'
-      - '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member'
-      - '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member'
-    summary: 'The columns in associated with this view, including hidden columns.'
-    name: columns
     fullName: columns
-    langs:
-      - typeScript
-    type: property
+    summary: 'The columns in associated with this view, including hidden columns.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'abstract readonly columns: ReadonlyArray<ColumnAccessor>;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!ListViewAccessor#columns~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member'
-    summary: Event that gets raised every time the selected items in the list view change.
-    name: selectedRowsChangedEvent
+        type: >-
+          @microsoft/sp-listview-extensibility!ListViewAccessor#<xref
+          uid="columns~0:complex" />
+  - name: selectedRowsChangedEvent
+    uid: >-
+      @microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: selectedRowsChangedEvent
-    langs:
-      - typeScript
-    type: event
-    syntax:
-      content: 'readonly selectedRowsChangedEvent: SPEvent<SelectedRowsChangedEventArgs>;'
-      return:
-        type:
-          - '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)'
     summary: >-
-      Returns the list view column corresponding to the field with the specified internal name, or undefined if none is
-      found.
-    name: tryGetColumnByName(internalName)
-    fullName: tryGetColumnByName(internalName)
-    langs:
-      - typeScript
-    type: method
+      Event that gets raised every time the selected items in the list view
+      change.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;'
+      content: >-
+        readonly selectedRowsChangedEvent:
+        SPEvent<SelectedRowsChangedEventArgs>;
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName~0:complex'
-        description: ''
+        type: >-
+          @microsoft/sp-listview-extensibility!ListViewAccessor#<xref
+          uid="selectedRowsChangedEvent~0:complex" />
+methods:
+  - name: tryGetColumnByName(internalName)
+    uid: >-
+      @microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: tryGetColumnByName(internalName)
+    summary: >-
+      Returns the list view column corresponding to the field with the specified
+      internal name, or undefined if none is found.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        abstract tryGetColumnByName(internalName: string): ColumnAccessor |
+        undefined;
       parameters:
         - id: internalName
           description: ''
-          type:
-            - string
-references:
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#columns~0:complex'
-    name: ReadonlyArray<ColumnAccessor>
-    fullName: ReadonlyArray<ColumnAccessor>
-    spec.typeScript:
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
-        name: ColumnAccessor
-        fullName: ColumnAccessor
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent~0:complex'
-    name: SPEvent<SelectedRowsChangedEventArgs>
-    fullName: SPEvent<SelectedRowsChangedEventArgs>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!SPEvent:class'
-        name: SPEvent
-        fullName: SPEvent
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class'
-        name: SelectedRowsChangedEventArgs
-        fullName: SelectedRowsChangedEventArgs
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName~0:complex'
-    name: ColumnAccessor | undefined
-    fullName: ColumnAccessor | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
-        name: ColumnAccessor
-        fullName: ColumnAccessor
-      - name: ' | undefined'
-        fullName: ' | undefined'
+          type: string
+      return:
+        type: >-
+          @microsoft/sp-listview-extensibility!ListViewAccessor#<xref
+          uid="tryGetColumnByName~0:complex" />
+        description: ''

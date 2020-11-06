@@ -1,23 +1,27 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
-    summary: Contains collections of data that can be processed by server side services like search index and link fixup
-    name: ISerializedServerProcessedData
-    fullName: ISerializedServerProcessedData
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ISerializedServerProcessedData
+uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: ISerializedServerProcessedData
+summary: >-
+  Contains collections of data that can be processed by server side services
+  like search index and link fixup
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: htmlStrings
+    uid: >-
+      @microsoft/sp-webpart-base!ISerializedServerProcessedData#htmlStrings:member
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!ISerializedServerProcessedData#htmlStrings:member'
-      - '@microsoft/sp-webpart-base!ISerializedServerProcessedData#imageSources:member'
-      - '@microsoft/sp-webpart-base!ISerializedServerProcessedData#links:member'
-      - '@microsoft/sp-webpart-base!ISerializedServerProcessedData#searchablePlainTexts:member'
-  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData#htmlStrings:member'
-    summary: A key-value map where keys are string identifiers and values are rich text with HTML format.
+    fullName: htmlStrings
+    summary: >-
+      A key-value map where keys are string identifiers and values are rich text
+      with HTML format.
     remarks: >-
-      SharePoint servers treat the values as HTML content and run services like safety checks, search index and link
-      fixup on them.
+      SharePoint servers treat the values as HTML content and run services like
+      safety checks, search index and link fixup on them.
 
 
       Example:
@@ -32,87 +36,101 @@ items:
 
 
       ```
-    name: htmlStrings
-    fullName: htmlStrings
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         htmlStrings?: {
                 [key: string]: string;
             };
       return:
-        type:
-          - |-
-            {
-                    [key: string]: string;
-                }
-  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData#imageSources:member'
-    summary: A key-value map where keys are string identifiers and values are image sources.
-    remarks: |-
-      SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+        type: |-
+          {
+                  [key: string]: string;
+              }
+  - name: imageSources
+    uid: >-
+      @microsoft/sp-webpart-base!ISerializedServerProcessedData#imageSources:member
+    package: '@microsoft/sp-webpart-base!'
+    fullName: imageSources
+    summary: >-
+      A key-value map where keys are string identifiers and values are image
+      sources.
+    remarks: >-
+      SharePoint servers treat the values as image sources and run services like
+      search index and link fixup on them.
+
 
       Example:
 
+
       ```
+
       {
         'myImage1': 'http://res.contoso.com/path/to/file'
         'myImage2': 'https://res.contoso.com/someName.jpg'
       }
 
+
       ```
-    name: imageSources
-    fullName: imageSources
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         imageSources?: {
                 [key: string]: string;
             };
       return:
-        type:
-          - |-
-            {
-                    [key: string]: string;
-                }
-  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData#links:member'
+        type: |-
+          {
+                  [key: string]: string;
+              }
+  - name: links
+    uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData#links:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: links
     summary: A key-value map where keys are string identifiers and values are links.
-    remarks: |-
-      SharePoint servers treat the values as links and run services like link fixup on them.
+    remarks: >-
+      SharePoint servers treat the values as links and run services like link
+      fixup on them.
+
 
       Example:
 
+
       ```
+
       {
         'myWebURL': 'http://contoso.com'
         'myFileLink': 'https://res.contoso.com/file.docx'
       }
 
+
       ```
-    name: links
-    fullName: links
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         links?: {
                 [key: string]: string;
             };
       return:
-        type:
-          - |-
-            {
-                    [key: string]: string;
-                }
-  - uid: '@microsoft/sp-webpart-base!ISerializedServerProcessedData#searchablePlainTexts:member'
-    summary: A key-value map where keys are string identifiers and values are strings that should be search indexed.
+        type: |-
+          {
+                  [key: string]: string;
+              }
+  - name: searchablePlainTexts
+    uid: >-
+      @microsoft/sp-webpart-base!ISerializedServerProcessedData#searchablePlainTexts:member
+    package: '@microsoft/sp-webpart-base!'
+    fullName: searchablePlainTexts
+    summary: >-
+      A key-value map where keys are string identifiers and values are strings
+      that should be search indexed.
     remarks: >-
-      The values are HTML-encoded before being sent to the server. The encoded values are visible to the search indexer,
-      but are not treated as valid HTML. So, other services such as link fixup will not run on them.
+      The values are HTML-encoded before being sent to the server. The encoded
+      values are visible to the search indexer, but are not treated as valid
+      HTML. So, other services such as link fixup will not run on them.
 
 
       Example:
@@ -127,19 +145,15 @@ items:
 
 
       ```
-    name: searchablePlainTexts
-    fullName: searchablePlainTexts
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         searchablePlainTexts?: {
                 [key: string]: string;
             };
       return:
-        type:
-          - |-
-            {
-                    [key: string]: string;
-                }
+        type: |-
+          {
+                  [key: string]: string;
+              }

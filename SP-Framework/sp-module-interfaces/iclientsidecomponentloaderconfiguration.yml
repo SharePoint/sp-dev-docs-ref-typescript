@@ -1,119 +1,135 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
-    summary: >-
-      This interface describes how a client-side component is to be loaded and initialized by a SharePoint client
-      framework. It contains all data for loading an entrypoint script and its dependency scripts.
-    isPreview: true
-    name: IClientSideComponentLoaderConfiguration
-    fullName: IClientSideComponentLoaderConfiguration
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IClientSideComponentLoaderConfiguration
+uid: >-
+  @microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface
+package: '@microsoft/sp-module-interfaces!'
+fullName: IClientSideComponentLoaderConfiguration
+summary: >-
+  This interface describes how a client-side component is to be loaded and
+  initialized by a SharePoint client framework. It contains all data for loading
+  an entrypoint script and its dependency scripts.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: entryModuleId
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member'
+    fullName: entryModuleId
     summary: This is the ID of one of the entries in the "scriptResources" dictionary.
     remarks: >-
-      The loader will download and evaluate the script resource referenced in this field, resolve all dependencies
-      against the keys in the "scriptResources", and return the exported object to the loader's calling function. The
-      entry referenced in the "scriptResources" dictionary must be of the "internal" or the "localized" type.
+      The loader will download and evaluate the script resource referenced in
+      this field, resolve all dependencies against the keys in the
+      "scriptResources", and return the exported object to the loader's calling
+      function. The entry referenced in the "scriptResources" dictionary must be
+      of the "internal" or the "localized" type.
 
 
-      Supported values: An entry in the "scriptResources" dictionary that defines the base exported module of the
-      component.
+      Supported values: An entry in the "scriptResources" dictionary that
+      defines the base exported module of the component.
 
 
       Example: `"myApplication.bundle"`
     isPreview: true
-    name: entryModuleId
-    fullName: entryModuleId
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'entryModuleId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member'
-    summary: The module referenced by the "entryModuleId" field may export an object with several fields.
+        type: string
+  - name: exportName
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: exportName
+    summary: >-
+      The module referenced by the "entryModuleId" field may export an object
+      with several fields.
     remarks: >-
-      This value optionally references the name of a field on the object exported by the module referenced by the
-      `entryModuleId` field. When this field has a value, the value of the referenced field on the object exported by
-      the module referenced by the `entryModuleId` field is returned when this manifest is loaded instead of the base
-      exported object. For example, if entryModuleId refers to a module with with a top-level export of `{ foo: 'bar',
-      baz: 123 }` and:
+      This value optionally references the name of a field on the object
+      exported by the module referenced by the `entryModuleId` field. When this
+      field has a value, the value of the referenced field on the object
+      exported by the module referenced by the `entryModuleId` field is returned
+      when this manifest is loaded instead of the base exported object. For
+      example, if entryModuleId refers to a module with with a top-level export
+      of `{ foo: 'bar', baz: 123 }` and:
 
 
-      - if this field is unset, the value returned by the module loader is `{ foo: 'bar', baz: 123 }`
+      - if this field is unset, the value returned by the module loader is `{
+      foo: 'bar', baz: 123 }`
 
 
-      - if this field is set to `foo`<!-- -->, the value returned by the module loader is `bar`
+      - if this field is set to `foo`<!-- -->, the value returned by the module
+      loader is `bar`
 
 
-      - if this field is set to `bar`<!-- -->, the value returned by the module loader is undefined (as `bar` is not a
-      key in the top-level export).
+      - if this field is set to `bar`<!-- -->, the value returned by the module
+      loader is undefined (as `bar` is not a key in the top-level export).
 
 
       Example: `mySpWebpart`
     isPreview: true
-    name: exportName
-    fullName: exportName
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'exportName?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member'
-    summary: >-
-      This is an array of fully-qualified paths to be prepended to each of the script resource paths with the "internal"
-      or "localized" type. If one fails to load, the loader will attempt to load from the next until there are no base
-      paths remaining.
-    remarks: >-
-      All "internal" and "localized" script resources that do not have fully-qualified URLs as their "path" field values
-      must be hosted under each of the paths listed in this property. For example, if an internal module's "path" field
-      value is `"master_2015-04-20/my-application.bundle_1928f8a0.js"` and this field's value is `[
-      "https://contoso.akamaihd.net/files/", "https://contoso.msecnd.net/files/" ]`<!-- -->, the loader will first
-      attempt to load this script resource from the URL
-      `"https://contoso.akamaihd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js"`<!-- -->. If loading
-      from that URL fails, the loader will then attempt to load this script resource from
-      `"https://contoso.msecnd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js"`<!-- -->. If that URL
-      fails to load, the component will fail to load and an error will be returned. It is important to note that the
-      support for multiple base URLs is purely for failover support. This means that all files must be present on all
-      hosts listed in this field.
-
-
-      Usage: Base URLs for script resources with the "internal" or "localized" type.
-
-
-      Supported values: Any URL that contains all internal scripts referenced in the "scriptResources" dictionary.
-
-
-      Example: `[ "https://contoso.akamaihd.net/files/", "https://contoso.msecnd.net/files/" ]`
-    isPreview: true
-    name: internalModuleBaseUrls
+        type: string
+  - name: internalModuleBaseUrls
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member
+    package: '@microsoft/sp-module-interfaces!'
     fullName: internalModuleBaseUrls
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      This is an array of fully-qualified paths to be prepended to each of the
+      script resource paths with the "internal" or "localized" type. If one
+      fails to load, the loader will attempt to load from the next until there
+      are no base paths remaining.
+    remarks: >-
+      All "internal" and "localized" script resources that do not have
+      fully-qualified URLs as their "path" field values must be hosted under
+      each of the paths listed in this property. For example, if an internal
+      module's "path" field value is
+      `"master_2015-04-20/my-application.bundle_1928f8a0.js"` and this field's
+      value is `[ "https://contoso.akamaihd.net/files/",
+      "https://contoso.msecnd.net/files/" ]`<!-- -->, the loader will first
+      attempt to load this script resource from the URL
+      `"https://contoso.akamaihd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js"`<!--
+      -->. If loading from that URL fails, the loader will then attempt to load
+      this script resource from
+      `"https://contoso.msecnd.net/files/master_2015-04-20/my-application.bundle_1928f8a0.js"`<!--
+      -->. If that URL fails to load, the component will fail to load and an
+      error will be returned. It is important to note that the support for
+      multiple base URLs is purely for failover support. This means that all
+      files must be present on all hosts listed in this field.
+
+
+      Usage: Base URLs for script resources with the "internal" or "localized"
+      type.
+
+
+      Supported values: Any URL that contains all internal scripts referenced in
+      the "scriptResources" dictionary.
+
+
+      Example: `[ "https://contoso.akamaihd.net/files/",
+      "https://contoso.msecnd.net/files/" ]`
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'internalModuleBaseUrls: string[];'
       return:
-        type:
-          - 'string[]'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member'
+        type: 'string[]'
+  - name: scriptResources
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: scriptResources
     summary: >-
-      This is a dictionary of named script resources. `path` and `localizedPath` modules may reference each other and
-      `manifest` modules are expected to be provided by the framework runtime. The resource named in the `entryModuleId`
-      must contain the component's exported object.
+      This is a dictionary of named script resources. `path` and `localizedPath`
+      modules may reference each other and `manifest` modules are expected to be
+      provided by the framework runtime. The resource named in the
+      `entryModuleId` must contain the component's exported object.
     remarks: |-
       Supported values: A dictionary of named script resources.
 
@@ -153,42 +169,13 @@ items:
 
       ```
     isPreview: true
-    name: scriptResources
-    fullName: scriptResources
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: |-
         scriptResources: {
                 [name: string]: IModuleConfiguration;
             };
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources~0:complex'
-references:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources~0:complex'
-    name: |-
-      {
-              [name: string]: IModuleConfiguration;
-          }
-    fullName: |-
-      {
-              [name: string]: IModuleConfiguration;
-          }
-    spec.typeScript:
-      - name: |-
-          {
-                  [name: string]: 
-        fullName: |-
-          {
-                  [name: string]: 
-      - uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
-        name: IModuleConfiguration
-        fullName: IModuleConfiguration
-      - name: |-
-          ;
-              }
-        fullName: |-
-          ;
-              }
+        type: >-
+          @microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#<xref
+          uid="scriptResources~0:complex" />

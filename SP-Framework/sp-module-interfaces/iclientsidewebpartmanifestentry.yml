@@ -1,73 +1,73 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface'
-    summary: >-
-      This interface specifies the set of properties that can be pre-configured by a Web Part developer. Each
-      pre-configured instance of the Web Part will need a copy of these properties. Organization admins and content
-      authors can modify these properties on a need basis.
-    name: IClientSideWebPartManifestEntry
-    fullName: IClientSideWebPartManifestEntry
-    langs:
-      - typeScript
-    type: interface
-    syntax:
-      typeParameters:
-        - id: TProperties
+### YamlMime:TSType
+name: IClientSideWebPartManifestEntry
+uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IClientSideWebPartManifestEntry
+summary: >-
+  This interface specifies the set of properties that can be pre-configured by a
+  Web Part developer. Each pre-configured instance of the Web Part will need a
+  copy of these properties. Organization admins and content authors can modify
+  these properties on a need basis.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: dataVersion
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#dataVersion:member
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#dataVersion:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#description:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#group:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#groupId:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#iconImageUrl:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#officeFabricIconFontName:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#properties:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#tags:member'
-      - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#title:member'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#dataVersion:member'
+    fullName: dataVersion
     summary: >-
-      Definition: Use this field to specify the data version of the pre-configured data provided to the web part. Note
-      that data version is different from the version field in the manifest.
+      Definition: Use this field to specify the data version of the
+      pre-configured data provided to the web part. Note that data version is
+      different from the version field in the manifest.
     remarks: >-
-      The manifest version is used to control the versioning of the web part code, while data version is used to control
-      the versioning of the serialized data of the web part. Refer to dataVersion field of your web part for more
-      information.
+      The manifest version is used to control the versioning of the web part
+      code, while data version is used to control the versioning of the
+      serialized data of the web part. Refer to dataVersion field of your web
+      part for more information.
 
 
       Usage: versioning and evolving the serialized data of the web part
 
 
-      Type: string representing a [semantic version](http://semver.org) with only two parts
+      Type: string representing a [semantic version](http://semver.org) with
+      only two parts
 
 
       Supported values: MAJOR.MINOR
 
 
       Example: `"1.0"`
-    name: dataVersion
-    fullName: dataVersion
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'dataVersion?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#description:member'
+        type: string
+  - name: description
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#description:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: description
     summary: >-
-      Description of the web part represented as a dictionary of locale keys to description values. This value will be
-      displayed to the user in the toolbox. This description should be used in the Toolbox tooltip and other display
-      areas.
+      Description of the web part represented as a dictionary of locale keys to
+      description values. This value will be displayed to the user in the
+      toolbox. This description should be used in the Toolbox tooltip and other
+      display areas.
     remarks: >-
-      The Web Part developer may give an initial description to the web part. The organization admin and page author
-      will have the ability to change this description as per need.
+      The Web Part developer may give an initial description to the web part.
+      The organization admin and page author will have the ability to change
+      this description as per need.
 
 
-      Usage: display the description of the web part in the toolbox tooltip, web part gallery and the page.
+      Usage: display the description of the web part in the toolbox tooltip, web
+      part gallery and the page.
 
 
-      Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.
+      Supported values: a dictionary of locale keys to strings. Should always
+      have a `'default'` key.
 
 
       Example: `"A tool for displaying neat information."`
@@ -82,87 +82,99 @@ items:
                }
 
       ```
-    name: description
-    fullName: description
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'description: ILocalizedString;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#group:member'
+        type: >-
+          <xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface"
+          />
+  - name: group
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#group:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: group
     summary: >-
-      The group name in web part picker to contain the web part in the classic page. If no value is provided, then the
-      web part will be displayed in the Miscellaneous group.
+      The group name in web part picker to contain the web part in the classic
+      page. If no value is provided, then the web part will be displayed in the
+      Miscellaneous group.
     remarks: 'Example: `{ "default": "Media and Content" }`'
     isPreview: true
-    name: group
-    fullName: group
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'group?: ILocalizedString;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#groupId:member'
+        type: >-
+          <xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface"
+          />
+  - name: groupId
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#groupId:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: groupId
     summary: >-
-      The group id to determine which modern group contains the web part in modern site page. The SharePoint Framework
-      reserves group ids for predefined groups. The developer can pick one from those groups. If the developer fills an
-      id not in the predefined groups, it falls back to Other group.
+      The group id to determine which modern group contains the web part in
+      modern site page. The SharePoint Framework reserves group ids for
+      predefined groups. The developer can pick one from those groups. If the
+      developer fills an id not in the predefined groups, it falls back to Other
+      group.
     remarks: |-
       Supported values: the GUID from PredefinedGroup list
 
       Example: `"cf066440-0614-43d6-98ae-0b31cf14c7c3"`
     isPreview: true
-    name: groupId
-    fullName: groupId
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'groupId: PredefinedGroup | string;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#groupId~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#iconImageUrl:member'
+        type: >-
+          @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#<xref
+          uid="groupId~0:complex" />
+  - name: iconImageUrl
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#iconImageUrl:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: iconImageUrl
     summary: >-
-      The icon for the web part, to be displayed in the toolbox, represented an image URL. The image at the URL must be
-      exactly 40x28 px (SPPPLAT VSO\#218660 to fix the size of the icon image).
+      The icon for the web part, to be displayed in the toolbox, represented an
+      image URL. The image at the URL must be exactly 40x28 px (SPPPLAT
+      VSO\#218660 to fix the size of the icon image).
     remarks: >-
       If the
       [IClientSideWebPartManifestEntry.officeFabricIconFontName](xref:@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#officeFabricIconFontName:member)
-      field does not have a value, this field must have a value. This value can be an absolute URL (e.g.
-      `"http://example.com/icons/my-icon.png"`<!-- -->) or a relative file path (e.g. `"./icons/my-icon.png"`<!-- -->).
-      In the latter case, the path will be resolved relative to the folder containing the input manifest. The icon file
-      will be copied to the deployment folder like an asset, and the output manifest’s iconImageUrl will be replaced
-      with a URL relative to the URL used to load all other assets (the loaderConfig.internalModuleBaseUrls property).
+      field does not have a value, this field must have a value. This value can
+      be an absolute URL (e.g. `"http://example.com/icons/my-icon.png"`<!-- -->)
+      or a relative file path (e.g. `"./icons/my-icon.png"`<!-- -->). In the
+      latter case, the path will be resolved relative to the folder containing
+      the input manifest. The icon file will be copied to the deployment folder
+      like an asset, and the output manifest’s iconImageUrl will be replaced
+      with a URL relative to the URL used to load all other assets (the
+      loaderConfig.internalModuleBaseUrls property).
 
 
       Supported values: Any absolute URL.
 
 
       Example: `"https://contoso.akamaihd.net/files/myWebpartIcon.png"`
-    name: iconImageUrl
-    fullName: iconImageUrl
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'iconImageUrl?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#officeFabricIconFontName:member'
+        type: string
+  - name: officeFabricIconFontName
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#officeFabricIconFontName:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: officeFabricIconFontName
     summary: >-
-      The icon for the Web Part, to be displayed in the toolbox, represented as a character name in the Office 365 icon
-      font file.
+      The icon for the Web Part, to be displayed in the toolbox, represented as
+      a character name in the Office 365 icon font file.
     remarks: >-
-      The icon font is specified here: [https://aka.ms/uifabric-icons](https://aka.ms/uifabric-icons) If this field has
-      a value, the
+      The icon font is specified here:
+      [https://aka.ms/uifabric-icons](https://aka.ms/uifabric-icons) If this
+      field has a value, the
       [IClientSideWebPartManifestEntry.iconImageUrl](xref:@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#iconImageUrl:member)
       field will be ignored.
 
@@ -171,70 +183,82 @@ items:
 
 
       Example: "graph"
-    name: officeFabricIconFontName
-    fullName: officeFabricIconFontName
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'officeFabricIconFontName?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#properties:member'
+        type: string
+  - name: properties
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#properties:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: properties
     summary: >-
-      Every web part is expected to have some custom properties. For example, an image web part might define properties
-      for the image URL and caption text. A list web part may have the list ID and list title as its properties, and so
-      on.
+      Every web part is expected to have some custom properties. For example, an
+      image web part might define properties for the image URL and caption text.
+      A list web part may have the list ID and list title as its properties, and
+      so on.
     remarks: >-
-      The SharePoint Framework passes these properties to the web parts when they are loaded. The web part developer
-      fully controls the schema for these properties. The web part developer should follow versioning rules when
-      updating the properties.
+      The SharePoint Framework passes these properties to the web parts when
+      they are loaded. The web part developer fully controls the schema for
+      these properties. The web part developer should follow versioning rules
+      when updating the properties.
 
 
       Usage: rendering of the web part
 
 
-      Example: `{"imageSource": "https://contoso.akamaihd.net/files/contosoLogo.jpg", "captionText": "Contoso logo"}"`
-    name: properties
-    fullName: properties
-    langs:
-      - typeScript
-    type: property
+      Example: `{"imageSource":
+      "https://contoso.akamaihd.net/files/contosoLogo.jpg", "captionText":
+      "Contoso logo"}"`
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'properties: TProperties;'
       return:
-        type:
-          - TProperties
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#tags:member'
-    summary: >-
-      This field is used to tag a web part with keywords that are different from the web part group name. Tags can be
-      used for categorization and searching of web parts. For example, in the web part toolbox.
-    remarks: 'Example `[{ "default": "image" }, { "default": "media" }, { "default": "picture" }, ...]`'
-    isPreview: true
-    name: tags
+        type: TProperties
+  - name: tags
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#tags:member
+    package: '@microsoft/sp-module-interfaces!'
     fullName: tags
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      This field is used to tag a web part with keywords that are different from
+      the web part group name. Tags can be used for categorization and searching
+      of web parts. For example, in the web part toolbox.
+    remarks: >-
+      Example `[{ "default": "image" }, { "default": "media" }, { "default":
+      "picture" }, ...]`
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'tags?: ILocalizedString[];'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#tags~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#title:member'
+        type: >-
+          @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#<xref
+          uid="tags~0:complex" />
+  - name: title
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#title:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: title
     summary: >-
-      Title of the web part represented as a single a dictionary of locale keys to title values. This value will be
-      displayed to the user in the toolbox.
+      Title of the web part represented as a single a dictionary of locale keys
+      to title values. This value will be displayed to the user in the toolbox.
     remarks: >-
-      This title should be used in the Toolbox and other display areas. The Web Part developer may give an initial title
-      to the web part. The organization admin and page author will have the ability to change this title as per need.
+      This title should be used in the Toolbox and other display areas. The Web
+      Part developer may give an initial title to the web part. The organization
+      admin and page author will have the ability to change this title as per
+      need.
 
 
-      Usage: display the name of the web part in the toolbox, web part gallery and the page.
+      Usage: display the name of the web part in the toolbox, web part gallery
+      and the page.
 
 
-      Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.
+      Supported values: a dictionary of locale keys to strings. Should always
+      have a `'default'` key.
 
 
       Example: `"My Webpart"`
@@ -249,34 +273,11 @@ items:
                }
 
       ```
-    name: title
-    fullName: title
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'title: ILocalizedString;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-references:
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-    name: ILocalizedString
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#groupId~0:complex'
-    name: PredefinedGroup | string
-    fullName: PredefinedGroup | string
-    spec.typeScript:
-      - uid: '@microsoft/sp-module-interfaces!PredefinedGroup:enum'
-        name: PredefinedGroup
-        fullName: PredefinedGroup
-      - name: ' | string'
-        fullName: ' | string'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry#tags~0:complex'
-    name: 'ILocalizedString[]'
-    fullName: 'ILocalizedString[]'
-    spec.typeScript:
-      - uid: '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-        name: ILocalizedString
-        fullName: ILocalizedString
-      - name: '[]'
-        fullName: '[]'
+        type: >-
+          <xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface"
+          />

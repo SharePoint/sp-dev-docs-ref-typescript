@@ -1,87 +1,73 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!ODataVersion:class'
-    summary: 'Represents supported version of the "OData-Version" header, which is part of the Open Data Protocol standard.'
-    name: ODataVersion
-    fullName: ODataVersion
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: ODataVersion
+uid: '@microsoft/sp-http!ODataVersion:class'
+package: '@microsoft/sp-http!'
+fullName: ODataVersion
+summary: >-
+  Represents supported version of the "OData-Version" header, which is part of
+  the Open Data Protocol standard.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: v3
+    uid: '@microsoft/sp-http!ODataVersion.v3:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!ODataVersion#toString:member(1)'
-      - '@microsoft/sp-http!ODataVersion.tryParseFromHeaders:member(1)'
-      - '@microsoft/sp-http!ODataVersion.v3:member'
-      - '@microsoft/sp-http!ODataVersion.v4:member'
-  - uid: '@microsoft/sp-http!ODataVersion#toString:member(1)'
-    summary: 'Returns the "OData-Version" value, for example "4.0".'
-    name: toString()
-    fullName: toString()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'toString(): string;'
-      return:
-        type:
-          - string
-        description: ''
-  - uid: '@microsoft/sp-http!ODataVersion.tryParseFromHeaders:member(1)'
-    summary: Attempt to parse the "OData-Version" header.
-    remarks: >-
-      If the "OData-Version" header is present, this returns the corresponding ODataVersion constant. An error is thrown
-      if the version number is not supported. If the header is missing, then undefined is returned.
-    name: tryParseFromHeaders(headers)
-    fullName: tryParseFromHeaders(headers)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'static tryParseFromHeaders(headers: Headers): ODataVersion | undefined;'
-      return:
-        type:
-          - '@microsoft/sp-http!ODataVersion.tryParseFromHeaders~0:complex'
-        description: ''
-      parameters:
-        - id: headers
-          description: ''
-          type:
-            - '!Headers:interface'
-  - uid: '@microsoft/sp-http!ODataVersion.v3:member'
-    summary: Represents version 3.0 for the "OData-Version" header
-    name: v3
     fullName: v3
-    langs:
-      - typeScript
-    type: property
+    summary: Represents version 3.0 for the "OData-Version" header
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static v3: ODataVersion;'
       return:
-        type:
-          - '@microsoft/sp-http!default:class'
-  - uid: '@microsoft/sp-http!ODataVersion.v4:member'
-    summary: Represents version 4.0 for the "OData-Version" header
-    name: v4
+        type: '<xref uid="@microsoft/sp-http!default:class" />'
+  - name: v4
+    uid: '@microsoft/sp-http!ODataVersion.v4:member'
+    package: '@microsoft/sp-http!'
     fullName: v4
-    langs:
-      - typeScript
-    type: property
+    summary: Represents version 4.0 for the "OData-Version" header
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static v4: ODataVersion;'
       return:
-        type:
-          - '@microsoft/sp-http!default:class'
-references:
-  - uid: '@microsoft/sp-http!ODataVersion.tryParseFromHeaders~0:complex'
-    name: ODataVersion | undefined
-    fullName: default | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-http!default:class'
-        name: ODataVersion
-        fullName: default
-      - name: ' | undefined'
-        fullName: ' | undefined'
-  - uid: '!Headers:interface'
-    name: Headers
-  - uid: '@microsoft/sp-http!default:class'
-    name: ODataVersion
+        type: '<xref uid="@microsoft/sp-http!default:class" />'
+methods:
+  - name: toString()
+    uid: '@microsoft/sp-http!ODataVersion#toString:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: toString()
+    summary: 'Returns the "OData-Version" value, for example "4.0".'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'toString(): string;'
+      return:
+        type: string
+        description: ''
+  - name: tryParseFromHeaders(headers)
+    uid: '@microsoft/sp-http!ODataVersion.tryParseFromHeaders:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: tryParseFromHeaders(headers)
+    summary: Attempt to parse the "OData-Version" header.
+    remarks: >-
+      If the "OData-Version" header is present, this returns the corresponding
+      ODataVersion constant. An error is thrown if the version number is not
+      supported. If the header is missing, then undefined is returned.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'static tryParseFromHeaders(headers: Headers): ODataVersion | undefined;'
+      parameters:
+        - id: headers
+          description: ''
+          type: '<xref uid="!Headers:interface" />'
+      return:
+        type: >-
+          @microsoft/sp-http!ODataVersion.<xref
+          uid="tryParseFromHeaders~0:complex" />
+        description: ''
