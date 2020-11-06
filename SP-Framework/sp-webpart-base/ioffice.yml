@@ -1,29 +1,25 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!IOffice:interface'
-    summary: Provides access to the Office context. Only provided when the web part is loaded in Office.
-    isPreview: true
-    name: IOffice
-    fullName: IOffice
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IOffice
+uid: '@microsoft/sp-webpart-base!IOffice:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: IOffice
+summary: >-
+  Provides access to the Office context. Only provided when the web part is
+  loaded in Office.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: context
+    uid: '@microsoft/sp-webpart-base!IOffice#context:member'
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!IOffice#context:member'
-  - uid: '@microsoft/sp-webpart-base!IOffice#context:member'
-    summary: Microsoft Office SDK.
-    isPreview: true
-    name: context
     fullName: context
-    langs:
-      - typeScript
-    type: property
+    summary: Microsoft Office SDK.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'context: Office.Context;'
       return:
-        type:
-          - '!Office.Context:interface'
-references:
-  - uid: '!Office.Context:interface'
-    name: Office.Context
+        type: '!Office.<xref uid="Context:interface" />'

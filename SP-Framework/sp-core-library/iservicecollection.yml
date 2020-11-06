@@ -1,31 +1,26 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!IServiceCollection:interface'
-    summary: A shorthand pattern for extracting well-known services from a ServiceScope.
-    deprecated:
-      content: >-
-        This pattern has been superceded by the BaseComponentContext pattern. This interface will be removed in a future
-        release.
-    name: IServiceCollection
-    fullName: IServiceCollection
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IServiceCollection
+uid: '@microsoft/sp-core-library!IServiceCollection:interface'
+package: '@microsoft/sp-core-library!'
+fullName: IServiceCollection
+summary: A shorthand pattern for extracting well-known services from a ServiceScope.
+remarks: ''
+isPreview: false
+isDeprecated: true
+customDeprecatedMessage: >-
+  This pattern has been superceded by the BaseComponentContext pattern. This
+  interface will be removed in a future release.
+type: interface
+properties:
+  - name: serviceScope
+    uid: '@microsoft/sp-core-library!IServiceCollection#serviceScope:member'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!IServiceCollection#serviceScope:member'
-  - uid: '@microsoft/sp-core-library!IServiceCollection#serviceScope:member'
-    summary: Returns the underlying ServiceScope that the members belong to.
-    name: serviceScope
     fullName: serviceScope
-    langs:
-      - typeScript
-    type: property
+    summary: Returns the underlying ServiceScope that the members belong to.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly serviceScope: ServiceScope;'
       return:
-        type:
-          - '@microsoft/sp-core-library!default:class'
-references:
-  - uid: '@microsoft/sp-core-library!default:class'
-    name: ServiceScope
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />'

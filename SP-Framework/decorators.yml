@@ -1,125 +1,87 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/decorators!'
-    summary: A conservative set of decorators intended for use in both NodeJS and web browser projects.
-    remarks: >-
-      This package provides a small set of decorators that enable more rigorous specification of API contracts when
-      using the TypeScript language. The intent is to better document expected behaviors and catch common mistakes. This
-      package is not intended to be a general toolkit of language extensions or helpful macros.
-    name: '@microsoft/decorators'
-    fullName: '@microsoft/decorators'
-    langs:
-      - typeScript
-    type: package
-    children:
-      - '@microsoft/decorators!override:function(1)'
-      - '@microsoft/decorators!sealed:function(1)'
-      - '@microsoft/decorators!virtual:function(1)'
-  - uid: '@microsoft/decorators!override:function(1)'
+### YamlMime:TSPackage
+uid: '@microsoft/decorators!'
+name: '@microsoft/decorators'
+type: package
+summary: >-
+  A conservative set of decorators intended for use in both NodeJS and web
+  browser projects.
+functions:
+  - name: 'override(target, propertyKey, descriptor)'
+    uid: '@microsoft/decorators!override:function(1)'
+    package: '@microsoft/decorators'
     summary: >-
-      This decorator is applied to a class's member function or property. It indicates that the definition overrides
-      another defintion (of the same name) from the base class. The base class definition must be marked as @<!--
-      -->virtual. This decorator is currently used for documentation purposes only. In the future, it may be enforced at
-      runtime.
-    name: 'override(target, propertyKey, descriptor)'
-    fullName: 'override(target, propertyKey, descriptor)'
-    langs:
-      - typeScript
-    type: function
+      This decorator is applied to a class's member function or property. It
+      indicates that the definition overrides another defintion (of the same
+      name) from the base class. The base class definition must be marked as
+      @<!-- -->virtual. This decorator is currently used for documentation
+      purposes only. In the future, it may be enforced at runtime.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function override(target: Object, propertyKey: string | symbol, descriptor:
-        TypedPropertyDescriptor<any>): void;
-      return:
-        type:
-          - void
-        description: ''
+        export declare function override(target: Object, propertyKey: string |
+        symbol, descriptor: TypedPropertyDescriptor<any>): void;
       parameters:
         - id: target
           description: ''
-          type:
-            - '!Object:interface'
+          type: '<xref uid="!Object:interface" />'
         - id: propertyKey
           description: ''
-          type:
-            - string | symbol
+          type: string | symbol
         - id: descriptor
           description: ''
-          type:
-            - '@microsoft/decorators!override~0:complex'
-  - uid: '@microsoft/decorators!sealed:function(1)'
+          type: '<xref uid="!TypedPropertyDescriptor:interface" />&lt;any&gt;'
+      return:
+        type: void
+        description: ''
+  - name: sealed(target)
+    uid: '@microsoft/decorators!sealed:function(1)'
+    package: '@microsoft/decorators'
     summary: >-
-      This decorator is applied to a class (but NOT member function or property). It indicates that subclasses must not
-      inherit from this class. This decorator is currently used for documentation purposes only. In the future, it may
-      be enforced at runtime.
-    name: sealed(target)
-    fullName: sealed(target)
-    langs:
-      - typeScript
-    type: function
+      This decorator is applied to a class (but NOT member function or
+      property). It indicates that subclasses must not inherit from this class.
+      This decorator is currently used for documentation purposes only. In the
+      future, it may be enforced at runtime.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'export declare function sealed(target: Function): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: target
           description: ''
-          type:
-            - '!Function:interface'
-  - uid: '@microsoft/decorators!virtual:function(1)'
+          type: '<xref uid="!Function:interface" />'
+      return:
+        type: void
+        description: ''
+  - name: 'virtual(target, propertyKey, descriptor)'
+    uid: '@microsoft/decorators!virtual:function(1)'
+    package: '@microsoft/decorators'
     summary: >-
-      This decorator is applied to a class's member function or property. It indicates that the definition may
-      optionally be overridden in a child class. Conversely, if the @<!-- -->virtual decorator is NOT applied to a
-      definition, then child classes may NOT override it. This decorator is currently used for documentation purposes
-      only. In the future, it may be enforced at runtime.
-    name: 'virtual(target, propertyKey, descriptor)'
-    fullName: 'virtual(target, propertyKey, descriptor)'
-    langs:
-      - typeScript
-    type: function
+      This decorator is applied to a class's member function or property. It
+      indicates that the definition may optionally be overridden in a child
+      class. Conversely, if the @<!-- -->virtual decorator is NOT applied to a
+      definition, then child classes may NOT override it. This decorator is
+      currently used for documentation purposes only. In the future, it may be
+      enforced at runtime.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function virtual(target: Object, propertyKey: string | symbol, descriptor:
-        TypedPropertyDescriptor<any>): void;
-      return:
-        type:
-          - void
-        description: ''
+        export declare function virtual(target: Object, propertyKey: string |
+        symbol, descriptor: TypedPropertyDescriptor<any>): void;
       parameters:
         - id: target
           description: ''
-          type:
-            - '!Object:interface'
+          type: '<xref uid="!Object:interface" />'
         - id: propertyKey
           description: ''
-          type:
-            - string | symbol
+          type: string | symbol
         - id: descriptor
           description: ''
-          type:
-            - '@microsoft/decorators!virtual~0:complex'
-references:
-  - uid: '!Object:interface'
-    name: Object
-  - uid: '@microsoft/decorators!override~0:complex'
-    name: TypedPropertyDescriptor<any>
-    fullName: TypedPropertyDescriptor<any>
-    spec.typeScript:
-      - uid: '!TypedPropertyDescriptor:interface'
-        name: TypedPropertyDescriptor
-        fullName: TypedPropertyDescriptor
-      - name: <any>
-        fullName: <any>
-  - uid: '!Function:interface'
-    name: Function
-  - uid: '@microsoft/decorators!virtual~0:complex'
-    name: TypedPropertyDescriptor<any>
-    fullName: TypedPropertyDescriptor<any>
-    spec.typeScript:
-      - uid: '!TypedPropertyDescriptor:interface'
-        name: TypedPropertyDescriptor
-        fullName: TypedPropertyDescriptor
-      - name: <any>
-        fullName: <any>
+          type: '<xref uid="!TypedPropertyDescriptor:interface" />&lt;any&gt;'
+      return:
+        type: void
+        description: ''

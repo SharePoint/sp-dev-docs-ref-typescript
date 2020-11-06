@@ -1,53 +1,48 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!ISPEventObserver:interface'
-    summary: >-
-      Used with the [SPEvent](xref:@microsoft/sp-core-library!SPEvent:class) system, this interface is implemented by
-      components that can subscribe to events.
-    remarks: >-
-      ISPEventObserver is an abstraction of the key features that a component must have in order to subscribe to a
-      SharePoint Framework event: It must have instanceId and componentId information for diagnostics reporting, and it
-      must have a way to notify the event system when the component is disposed, so that its handlers can be
-      automatically removed. Other objects may implement this contract, as long as they meet these requirements.
-    name: ISPEventObserver
-    fullName: ISPEventObserver
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-core-library!IDisposable:interface'
-    inheritance:
-      - type: '@microsoft/sp-core-library!IDisposable:interface'
+### YamlMime:TSType
+name: ISPEventObserver
+uid: '@microsoft/sp-core-library!ISPEventObserver:interface'
+package: '@microsoft/sp-core-library!'
+fullName: ISPEventObserver
+summary: >-
+  Used with the [SPEvent](xref:@microsoft/sp-core-library!SPEvent:class) system,
+  this interface is implemented by components that can subscribe to events.
+remarks: >-
+  ISPEventObserver is an abstraction of the key features that a component must
+  have in order to subscribe to a SharePoint Framework event: It must have
+  instanceId and componentId information for diagnostics reporting, and it must
+  have a way to notify the event system when the component is disposed, so that
+  its handlers can be automatically removed. Other objects may implement this
+  contract, as long as they meet these requirements.
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: componentId
+    uid: '@microsoft/sp-core-library!ISPEventObserver#componentId:member'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!ISPEventObserver#componentId:member'
-      - '@microsoft/sp-core-library!ISPEventObserver#instanceId:member'
-  - uid: '@microsoft/sp-core-library!ISPEventObserver#componentId:member'
-    summary: 'The component identifier, from the component''s manifest.'
-    remarks: 'This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception'
-    name: componentId
     fullName: componentId
-    langs:
-      - typeScript
-    type: property
+    summary: 'The component identifier, from the component''s manifest.'
+    remarks: >-
+      This will be used for diagnostic reporting, e.g. if the callback function
+      has an uncaught exception
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly componentId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-core-library!ISPEventObserver#instanceId:member'
-    summary: The instance identifier for the component.
-    remarks: 'This will be used for diagnostic reporting, e.g. if the callback function has an uncaught exception'
-    name: instanceId
+        type: string
+  - name: instanceId
+    uid: '@microsoft/sp-core-library!ISPEventObserver#instanceId:member'
+    package: '@microsoft/sp-core-library!'
     fullName: instanceId
-    langs:
-      - typeScript
-    type: property
+    summary: The instance identifier for the component.
+    remarks: >-
+      This will be used for diagnostic reporting, e.g. if the callback function
+      has an uncaught exception
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly instanceId: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-core-library!IDisposable:interface'
-    name: IDisposable
+        type: string
+extends: '<xref uid="@microsoft/sp-core-library!IDisposable:interface" />'

@@ -1,158 +1,133 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext:interface'
-    summary: The base context interface for client-side web parts.
-    remarks: >-
-      A "context" object is a collection of well-known services and other objects that are likely to be needed by any
-      business logic working with a component. Each component type has its own specialized extension of this interface,
-      e.g. IWebPartContext for web parts, IExtensionContext for client-side extensions, etc.
-    deprecated:
-      content: >-
-        - This interface will be removed in an upcoming release. Use the
-        [WebPartContext](xref:@microsoft/sp-webpart-base!WebPartContext:class) class instead.
-    name: IWebPartContext
-    fullName: IWebPartContext
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IWebPartContext
+uid: '@microsoft/sp-webpart-base!IWebPartContext:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: IWebPartContext
+summary: The base context interface for client-side web parts.
+remarks: >-
+  A "context" object is a collection of well-known services and other objects
+  that are likely to be needed by any business logic working with a component.
+  Each component type has its own specialized extension of this interface, e.g.
+  IWebPartContext for web parts, IExtensionContext for client-side extensions,
+  etc.
+isPreview: false
+isDeprecated: true
+customDeprecatedMessage: >-
+  - This interface will be removed in an upcoming release. Use the
+  [WebPartContext](xref:@microsoft/sp-webpart-base!WebPartContext:class) class
+  instead.
+type: interface
+properties:
+  - name: domElement
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#domElement:member'
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!IWebPartContext#domElement:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#httpClient:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#instanceId:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#manifest:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#pageContext:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#propertyPane:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#spHttpClient:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#statusRenderer:member'
-      - '@microsoft/sp-webpart-base!IWebPartContext#webPartTag:member'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#domElement:member'
-    summary: Reference to the DOM element that hosts this client-side component.
-    name: domElement
     fullName: domElement
-    langs:
-      - typeScript
-    type: property
+    summary: Reference to the DOM element that hosts this client-side component.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly domElement: HTMLElement;'
       return:
-        type:
-          - '!HTMLElement:interface'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#httpClient:member'
-    summary: HttpClient instance scoped to this web part.
-    name: httpClient
+        type: '<xref uid="!HTMLElement:interface" />'
+  - name: httpClient
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#httpClient:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: httpClient
-    langs:
-      - typeScript
-    type: property
+    summary: HttpClient instance scoped to this web part.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly httpClient: HttpClient;'
       return:
-        type:
-          - '@microsoft/sp-http!HttpClient:class'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#instanceId:member'
-    summary: Web part instance id. This is a globally unique value.
-    name: instanceId
+        type: '<xref uid="@microsoft/sp-http!HttpClient:class" />'
+  - name: instanceId
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#instanceId:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: instanceId
-    langs:
-      - typeScript
-    type: property
+    summary: Web part instance id. This is a globally unique value.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly instanceId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#manifest:member'
-    summary: Manifest for the client-side web part.
-    name: manifest
+        type: string
+  - name: manifest
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#manifest:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: manifest
-    langs:
-      - typeScript
-    type: property
+    summary: Manifest for the client-side web part.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!IWebPartContext#manifest~0:complex'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#pageContext:member'
-    summary: SharePoint page context.
-    name: pageContext
+        type: >-
+          <xref
+          uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface"
+          />&lt;any&gt;
+  - name: pageContext
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#pageContext:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: pageContext
-    langs:
-      - typeScript
-    type: property
+    summary: SharePoint page context.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly pageContext: PageContext;'
       return:
-        type:
-          - '@microsoft/sp-page-context!PageContext:class'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#propertyPane:member'
-    summary: Accessor for common web part property pane operations.
-    name: propertyPane
+        type: '<xref uid="@microsoft/sp-page-context!PageContext:class" />'
+  - name: propertyPane
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#propertyPane:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: propertyPane
-    langs:
-      - typeScript
-    type: property
+    summary: Accessor for common web part property pane operations.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly propertyPane: IPropertyPaneAccessor;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#spHttpClient:member'
-    summary: SPHttpClient instance scoped to this web part.
-    name: spHttpClient
+        type: >-
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface"
+          />
+  - name: spHttpClient
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#spHttpClient:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: spHttpClient
-    langs:
-      - typeScript
-    type: property
+    summary: SPHttpClient instance scoped to this web part.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly spHttpClient: SPHttpClient;'
       return:
-        type:
-          - '@microsoft/sp-http!SPHttpClient:class'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#statusRenderer:member'
-    summary: Web part status renderer.
-    name: statusRenderer
+        type: '<xref uid="@microsoft/sp-http!SPHttpClient:class" />'
+  - name: statusRenderer
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#statusRenderer:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: statusRenderer
-    langs:
-      - typeScript
-    type: property
+    summary: Web part status renderer.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly statusRenderer: IClientSideWebPartStatusRenderer;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!default:interface'
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#webPartTag:member'
-    summary: Web part tag to be used for logging and telemetry.
-    name: webPartTag
+        type: '<xref uid="@microsoft/sp-webpart-base!default:interface" />'
+  - name: webPartTag
+    uid: '@microsoft/sp-webpart-base!IWebPartContext#webPartTag:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: webPartTag
-    langs:
-      - typeScript
-    type: property
+    summary: Web part tag to be used for logging and telemetry.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly webPartTag: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '!HTMLElement:interface'
-    name: HTMLElement
-  - uid: '@microsoft/sp-http!HttpClient:class'
-    name: HttpClient
-  - uid: '@microsoft/sp-webpart-base!IWebPartContext#manifest~0:complex'
-    name: IClientSideWebPartManifestInstance<any>
-    fullName: IClientSideWebPartManifestInstance<any>
-    spec.typeScript:
-      - uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface'
-        name: IClientSideWebPartManifestInstance
-        fullName: IClientSideWebPartManifestInstance
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-page-context!PageContext:class'
-    name: PageContext
-  - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
-    name: IPropertyPaneAccessor
-  - uid: '@microsoft/sp-http!SPHttpClient:class'
-    name: SPHttpClient
-  - uid: '@microsoft/sp-webpart-base!default:interface'
-    name: IClientSideWebPartStatusRenderer
+        type: string

@@ -1,290 +1,233 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource:interface'
-    summary: >-
-      Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API
-      to get the data.
-    name: IDynamicDataSource
-    fullName: IDynamicDataSource
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IDynamicDataSource
+uid: '@microsoft/sp-dynamic-data!IDynamicDataSource:interface'
+package: '@microsoft/sp-dynamic-data!'
+fullName: IDynamicDataSource
+summary: >-
+  Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to
+  identify the data sources and API to get the data.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: id
+    uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#id:member'
     package: '@microsoft/sp-dynamic-data!'
-    children:
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#allowedEventsAsync:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValue:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValueAsync:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitions:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitionsAsync:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValue:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValueAsync:member(1)'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#id:member'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#metadata:member'
-      - '@microsoft/sp-dynamic-data!IDynamicDataSource#sendEvent:member(1)'
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#allowedEventsAsync:member(1)'
-    summary: >-
-      Returns list of allowed events on the dynamic data source. When this api returns a non-empty result, then source
-      must define 'sendData' api.
-
-
-      If this api is not defined or returns an empty map, then no consumer will be able to talk to this source.
-    isPreview: true
-    name: allowedEventsAsync()
-    fullName: allowedEventsAsync()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'allowedEventsAsync?(): Promise<ReadonlyArray<IDynamicDataEventDefinition>>;'
-      return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataSource#allowedEventsAsync~0:complex'
-        description: ''
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValue:member(1)'
-    summary: >-
-      Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
-      back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
-    deprecated:
-      content: '- This API is deprecated. Please use the asynchronous version `getAsyncAnnotatedPropertyValue`'
-    name: getAnnotatedPropertyValue(propertyId)
-    fullName: getAnnotatedPropertyValue(propertyId)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getAnnotatedPropertyValue(propertyId: string): IDynamicDataAnnotatedPropertyValue;'
-      return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface'
-        description: ''
-      parameters:
-        - id: propertyId
-          description: One of the property ids exposed from the dynamic data source.
-          type:
-            - string
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValueAsync:member(1)'
-    summary: >-
-      Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
-      back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
-    name: getAnnotatedPropertyValueAsync(propertyId)
-    fullName: getAnnotatedPropertyValueAsync(propertyId)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getAnnotatedPropertyValueAsync(propertyId: string): Promise<IDynamicDataAnnotatedPropertyValue>;'
-      return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValueAsync~0:complex'
-        description: ''
-      parameters:
-        - id: propertyId
-          description: Property id for which the value is requested.
-          type:
-            - string
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitions:member(1)'
-    summary: >-
-      Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
-      component.
-    deprecated:
-      content: '- This API is deprecated. Please use the asynchronous version `getPropertyDefinitionsAsync`'
-    name: getPropertyDefinitions()
-    fullName: getPropertyDefinitions()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;'
-      return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitions~0:complex'
-        description: ''
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitionsAsync:member(1)'
-    summary: >-
-      Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
-      component.
-    name: getPropertyDefinitionsAsync()
-    fullName: getPropertyDefinitionsAsync()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getPropertyDefinitionsAsync(): Promise<ReadonlyArray<IDynamicDataPropertyDefinition>>;'
-      return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitionsAsync~0:complex'
-        description: ''
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValue:member(1)'
-    summary: >-
-      Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
-      component.
-    deprecated:
-      content: '- This API is deprecated. Please use the asynchronous version `getAsyncPropertyValue`'
-    name: getPropertyValue(propertyId)
-    fullName: getPropertyValue(propertyId)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getPropertyValue(propertyId: string): any;'
-      return:
-        type:
-          - any
-        description: ''
-      parameters:
-        - id: propertyId
-          description: Property id for which the value is requested.
-          type:
-            - string
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValueAsync:member(1)'
-    summary: >-
-      Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
-      component.
-    name: getPropertyValueAsync(propertyId)
-    fullName: getPropertyValueAsync(propertyId)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getPropertyValueAsync(propertyId: string): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValueAsync~0:complex'
-        description: ''
-      parameters:
-        - id: propertyId
-          description: Property id for which the value is requested.
-          type:
-            - string
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#id:member'
-    summary: Id of the Dynamic Data Source.
-    name: id
     fullName: id
-    langs:
-      - typeScript
-    type: property
+    summary: Id of the Dynamic Data Source.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'id: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#metadata:member'
-    summary: Metadata of the Dynamic Data Source.
-    name: metadata
+        type: string
+  - name: metadata
+    uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#metadata:member'
+    package: '@microsoft/sp-dynamic-data!'
     fullName: metadata
-    langs:
-      - typeScript
-    type: property
+    summary: Metadata of the Dynamic Data Source.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'metadata: IDynamicDataSourceMetadata;'
       return:
-        type:
-          - '@microsoft/sp-dynamic-data!IDynamicDataSourceMetadata:interface'
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#sendEvent:member(1)'
+        type: >-
+          <xref
+          uid="@microsoft/sp-dynamic-data!IDynamicDataSourceMetadata:interface"
+          />
+methods:
+  - name: allowedEventsAsync()
+    uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#allowedEventsAsync:member(1)'
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: allowedEventsAsync()
     summary: >-
-      If defined, enables the consumer to send data to the associated dynamic data source. Then source can act
-      accordingly.
+      Returns list of allowed events on the dynamic data source. When this api
+      returns a non-empty result, then source must define 'sendData' api.
 
 
-      Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
+      If this api is not defined or returns an empty map, then no consumer will
+      be able to talk to this source.
+    remarks: ''
     isPreview: true
-    name: 'sendEvent(eventName, data)'
+    isDeprecated: false
+    syntax:
+      content: >-
+        allowedEventsAsync?():
+        Promise<ReadonlyArray<IDynamicDataEventDefinition>>;
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref uid="!ReadonlyArray:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-dynamic-data!IDynamicDataEventDefinition:interface"
+          />&gt;&gt;
+        description: ''
+  - name: getAnnotatedPropertyValue(propertyId)
+    uid: >-
+      @microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValue:member(1)
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: getAnnotatedPropertyValue(propertyId)
+    summary: >-
+      Given a property id, returns its annotated value. If the source doesn't
+      supply the annotated value, then it falls back to whatever
+      'getPropertyValue' as the sample value and metadata would be undefined.
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: >-
+      - This API is deprecated. Please use the asynchronous version
+      `getAsyncAnnotatedPropertyValue`
+    syntax:
+      content: >-
+        getAnnotatedPropertyValue(propertyId: string):
+        IDynamicDataAnnotatedPropertyValue;
+      parameters:
+        - id: propertyId
+          description: One of the property ids exposed from the dynamic data source.
+          type: string
+      return:
+        type: >-
+          <xref
+          uid="@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface"
+          />
+        description: ''
+  - name: getAnnotatedPropertyValueAsync(propertyId)
+    uid: >-
+      @microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValueAsync:member(1)
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: getAnnotatedPropertyValueAsync(propertyId)
+    summary: >-
+      Given a property id, returns its annotated value. If the source doesn't
+      supply the annotated value, then it falls back to whatever
+      'getPropertyValue' as the sample value and metadata would be undefined.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        getAnnotatedPropertyValueAsync(propertyId: string):
+        Promise<IDynamicDataAnnotatedPropertyValue>;
+      parameters:
+        - id: propertyId
+          description: Property id for which the value is requested.
+          type: string
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface"
+          />&gt;
+        description: ''
+  - name: getPropertyDefinitions()
+    uid: >-
+      @microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitions:member(1)
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: getPropertyDefinitions()
+    summary: >-
+      Returns all the property definitions for dynamic data. This needs to be
+      overriden by the implementation of the component.
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: >-
+      - This API is deprecated. Please use the asynchronous version
+      `getPropertyDefinitionsAsync`
+    syntax:
+      content: 'getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;'
+      return:
+        type: >-
+          <xref uid="!ReadonlyArray:interface" />&lt;<xref
+          uid="@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface"
+          />&gt;
+        description: ''
+  - name: getPropertyDefinitionsAsync()
+    uid: >-
+      @microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitionsAsync:member(1)
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: getPropertyDefinitionsAsync()
+    summary: >-
+      Returns all the property definitions for dynamic data. This needs to be
+      overriden by the implementation of the component.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        getPropertyDefinitionsAsync():
+        Promise<ReadonlyArray<IDynamicDataPropertyDefinition>>;
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref uid="!ReadonlyArray:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface"
+          />&gt;&gt;
+        description: ''
+  - name: getPropertyValue(propertyId)
+    uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValue:member(1)'
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: getPropertyValue(propertyId)
+    summary: >-
+      Given a property id, returns the value of the property. This needs to be
+      overriden by the implementation of the component.
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: >-
+      - This API is deprecated. Please use the asynchronous version
+      `getAsyncPropertyValue`
+    syntax:
+      content: 'getPropertyValue(propertyId: string): any;'
+      parameters:
+        - id: propertyId
+          description: Property id for which the value is requested.
+          type: string
+      return:
+        type: any
+        description: ''
+  - name: getPropertyValueAsync(propertyId)
+    uid: >-
+      @microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValueAsync:member(1)
+    package: '@microsoft/sp-dynamic-data!'
+    fullName: getPropertyValueAsync(propertyId)
+    summary: >-
+      Given a property id, returns the value of the property. This needs to be
+      overriden by the implementation of the component.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getPropertyValueAsync(propertyId: string): Promise<any>;'
+      parameters:
+        - id: propertyId
+          description: Property id for which the value is requested.
+          type: string
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: 'sendEvent(eventName, data)'
+    uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#sendEvent:member(1)'
+    package: '@microsoft/sp-dynamic-data!'
     fullName: 'sendEvent(eventName, data)'
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      If defined, enables the consumer to send data to the associated dynamic
+      data source. Then source can act accordingly.
+
+
+      Invoking this api throws an error when the passed in 'eventName' is not
+      one of the allowed events on the source.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'sendEvent?(eventName: string, data: any): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: eventName
           description: A case-sensitive string representing the name of the event.
-          type:
-            - string
+          type: string
         - id: data
           description: Data to be sent to the dynamic data source.
-          type:
-            - any
-references:
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#allowedEventsAsync~0:complex'
-    name: Promise<ReadonlyArray<IDynamicDataEventDefinition>>
-    fullName: Promise<ReadonlyArray<IDynamicDataEventDefinition>>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-dynamic-data!IDynamicDataEventDefinition:interface'
-        name: IDynamicDataEventDefinition
-        fullName: IDynamicDataEventDefinition
-      - name: '>>'
-        fullName: '>>'
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface'
-    name: IDynamicDataAnnotatedPropertyValue
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getAnnotatedPropertyValueAsync~0:complex'
-    name: Promise<IDynamicDataAnnotatedPropertyValue>
-    fullName: Promise<IDynamicDataAnnotatedPropertyValue>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface'
-        name: IDynamicDataAnnotatedPropertyValue
-        fullName: IDynamicDataAnnotatedPropertyValue
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitions~0:complex'
-    name: ReadonlyArray<IDynamicDataPropertyDefinition>
-    fullName: ReadonlyArray<IDynamicDataPropertyDefinition>
-    spec.typeScript:
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface'
-        name: IDynamicDataPropertyDefinition
-        fullName: IDynamicDataPropertyDefinition
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyDefinitionsAsync~0:complex'
-    name: Promise<ReadonlyArray<IDynamicDataPropertyDefinition>>
-    fullName: Promise<ReadonlyArray<IDynamicDataPropertyDefinition>>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface'
-        name: IDynamicDataPropertyDefinition
-        fullName: IDynamicDataPropertyDefinition
-      - name: '>>'
-        fullName: '>>'
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSource#getPropertyValueAsync~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataSourceMetadata:interface'
-    name: IDynamicDataSourceMetadata
+          type: any
+      return:
+        type: void
+        description: ''

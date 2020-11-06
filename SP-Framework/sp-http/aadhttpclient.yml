@@ -1,204 +1,151 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!AadHttpClient:class'
-    summary: AadHttpClient is used to perform REST calls against an Azure AD Application.
-    remarks: >-
-      This class is marked as `@sealed`. Subclasses should not extend it.
+### YamlMime:TSType
+name: AadHttpClient
+uid: '@microsoft/sp-http!AadHttpClient:class'
+package: '@microsoft/sp-http!'
+fullName: AadHttpClient
+summary: AadHttpClient is used to perform REST calls against an Azure AD Application.
+remarks: >-
+  This class is marked as `@sealed`. Subclasses should not extend it.
 
 
-      For communicating with SharePoint, use the [SPHttpClient](xref:@microsoft/sp-http!SPHttpClient:class) class
-      instead. For communicating with Microsoft Graph, use the
-      [MSGraphClient](xref:@microsoft/sp-http!MSGraphClient:class) class.
-    name: AadHttpClient
-    fullName: AadHttpClient
-    langs:
-      - typeScript
-    type: class
+  For communicating with SharePoint, use the
+  [SPHttpClient](xref:@microsoft/sp-http!SPHttpClient:class) class instead. For
+  communicating with Microsoft Graph, use the
+  [MSGraphClient](xref:@microsoft/sp-http!MSGraphClient:class) class.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: '(constructor)(serviceScope, resourceEndpoint, options)'
+    uid: '@microsoft/sp-http!AadHttpClient:constructor(1)'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!AadHttpClient:constructor(1)'
-      - '@microsoft/sp-http!AadHttpClient.configurations:member'
-      - '@microsoft/sp-http!AadHttpClient#fetch:member(1)'
-      - '@microsoft/sp-http!AadHttpClient#get:member(1)'
-      - '@microsoft/sp-http!AadHttpClient#post:member(1)'
-  - uid: '@microsoft/sp-http!AadHttpClient:constructor(1)'
-    summary: Constructs a new instance of the `AadHttpClient` class
-    name: '(constructor)(serviceScope, resourceEndpoint, options)'
     fullName: '(constructor)(serviceScope, resourceEndpoint, options)'
-    langs:
-      - typeScript
-    type: constructor
+    summary: Constructs a new instance of the `AadHttpClient` class
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'constructor(serviceScope: ServiceScope, resourceEndpoint: string, options?: IAadHttpClientOptions);'
+      content: >-
+        constructor(serviceScope: ServiceScope, resourceEndpoint: string,
+        options?: IAadHttpClientOptions);
       parameters:
         - id: serviceScope
-          description: The service scope is needed to retrieve some of the class's internal components.
-          type:
-            - '@microsoft/sp-core-library!ServiceScope:class'
+          description: >-
+            The service scope is needed to retrieve some of the class's internal
+            components.
+          type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" />'
         - id: resourceEndpoint
           description: ''
-          type:
-            - string
+          type: string
         - id: options
           description: Configuration options for the request to get an access token.
-          type:
-            - '@microsoft/sp-http!IAadHttpClientOptions:interface'
-  - uid: '@microsoft/sp-http!AadHttpClient.configurations:member'
-    summary: The standard predefined AadHttpClientConfiguration objects for use with the AadHttpClient class.
-    name: configurations
+          type: '<xref uid="@microsoft/sp-http!IAadHttpClientOptions:interface" />'
+properties:
+  - name: configurations
+    uid: '@microsoft/sp-http!AadHttpClient.configurations:member'
+    package: '@microsoft/sp-http!'
     fullName: configurations
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      The standard predefined AadHttpClientConfiguration objects for use with
+      the AadHttpClient class.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly configurations: IAadHttpClientConfigurations;'
       return:
-        type:
-          - '@microsoft/sp-http!IAadHttpClientConfigurations:interface'
-  - uid: '@microsoft/sp-http!AadHttpClient#fetch:member(1)'
+        type: >-
+          <xref uid="@microsoft/sp-http!IAadHttpClientConfigurations:interface"
+          />
+methods:
+  - name: 'fetch(url, configuration, options)'
+    uid: '@microsoft/sp-http!AadHttpClient#fetch:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: 'fetch(url, configuration, options)'
     summary: Performs a REST service call.
     remarks: >-
-      Although the AadHttpClient subclass adds additional enhancements, the parameters and semantics for
-      HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
+      Although the AadHttpClient subclass adds additional enhancements, the
+      parameters and semantics for HttpClient.fetch() are essentially the same
+      as the WHATWG API standard that is documented here:
       https://fetch.spec.whatwg.org/
-    name: 'fetch(url, configuration, options)'
-    fullName: 'fetch(url, configuration, options)'
-    langs:
-      - typeScript
-    type: method
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        fetch(url: string, configuration: AadHttpClientConfiguration, options: IHttpClientOptions):
-        Promise<HttpClientResponse>;
-      return:
-        type:
-          - '@microsoft/sp-http!AadHttpClient#fetch~0:complex'
-        description: A promise that will return the result.
+        fetch(url: string, configuration: AadHttpClientConfiguration, options:
+        IHttpClientOptions): Promise<HttpClientResponse>;
       parameters:
         - id: url
           description: The endpoint URL that fetch will be called on.
-          type:
-            - string
+          type: string
         - id: configuration
           description: >-
-            Determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations.
-          type:
-            - '@microsoft/sp-http!default:class'
+            Determines the default behavior of HttpClient; normally this should
+            be the latest version number from HttpClientConfigurations.
+          type: '<xref uid="@microsoft/sp-http!default:class" />'
         - id: options
           description: Additional options that affect the request.
-          type:
-            - '@microsoft/sp-http!IHttpClientOptions:interface'
-  - uid: '@microsoft/sp-http!AadHttpClient#get:member(1)'
-    summary: 'Calls fetch(), but sets the method to "GET".'
-    name: 'get(url, configuration, options)'
+          type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
+        description: A promise that will return the result.
+  - name: 'get(url, configuration, options)'
+    uid: '@microsoft/sp-http!AadHttpClient#get:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'get(url, configuration, options)'
-    langs:
-      - typeScript
-    type: method
+    summary: 'Calls fetch(), but sets the method to "GET".'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        get(url: string, configuration: AadHttpClientConfiguration, options?: IHttpClientOptions):
-        Promise<HttpClientResponse>;
-      return:
-        type:
-          - '@microsoft/sp-http!AadHttpClient#get~0:complex'
-        description: A promise that will return the result.
+        get(url: string, configuration: AadHttpClientConfiguration, options?:
+        IHttpClientOptions): Promise<HttpClientResponse>;
       parameters:
         - id: url
           description: The endpoint URL that fetch will be called on.
-          type:
-            - string
+          type: string
         - id: configuration
           description: >-
-            Determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations.
-          type:
-            - '@microsoft/sp-http!default:class'
+            Determines the default behavior of HttpClient; normally this should
+            be the latest version number from HttpClientConfigurations.
+          type: '<xref uid="@microsoft/sp-http!default:class" />'
         - id: options
           description: Additional options that affect the request.
-          type:
-            - '@microsoft/sp-http!IHttpClientOptions:interface'
-  - uid: '@microsoft/sp-http!AadHttpClient#post:member(1)'
-    summary: 'Calls fetch(), but sets the method to "POST".'
-    name: 'post(url, configuration, options)'
+          type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
+        description: A promise that will return the result.
+  - name: 'post(url, configuration, options)'
+    uid: '@microsoft/sp-http!AadHttpClient#post:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'post(url, configuration, options)'
-    langs:
-      - typeScript
-    type: method
+    summary: 'Calls fetch(), but sets the method to "POST".'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        post(url: string, configuration: AadHttpClientConfiguration, options: IHttpClientOptions):
-        Promise<HttpClientResponse>;
-      return:
-        type:
-          - '@microsoft/sp-http!AadHttpClient#post~0:complex'
-        description: A promise that will return the result.
+        post(url: string, configuration: AadHttpClientConfiguration, options:
+        IHttpClientOptions): Promise<HttpClientResponse>;
       parameters:
         - id: url
           description: The endpoint URL that fetch will be called on.
-          type:
-            - string
+          type: string
         - id: configuration
           description: >-
-            Determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations.
-          type:
-            - '@microsoft/sp-http!default:class'
+            Determines the default behavior of HttpClient; normally this should
+            be the latest version number from HttpClientConfigurations.
+          type: '<xref uid="@microsoft/sp-http!default:class" />'
         - id: options
           description: Additional options that affect the request.
-          type:
-            - '@microsoft/sp-http!IHttpClientOptions:interface'
-references:
-  - uid: '@microsoft/sp-core-library!ServiceScope:class'
-    name: ServiceScope
-  - uid: '@microsoft/sp-http!IAadHttpClientOptions:interface'
-    name: IAadHttpClientOptions
-  - uid: '@microsoft/sp-http!IAadHttpClientConfigurations:interface'
-    name: IAadHttpClientConfigurations
-  - uid: '@microsoft/sp-http!AadHttpClient#fetch~0:complex'
-    name: Promise<HttpClientResponse>
-    fullName: Promise<default>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: HttpClientResponse
-        fullName: default
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-http!default:class'
-    name: AadHttpClientConfiguration
-  - uid: '@microsoft/sp-http!IHttpClientOptions:interface'
-    name: IHttpClientOptions
-  - uid: '@microsoft/sp-http!AadHttpClient#get~0:complex'
-    name: Promise<HttpClientResponse>
-    fullName: Promise<default>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: HttpClientResponse
-        fullName: default
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-http!AadHttpClient#post~0:complex'
-    name: Promise<HttpClientResponse>
-    fullName: Promise<default>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: HttpClientResponse
-        fullName: default
-      - name: '>'
-        fullName: '>'
+          type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
+        description: A promise that will return the result.

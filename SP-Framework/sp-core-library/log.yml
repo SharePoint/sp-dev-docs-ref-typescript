@@ -1,145 +1,150 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!Log:class'
-    summary: A basic redirectable logging system.
-    remarks: >-
-      The Log class provides static methods for logging messages at different levels (verbose, info, warning, error) and
-      with context information. Context information helps identify which component generated the messages and allows for
-      filtering of log events. In a SharePoint Framework application, these messages will appear on the developer
-      dashboard.
-    name: Log
-    fullName: Log
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: Log
+uid: '@microsoft/sp-core-library!Log:class'
+package: '@microsoft/sp-core-library!'
+fullName: Log
+summary: A basic redirectable logging system.
+remarks: >-
+  The Log class provides static methods for logging messages at different levels
+  (verbose, info, warning, error) and with context information. Context
+  information helps identify which component generated the messages and allows
+  for filtering of log events. In a SharePoint Framework application, these
+  messages will appear on the developer dashboard.
+isPreview: false
+isDeprecated: false
+type: class
+methods:
+  - name: 'error(source, error, scope)'
+    uid: '@microsoft/sp-core-library!Log.error:member(1)'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!Log.error:member(1)'
-      - '@microsoft/sp-core-library!Log.info:member(1)'
-      - '@microsoft/sp-core-library!Log.verbose:member(1)'
-      - '@microsoft/sp-core-library!Log.warn:member(1)'
-  - uid: '@microsoft/sp-core-library!Log.error:member(1)'
-    summary: Logs an error.
-    name: 'error(source, error, scope)'
     fullName: 'error(source, error, scope)'
-    langs:
-      - typeScript
-    type: method
+    summary: Logs an error.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static error(source: string, error: Error, scope?: ServiceScope): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: source
           description: >-
-            the source from where the error is logged, e.g., the class name. The source provides context information for
-            the logged error. If the source's length is more than 20, only the first 20 characters are kept.
-          type:
-            - string
+            the source from where the error is logged, e.g., the class name. The
+            source provides context information for the logged error. If the
+            source's length is more than 20, only the first 20 characters are
+            kept.
+          type: string
         - id: error
           description: the error to be logged
-          type:
-            - '!Error:interface'
+          type: '<xref uid="!Error:interface" />'
         - id: scope
           description: >-
-            the service scope that the source uses. A service scope can provide more context information (e.g., web part
-            information) to the logged error.
-          type:
-            - '@microsoft/sp-core-library!default:class'
-  - uid: '@microsoft/sp-core-library!Log.info:member(1)'
-    summary: Logs a general informational message.
-    name: 'info(source, message, scope)'
+            the service scope that the source uses. A service scope can provide
+            more context information (e.g., web part information) to the logged
+            error.
+          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+      return:
+        type: void
+        description: ''
+  - name: 'info(source, message, scope)'
+    uid: '@microsoft/sp-core-library!Log.info:member(1)'
+    package: '@microsoft/sp-core-library!'
     fullName: 'info(source, message, scope)'
-    langs:
-      - typeScript
-    type: method
+    summary: Logs a general informational message.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'static info(source: string, message: string, scope?: ServiceScope): void;'
-      return:
-        type:
-          - void
-        description: ''
+      content: >-
+        static info(source: string, message: string, scope?: ServiceScope):
+        void;
       parameters:
         - id: source
           description: >-
-            the source from where the message is logged, e.g., the class name. The source provides context information
-            for the logged message. If the source's length is more than 20, only the first 20 characters are kept.
-          type:
-            - string
+            the source from where the message is logged, e.g., the class name.
+            The source provides context information for the logged message. If
+            the source's length is more than 20, only the first 20 characters
+            are kept.
+          type: string
         - id: message
-          description: 'the message to be logged If the message''s length is more than 100, only the first 100 characters are kept.'
-          type:
-            - string
+          description: >-
+            the message to be logged If the message's length is more than 100,
+            only the first 100 characters are kept.
+          type: string
         - id: scope
           description: >-
-            the service scope that the source uses. A service scope can provide more context information (e.g., web part
-            information) to the logged message.
-          type:
-            - '@microsoft/sp-core-library!default:class'
-  - uid: '@microsoft/sp-core-library!Log.verbose:member(1)'
-    summary: Logs a message which contains detailed information that is generally only needed for troubleshooting.
-    name: 'verbose(source, message, scope)'
+            the service scope that the source uses. A service scope can provide
+            more context information (e.g., web part information) to the logged
+            message.
+          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+      return:
+        type: void
+        description: ''
+  - name: 'verbose(source, message, scope)'
+    uid: '@microsoft/sp-core-library!Log.verbose:member(1)'
+    package: '@microsoft/sp-core-library!'
     fullName: 'verbose(source, message, scope)'
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      Logs a message which contains detailed information that is generally only
+      needed for troubleshooting.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'static verbose(source: string, message: string, scope?: ServiceScope): void;'
-      return:
-        type:
-          - void
-        description: ''
+      content: >-
+        static verbose(source: string, message: string, scope?: ServiceScope):
+        void;
       parameters:
         - id: source
           description: >-
-            the source from where the message is logged, e.g., the class name. The source provides context information
-            for the logged message. If the source's length is more than 20, only the first 20 characters are kept.
-          type:
-            - string
+            the source from where the message is logged, e.g., the class name.
+            The source provides context information for the logged message. If
+            the source's length is more than 20, only the first 20 characters
+            are kept.
+          type: string
         - id: message
-          description: 'the message to be logged If the message''s length is more than 100, only the first 100 characters are kept.'
-          type:
-            - string
+          description: >-
+            the message to be logged If the message's length is more than 100,
+            only the first 100 characters are kept.
+          type: string
         - id: scope
           description: >-
-            the service scope that the source uses. A service scope can provide more context information (e.g., web part
-            information) to the logged message.
-          type:
-            - '@microsoft/sp-core-library!default:class'
-  - uid: '@microsoft/sp-core-library!Log.warn:member(1)'
-    summary: Logs a warning.
-    name: 'warn(source, message, scope)'
+            the service scope that the source uses. A service scope can provide
+            more context information (e.g., web part information) to the logged
+            message.
+          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+      return:
+        type: void
+        description: ''
+  - name: 'warn(source, message, scope)'
+    uid: '@microsoft/sp-core-library!Log.warn:member(1)'
+    package: '@microsoft/sp-core-library!'
     fullName: 'warn(source, message, scope)'
-    langs:
-      - typeScript
-    type: method
+    summary: Logs a warning.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'static warn(source: string, message: string, scope?: ServiceScope): void;'
-      return:
-        type:
-          - void
-        description: ''
+      content: >-
+        static warn(source: string, message: string, scope?: ServiceScope):
+        void;
       parameters:
         - id: source
           description: >-
-            the source from where the message is logged, e.g., the class name. The source provides context information
-            for the logged message. If the source's length is more than 20, only the first 20 characters are kept.
-          type:
-            - string
+            the source from where the message is logged, e.g., the class name.
+            The source provides context information for the logged message. If
+            the source's length is more than 20, only the first 20 characters
+            are kept.
+          type: string
         - id: message
-          description: 'the message to be logged If the message''s length is more than 100, only the first 100 characters are kept.'
-          type:
-            - string
+          description: >-
+            the message to be logged If the message's length is more than 100,
+            only the first 100 characters are kept.
+          type: string
         - id: scope
           description: >-
-            the service scope that the source uses. A service scope can provide more context information (e.g., web part
-            information) to the logged message.
-          type:
-            - '@microsoft/sp-core-library!default:class'
-references:
-  - uid: '!Error:interface'
-    name: Error
-  - uid: '@microsoft/sp-core-library!default:class'
-    name: ServiceScope
+            the service scope that the source uses. A service scope can provide
+            more context information (e.g., web part information) to the logged
+            message.
+          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+      return:
+        type: void
+        description: ''

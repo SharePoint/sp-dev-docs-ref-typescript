@@ -1,79 +1,53 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!AadHttpClientFactory:class'
-    summary: >-
-      Returns a preinitialized version of the AadHttpClient for a given resource url. For more information:
-      [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `AadHttpClientFactory` class.
-    name: AadHttpClientFactory
-    fullName: AadHttpClientFactory
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: AadHttpClientFactory
+uid: '@microsoft/sp-http!AadHttpClientFactory:class'
+package: '@microsoft/sp-http!'
+fullName: AadHttpClientFactory
+summary: >-
+  Returns a preinitialized version of the AadHttpClient for a given resource
+  url. For more information:
+  [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `AadHttpClientFactory` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: serviceKey
+    uid: '@microsoft/sp-http!AadHttpClientFactory.serviceKey:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!AadHttpClientFactory#getClient:member(1)'
-      - '@microsoft/sp-http!AadHttpClientFactory.serviceKey:member'
-  - uid: '@microsoft/sp-http!AadHttpClientFactory#getClient:member(1)'
-    summary: >-
-      Returns an instance of the AadHttpClient that communicates with the current tenant's configurable Service
-      Principal.
-    name: getClient(resourceEndpoint)
-    fullName: getClient(resourceEndpoint)
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'getClient(resourceEndpoint: string): Promise<AadHttpClient>;'
-      return:
-        type:
-          - '@microsoft/sp-http!AadHttpClientFactory#getClient~0:complex'
-        description: ''
-      parameters:
-        - id: resourceEndpoint
-          description: The target AAD application's resource endpoint.
-          type:
-            - string
-  - uid: '@microsoft/sp-http!AadHttpClientFactory.serviceKey:member'
-    summary: The service key for AadHttpClientFactory.
-    name: serviceKey
     fullName: serviceKey
-    langs:
-      - typeScript
-    type: property
+    summary: The service key for AadHttpClientFactory.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly serviceKey: ServiceKey<AadHttpClientFactory>;'
       return:
-        type:
-          - '@microsoft/sp-http!AadHttpClientFactory.serviceKey~0:complex'
-references:
-  - uid: '@microsoft/sp-http!AadHttpClientFactory#getClient~0:complex'
-    name: Promise<AadHttpClient>
-    fullName: Promise<default>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: AadHttpClient
-        fullName: default
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-http!AadHttpClientFactory.serviceKey~0:complex'
-    name: ServiceKey<AadHttpClientFactory>
-    fullName: ServiceKey<default>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!ServiceKey:class'
-        name: ServiceKey
-        fullName: ServiceKey
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-http!default:class'
-        name: AadHttpClientFactory
-        fullName: default
-      - name: '>'
-        fullName: '>'
+        type: >-
+          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
+methods:
+  - name: getClient(resourceEndpoint)
+    uid: '@microsoft/sp-http!AadHttpClientFactory#getClient:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: getClient(resourceEndpoint)
+    summary: >-
+      Returns an instance of the AadHttpClient that communicates with the
+      current tenant's configurable Service Principal.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getClient(resourceEndpoint: string): Promise<AadHttpClient>;'
+      parameters:
+        - id: resourceEndpoint
+          description: The target AAD application's resource endpoint.
+          type: string
+      return:
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
+        description: ''

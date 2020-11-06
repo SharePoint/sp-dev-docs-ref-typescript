@@ -1,78 +1,81 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!ICommandDefinition:interface'
-    summary: >-
-      Used by ICommandSetExtensionManifest, this defines a command to be displayed by a UI surface such as a menu, tool
-      bar, etc.
-    name: ICommandDefinition
-    fullName: ICommandDefinition
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ICommandDefinition
+uid: '@microsoft/sp-module-interfaces!ICommandDefinition:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: ICommandDefinition
+summary: >-
+  Used by ICommandSetExtensionManifest, this defines a command to be displayed
+  by a UI surface such as a menu, tool bar, etc.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: ariaLabel
+    uid: '@microsoft/sp-module-interfaces!ICommandDefinition#ariaLabel:member'
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!ICommandDefinition#ariaLabel:member'
-      - '@microsoft/sp-module-interfaces!ICommandDefinition#iconImageUrl:member'
-      - '@microsoft/sp-module-interfaces!ICommandDefinition#title:member'
-      - '@microsoft/sp-module-interfaces!ICommandDefinition#type:member'
-  - uid: '@microsoft/sp-module-interfaces!ICommandDefinition#ariaLabel:member'
-    summary: >-
-      Custom accessibility text for the browser's "aria-label" attribute. If omitted, the title property will be used by
-      default. Example: "Show information. Press ENTER to select."
-    name: ariaLabel
     fullName: ariaLabel
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Custom accessibility text for the browser's "aria-label" attribute. If
+      omitted, the title property will be used by default. Example: "Show
+      information. Press ENTER to select."
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'ariaLabel?: ILocalizedString;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-  - uid: '@microsoft/sp-module-interfaces!ICommandDefinition#iconImageUrl:member'
-    summary: >-
-      An optional URL for an image to be displayed next to the command. The requirements for this image are defined by
-      the type of extension; some extension types may not display the image at all.
-    remarks: >-
-      This value can be an absolute URL (e.g. "http://example.com/icons/my-icon.png") or a relative file path (e.g.
-      "./icons/my-icon.png"). In the latter case, the path will be resolved relative to the folder containing the input
-      manifest. The icon file will be copied to the deployment folder like an asset, and the output manifest’s
-      iconImageUrl will be replaced with a URL relative to the URL used to load all other assets (the
-      loaderConfig.internalModuleBaseUrls property).
-    name: iconImageUrl
+        type: >-
+          <xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface"
+          />
+  - name: iconImageUrl
+    uid: '@microsoft/sp-module-interfaces!ICommandDefinition#iconImageUrl:member'
+    package: '@microsoft/sp-module-interfaces!'
     fullName: iconImageUrl
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      An optional URL for an image to be displayed next to the command. The
+      requirements for this image are defined by the type of extension; some
+      extension types may not display the image at all.
+    remarks: >-
+      This value can be an absolute URL (e.g.
+      "http://example.com/icons/my-icon.png") or a relative file path (e.g.
+      "./icons/my-icon.png"). In the latter case, the path will be resolved
+      relative to the folder containing the input manifest. The icon file will
+      be copied to the deployment folder like an asset, and the output
+      manifest’s iconImageUrl will be replaced with a URL relative to the URL
+      used to load all other assets (the loaderConfig.internalModuleBaseUrls
+      property).
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'iconImageUrl?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!ICommandDefinition#title:member'
-    summary: 'A short label to be displayed by the associated button, menu item, etc. Example: "Show information"'
-    name: title
+        type: string
+  - name: title
+    uid: '@microsoft/sp-module-interfaces!ICommandDefinition#title:member'
+    package: '@microsoft/sp-module-interfaces!'
     fullName: title
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      A short label to be displayed by the associated button, menu item, etc.
+      Example: "Show information"
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'title: ILocalizedString;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-  - uid: '@microsoft/sp-module-interfaces!ICommandDefinition#type:member'
-    summary: Type of the item. Currently only "command" is allowed.
-    name: type
+        type: >-
+          <xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface"
+          />
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!ICommandDefinition#type:member'
+    package: '@microsoft/sp-module-interfaces!'
     fullName: type
-    langs:
-      - typeScript
-    type: property
+    summary: Type of the item. Currently only "command" is allowed.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'type: ''command'';'
       return:
-        type:
-          - '''command'''
-references:
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-    name: ILocalizedString
+        type: '''command'''

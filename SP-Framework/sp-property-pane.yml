@@ -1,680 +1,450 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-property-pane!'
-    summary: SharePoint Framework property pane.
-    remarks: 'Helps create the property pane for the SharePoint components such as web parts, canvas etc.,'
-    name: '@microsoft/sp-property-pane'
-    fullName: '@microsoft/sp-property-pane'
-    langs:
-      - typeScript
-    type: package
-    children:
-      - '@microsoft/sp-property-pane!DynamicDataSharedDepth:enum'
-      - '@microsoft/sp-property-pane!IDynamicDataSharedPropertyConfiguration:interface'
-      - '@microsoft/sp-property-pane!IDynamicDataSharedPropertyFilters:interface'
-      - '@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface'
-      - '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
-      - '@microsoft/sp-property-pane!IPopupWindowProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupOption:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupOptionIconProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneConditionalGroup:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneConfiguration:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDebounceProperty:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDropdownCalloutProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDropdownOption:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldFilters:type'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPanePage:interface'
-      - '@microsoft/sp-property-pane!IPropertyPanePageHeader:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface'
-      - '@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface'
-      - '@microsoft/sp-property-pane!PopupWindowPosition:enum'
-      - '@microsoft/sp-property-pane!PropertyPaneButton:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneButtonType:enum'
-      - '@microsoft/sp-property-pane!PropertyPaneCheckbox:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneChoiceGroup:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneCustomField:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneDropdown:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneDropdownOptionType:enum'
-      - '@microsoft/sp-property-pane!PropertyPaneDynamicField:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneDynamicFieldSet:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneDynamicTextField:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneFieldType:enum'
-      - '@microsoft/sp-property-pane!PropertyPaneHorizontalRule:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneLabel:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneLink:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneSlider:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneTextField:function(1)'
-      - '@microsoft/sp-property-pane!PropertyPaneToggle:function(1)'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldFilters:type'
-    summary: Property pane dynamic field filters which is an intersection of both source and property filters.
-    name: IPropertyPaneDynamicFieldFilters
-    fullName: IPropertyPaneDynamicFieldFilters
-    langs:
-      - typeScript
-    type: typealias
-    syntax:
-      content: >-
-        export declare type IPropertyPaneDynamicFieldFilters = IDynamicDataSharedSourceFilters &
-        IDynamicDataSharedPropertyFilters;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldFilters~0:complex'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneButton:function(1)'
+### YamlMime:TSPackage
+uid: '@microsoft/sp-property-pane!'
+name: '@microsoft/sp-property-pane'
+type: package
+summary: SharePoint Framework property pane.
+enums:
+  - '@microsoft/sp-property-pane!DynamicDataSharedDepth:enum'
+  - '@microsoft/sp-property-pane!PopupWindowPosition:enum'
+  - '@microsoft/sp-property-pane!PropertyPaneButtonType:enum'
+  - '@microsoft/sp-property-pane!PropertyPaneDropdownOptionType:enum'
+  - '@microsoft/sp-property-pane!PropertyPaneFieldType:enum'
+interfaces:
+  - >-
+    @microsoft/sp-property-pane!IDynamicDataSharedPropertyConfiguration:interface
+  - '@microsoft/sp-property-pane!IDynamicDataSharedPropertyFilters:interface'
+  - '@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface'
+  - '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
+  - '@microsoft/sp-property-pane!IPopupWindowProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupOption:interface'
+  - >-
+    @microsoft/sp-property-pane!IPropertyPaneChoiceGroupOptionIconProps:interface
+  - '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneConditionalGroup:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneConfiguration:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDebounceProperty:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDropdownCalloutProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDropdownOption:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneField:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPanePage:interface'
+  - '@microsoft/sp-property-pane!IPropertyPanePageHeader:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface'
+functions:
+  - name: 'PropertyPaneButton(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneButton:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Button on the PropertyPane.
-    name: 'PropertyPaneButton(targetProperty, properties)'
-    fullName: 'PropertyPaneButton(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneButton(targetProperty: string, properties: IPropertyPaneButtonProps):
+        export declare function PropertyPaneButton(targetProperty: string,
+        properties: IPropertyPaneButtonProps):
         IPropertyPaneField<IPropertyPaneButtonProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneButton~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the Button is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Button properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneCheckbox:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneCheckbox(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneCheckbox:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Checkbox on the PropertyPane.
-    name: 'PropertyPaneCheckbox(targetProperty, properties)'
-    fullName: 'PropertyPaneCheckbox(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneCheckbox(targetProperty: string, properties: IPropertyPaneCheckboxProps):
+        export declare function PropertyPaneCheckbox(targetProperty: string,
+        properties: IPropertyPaneCheckboxProps):
         IPropertyPaneField<IPropertyPaneCheckboxProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneCheckbox~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the checkbox is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Checkbox properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneChoiceGroup:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneChoiceGroup(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneChoiceGroup:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Choice Group on the PropertyPane.
-    name: 'PropertyPaneChoiceGroup(targetProperty, properties)'
-    fullName: 'PropertyPaneChoiceGroup(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneChoiceGroup(targetProperty: string, properties:
-        IPropertyPaneChoiceGroupProps): IPropertyPaneField<IPropertyPaneChoiceGroupProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneChoiceGroup~0:complex'
-        description: ''
+        export declare function PropertyPaneChoiceGroup(targetProperty: string,
+        properties: IPropertyPaneChoiceGroupProps):
+        IPropertyPaneField<IPropertyPaneChoiceGroupProps>;
       parameters:
         - id: targetProperty
           description: Target property the choice group is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Choice Group properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneCustomField:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface"
+          />&gt;
+        description: ''
+  - name: PropertyPaneCustomField(properties)
+    uid: '@microsoft/sp-property-pane!PropertyPaneCustomField:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a custom field on the PropertyPane.
     remarks: >-
-      The purpose of the custom field is to help the web part developer to add a custom control to the PropertyPane. The
-      PropertyPane supports a host of inbuilt field types. While this list meets the demands of most web parts, but
-      there are exceptional cases when web parts have special needs and need a special control. The custom field helps
-      fill that gap.
+      The purpose of the custom field is to help the web part developer to add a
+      custom control to the PropertyPane. The PropertyPane supports a host of
+      inbuilt field types. While this list meets the demands of most web parts,
+      but there are exceptional cases when web parts have special needs and need
+      a special control. The custom field helps fill that gap.
     isPreview: true
-    name: PropertyPaneCustomField(properties)
-    fullName: PropertyPaneCustomField(properties)
-    langs:
-      - typeScript
-    type: function
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneCustomField(properties: IPropertyPaneCustomFieldProps):
+        export declare function PropertyPaneCustomField(properties:
+        IPropertyPaneCustomFieldProps):
         IPropertyPaneField<IPropertyPaneCustomFieldProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneCustomField~0:complex'
-        description: ''
       parameters:
         - id: properties
           description: Strongly typed Custom field properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDropdown:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneDropdown(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneDropdown:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Dropdown on the PropertyPane.
-    name: 'PropertyPaneDropdown(targetProperty, properties)'
-    fullName: 'PropertyPaneDropdown(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneDropdown(targetProperty: string, properties: IPropertyPaneDropdownProps):
+        export declare function PropertyPaneDropdown(targetProperty: string,
+        properties: IPropertyPaneDropdownProps):
         IPropertyPaneField<IPropertyPaneDropdownProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneDropdown~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the dropdown is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Dropdown properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDynamicField:function(1)'
-    summary: Helper method to create a Dynamic Data widget on the PropertyPane for a dynamic field.
-    name: 'PropertyPaneDynamicField(targetProperty, properties)'
-    fullName: 'PropertyPaneDynamicField(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneDynamicField(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneDynamicField:function(1)'
+    package: '@microsoft/sp-property-pane'
+    summary: >-
+      Helper method to create a Dynamic Data widget on the PropertyPane for a
+      dynamic field.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneDynamicField(targetProperty: string, properties:
-        IPropertyPaneDynamicFieldProps): IPropertyPaneField<IPropertyPaneDynamicFieldProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneDynamicField~0:complex'
-        description: ''
+        export declare function PropertyPaneDynamicField(targetProperty: string,
+        properties: IPropertyPaneDynamicFieldProps):
+        IPropertyPaneField<IPropertyPaneDynamicFieldProps>;
       parameters:
         - id: targetProperty
           description: Target property the Dynamic Data widget is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: ''
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDynamicFieldSet:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface"
+          />&gt;
+        description: ''
+  - name: PropertyPaneDynamicFieldSet(properties)
+    uid: '@microsoft/sp-property-pane!PropertyPaneDynamicFieldSet:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: >-
-      Helper method to create a Dynamic Data widget on the Property Pane for a set of dynamic fields with a common data
-      source.
+      Helper method to create a Dynamic Data widget on the Property Pane for a
+      set of dynamic fields with a common data source.
 
 
-      These fields can possibly share the same property based on the associated filters.
-    name: PropertyPaneDynamicFieldSet(properties)
-    fullName: PropertyPaneDynamicFieldSet(properties)
-    langs:
-      - typeScript
-    type: function
+      These fields can possibly share the same property based on the associated
+      filters.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneDynamicFieldSet(properties: IPropertyPaneDynamicFieldSetProps):
+        export declare function PropertyPaneDynamicFieldSet(properties:
+        IPropertyPaneDynamicFieldSetProps):
         IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneDynamicFieldSet~0:complex'
-        description: ''
       parameters:
         - id: properties
           description: >-
-            Contains entries and options, described as below: entries - A set of entries to be configured by the widget.
-            Each entry includes the target property and, optionally, the label to show. options - Options enabling
-            customized values for callback, filters etc., for the given set of dynamic fields.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDynamicTextField:function(1)'
+            Contains entries and options, described as below: entries - A set of
+            entries to be configured by the widget. Each entry includes the
+            target property and, optionally, the label to show. options -
+            Options enabling customized values for callback, filters etc., for
+            the given set of dynamic fields.
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneDynamicTextField:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Dynamic TextField on the PropertyPane.
-    deprecated:
-      content: '- This has been replaced by PropertyPaneDynamicField'
+    remarks: ''
     isPreview: true
-    name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
-    fullName: 'PropertyPaneDynamicTextField(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    isDeprecated: true
+    customDeprecatedMessage: '- This has been replaced by PropertyPaneDynamicField'
     syntax:
       content: >-
-        export declare function PropertyPaneDynamicTextField(targetProperty: string, properties:
-        IPropertyPaneDynamicTextFieldProps): IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneDynamicTextField~0:complex'
-        description: ''
+        export declare function PropertyPaneDynamicTextField(targetProperty:
+        string, properties: IPropertyPaneDynamicTextFieldProps):
+        IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>;
       parameters:
         - id: targetProperty
           description: Target property the dynamic textfield is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Properties of the PropertyPaneDynamicTextField.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneHorizontalRule:function(1)'
-    summary: Helper method to create a Horizontal Rule on the PropertyPane.
-    name: PropertyPaneHorizontalRule()
-    fullName: PropertyPaneHorizontalRule()
-    langs:
-      - typeScript
-    type: function
-    syntax:
-      content: 'export declare function PropertyPaneHorizontalRule(): IPropertyPaneField<void>;'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface"
+            />
       return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneHorizontalRule~0:complex'
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface"
+          />&gt;
         description: ''
-  - uid: '@microsoft/sp-property-pane!PropertyPaneLabel:function(1)'
-    summary: Helper method to create a Label on the PropertyPane.
-    name: 'PropertyPaneLabel(targetProperty, properties)'
-    fullName: 'PropertyPaneLabel(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+  - name: PropertyPaneHorizontalRule()
+    uid: '@microsoft/sp-property-pane!PropertyPaneHorizontalRule:function(1)'
+    package: '@microsoft/sp-property-pane'
+    summary: Helper method to create a Horizontal Rule on the PropertyPane.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneLabel(targetProperty: string, properties: IPropertyPaneLabelProps):
-        IPropertyPaneField<IPropertyPaneLabelProps>;
+        export declare function PropertyPaneHorizontalRule():
+        IPropertyPaneField<void>;
       return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneLabel~0:complex'
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;void&gt;
         description: ''
+  - name: 'PropertyPaneLabel(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneLabel:function(1)'
+    package: '@microsoft/sp-property-pane'
+    summary: Helper method to create a Label on the PropertyPane.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function PropertyPaneLabel(targetProperty: string,
+        properties: IPropertyPaneLabelProps):
+        IPropertyPaneField<IPropertyPaneLabelProps>;
       parameters:
         - id: targetProperty
           description: Target property the label is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Label properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneLink:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneLink(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneLink:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Link on the PropertyPane.
-    name: 'PropertyPaneLink(targetProperty, properties)'
-    fullName: 'PropertyPaneLink(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneLink(targetProperty: string, properties: IPropertyPaneLinkProps):
+        export declare function PropertyPaneLink(targetProperty: string,
+        properties: IPropertyPaneLinkProps):
         IPropertyPaneField<IPropertyPaneLinkProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneLink~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the Link is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Link properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneSlider:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneSlider(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneSlider:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Slider on the PropertyPane.
-    name: 'PropertyPaneSlider(targetProperty, properties)'
-    fullName: 'PropertyPaneSlider(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneSlider(targetProperty: string, properties: IPropertyPaneSliderProps):
+        export declare function PropertyPaneSlider(targetProperty: string,
+        properties: IPropertyPaneSliderProps):
         IPropertyPaneField<IPropertyPaneSliderProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneSlider~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the slider is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Slider properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneTextField:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneTextField(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneTextField:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a TextField on the PropertyPane.
-    name: 'PropertyPaneTextField(targetProperty, properties)'
-    fullName: 'PropertyPaneTextField(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneTextField(targetProperty: string, properties: IPropertyPaneTextFieldProps):
+        export declare function PropertyPaneTextField(targetProperty: string,
+        properties: IPropertyPaneTextFieldProps):
         IPropertyPaneField<IPropertyPaneTextFieldProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneTextField~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the textfield is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed TextField properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneToggle:function(1)'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface"
+          />&gt;
+        description: ''
+  - name: 'PropertyPaneToggle(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneToggle:function(1)'
+    package: '@microsoft/sp-property-pane'
     summary: Helper method to create a Toggle on the PropertyPane.
-    name: 'PropertyPaneToggle(targetProperty, properties)'
-    fullName: 'PropertyPaneToggle(targetProperty, properties)'
-    langs:
-      - typeScript
-    type: function
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
-        export declare function PropertyPaneToggle(targetProperty: string, properties: IPropertyPaneToggleProps):
+        export declare function PropertyPaneToggle(targetProperty: string,
+        properties: IPropertyPaneToggleProps):
         IPropertyPaneField<IPropertyPaneToggleProps>;
-      return:
-        type:
-          - '@microsoft/sp-property-pane!PropertyPaneToggle~0:complex'
-        description: ''
       parameters:
         - id: targetProperty
           description: Target property the toggle is associated to.
-          type:
-            - string
+          type: string
         - id: properties
           description: Strongly typed Toggle properties.
-          type:
-            - '@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface'
-references:
-  - uid: '@microsoft/sp-property-pane!DynamicDataSharedDepth:enum'
-    name: DynamicDataSharedDepth
-  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedPropertyConfiguration:interface'
-    name: IDynamicDataSharedPropertyConfiguration
-  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedPropertyFilters:interface'
-    name: IDynamicDataSharedPropertyFilters
-  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface'
-    name: IDynamicDataSharedSourceConfiguration
-  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
-    name: IDynamicDataSharedSourceFilters
-  - uid: '@microsoft/sp-property-pane!IPopupWindowProps:interface'
-    name: IPopupWindowProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface'
-    name: IPropertyPaneButtonProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface'
-    name: IPropertyPaneCheckboxProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupOption:interface'
-    name: IPropertyPaneChoiceGroupOption
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupOptionIconProps:interface'
-    name: IPropertyPaneChoiceGroupOptionIconProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface'
-    name: IPropertyPaneChoiceGroupProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneConditionalGroup:interface'
-    name: IPropertyPaneConditionalGroup
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneConfiguration:interface'
-    name: IPropertyPaneConfiguration
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
-    name: IPropertyPaneCustomFieldProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDebounceProperty:interface'
-    name: IPropertyPaneDebounceProperty
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDropdownCalloutProps:interface'
-    name: IPropertyPaneDropdownCalloutProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDropdownOption:interface'
-    name: IPropertyPaneDropdownOption
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface'
-    name: IPropertyPaneDropdownProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldFilters~0:complex'
-    name: IDynamicDataSharedSourceFilters & IDynamicDataSharedPropertyFilters
-    fullName: IDynamicDataSharedSourceFilters & IDynamicDataSharedPropertyFilters
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
-        name: IDynamicDataSharedSourceFilters
-        fullName: IDynamicDataSharedSourceFilters
-      - name: ' & '
-        fullName: ' & '
-      - uid: '@microsoft/sp-property-pane!IDynamicDataSharedPropertyFilters:interface'
-        name: IDynamicDataSharedPropertyFilters
-        fullName: IDynamicDataSharedPropertyFilters
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface'
-    name: IPropertyPaneDynamicFieldProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
-    name: IPropertyPaneDynamicFieldSetProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
-    name: IPropertyPaneDynamicTextFieldProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-    name: IPropertyPaneField
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
-    name: IPropertyPaneGroup
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface'
-    name: IPropertyPaneLabelProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface'
-    name: IPropertyPaneLinkProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPanePage:interface'
-    name: IPropertyPanePage
-  - uid: '@microsoft/sp-property-pane!IPropertyPanePageHeader:interface'
-    name: IPropertyPanePageHeader
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface'
-    name: IPropertyPaneSliderProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface'
-    name: IPropertyPaneTextFieldProps
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface'
-    name: IPropertyPaneToggleProps
-  - uid: '@microsoft/sp-property-pane!PopupWindowPosition:enum'
-    name: PopupWindowPosition
-  - uid: '@microsoft/sp-property-pane!PropertyPaneButton~0:complex'
-    name: IPropertyPaneField<IPropertyPaneButtonProps>
-    fullName: IPropertyPaneField<IPropertyPaneButtonProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface'
-        name: IPropertyPaneButtonProps
-        fullName: IPropertyPaneButtonProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneButtonType:enum'
-    name: PropertyPaneButtonType
-  - uid: '@microsoft/sp-property-pane!PropertyPaneCheckbox~0:complex'
-    name: IPropertyPaneField<IPropertyPaneCheckboxProps>
-    fullName: IPropertyPaneField<IPropertyPaneCheckboxProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface'
-        name: IPropertyPaneCheckboxProps
-        fullName: IPropertyPaneCheckboxProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneChoiceGroup~0:complex'
-    name: IPropertyPaneField<IPropertyPaneChoiceGroupProps>
-    fullName: IPropertyPaneField<IPropertyPaneChoiceGroupProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneChoiceGroupProps:interface'
-        name: IPropertyPaneChoiceGroupProps
-        fullName: IPropertyPaneChoiceGroupProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneCustomField~0:complex'
-    name: IPropertyPaneField<IPropertyPaneCustomFieldProps>
-    fullName: IPropertyPaneField<IPropertyPaneCustomFieldProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps:interface'
-        name: IPropertyPaneCustomFieldProps
-        fullName: IPropertyPaneCustomFieldProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDropdown~0:complex'
-    name: IPropertyPaneField<IPropertyPaneDropdownProps>
-    fullName: IPropertyPaneField<IPropertyPaneDropdownProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneDropdownProps:interface'
-        name: IPropertyPaneDropdownProps
-        fullName: IPropertyPaneDropdownProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDropdownOptionType:enum'
-    name: PropertyPaneDropdownOptionType
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDynamicField~0:complex'
-    name: IPropertyPaneField<IPropertyPaneDynamicFieldProps>
-    fullName: IPropertyPaneField<IPropertyPaneDynamicFieldProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface'
-        name: IPropertyPaneDynamicFieldProps
-        fullName: IPropertyPaneDynamicFieldProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDynamicFieldSet~0:complex'
-    name: IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>
-    fullName: IPropertyPaneField<IPropertyPaneDynamicFieldSetProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
-        name: IPropertyPaneDynamicFieldSetProps
-        fullName: IPropertyPaneDynamicFieldSetProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneDynamicTextField~0:complex'
-    name: IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>
-    fullName: IPropertyPaneField<IPropertyPaneDynamicTextFieldProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
-        name: IPropertyPaneDynamicTextFieldProps
-        fullName: IPropertyPaneDynamicTextFieldProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneFieldType:enum'
-    name: PropertyPaneFieldType
-  - uid: '@microsoft/sp-property-pane!PropertyPaneHorizontalRule~0:complex'
-    name: IPropertyPaneField<void>
-    fullName: IPropertyPaneField<void>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <void>
-        fullName: <void>
-  - uid: '@microsoft/sp-property-pane!PropertyPaneLabel~0:complex'
-    name: IPropertyPaneField<IPropertyPaneLabelProps>
-    fullName: IPropertyPaneField<IPropertyPaneLabelProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface'
-        name: IPropertyPaneLabelProps
-        fullName: IPropertyPaneLabelProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneLink~0:complex'
-    name: IPropertyPaneField<IPropertyPaneLinkProps>
-    fullName: IPropertyPaneField<IPropertyPaneLinkProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface'
-        name: IPropertyPaneLinkProps
-        fullName: IPropertyPaneLinkProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneSlider~0:complex'
-    name: IPropertyPaneField<IPropertyPaneSliderProps>
-    fullName: IPropertyPaneField<IPropertyPaneSliderProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface'
-        name: IPropertyPaneSliderProps
-        fullName: IPropertyPaneSliderProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneTextField~0:complex'
-    name: IPropertyPaneField<IPropertyPaneTextFieldProps>
-    fullName: IPropertyPaneField<IPropertyPaneTextFieldProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface'
-        name: IPropertyPaneTextFieldProps
-        fullName: IPropertyPaneTextFieldProps
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-property-pane!PropertyPaneToggle~0:complex'
-    name: IPropertyPaneField<IPropertyPaneToggleProps>
-    fullName: IPropertyPaneField<IPropertyPaneToggleProps>
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface'
-        name: IPropertyPaneToggleProps
-        fullName: IPropertyPaneToggleProps
-      - name: '>'
-        fullName: '>'
+          type: >-
+            <xref
+            uid="@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface"
+            />
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface"
+          />&gt;
+        description: ''

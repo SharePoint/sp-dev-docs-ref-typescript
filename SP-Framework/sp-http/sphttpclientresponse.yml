@@ -1,81 +1,64 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!SPHttpClientResponse:class'
-    summary: The Response subclass returned by methods such as SPHttpClient.fetch().
-    remarks: |-
-      This class is marked as `@sealed`. Subclasses should not extend it.
+### YamlMime:TSType
+name: SPHttpClientResponse
+uid: '@microsoft/sp-http!SPHttpClientResponse:class'
+package: '@microsoft/sp-http!'
+fullName: SPHttpClientResponse
+summary: The Response subclass returned by methods such as SPHttpClient.fetch().
+remarks: >-
+  This class is marked as `@sealed`. Subclasses should not extend it.
 
-      This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class.
-    name: SPHttpClientResponse
-    fullName: SPHttpClientResponse
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-http!default:class'
-    inheritance:
-      - type: '@microsoft/sp-http!default:class'
+
+  This is a placeholder. In the future, additional SPHttpClient-specific
+  functionality may be added to this class.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)(response)
+    uid: '@microsoft/sp-http!SPHttpClientResponse:constructor(1)'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!SPHttpClientResponse:constructor(1)'
-      - '@microsoft/sp-http!SPHttpClientResponse#clone:member(1)'
-      - '@microsoft/sp-http!SPHttpClientResponse#correlationId:member'
-  - uid: '@microsoft/sp-http!SPHttpClientResponse:constructor(1)'
-    summary: Constructs a new instance of the `SPHttpClientResponse` class
-    name: (constructor)(response)
     fullName: (constructor)(response)
-    langs:
-      - typeScript
-    type: constructor
+    summary: Constructs a new instance of the `SPHttpClientResponse` class
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'constructor(response: Response);'
       parameters:
         - id: response
           description: ''
-          type:
-            - '!Response:interface'
-  - uid: '@microsoft/sp-http!SPHttpClientResponse#clone:member(1)'
-    name: clone()
+          type: '<xref uid="!Response:interface" />'
+properties:
+  - name: correlationId
+    uid: '@microsoft/sp-http!SPHttpClientResponse#correlationId:member'
+    package: '@microsoft/sp-http!'
+    fullName: correlationId
+    summary: Returns the SharePoint correlation ID.
+    remarks: >-
+      The correlation ID is a Guid that can be used to associate log events that
+      are part of the same overall operation, but may originate from different
+      services or components. SharePoint REST operations return the server's
+      correlation ID as the "sprequestguid" header.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'readonly correlationId: Guid | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined'
+methods:
+  - name: clone()
+    uid: '@microsoft/sp-http!SPHttpClientResponse#clone:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: clone()
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         /** @override */
         clone(): SPHttpClientResponse;
       return:
-        type:
-          - '@microsoft/sp-http!default:class'
+        type: '<xref uid="@microsoft/sp-http!default:class" />'
         description: ''
-  - uid: '@microsoft/sp-http!SPHttpClientResponse#correlationId:member'
-    summary: Returns the SharePoint correlation ID.
-    remarks: >-
-      The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation,
-      but may originate from different services or components. SharePoint REST operations return the server's
-      correlation ID as the "sprequestguid" header.
-    isPreview: true
-    name: correlationId
-    fullName: correlationId
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly correlationId: Guid | undefined;'
-      return:
-        type:
-          - '@microsoft/sp-http!SPHttpClientResponse#correlationId~0:complex'
-references:
-  - uid: '@microsoft/sp-http!default:class'
-    name: HttpClientResponse
-  - uid: '!Response:interface'
-    name: Response
-  - uid: '@microsoft/sp-http!SPHttpClientResponse#correlationId~0:complex'
-    name: Guid | undefined
-    fullName: Guid | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!Guid:class'
-        name: Guid
-        fullName: Guid
-      - name: ' | undefined'
-        fullName: ' | undefined'
+extends: '<xref uid="@microsoft/sp-http!default:class" />'

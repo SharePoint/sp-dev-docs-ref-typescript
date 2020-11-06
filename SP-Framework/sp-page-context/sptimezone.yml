@@ -1,133 +1,119 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-page-context!SPTimeZone:class'
-    summary: >-
-      It provides timezone information from SharePoint. A conversion from UTC to local time can be calculated by using
-      the following formula.
-    remarks: >-
-      ```
+### YamlMime:TSType
+name: SPTimeZone
+uid: '@microsoft/sp-page-context!SPTimeZone:class'
+package: '@microsoft/sp-page-context!'
+fullName: SPTimeZone
+summary: >-
+  It provides timezone information from SharePoint. A conversion from UTC to
+  local time can be calculated by using the following formula.
+remarks: >-
+  ```
 
-      isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the StandardDate
+  isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the
+  StandardDate
 
-      LocalTime = UTCTime - Offset - (isDaylightSavingsTime ? daylightOffset : standardOffset)
+  LocalTime = UTCTime - Offset - (isDaylightSavingsTime ? daylightOffset :
+  standardOffset)
 
-      June 11, 2 A.M. PST = June 11, 9 A.M. - (480 minutes) - (-60  minutes)
+  June 11, 2 A.M. PST = June 11, 9 A.M. - (480 minutes) - (-60  minutes)
 
 
-      ```
+  ```
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `SPTimeZone` class.
-    isPreview: true
-    name: SPTimeZone
-    fullName: SPTimeZone
-    langs:
-      - typeScript
-    type: class
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `SPTimeZone` class.
+isPreview: true
+isDeprecated: false
+type: class
+properties:
+  - name: daylightDate
+    uid: '@microsoft/sp-page-context!SPTimeZone#daylightDate:member'
     package: '@microsoft/sp-page-context!'
-    children:
-      - '@microsoft/sp-page-context!SPTimeZone#daylightDate:member'
-      - '@microsoft/sp-page-context!SPTimeZone#daylightOffset:member'
-      - '@microsoft/sp-page-context!SPTimeZone#description:member'
-      - '@microsoft/sp-page-context!SPTimeZone#id:member'
-      - '@microsoft/sp-page-context!SPTimeZone#offset:member'
-      - '@microsoft/sp-page-context!SPTimeZone#standardDate:member'
-      - '@microsoft/sp-page-context!SPTimeZone#standardOffset:member'
-  - uid: '@microsoft/sp-page-context!SPTimeZone#daylightDate:member'
-    summary: Gets the date on which daylight time begins for the time zone.
-    isPreview: true
-    name: daylightDate
     fullName: daylightDate
-    langs:
-      - typeScript
-    type: property
+    summary: Gets the date on which daylight time begins for the time zone.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly daylightDate: ISPSystemTime;'
       return:
-        type:
-          - '@microsoft/sp-page-context!ISPSystemTime:interface'
-  - uid: '@microsoft/sp-page-context!SPTimeZone#daylightOffset:member'
-    summary: >-
-      Gets the offset in the number of minutes that daylight time for the time zone differs from Coordinated Universal
-      Time (UTC).
-    isPreview: true
-    name: daylightOffset
+        type: '<xref uid="@microsoft/sp-page-context!ISPSystemTime:interface" />'
+  - name: daylightOffset
+    uid: '@microsoft/sp-page-context!SPTimeZone#daylightOffset:member'
+    package: '@microsoft/sp-page-context!'
     fullName: daylightOffset
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Gets the offset in the number of minutes that daylight time for the time
+      zone differs from Coordinated Universal Time (UTC).
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly daylightOffset: number;'
       return:
-        type:
-          - number
-  - uid: '@microsoft/sp-page-context!SPTimeZone#description:member'
-    summary: Gets the description for the time zone.
-    isPreview: true
-    name: description
+        type: number
+  - name: description
+    uid: '@microsoft/sp-page-context!SPTimeZone#description:member'
+    package: '@microsoft/sp-page-context!'
     fullName: description
-    langs:
-      - typeScript
-    type: property
+    summary: Gets the description for the time zone.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly description: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPTimeZone#id:member'
-    summary: Gets the ID of the time zone.
-    isPreview: true
-    name: id
+        type: string
+  - name: id
+    uid: '@microsoft/sp-page-context!SPTimeZone#id:member'
+    package: '@microsoft/sp-page-context!'
     fullName: id
-    langs:
-      - typeScript
-    type: property
+    summary: Gets the ID of the time zone.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly id: number;'
       return:
-        type:
-          - number
-  - uid: '@microsoft/sp-page-context!SPTimeZone#offset:member'
-    summary: Gets the offset in the number of minutes that the time zone differs from Coordinated Universal Time (UTC).
-    isPreview: true
-    name: offset
+        type: number
+  - name: offset
+    uid: '@microsoft/sp-page-context!SPTimeZone#offset:member'
+    package: '@microsoft/sp-page-context!'
     fullName: offset
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Gets the offset in the number of minutes that the time zone differs from
+      Coordinated Universal Time (UTC).
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly offset: number;'
       return:
-        type:
-          - number
-  - uid: '@microsoft/sp-page-context!SPTimeZone#standardDate:member'
-    summary: Gets the date on which standard time begins for the time zone.
-    isPreview: true
-    name: standardDate
+        type: number
+  - name: standardDate
+    uid: '@microsoft/sp-page-context!SPTimeZone#standardDate:member'
+    package: '@microsoft/sp-page-context!'
     fullName: standardDate
-    langs:
-      - typeScript
-    type: property
+    summary: Gets the date on which standard time begins for the time zone.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly standardDate: ISPSystemTime;'
       return:
-        type:
-          - '@microsoft/sp-page-context!ISPSystemTime:interface'
-  - uid: '@microsoft/sp-page-context!SPTimeZone#standardOffset:member'
-    summary: >-
-      Gets the offset in the number of minutes that standard time for the time zone differs from coordinated universal
-      time (UTC).
-    isPreview: true
-    name: standardOffset
+        type: '<xref uid="@microsoft/sp-page-context!ISPSystemTime:interface" />'
+  - name: standardOffset
+    uid: '@microsoft/sp-page-context!SPTimeZone#standardOffset:member'
+    package: '@microsoft/sp-page-context!'
     fullName: standardOffset
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Gets the offset in the number of minutes that standard time for the time
+      zone differs from coordinated universal time (UTC).
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'readonly standardOffset: number;'
       return:
-        type:
-          - number
-references:
-  - uid: '@microsoft/sp-page-context!ISPSystemTime:interface'
-    name: ISPSystemTime
+        type: number

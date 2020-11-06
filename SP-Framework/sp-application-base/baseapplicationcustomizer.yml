@@ -1,95 +1,75 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer:class'
-    summary: >-
-      This is the base class that third parties should extend when implementing a client-side extension that runs when
-      an application is first starting.
-    remarks: >-
-      In the component manifest, the "extensionType" should be set to "ApplicationCustomizer".
+### YamlMime:TSType
+name: BaseApplicationCustomizer
+uid: '@microsoft/sp-application-base!BaseApplicationCustomizer:class'
+package: '@microsoft/sp-application-base!'
+fullName: BaseApplicationCustomizer
+summary: >-
+  This is the base class that third parties should extend when implementing a
+  client-side extension that runs when an application is first starting.
+remarks: >-
+  In the component manifest, the "extensionType" should be set to
+  "ApplicationCustomizer".
 
 
-      Example usage scenarios for an application customizer might include: rendering custom UI elements inside a
-      SharePoint content placeholder, tracking page load statistics, or automatically logging the user out after a
-      certain time period.
-    name: BaseApplicationCustomizer
-    fullName: BaseApplicationCustomizer
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-application-base!BaseApplicationCustomizer~0:complex'
-    inheritance:
-      - type: '@microsoft/sp-application-base!BaseApplicationCustomizer~1:complex'
+  Example usage scenarios for an application customizer might include: rendering
+  custom UI elements inside a SharePoint content placeholder, tracking page load
+  statistics, or automatically logging the user out after a certain time period.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: context
+    uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#context:member'
     package: '@microsoft/sp-application-base!'
-    children:
-      - '@microsoft/sp-application-base!BaseApplicationCustomizer#context:member'
-      - '@microsoft/sp-application-base!BaseApplicationCustomizer#dispose:member(1)'
-      - '@microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)'
-  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#context:member'
-    name: context
     fullName: context
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected readonly context: ApplicationCustomizerContext;'
       return:
-        type:
-          - '@microsoft/sp-application-base!default:class'
-  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#dispose:member(1)'
+        type: '<xref uid="@microsoft/sp-application-base!default:class" />'
+methods:
+  - name: dispose()
+    uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#dispose:member(1)'
+    package: '@microsoft/sp-application-base!'
+    fullName: dispose()
     summary: Disposes the component.
     remarks: >-
-      Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
-      for a web part or extension. To perform custom cleanup when your component is disposed, override the  method.
-    name: dispose()
-    fullName: dispose()
-    langs:
-      - typeScript
-    type: method
+      Third-party code generally does not need to call this method; it's invoked
+      automatically when the lifecycle ends for a web part or extension. To
+      perform custom cleanup when your component is disposed, override the 
+      method.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'dispose(): void;'
       return:
-        type:
-          - void
+        type: void
         description: ''
-  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)'
-    summary: >-
-      This event method is called when the placeholders of the host application change, come into existence, or
-      disappear.
-    name: onPlaceholdersChanged(placeholderProvider)
+  - name: onPlaceholdersChanged(placeholderProvider)
+    uid: >-
+      @microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)
+    package: '@microsoft/sp-application-base!'
     fullName: onPlaceholdersChanged(placeholderProvider)
-    langs:
-      - typeScript
-    type: method
+    summary: >-
+      This event method is called when the placeholders of the host application
+      change, come into existence, or disappear.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
-      content: 'protected onPlaceholdersChanged(placeholderProvider: PlaceholderProvider): void;'
-      return:
-        type:
-          - void
-        description: ''
+      content: >-
+        protected onPlaceholdersChanged(placeholderProvider:
+        PlaceholderProvider): void;
       parameters:
         - id: placeholderProvider
           description: ''
-          type:
-            - '@microsoft/sp-application-base!default:class'
-references:
-  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer~0:complex'
-    name: BaseExtension<TProperties>
-    fullName: BaseExtension<TProperties>
-    spec.typeScript:
-      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
-        name: BaseExtension
-        fullName: BaseExtension
-      - name: '<TProperties> '
-        fullName: '<TProperties> '
-  - uid: '@microsoft/sp-application-base!BaseApplicationCustomizer~1:complex'
-    name: BaseExtension<TProperties>
-    fullName: BaseExtension<TProperties>
-    spec.typeScript:
-      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
-        name: BaseExtension
-        fullName: BaseExtension
-      - name: '<TProperties> '
-        fullName: '<TProperties> '
-  - uid: '@microsoft/sp-application-base!default:class'
-    name: ApplicationCustomizerContext
+          type: '<xref uid="@microsoft/sp-application-base!default:class" />'
+      return:
+        type: void
+        description: ''
+extends: >-
+  <xref uid="@microsoft/sp-extension-base!BaseExtension:class"
+  />&lt;TProperties&gt; 
