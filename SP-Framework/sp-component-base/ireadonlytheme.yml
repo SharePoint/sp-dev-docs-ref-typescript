@@ -21,7 +21,7 @@ properties:
       content: 'readonly fonts: Readonly<IReadonlyFontStyles>;'
       return:
         type: >-
-          <xref uid="!Readonly:type" />&lt;<xref
+          Readonly&lt;<xref
           uid="@microsoft/sp-component-base!IReadonlyFontStyles:interface"
           />&gt;
   - name: palette
@@ -36,7 +36,7 @@ properties:
       content: 'readonly palette: Readonly<IPalette>;'
       return:
         type: >-
-          <xref uid="!Readonly:type" />&lt;<xref
+          Readonly&lt;<xref
           uid="@microsoft/sp-component-base!IPalette:interface" />&gt;
   - name: semanticColors
     uid: '@microsoft/sp-component-base!IReadonlyTheme#semanticColors:member'
@@ -50,8 +50,6 @@ properties:
       content: 'readonly semanticColors: Readonly<ISemanticColors>;'
       return:
         type: >-
-          <xref uid="!Readonly:type" />&lt;<xref
+          Readonly&lt;<xref
           uid="@microsoft/sp-component-base!ISemanticColors:interface" />&gt;
-extends: >-
-  <xref uid="!Readonly:type" />&lt;<xref
-  uid="@microsoft/sp-component-base!ITheme:interface" />&gt; 
+extends: 'Readonly&lt;<xref uid="@microsoft/sp-component-base!ITheme:interface" />&gt; '
