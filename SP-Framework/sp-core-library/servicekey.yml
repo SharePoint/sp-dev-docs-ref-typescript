@@ -28,10 +28,7 @@ properties:
     syntax:
       content: 'readonly defaultCreator: ServiceCreator<T>;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-core-library!ServiceKey#defaultCreator~0:complex"
-          />
+        type: '<xref uid="@microsoft/sp-core-library!ServiceCreator:type" />&lt;T&gt;'
   - name: id
     uid: '@microsoft/sp-core-library!ServiceKey#id:member'
     package: '@microsoft/sp-core-library!'
@@ -106,11 +103,12 @@ methods:
           type: string
         - id: serviceClass
           description: the TypeScript class that implements the service.
-          type: >-
-            @microsoft/sp-core-library!ServiceKey.<xref uid="create~1:complex"
-            />
+          type: |-
+            {
+                    new (serviceScope: <xref uid="@microsoft/sp-core-library!default:class" />): TKey;
+                }
       return:
-        type: '@microsoft/sp-core-library!ServiceKey.<xref uid="create~0:complex" />'
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />&lt;TKey&gt;'
         description: the newly created ServiceKey
   - name: 'createCustom(name, defaultCreator)'
     uid: '@microsoft/sp-core-library!ServiceKey.createCustom:member(1)'
@@ -135,10 +133,8 @@ methods:
         - id: defaultCreator
           description: a callback that returns an object that implements the T interface
           type: >-
-            @microsoft/sp-core-library!ServiceKey.<xref
-            uid="createCustom~1:complex" />
+            <xref uid="@microsoft/sp-core-library!ServiceCreator:type"
+            />&lt;TKey&gt;
       return:
-        type: >-
-          @microsoft/sp-core-library!ServiceKey.<xref
-          uid="createCustom~0:complex" />
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />&lt;TKey&gt;'
         description: the newly created service key

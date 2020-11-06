@@ -41,8 +41,7 @@ properties:
       content: 'defaultPath: string | IPath;'
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath~0:complex"
+          string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface"
           />
   - name: paths
     uid: >-
@@ -91,8 +90,8 @@ properties:
                 [locale: string]: string | IPath;
             };
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths~0:complex"
-          />
+        type: |-
+          {
+                  [locale: string]: string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface" />;
+              }
 extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'

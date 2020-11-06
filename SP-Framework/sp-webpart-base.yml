@@ -81,7 +81,11 @@ functions:
             uid="@microsoft/sp-webpart-base!IPropertyPaneButtonProps:interface"
             />
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!PropertyPaneButton~0:complex" />'
+        type: >-
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneButtonProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneCheckbox(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneCheckbox:function(1)'
@@ -110,8 +114,10 @@ functions:
             />
       return:
         type: >-
-          <xref uid="@microsoft/sp-webpart-base!PropertyPaneCheckbox~0:complex"
-          />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneCheckboxProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneChoiceGroup(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneChoiceGroup:function(1)'
@@ -140,8 +146,10 @@ functions:
             />
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!PropertyPaneChoiceGroup~0:complex" />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneChoiceGroupProps:interface"
+          />&gt;
         description: ''
   - name: PropertyPaneCustomField(properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneCustomField:function(1)'
@@ -172,8 +180,10 @@ functions:
             />
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!PropertyPaneCustomField~0:complex" />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneCustomFieldProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneDropdown(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneDropdown:function(1)'
@@ -202,8 +212,10 @@ functions:
             />
       return:
         type: >-
-          <xref uid="@microsoft/sp-webpart-base!PropertyPaneDropdown~0:complex"
-          />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneDropdownProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneDynamicField(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneDynamicField:function(1)'
@@ -234,8 +246,10 @@ functions:
             />
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!PropertyPaneDynamicField~0:complex" />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldProps:interface"
+          />&gt;
         description: ''
   - name: PropertyPaneDynamicFieldSet(properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneDynamicFieldSet:function(1)'
@@ -272,9 +286,10 @@ functions:
             />
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!PropertyPaneDynamicFieldSet~0:complex"
-          />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldSetProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneDynamicTextField:function(1)'
@@ -303,9 +318,10 @@ functions:
             />
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!PropertyPaneDynamicTextField~0:complex"
-          />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicTextFieldProps:interface"
+          />&gt;
         description: ''
   - name: PropertyPaneHorizontalRule()
     uid: '@microsoft/sp-webpart-base!PropertyPaneHorizontalRule:function(1)'
@@ -323,9 +339,8 @@ functions:
         IPropertyPaneField<void>;
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!PropertyPaneHorizontalRule~0:complex"
-          />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;void&gt;
         description: ''
   - name: 'PropertyPaneLabel(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneLabel:function(1)'
@@ -353,7 +368,11 @@ functions:
             uid="@microsoft/sp-webpart-base!IPropertyPaneLabelProps:interface"
             />
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!PropertyPaneLabel~0:complex" />'
+        type: >-
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneLabelProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneLink(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneLink:function(1)'
@@ -380,7 +399,11 @@ functions:
             <xref
             uid="@microsoft/sp-webpart-base!IPropertyPaneLinkProps:interface" />
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!PropertyPaneLink~0:complex" />'
+        type: >-
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneLinkProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneSlider(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneSlider:function(1)'
@@ -408,7 +431,11 @@ functions:
             uid="@microsoft/sp-webpart-base!IPropertyPaneSliderProps:interface"
             />
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!PropertyPaneSlider~0:complex" />'
+        type: >-
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneSliderProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneTextField(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneTextField:function(1)'
@@ -437,8 +464,10 @@ functions:
             />
       return:
         type: >-
-          <xref uid="@microsoft/sp-webpart-base!PropertyPaneTextField~0:complex"
-          />
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneTextFieldProps:interface"
+          />&gt;
         description: ''
   - name: 'PropertyPaneToggle(targetProperty, properties)'
     uid: '@microsoft/sp-webpart-base!PropertyPaneToggle:function(1)'
@@ -466,5 +495,9 @@ functions:
             uid="@microsoft/sp-webpart-base!IPropertyPaneToggleProps:interface"
             />
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!PropertyPaneToggle~0:complex" />'
+        type: >-
+          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-webpart-base!IPropertyPaneToggleProps:interface"
+          />&gt;
         description: ''

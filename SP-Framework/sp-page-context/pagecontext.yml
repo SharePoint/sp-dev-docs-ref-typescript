@@ -43,9 +43,7 @@ properties:
     syntax:
       content: 'readonly aadInfo: AzureActiveDirectoryInfo | undefined;'
       return:
-        type: >-
-          <xref uid="@microsoft/sp-page-context!PageContext#aadInfo~0:complex"
-          />
+        type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
   - name: cultureInfo
     uid: '@microsoft/sp-page-context!PageContext#cultureInfo:member'
     package: '@microsoft/sp-page-context!'
@@ -113,7 +111,7 @@ properties:
     syntax:
       content: 'readonly list: SPList | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-page-context!PageContext#list~0:complex" />'
+        type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
   - name: listItem
     uid: '@microsoft/sp-page-context!PageContext#listItem:member'
     package: '@microsoft/sp-page-context!'
@@ -128,9 +126,7 @@ properties:
     syntax:
       content: 'readonly listItem: SPListItem | undefined;'
       return:
-        type: >-
-          <xref uid="@microsoft/sp-page-context!PageContext#listItem~0:complex"
-          />
+        type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
   - name: serviceKey
     uid: '@microsoft/sp-page-context!PageContext.serviceKey:member'
     package: '@microsoft/sp-page-context!'
@@ -143,8 +139,8 @@ properties:
       content: 'static readonly serviceKey: ServiceKey<PageContext>;'
       return:
         type: >-
-          @microsoft/sp-page-context!PageContext.<xref
-          uid="serviceKey~0:complex" />
+          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
+          uid="@microsoft/sp-page-context!default:class" />&gt;
   - name: site
     uid: '@microsoft/sp-page-context!PageContext#site:member'
     package: '@microsoft/sp-page-context!'

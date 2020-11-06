@@ -23,8 +23,9 @@ methods:
       content: 'static getManifests(): IClientSideComponentManifest[];'
       return:
         type: >-
-          @microsoft/sp-loader!SPComponentLoader.<xref
-          uid="getManifests~0:complex" />
+          <xref
+          uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
+          />[]
         description: ''
   - name: loadComponent(manifest)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)'
@@ -46,9 +47,7 @@ methods:
             uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
             />
       return:
-        type: >-
-          @microsoft/sp-loader!SPComponentLoader.<xref
-          uid="loadComponent~0:complex" />
+        type: '<xref uid="!Promise:class" />&lt;TComponent&gt;'
         description: A promise containing the loaded module.
   - name: 'loadComponentById(id, version)'
     uid: '@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)'
@@ -72,9 +71,7 @@ methods:
             method will load any version of the component.
           type: string
       return:
-        type: >-
-          @microsoft/sp-loader!SPComponentLoader.<xref
-          uid="loadComponentById~0:complex" />
+        type: '<xref uid="!Promise:class" />&lt;TComponent&gt;'
         description: A promise containing the loaded module.
   - name: loadCss(url)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)'
@@ -119,7 +116,5 @@ methods:
             global member on the page, specify the global member's name.
           type: '<xref uid="@microsoft/sp-loader!ILoadScriptOptions:interface" />'
       return:
-        type: >-
-          @microsoft/sp-loader!SPComponentLoader.<xref
-          uid="loadScript~0:complex" />
+        type: '<xref uid="!Promise:class" />&lt;TModule&gt;'
         description: A promise containing the loaded module.

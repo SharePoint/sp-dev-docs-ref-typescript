@@ -24,9 +24,10 @@ properties:
       content: 'fields: IPropertyPaneField<IPropertyPaneDynamicFieldProps>[];'
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#fields~0:complex"
-          />
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface"
+          />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface"
+          />&gt;[]
   - name: label
     uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#label:member'
     package: '@microsoft/sp-property-pane!'
@@ -56,7 +57,9 @@ properties:
                 property?: IDynamicDataSharedPropertyConfiguration;
             };
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#sharedConfiguration~0:complex"
-          />
+        type: |-
+          {
+                  depth: <xref uid="@microsoft/sp-property-pane!DynamicDataSharedDepth:enum" />;
+                  source?: <xref uid="@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface" />;
+                  property?: <xref uid="@microsoft/sp-property-pane!IDynamicDataSharedPropertyConfiguration:interface" />;
+              }

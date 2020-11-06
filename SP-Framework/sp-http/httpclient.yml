@@ -53,7 +53,9 @@ properties:
     syntax:
       content: 'static readonly serviceKey: ServiceKey<HttpClient>;'
       return:
-        type: '@microsoft/sp-http!HttpClient.<xref uid="serviceKey~0:complex" />'
+        type: >-
+          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
 methods:
   - name: 'fetch(url, configuration, options)'
     uid: '@microsoft/sp-http!HttpClient#fetch:member(1)'
@@ -84,7 +86,9 @@ methods:
           description: additional options that affect the request
           type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
       return:
-        type: '<xref uid="@microsoft/sp-http!HttpClient#fetch~0:complex" />'
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will
           resolve normally (with
@@ -117,7 +121,9 @@ methods:
           description: additional options that affect the request
           type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
       return:
-        type: '<xref uid="@microsoft/sp-http!HttpClient#get~0:complex" />'
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will
           resolve normally (with
@@ -150,7 +156,9 @@ methods:
           description: additional options that affect the request
           type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
       return:
-        type: '<xref uid="@microsoft/sp-http!HttpClient#post~0:complex" />'
+        type: >-
+          <xref uid="!Promise:class" />&lt;<xref
+          uid="@microsoft/sp-http!default:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will
           resolve normally (with

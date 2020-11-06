@@ -49,9 +49,8 @@ properties:
       content: 'readonly changedEvent: SPEvent<SPEventArgs>;'
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-application-base!PlaceholderProvider#changedEvent~0:complex"
-          />
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-core-library!SPEventArgs:class" />&gt;
   - name: isDisposed
     uid: '@microsoft/sp-application-base!PlaceholderProvider#isDisposed:member'
     package: '@microsoft/sp-application-base!'
@@ -76,9 +75,8 @@ properties:
       content: 'readonly placeholderNames: ReadonlyArray<PlaceholderName>;'
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-application-base!PlaceholderProvider#placeholderNames~0:complex"
-          />
+          <xref uid="!ReadonlyArray:interface" />&lt;<xref
+          uid="@microsoft/sp-application-base!~PlaceholderName:enum" />&gt;
 methods:
   - name: dispose()
     uid: '@microsoft/sp-application-base!PlaceholderProvider#dispose:member(1)'
@@ -127,9 +125,8 @@ methods:
             />
       return:
         type: >-
-          <xref
-          uid="@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent~0:complex"
-          />
+          <xref uid="@microsoft/sp-application-base!default:class" /> |
+          undefined
         description: >-
           A new PlaceholderContent object, or undefined if the requested
           placeholder does not exist.
