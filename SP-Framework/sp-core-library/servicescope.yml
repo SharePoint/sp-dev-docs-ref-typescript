@@ -100,8 +100,8 @@ methods:
             the key that was used when provide() was called to register the
             service
           type: >-
-            @microsoft/sp-core-library!ServiceScope#<xref
-            uid="consume~0:complex" />
+            <xref
+            uid="@microsoft/sp-core-library!ServiceScope#consume~0:complex" />
       return:
         type: T
         description: the service instance
@@ -125,13 +125,15 @@ methods:
         - id: serviceKey
           description: the key that can be used later to consume the service
           type: >-
-            @microsoft/sp-core-library!ServiceScope#<xref
-            uid="createAndProvide~0:complex" />
+            <xref
+            uid="@microsoft/sp-core-library!ServiceScope#createAndProvide~0:complex"
+            />
         - id: simpleServiceClass
           description: the TypeScript class to be constructed
           type: >-
-            @microsoft/sp-core-library!ServiceScope#<xref
-            uid="createAndProvide~1:complex" />
+            <xref
+            uid="@microsoft/sp-core-library!ServiceScope#createAndProvide~1:complex"
+            />
       return:
         type: T
         description: a newly constructed instance of simpleServiceClass
@@ -152,8 +154,9 @@ methods:
         - id: serviceKey
           description: the key that can be used later to consume the service
           type: >-
-            @microsoft/sp-core-library!ServiceScope#<xref
-            uid="createDefaultAndProvide~0:complex" />
+            <xref
+            uid="@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide~0:complex"
+            />
       return:
         type: T
         description: >-
@@ -198,8 +201,8 @@ methods:
       content: 'getParent(): ServiceScope | undefined;'
       return:
         type: >-
-          @microsoft/sp-core-library!ServiceScope#<xref
-          uid="getParent~0:complex" />
+          <xref
+          uid="@microsoft/sp-core-library!ServiceScope#getParent~0:complex" />
         description: the parent service scope
   - name: 'provide(serviceKey, service)'
     uid: '@microsoft/sp-core-library!ServiceScope#provide:member(1)'
@@ -219,8 +222,8 @@ methods:
         - id: serviceKey
           description: the key that will later be used to consume the service
           type: >-
-            @microsoft/sp-core-library!ServiceScope#<xref
-            uid="provide~0:complex" />
+            <xref
+            uid="@microsoft/sp-core-library!ServiceScope#provide~0:complex" />
         - id: service
           description: the service instance that is being registered
           type: T
@@ -263,9 +266,9 @@ methods:
     package: '@microsoft/sp-core-library!'
     fullName: whenFinished(callback)
     summary: >-
-      Defer an operation until after
-      [ServiceScope.finish()](xref:@microsoft/sp-core-library!ServiceScope#<xref
-      uid="finish:member(1" />)) has completed.
+      Defer an operation until after [ServiceScope.finish()](xref:<xref
+      uid="@microsoft/sp-core-library!ServiceScope#finish:member(1" />)) has
+      completed.
     remarks: >-
       It is an error to call ServiceScope.consume() before finish() has been
       called. The most reliable way to protect your component against this error
