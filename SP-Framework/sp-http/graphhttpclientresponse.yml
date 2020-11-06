@@ -1,73 +1,66 @@
-### YamlMime:UniversalReference
-items:
-  - uid: sp-http.GraphHttpClientResponse
-    summary: The Response subclass returned by methods such as GraphHttpClient.fetch().
-    remarks: >-
-      This class is marked as `@sealed`. Subclasses should not extend it.
+### YamlMime:TSType
+name: GraphHttpClientResponse
+uid: sp-http.GraphHttpClientResponse
+package: sp-http
+fullName: GraphHttpClientResponse
+summary: The Response subclass returned by methods such as GraphHttpClient.fetch().
+remarks: >-
+  This class is marked as `@sealed`. Subclasses should not extend it.
 
 
-      This is a placeholder. In the future, additional GraphHttpClient-specific functionality may be added to this
-      class.
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    isPreview: true
-    name: GraphHttpClientResponse
-    fullName: GraphHttpClientResponse
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - HttpClientResponse
+  This is a placeholder. In the future, additional GraphHttpClient-specific
+  functionality may be added to this class.
+isPreview: true
+isDeprecated: true
+customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
+type: class
+constructors:
+  - name: constructor(response)
+    uid: sp-http.GraphHttpClientResponse.constructor
     package: sp-http
-    children:
-      - sp-http.GraphHttpClientResponse.constructor
-      - sp-http.GraphHttpClientResponse.clone
-      - sp-http.GraphHttpClientResponse.correlationId
-  - uid: sp-http.GraphHttpClientResponse.constructor
-    summary: 'Constructs a new instance of the [GraphHttpClientResponse](xref:sp-http.GraphHttpClientResponse) class'
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    name: constructor(response)
     fullName: constructor
-    langs:
-      - typeScript
-    type: constructor
+    summary: >-
+      Constructs a new instance of the
+      [GraphHttpClientResponse](xref:sp-http.GraphHttpClientResponse) class
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
     syntax:
       content: 'constructor(response: Response);'
       parameters:
         - id: response
           description: ''
-          type:
-            - Response
-  - uid: sp-http.GraphHttpClientResponse.clone
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
+          type: Response
+properties:
+  - name: correlationId
+    uid: sp-http.GraphHttpClientResponse.correlationId
+    package: sp-http
+    fullName: correlationId
+    summary: Returns the Graph API correlation ID.
+    remarks: ''
     isPreview: true
-    name: clone()
+    isDeprecated: true
+    customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
+    syntax:
+      content: 'readonly correlationId: Guid | undefined;'
+      return:
+        type: Guid | undefined
+methods:
+  - name: clone()
+    uid: sp-http.GraphHttpClientResponse.clone
+    package: sp-http
     fullName: clone
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: true
+    isDeprecated: true
+    customDeprecatedMessage: The GraphHttpClient class has been superceded by the MSGraphClient class.
     syntax:
       content: |-
         /** @override */
         clone(): GraphHttpClientResponse;
       return:
-        type:
-          - GraphHttpClientResponse
+        type: GraphHttpClientResponse
         description: ''
-  - uid: sp-http.GraphHttpClientResponse.correlationId
-    summary: Returns the Graph API correlation ID.
-    deprecated:
-      content: The GraphHttpClient class has been superceded by the MSGraphClient class.
-    isPreview: true
-    name: correlationId
-    fullName: correlationId
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'readonly correlationId: Guid | undefined;'
-      return:
-        type:
-          - Guid | undefined
+extends: HttpClientResponse

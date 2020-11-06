@@ -1,78 +1,66 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-application-base!ApplicationAccessor:class'
-    summary: Provides access to the client-side application that is currently running.
-    remarks: >-
-      The client-side application determines the user experience for an entire web page. (It is a client-side component
-      with a manifest; however, the SharePoint Framework does not enable third parties to create their own client-side
-      applications at this time.) Within a web page, at most one client-side application will be running at a time.
-      Certain in-place navigation transitions can cause the application to be unloaded and replaced by a different
-      application.
+### YamlMime:TSType
+name: ApplicationAccessor
+uid: '@microsoft/sp-application-base!ApplicationAccessor:class'
+package: '@microsoft/sp-application-base!'
+fullName: ApplicationAccessor
+summary: Provides access to the client-side application that is currently running.
+remarks: >-
+  The client-side application determines the user experience for an entire web
+  page. (It is a client-side component with a manifest; however, the SharePoint
+  Framework does not enable third parties to create their own client-side
+  applications at this time.) Within a web page, at most one client-side
+  application will be running at a time. Certain in-place navigation transitions
+  can cause the application to be unloaded and replaced by a different
+  application.
 
 
-      The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with
-      the currently running application. It acts as a proxy for the real application object (the BaseApplication
-      subclass), to ensure that extensibility components only rely on interactions that would be portable across all
-      applications.
-    name: ApplicationAccessor
-    fullName: ApplicationAccessor
-    langs:
-      - typeScript
-    type: class
+  The ApplicationAccessor class enables extensibility components such as
+  extensions and web parts to interact with the currently running application.
+  It acts as a proxy for the real application object (the BaseApplication
+  subclass), to ensure that extensibility components only rely on interactions
+  that would be portable across all applications.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)(serviceScope)
+    uid: '@microsoft/sp-application-base!ApplicationAccessor:constructor(1)'
     package: '@microsoft/sp-application-base!'
-    children:
-      - '@microsoft/sp-application-base!ApplicationAccessor:constructor(1)'
-      - '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent:member'
-  - uid: '@microsoft/sp-application-base!ApplicationAccessor:constructor(1)'
+    fullName: (constructor)(serviceScope)
     summary: >-
       Constructs a new instance of the
-      [ApplicationAccessor](xref:@microsoft/sp-application-base!ApplicationAccessor:class) class.
+      [ApplicationAccessor](xref:@microsoft/sp-application-base!ApplicationAccessor:class)
+      class.
     remarks: >-
-      Third parties should not call this constructor. Instead, use the ApplicationAccessor instance from the component
-      context, for example
+      Third parties should not call this constructor. Instead, use the
+      ApplicationAccessor instance from the component context, for example
       [BaseApplicationCustomizer.context](xref:@microsoft/sp-application-base!BaseApplicationCustomizer#context:member)<!--
       -->.
-    name: (constructor)(serviceScope)
-    fullName: (constructor)(serviceScope)
-    langs:
-      - typeScript
-    type: constructor
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
       parameters:
         - id: serviceScope
           description: ''
-          type:
-            - '@microsoft/sp-core-library!ServiceScope:class'
-  - uid: '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent:member'
-    summary: An event that is fired when the application's top-level page context navigates to a new page.
-    remarks: >-
-      This event fires after the top-level [PageContext](xref:@microsoft/sp-page-context!PageContext:class) has
-      navigated to a new page.
-    name: navigatedEvent
+          type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" />'
+properties:
+  - name: navigatedEvent
+    uid: '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent:member'
+    package: '@microsoft/sp-application-base!'
     fullName: navigatedEvent
-    langs:
-      - typeScript
-    type: event
+    summary: >-
+      An event that is fired when the application's top-level page context
+      navigates to a new page.
+    remarks: >-
+      This event fires after the top-level
+      [PageContext](xref:@microsoft/sp-page-context!PageContext:class) has
+      navigated to a new page.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly navigatedEvent: SPEvent<SPEventArgs>;'
       return:
-        type:
-          - '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent~0:complex'
-references:
-  - uid: '@microsoft/sp-core-library!ServiceScope:class'
-    name: ServiceScope
-  - uid: '@microsoft/sp-application-base!ApplicationAccessor#navigatedEvent~0:complex'
-    name: SPEvent<SPEventArgs>
-    fullName: SPEvent<SPEventArgs>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!SPEvent:class'
-        name: SPEvent
-        fullName: SPEvent
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-core-library!SPEventArgs:class'
-        name: SPEventArgs
-        fullName: SPEventArgs
-      - name: '>'
-        fullName: '>'
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-core-library!SPEventArgs:class" />&gt;

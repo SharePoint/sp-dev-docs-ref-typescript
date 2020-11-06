@@ -1,189 +1,201 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-    summary: >-
-      All client-side components built on the SharePoint framework need a valid component manifest. This interface
-      represents properties that are required by all types of client-side components like Applications and Web Parts.
-      Component specific manifests will extend this interface to add properties required by that component type.
-    remarks: >-
-      The schema of this manifest is owned and versioned by Microsoft. Following rules should be followed while changing
-      this schema. This set of rules can also be called the "manifest upgrade rules".
+### YamlMime:TSType
+name: IClientSideComponentManifest
+uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IClientSideComponentManifest
+summary: >-
+  All client-side components built on the SharePoint framework need a valid
+  component manifest. This interface represents properties that are required by
+  all types of client-side components like Applications and Web Parts. Component
+  specific manifests will extend this interface to add properties required by
+  that component type.
+remarks: >-
+  The schema of this manifest is owned and versioned by Microsoft. Following
+  rules should be followed while changing this schema. This set of rules can
+  also be called the "manifest upgrade rules".
 
 
-      - For minor changes, new properties can be added to this schema in a backwards-compatible way. i.e. the code that
-      processes the manifest should be able to handle the absence of those new properties.
+  - For minor changes, new properties can be added to this schema in a
+  backwards-compatible way. i.e. the code that processes the manifest should be
+  able to handle the absence of those new properties.
 
 
-      - Try to model your changes as minor SemVer increments. Major version changes should be avoided because they
-      impose a migration cost on developers.
+  - Try to model your changes as minor SemVer increments. Major version changes
+  should be avoided because they impose a migration cost on developers.
 
 
-      - The `'manifestVersion'` should be bumped for all small or big changes.
-    name: IClientSideComponentManifest
-    fullName: IClientSideComponentManifest
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
-    inheritance:
-      - type: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+  - The `'manifestVersion'` should be bumped for all small or big changes.
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: alias
+    uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#alias:member'
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#alias:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#componentType:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#loaderConfig:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#loadLegacyFabricCss:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#requiresCustomScript:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#safeWithCustomScriptDisabled:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest#version:member'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#alias:member'
+    fullName: alias
     summary: >-
-      A short name usually given by developer. It does not need to be localized and is expected to stay the same through
-      the lifetime of the component. If an application overrides the `ClientSideApplication.alias` property,
-      `ClientSideApplication.alias` is given precedence over the value provided in the manifest.
-    remarks: |-
+      A short name usually given by developer. It does not need to be localized
+      and is expected to stay the same through the lifetime of the component. If
+      an application overrides the `ClientSideApplication.alias` property,
+      `ClientSideApplication.alias` is given precedence over the value provided
+      in the manifest.
+    remarks: >-
       Usage: A short name to identify a client-side component by developer.
 
-      Supported values: Allowed characters are a-z, A-Z, and '-'. Not longer than 40 characters.
+
+      Supported values: Allowed characters are a-z, A-Z, and '-'. Not longer
+      than 40 characters.
+
 
       Example: `"NewFeed"`
-    name: alias
-    fullName: alias
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'alias: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#componentType:member'
-    summary: >-
-      Type of client-side component. Components with the "Application" type are defined by the
-      "IClientSideApplicationManifest" interface. Components with the "WebPart" type are defined by the
-      "IClientSideWebPartManifest" interface. Components with the "Library" type are defined by the
-      "IClientSideLibraryManifest" interface.
-    remarks: |-
-      Usage: To help bundling, loading, enumeration, and initialization of components based on their contents.
-
-      Supported values: `"Application"`<!-- -->, `"WebPart"`<!-- -->, `"Library"`<!-- -->, `"Extension"`
-    name: componentType
+        type: string
+  - name: componentType
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentManifest#componentType:member
+    package: '@microsoft/sp-module-interfaces!'
     fullName: componentType
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Type of client-side component. Components with the "Application" type are
+      defined by the "IClientSideApplicationManifest" interface. Components with
+      the "WebPart" type are defined by the "IClientSideWebPartManifest"
+      interface. Components with the "Library" type are defined by the
+      "IClientSideLibraryManifest" interface.
+    remarks: >-
+      Usage: To help bundling, loading, enumeration, and initialization of
+      components based on their contents.
+
+
+      Supported values: `"Application"`<!-- -->, `"WebPart"`<!-- -->,
+      `"Library"`<!-- -->, `"Extension"`
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'componentType: ComponentType;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ComponentType:type'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#loaderConfig:member'
+        type: '<xref uid="@microsoft/sp-module-interfaces!ComponentType:type" />'
+  - name: loaderConfig
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentManifest#loaderConfig:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: loaderConfig
     summary: >-
-      This portion of the configuration describes how the component is to be loaded and initialized by a client. It
-      contains an enumeration of scripts that the component requires along with a single entry point script.
-    remarks: |-
+      This portion of the configuration describes how the component is to be
+      loaded and initialized by a client. It contains an enumeration of scripts
+      that the component requires along with a single entry point script.
+    remarks: >-
       Usage: Loading a component.
 
-      See `IClientSideComponentLoaderConfiguration` for more information and examples.
+
+      See `IClientSideComponentLoaderConfiguration` for more information and
+      examples.
     isPreview: true
-    name: loaderConfig
-    fullName: loaderConfig
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'loaderConfig: IClientSideComponentLoaderConfiguration;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#loadLegacyFabricCss:member'
-    summary: >-
-      This property is used to keep older components that don't explicitly use fabric CSS. For the most part, webparts
-      build after using spfx 1.1 don't need this.
-    name: loadLegacyFabricCss
+        type: >-
+          <xref
+          uid="@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface"
+          />
+  - name: loadLegacyFabricCss
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentManifest#loadLegacyFabricCss:member
+    package: '@microsoft/sp-module-interfaces!'
     fullName: loadLegacyFabricCss
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      This property is used to keep older components that don't explicitly use
+      fabric CSS. For the most part, webparts build after using spfx 1.1 don't
+      need this.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'loadLegacyFabricCss?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#requiresCustomScript:member'
+        type: boolean
+  - name: requiresCustomScript
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentManifest#requiresCustomScript:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: requiresCustomScript
     summary: >-
-      If true, the component can only be installed on sites where Custom Script is enabled. This should be set to true
-      if the component allows authors to execute arbitrary scripts on the page.
+      If true, the component can only be installed on sites where Custom Script
+      is enabled. This should be set to true if the component allows authors to
+      execute arbitrary scripts on the page.
     remarks: >-
       Defaults to false. See
       https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
       for more information.
 
 
-      Usage: Requires Custom Script to be allowed in order for this component to be installed and run.
-    name: requiresCustomScript
-    fullName: requiresCustomScript
-    langs:
-      - typeScript
-    type: property
+      Usage: Requires Custom Script to be allowed in order for this component to
+      be installed and run.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'requiresCustomScript?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#safeWithCustomScriptDisabled:member'
-    summary: This property is provided for backwards compatibility. It no longer has any effect.
-    deprecated:
-      content: Use requiresCustomScript instead of safeWithCustomScriptDisabled.
-    name: safeWithCustomScriptDisabled
+        type: boolean
+  - name: safeWithCustomScriptDisabled
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentManifest#safeWithCustomScriptDisabled:member
+    package: '@microsoft/sp-module-interfaces!'
     fullName: safeWithCustomScriptDisabled
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      This property is provided for backwards compatibility. It no longer has
+      any effect.
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: Use requiresCustomScript instead of safeWithCustomScriptDisabled.
     syntax:
       content: 'safeWithCustomScriptDisabled?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest#version:member'
+        type: boolean
+  - name: version
+    uid: >-
+      @microsoft/sp-module-interfaces!IClientSideComponentManifest#version:member
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: version
     summary: >-
-      Client-side component version. The value of this field is expected to be controlled by the developer of the
-      client-side component.
+      Client-side component version. The value of this field is expected to be
+      controlled by the developer of the client-side component.
     remarks: >-
-      The purpose of this field is to help client-side component developers upgrade their client-side components in a
-      managed way. This helps the consumers of the client-side component make decisions about when and how to upgrade
-      the client-side component. As the developer evolves the code for their client-side component, they can decide to
-      bump the MAJOR, MINOR or PATCH version of the component.
+      The purpose of this field is to help client-side component developers
+      upgrade their client-side components in a managed way. This helps the
+      consumers of the client-side component make decisions about when and how
+      to upgrade the client-side component. As the developer evolves the code
+      for their client-side component, they can decide to bump the MAJOR, MINOR
+      or PATCH version of the component.
 
 
-      All incompatible API changes should result in a MAJOR version bump. Backwards compatible functionality changes
-      should result in a MINOR version bump, and backwards compatible bug fixes should result in a PATCH version bump.
-      Please see [http://semver.org](http://semver.org) for more details on how to manage the version of your
-      components.
+      All incompatible API changes should result in a MAJOR version bump.
+      Backwards compatible functionality changes should result in a MINOR
+      version bump, and backwards compatible bug fixes should result in a PATCH
+      version bump. Please see [http://semver.org](http://semver.org) for more
+      details on how to manage the version of your components.
 
 
-      Usage: Versioning and evolving a client-side component safely in a controlled way.
+      Usage: Versioning and evolving a client-side component safely in a
+      controlled way.
 
 
-      Supported values: string representing a [semantic version](http://semver.org) i.e. MAJOR.MINOR.PATCH
+      Supported values: string representing a [semantic
+      version](http://semver.org) i.e. MAJOR.MINOR.PATCH
 
 
       Example: `"1.0.0"`
-    name: version
-    fullName: version
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'version: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
-    name: IClientSideManifestBase
-  - uid: '@microsoft/sp-module-interfaces!ComponentType:type'
-    name: ComponentType
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
-    name: IClientSideComponentLoaderConfiguration
+        type: string
+extends: >-
+  <xref uid="@microsoft/sp-module-interfaces!IClientSideManifestBase:interface"
+  />

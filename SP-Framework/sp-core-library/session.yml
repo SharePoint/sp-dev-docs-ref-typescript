@@ -1,60 +1,64 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!Session:class'
-    summary: Provides access to the application's browser session and active page.
-    name: Session
-    fullName: Session
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: Session
+uid: '@microsoft/sp-core-library!Session:class'
+package: '@microsoft/sp-core-library!'
+fullName: Session
+summary: Provides access to the application's browser session and active page.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: applicationId
+    uid: '@microsoft/sp-core-library!Session.applicationId:member'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!Session.applicationId:member'
-      - '@microsoft/sp-core-library!Session.pageId:member'
-  - uid: '@microsoft/sp-core-library!Session.applicationId:member'
-    summary: A unique identifier for the current instance of the client-side application.
-    remarks: >-
-      A unique identifier used to correlate logging and other diagnostic information. Its lifetime persists for the
-      duration of the client-side application instance, i.e. it begins with the server request that renders the page,
-      and ends e.g. when the browser tab is closed or F5 is pressed to reload the page. Note that if the application's
-      router supports in-place navigation (via the history.pushState() API), the application session persists across
-      these transitions.
-    name: applicationId
     fullName: applicationId
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      A unique identifier for the current instance of the client-side
+      application.
+    remarks: >-
+      A unique identifier used to correlate logging and other diagnostic
+      information. Its lifetime persists for the duration of the client-side
+      application instance, i.e. it begins with the server request that renders
+      the page, and ends e.g. when the browser tab is closed or F5 is pressed to
+      reload the page. Note that if the application's router supports in-place
+      navigation (via the history.pushState() API), the application session
+      persists across these transitions.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly applicationId: Guid;'
       return:
-        type:
-          - '@microsoft/sp-core-library!default:class'
-  - uid: '@microsoft/sp-core-library!Session.pageId:member'
-    summary: A unique identifier for the current page within the client-side application.
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+  - name: pageId
+    uid: '@microsoft/sp-core-library!Session.pageId:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: pageId
+    summary: >-
+      A unique identifier for the current page within the client-side
+      application.
     remarks: >-
-      A unique identifier used to correlate logging and other diagnostic information. Whereas the
-      [Session.applicationId](xref:@microsoft/sp-core-library!Session.applicationId:member) tracks the entire lifetime
-      of the client-side application instance, the pageId tracks an individual "page" that is rendered.
+      A unique identifier used to correlate logging and other diagnostic
+      information. Whereas the
+      [Session.applicationId](xref:@microsoft/sp-core-library!Session.applicationId:member)
+      tracks the entire lifetime of the client-side application instance, the
+      pageId tracks an individual "page" that is rendered.
 
 
-      For example, suppose that the application initially loads PageA, then the user does in-place navigation (via the
-      history.pushState() API) to PageB, then navigates back to PageA, and finally they close the browser tab. During
-      this sequence, the applicationId will remain the same, however the pageId will change on each navigation. The 3
-      different pageId values are used by the diagnostics e.g. to track success/failure statistics for PageA
+      For example, suppose that the application initially loads PageA, then the
+      user does in-place navigation (via the history.pushState() API) to PageB,
+      then navigates back to PageA, and finally they close the browser tab.
+      During this sequence, the applicationId will remain the same, however the
+      pageId will change on each navigation. The 3 different pageId values are
+      used by the diagnostics e.g. to track success/failure statistics for PageA
       independently of PageB.
 
 
-      The concept of a page is subjective and defined by the router for a particular application.
-    name: pageId
-    fullName: pageId
-    langs:
-      - typeScript
-    type: property
+      The concept of a page is subjective and defined by the router for a
+      particular application.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static readonly pageId: Guid;'
       return:
-        type:
-          - '@microsoft/sp-core-library!default:class'
-references:
-  - uid: '@microsoft/sp-core-library!default:class'
-    name: Guid
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />'

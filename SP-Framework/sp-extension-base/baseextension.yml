@@ -1,80 +1,69 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-extension-base!BaseExtension:class'
-    summary: The base class for all client-side extensions.
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `BaseExtension` class.
-    name: BaseExtension
-    fullName: BaseExtension
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-component-base!BaseComponent:class'
-    inheritance:
-      - type: '@microsoft/sp-component-base!BaseComponent:class'
+### YamlMime:TSType
+name: BaseExtension
+uid: '@microsoft/sp-extension-base!BaseExtension:class'
+package: '@microsoft/sp-extension-base!'
+fullName: BaseExtension
+summary: The base class for all client-side extensions.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `BaseExtension` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: context
+    uid: '@microsoft/sp-extension-base!BaseExtension#context:member'
     package: '@microsoft/sp-extension-base!'
-    children:
-      - '@microsoft/sp-extension-base!BaseExtension#context:member'
-      - '@microsoft/sp-extension-base!BaseExtension#onInit:member(1)'
-      - '@microsoft/sp-extension-base!BaseExtension#properties:member'
-  - uid: '@microsoft/sp-extension-base!BaseExtension#context:member'
-    summary: Use the context object to access common services and state associated with the component.
-    remarks: >-
-      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
-      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
-      the constructor), but child classes should redeclare it as readonly.
-    name: context
     fullName: context
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Use the context object to access common services and state associated with
+      the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a
+      specialized type. It is meant to be a read-only property; the type cannot
+      be declared as read-only in the base class (because it is initialized
+      outside the constructor), but child classes should redeclare it as
+      readonly.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected readonly context: ExtensionContext;'
       return:
-        type:
-          - '@microsoft/sp-extension-base!default:class'
-  - uid: '@microsoft/sp-extension-base!BaseExtension#onInit:member(1)'
-    summary: This event method is called when the client-side extension is first activated on the page.
-    name: onInit()
-    fullName: onInit()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'protected onInit(): Promise<void>;'
-      return:
-        type:
-          - '@microsoft/sp-extension-base!BaseExtension#onInit~0:complex'
-        description: ''
-  - uid: '@microsoft/sp-extension-base!BaseExtension#properties:member'
-    summary: Extension properties is a JavaScript object that are passed in by the application that initializes the extension.
-    remarks: >-
-      Properties can be used in the extension code to define configurable behaviors. The application has control over
-      what properties to provide to an instance of the extension, however the most common way would be to have it stored
-      on the server as JSON and pass it as is to the extension on initialization.
-    name: properties
+        type: '<xref uid="@microsoft/sp-extension-base!default:class" />'
+  - name: properties
+    uid: '@microsoft/sp-extension-base!BaseExtension#properties:member'
+    package: '@microsoft/sp-extension-base!'
     fullName: properties
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Extension properties is a JavaScript object that are passed in by the
+      application that initializes the extension.
+    remarks: >-
+      Properties can be used in the extension code to define configurable
+      behaviors. The application has control over what properties to provide to
+      an instance of the extension, however the most common way would be to have
+      it stored on the server as JSON and pass it as is to the extension on
+      initialization.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected readonly properties: TProperties;'
       return:
-        type:
-          - TProperties
-references:
-  - uid: '@microsoft/sp-component-base!BaseComponent:class'
-    name: BaseComponent
-  - uid: '@microsoft/sp-extension-base!default:class'
-    name: ExtensionContext
-  - uid: '@microsoft/sp-extension-base!BaseExtension#onInit~0:complex'
-    name: Promise<void>
-    fullName: Promise<void>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <void>
-        fullName: <void>
+        type: TProperties
+methods:
+  - name: onInit()
+    uid: '@microsoft/sp-extension-base!BaseExtension#onInit:member(1)'
+    package: '@microsoft/sp-extension-base!'
+    fullName: onInit()
+    summary: >-
+      This event method is called when the client-side extension is first
+      activated on the page.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected onInit(): Promise<void>;'
+      return:
+        type: '<xref uid="!Promise:class" />&lt;void&gt;'
+        description: ''
+extends: '<xref uid="@microsoft/sp-component-base!BaseComponent:class" />'

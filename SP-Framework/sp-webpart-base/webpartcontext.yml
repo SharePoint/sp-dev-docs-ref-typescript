@@ -1,88 +1,70 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!WebPartContext:class'
-    summary: >-
-      Web part context object. This object contains the contextual services available to a web part. e.g. a contextual
-      instance to the http client.
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `WebPartContext` class.
-    name: WebPartContext
-    fullName: WebPartContext
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-webpart-base!default:class'
-    inheritance:
-      - type: '@microsoft/sp-webpart-base!default:class'
+### YamlMime:TSType
+name: WebPartContext
+uid: '@microsoft/sp-webpart-base!WebPartContext:class'
+package: '@microsoft/sp-webpart-base!'
+fullName: WebPartContext
+summary: >-
+  Web part context object. This object contains the contextual services
+  available to a web part. e.g. a contextual instance to the http client.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should
+  not call the constructor directly or create subclasses that extend the
+  `WebPartContext` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: domElement
+    uid: '@microsoft/sp-webpart-base!WebPartContext#domElement:member'
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!WebPartContext#domElement:member'
-      - '@microsoft/sp-webpart-base!WebPartContext#microsoftTeams:member'
-      - '@microsoft/sp-webpart-base!WebPartContext#sdks:member'
-      - '@microsoft/sp-webpart-base!WebPartContext#statusRenderer:member'
-  - uid: '@microsoft/sp-webpart-base!WebPartContext#domElement:member'
-    summary: Reference to the DOM element that hosts this client-side component.
-    name: domElement
     fullName: domElement
-    langs:
-      - typeScript
-    type: property
+    summary: Reference to the DOM element that hosts this client-side component.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly domElement: HTMLElement;'
       return:
-        type:
-          - '!HTMLElement:interface'
-  - uid: '@microsoft/sp-webpart-base!WebPartContext#microsoftTeams:member'
+        type: '<xref uid="!HTMLElement:interface" />'
+  - name: microsoftTeams
+    uid: '@microsoft/sp-webpart-base!WebPartContext#microsoftTeams:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: microsoftTeams
     summary: >-
-      Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
-      being hosted in Microsoft Teams.
+      Contextual information about the current Microsoft Teams tab. This object
+      will only be defined if a component is being hosted in Microsoft Teams.
     remarks: >-
       For more information, please see:
       [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
-    deprecated:
-      content: '- This function has been deprecated'
-    name: microsoftTeams
-    fullName: microsoftTeams
-    langs:
-      - typeScript
-    type: property
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: '- This function has been deprecated'
     syntax:
       content: 'readonly microsoftTeams: typeof microsoftTeams | undefined;'
       return:
-        type:
-          - typeof microsoftTeams | undefined
-  - uid: '@microsoft/sp-webpart-base!WebPartContext#sdks:member'
-    summary: Conditional set of SDKs provided by SPFx dependent on the environment.
-    name: sdks
+        type: typeof microsoftTeams | undefined
+  - name: sdks
+    uid: '@microsoft/sp-webpart-base!WebPartContext#sdks:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: sdks
-    langs:
-      - typeScript
-    type: property
+    summary: Conditional set of SDKs provided by SPFx dependent on the environment.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly sdks: ISDKs;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!ISDKs:interface'
-  - uid: '@microsoft/sp-webpart-base!WebPartContext#statusRenderer:member'
-    summary: Web part status renderer.
-    name: statusRenderer
+        type: '<xref uid="@microsoft/sp-webpart-base!ISDKs:interface" />'
+  - name: statusRenderer
+    uid: '@microsoft/sp-webpart-base!WebPartContext#statusRenderer:member'
+    package: '@microsoft/sp-webpart-base!'
     fullName: statusRenderer
-    langs:
-      - typeScript
-    type: property
+    summary: Web part status renderer.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly statusRenderer: IClientSideWebPartStatusRenderer;'
       return:
-        type:
-          - '@microsoft/sp-webpart-base!default:interface'
-references:
-  - uid: '@microsoft/sp-webpart-base!default:class'
-    name: BaseWebPartContext
-  - uid: '!HTMLElement:interface'
-    name: HTMLElement
-  - uid: '@microsoft/sp-webpart-base!ISDKs:interface'
-    name: ISDKs
-  - uid: '@microsoft/sp-webpart-base!default:interface'
-    name: IClientSideWebPartStatusRenderer
+        type: '<xref uid="@microsoft/sp-webpart-base!default:interface" />'
+extends: '<xref uid="@microsoft/sp-webpart-base!default:class" />'

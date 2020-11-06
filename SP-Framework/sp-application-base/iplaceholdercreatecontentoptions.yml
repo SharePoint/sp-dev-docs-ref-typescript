@@ -1,43 +1,35 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface'
-    summary: >-
-      Options for the
-      [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1))
-      method.
-    name: IPlaceholderCreateContentOptions
-    fullName: IPlaceholderCreateContentOptions
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IPlaceholderCreateContentOptions
+uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface'
+package: '@microsoft/sp-application-base!'
+fullName: IPlaceholderCreateContentOptions
+summary: >-
+  Options for the
+  [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1))
+  method.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: onDispose
+    uid: >-
+      @microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member
     package: '@microsoft/sp-application-base!'
-    children:
-      - '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member'
-  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose:member'
-    summary: An optional callback that will be invoked when the PlaceholderContent object is disposed.
-    remarks: >-
-      To avoid a resource leak, use this callback to free any resources that were allocated when the placeholder content
-      was rendered. For example, if ReactDOM.render() was used to mount a React component, then the onDispose handler
-      might call ReactDOM.unmountComponentAtNode() to unmount it.
-    name: onDispose
     fullName: onDispose
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      An optional callback that will be invoked when the PlaceholderContent
+      object is disposed.
+    remarks: >-
+      To avoid a resource leak, use this callback to free any resources that
+      were allocated when the placeholder content was rendered. For example, if
+      ReactDOM.render() was used to mount a React component, then the onDispose
+      handler might call ReactDOM.unmountComponentAtNode() to unmount it.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'onDispose?: (placeholderContent: PlaceholderContent) => void;'
       return:
-        type:
-          - '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose~0:complex'
-references:
-  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions#onDispose~0:complex'
-    name: '(placeholderContent: PlaceholderContent) => void'
-    fullName: '(placeholderContent: default) => void'
-    spec.typeScript:
-      - name: '(placeholderContent: '
-        fullName: '(placeholderContent: '
-      - uid: '@microsoft/sp-application-base!default:class'
-        name: PlaceholderContent
-        fullName: default
-      - name: ) => void
-        fullName: ) => void
+        type: >-
+          (placeholderContent: <xref
+          uid="@microsoft/sp-application-base!default:class" />) =&gt; void

@@ -1,655 +1,574 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!GraphRequest:interface'
-    summary: >-
-      Typings for the GraphRequest Object For more information:
-      [https://github.com/microsoftgraph/msgraph-sdk-javascript](https://github.com/microsoftgraph/msgraph-sdk-javascript)
-    name: GraphRequest
-    fullName: GraphRequest
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: GraphRequest
+uid: '@microsoft/sp-http!GraphRequest:interface'
+package: '@microsoft/sp-http!'
+fullName: GraphRequest
+summary: >-
+  Typings for the GraphRequest Object For more information:
+  [https://github.com/microsoftgraph/msgraph-sdk-javascript](https://github.com/microsoftgraph/msgraph-sdk-javascript)
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: _headers
+    uid: '@microsoft/sp-http!GraphRequest#_headers:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!GraphRequest#_headers:member'
-      - '@microsoft/sp-http!GraphRequest#_responseType:member'
-      - '@microsoft/sp-http!GraphRequest#buildFullUrl:member(1)'
-      - '@microsoft/sp-http!GraphRequest#config:member'
-      - '@microsoft/sp-http!GraphRequest#constructor:member(1)'
-      - '@microsoft/sp-http!GraphRequest#count:member(1)'
-      - '@microsoft/sp-http!GraphRequest#create:member(1)'
-      - '@microsoft/sp-http!GraphRequest#del:member(1)'
-      - '@microsoft/sp-http!GraphRequest#delete:member(1)'
-      - '@microsoft/sp-http!GraphRequest#expand:member(1)'
-      - '@microsoft/sp-http!GraphRequest#filter:member(1)'
-      - '@microsoft/sp-http!GraphRequest#get:member(1)'
-      - '@microsoft/sp-http!GraphRequest#getStream:member(1)'
-      - '@microsoft/sp-http!GraphRequest#header:member(1)'
-      - '@microsoft/sp-http!GraphRequest#headers:member(1)'
-      - '@microsoft/sp-http!GraphRequest#orderby:member(1)'
-      - '@microsoft/sp-http!GraphRequest#parsePath:member(1)'
-      - '@microsoft/sp-http!GraphRequest#patch:member(1)'
-      - '@microsoft/sp-http!GraphRequest#post:member(1)'
-      - '@microsoft/sp-http!GraphRequest#put:member(1)'
-      - '@microsoft/sp-http!GraphRequest#putStream:member(1)'
-      - '@microsoft/sp-http!GraphRequest#query:member(1)'
-      - '@microsoft/sp-http!GraphRequest#responseType:member(1)'
-      - '@microsoft/sp-http!GraphRequest#select:member(1)'
-      - '@microsoft/sp-http!GraphRequest#skip:member(1)'
-      - '@microsoft/sp-http!GraphRequest#skipToken:member(1)'
-      - '@microsoft/sp-http!GraphRequest#top:member(1)'
-      - '@microsoft/sp-http!GraphRequest#update:member(1)'
-      - '@microsoft/sp-http!GraphRequest#urlComponents:member'
-      - '@microsoft/sp-http!GraphRequest#version:member(1)'
-  - uid: '@microsoft/sp-http!GraphRequest#_headers:member'
-    name: _headers
     fullName: _headers
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         _headers: {
                 [key: string]: string | number;
             };
       return:
-        type:
-          - |-
-            {
-                    [key: string]: string | number;
-                }
-  - uid: '@microsoft/sp-http!GraphRequest#_responseType:member'
-    name: _responseType
+        type: |-
+          {
+                  [key: string]: string | number;
+              }
+  - name: _responseType
+    uid: '@microsoft/sp-http!GraphRequest#_responseType:member'
+    package: '@microsoft/sp-http!'
     fullName: _responseType
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: '_responseType: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!GraphRequest#buildFullUrl:member(1)'
-    name: buildFullUrl()
-    fullName: buildFullUrl()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'buildFullUrl(): string;'
-      return:
-        type:
-          - string
-        description: ''
-  - uid: '@microsoft/sp-http!GraphRequest#config:member'
-    name: config
+        type: string
+  - name: config
+    uid: '@microsoft/sp-http!GraphRequest#config:member'
+    package: '@microsoft/sp-http!'
     fullName: config
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'config: Options;'
       return:
-        type:
-          - '@microsoft/microsoft-graph-client!Options:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#constructor:member(1)'
-    name: 'constructor(config, path)'
+        type: '<xref uid="@microsoft/microsoft-graph-client!Options:interface" />'
+  - name: urlComponents
+    uid: '@microsoft/sp-http!GraphRequest#urlComponents:member'
+    package: '@microsoft/sp-http!'
+    fullName: urlComponents
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'urlComponents: URLComponents;'
+      return:
+        type: >-
+          <xref uid="@microsoft/microsoft-graph-client!URLComponents:interface"
+          />
+methods:
+  - name: buildFullUrl()
+    uid: '@microsoft/sp-http!GraphRequest#buildFullUrl:member(1)'
+    package: '@microsoft/sp-http!'
+    fullName: buildFullUrl()
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'buildFullUrl(): string;'
+      return:
+        type: string
+        description: ''
+  - name: 'constructor(config, path)'
+    uid: '@microsoft/sp-http!GraphRequest#constructor:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'constructor(config, path)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'constructor(config: Options, path: string): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: config
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!Options:interface'
+          type: '<xref uid="@microsoft/microsoft-graph-client!Options:interface" />'
         - id: path
           description: ''
-          type:
-            - string
-  - uid: '@microsoft/sp-http!GraphRequest#count:member(1)'
-    name: count(count)
+          type: string
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: count(count)
+    uid: '@microsoft/sp-http!GraphRequest#count:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: count(count)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'count(count: boolean): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: count
           description: ''
-          type:
-            - boolean
-  - uid: '@microsoft/sp-http!GraphRequest#create:member(1)'
-    name: 'create(content, callback)'
+          type: boolean
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: 'create(content, callback)'
+    uid: '@microsoft/sp-http!GraphRequest#create:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'create(content, callback)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'create(content: any, callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#create~0:complex'
-        description: ''
       parameters:
         - id: content
           description: ''
-          type:
-            - any
+          type: any
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#del:member(1)'
-    name: del(callback)
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: del(callback)
+    uid: '@microsoft/sp-http!GraphRequest#del:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: del(callback)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'del(callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#del~0:complex'
-        description: ''
       parameters:
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#delete:member(1)'
-    name: delete(callback)
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: delete(callback)
+    uid: '@microsoft/sp-http!GraphRequest#delete:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: delete(callback)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'delete(callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#delete~0:complex'
-        description: ''
       parameters:
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#expand:member(1)'
-    name: expand(properties)
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: expand(properties)
+    uid: '@microsoft/sp-http!GraphRequest#expand:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: expand(properties)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'expand(properties: string | string[]): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: properties
           description: ''
-          type:
-            - 'string | string[]'
-  - uid: '@microsoft/sp-http!GraphRequest#filter:member(1)'
-    name: filter(filterStr)
+          type: 'string | string[]'
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: filter(filterStr)
+    uid: '@microsoft/sp-http!GraphRequest#filter:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: filter(filterStr)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'filter(filterStr: string): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: filterStr
           description: ''
-          type:
-            - string
-  - uid: '@microsoft/sp-http!GraphRequest#get:member(1)'
-    name: get(callback)
+          type: string
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: get(callback)
+    uid: '@microsoft/sp-http!GraphRequest#get:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: get(callback)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'get(callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#get~0:complex'
-        description: ''
       parameters:
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#getStream:member(1)'
-    name: getStream(callback)
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: getStream(callback)
+    uid: '@microsoft/sp-http!GraphRequest#getStream:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: getStream(callback)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'getStream(callback: GraphRequestCallback): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#header:member(1)'
-    name: 'header(headerKey, headerValue)'
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: void
+        description: ''
+  - name: 'header(headerKey, headerValue)'
+    uid: '@microsoft/sp-http!GraphRequest#header:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'header(headerKey, headerValue)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'header(headerKey: string, headerValue: string): this;'
-      return:
-        type:
-          - this
-        description: ''
       parameters:
         - id: headerKey
           description: ''
-          type:
-            - string
+          type: string
         - id: headerValue
           description: ''
-          type:
-            - string
-  - uid: '@microsoft/sp-http!GraphRequest#headers:member(1)'
-    name: headers(headers)
+          type: string
+      return:
+        type: this
+        description: ''
+  - name: headers(headers)
+    uid: '@microsoft/sp-http!GraphRequest#headers:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: headers(headers)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         headers(headers: {
                 [key: string]: string | number;
             }): this;
-      return:
-        type:
-          - this
-        description: ''
       parameters:
         - id: headers
           description: ''
-          type:
-            - |-
-              {
-                      [key: string]: string | number;
-                  }
-  - uid: '@microsoft/sp-http!GraphRequest#orderby:member(1)'
-    name: orderby(properties)
+          type: |-
+            {
+                    [key: string]: string | number;
+                }
+      return:
+        type: this
+        description: ''
+  - name: orderby(properties)
+    uid: '@microsoft/sp-http!GraphRequest#orderby:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: orderby(properties)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'orderby(properties: string | string[]): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: properties
           description: ''
-          type:
-            - 'string | string[]'
-  - uid: '@microsoft/sp-http!GraphRequest#parsePath:member(1)'
-    name: parsePath(rawPath)
+          type: 'string | string[]'
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: parsePath(rawPath)
+    uid: '@microsoft/sp-http!GraphRequest#parsePath:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: parsePath(rawPath)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'parsePath(rawPath: string): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: rawPath
           description: ''
-          type:
-            - string
-  - uid: '@microsoft/sp-http!GraphRequest#patch:member(1)'
-    name: 'patch(content, callback)'
+          type: string
+      return:
+        type: void
+        description: ''
+  - name: 'patch(content, callback)'
+    uid: '@microsoft/sp-http!GraphRequest#patch:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'patch(content, callback)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'patch(content: any, callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#patch~0:complex'
-        description: ''
       parameters:
         - id: content
           description: ''
-          type:
-            - any
+          type: any
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#post:member(1)'
-    name: 'post(content, callback)'
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: 'post(content, callback)'
+    uid: '@microsoft/sp-http!GraphRequest#post:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'post(content, callback)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'post(content: any, callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#post~0:complex'
-        description: ''
       parameters:
         - id: content
           description: ''
-          type:
-            - any
+          type: any
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#put:member(1)'
-    name: 'put(content, callback)'
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: 'put(content, callback)'
+    uid: '@microsoft/sp-http!GraphRequest#put:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'put(content, callback)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'put(content: any, callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#put~0:complex'
-        description: ''
       parameters:
         - id: content
           description: ''
-          type:
-            - any
+          type: any
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#putStream:member(1)'
-    name: 'putStream(stream, callback)'
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: 'putStream(stream, callback)'
+    uid: '@microsoft/sp-http!GraphRequest#putStream:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'putStream(stream, callback)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'putStream(stream: any, callback: GraphRequestCallback): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: stream
           description: ''
-          type:
-            - any
+          type: any
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#query:member(1)'
-    name: query(queryDictionaryOrString)
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
+      return:
+        type: void
+        description: ''
+  - name: query(queryDictionaryOrString)
+    uid: '@microsoft/sp-http!GraphRequest#query:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: query(queryDictionaryOrString)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         query(queryDictionaryOrString: string | {
                 [key: string]: string | number;
             }): IGraphRequest;
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: queryDictionaryOrString
           description: ''
-          type:
-            - |-
-              string | {
-                      [key: string]: string | number;
-                  }
-  - uid: '@microsoft/sp-http!GraphRequest#responseType:member(1)'
-    name: responseType(responseType)
+          type: |-
+            string | {
+                    [key: string]: string | number;
+                }
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: responseType(responseType)
+    uid: '@microsoft/sp-http!GraphRequest#responseType:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: responseType(responseType)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'responseType(responseType: string): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: responseType
           description: ''
-          type:
-            - string
-  - uid: '@microsoft/sp-http!GraphRequest#select:member(1)'
-    name: select(properties)
+          type: string
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: select(properties)
+    uid: '@microsoft/sp-http!GraphRequest#select:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: select(properties)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'select(properties: string | string[]): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: properties
           description: ''
-          type:
-            - 'string | string[]'
-  - uid: '@microsoft/sp-http!GraphRequest#skip:member(1)'
-    name: skip(n)
+          type: 'string | string[]'
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: skip(n)
+    uid: '@microsoft/sp-http!GraphRequest#skip:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: skip(n)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'skip(n: number): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: 'n'
           description: ''
-          type:
-            - number
-  - uid: '@microsoft/sp-http!GraphRequest#skipToken:member(1)'
-    name: skipToken(token)
+          type: number
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: skipToken(token)
+    uid: '@microsoft/sp-http!GraphRequest#skipToken:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: skipToken(token)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'skipToken(token: string): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: token
           description: ''
-          type:
-            - string
-  - uid: '@microsoft/sp-http!GraphRequest#top:member(1)'
-    name: top(n)
+          type: string
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: top(n)
+    uid: '@microsoft/sp-http!GraphRequest#top:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: top(n)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'top(n: number): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: 'n'
           description: ''
-          type:
-            - number
-  - uid: '@microsoft/sp-http!GraphRequest#update:member(1)'
-    name: 'update(content, callback)'
+          type: number
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''
+  - name: 'update(content, callback)'
+    uid: '@microsoft/sp-http!GraphRequest#update:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: 'update(content, callback)'
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'update(content: any, callback?: GraphRequestCallback): Promise<any>;'
-      return:
-        type:
-          - '@microsoft/sp-http!GraphRequest#update~0:complex'
-        description: ''
       parameters:
         - id: content
           description: ''
-          type:
-            - any
+          type: any
         - id: callback
           description: ''
-          type:
-            - '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#urlComponents:member'
-    name: urlComponents
-    fullName: urlComponents
-    langs:
-      - typeScript
-    type: property
-    syntax:
-      content: 'urlComponents: URLComponents;'
+          type: >-
+            <xref
+            uid="@microsoft/microsoft-graph-client!GraphRequestCallback:interface"
+            />
       return:
-        type:
-          - '@microsoft/microsoft-graph-client!URLComponents:interface'
-  - uid: '@microsoft/sp-http!GraphRequest#version:member(1)'
-    name: version(v)
+        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        description: ''
+  - name: version(v)
+    uid: '@microsoft/sp-http!GraphRequest#version:member(1)'
+    package: '@microsoft/sp-http!'
     fullName: version(v)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'version(v: string): IGraphRequest;'
-      return:
-        type:
-          - '@microsoft/sp-http!IGraphRequest:interface'
-        description: ''
       parameters:
         - id: v
           description: ''
-          type:
-            - string
-references:
-  - uid: '@microsoft/microsoft-graph-client!Options:interface'
-    name: Options
-  - uid: '@microsoft/sp-http!IGraphRequest:interface'
-    name: IGraphRequest
-  - uid: '@microsoft/sp-http!GraphRequest#create~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/microsoft-graph-client!GraphRequestCallback:interface'
-    name: GraphRequestCallback
-  - uid: '@microsoft/sp-http!GraphRequest#del~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-http!GraphRequest#delete~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-http!GraphRequest#get~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-http!GraphRequest#patch~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-http!GraphRequest#post~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-http!GraphRequest#put~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/sp-http!GraphRequest#update~0:complex'
-    name: Promise<any>
-    fullName: Promise<any>
-    spec.typeScript:
-      - uid: '!Promise:class'
-        name: Promise
-        fullName: Promise
-      - name: <any>
-        fullName: <any>
-  - uid: '@microsoft/microsoft-graph-client!URLComponents:interface'
-    name: URLComponents
+          type: string
+      return:
+        type: '<xref uid="@microsoft/sp-http!IGraphRequest:interface" />'
+        description: ''

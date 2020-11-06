@@ -1,96 +1,83 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer:class'
-    summary: >-
-      This is the base class that third parties should extend when implementing a client-side extension that customizes
-      the appearance of fields in a SharePoint ListView.
+### YamlMime:TSType
+name: BaseFieldCustomizer
+uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: BaseFieldCustomizer
+summary: >-
+  This is the base class that third parties should extend when implementing a
+  client-side extension that customizes the appearance of fields in a SharePoint
+  ListView.
 
 
-      In the component manifest, the "extensionType" should be set to "FieldCustomizer".
-    name: BaseFieldCustomizer
-    fullName: BaseFieldCustomizer
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~0:complex'
-    inheritance:
-      - type: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~1:complex'
+  In the component manifest, the "extensionType" should be set to
+  "FieldCustomizer".
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: context
+    uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#context:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#context:member'
-      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onDisposeCell:member(1)'
-      - '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onRenderCell:member(1)'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#context:member'
-    summary: Use the context object to access common services and state associated with the component.
-    remarks: >-
-      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
-      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
-      the constructor), but child classes should redeclare it as readonly.
-    name: context
     fullName: context
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      Use the context object to access common services and state associated with
+      the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a
+      specialized type. It is meant to be a read-only property; the type cannot
+      be declared as read-only in the base class (because it is initialized
+      outside the constructor), but child classes should redeclare it as
+      readonly.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected readonly context: FieldCustomizerContext;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!default:class'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onDisposeCell:member(1)'
-    name: onDisposeCell(event)
+        type: '<xref uid="@microsoft/sp-listview-extensibility!default:class" />'
+methods:
+  - name: onDisposeCell(event)
+    uid: >-
+      @microsoft/sp-listview-extensibility!BaseFieldCustomizer#onDisposeCell:member(1)
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: onDisposeCell(event)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'onDisposeCell(event: IFieldCustomizerCellEventParameters): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: event
           description: ''
-          type:
-            - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer#onRenderCell:member(1)'
-    name: onRenderCell(event)
+          type: >-
+            <xref
+            uid="@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface"
+            />
+      return:
+        type: void
+        description: ''
+  - name: onRenderCell(event)
+    uid: >-
+      @microsoft/sp-listview-extensibility!BaseFieldCustomizer#onRenderCell:member(1)
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: onRenderCell(event)
-    langs:
-      - typeScript
-    type: method
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'onRenderCell(event: IFieldCustomizerCellEventParameters): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: event
           description: ''
-          type:
-            - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
-references:
-  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~0:complex'
-    name: BaseExtension<TProperties>
-    fullName: BaseExtension<TProperties>
-    spec.typeScript:
-      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
-        name: BaseExtension
-        fullName: BaseExtension
-      - name: '<TProperties> '
-        fullName: '<TProperties> '
-  - uid: '@microsoft/sp-listview-extensibility!BaseFieldCustomizer~1:complex'
-    name: BaseExtension<TProperties>
-    fullName: BaseExtension<TProperties>
-    spec.typeScript:
-      - uid: '@microsoft/sp-extension-base!BaseExtension:class'
-        name: BaseExtension
-        fullName: BaseExtension
-      - name: '<TProperties> '
-        fullName: '<TProperties> '
-  - uid: '@microsoft/sp-listview-extensibility!default:class'
-    name: FieldCustomizerContext
-  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
-    name: IFieldCustomizerCellEventParameters
+          type: >-
+            <xref
+            uid="@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface"
+            />
+      return:
+        type: void
+        description: ''
+extends: >-
+  <xref uid="@microsoft/sp-extension-base!BaseExtension:class"
+  />&lt;TProperties&gt; 

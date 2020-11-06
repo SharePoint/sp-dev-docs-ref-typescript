@@ -1,81 +1,82 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyValueMetadataCollection:interface'
-    summary: >-
-      A collection of key value pairs, where 'key' is one of the keys from the property value object and 'value' is the
-      metadata describing the 'key' and its value.
-    remarks: >-
-      Important note:
+### YamlMime:TSType
+name: IDynamicDataPropertyValueMetadataCollection
+uid: >-
+  @microsoft/sp-dynamic-data!IDynamicDataPropertyValueMetadataCollection:interface
+package: '@microsoft/sp-dynamic-data!'
+fullName: IDynamicDataPropertyValueMetadataCollection
+summary: >-
+  A collection of key value pairs, where 'key' is one of the keys from the
+  property value object and 'value' is the metadata describing the 'key' and its
+  value.
+remarks: >-
+  Important note:
 
 
-      1. Key in the metadata should match the key in the sample value object.
+  1. Key in the metadata should match the key in the sample value object.
 
 
-      2. For arrays, metadataCollection would be same as describing the element of the array, only once. See below
-      example for more details.
+  2. For arrays, metadataCollection would be same as describing the element of
+  the array, only once. See below example for more details.
 
 
-      For example:
+  For example:
 
 
-      ```
+  ```
 
-      case 1: With simple values
-       Sample Property Id value - {
-         firstName: 'Bob',
-         lastName: 'Smith',
-         age: 30
+  case 1: With simple values
+   Sample Property Id value - {
+     firstName: 'Bob',
+     lastName: 'Smith',
+     age: 30
+   }
+
+   MetadataCollection for the above object would be -
+   metadataCollection: {
+     'firstName': { title: 'First Name' },
+     'lastName': { title: 'Last Name' },
+     'age': { title: 'Age' }
+   }
+
+  Case 2: With complex values
+   Sample Property Id value - {
+     person: {
+       firstName: 'Bob',
+       lastName: 'Smith',
+       age: 30
+     },
+     visitedLocations: [
+       {
+         city: 'Redmond',
+         state: 'WA'
+       },
+       {
+         city: 'New York City',
+         state: 'NY'
        }
+     ]
+   }
 
-       MetadataCollection for the above object would be -
+   MetadataCollection for the above object would be -
+   metadataCollection: {
+     'person': {
+       title: 'Person',
        metadataCollection: {
          'firstName': { title: 'First Name' },
          'lastName': { title: 'Last Name' },
          'age': { title: 'Age' }
        }
-
-      Case 2: With complex values
-       Sample Property Id value - {
-         person: {
-           firstName: 'Bob',
-           lastName: 'Smith',
-           age: 30
-         },
-         visitedLocations: [
-           {
-             city: 'Redmond',
-             state: 'WA'
-           },
-           {
-             city: 'New York City',
-             state: 'NY'
-           }
-         ]
-       }
-
-       MetadataCollection for the above object would be -
+     },
+     'vistedLocations': {
+       title: 'Visted Locations',
        metadataCollection: {
-         'person': {
-           title: 'Person',
-           metadataCollection: {
-             'firstName': { title: 'First Name' },
-             'lastName': { title: 'Last Name' },
-             'age': { title: 'Age' }
-           }
-         },
-         'vistedLocations': {
-           title: 'Visted Locations',
-           metadataCollection: {
-             'city': { title: 'City' },
-             'state': { title: 'State' }
-           }
-         }
+         'city': { title: 'City' },
+         'state': { title: 'State' }
        }
+     }
+   }
 
-      ```
-    name: IDynamicDataPropertyValueMetadataCollection
-    fullName: IDynamicDataPropertyValueMetadataCollection
-    langs:
-      - typeScript
-    type: interface
-    package: '@microsoft/sp-dynamic-data!'
+  ```
+isPreview: false
+isDeprecated: false
+type: interface

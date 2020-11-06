@@ -1,74 +1,71 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface'
-    summary: Event parameters for BaseFieldCustomizer.onRenderCell()
-    name: IFieldCustomizerCellEventParameters
-    fullName: IFieldCustomizerCellEventParameters
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IFieldCustomizerCellEventParameters
+uid: >-
+  @microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters:interface
+package: '@microsoft/sp-listview-extensibility!'
+fullName: IFieldCustomizerCellEventParameters
+summary: Event parameters for BaseFieldCustomizer.onRenderCell()
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: domElement
+    uid: >-
+      @microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#domElement:member
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#domElement:member'
-      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#fieldValue:member'
-      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#listItem:member'
-      - '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#userData:member'
-  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#domElement:member'
-    summary: >-
-      The HTML "div" element that the extension will take ownership of. This ownership will end when onDisposeCell() is
-      called.
-    name: domElement
     fullName: domElement
-    langs:
-      - typeScript
-    type: property
+    summary: >-
+      The HTML "div" element that the extension will take ownership of. This
+      ownership will end when onDisposeCell() is called.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly domElement: HTMLDivElement;'
       return:
-        type:
-          - '!HTMLDivElement:interface'
-  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#fieldValue:member'
-    summary: The value of the field being rendered.
-    name: fieldValue
+        type: '<xref uid="!HTMLDivElement:interface" />'
+  - name: fieldValue
+    uid: >-
+      @microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#fieldValue:member
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: fieldValue
-    langs:
-      - typeScript
-    type: property
+    summary: The value of the field being rendered.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly fieldValue: any;'
       return:
-        type:
-          - any
-  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#listItem:member'
-    summary: The list item being edited.
-    name: listItem
+        type: any
+  - name: listItem
+    uid: >-
+      @microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#listItem:member
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: listItem
-    langs:
-      - typeScript
-    type: property
+    summary: The list item being edited.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly listItem: ListItemAccessor;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!default:class'
-  - uid: '@microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#userData:member'
+        type: '<xref uid="@microsoft/sp-listview-extensibility!default:class" />'
+  - name: userData
+    uid: >-
+      @microsoft/sp-listview-extensibility!IFieldCustomizerCellEventParameters#userData:member
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: userData
     summary: An implementation defined storage property.
     remarks: >-
-      For example, suppose that resources need to be allocated during rendering (e.g. a renderer object, an HTTP request
-      to be canceled, a cache slot, etc). The onRenderCell() implementation could store a key or handle in this
-      property, and then onDisposeCell() can use this key to find the resource to be freed.
-    name: userData
-    fullName: userData
-    langs:
-      - typeScript
-    type: property
+      For example, suppose that resources need to be allocated during rendering
+      (e.g. a renderer object, an HTTP request to be canceled, a cache slot,
+      etc). The onRenderCell() implementation could store a key or handle in
+      this property, and then onDisposeCell() can use this key to find the
+      resource to be freed.
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'userData: any;'
       return:
-        type:
-          - any
-references:
-  - uid: '!HTMLDivElement:interface'
-    name: HTMLDivElement
-  - uid: '@microsoft/sp-listview-extensibility!default:class'
-    name: ListItemAccessor
+        type: any

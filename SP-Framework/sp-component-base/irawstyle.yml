@@ -1,72 +1,44 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-component-base!IRawStyle:interface'
-    summary: 'IStyleObject extends a raw style objects, but allows selectors to be defined under the selectors node.'
-    name: IRawStyle
-    fullName: IRawStyle
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-component-base!IRawStyleBase:interface'
-    inheritance:
-      - type: '@microsoft/sp-component-base!IRawStyleBase:interface'
+### YamlMime:TSType
+name: IRawStyle
+uid: '@microsoft/sp-component-base!IRawStyle:interface'
+package: '@microsoft/sp-component-base!'
+fullName: IRawStyle
+summary: >-
+  IStyleObject extends a raw style objects, but allows selectors to be defined
+  under the selectors node.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: displayName
+    uid: '@microsoft/sp-component-base!IRawStyle#displayName:member'
     package: '@microsoft/sp-component-base!'
-    children:
-      - '@microsoft/sp-component-base!IRawStyle#displayName:member'
-      - '@microsoft/sp-component-base!IRawStyle#selectors:member'
-  - uid: '@microsoft/sp-component-base!IRawStyle#displayName:member'
-    summary: Display name for the style.
-    name: displayName
     fullName: displayName
-    langs:
-      - typeScript
-    type: property
+    summary: Display name for the style.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'displayName?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-component-base!IRawStyle#selectors:member'
-    summary: Custom selectors for the style.
-    name: selectors
+        type: string
+  - name: selectors
+    uid: '@microsoft/sp-component-base!IRawStyle#selectors:member'
+    package: '@microsoft/sp-component-base!'
     fullName: selectors
-    langs:
-      - typeScript
-    type: property
+    summary: Custom selectors for the style.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         selectors?: {
                 [key: string]: IStyle;
             };
       return:
-        type:
-          - '@microsoft/sp-component-base!IRawStyle#selectors~0:complex'
-references:
-  - uid: '@microsoft/sp-component-base!IRawStyleBase:interface'
-    name: IRawStyleBase
-  - uid: '@microsoft/sp-component-base!IRawStyle#selectors~0:complex'
-    name: |-
-      {
-              [key: string]: IStyle;
-          }
-    fullName: |-
-      {
-              [key: string]: IStyle;
-          }
-    spec.typeScript:
-      - name: |-
+        type: |-
           {
-                  [key: string]: 
-        fullName: |-
-          {
-                  [key: string]: 
-      - uid: '@microsoft/sp-component-base!IStyle:type'
-        name: IStyle
-        fullName: IStyle
-      - name: |-
-          ;
+                  [key: string]: <xref uid="@microsoft/sp-component-base!IStyle:type" />;
               }
-        fullName: |-
-          ;
-              }
+extends: '<xref uid="@microsoft/sp-component-base!IRawStyleBase:interface" />'
