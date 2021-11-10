@@ -5,9 +5,8 @@ package: '@microsoft/sp-listview-extensibility!'
 fullName: FieldCustomizerContext
 summary: This object provides contextual information for BaseFieldCustomizer.
 remarks: >-
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `FieldCustomizerContext` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `FieldCustomizerContext` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -16,39 +15,30 @@ properties:
     uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member'
     package: '@microsoft/sp-listview-extensibility!'
     fullName: field
-    summary: >-
-      Provides access to the SharePoint field that the customizer will operate
-      on.
+    summary: Provides access to the SharePoint field that the customizer will operate on.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly field: SPField;'
+      content: 'get field(): SPField;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!SPField:class" />'
 methods:
   - name: tryGetListView()
-    uid: >-
-      @microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)
+    uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)'
     package: '@microsoft/sp-listview-extensibility!'
     fullName: tryGetListView()
     summary: >-
-      If the field customizer is bounded to the SharePoint list view, this
-      provides access to the list view specific functionality; otherwise the
-      value is undefined.
+      If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific
+      functionality; otherwise the value is undefined.
     remarks: >-
-      Although the SharePoint list view is the main usage scenario, field
-      customizers can be used by other user interface surfaces. For example, in
-      the future SharePoint may support field customizers on a display/edit
-      form.
+      Although the SharePoint list view is the main usage scenario, field customizers can be used by other user
+      interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'tryGetListView(): ListViewAccessor | undefined;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-listview-extensibility!~ListViewAccessor:class" />
-          | undefined
+        type: '<xref uid="@microsoft/sp-listview-extensibility!~ListViewAccessor:class" /> | undefined'
         description: 'the SharePoint list view, or undefined if there is none.'
 extends: '<xref uid="@microsoft/sp-extension-base!ExtensionContext:class" />'

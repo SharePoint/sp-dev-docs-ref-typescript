@@ -5,9 +5,8 @@ package: '@microsoft/sp-listview-extensibility!'
 fullName: ListViewAccessor
 summary: Provides access to a SharePoint ListView control.
 remarks: >-
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `ListViewAccessor` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `ListViewAccessor` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -21,53 +20,41 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'abstract readonly columns: ReadonlyArray<ColumnAccessor>;'
+      content: 'abstract get columns(): ReadonlyArray<ColumnAccessor>;'
       return:
-        type: >-
-          <xref uid="!ReadonlyArray:interface" />&lt;<xref
-          uid="@microsoft/sp-listview-extensibility!ColumnAccessor:class" />&gt;
-  - name: selectedRowsChangedEvent
-    uid: >-
-      @microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: selectedRowsChangedEvent
-    summary: >-
-      Event that gets raised every time the selected items in the list view
-      change.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: >-
-        readonly selectedRowsChangedEvent:
-        SPEvent<SelectedRowsChangedEventArgs>;
-      return:
-        type: >-
-          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
-          uid="@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class"
-          />&gt;
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!ColumnAccessor:class" />&gt;'
 methods:
   - name: tryGetColumnByName(internalName)
-    uid: >-
-      @microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)'
     package: '@microsoft/sp-listview-extensibility!'
     fullName: tryGetColumnByName(internalName)
     summary: >-
-      Returns the list view column corresponding to the field with the specified
-      internal name, or undefined if none is found.
+      Returns the list view column corresponding to the field with the specified internal name, or undefined if none is
+      found.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        abstract tryGetColumnByName(internalName: string): ColumnAccessor |
-        undefined;
+      content: 'abstract tryGetColumnByName(internalName: string): ColumnAccessor | undefined;'
       parameters:
         - id: internalName
           description: ''
           type: string
       return:
-        type: >-
-          <xref uid="@microsoft/sp-listview-extensibility!ColumnAccessor:class"
-          /> | undefined
+        type: '<xref uid="@microsoft/sp-listview-extensibility!ColumnAccessor:class" /> | undefined'
         description: ''
+events:
+  - name: selectedRowsChangedEvent
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: selectedRowsChangedEvent
+    summary: Event that gets raised every time the selected items in the list view change.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get selectedRowsChangedEvent(): SPEvent<SelectedRowsChangedEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-listview-extensibility!SelectedRowsChangedEventArgs:class" />&gt;

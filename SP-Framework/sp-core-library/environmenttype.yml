@@ -3,14 +3,10 @@ name: EnvironmentType
 uid: '@microsoft/sp-core-library!EnvironmentType:enum'
 package: '@microsoft/sp-core-library!'
 fullName: EnvironmentType
-summary: >-
-  Indicates the general type of environment where the SharePoint Framework is
-  running.
+summary: Indicates the general type of environment where the SharePoint Framework is running.
 remarks: >-
-  This enum is used by the
-  [Environment.type](xref:@microsoft/sp-core-library!Environment.type:member)
-  property. It provides a way to distinguish environments where certain
-  functionality may be limited or disabled.
+  This enum is used by the [Environment.type](xref:@microsoft/sp-core-library!Environment.type:member) property. It
+  provides a way to distinguish environments where certain functionality may be limited or disabled.
 isPreview: false
 isDeprecated: false
 fields:
@@ -18,33 +14,29 @@ fields:
     uid: '@microsoft/sp-core-library!EnvironmentType.ClassicSharePoint:member'
     package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the framework was hosted by a classic server-rendered
-      SharePoint page. Some functionality may be limited, e.g. various
-      extensibility APIs may not be supported.
-    numericValue: 3
+      Indicates that the framework was hosted by a classic server-rendered SharePoint page. Some functionality may be
+      limited, e.g. various extensibility APIs may not be supported.
+    value: '3'
   - name: Local
     uid: '@microsoft/sp-core-library!EnvironmentType.Local:member'
     package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the SharePoint Framework is running on a page from a
-      "localhost" web server, for example the SharePoint Workbench when hosted
-      via "gulp serve". SharePoint REST API calls will not be available, and in
-      general network access may not authenticate properly. Certain page context
-      information may be using mock values for testing.
-    numericValue: 1
+      Indicates that the SharePoint Framework is running on a page from a "localhost" web server, for example the
+      SharePoint Workbench when hosted via "gulp serve". SharePoint REST API calls will not be available, and in general
+      network access may not authenticate properly. Certain page context information may be using mock values for
+      testing.
+    value: '1'
   - name: SharePoint
     uid: '@microsoft/sp-core-library!EnvironmentType.SharePoint:member'
     package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the SharePoint Framework is running on a modern SharePoint
-      web page, with full framework functionality. This is the normal usage
-      scenario.
-    numericValue: 2
+      Indicates that the SharePoint Framework is running on a modern SharePoint web page, with full framework
+      functionality. This is the normal usage scenario.
+    value: '2'
   - name: Test
     uid: '@microsoft/sp-core-library!EnvironmentType.Test:member'
     package: '@microsoft/sp-core-library!'
     summary: >-
-      Indicates that the SharePoint Framework is running inside a test harness,
-      e.g. a unit test. There may be no user interaction at all, and network
-      access in general may be disabled.
-    numericValue: 0
+      Indicates that the SharePoint Framework is running inside a test harness, e.g. a unit test. There may be no user
+      interaction at all, and network access in general may be disabled.
+    value: '0'

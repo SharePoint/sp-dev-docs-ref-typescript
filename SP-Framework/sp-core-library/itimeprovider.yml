@@ -3,16 +3,12 @@ name: ITimeProvider
 uid: '@microsoft/sp-core-library!ITimeProvider:interface'
 package: '@microsoft/sp-core-library!'
 fullName: ITimeProvider
-summary: >-
-  This is a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)
-  contract for reading the system clock.
+summary: 'This is a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class) contract for reading the system clock.'
 remarks: >-
-  This interface abstracts the functionality of the system time APIs for usage
-  with a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)<!--
-  -->. For example, a unit test might replace the default
-  [TimeProvider](xref:@microsoft/sp-core-library!TimeProvider:class) service
-  with a mock implementation that follows a manually incremented timeline, in
-  order to ensure that test failures are always repeatable.
+  This interface abstracts the functionality of the system time APIs for usage with a
+  [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)<!-- -->. For example, a unit test might replace the
+  default [TimeProvider](xref:@microsoft/sp-core-library!TimeProvider:class) service with a mock implementation that
+  follows a manually incremented timeline, in order to ensure that test failures are always repeatable.
 isPreview: false
 isDeprecated: false
 type: interface
@@ -28,15 +24,13 @@ methods:
     syntax:
       content: 'getDate(): Date;'
       return:
-        type: '<xref uid="!Date:interface" />'
+        type: Date
         description: ''
   - name: getTimestamp()
     uid: '@microsoft/sp-core-library!ITimeProvider#getTimestamp:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: getTimestamp()
-    summary: >-
-      Returns a DOMHighResTimeStamp timing measurement, as defined by the
-      standard performance.now() API.
+    summary: 'Returns a DOMHighResTimeStamp timing measurement, as defined by the standard performance.now() API.'
     remarks: ''
     isPreview: false
     isDeprecated: false

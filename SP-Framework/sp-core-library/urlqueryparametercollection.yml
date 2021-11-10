@@ -5,25 +5,20 @@ package: '@microsoft/sp-core-library!'
 fullName: UrlQueryParameterCollection
 summary: Provides features for storing and retrieving URL query parameters.
 remarks: >-
-  The URL can be server-relative, and it can also be an empty or null string.
-  The query parameters must start with "?" to indicate the first query parameter
-  and use "&amp;" for all subsequent parameters. The class also supports
+  The URL can be server-relative, and it can also be an empty or null string. The query parameters must start with "?"
+  to indicate the first query parameter and use "&amp;" for all subsequent parameters. The class also supports
   fragments.
 
 
   Edge case behavior:
 
 
-  Empty value (www.example.com/?test=) stores key and empty value No equals in
-  queryParam (www.example.com/?test) stores key and undefined value Empty
-  queryParam (www.example.com/?&amp;debug=on) stores undefined key and value
-  Query param with only equals (www.example.com/?=&amp;debug=on stores empty
-  string key and value
+  Empty value (www.example.com/?test=) stores key and empty value No equals in queryParam (www.example.com/?test) stores
+  key and undefined value Empty queryParam (www.example.com/?&amp;debug=on) stores undefined key and value Query param
+  with only equals (www.example.com/?=&amp;debug=on stores empty string key and value
 isPreview: false
 isDeprecated: true
-customDeprecatedMessage: >-
-  Use the URLSearchParams browser API instead. The SharePoint Framework includes
-  a polyfill for older browsers.
+customDeprecatedMessage: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
 type: class
 constructors:
   - name: (constructor)(url)
@@ -45,9 +40,7 @@ methods:
     uid: '@microsoft/sp-core-library!UrlQueryParameterCollection#getValue:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: getValue(param)
-    summary: >-
-      Returns the value of the first matching query parameter or undefined if
-      the key doesn't exist.
+    summary: Returns the value of the first matching query parameter or undefined if the key doesn't exist.
     remarks: |-
       Examples:
 
@@ -59,7 +52,6 @@ methods:
         getValue('TEST') ---> 'done'
         getValue('debug')  ---> 'false'
         getValue('lost')  ---> undefined
-
       ```
     isPreview: false
     isDeprecated: false
@@ -76,9 +68,7 @@ methods:
     uid: '@microsoft/sp-core-library!UrlQueryParameterCollection#getValues:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: getValues(param)
-    summary: >-
-      Returns the values of all of the matching query parameters or undefined if
-      the key doesn't exist.
+    summary: Returns the values of all of the matching query parameters or undefined if the key doesn't exist.
     remarks: |-
       Examples:
 
@@ -90,7 +80,6 @@ methods:
         getValues('TEST') ---> ['done', 'notdone']
         getValues('debug')  ---> ['false']
         getValues('lost')  ---> undefined
-
       ```
     isPreview: false
     isDeprecated: false

@@ -22,13 +22,10 @@ properties:
       return:
         type: string
   - name: deferredValidationTime
-    uid: >-
-      @microsoft/sp-property-pane!IPropertyPaneTextFieldProps#deferredValidationTime:member
+    uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#deferredValidationTime:member'
     package: '@microsoft/sp-property-pane!'
     fullName: deferredValidationTime
-    summary: >-
-      Text field will start to validate after users stop typing for
-      `deferredValidationTime` milliseconds.
+    summary: Text field will start to validate after users stop typing for `deferredValidationTime` milliseconds.
     remarks: The default value is 200.
     isPreview: false
     isDeprecated: false
@@ -61,18 +58,16 @@ properties:
       return:
         type: boolean
   - name: errorMessage
-    uid: >-
-      @microsoft/sp-property-pane!IPropertyPaneTextFieldProps#errorMessage:member
+    uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#errorMessage:member'
     package: '@microsoft/sp-property-pane!'
     fullName: errorMessage
     summary: 'If set, this will be displayed as an error message.'
     remarks: >-
-      When onGetErrorMessage returns empty string, if this property has a value
-      set then this will be displayed as the error message.
+      When onGetErrorMessage returns empty string, if this property has a value set then this will be displayed as the
+      error message.
 
 
-      So, make sure to set this only if you want to see an error message
-      displayed for the text field.
+      So, make sure to set this only if you want to see an error message displayed for the text field.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -95,31 +90,25 @@ properties:
     uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#logName:member'
     package: '@microsoft/sp-property-pane!'
     fullName: logName
-    summary: >-
-      Name used to log `PropertyPaneTextField` value changes for engagement
-      tracking.
+    summary: Name used to log `PropertyPaneTextField` value changes for engagement tracking.
     remarks: >-
-      The messages will be logged with a format such as
-      `<moduleName>.<controlName>`<!-- -->.
+      The messages will be logged with a format such as `<moduleName>.<controlName>`<!-- -->.
 
 
-      For example, if `{moduleName: 'ImageWebPart', controlName: 'OverlayText'}`
-      is specified, the engagement log might contain:
+      For example, if `{moduleName: 'ImageWebPart', controlName: 'OverlayText'}` is specified, the engagement log might
+      contain:
 
 
       1. The action type:
 
 
-      `Add`<!-- -->: change from initial/unset state to customized content.
-      (first edit)
+      `Add`<!-- -->: change from initial/unset state to customized content. (first edit)
 
 
-      `Clear`<!-- -->: reset the content of caption element to initial/unset
-      state.
+      `Clear`<!-- -->: reset the content of caption element to initial/unset state.
 
 
-      `Edit`<!-- -->: any edition that changes the content apart from add and
-      clear
+      `Edit`<!-- -->: any edition that changes the content apart from add and clear
 
 
       2. The text length after each edit
@@ -162,29 +151,20 @@ properties:
       return:
         type: boolean
   - name: onGetErrorMessage
-    uid: >-
-      @microsoft/sp-property-pane!IPropertyPaneTextFieldProps#onGetErrorMessage:member
+    uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#onGetErrorMessage:member'
     package: '@microsoft/sp-property-pane!'
     fullName: onGetErrorMessage
-    summary: >-
-      The method is used to get the validation error message and determine
-      whether the input value is valid or not.
-    remarks: >-
+    summary: The method is used to get the validation error message and determine whether the input value is valid or not.
+    remarks: |-
       When it returns string:
-
 
       - If valid, it returns empty string.
 
-
-      - If invalid, it returns the error message string and an error message is
-      displayed below the text field.
-
+      - If invalid, it returns the error message string and an error message is displayed below the text field.
 
       When it returns `Promise<string>`<!-- -->:
 
-
       - The resolved value is display as error message.
-
 
       - The rejected, the value is thrown away.
     isPreview: false
@@ -192,9 +172,7 @@ properties:
     syntax:
       content: 'onGetErrorMessage?: (value: string) => string | Promise<string>;'
       return:
-        type: >-
-          (value: string) =&gt; string | <xref uid="!Promise:class"
-          />&lt;string&gt;
+        type: '(value: string) =&gt; string | Promise&lt;string&gt;'
   - name: placeholder
     uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#placeholder:member'
     package: '@microsoft/sp-property-pane!'
@@ -223,9 +201,7 @@ properties:
     uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#rows:member'
     package: '@microsoft/sp-property-pane!'
     fullName: rows
-    summary: >-
-      Specifies the visible height of a text area(multiline text TextField), in
-      lines.
+    summary: 'Specifies the visible height of a text area(multiline text TextField), in lines.'
     remarks: This prop is used only when the multiline prop is set to true.
     isPreview: false
     isDeprecated: false
@@ -246,8 +222,7 @@ properties:
       return:
         type: boolean
   - name: validateOnFocusIn
-    uid: >-
-      @microsoft/sp-property-pane!IPropertyPaneTextFieldProps#validateOnFocusIn:member
+    uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#validateOnFocusIn:member'
     package: '@microsoft/sp-property-pane!'
     fullName: validateOnFocusIn
     summary: Run validation when the PropertyPaneTextField is focused.
@@ -259,8 +234,7 @@ properties:
       return:
         type: boolean
   - name: validateOnFocusOut
-    uid: >-
-      @microsoft/sp-property-pane!IPropertyPaneTextFieldProps#validateOnFocusOut:member
+    uid: '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps#validateOnFocusOut:member'
     package: '@microsoft/sp-property-pane!'
     fullName: validateOnFocusOut
     summary: Run validation when the PropertyPaneTextField is out of focus or on blur.
@@ -276,9 +250,8 @@ properties:
     package: '@microsoft/sp-property-pane!'
     fullName: value
     summary: >-
-      Value to be displayed in the text field when the value of the
-      targetProperty in the manifest's property bag is empty or contains null
-      value.
+      Value to be displayed in the text field when the value of the targetProperty in the manifest's property bag is
+      empty or contains null value.
     remarks: ''
     isPreview: false
     isDeprecated: false

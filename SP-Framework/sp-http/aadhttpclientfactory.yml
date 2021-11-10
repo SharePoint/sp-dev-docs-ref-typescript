@@ -4,13 +4,11 @@ uid: '@microsoft/sp-http!AadHttpClientFactory:class'
 package: '@microsoft/sp-http!'
 fullName: AadHttpClientFactory
 summary: >-
-  Returns a preinitialized version of the AadHttpClient for a given resource
-  url. For more information:
+  Returns a preinitialized version of the AadHttpClient for a given resource url. For more information:
   [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
 remarks: >-
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `AadHttpClientFactory` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `AadHttpClientFactory` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -27,16 +25,16 @@ properties:
       content: 'static readonly serviceKey: ServiceKey<AadHttpClientFactory>;'
       return:
         type: >-
-          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
-          uid="@microsoft/sp-http!default:class" />&gt;
+          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref uid="@microsoft/sp-http!default:class"
+          />&gt;
 methods:
   - name: getClient(resourceEndpoint)
     uid: '@microsoft/sp-http!AadHttpClientFactory#getClient:member(1)'
     package: '@microsoft/sp-http!'
     fullName: getClient(resourceEndpoint)
     summary: >-
-      Returns an instance of the AadHttpClient that communicates with the
-      current tenant's configurable Service Principal.
+      Returns an instance of the AadHttpClient that communicates with the current tenant's configurable Service
+      Principal.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -47,7 +45,5 @@ methods:
           description: The target AAD application's resource endpoint.
           type: string
       return:
-        type: >-
-          <xref uid="!Promise:class" />&lt;<xref
-          uid="@microsoft/sp-http!default:class" />&gt;
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
         description: ''

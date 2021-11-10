@@ -4,53 +4,29 @@ uid: '@microsoft/sp-application-base!PlaceholderProvider:class'
 package: '@microsoft/sp-application-base!'
 fullName: PlaceholderProvider
 summary: >-
-  Allows third-party components to discover and use SharePoint placeholders.
-  Placeholders enable third-party components to render custom content into
-  designated regions on the page.
+  Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party components
+  to render custom content into designated regions on the page.
 remarks: >-
-  Placeholders are designated regions on the page, identified by one of the
-  predefined
-  [PlaceholderName](xref:@microsoft/sp-application-base!PlaceholderName:enum)
-  constants. Different applications and pages might support different
-  placeholder names. Placeholders can appear and disappear as the user interacts
-  with the page, for example via in-place navigation. Third-party components
-  should not assume that a given placeholder will always be available.
+  Placeholders are designated regions on the page, identified by one of the predefined
+  [PlaceholderName](xref:@microsoft/sp-application-base!PlaceholderName:enum) constants. Different applications and
+  pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with the
+  page, for example via in-place navigation. Third-party components should not assume that a given placeholder will
+  always be available.
 
 
   Use
-  [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1))
+  [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider%23tryCreateContent:member(1))
   to test whether a placeholder is available and add content to it. Use the
-  [PlaceholderProvider.changedEvent](xref:@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member)
+  [PlaceholderProvider.changedEvent](xref:@microsoft/sp-application-base!PlaceholderProvider%23changedEvent:member)
   event to discover when new placeholders appear.
 
 
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `PlaceholderProvider` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `PlaceholderProvider` class.
 isPreview: false
 isDeprecated: false
 type: class
 properties:
-  - name: changedEvent
-    uid: '@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member'
-    package: '@microsoft/sp-application-base!'
-    fullName: changedEvent
-    summary: >-
-      This event is raised when the list of currently available placeholders is
-      changed.
-    remarks: >-
-      The application can change its list of available placeholders at any time.
-      This means that the existing placeholders may get disposed or new
-      placeholders may be added. Use this event to discover new placeholders
-      when they appear.
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'readonly changedEvent: SPEvent<SPEventArgs>;'
-      return:
-        type: >-
-          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
-          uid="@microsoft/sp-core-library!SPEventArgs:class" />&gt;
   - name: isDisposed
     uid: '@microsoft/sp-application-base!PlaceholderProvider#isDisposed:member'
     package: '@microsoft/sp-application-base!'
@@ -60,7 +36,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly isDisposed: boolean;'
+      content: 'get isDisposed(): boolean;'
       return:
         type: boolean
   - name: placeholderNames
@@ -72,11 +48,9 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly placeholderNames: ReadonlyArray<PlaceholderName>;'
+      content: 'get placeholderNames(): ReadonlyArray<PlaceholderName>;'
       return:
-        type: >-
-          <xref uid="!ReadonlyArray:interface" />&lt;<xref
-          uid="@microsoft/sp-application-base!~PlaceholderName:enum" />&gt;
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-application-base!~PlaceholderName:enum" />&gt;'
 methods:
   - name: dispose()
     uid: '@microsoft/sp-application-base!PlaceholderProvider#dispose:member(1)'
@@ -92,41 +66,47 @@ methods:
         type: void
         description: ''
   - name: 'tryCreateContent(name, options)'
-    uid: >-
-      @microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1)
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1)'
     package: '@microsoft/sp-application-base!'
     fullName: 'tryCreateContent(name, options)'
     summary: >-
-      Tests whether the page contains the specified placeholder. If so, a new
-      PlaceholderContent object is created, which allows the caller to render
-      custom content inside the placeholder.
+      Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created,
+      which allows the caller to render custom content inside the placeholder.
     remarks: >-
-      The host application makes no guarantees about the availability of a given
-      placeholder. In situations where an expected placeholder is not available,
-      the third-party extension must handle it gracefully, e.g. by not rendering
+      The host application makes no guarantees about the availability of a given placeholder. In situations where an
+      expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering
       anything, or by choosing an alternative placeholder.
     isPreview: false
     isDeprecated: false
     syntax:
       content: >-
-        tryCreateContent(name: PlaceholderName, options?:
-        IPlaceholderCreateContentOptions): PlaceholderContent | undefined;
+        tryCreateContent(name: PlaceholderName, options?: IPlaceholderCreateContentOptions): PlaceholderContent |
+        undefined;
       parameters:
         - id: name
           description: The requested placeholder
           type: '<xref uid="@microsoft/sp-application-base!~PlaceholderName:enum" />'
         - id: options
-          description: >-
-            Additional options, for example to detect when the placeholder is
-            disposed.
-          type: >-
-            <xref
-            uid="@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface"
-            />
+          description: 'Additional options, for example to detect when the placeholder is disposed.'
+          type: '<xref uid="@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-application-base!default:class" /> | undefined'
+        description: 'A new PlaceholderContent object, or undefined if the requested placeholder does not exist.'
+events:
+  - name: changedEvent
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: changedEvent
+    summary: This event is raised when the list of currently available placeholders is changed.
+    remarks: >-
+      The application can change its list of available placeholders at any time. This means that the existing
+      placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
+      they appear.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get changedEvent(): SPEvent<SPEventArgs>;'
       return:
         type: >-
-          <xref uid="@microsoft/sp-application-base!default:class" /> |
-          undefined
-        description: >-
-          A new PlaceholderContent object, or undefined if the requested
-          placeholder does not exist.
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-core-library!SPEventArgs:class" />&gt;

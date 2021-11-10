@@ -5,15 +5,12 @@ package: '@microsoft/sp-core-library!'
 fullName: Version
 summary: 'Represents a version number with two, three, or four parts.'
 remarks: >-
-  This class represents versions that follow the string format of
-  `MAJOR.MINOR[.PATCH[.REVISION]]` where the MAJOR, MINOR, PATCH and REVISION
-  parts are integers. PATCH and REVISION are optional. Leading zero digits are
-  allowed, but they are discarded. Missing parts are treated as zeroes for
-  comparisons.
+  This class represents versions that follow the string format of `MAJOR.MINOR[.PATCH[.REVISION]]` where the MAJOR,
+  MINOR, PATCH and REVISION parts are integers. PATCH and REVISION are optional. Leading zero digits are allowed, but
+  they are discarded. Missing parts are treated as zeroes for comparisons.
 
 
-  Examples: `1.0`<!-- -->, `1.0.0`<!-- -->, `1.0.0.0`<!-- -->, `1.01`<!-- -->,
-  `01.02.03`<!-- -->, `001.002.003.004`
+  Examples: `1.0`<!-- -->, `1.0.0`<!-- -->, `1.0.0.0`<!-- -->, `1.01`<!-- -->, `01.02.03`<!-- -->, `001.002.003.004`
 isPreview: false
 isDeprecated: false
 type: class
@@ -23,13 +20,11 @@ properties:
     package: '@microsoft/sp-core-library!'
     fullName: major
     summary: Returns the first component of the version string.
-    remarks: >-
-      Typically a change in the major version number indicates a compatibility
-      break with previous versions.
+    remarks: Typically a change in the major version number indicates a compatibility break with previous versions.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly major: number;'
+      content: 'get major(): number;'
       return:
         type: number
   - name: minor
@@ -38,12 +33,12 @@ properties:
     fullName: minor
     summary: Returns the second component of the version string.
     remarks: >-
-      Typically a change in the minor version number indicates that new features
-      were added, while remaining backwards compatible with previous releases.
+      Typically a change in the minor version number indicates that new features were added, while remaining backwards
+      compatible with previous releases.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly minor: number;'
+      content: 'get minor(): number;'
       return:
         type: number
   - name: patch
@@ -52,13 +47,12 @@ properties:
     fullName: patch
     summary: 'The third number in the version string, or undefined if unspecified.'
     remarks: >-
-      Typically a change in the patch version number indicates a small fix that
-      does not affect the compatibility contract for the library. For a .NET
-      System.Version object, this is referred to as the "build" number.
+      Typically a change in the patch version number indicates a small fix that does not affect the compatibility
+      contract for the library. For a .NET System.Version object, this is referred to as the "build" number.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly patch: number | undefined;'
+      content: 'get patch(): number | undefined;'
       return:
         type: number | undefined
   - name: revision
@@ -67,12 +61,12 @@ properties:
     fullName: revision
     summary: 'The fourth number in the version string, or undefined if unspecified.'
     remarks: >-
-      This number is not part of the Semantic Versioning (SemVer) standard used
-      in JavaScript, but it is used by .NET version numbers.
+      This number is not part of the Semantic Versioning (SemVer) standard used in JavaScript, but it is used by .NET
+      version numbers.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly revision: number | undefined;'
+      content: 'get revision(): number | undefined;'
       return:
         type: number | undefined
 methods:
@@ -96,9 +90,8 @@ methods:
       return:
         type: number
         description: >-
-          -1 if the first input is less than the second input; 0 if the first
-          input is equal to the second input; 1 if the first input is greater
-          than the second input.
+          -1 if the first input is less than the second input; 0 if the first input is equal to the second input; 1 if
+          the first input is greater than the second input.
   - name: equals(compareWith)
     uid: '@microsoft/sp-core-library!Version#equals:member(1)'
     package: '@microsoft/sp-core-library!'
@@ -112,7 +105,6 @@ methods:
       2.0.1 equals 2.0.0 -> false;
       3.0   equals 3.0.0 -> true;
       04.01 equals 4.1   -> true
-
       ```
     isPreview: false
     isDeprecated: false
@@ -129,9 +121,7 @@ methods:
     uid: '@microsoft/sp-core-library!Version#greaterThan:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: greaterThan(compareWith)
-    summary: >-
-      Tests whether this version is greater than (i.e. newer than) the input
-      parameter.
+    summary: Tests whether this version is greater than (i.e. newer than) the input parameter.
     remarks: |-
       Examples:
 
@@ -139,7 +129,6 @@ methods:
       1.0.0 greaterThan 0.0.9 -> true;
       2.0   greaterThan 2.0.0 -> false;
       3.0.1 greaterThan 3.0   -> true
-
       ```
     isPreview: false
     isDeprecated: false
@@ -151,9 +140,7 @@ methods:
           type: '<xref uid="@microsoft/sp-core-library!default:class" />'
       return:
         type: boolean
-        description: >-
-          A boolean indicating if this version is greater than the input
-          parameter
+        description: A boolean indicating if this version is greater than the input parameter
   - name: isValid(versionString)
     uid: '@microsoft/sp-core-library!Version.isValid:member(1)'
     package: '@microsoft/sp-core-library!'
@@ -175,9 +162,7 @@ methods:
     uid: '@microsoft/sp-core-library!Version#lessThan:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: lessThan(compareWith)
-    summary: >-
-      Tests whether this version is less than (i.e. older than) the input
-      parameter.
+    summary: Tests whether this version is less than (i.e. older than) the input parameter.
     remarks: |-
       Examples:
 
@@ -186,7 +171,6 @@ methods:
       2.0   lessThan 2.0.0 -> false;
       3.0   lessThan 3.0.1 -> true;
       04.01 lessThan 4.1   -> false
-
       ```
     isPreview: false
     isDeprecated: false
@@ -203,9 +187,7 @@ methods:
     uid: '@microsoft/sp-core-library!Version.parse:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: parse(versionString)
-    summary: >-
-      Constructs a new Version instance using the version string. An exception
-      is thrown if the string cannot be parsed.
+    summary: Constructs a new Version instance using the version string. An exception is thrown if the string cannot be parsed.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -223,12 +205,11 @@ methods:
     package: '@microsoft/sp-core-library!'
     fullName: satisfies(compareWith)
     summary: >-
-      Tests whether this version satisfies the compatibility requirements of the
-      input version, i.e. is backwards compatible.
+      Tests whether this version satisfies the compatibility requirements of the input version, i.e. is backwards
+      compatible.
     remarks: >-
-      In order to satisfy the compatibility requirements, this object must have
-      the same major version number as the input parameter, and it must NOT be
-      older than the input parameter.
+      In order to satisfy the compatibility requirements, this object must have the same major version number as the
+      input parameter, and it must NOT be older than the input parameter.
 
 
       Examples:
@@ -244,7 +225,6 @@ methods:
 
       1.0.0 satisfies 1.1.0 -> false
 
-
       ```
     isPreview: false
     isDeprecated: false
@@ -256,18 +236,15 @@ methods:
           type: '<xref uid="@microsoft/sp-core-library!default:class" />'
       return:
         type: boolean
-        description: >-
-          A boolean indicating if this version is compatible with the input
-          parameter
+        description: A boolean indicating if this version is compatible with the input parameter
   - name: toString()
     uid: '@microsoft/sp-core-library!Version#toString:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: toString()
     summary: Returns a string representation of the version.
     remarks: >-
-      The value is normalized and may be different from the original string
-      (e.g. leading zeroes may be removed). However, the number of version parts
-      will be unchanged.
+      The value is normalized and may be different from the original string (e.g. leading zeroes may be removed).
+      However, the number of version parts will be unchanged.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -280,15 +257,13 @@ methods:
     package: '@microsoft/sp-core-library!'
     fullName: tryParse(versionString)
     summary: >-
-      Attempts to parse the input string to construct a new Version object. If
-      the string cannot be parsed, then undefined is returned.
+      Attempts to parse the input string to construct a new Version object. If the string cannot be parsed, then
+      undefined is returned.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        static tryParse(versionString: string | undefined | null): Version |
-        undefined;
+      content: 'static tryParse(versionString: string | undefined | null): Version | undefined;'
       parameters:
         - id: versionString
           description: A version string

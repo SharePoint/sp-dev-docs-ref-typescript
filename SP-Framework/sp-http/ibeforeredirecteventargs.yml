@@ -1,0 +1,36 @@
+### YamlMime:TSType
+name: IBeforeRedirectEventArgs
+uid: '@microsoft/sp-http!IBeforeRedirectEventArgs:interface'
+package: '@microsoft/sp-http!'
+fullName: IBeforeRedirectEventArgs
+summary: Represents arguments used before redirecting event.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: cancel
+    uid: '@microsoft/sp-http!IBeforeRedirectEventArgs#cancel:member'
+    package: '@microsoft/sp-http!'
+    fullName: cancel
+    summary: Call this method if the redirect should be cancelled because it is being handled by code in the cancelling class.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'cancel: () => void;'
+      return:
+        type: () =&gt; void
+  - name: redirectUrl
+    uid: '@microsoft/sp-http!IBeforeRedirectEventArgs#redirectUrl:member'
+    package: '@microsoft/sp-http!'
+    fullName: redirectUrl
+    summary: The url of the page to redirect to if automatic redirect is cancelled
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'redirectUrl: string;'
+      return:
+        type: string
+extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'

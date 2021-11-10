@@ -4,8 +4,8 @@ uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory:class'
 package: '@microsoft/sp-list-subscription!'
 fullName: ListSubscriptionFactory
 summary: >-
-  Creates and manages subscriptions to list resources. Registers callbacks
-  provided by the developer with the subscription to handle subscription events.
+  Creates and manages subscriptions to list resources. Registers callbacks provided by the developer with the
+  subscription to handle subscription events.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -27,8 +27,7 @@ constructors:
           type: '<xref uid="@microsoft/sp-component-base!BaseComponent:class" />'
 methods:
   - name: createSubscription(settings)
-    uid: >-
-      @microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription:member(1)
+    uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription:member(1)'
     package: '@microsoft/sp-list-subscription!'
     fullName: createSubscription(settings)
     summary: Creates a connection to the list specified by the site id and list id.
@@ -36,25 +35,16 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        createSubscription(settings: ICreateSubscriptionSettings):
-        Promise<IListSubscription>;
+      content: 'createSubscription(settings: ICreateSubscriptionSettings): Promise<IListSubscription>;'
       parameters:
         - id: settings
           description: The various parameters
-          type: >-
-            <xref
-            uid="@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface"
-            />
+          type: '<xref uid="@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface" />'
       return:
-        type: >-
-          <xref uid="!Promise:class" />&lt;<xref
-          uid="@microsoft/sp-list-subscription!IListSubscription:interface"
-          />&gt;
+        type: 'Promise&lt;<xref uid="@microsoft/sp-list-subscription!IListSubscription:interface" />&gt;'
         description: Promise of the subscription to the list.
   - name: deleteSubscription(subscription)
-    uid: >-
-      @microsoft/sp-list-subscription!ListSubscriptionFactory#deleteSubscription:member(1)
+    uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#deleteSubscription:member(1)'
     package: '@microsoft/sp-list-subscription!'
     fullName: deleteSubscription(subscription)
     summary: Deletes the subscription's connection to the resource.
@@ -66,9 +56,7 @@ methods:
       parameters:
         - id: subscription
           description: The subscription to delete.
-          type: >-
-            <xref
-            uid="@microsoft/sp-list-subscription!IListSubscription:interface" />
+          type: '<xref uid="@microsoft/sp-list-subscription!IListSubscription:interface" />'
       return:
         type: void
         description: ''

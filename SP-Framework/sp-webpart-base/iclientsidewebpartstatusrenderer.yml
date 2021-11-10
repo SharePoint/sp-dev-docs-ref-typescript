@@ -4,16 +4,15 @@ uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer:interface'
 package: '@microsoft/sp-webpart-base!'
 fullName: IClientSideWebPartStatusRenderer
 summary: >-
-  Interface to be implemented by a component that should display the loading
-  indicator and error messages for a web part.
+  Interface to be implemented by a component that should display the loading indicator and error messages for a web
+  part.
 remarks: ''
 isPreview: false
 isDeprecated: false
 type: interface
 methods:
   - name: clearError(domElement)
-    uid: >-
-      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)
+    uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearError:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: clearError(domElement)
     summary: Clear the webpart error message.
@@ -25,13 +24,12 @@ methods:
       parameters:
         - id: domElement
           description: the web part container div.
-          type: '<xref uid="!HTMLElement:interface" />'
+          type: HTMLElement
       return:
         type: void
         description: ''
   - name: clearLoadingIndicator(domElement)
-    uid: >-
-      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)
+    uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#clearLoadingIndicator:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: clearLoadingIndicator(domElement)
     summary: Clear the loading indicator.
@@ -43,13 +41,12 @@ methods:
       parameters:
         - id: domElement
           description: the web part container div.
-          type: '<xref uid="!Element:interface" />'
+          type: Element
       return:
         type: void
         description: ''
   - name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
-    uid: >-
-      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)
+    uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
     summary: Display a loading spinner.
@@ -57,13 +54,11 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        displayLoadingIndicator(domElement: Element, loadingMessage: string,
-        timeout?: number): void;
+      content: 'displayLoadingIndicator(domElement: Element, loadingMessage: string, timeout?: number): void;'
       parameters:
         - id: domElement
           description: the web part container div.
-          type: '<xref uid="!Element:interface" />'
+          type: Element
         - id: loadingMessage
           description: the message to be displayed when the loading spinner id displayed.
           type: string
@@ -74,8 +69,7 @@ methods:
         type: void
         description: ''
   - name: 'renderError(domElement, error)'
-    uid: >-
-      @microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)
+    uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: 'renderError(domElement, error)'
     summary: Render the provided error message in the webpart container div.
@@ -87,10 +81,10 @@ methods:
       parameters:
         - id: domElement
           description: the web part container div.
-          type: '<xref uid="!HTMLElement:interface" />'
+          type: HTMLElement
         - id: error
           description: the error message.
-          type: '<xref uid="!Error:interface" /> | string'
+          type: Error | string
       return:
         type: void
         description: ''

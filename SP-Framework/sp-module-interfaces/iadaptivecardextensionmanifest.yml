@@ -1,0 +1,171 @@
+### YamlMime:TSType
+name: IAdaptiveCardExtensionManifest
+uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IAdaptiveCardExtensionManifest
+summary: ''
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: connectedSPFXAppId
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#connectedSPFXAppId:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: connectedSPFXAppId
+    summary: Id of the SPFx application that the ACE will redirect to when a “full page” experience is required
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'connectedSPFXAppId?: string;'
+      return:
+        type: string
+  - name: connectedTeamsAppId
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#connectedTeamsAppId:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: connectedTeamsAppId
+    summary: Id matching the Teams SaaS application that the ACE will redirect to when a “full page” experience is required
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'connectedTeamsAppId?: string;'
+      return:
+        type: string
+  - name: experimentalData
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#experimentalData:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: experimentalData
+    summary: An untyped property bag for experimental flags not ready for production.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        experimentalData?: {
+                [key: string]: any;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: any;
+              }
+  - name: hiddenFromToolbox
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#hiddenFromToolbox:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: hiddenFromToolbox
+    summary: 'If true, this AdaptiveCardExtension should not be displayed in the modern SharePoint toolbox.'
+    remarks: >-
+      Usage: Use this flag if it is not appropriate to display a AdaptiveCardExtension in the modern toolbox. By
+      default, all AdaptiveCardExtensions are enabled to be displayed in the toolbox if supportedHosts contains
+      'SharePointWebPart' Such AdaptiveCardExtensions can be provisioned on pages though API or be added to the page in
+      a pre configured way.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'hiddenFromToolbox?: boolean;'
+      return:
+        type: boolean
+  - name: preconfiguredEntries
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#preconfiguredEntries:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: preconfiguredEntries
+    summary: >-
+      A AdaptiveCardExtension can have pre-configured properties like the title, description, iconImageUrl,
+      officeFabricIconFontName, toolbox group name and AdaptiveCardExtension specific custom properties. And there can
+      be multiple instances of these pre-configured properties.
+    remarks: >-
+      This helps support scenarios where an organization may want to present multiple pre-configured entries for a
+      AdaptiveCardExtension in the Toolbox. Each entry is expected to configure the AdaptiveCardExtension with a
+      different set of pre-configured properties. A developer may decide to seed some initial values for these
+      properties but an organization admin can go ahead and customize these properties per the needs of his/her
+      organization. The properties can also be modified by the author of the page.
+
+
+      Usage: help display a AdaptiveCardExtension in the Toolbox, PropertyPane and the initial rendering of the
+      AdaptiveCardExtension.
+
+
+      Type: JSON object
+
+
+      Supported values: Array of `IClientSideWebPartManifestEntry` objects.
+
+
+      Example:
+
+
+      ```
+        [{
+           "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+           "group": { "default": "Other" },
+           "title": { "id": "$./ManifestStrings.resx:PrimaryTextL1Template;" },
+           "description": { "id": "$./ManifestStrings.resx:PrimaryTextL1TemplateDescription;" },
+           "officeFabricIconFontName": "Balloons",
+           "properties": {
+             "templateType": "primaryText",
+             "title": "Primary Text",
+             "primaryText": "Basic card",
+             "description": "This is an example.",
+             "cardSize": "Medium"
+           }
+         }]
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'preconfiguredEntries: IAdaptiveCardExtensionManifestEntry<TProperties>[];'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifestEntry:interface"
+          />&lt;TProperties&gt;[]
+  - name: supportedHosts
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#supportedHosts:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: supportedHosts
+    summary: 'Definition: An array defining what host types are supported'
+    remarks: 'Usage: Use this array to define all hosts that are supported.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'supportedHosts?: ReadonlyArray<''Dashboard''>;'
+      return:
+        type: ReadonlyArray&lt;'Dashboard'&gt;
+  - name: supportsThemeVariants
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#supportsThemeVariants:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: supportsThemeVariants
+    summary: 'Definition: If true, this ACE supports and has been tested for theme variants experience.'
+    remarks: >-
+      Usage: Use this flag if a ACE supports theme variants and has been tested as such. In order to support theme
+      variants, ACEs must have the capability to render correctly in the context of a theme variant. An ACE may or may
+      not need to be updated to support theme variants, but should always be tested before enabling this flag. By
+      default no ACEs support theme variants.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'supportsThemeVariants?: boolean;'
+      return:
+        type: boolean
+  - name: useFallbackWhenPropertiesUpdatedExternally
+    uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest#useFallbackWhenPropertiesUpdatedExternally:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: useFallbackWhenPropertiesUpdatedExternally
+    summary: >-
+      Definition: - If true, the AdaptiveCardExtension will be disposed and reloaded when the AdaptiveCardExtension data
+      is updated by an external source. - If false, the AdaptiveCardExtension data will be deserialized and the
+      properties of the AdaptiveCardExtension will be updated, onAfterPropertiesUpdatedExternally will be executed. - If
+      undefined, AdaptiveCardExtensions developed with SPFx version below 1.9 will default to true and
+      AdaptiveCardExtensions developed with a SPFx version 1.9 or greater will default to false.
+    remarks: >-
+      By default, onAfterPropertiesUpdatedExternally will re-render the AdaptiveCardExtension. If your
+      AdaptiveCardExtension requires specialized logic, then it is recommended to override
+      onAfterPropertiesUpdatedExternally.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'useFallbackWhenPropertiesUpdatedExternally?: boolean;'
+      return:
+        type: boolean
+extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'

@@ -4,8 +4,8 @@ uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
 package: '@microsoft/sp-webpart-base!'
 fullName: IPropertyPaneAccessor
 summary: >-
-  Web part context property pane accessor interface. Provides some most commonly
-  used operations to access the property pane.
+  Web part context property pane accessor interface. Provides some most commonly used operations to access the property
+  pane.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -15,9 +15,7 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#close:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: close()
-    summary: >-
-      This API should be used to close the PropertyPane to help configure the
-      web part.
+    summary: This API should be used to close the PropertyPane to help configure the web part.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -27,8 +25,7 @@ methods:
         type: void
         description: ''
   - name: isPropertyPaneOpen()
-    uid: >-
-      @microsoft/sp-webpart-base!IPropertyPaneAccessor#isPropertyPaneOpen:member(1)
+    uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isPropertyPaneOpen:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: isPropertyPaneOpen()
     summary: Returns true if the PropertyPane is open.
@@ -41,15 +38,13 @@ methods:
         type: boolean
         description: ''
   - name: isRenderedByWebPart()
-    uid: >-
-      @microsoft/sp-webpart-base!IPropertyPaneAccessor#isRenderedByWebPart:member(1)
+    uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isRenderedByWebPart:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: isRenderedByWebPart()
     summary: Indicates whether the PropertyPane was initially opened by the web part.
     remarks: >-
-      For example, if the web part calls this.context.propertyPane.open() then
-      the property would be true, whereas if the property pane was opened by the
-      host, then the value will be false.
+      For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if
+      the property pane was opened by the host, then the value will be false.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -61,9 +56,7 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#open:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: open()
-    summary: >-
-      This API should be used to open the PropertyPane to help configure the web
-      part.
+    summary: This API should be used to open the PropertyPane to help configure the web part.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -76,12 +69,8 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#openDetails:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: openDetails(context)
-    summary: >-
-      This API should be used to open the Details PropertyPane to help configure
-      the items in the web part.
-    remarks: >-
-      This API is mainly used for configuring Details, which is different from
-      configuring the web part itself.
+    summary: This API should be used to open the Details PropertyPane to help configure the items in the web part.
+    remarks: 'This API is mainly used for configuring Details, which is different from configuring the web part itself.'
     isPreview: false
     isDeprecated: false
     syntax:
@@ -97,13 +86,10 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#refresh:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: refresh()
-    summary: >-
-      This API should be used to invoke the PropertyPane to help configure the
-      web part.
+    summary: This API should be used to invoke the PropertyPane to help configure the web part.
     remarks: >-
-      This operation only works when the PropertyPane is already open for the
-      currently active web part. If the PropertyPane is opened for another web
-      part, calling the refresh API will have no impact.
+      This operation only works when the PropertyPane is already open for the currently active web part. If the
+      PropertyPane is opened for another web part, calling the refresh API will have no impact.
     isPreview: false
     isDeprecated: false
     syntax:

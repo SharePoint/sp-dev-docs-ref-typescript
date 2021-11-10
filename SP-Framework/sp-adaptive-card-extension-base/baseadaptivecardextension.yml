@@ -1,0 +1,522 @@
+### YamlMime:TSType
+name: BaseAdaptiveCardExtension
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension:class'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: BaseAdaptiveCardExtension
+summary: Base class for Adaptive Card Extensions.
+remarks: Adaptive Card Extensions must inherit from this class.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension:constructor(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: (constructor)()
+    summary: Constructs a new instance of the `BaseAdaptiveCardExtension` class
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: constructor();
+properties:
+  - name: _iconProperty
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#_iconProperty:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: _iconProperty
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected _iconProperty: string;'
+      return:
+        type: string
+  - name: _title
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#_title:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: _title
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected _title: string;'
+      return:
+        type: string
+  - name: cardNavigator
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#cardNavigator:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardNavigator
+    summary: 'The [ViewNavigator](xref:@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class) for the Card view.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get cardNavigator(): ViewNavigator<BaseCardView<TProperties, TState>>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />&lt;TProperties, TState&gt;&gt;
+  - name: cardSize
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#cardSize:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardSize
+    summary: 'The current [CardSize](xref:@microsoft/sp-adaptive-card-extension-base!CardSize:type)<!-- -->.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get cardSize(): CardSize;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!CardSize:type" />'
+  - name: context
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#context:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: context
+    summary: 'See [BaseComponent.context](xref:@microsoft/sp-component-base!BaseComponent%23context:member)<!-- -->.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected context: AdaptiveCardExtensionContext;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext:class" />'
+  - name: dataVersion
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#dataVersion:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: dataVersion
+    summary: >-
+      The value of this property is stored in the serialized data of the Adaptive Card Extension. It can be used to
+      manage versioning of the Adaptive Card Extension.
+    remarks: The default version is 1.0.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get dataVersion(): Version;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+  - name: description
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#description:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: description
+    summary: The description of the Adaptive Card Extension defined in the manifest.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get description(): string;'
+      return:
+        type: string
+  - name: displayMode
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#displayMode:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: displayMode
+    summary: 'The current [DisplayMode](xref:@microsoft/sp-core-library!DisplayMode:enum)<!-- -->.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get displayMode(): DisplayMode;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!DisplayMode:enum" />'
+  - name: iconProperty
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#iconProperty:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: iconProperty
+    summary: The icon url used to render an icon on the Card view.
+    remarks: 'By default, this will return the iconImageUrl defined in the manifest.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected get iconProperty(): string;
+      return:
+        type: string
+  - name: isVisible
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#isVisible:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: isVisible
+    summary: Sets the visibility of the Adaptive Card Extension and re-render
+    remarks: >-
+      This method should be called after a card view has been registered. Otherwise visibility change will not be
+      applied to the Adaptive Card.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        get isVisible(): boolean;
+
+        set isVisible(value: boolean);
+      return:
+        type: boolean
+  - name: properties
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#properties:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: properties
+    summary: 'The custom, persisted properties of the Adaptive Card Extension.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get properties(): TProperties;'
+      return:
+        type: TProperties
+  - name: propertiesMetadata
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#propertiesMetadata:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: propertiesMetadata
+    summary: >-
+      This property defines metadata for the Adaptive Card Extension property bag. The metadata can help SharePoint
+      understand the content of the properties better and perform relevant services on the data.
+    remarks: >-
+      See
+      [IAdaptiveCardExtensionPropertiesMetadata](xref:@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertiesMetadata:interface)
+      for more information about how to define metadata.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected get propertiesMetadata(): IAdaptiveCardExtensionPropertiesMetadata | undefined;
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertiesMetadata:interface" /> |
+          undefined
+  - name: quickViewNavigator
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#quickViewNavigator:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: quickViewNavigator
+    summary: >-
+      [QuickViewNavigator](xref:@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class) is a
+      [ViewNavigator](xref:@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class) for the Quick view.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get quickViewNavigator(): QuickViewNavigator<BaseAdaptiveCardView<TProperties, TState>>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class" />&lt;TProperties, TState&gt;&gt;
+  - name: renderedFromPersistedData
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#renderedFromPersistedData:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: renderedFromPersistedData
+    summary: >-
+      Indicates whether the Adaptive Card Extension was rendered from persisted data or initialized from a default
+      state.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get renderedFromPersistedData(): boolean;'
+      return:
+        type: boolean
+  - name: renderedOnce
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#renderedOnce:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: renderedOnce
+    summary: Indicates whether the Adaptive Card Extension has initially rendered.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get renderedOnce(): boolean;'
+      return:
+        type: boolean
+  - name: renderType
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#renderType:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: renderType
+    summary: 'The current [RenderType](xref:@microsoft/sp-adaptive-card-extension-base!RenderType:type)<!-- -->.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get renderType(): RenderType;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!RenderType:type" />'
+  - name: state
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#state:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: state
+    summary: Gets the custom state of the Adaptive Card Extension.
+    remarks: >-
+      If this property is not initialized,
+      [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))
+      cannot be called.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        protected get state(): Readonly<TState>;
+
+        protected set state(initialState: Readonly<TState>);
+      return:
+        type: Readonly&lt;TState&gt;
+  - name: title
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#title:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: title
+    summary: >-
+      This value is displayed in Card and Quick view unless it is explicitly overridden by the Views. It is also
+      displayed as the Property Pane title.
+    remarks: 'By default, this will return the title defined in the manifest.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get title(): string;
+      return:
+        type: string
+methods:
+  - name: getPropertyPaneConfiguration()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#getPropertyPaneConfiguration:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: getPropertyPaneConfiguration()
+    summary: >-
+      Get the Property Pane configuration for this Adaptive Card Extension. If an Adaptive Card Extension wants to use
+      the Property Pane, then this method must be overriden.
+    remarks: >-
+      Property Pane resources can be defer loaded to reduce bundle size. See
+      [BaseAdaptiveCardExtension.loadPropertyPaneResources()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23loadPropertyPaneResources:member(1))<!--
+      -->.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;
+      return:
+        type: '<xref uid="@microsoft/sp-property-pane!IPropertyPaneConfiguration:interface" />'
+        description: ''
+  - name: loadPropertyPaneResources()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#loadPropertyPaneResources:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: loadPropertyPaneResources()
+    summary: API to enable asynchronous loading of Property Pane related resources of the Adaptive Card Extension.
+    remarks: >-
+      No Property Pane events will be raised until this method resolves except for
+      `PropertyPaneConfigurationComplete`<!-- -->, which can be used to clean up any pending resources.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected loadPropertyPaneResources(): Promise<void>;
+      return:
+        type: Promise&lt;void&gt;
+        description: ''
+  - name: 'onAfterDeserialize(deserializedProperties, dataVersion)'
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onAfterDeserialize:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: 'onAfterDeserialize(deserializedProperties, dataVersion)'
+    summary: Lifecycle method called before the property bag is populated with the deserialized property object.
+    remarks: >-
+      The default implementation is a no-op. An Adaptive Card Extension developer can override this API if the
+      deserialized object does not fully reflect the initial state of the property bag. This gives the Adaptive Card
+      Extension developer a chance to populate the property bag right after the data is deserialized to an object.
+
+
+      An important scenario to use deserialize is upgrading. An upgraded Adaptive Card Extension may load the data that
+      was serialized by an older version of the Adaptive Card Extension that supported a different schema of the
+      property bag, resulting the deserialized object to be incosistent with the current schema of the property bag. The
+      developer can use `onAfterDeserialize` to check the dataVersion and fix the property bag.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected onAfterDeserialize(deserializedProperties: any, dataVersion: Version): TProperties;
+      parameters:
+        - id: deserializedProperties
+          description: >-
+            The object deserialized from the stored data. Note that the schema of this object is not necessarily
+            consistent with the current property bag, because the serialization could have been done by an older version
+            of the Adaptive Card Extension
+          type: any
+        - id: dataVersion
+          description: >-
+            The data version of the stored data being deserialized. You can use this value to determine if the data was
+            serialized by an older Adaptive Card Extension. Adaptive Card Extensions can define their data version by
+            overriding the dataVersion property.
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+      return:
+        type: TProperties
+        description: The property bag of the Adaptive Card Extension
+  - name: onAfterPropertiesUpdatedExternally(prevProperties)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onAfterPropertiesUpdatedExternally:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onAfterPropertiesUpdatedExternally(prevProperties)
+    summary: >-
+      Lifecycle method called after the Adaptive Card Extension's properties have been updated by a source other than
+      the property pane (except for isolated Adaptive Card Extensions).
+    remarks: 'For isolated Adaptive Card Extensions, this lifecycle is invoked instead of `onPropertyPaneFieldChanged`<!-- -->.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onAfterPropertiesUpdatedExternally(prevProperties: TProperties): void;
+      parameters:
+        - id: prevProperties
+          description: The Adaptive Card Extension properties before the update.
+          type: TProperties
+      return:
+        type: void
+        description: ''
+  - name: onBeforeSerialize()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onBeforeSerialize:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onBeforeSerialize()
+    summary: Lifecycle method called before serialization.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onBeforeSerialize(): void;
+      return:
+        type: void
+        description: ''
+  - name: onDisplayModeChanged(oldDisplayMode)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onDisplayModeChanged:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onDisplayModeChanged(oldDisplayMode)
+    summary: 'Lifecycle method called after the [DisplayMode](xref:@microsoft/sp-core-library!DisplayMode:enum) changed.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;
+      parameters:
+        - id: oldDisplayMode
+          description: The old display mode.
+          type: '<xref uid="@microsoft/sp-core-library!DisplayMode:enum" />'
+      return:
+        type: void
+        description: ''
+  - name: onDispose()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onDispose:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onDispose()
+    summary: Lifecycle method called before disposing the Adaptive Card Extension.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onDispose(): void;
+      return:
+        type: void
+        description: ''
+  - name: onInit()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onInit:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onInit()
+    summary: Lifecycle method called during initialization.
+    remarks: >-
+      Asynchronous data fetches should be started during this lifecycle. Rendering can either be dependent on the result
+      or, if resolved immediately, a fetching data state can be rendered.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onInit(): Promise<void>;
+      return:
+        type: Promise&lt;void&gt;
+        description: ''
+  - name: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onPropertyPaneFieldChanged:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
+    summary: Lifecycle method called when a Property Pane field is changed.
+    remarks: This is invoked for reactive Property Panes.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;
+      parameters:
+        - id: propertyPath
+          description: >-
+            JSON path of the property in the property bag. In the case of custom field, if no target property is
+            provided then a custom value is assigned, which will be in the form of `__CustomField_<key provided when the
+            custom field is created>`<!-- -->.
+          type: string
+        - id: oldValue
+          description: Old value of the property. This value could be undefined/empty in the case of custom field.
+          type: any
+        - id: newValue
+          description: New value of the property. This value could be undefined/empty in the case of custom field.
+          type: any
+      return:
+        type: void
+        description: ''
+  - name: onRenderTypeChanged(oldRenderType)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onRenderTypeChanged:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onRenderTypeChanged(oldRenderType)
+    summary: >-
+      Lifecycle method called when the [RenderType](xref:@microsoft/sp-adaptive-card-extension-base!RenderType:type)
+      changes.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected onRenderTypeChanged(oldRenderType: RenderType): void;
+      parameters:
+        - id: oldRenderType
+          description: 'The previous [RenderType](xref:@microsoft/sp-adaptive-card-extension-base!RenderType:type)<!-- -->.'
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!RenderType:type" />'
+      return:
+        type: void
+        description: ''
+  - name: renderCard()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#renderCard:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: renderCard()
+    summary: The id of the initial Card view.
+    remarks: 'By default, this returns undefined and will render a default Card view.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected renderCard(): string | undefined;
+      return:
+        type: string | undefined
+        description: ''
+  - name: setState(newState)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#setState:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: setState(newState)
+    summary: Update the state of the Adaptive Card Extension and re-render.
+    remarks: >-
+      [BaseAdaptiveCardExtension.state](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23state:member)
+      must have been initialized before calling
+      [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
+      -->.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'setState(newState?: Partial<TState>): void;'
+      parameters:
+        - id: newState
+          description: ''
+          type: Partial&lt;TState&gt;
+      return:
+        type: void
+        description: ''
+extends: '<xref uid="@microsoft/sp-component-base!BaseComponent:class" />'

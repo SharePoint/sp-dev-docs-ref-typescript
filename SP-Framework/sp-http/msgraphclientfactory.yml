@@ -7,9 +7,8 @@ summary: >-
   Returns a preinitialized version of the MSGraphClient. For more information:
   [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph)
 remarks: >-
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `MSGraphClientFactory` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `MSGraphClientFactory` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -26,23 +25,21 @@ properties:
       content: 'static readonly serviceKey: ServiceKey<MSGraphClientFactory>;'
       return:
         type: >-
-          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
-          uid="@microsoft/sp-http!default:class" />&gt;
+          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref uid="@microsoft/sp-http!default:class"
+          />&gt;
 methods:
   - name: getClient()
     uid: '@microsoft/sp-http!MSGraphClientFactory#getClient:member(1)'
     package: '@microsoft/sp-http!'
     fullName: getClient()
     summary: >-
-      Returns an instance of the MSGraphClient that communicates with the
-      current tenant's configurable Service Principal.
+      Returns an instance of the MSGraphClient that communicates with the current tenant's configurable Service
+      Principal.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'getClient(): Promise<MSGraphClient>;'
       return:
-        type: >-
-          <xref uid="!Promise:class" />&lt;<xref
-          uid="@microsoft/sp-http!default:class" />&gt;
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
         description: ''

@@ -3,13 +3,10 @@ name: BaseComponent
 uid: '@microsoft/sp-component-base!BaseComponent:class'
 package: '@microsoft/sp-component-base!'
 fullName: BaseComponent
-summary: >-
-  The base class for client-side components such as BaseClientSideWebPart or
-  BaseExtension.
+summary: The base class for client-side components such as BaseClientSideWebPart or BaseExtension.
 remarks: >-
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `BaseComponent` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `BaseComponent` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -18,55 +15,45 @@ properties:
     uid: '@microsoft/sp-component-base!BaseComponent#componentId:member'
     package: '@microsoft/sp-component-base!'
     fullName: componentId
-    summary: >-
-      Returns the component identifier as defined in the component’s associated
-      manifest.
+    summary: Returns the component identifier as defined in the component’s associated manifest.
     remarks: >-
-      Each client-side component has an associated manifest that is used by the
-      sp-loader to load its scripts, and which may include additional metadata
-      about the component. The manifest is uniquely identified using a text
-      string containing a lower case GUID value.
+      Each client-side component has an associated manifest that is used by the sp-loader to load its scripts, and which
+      may include additional metadata about the component. The manifest is uniquely identified using a text string
+      containing a lower case GUID value.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly componentId: string;'
+      content: 'get componentId(): string;'
       return:
         type: string
   - name: context
     uid: '@microsoft/sp-component-base!BaseComponent#context:member'
     package: '@microsoft/sp-component-base!'
     fullName: context
-    summary: >-
-      Use the context object to access common services and state associated with
-      the component.
+    summary: Use the context object to access common services and state associated with the component.
     remarks: >-
-      Child classes are expected to override this field by redeclaring it with a
-      specialized type. It is meant to be a read-only property; the type cannot
-      be declared as read-only in the base class (because it is initialized
-      outside the constructor), but child classes should redeclare it as
-      readonly.
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected context: BaseComponentContext;'
       return:
-        type: >-
-          <xref uid="@microsoft/sp-component-base!~BaseComponentContext:class"
-          />
+        type: '<xref uid="@microsoft/sp-component-base!~BaseComponentContext:class" />'
   - name: instanceId
     uid: '@microsoft/sp-component-base!BaseComponent#instanceId:member'
     package: '@microsoft/sp-component-base!'
     fullName: instanceId
     summary: A unique identifier for the instance of the component.
     remarks: >-
-      A component implementation can be loaded multiple times on the page. For
-      example, if the component is a charting web part, multiple instances of
-      this web part could be added to the SharePoint canvas. The instanceId
-      uniquely identifies each of these instances.
+      A component implementation can be loaded multiple times on the page. For example, if the component is a charting
+      web part, multiple instances of this web part could be added to the SharePoint canvas. The instanceId uniquely
+      identifies each of these instances.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly instanceId: string;'
+      content: 'get instanceId(): string;'
       return:
         type: string
   - name: isDisposed
@@ -78,24 +65,21 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly isDisposed: boolean;'
+      content: 'get isDisposed(): boolean;'
       return:
         type: boolean
   - name: manifest
     uid: '@microsoft/sp-component-base!BaseComponent#manifest:member'
     package: '@microsoft/sp-component-base!'
     fullName: manifest
-    summary: Provides access to the manifest for the client-side component.
+    summary: Provides access to the manifest for the client-side component. virtual
     remarks: Child classes can override this with more specialized manifest types.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly manifest: IClientSideComponentManifest;'
+      content: 'get manifest(): IClientSideComponentManifest;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
-          />
+        type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'
 methods:
   - name: dispose()
     uid: '@microsoft/sp-component-base!BaseComponent#dispose:member(1)'
@@ -103,11 +87,9 @@ methods:
     fullName: dispose()
     summary: Disposes the component.
     remarks: >-
-      Third-party code generally does not need to call this method; it's invoked
-      automatically when the lifecycle ends for a web part or extension. To
-      perform custom cleanup when your component is disposed, override the
-      [onDispose()](xref:@microsoft/sp-component-base!BaseComponent#onDispose:member(1))
-      method.
+      Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
+      for a web part or extension. To perform custom cleanup when your component is disposed, override the
+      [BaseComponent.onDispose()](xref:@microsoft/sp-component-base!BaseComponent%23onDispose:member(1)) method.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -120,9 +102,8 @@ methods:
     package: '@microsoft/sp-component-base!'
     fullName: onDispose()
     summary: >-
-      This event method is called at the end of the component's lifecycle. It
-      provides an opportunity to release any associated resources, cancel any
-      outstanding requests, etc.
+      This event method is called at the end of the component's lifecycle. It provides an opportunity to release any
+      associated resources, cancel any outstanding requests, etc. virtual
     remarks: ''
     isPreview: false
     isDeprecated: false

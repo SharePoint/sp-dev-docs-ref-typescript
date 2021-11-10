@@ -8,12 +8,10 @@ remarks: >-
   Supported values:
 
 
-  - An Id referring to a localized resource. In this case it requires an 'id'
-  key.
+  - An Id referring to a localized resource. In this case it requires an 'id' key.
 
 
-  - A dictionary of locale keys to strings. In this case it requires a 'default'
-  key.
+  - A dictionary of locale keys to strings. In this case it requires a 'default' key.
 
 
   ```
@@ -29,7 +27,6 @@ remarks: >-
              "fr-fr": "Ma demande",
              "zh": "我的應用程式"
            }
-
   ```
 
   Notes on string ids:
@@ -41,16 +38,14 @@ remarks: >-
   - `resourceName` needs to be a `localizedResource` in the config.json.
 
 
-  - `expression` is an expression that will be evaluated to access the string
-  from the resource module.
+  - `expression` is an expression that will be evaluated to access the string from the resource module.
 
 
-  If your resource is a dictionary, access it through
-  `"$resource:resource.MyString;"` or `"$resource:resource[\"MyString\"];"`
+  If your resource is a dictionary, access it through `"$resource:resource.MyString;"` or
+  `"$resource:resource[\"MyString\"];"`
 
 
-  For more complex cases, run an appropriate expression to access your resource
-  and return the string.
+  For more complex cases, run an appropriate expression to access your resource and return the string.
 isPreview: false
 isDeprecated: false
 type: interface

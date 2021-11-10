@@ -1,0 +1,50 @@
+### YamlMime:TSType
+name: IImageHelperRequest
+uid: '@microsoft/sp-image-helper!IImageHelperRequest:interface'
+package: '@microsoft/sp-image-helper!'
+fullName: IImageHelperRequest
+summary: Interface for constructing a request to create an optimized image url from a file on SharePoint.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: height
+    uid: '@microsoft/sp-image-helper!IImageHelperRequest#height:member'
+    package: '@microsoft/sp-image-helper!'
+    fullName: height
+    summary: Optional height of the image requested
+    remarks: >-
+      By default, the image height would be based on the width while maintaining the aspect ratio for the image. (This
+      provides the image with the quickest response.) When the height is specified, the width is not adjusted to the
+      nearest larger resolution breakpoint.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'height?: number;'
+      return:
+        type: number
+  - name: sourceUrl
+    uid: '@microsoft/sp-image-helper!IImageHelperRequest#sourceUrl:member'
+    package: '@microsoft/sp-image-helper!'
+    fullName: sourceUrl
+    summary: The url to the item to be retrieved as an image. This can be an absolute url or a relative url.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'sourceUrl: string;'
+      return:
+        type: string
+  - name: width
+    uid: '@microsoft/sp-image-helper!IImageHelperRequest#width:member'
+    package: '@microsoft/sp-image-helper!'
+    fullName: width
+    summary: Width of the image requested.
+    remarks: 'When the height is unspecified, the width is mapped to nearest larger resolution breakpoint with a maximum size.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'width: number;'
+      return:
+        type: number

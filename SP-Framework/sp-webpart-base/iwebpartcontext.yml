@@ -5,17 +5,14 @@ package: '@microsoft/sp-webpart-base!'
 fullName: IWebPartContext
 summary: The base context interface for client-side web parts.
 remarks: >-
-  A "context" object is a collection of well-known services and other objects
-  that are likely to be needed by any business logic working with a component.
-  Each component type has its own specialized extension of this interface, e.g.
-  IWebPartContext for web parts, IExtensionContext for client-side extensions,
-  etc.
+  A "context" object is a collection of well-known services and other objects that are likely to be needed by any
+  business logic working with a component. Each component type has its own specialized extension of this interface, e.g.
+  IWebPartContext for web parts, IExtensionContext for client-side extensions, etc.
 isPreview: false
 isDeprecated: true
 customDeprecatedMessage: >-
   - This interface will be removed in an upcoming release. Use the
-  [WebPartContext](xref:@microsoft/sp-webpart-base!WebPartContext:class) class
-  instead.
+  [WebPartContext](xref:@microsoft/sp-webpart-base!WebPartContext:class) class instead.
 type: interface
 properties:
   - name: domElement
@@ -29,7 +26,7 @@ properties:
     syntax:
       content: 'readonly domElement: HTMLElement;'
       return:
-        type: '<xref uid="!HTMLElement:interface" />'
+        type: HTMLElement
   - name: httpClient
     uid: '@microsoft/sp-webpart-base!IWebPartContext#httpClient:member'
     package: '@microsoft/sp-webpart-base!'
@@ -65,10 +62,7 @@ properties:
     syntax:
       content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface"
-          />&lt;any&gt;
+        type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface" />&lt;any&gt;'
   - name: pageContext
     uid: '@microsoft/sp-webpart-base!IWebPartContext#pageContext:member'
     package: '@microsoft/sp-webpart-base!'
@@ -92,9 +86,7 @@ properties:
     syntax:
       content: 'readonly propertyPane: IPropertyPaneAccessor;'
       return:
-        type: >-
-          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface"
-          />
+        type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface" />'
   - name: spHttpClient
     uid: '@microsoft/sp-webpart-base!IWebPartContext#spHttpClient:member'
     package: '@microsoft/sp-webpart-base!'

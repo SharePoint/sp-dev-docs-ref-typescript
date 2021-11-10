@@ -4,16 +4,14 @@ uid: '@microsoft/sp-application-base!BaseApplicationCustomizer:class'
 package: '@microsoft/sp-application-base!'
 fullName: BaseApplicationCustomizer
 summary: >-
-  This is the base class that third parties should extend when implementing a
-  client-side extension that runs when an application is first starting.
+  This is the base class that third parties should extend when implementing a client-side extension that runs when an
+  application is first starting.
 remarks: >-
-  In the component manifest, the "extensionType" should be set to
-  "ApplicationCustomizer".
+  In the component manifest, the "extensionType" should be set to "ApplicationCustomizer".
 
 
-  Example usage scenarios for an application customizer might include: rendering
-  custom UI elements inside a SharePoint content placeholder, tracking page load
-  statistics, or automatically logging the user out after a certain time period.
+  Example usage scenarios for an application customizer might include: rendering custom UI elements inside a SharePoint
+  content placeholder, tracking page load statistics, or automatically logging the user out after a certain time period.
 isPreview: false
 isDeprecated: false
 type: class
@@ -37,10 +35,8 @@ methods:
     fullName: dispose()
     summary: Disposes the component.
     remarks: >-
-      Third-party code generally does not need to call this method; it's invoked
-      automatically when the lifecycle ends for a web part or extension. To
-      perform custom cleanup when your component is disposed, override the 
-      method.
+      Third-party code generally does not need to call this method; it's invoked automatically when the lifecycle ends
+      for a web part or extension. To perform custom cleanup when your component is disposed, override the  method.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -49,20 +45,17 @@ methods:
         type: void
         description: ''
   - name: onPlaceholdersChanged(placeholderProvider)
-    uid: >-
-      @microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)
+    uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#onPlaceholdersChanged:member(1)'
     package: '@microsoft/sp-application-base!'
     fullName: onPlaceholdersChanged(placeholderProvider)
     summary: >-
-      This event method is called when the placeholders of the host application
-      change, come into existence, or disappear.
+      This event method is called when the placeholders of the host application change, come into existence, or
+      disappear. virtual
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        protected onPlaceholdersChanged(placeholderProvider:
-        PlaceholderProvider): void;
+      content: 'protected onPlaceholdersChanged(placeholderProvider: PlaceholderProvider): void;'
       parameters:
         - id: placeholderProvider
           description: ''
@@ -70,6 +63,4 @@ methods:
       return:
         type: void
         description: ''
-extends: >-
-  <xref uid="@microsoft/sp-extension-base!BaseExtension:class"
-  />&lt;TProperties&gt; 
+extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />&lt;TProperties&gt; '

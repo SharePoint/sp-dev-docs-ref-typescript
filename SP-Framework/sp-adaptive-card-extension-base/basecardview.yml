@@ -1,0 +1,78 @@
+### YamlMime:TSType
+name: BaseCardView
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: BaseCardView
+summary: Primitive base class for Card views.
+remarks: |-
+  This class is marked as `@sealed`. Subclasses should not extend it.
+
+  No third-party Card views should inherit from this class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: cardButtons
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardButtons
+    summary: The buttons displayed on the Card.
+    remarks: >-
+      Some Card view templates will restrict how many buttons can be displayed depending on various factors. See the
+      documentation for the respective base Card View class for specific details.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined;
+      return:
+        type: >-
+          [<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | [<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />, <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | undefined
+  - name: data
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#data:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: data
+    summary: The data used to render the Card view.
+    remarks: >-
+      The available data to display is dependent on the Card view template and its respective base Card view class. See
+      the documentation for the Card View class for specific details.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'abstract get data(): TData;'
+      return:
+        type: TData
+  - name: isCacheEnabled
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#isCacheEnabled:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: isCacheEnabled
+    summary: 'If true, this Card view will be cached and rendered at next load.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get isCacheEnabled(): boolean;
+      return:
+        type: boolean
+  - name: onCardSelection
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onCardSelection:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onCardSelection
+    summary: Action to invoke when the card is selected.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined;
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!IQuickViewCardAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IExternalLinkCardAction:interface" /> | undefined
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState, TData&gt; '

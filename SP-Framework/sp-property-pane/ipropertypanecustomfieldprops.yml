@@ -14,9 +14,8 @@ properties:
     package: '@microsoft/sp-property-pane!'
     fullName: context
     summary: >-
-      Instance specific context. This context is passed back to the web part in
-      the onRender and onDispose APIs. The web part can use this context to
-      manage state information.
+      Instance specific context. This context is passed back to the web part in the onRender and onDispose APIs. The web
+      part can use this context to manage state information.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -32,15 +31,13 @@ properties:
       An UNIQUE key indicates the identity of this contorl.
 
 
-      The PropertyPane uses ReactJS to render its components. ReactJS uses keys
-      to identify a component and if it should be re-rendered or not. This is a
-      performance feature in ReactJS. Please read the following link to
-      understand how to pick the value of the key.
+      The PropertyPane uses ReactJS to render its components. ReactJS uses keys to identify a component and if it should
+      be re-rendered or not. This is a performance feature in ReactJS. Please read the following link to understand how
+      to pick the value of the key.
 
 
       For more information, see the [React
-      documentation](https://facebook.github.io/react/docs/lists-and-keys.html#keys)<!--
-      -->.
+      documentation](https://facebook.github.io/react/docs/lists-and-keys.html#keys)<!-- -->.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -59,25 +56,20 @@ properties:
     syntax:
       content: 'onDispose?: (domElement: HTMLElement, context?: any) => void;'
       return:
-        type: >-
-          (domElement: <xref uid="!HTMLElement:interface" />, context?: any)
-          =&gt; void
+        type: '(domElement: HTMLElement, context?: any) =&gt; void'
   - name: onRender
     uid: '@microsoft/sp-property-pane!IPropertyPaneCustomFieldProps#onRender:member'
     package: '@microsoft/sp-property-pane!'
     fullName: onRender
-    summary: >-
-      This API will be called once the custom field is mounted on the host
-      element.
+    summary: This API will be called once the custom field is mounted on the host element.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: >-
-        onRender: (domElement: HTMLElement, context?: any, changeCallback?:
-        (targetProperty?: string, newValue?: any) => void) => void;
+        onRender: (domElement: HTMLElement, context?: any, changeCallback?: (targetProperty?: string, newValue?: any) =>
+        void) => void;
       return:
         type: >-
-          (domElement: <xref uid="!HTMLElement:interface" />, context?: any,
-          changeCallback?: (targetProperty?: string, newValue?: any) =&gt; void)
-          =&gt; void
+          (domElement: HTMLElement, context?: any, changeCallback?: (targetProperty?: string, newValue?: any) =&gt;
+          void) =&gt; void
