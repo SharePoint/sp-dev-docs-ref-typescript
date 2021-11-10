@@ -4,23 +4,20 @@ uid: '@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface'
 package: '@microsoft/sp-list-subscription!'
 fullName: ICreateSubscriptionSettings
 summary: >-
-  A list subscription requires at least a site ID and list ID. If the list is
-  not contained in the root site of a web, you need to pass in the subweb id. If
-  the domain you are accessing is different than the current domain, you will
-  need to provide it as well.
+  A list subscription requires at least a site ID and list ID. If the list is not contained in the root site of a web,
+  you need to pass in the subweb id. If the domain you are accessing is different than the current domain, you will need
+  to provide it as well.
 
 
-  In the simple case (say a teamsite document library) in the current site, you
-  can simply provide the library ID, and the current domain, site and web will
-  be used.
+  In the simple case (say a teamsite document library) in the current site, you can simply provide the library ID, and
+  the current domain, site and web will be used.
 remarks: ''
 isPreview: false
 isDeprecated: false
 type: interface
 properties:
   - name: callbacks
-    uid: >-
-      @microsoft/sp-list-subscription!ICreateSubscriptionSettings#callbacks:member
+    uid: '@microsoft/sp-list-subscription!ICreateSubscriptionSettings#callbacks:member'
     package: '@microsoft/sp-list-subscription!'
     fullName: callbacks
     summary: the list of callbacks
@@ -30,17 +27,12 @@ properties:
     syntax:
       content: 'callbacks: ISubscriptionCallbacks;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-list-subscription!ISubscriptionCallbacks:interface"
-          />
+        type: '<xref uid="@microsoft/sp-list-subscription!ISubscriptionCallbacks:interface" />'
   - name: domain
     uid: '@microsoft/sp-list-subscription!ICreateSubscriptionSettings#domain:member'
     package: '@microsoft/sp-list-subscription!'
     fullName: domain
-    summary: >-
-      In the case of a multi-geography tenancy, you need to provide the domain
-      that the site collection lives in.
+    summary: 'In the case of a multi-geography tenancy, you need to provide the domain that the site collection lives in.'
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -52,9 +44,7 @@ properties:
     uid: '@microsoft/sp-list-subscription!ICreateSubscriptionSettings#listId:member'
     package: '@microsoft/sp-list-subscription!'
     fullName: listId
-    summary: >-
-      The Guid of the Sharepoint List. At this point, it needs to be a document
-      library, and not just a list.
+    summary: 'The Guid of the Sharepoint List. At this point, it needs to be a document library, and not just a list.'
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -67,8 +57,8 @@ properties:
     package: '@microsoft/sp-list-subscription!'
     fullName: siteId
     summary: >-
-      The SharePoint Site Id (assuming it is not the current site) If the siteId
-      parameter is not provided, the current site will be used.
+      The SharePoint Site Id (assuming it is not the current site) If the siteId parameter is not provided, the current
+      site will be used.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -81,8 +71,8 @@ properties:
     package: '@microsoft/sp-list-subscription!'
     fullName: webId
     summary: >-
-      The SharePoint Web Id (assuming it is not the current web) If the webId
-      parameter is not provided, the current web will be used.
+      The SharePoint Web Id (assuming it is not the current web) If the webId parameter is not provided, the current web
+      will be used.
     remarks: ''
     isPreview: false
     isDeprecated: false

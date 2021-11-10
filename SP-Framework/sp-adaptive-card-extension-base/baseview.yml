@@ -1,0 +1,192 @@
+### YamlMime:TSType
+name: BaseView
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: BaseView
+summary: Base class for all views.
+remarks: |-
+  This class is marked as `@sealed`. Subclasses should not extend it.
+
+  No third-party views should inherit from this class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: cardNavigator
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#cardNavigator:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardNavigator
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.cardNavigator](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23cardNavigator:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get cardNavigator(): ViewNavigator<BaseCardView<TProperties, TState>>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />&lt;TProperties, TState&gt;&gt;
+  - name: cardSize
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#cardSize:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardSize
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.cardSize](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23cardSize:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get cardSize(): CardSize;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!CardSize:type" />'
+  - name: context
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#context:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: context
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.context](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23context:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get context(): AdaptiveCardExtensionContext;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext:class" />'
+  - name: data
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#data:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: data
+    summary: The data used to render the View.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'abstract get data(): TData | undefined;'
+      return:
+        type: TData | undefined
+  - name: properties
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#properties:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: properties
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.properties](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23properties:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get properties(): TProperties;'
+      return:
+        type: TProperties
+  - name: quickViewNavigator
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#quickViewNavigator:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: quickViewNavigator
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.quickViewNavigator](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23quickViewNavigator:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get quickViewNavigator(): QuickViewNavigator<BaseAdaptiveCardView<TProperties, TState>>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class" />&lt;TProperties, TState&gt;&gt;
+  - name: state
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#state:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: state
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.state](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23state:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get state(): Readonly<TState>;'
+      return:
+        type: Readonly&lt;TState&gt;
+  - name: template
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#template:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: template
+    summary: The Adaptive Card template used to render the view.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'abstract get template(): ISPFxAdaptiveCard;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
+methods:
+  - name: onAction(action)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#onAction:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onAction(action)
+    summary: Action handler for Adaptive Card Actions.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'onAction(action: IActionArguments): void;'
+      parameters:
+        - id: action
+          description: >-
+            The [IActionArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionArguments:type) for the
+            current event.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IActionArguments:type" />'
+      return:
+        type: void
+        description: ''
+  - name: setState(newState)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#setState:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: setState(newState)
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'setState(newState?: Partial<TState>): void;'
+      parameters:
+        - id: newState
+          description: ''
+          type: Partial&lt;TState&gt;
+      return:
+        type: void
+        description: ''
+  - name: setVisibility(isVisible)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#setVisibility:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: setVisibility(isVisible)
+    summary: >-
+      Sets visibility to false and rerenders the card. See
+      [BaseAdaptiveCardExtension.isVisible](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23isVisible:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'setVisibility(isVisible: boolean): void;'
+      parameters:
+        - id: isVisible
+          description: ''
+          type: boolean
+      return:
+        type: void
+        description: ''

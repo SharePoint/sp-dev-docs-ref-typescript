@@ -3,22 +3,17 @@ name: ColumnAccessor
 uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
 package: '@microsoft/sp-listview-extensibility!'
 fullName: ColumnAccessor
-summary: >-
-  Provides access to a ListView column, which is the visual presentation of a
-  field.
+summary: 'Provides access to a ListView column, which is the visual presentation of a field.'
 remarks: >-
-  A SharePoint "field" (SPField) defines the data storage for a property of a
-  list item. (If the list item represents a document, then the field is
-  sometimes called a "property".)
+  A SharePoint "field" (SPField) defines the data storage for a property of a list item. (If the list item represents a
+  document, then the field is sometimes called a "property".)
 
 
-  A "column" is the visual presentation of a field, when displayed by the
-  ListView.
+  A "column" is the visual presentation of a field, when displayed by the ListView.
 
 
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `ColumnAccessor` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `ColumnAccessor` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -32,7 +27,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'abstract readonly field: SPField;'
+      content: 'abstract get field(): SPField;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!SPField:class" />'
   - name: visible
@@ -44,6 +39,6 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'abstract readonly visible: boolean;'
+      content: 'abstract get visible(): boolean;'
       return:
         type: boolean

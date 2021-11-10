@@ -3,9 +3,7 @@ name: SPComponentLoader
 uid: '@microsoft/sp-loader!SPComponentLoader:class'
 package: '@microsoft/sp-loader!'
 fullName: SPComponentLoader
-summary: >-
-  Component loader. Needs to be initialized with an implemented
-  `ISPComponentLoader`<!-- -->.
+summary: Component loader. Needs to be initialized with an implemented `ISPComponentLoader`<!-- -->.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -22,10 +20,7 @@ methods:
     syntax:
       content: 'static getManifests(): IClientSideComponentManifest[];'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
-          />[]
+        type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />[]'
         description: ''
   - name: loadComponent(manifest)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)'
@@ -36,18 +31,13 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        static loadComponent<TComponent>(manifest:
-        IClientSideComponentManifest): Promise<TComponent>;
+      content: 'static loadComponent<TComponent>(manifest: IClientSideComponentManifest): Promise<TComponent>;'
       parameters:
         - id: manifest
           description: Manifest of the module to load.
-          type: >-
-            <xref
-            uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface"
-            />
+          type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'
       return:
-        type: '<xref uid="!Promise:class" />&lt;TComponent&gt;'
+        type: Promise&lt;TComponent&gt;
         description: A promise containing the loaded module.
   - name: 'loadComponentById(id, version)'
     uid: '@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)'
@@ -58,20 +48,18 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        static loadComponentById<TComponent>(id: string, version?: string):
-        Promise<TComponent>;
+      content: 'static loadComponentById<TComponent>(id: string, version?: string): Promise<TComponent>;'
       parameters:
         - id: id
           description: The id of the component to load.
           type: string
         - id: version
           description: >-
-            The version of the component to load. If version is not defined, the
-            method will load any version of the component.
+            The version of the component to load. If version is not defined, the method will load any version of the
+            component.
           type: string
       return:
-        type: '<xref uid="!Promise:class" />&lt;TComponent&gt;'
+        type: Promise&lt;TComponent&gt;
         description: A promise containing the loaded module.
   - name: loadCss(url)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadCss:member(1)'
@@ -96,25 +84,22 @@ methods:
     fullName: 'loadScript(url, options)'
     summary: 'Given a URL, load a script.'
     remarks: >-
-      If a script with a global variable is being loaded, the global variable
-      already exists, and the script fails to load (because of a syntax error,
-      for example), the original global variable may be returned and an error
-      may not be propagated.
+      If a script with a global variable is being loaded, the global variable already exists, and the script fails to
+      load (because of a syntax error, for example), the original global variable may be returned and an error may not
+      be propagated.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        static loadScript<TModule>(url: string, options?: ILoadScriptOptions):
-        Promise<TModule>;
+      content: 'static loadScript<TModule>(url: string, options?: ILoadScriptOptions): Promise<TModule>;'
       parameters:
         - id: url
           description: The script URL.
           type: string
         - id: options
           description: >-
-            globalExportsName: If the script isn't an AMD module and loads a
-            global member on the page, specify the global member's name.
+            globalExportsName: If the script isn't an AMD module and loads a global member on the page, specify the
+            global member's name.
           type: '<xref uid="@microsoft/sp-loader!ILoadScriptOptions:interface" />'
       return:
-        type: '<xref uid="!Promise:class" />&lt;TModule&gt;'
+        type: Promise&lt;TModule&gt;
         description: A promise containing the loaded module.

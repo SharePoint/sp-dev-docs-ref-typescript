@@ -1,0 +1,39 @@
+### YamlMime:TSType
+name: ISelectMediaActionArguments
+uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ISelectMediaActionArguments
+summary: >-
+  The object passed to
+  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a
+  `SelectMedia` Action is executed.
+remarks: API under active development and not ready for use.
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: media
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#media:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: media
+    summary: media object returned media picker API
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'media: ISelectMediaAttachment[];'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface" />[]'
+  - name: type
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#type:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: type
+    summary: The type of Adaptive Card Action.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: ''VivaAction.SelectMedia'';'
+      return:
+        type: '''VivaAction.SelectMedia'''
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />, ''type''&gt; '

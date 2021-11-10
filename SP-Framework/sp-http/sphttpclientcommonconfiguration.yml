@@ -3,9 +3,7 @@ name: SPHttpClientCommonConfiguration
 uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:class'
 package: '@microsoft/sp-http!'
 fullName: SPHttpClientCommonConfiguration
-summary: >-
-  Common base class for SPHttpClientConfiguration and
-  SPHttpClientBatchConfiguration.
+summary: Common base class for SPHttpClientConfiguration and SPHttpClientBatchConfiguration.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -15,31 +13,21 @@ constructors:
     uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:constructor(1)'
     package: '@microsoft/sp-http!'
     fullName: '(constructor)(flags, overrideFlags)'
-    summary: >-
-      Constructs a new instance of SPHttpClientCommonConfiguration with the
-      specified flags.
+    summary: Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags.
     remarks: >-
-      The default values will be used for any flags that are missing or
-      undefined. If overrideFlags is specified, it takes precedence over flags.
+      The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it
+      takes precedence over flags.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        constructor(flags: ISPHttpClientCommonConfiguration, overrideFlags?:
-        ISPHttpClientCommonConfiguration);
+      content: 'constructor(flags: ISPHttpClientCommonConfiguration, overrideFlags?: ISPHttpClientCommonConfiguration);'
       parameters:
         - id: flags
           description: ''
-          type: >-
-            <xref
-            uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface"
-            />
+          type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
         - id: overrideFlags
           description: ''
-          type: >-
-            <xref
-            uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface"
-            />
+          type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
 properties:
   - name: flags
     uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#flags:member'
@@ -52,9 +40,7 @@ properties:
     syntax:
       content: 'protected flags: ISPHttpClientCommonConfiguration;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />
+        type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
   - name: jsonRequest
     uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonRequest:member'
     package: '@microsoft/sp-http!'
@@ -64,20 +50,18 @@ properties:
       When this switch is true:
 
 
-      If the "Content-Type" header was not explicitly added for the request,
-      then SPHttpClient will add it if the request is a write operation (i.e. an
-      HTTP method other than "GET", "HEAD", or "OPTIONS").
+      If the "Content-Type" header was not explicitly added for the request, then SPHttpClient will add it if the
+      request is a write operation (i.e. an HTTP method other than "GET", "HEAD", or "OPTIONS").
 
 
-      For OData 3.0, the value is
-      'application/json;odata=verbose;charset=utf-8'.
+      For OData 3.0, the value is 'application/json;odata=verbose;charset=utf-8'.
 
 
       For OData 4.0, the value is 'application/json;charset=utf-8'.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly jsonRequest: boolean;'
+      content: 'get jsonRequest(): boolean;'
       return:
         type: boolean
   - name: jsonResponse
@@ -85,28 +69,23 @@ properties:
     package: '@microsoft/sp-http!'
     fullName: jsonResponse
     summary: Automatically configure the "Accept" header for a JSON payload.
-    remarks: >-
+    remarks: |-
       When this switch is true:
 
-
-      If the "Accept" header was not explicitly added for the request, then
-      SPHttpClient will add it.
-
+      If the "Accept" header was not explicitly added for the request, then SPHttpClient will add it.
 
       For OData 3.0, the value is 'application/json'.
-
 
       For OData 4.0, the value is 'application/json;odata.metadata=minimal'.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly jsonResponse: boolean;'
+      content: 'get jsonResponse(): boolean;'
       return:
         type: boolean
 methods:
   - name: initializeFlags()
-    uid: >-
-      @microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)
+    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)'
     package: '@microsoft/sp-http!'
     fullName: initializeFlags()
     summary: ''
@@ -129,18 +108,13 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
+      content: |-
         /** @override */
-
-        overrideWith(sourceFlags: ISPHttpClientCommonConfiguration):
-        SPHttpClientCommonConfiguration;
+        overrideWith(sourceFlags: ISPHttpClientCommonConfiguration): SPHttpClientCommonConfiguration;
       parameters:
         - id: sourceFlags
           description: ''
-          type: >-
-            <xref
-            uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface"
-            />
+          type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
       return:
         type: '<xref uid="@microsoft/sp-http!default:class" />'
         description: ''

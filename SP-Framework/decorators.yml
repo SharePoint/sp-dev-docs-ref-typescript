@@ -2,47 +2,43 @@
 uid: '@microsoft/decorators!'
 name: '@microsoft/decorators'
 type: package
-summary: >-
-  A conservative set of decorators intended for use in both NodeJS and web
-  browser projects.
+summary: A conservative set of decorators intended for use in both NodeJS and web browser projects.
 functions:
   - name: 'override(target, propertyKey, descriptor)'
     uid: '@microsoft/decorators!override:function(1)'
-    package: '@microsoft/decorators'
+    package: '@microsoft/decorators!'
     summary: >-
-      This decorator is applied to a class's member function or property. It
-      indicates that the definition overrides another defintion (of the same
-      name) from the base class. The base class definition must be marked as
-      @<!-- -->virtual. This decorator is currently used for documentation
-      purposes only. In the future, it may be enforced at runtime.
+      This decorator is applied to a class's member function or property. It indicates that the definition overrides
+      another defintion (of the same name) from the base class. The base class definition must be marked as @<!--
+      -->virtual. This decorator is currently used for documentation purposes only. In the future, it may be enforced at
+      runtime.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: >-
-        export declare function override(target: Object, propertyKey: string |
-        symbol, descriptor: TypedPropertyDescriptor<any>): void;
+        export declare function override(target: Object, propertyKey: string | symbol, descriptor:
+        TypedPropertyDescriptor<any>): void;
       parameters:
         - id: target
           description: ''
-          type: '<xref uid="!Object:interface" />'
+          type: Object
         - id: propertyKey
           description: ''
           type: string | symbol
         - id: descriptor
           description: ''
-          type: '<xref uid="!TypedPropertyDescriptor:interface" />&lt;any&gt;'
+          type: TypedPropertyDescriptor&lt;any&gt;
       return:
         type: void
         description: ''
   - name: sealed(target)
     uid: '@microsoft/decorators!sealed:function(1)'
-    package: '@microsoft/decorators'
+    package: '@microsoft/decorators!'
     summary: >-
-      This decorator is applied to a class (but NOT member function or
-      property). It indicates that subclasses must not inherit from this class.
-      This decorator is currently used for documentation purposes only. In the
-      future, it may be enforced at runtime.
+      This decorator is applied to a class (but NOT member function or property). It indicates that subclasses must not
+      inherit from this class. This decorator is currently used for documentation purposes only. In the future, it may
+      be enforced at runtime.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -51,37 +47,35 @@ functions:
       parameters:
         - id: target
           description: ''
-          type: '<xref uid="!Function:interface" />'
+          type: Function
       return:
         type: void
         description: ''
   - name: 'virtual(target, propertyKey, descriptor)'
     uid: '@microsoft/decorators!virtual:function(1)'
-    package: '@microsoft/decorators'
+    package: '@microsoft/decorators!'
     summary: >-
-      This decorator is applied to a class's member function or property. It
-      indicates that the definition may optionally be overridden in a child
-      class. Conversely, if the @<!-- -->virtual decorator is NOT applied to a
-      definition, then child classes may NOT override it. This decorator is
-      currently used for documentation purposes only. In the future, it may be
-      enforced at runtime.
+      This decorator is applied to a class's member function or property. It indicates that the definition may
+      optionally be overridden in a child class. Conversely, if the @<!-- -->virtual decorator is NOT applied to a
+      definition, then child classes may NOT override it. This decorator is currently used for documentation purposes
+      only. In the future, it may be enforced at runtime.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: >-
-        export declare function virtual(target: Object, propertyKey: string |
-        symbol, descriptor: TypedPropertyDescriptor<any>): void;
+        export declare function virtual(target: Object, propertyKey: string | symbol, descriptor:
+        TypedPropertyDescriptor<any>): void;
       parameters:
         - id: target
           description: ''
-          type: '<xref uid="!Object:interface" />'
+          type: Object
         - id: propertyKey
           description: ''
           type: string | symbol
         - id: descriptor
           description: ''
-          type: '<xref uid="!TypedPropertyDescriptor:interface" />&lt;any&gt;'
+          type: TypedPropertyDescriptor&lt;any&gt;
       return:
         type: void
         description: ''

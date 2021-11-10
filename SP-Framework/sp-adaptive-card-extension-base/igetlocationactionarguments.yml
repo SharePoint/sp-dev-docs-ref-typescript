@@ -1,0 +1,39 @@
+### YamlMime:TSType
+name: IGetLocationActionArguments
+uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IGetLocationActionArguments
+summary: >-
+  The object passed to
+  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a Get
+  location Action is executed.
+remarks: API under active development and not ready for use.
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: location
+    uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#location:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: location
+    summary: 'Coordinates of the location. In case of erroneous situation, location object will be undefined.'
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'location?: ILocation;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ILocation:interface" />'
+  - name: type
+    uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#type:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: type
+    summary: The type of Adaptive Card Action.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: ''VivaAction.GetLocation'';'
+      return:
+        type: '''VivaAction.GetLocation'''
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />, ''type''&gt; '

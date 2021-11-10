@@ -5,11 +5,9 @@ package: '@microsoft/sp-page-context!'
 fullName: PageContext
 summary: The SharePoint page context object.
 remarks: >-
-  The page context provides standard definitions for common SharePoint objects
-  that need to be shared between the client-side application, web parts, and
-  other components. Typically the data is fetched via REST queries when
-  navigating to a new page, but it can also be preloaded by the web server, or
-  filled from a custom application cache.
+  The page context provides standard definitions for common SharePoint objects that need to be shared between the
+  client-side application, web parts, and other components. Typically the data is fetched via REST queries when
+  navigating to a new page, but it can also be preloaded by the web server, or filled from a custom application cache.
 isPreview: false
 isDeprecated: false
 type: class
@@ -34,14 +32,13 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: aadInfo
     summary: >-
-      Contextual information for communicating with Azure Active Directory. If
-      the current page doesn't have an associated Azure Active Directory tenant,
-      this property will be undefined.
+      Contextual information for communicating with Azure Active Directory. If the current page doesn't have an
+      associated Azure Active Directory tenant, this property will be undefined.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly aadInfo: AzureActiveDirectoryInfo | undefined;'
+      content: 'get aadInfo(): AzureActiveDirectoryInfo | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
   - name: cultureInfo
@@ -49,13 +46,13 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: cultureInfo
     summary: >-
-      It provides culture info for the current user of the application. This
-      class is primarily used with the `PageContext` class.
+      It provides culture info for the current user of the application. This class is primarily used with the
+      `PageContext` class.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly cultureInfo: CultureInfo;'
+      content: 'get cultureInfo(): CultureInfo;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" />'
   - name: isInitialized
@@ -67,34 +64,29 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly isInitialized: boolean;'
+      content: 'get isInitialized(): boolean;'
       return:
         type: boolean
   - name: legacyPageContext
     uid: '@microsoft/sp-page-context!PageContext#legacyPageContext:member'
     package: '@microsoft/sp-page-context!'
     fullName: legacyPageContext
-    summary: >-
-      An object providing classic SharePoint properties that may be required by
-      certain legacy scripts.
+    summary: An object providing classic SharePoint properties that may be required by certain legacy scripts.
     remarks: >-
-      This property is provided to facilitate migration of legacy code. It
-      returns a JavaScript object whose contents are similar to the
-      `_spPageContextInfo` window variable from classic pages. The contents of
-      this variable may change in future releases of SharePoint. For this
-      reason, new projects are encouraged to use the SharePoint Framework
-      TypeScript APIs instead, since they are fully documented and provide
-      reliable backwards compatibility guarantees.
+      This property is provided to facilitate migration of legacy code. It returns a JavaScript object whose contents
+      are similar to the `_spPageContextInfo` window variable from classic pages. The contents of this variable may
+      change in future releases of SharePoint. For this reason, new projects are encouraged to use the SharePoint
+      Framework TypeScript APIs instead, since they are fully documented and provide reliable backwards compatibility
+      guarantees.
 
 
-      NOTE: If certain functionality is exposed in the `legacyPageContext` but
-      does not seem to have a proper TypeScript API, please file an issue on
-      GitHub. The intention is that no modern application should need to rely on
-      the `legacyPageContext` object.
+      NOTE: If certain functionality is exposed in the `legacyPageContext` but does not seem to have a proper TypeScript
+      API, please file an issue on GitHub. The intention is that no modern application should need to rely on the
+      `legacyPageContext` object.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly legacyPageContext: any;'
+      content: 'get legacyPageContext(): any;'
       return:
         type: any
   - name: list
@@ -102,14 +94,13 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: list
     summary: >-
-      Contextual information for the SharePoint list that is hosting the page.
-      If there is no list associated to the current page, this property will be
-      undefined.
+      Contextual information for the SharePoint list that is hosting the page. If there is no list associated to the
+      current page, this property will be undefined.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly list: SPList | undefined;'
+      content: 'get list(): SPList | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
   - name: listItem
@@ -117,14 +108,13 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: listItem
     summary: >-
-      Contextual information for the SharePoint list item that is hosting the
-      page. If there is no list item associated to the current page, this
-      property will be undefined.
+      Contextual information for the SharePoint list item that is hosting the page. If there is no list item associated
+      to the current page, this property will be undefined.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly listItem: SPListItem | undefined;'
+      content: 'get listItem(): SPListItem | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
   - name: serviceKey
@@ -145,14 +135,12 @@ properties:
     uid: '@microsoft/sp-page-context!PageContext#site:member'
     package: '@microsoft/sp-page-context!'
     fullName: site
-    summary: >-
-      Contextual information for the SharePoint site collection ("SPSite") that
-      is hosting the page.
+    summary: Contextual information for the SharePoint site collection ("SPSite") that is hosting the page.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly site: SPSite;'
+      content: 'get site(): SPSite;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" />'
   - name: user
@@ -160,27 +148,24 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: user
     summary: >-
-      It provides contextual information for the SharePoint user that is
-      accessing the page. This class is primarily used with the `PageContext`
-      class.
+      It provides contextual information for the SharePoint user that is accessing the page. This class is primarily
+      used with the `PageContext` class.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly user: SPUser;'
+      content: 'get user(): SPUser;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" />'
   - name: web
     uid: '@microsoft/sp-page-context!PageContext#web:member'
     package: '@microsoft/sp-page-context!'
     fullName: web
-    summary: >-
-      Contextual information for the SharePoint site ("SPWeb") that is hosting
-      the page.
+    summary: Contextual information for the SharePoint site ("SPWeb") that is hosting the page.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly web: SPWeb;'
+      content: 'get web(): SPWeb;'
       return:
         type: '<xref uid="@microsoft/sp-page-context!default:class" />'

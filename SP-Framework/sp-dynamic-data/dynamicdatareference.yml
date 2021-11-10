@@ -4,15 +4,12 @@ uid: '@microsoft/sp-dynamic-data!DynamicDataReference:class'
 package: '@microsoft/sp-dynamic-data!'
 fullName: DynamicDataReference
 summary: >-
-  Class that contains the Dynamic Data reference. This includes the source,
-  property, and property path (if applicable) of Dynamic Data
-remarks: >-
-  The reference string is of the form `<sourceId>:<property>` or
-  `<sourceId>:<property>:<propertyPath>`
+  Class that contains the Dynamic Data reference. This includes the source, property, and property path (if applicable)
+  of Dynamic Data
+remarks: |-
+  The reference string is of the form `<sourceId>:<property>` or `<sourceId>:<property>:<propertyPath>`
 
-
-  Examples of references are:
-  `WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName`
+  Examples of references are: `WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName`
 isPreview: false
 isDeprecated: false
 type: class
@@ -41,21 +38,19 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly property: string;'
+      content: 'get property(): string;'
       return:
         type: string
   - name: propertyPath
     uid: '@microsoft/sp-dynamic-data!DynamicDataReference#propertyPath:member'
     package: '@microsoft/sp-dynamic-data!'
     fullName: propertyPath
-    summary: >-
-      Returns the referred property path of the Dynamic Data. Returns undefined
-      if there is no property path.
+    summary: Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly propertyPath: string | undefined;'
+      content: 'get propertyPath(): string | undefined;'
       return:
         type: string | undefined
   - name: reference
@@ -67,7 +62,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly reference: string;'
+      content: 'get reference(): string;'
       return:
         type: string
   - name: sourceId
@@ -79,6 +74,6 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly sourceId: string;'
+      content: 'get sourceId(): string;'
       return:
         type: string

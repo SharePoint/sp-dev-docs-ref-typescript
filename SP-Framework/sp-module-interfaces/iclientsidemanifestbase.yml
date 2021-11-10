@@ -3,9 +3,7 @@ name: IClientSideManifestBase
 uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
 package: '@microsoft/sp-module-interfaces!'
 fullName: IClientSideManifestBase
-summary: >-
-  This interface defines members that are common between all deployable
-  manifests.
+summary: This interface defines members that are common between all deployable manifests.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -16,9 +14,8 @@ properties:
     package: '@microsoft/sp-module-interfaces!'
     fullName: id
     summary: >-
-      A universally unique component id. Each client-side component is required
-      to have this id. Once an id has been used for a component, it cannot be
-      changed. A change in this value is treated same as the creation of a new
+      A universally unique component id. Each client-side component is required to have this id. Once an id has been
+      used for a component, it cannot be changed. A change in this value is treated same as the creation of a new
       component. Two components are never expected to have the same id.
 
 
@@ -37,20 +34,16 @@ properties:
       return:
         type: string
   - name: manifestVersion
-    uid: >-
-      @microsoft/sp-module-interfaces!IClientSideManifestBase#manifestVersion:member
+    uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase#manifestVersion:member'
     package: '@microsoft/sp-module-interfaces!'
     fullName: manifestVersion
     summary: >-
-      Version of the component manifest schema. The value of this field is
-      controlled by Microsoft. The purpose of this field is to help manage
-      upgrades of the component manifest schema.
+      Version of the component manifest schema. The value of this field is controlled by Microsoft. The purpose of this
+      field is to help manage upgrades of the component manifest schema.
     remarks: >-
-      A component developer needs to only confirm that they are using the
-      correct value per the manifest schema. Please read the "manifest upgrade
-      rules" for more details on when the schema could change. Note, manifest
-      schema version upgrade will be considered a big API change event and will
-      be advertised broadly.
+      A component developer needs to only confirm that they are using the correct value per the manifest schema. Please
+      read the "manifest upgrade rules" for more details on when the schema could change. Note, manifest schema version
+      upgrade will be considered a big API change event and will be advertised broadly.
 
 
       Usage: To help support multiple manifest schema versions.

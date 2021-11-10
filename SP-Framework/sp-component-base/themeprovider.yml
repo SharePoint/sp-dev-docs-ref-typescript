@@ -4,9 +4,8 @@ uid: '@microsoft/sp-component-base!ThemeProvider:class'
 package: '@microsoft/sp-component-base!'
 fullName: ThemeProvider
 summary: >-
-  The ThemeProvider class provides the capability to get different themes from
-  the Framework. Themes can be provided in different contexts, e.g. Canvas
-  sections may provide a variant of the global theme in some contexts.
+  The ThemeProvider class provides the capability to get different themes from the Framework. Themes can be provided in
+  different contexts, e.g. Canvas sections may provide a variant of the global theme in some contexts.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -44,6 +43,21 @@ properties:
         type: >-
           <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
           uid="@microsoft/sp-component-base!ThemeProvider:class" />&gt;
+methods:
+  - name: tryGetTheme()
+    uid: '@microsoft/sp-component-base!ThemeProvider#tryGetTheme:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: tryGetTheme()
+    summary: 'If set, get the current scoped theme.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'tryGetTheme(): IReadonlyTheme | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-component-base!IReadonlyTheme:interface" /> | undefined'
+        description: ''
+events:
   - name: themeChangedEvent
     uid: '@microsoft/sp-component-base!ThemeProvider#themeChangedEvent:member'
     package: '@microsoft/sp-component-base!'
@@ -58,19 +72,3 @@ properties:
         type: >-
           <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
           uid="@microsoft/sp-component-base!ThemeChangedEventArgs:class" />&gt;
-methods:
-  - name: tryGetTheme()
-    uid: '@microsoft/sp-component-base!ThemeProvider#tryGetTheme:member(1)'
-    package: '@microsoft/sp-component-base!'
-    fullName: tryGetTheme()
-    summary: 'If set, get the current scoped theme.'
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'tryGetTheme(): IReadonlyTheme | undefined;'
-      return:
-        type: >-
-          <xref uid="@microsoft/sp-component-base!IReadonlyTheme:interface" /> |
-          undefined
-        description: ''

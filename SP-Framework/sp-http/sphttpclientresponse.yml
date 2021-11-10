@@ -4,12 +4,10 @@ uid: '@microsoft/sp-http!SPHttpClientResponse:class'
 package: '@microsoft/sp-http!'
 fullName: SPHttpClientResponse
 summary: The Response subclass returned by methods such as SPHttpClient.fetch().
-remarks: >-
+remarks: |-
   This class is marked as `@sealed`. Subclasses should not extend it.
 
-
-  This is a placeholder. In the future, additional SPHttpClient-specific
-  functionality may be added to this class.
+  This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -27,7 +25,7 @@ constructors:
       parameters:
         - id: response
           description: ''
-          type: '<xref uid="!Response:interface" />'
+          type: Response
 properties:
   - name: correlationId
     uid: '@microsoft/sp-http!SPHttpClientResponse#correlationId:member'
@@ -35,14 +33,13 @@ properties:
     fullName: correlationId
     summary: Returns the SharePoint correlation ID.
     remarks: >-
-      The correlation ID is a Guid that can be used to associate log events that
-      are part of the same overall operation, but may originate from different
-      services or components. SharePoint REST operations return the server's
+      The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation,
+      but may originate from different services or components. SharePoint REST operations return the server's
       correlation ID as the "sprequestguid" header.
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'readonly correlationId: Guid | undefined;'
+      content: 'get correlationId(): Guid | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined'
 methods:

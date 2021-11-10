@@ -4,24 +4,21 @@ uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart:class'
 package: '@microsoft/sp-webpart-base!'
 fullName: BaseClientSideWebPart
 summary: >-
-  This abstract class implements the the base functionality for a client-side
-  web part. Every client-side web part needs to inherit from this class.
+  This abstract class implements the the base functionality for a client-side web part. Every client-side web part needs
+  to inherit from this class.
 remarks: >-
-  Along with the base functionality, this class provides some APIs that can be
-  used by the web part. These APIs fall in two catagories.
+  Along with the base functionality, this class provides some APIs that can be used by the web part. These APIs fall in
+  two catagories.
 
 
-  The first category of APIs provide data and functionality. Example, the web
-  part context (i.e. this.context). This API should be used to access contextual
-  data relevant to this web part instance.
+  The first category of APIs provide data and functionality. Example, the web part context (i.e. this.context). This API
+  should be used to access contextual data relevant to this web part instance.
 
 
-  The second category of APIs provide a base implementation for the web part
-  lifecycle and can be overridden for an updated implementation. The render()
-  API is the only API that is mandatory to be implemented/overridden by a web
-  part. All other life cycle APIs have a base implementation and can be
-  overridden based on the needs of the web part. Please refer to the
-  documentation of the individual APIs to make the right decision.
+  The second category of APIs provide a base implementation for the web part lifecycle and can be overridden for an
+  updated implementation. The render() API is the only API that is mandatory to be implemented/overridden by a web part.
+  All other life cycle APIs have a base implementation and can be overridden based on the needs of the web part. Please
+  refer to the documentation of the individual APIs to make the right decision.
 isPreview: false
 isDeprecated: false
 type: class
@@ -32,56 +29,44 @@ constructors:
     fullName: (constructor)()
     summary: Constructor for the BaseClientSideWebPart class.
     remarks: >-
-      It is highly recommended that the web part use the `onInit()` API to
-      perform any web part specific initialization. Most of the web part
-      features like this.context and `this.properties` are not available to be
-      used before the the `onInit()` part of the web part loading lifecycle.
+      It is highly recommended that the web part use the `onInit()` API to perform any web part specific initialization.
+      Most of the web part features like this.context and `this.properties` are not available to be used before the the
+      `onInit()` part of the web part loading lifecycle.
     isPreview: false
     isDeprecated: false
     syntax:
       content: constructor();
 properties:
   - name: canOpenPopupOnRender
-    uid: >-
-      @microsoft/sp-webpart-base!BaseClientSideWebPart#canOpenPopupOnRender:member
+    uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#canOpenPopupOnRender:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: canOpenPopupOnRender
-    summary: >-
-      This property indicates whether a web part can open a popup on initial
-      render.
+    summary: This property indicates whether a web part can open a popup on initial render.
     remarks: >-
-      In some environments the host re-renders the web parts frequently, and
-      therefore opening popups during render will cause popups to open
-      repeatedly, which is a poor user experience. As an example, the classic
-      SharePoint pages perform postbacks causing the page to re-render on all
-      button clicks.
+      In some environments the host re-renders the web parts frequently, and therefore opening popups during render will
+      cause popups to open repeatedly, which is a poor user experience. As an example, the classic SharePoint pages
+      perform postbacks causing the page to re-render on all button clicks.
 
 
-      If a web part needs to open a popup on render, it should use this API
-      before opening the popup. If this API returns false, the web part should
-      not open popup on initial render. Some web parts that open popups during
-      render are the document embed web part that pops up the file picker on
-      initial render, embedded video web part that pops up the PropertyPane on
-      initial render.
+      If a web part needs to open a popup on render, it should use this API before opening the popup. If this API
+      returns false, the web part should not open popup on initial render. Some web parts that open popups during render
+      are the document embed web part that pops up the file picker on initial render, embedded video web part that pops
+      up the PropertyPane on initial render.
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'protected readonly canOpenPopupOnRender: boolean;'
+      content: 'protected get canOpenPopupOnRender(): boolean;'
       return:
         type: boolean
   - name: context
     uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#context:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: context
-    summary: >-
-      Use the context object to access common services and state associated with
-      the component.
+    summary: Use the context object to access common services and state associated with the component.
     remarks: >-
-      Child classes are expected to override this field by redeclaring it with a
-      specialized type. It is meant to be a read-only property; the type cannot
-      be declared as read-only in the base class (because it is initialized
-      outside the constructor), but child classes should redeclare it as
-      readonly.
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -93,23 +78,23 @@ properties:
     package: '@microsoft/sp-webpart-base!'
     fullName: domElement
     summary: >-
-      This property is a pointer to the root DOM element of the web part. This
-      is a DIV element and contains the whole DOM subtree of the web part.
+      This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole
+      DOM subtree of the web part.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'protected readonly domElement: HTMLElement;'
+      content: 'protected get domElement(): HTMLElement;'
       return:
-        type: '<xref uid="!HTMLElement:interface" />'
+        type: HTMLElement
   - name: isRenderAsync
     uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#isRenderAsync:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: isRenderAsync
     summary: Indicates whether the web part is rendering in Async mode.
     remarks: >-
-      If the web part overrides this field to return true, then it needs to call
-      renderCompleted API after the web part rendering is complete.
+      If the web part overrides this field to return true, then it needs to call renderCompleted API after the web part
+      rendering is complete.
 
 
       The default value is false.
@@ -118,25 +103,21 @@ properties:
     syntax:
       content: |-
         /** @virtual */
-        protected readonly isRenderAsync: boolean;
+        protected get isRenderAsync(): boolean;
       return:
         type: boolean
   - name: renderedFromPersistedData
-    uid: >-
-      @microsoft/sp-webpart-base!BaseClientSideWebPart#renderedFromPersistedData:member
+    uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#renderedFromPersistedData:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: renderedFromPersistedData
     summary: >-
-      This property indicates whether the web part was rendered from the
-      persisted data (serialized state from the last time that the web part was
-      saved) or not.
-    remarks: >-
-      Example: When web part is added for the first time using toolbox then the
-      value is false.
+      This property indicates whether the web part was rendered from the persisted data (serialized state from the last
+      time that the web part was saved) or not.
+    remarks: 'Example: When web part is added for the first time using toolbox then the value is false.'
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'protected readonly renderedFromPersistedData: boolean;'
+      content: 'protected get renderedFromPersistedData(): boolean;'
       return:
         type: boolean
   - name: renderedOnce
@@ -144,24 +125,35 @@ properties:
     package: '@microsoft/sp-webpart-base!'
     fullName: renderedOnce
     summary: >-
-      This property indicates whether the web part has been rendered once or
-      not. After the first time rendering, the value of this property is always
-      true until a full re-render of the web part happens.
+      This property indicates whether the web part has been rendered once or not. After the first time rendering, the
+      value of this property is always true until a full re-render of the web part happens.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'protected readonly renderedOnce: boolean;'
+      content: 'protected get renderedOnce(): boolean;'
       return:
         type: boolean
+  - name: width
+    uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#width:member'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: width
+    summary: This propery returns the width of the container for the web part.
+    remarks: >-
+      Web parts should utilize this property to perform operations such as any conditional styling of components based
+      on the initial available width for the web part.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get width(): number;'
+      return:
+        type: number
 methods:
   - name: clearError()
     uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#clearError:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: clearError()
-    summary: >-
-      This API should be used to clear the error message from the web part
-      display area.
+    summary: This API should be used to clear the error message from the web part display area.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -170,20 +162,38 @@ methods:
       return:
         type: void
         description: ''
+  - name: onAfterResize(newWidth)
+    uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#onAfterResize:member(1)'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: onAfterResize(newWidth)
+    summary: >-
+      This API is invoked when the web part container dom element width is changed, e.g. when the browser browser window
+      is resized and when the property pane is toggled open/closed.
+    remarks: >-
+      Web parts should utilize this method to perform operations such as potentially re-rendering components based on
+      the new available width for the web part.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected onAfterResize(newWidth: number): void;
+      parameters:
+        - id: newWidth
+          description: Width (in pixels) of the container for the web part after the resize event.
+          type: number
+      return:
+        type: void
+        description: ''
   - name: onDisplayModeChanged(oldDisplayMode)
-    uid: >-
-      @microsoft/sp-webpart-base!BaseClientSideWebPart#onDisplayModeChanged:member(1)
+    uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#onDisplayModeChanged:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: onDisplayModeChanged(oldDisplayMode)
-    summary: >-
-      This event method is called when the display mode of a web part is
-      changed.
+    summary: This event method is called when the display mode of a web part is changed.
     remarks: >-
-      The default implementation of this API calls the web part render method to
-      re-render the web part with the new display mode. If a web part developer
-      does not want a full re-render to happen on display mode change, they can
-      override this API and perform specific updates to the web part DOM to
-      switch its display mode.
+      The default implementation of this API calls the web part render method to re-render the web part with the new
+      display mode. If a web part developer does not want a full re-render to happen on display mode change, they can
+      override this API and perform specific updates to the web part DOM to switch its display mode.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -203,11 +213,10 @@ methods:
     fullName: onDispose()
     summary: This API should be used to refresh the contents of the PropertyPane.
     remarks: >-
-      This API is called at the end of the web part lifecycle on a page. It
-      should be used to dispose any local resources (i.e. DOM elements) that the
-      web part is holding onto. This API is expected to be called in scenarios
-      like page navigation i.e. the host is transitioning from one page to
-      another and disposes the page that is being transitioned out.
+      This API is called at the end of the web part lifecycle on a page. It should be used to dispose any local
+      resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios
+      like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
+      transitioned out.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -222,8 +231,8 @@ methods:
     package: '@microsoft/sp-webpart-base!'
     fullName: render()
     summary: >-
-      This API is called to render the web part. There is no base implementation
-      of this API and the web part is required to override this API.
+      This API is called to render the web part. There is no base implementation of this API and the web part is
+      required to override this API.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -232,21 +241,24 @@ methods:
       return:
         type: void
         description: ''
-  - name: renderCompleted()
+  - name: renderCompleted(error)
     uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#renderCompleted:member(1)'
     package: '@microsoft/sp-webpart-base!'
-    fullName: renderCompleted()
+    fullName: renderCompleted(error)
     summary: >-
-      This API should be called by web parts that perform Async rendering. Those
-      web part are required to override the isRenderAsync API and return true.
-      One such example is web parts that render content in an IFrame. The web
-      part initiates the IFrame rendering in the `render()` API but the actual
-      rendering is complete only after the iframe loading completes.
+      This API should be called by web parts that perform Async rendering. Those web part are required to override the
+      isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part
+      initiates the IFrame rendering in the `render()` API but the actual rendering is complete only after the iframe
+      loading completes.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'protected renderCompleted(): void;'
+      content: 'protected renderCompleted(error?: Error): void;'
+      parameters:
+        - id: error
+          description: ''
+          type: Error
       return:
         type: void
         description: ''
@@ -255,8 +267,8 @@ methods:
     package: '@microsoft/sp-webpart-base!'
     fullName: renderError(error)
     summary: >-
-      This API should be used to render an error message in the web part display
-      area. Also logs the error message using the trace logger.
+      This API should be used to render an error message in the web part display area. Also logs the error message using
+      the trace logger.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -265,7 +277,7 @@ methods:
       parameters:
         - id: error
           description: An error object containing the error message to render.
-          type: '<xref uid="!Error:interface" />'
+          type: Error
       return:
         type: void
         description: ''

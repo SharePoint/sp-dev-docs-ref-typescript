@@ -1,0 +1,34 @@
+### YamlMime:TSType
+name: ImageHelper
+uid: '@microsoft/sp-image-helper!ImageHelper:class'
+package: '@microsoft/sp-image-helper!'
+fullName: ImageHelper
+summary: ImageHelper exposes the ability to convert a SharePoint url to an optimized thumbnail url.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: class
+methods:
+  - name: convertToImageUrl(request)
+    uid: '@microsoft/sp-image-helper!ImageHelper.convertToImageUrl:member(1)'
+    package: '@microsoft/sp-image-helper!'
+    fullName: convertToImageUrl(request)
+    summary: Convert a url to a file or page on SharePoint into an optimized image url.
+    remarks: >-
+      - If width and height are provided, then the resulting image will be scaled to the minimum of the width or height.
+      - The url will be most performant if only a width is provided. If a height is provided, the image will take longer
+      to download due to the scaling. - Only use this url at rendering time. It may contain an expiration token.
+      Continue to use the original file's url for serialization.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'static convertToImageUrl(request: IImageHelperRequest): string;'
+      parameters:
+        - id: request
+          description: IImageHelperRequest for the bundled parameters.
+          type: '<xref uid="@microsoft/sp-image-helper!IImageHelperRequest:interface" />'
+      return:
+        type: string
+        description: >-
+          A full url string for the image of the file. If no optimized url can be created (i.e. an external url or an
+          unsupported file type), the original sourceUrl is returned.

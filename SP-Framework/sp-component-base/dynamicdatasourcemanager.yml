@@ -4,10 +4,9 @@ uid: '@microsoft/sp-component-base!DynamicDataSourceManager:class'
 package: '@microsoft/sp-component-base!'
 fullName: DynamicDataSourceManager
 summary: >-
-  The Dynamic Data Source Manager is responsible for: - Constructing the dynamic
-  data source - Allowing initialization of the dynamic data source by a
-  component - Allowing data source to update its metadata and notify when data
-  has been updated.
+  The Dynamic Data Source Manager is responsible for: - Constructing the dynamic data source - Allowing initialization
+  of the dynamic data source by a component - Allowing data source to update its metadata and notify when data has been
+  updated.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -22,7 +21,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly isDisposed: boolean;'
+      content: 'get isDisposed(): boolean;'
       return:
         type: boolean
   - name: sourceId
@@ -30,13 +29,13 @@ properties:
     package: '@microsoft/sp-component-base!'
     fullName: sourceId
     summary: >-
-      Returns the Id of the current DataSource. If the component did not
-      initialize as a dynamic data source, then it returns an empty string.
+      Returns the Id of the current DataSource. If the component did not initialize as a dynamic data source, then it
+      returns an empty string.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly sourceId: string;'
+      content: 'get sourceId(): string;'
       return:
         type: string
 methods:
@@ -54,8 +53,7 @@ methods:
         type: void
         description: ''
   - name: initializeSource(callableFunctions)
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataSourceManager#initializeSource:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataSourceManager#initializeSource:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: initializeSource(callableFunctions)
     summary: Initializes the Dynamic Data Source for the component.
@@ -67,23 +65,20 @@ methods:
       parameters:
         - id: callableFunctions
           description: Set of methods that are exposed through the Dynamic Data Source
-          type: >-
-            <xref
-            uid="@microsoft/sp-dynamic-data!IDynamicDataCallables:interface" />
+          type: '<xref uid="@microsoft/sp-dynamic-data!IDynamicDataCallables:interface" />'
       return:
         type: void
         description: ''
   - name: notifyPropertyChanged(propertyId)
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataSourceManager#notifyPropertyChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataSourceManager#notifyPropertyChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: notifyPropertyChanged(propertyId)
     summary: >-
       Notifies that this source has updated a specific property.
 
 
-      When invoked, it enables to broadcast the notification to all the
-      consumers who have registered to this notification from this source.
+      When invoked, it enables to broadcast the notification to all the consumers who have registered to this
+      notification from this source.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -97,16 +92,15 @@ methods:
         type: void
         description: ''
   - name: notifySourceChanged()
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataSourceManager#notifySourceChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataSourceManager#notifySourceChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: notifySourceChanged()
     summary: >-
       Notifies that this source has updated its properties.
 
 
-      When invoked, it enables to broadcast the notification to all the
-      consumers who have registered to this notification from this source.
+      When invoked, it enables to broadcast the notification to all the consumers who have registered to this
+      notification from this source.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -116,14 +110,12 @@ methods:
         type: void
         description: ''
   - name: updateMetadata(metadata)
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataSourceManager#updateMetadata:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataSourceManager#updateMetadata:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: updateMetadata(metadata)
     summary: >-
-      Updates the metadata of the Dynamic Data Source. It allows to update
-      fields like title or description. Auto-generated fields like alias,
-      componentId or instanceId cannot be updated.
+      Updates the metadata of the Dynamic Data Source. It allows to update fields like title or description.
+      Auto-generated fields like alias, componentId or instanceId cannot be updated.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -132,10 +124,7 @@ methods:
       parameters:
         - id: metadata
           description: Partial of the metadata.
-          type: >-
-            <xref uid="!Partial:type" />&lt;<xref
-            uid="@microsoft/sp-dynamic-data!IDynamicDataSourceMetadata:interface"
-            />&gt;
+          type: 'Partial&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataSourceMetadata:interface" />&gt;'
       return:
         type: void
         description: ''

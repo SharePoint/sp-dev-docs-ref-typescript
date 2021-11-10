@@ -5,9 +5,8 @@ package: '@microsoft/sp-webpart-base!'
 fullName: IWebPartData
 summary: This structure represents the serialized state of a web part.
 remarks: >-
-  When the `serialize()` API is called on a web part, the output should be this
-  structure. The structure of the 'properties' field is owned by the web part
-  and is specific to the web part. Each web part can decide the set of
+  When the `serialize()` API is called on a web part, the output should be this structure. The structure of the
+  'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of
   properties it wants to serialize.
 isPreview: false
 isDeprecated: false
@@ -19,11 +18,9 @@ properties:
     fullName: dataVersion
     summary: Web part data version
     remarks: >-
-      Note that data version is different from the version field in the
-      manifest. The manifest version is used to control the versioning of the
-      web part code, while data version is used to control the versioning of the
-      serialized data of the web part. Refer to dataVersion field of your web
-      part for more information.
+      Note that data version is different from the version field in the manifest. The manifest version is used to
+      control the versioning of the web part code, while data version is used to control the versioning of the
+      serialized data of the web part. Refer to dataVersion field of your web part for more information.
 
 
       Supported values: MAJOR.MINOR
@@ -59,9 +56,8 @@ properties:
     fullName: dynamicDataPaths
     summary: Paths for the dynamic data.
     remarks: >-
-      This is used to reconstruct the dynamic data objects when deserializing
-      the web part. The key is the path within the web part properties, and the
-      value is the dynamic data internal id.
+      This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within
+      the web part properties, and the value is the dynamic data internal id.
 
 
       Example:
@@ -75,7 +71,6 @@ properties:
         'anotherWebPartProperty':
           'WebPart.c3be45f2-7cd9-4e92-9c6c-a01d24dc04cf.3d6307e4-c8e1-4b2d-bef9-f1689c6eb7ea:aProperty'
       }
-
 
       ```
     isPreview: true
@@ -95,24 +90,18 @@ properties:
     package: '@microsoft/sp-webpart-base!'
     fullName: dynamicDataValues
     summary: >-
-      Static values for the dynamic data.This is used to reconstruct the dynamic
-      data objects when deserializing the web part.
-    remarks: >-
-      The key is the path within the web part properties, and the value is the
-      dynamic data static value.
-
+      Static values for the dynamic data.This is used to reconstruct the dynamic data objects when deserializing the web
+      part.
+    remarks: |-
+      The key is the path within the web part properties, and the value is the dynamic data static value.
 
       Example:
 
-
       ```
-
       {
         'aStringProperty': 'thisIsAString',
         'aBooleanProperty': true
       }
-
-
       ```
     isPreview: true
     isDeprecated: false
@@ -143,13 +132,10 @@ properties:
     package: '@microsoft/sp-webpart-base!'
     fullName: instanceId
     summary: >-
-      Universally unique instance id of the web part. A web part can have
-      multiple instances on a page. This id is expected to be universally unique
-      across time and page boundaries.
-    remarks: >-
-      supported values: a unique string. Could be GUID or other uniquely
-      identifiable formats.
-
+      Universally unique instance id of the web part. A web part can have multiple instances on a page. This id is
+      expected to be universally unique across time and page boundaries.
+    remarks: |-
+      supported values: a unique string. Could be GUID or other uniquely identifiable formats.
 
       example: `["dbef608d-3ad5-4f8f-b139-d916f2f0a294"]`
     isPreview: false
@@ -162,16 +148,13 @@ properties:
     uid: '@microsoft/sp-webpart-base!IWebPartData#properties:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: properties
-    summary: >-
-      Web part specific properties. The individual web part owns the definition
-      of these properties.
+    summary: Web part specific properties. The individual web part owns the definition of these properties.
     remarks: >-
-      Used by the web part to manage its internal metadata and config data. The
-      framework code never touches these properties.
+      Used by the web part to manage its internal metadata and config data. The framework code never touches these
+      properties.
 
 
-      Supported values: any object hierarchy that can be serialized using
-      `JSON.stringify()`<!-- -->.
+      Supported values: any object hierarchy that can be serialized using `JSON.stringify()`<!-- -->.
 
 
       Example: `{ 'value': 'text value' }`
@@ -185,31 +168,23 @@ properties:
     uid: '@microsoft/sp-webpart-base!IWebPartData#serverProcessedContent:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: serverProcessedContent
-    summary: >-
-      The collections of data that can be processed by server side services like
-      search index and link fixup
+    summary: The collections of data that can be processed by server side services like search index and link fixup
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-webpart-base!ISerializedServerProcessedData:interface"
-          />
+        type: '<xref uid="@microsoft/sp-component-base!ISerializedServerProcessedData:interface" />'
   - name: title
     uid: '@microsoft/sp-webpart-base!IWebPartData#title:member'
     package: '@microsoft/sp-webpart-base!'
     fullName: title
     summary: Web part title
-    remarks: >-
-      Used to display the name of the web part in the toolbox, web part gallery
-      and the page.
-
+    remarks: |-
+      Used to display the name of the web part in the toolbox, web part gallery and the page.
 
       Supported values: string less than 100 characters
-
 
       Example: `"Text"`
     isPreview: false

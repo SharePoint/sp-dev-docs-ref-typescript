@@ -5,13 +5,11 @@ package: '@microsoft/sp-http!'
 fullName: HttpClientResponse
 summary: The Response subclass returned by methods such as HttpClient.fetch().
 remarks: >-
-  This is a placeholder. In the future, additional HttpClient-specific
-  functionality may be added to this class.
+  This is a placeholder. In the future, additional HttpClient-specific functionality may be added to this class.
 
 
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `HttpClientResponse` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `HttpClientResponse` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -20,30 +18,26 @@ properties:
     uid: '@microsoft/sp-http!HttpClientResponse#bodyUsed:member'
     package: '@microsoft/sp-http!'
     fullName: bodyUsed
-    summary: >-
-      See documentation for the browser's
-      [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly bodyUsed: boolean;'
+      content: 'get bodyUsed(): boolean;'
       return:
         type: boolean
   - name: headers
     uid: '@microsoft/sp-http!HttpClientResponse#headers:member'
     package: '@microsoft/sp-http!'
     fullName: headers
-    summary: >-
-      See documentation for the browser's
-      [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly headers: Headers;'
+      content: 'get headers(): Headers;'
       return:
-        type: '<xref uid="!Headers:interface" />'
+        type: Headers
   - name: nativeResponse
     uid: '@microsoft/sp-http!HttpClientResponse#nativeResponse:member'
     package: '@microsoft/sp-http!'
@@ -55,75 +49,65 @@ properties:
     syntax:
       content: 'protected nativeResponse: Response;'
       return:
-        type: '<xref uid="!Response:interface" />'
+        type: Response
   - name: ok
     uid: '@microsoft/sp-http!HttpClientResponse#ok:member'
     package: '@microsoft/sp-http!'
     fullName: ok
-    summary: >-
-      See documentation for the browser's
-      [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly ok: boolean;'
+      content: 'get ok(): boolean;'
       return:
         type: boolean
   - name: status
     uid: '@microsoft/sp-http!HttpClientResponse#status:member'
     package: '@microsoft/sp-http!'
     fullName: status
-    summary: >-
-      See documentation for the browser's
-      [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly status: number;'
+      content: 'get status(): number;'
       return:
         type: number
   - name: statusText
     uid: '@microsoft/sp-http!HttpClientResponse#statusText:member'
     package: '@microsoft/sp-http!'
     fullName: statusText
-    summary: >-
-      See documentation for the browser's
-      [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly statusText: string;'
+      content: 'get statusText(): string;'
       return:
         type: string
   - name: type
     uid: '@microsoft/sp-http!HttpClientResponse#type:member'
     package: '@microsoft/sp-http!'
     fullName: type
-    summary: >-
-      See documentation for the browser's
-      [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly type: ResponseType;'
+      content: 'get type(): ResponseType;'
       return:
-        type: '<xref uid="!ResponseType:type" />'
+        type: ResponseType
   - name: url
     uid: '@microsoft/sp-http!HttpClientResponse#url:member'
     package: '@microsoft/sp-http!'
     fullName: url
-    summary: >-
-      See documentation for the browser's
-      [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly url: string;'
+      content: 'get url(): string;'
       return:
         type: string
 methods:
@@ -131,33 +115,27 @@ methods:
     uid: '@microsoft/sp-http!HttpClientResponse#arrayBuffer:member(1)'
     package: '@microsoft/sp-http!'
     fullName: arrayBuffer()
-    summary: >-
-      See documentation for the browser's
-      [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'arrayBuffer(): Promise<ArrayBuffer>;'
       return:
-        type: >-
-          <xref uid="!Promise:class" />&lt;<xref uid="!ArrayBuffer:interface"
-          />&gt;
+        type: Promise&lt;ArrayBuffer&gt;
         description: ''
   - name: blob()
     uid: '@microsoft/sp-http!HttpClientResponse#blob:member(1)'
     package: '@microsoft/sp-http!'
     fullName: blob()
-    summary: >-
-      See documentation for the browser's
-      [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'blob(): Promise<Blob>;'
       return:
-        type: '<xref uid="!Promise:class" />&lt;<xref uid="!Blob:interface" />&gt;'
+        type: Promise&lt;Blob&gt;
         description: ''
   - name: clone()
     uid: '@microsoft/sp-http!HttpClientResponse#clone:member(1)'
@@ -178,46 +156,38 @@ methods:
     uid: '@microsoft/sp-http!HttpClientResponse#formData:member(1)'
     package: '@microsoft/sp-http!'
     fullName: formData()
-    summary: >-
-      See documentation for the browser's
-      [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'formData(): Promise<FormData>;'
       return:
-        type: >-
-          <xref uid="!Promise:class" />&lt;<xref uid="!FormData:interface"
-          />&gt;
+        type: Promise&lt;FormData&gt;
         description: ''
   - name: json()
     uid: '@microsoft/sp-http!HttpClientResponse#json:member(1)'
     package: '@microsoft/sp-http!'
     fullName: json()
-    summary: >-
-      See documentation for the browser's
-      [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'json(): Promise<any>;'
       return:
-        type: '<xref uid="!Promise:class" />&lt;any&gt;'
+        type: Promise&lt;any&gt;
         description: ''
   - name: text()
     uid: '@microsoft/sp-http!HttpClientResponse#text:member(1)'
     package: '@microsoft/sp-http!'
     fullName: text()
-    summary: >-
-      See documentation for the browser's
-      [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'text(): Promise<string>;'
       return:
-        type: '<xref uid="!Promise:class" />&lt;string&gt;'
+        type: Promise&lt;string&gt;
         description: ''

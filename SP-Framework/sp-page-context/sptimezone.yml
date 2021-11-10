@@ -4,25 +4,21 @@ uid: '@microsoft/sp-page-context!SPTimeZone:class'
 package: '@microsoft/sp-page-context!'
 fullName: SPTimeZone
 summary: >-
-  It provides timezone information from SharePoint. A conversion from UTC to
-  local time can be calculated by using the following formula.
+  It provides timezone information from SharePoint. A conversion from UTC to local time can be calculated by using the
+  following formula.
 remarks: >-
   ```
 
-  isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the
-  StandardDate
+  isDaylightSavingsTime = isCurrentDate after DaylightSavingsDate but before the StandardDate
 
-  LocalTime = UTCTime - Offset - (isDaylightSavingsTime ? daylightOffset :
-  standardOffset)
+  LocalTime = UTCTime - Offset - (isDaylightSavingsTime ? daylightOffset : standardOffset)
 
   June 11, 2 A.M. PST = June 11, 9 A.M. - (480 minutes) - (-60  minutes)
 
-
   ```
 
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `SPTimeZone` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `SPTimeZone` class.
 isPreview: true
 isDeprecated: false
 type: class
@@ -44,8 +40,8 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: daylightOffset
     summary: >-
-      Gets the offset in the number of minutes that daylight time for the time
-      zone differs from Coordinated Universal Time (UTC).
+      Gets the offset in the number of minutes that daylight time for the time zone differs from Coordinated Universal
+      Time (UTC).
     remarks: ''
     isPreview: true
     isDeprecated: false
@@ -81,9 +77,7 @@ properties:
     uid: '@microsoft/sp-page-context!SPTimeZone#offset:member'
     package: '@microsoft/sp-page-context!'
     fullName: offset
-    summary: >-
-      Gets the offset in the number of minutes that the time zone differs from
-      Coordinated Universal Time (UTC).
+    summary: Gets the offset in the number of minutes that the time zone differs from Coordinated Universal Time (UTC).
     remarks: ''
     isPreview: true
     isDeprecated: false
@@ -108,8 +102,8 @@ properties:
     package: '@microsoft/sp-page-context!'
     fullName: standardOffset
     summary: >-
-      Gets the offset in the number of minutes that standard time for the time
-      zone differs from coordinated universal time (UTC).
+      Gets the offset in the number of minutes that standard time for the time zone differs from coordinated universal
+      time (UTC).
     remarks: ''
     isPreview: true
     isDeprecated: false

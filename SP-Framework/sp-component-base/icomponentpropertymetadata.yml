@@ -1,0 +1,111 @@
+### YamlMime:TSType
+name: IComponentPropertyMetadata
+uid: '@microsoft/sp-component-base!IComponentPropertyMetadata:interface'
+package: '@microsoft/sp-component-base!'
+fullName: IComponentPropertyMetadata
+summary: This is the structure used for map values for component properties metadata.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: isHtmlString
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isHtmlString:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: isHtmlString
+    summary: Indicates whether the property should be serialized as HTML.
+    remarks: >-
+      This flag instructs framework to store the value as HTML, so that SharePoint can perform the following services on
+      it:
+
+
+      - normalizing HTML encodings
+
+
+      - stripping unsafe HTML tags (i.e. for usage with Element.innerHTML)
+
+
+      - search indexing
+
+
+      - SharePoint link fix-up
+
+
+      Only enable this flag for HTML content where these modifications are acceptable. If non-HTML content is provided,
+      SharePoint framework might make modifications to convert it to HTML valid. For plain text content that simply
+      needs to be exposed to the search index (without any rewriting), use the `isSearchablePlainText` flag instead.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'isHtmlString?: boolean;'
+      return:
+        type: boolean
+  - name: isImageSource
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isImageSource:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: isImageSource
+    summary: >-
+      Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
+      services like link fix-up, search indexing, loading from CDN, etc.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'isImageSource?: boolean;'
+      return:
+        type: boolean
+  - name: isLink
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isLink:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: isLink
+    summary: >-
+      Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
+      services like search indexing, link fix-up, loading from CDN, etc.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'isLink?: boolean;'
+      return:
+        type: boolean
+  - name: isSearchablePlainText
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isSearchablePlainText:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: isSearchablePlainText
+    summary: Indicates if the property contains plain text that should be search-indexed by SharePoint.
+    remarks: >-
+      This flag instructs the framework to store the property in a representation that supports search indexing. The
+      content will be treated as plain text; SharePoint will not modify the string in any way, and special HTML
+      characters may be stored encoded and appear in search results. If your string contains HTML markup, use the
+      isHtmlString setting instead.
+
+
+      Security note: For security reasons, never assign a plain text string to `Element.innerHTML`<!-- -->.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'isSearchablePlainText?: boolean;'
+      return:
+        type: boolean
+  - name: shouldNotPersist
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#shouldNotPersist:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: shouldNotPersist
+    summary: Indicates if the framework should persist the property on the server.
+    remarks: >-
+      Use this for properties that are only important in run-time, and do not need to persist on the server. This can
+      reduce the size of the serialized data of the component and optimize the component load time. The property value
+      will be removed from the serialized data sent to the server, but this has no effect on the run-time property bag.
+      The property value will still be available in the `onBeforeSerialize()` method, and the value will not be cleared
+      from the run-time property bag. The initial render of your component should not depend on the value of the
+      property. Setting a default value for the property can be done in `onInit()` method.
+
+
+      Note that if the property path refers to a property that has a complex object as the value, the whole object will
+      be removed from the persisted data.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'shouldNotPersist?: boolean;'
+      return:
+        type: boolean

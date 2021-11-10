@@ -4,8 +4,8 @@ uid: '@microsoft/sp-component-base!DynamicDataProvider:class'
 package: '@microsoft/sp-component-base!'
 fullName: DynamicDataProvider
 summary: >-
-  The Dynamic Data Provider allows components to consume Dynamic Data. It allows
-  components to request Dynamic Data sources and register/unregister to those.
+  The Dynamic Data Provider allows components to consume Dynamic Data. It allows components to request Dynamic Data
+  sources and register/unregister to those.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -20,7 +20,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly isDisposed: boolean;'
+      content: 'get isDisposed(): boolean;'
       return:
         type: boolean
 methods:
@@ -38,8 +38,7 @@ methods:
         type: void
         description: ''
   - name: getAvailableSources()
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#getAvailableSources:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#getAvailableSources:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: getAvailableSources()
     summary: Returns a list with all available Dynamic Data Sources.
@@ -49,18 +48,13 @@ methods:
     syntax:
       content: 'getAvailableSources(): ReadonlyArray<IDynamicDataSource>;'
       return:
-        type: >-
-          <xref uid="!ReadonlyArray:interface" />&lt;<xref
-          uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" />&gt;
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" />&gt;'
         description: Read-only array with all available sources.
   - name: registerAvailableSourcesChanged(callback)
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#registerAvailableSourcesChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#registerAvailableSourcesChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: registerAvailableSourcesChanged(callback)
-    summary: >-
-      Registers a callback to an event that raises when the list of available
-      Dynamic Data Sources is updated.
+    summary: Registers a callback to an event that raises when the list of available Dynamic Data Sources is updated.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -74,20 +68,15 @@ methods:
         type: void
         description: ''
   - name: 'registerPropertyChanged(sourceId, propertyId, callback)'
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#registerPropertyChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#registerPropertyChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: 'registerPropertyChanged(sourceId, propertyId, callback)'
-    summary: >-
-      Registers a callback for updates when a property is changed in a Dynamic
-      Data source.
+    summary: Registers a callback for updates when a property is changed in a Dynamic Data source.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        registerPropertyChanged(sourceId: string, propertyId: string, callback:
-        () => void): void;
+      content: 'registerPropertyChanged(sourceId: string, propertyId: string, callback: () => void): void;'
       parameters:
         - id: sourceId
           description: Id of the Dynamic Data Source.
@@ -102,13 +91,12 @@ methods:
         type: void
         description: ''
   - name: 'registerSourceChanged(sourceId, callback)'
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#registerSourceChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#registerSourceChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: 'registerSourceChanged(sourceId, callback)'
     summary: >-
-      Registers a callback for updates when a Dynamic Data source is changed.
-      This happens when any property is updated within the source.
+      Registers a callback for updates when a Dynamic Data source is changed. This happens when any property is updated
+      within the source.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -128,9 +116,7 @@ methods:
     uid: '@microsoft/sp-component-base!DynamicDataProvider#tryGetSource:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: tryGetSource(id)
-    summary: >-
-      Returns a Dynamic Data Source, by its id. If the source is not present, it
-      returns undefined.
+    summary: 'Returns a Dynamic Data Source, by its id. If the source is not present, it returns undefined.'
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -141,18 +127,13 @@ methods:
           description: Id of the Dynamic Data Source.
           type: string
       return:
-        type: >-
-          <xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" />
-          | undefined
+        type: '<xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" /> | undefined'
         description: ''
   - name: unregisterAvailableSourcesChanged(callback)
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#unregisterAvailableSourcesChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#unregisterAvailableSourcesChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: unregisterAvailableSourcesChanged(callback)
-    summary: >-
-      Unregisters a callback to an event that raises when the list of available
-      Dynamic Data Sources is updated.
+    summary: Unregisters a callback to an event that raises when the list of available Dynamic Data Sources is updated.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -160,28 +141,21 @@ methods:
       content: 'unregisterAvailableSourcesChanged(callback: () => void): void;'
       parameters:
         - id: callback
-          description: >-
-            Function to remove from the registration. Must be the same it was
-            registered with.
+          description: Function to remove from the registration. Must be the same it was registered with.
           type: () =&gt; void
       return:
         type: void
         description: ''
   - name: 'unregisterPropertyChanged(sourceId, propertyId, callback)'
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#unregisterPropertyChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#unregisterPropertyChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: 'unregisterPropertyChanged(sourceId, propertyId, callback)'
-    summary: >-
-      Unregisters a callback for updates when a property is changed in a Dynamic
-      Data source.
+    summary: Unregisters a callback for updates when a property is changed in a Dynamic Data source.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        unregisterPropertyChanged(sourceId: string, propertyId: string,
-        callback: () => void): void;
+      content: 'unregisterPropertyChanged(sourceId: string, propertyId: string, callback: () => void): void;'
       parameters:
         - id: sourceId
           description: Id of the Dynamic Data Source.
@@ -190,16 +164,13 @@ methods:
           description: Id of the property of the source.
           type: string
         - id: callback
-          description: >-
-            Function to remove from the registration. Must be the same it was
-            registered with.
+          description: Function to remove from the registration. Must be the same it was registered with.
           type: () =&gt; void
       return:
         type: void
         description: ''
   - name: 'unregisterSourceChanged(sourceId, callback)'
-    uid: >-
-      @microsoft/sp-component-base!DynamicDataProvider#unregisterSourceChanged:member(1)
+    uid: '@microsoft/sp-component-base!DynamicDataProvider#unregisterSourceChanged:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: 'unregisterSourceChanged(sourceId, callback)'
     summary: Unregisters a callback for updates when a Dynamic Data source is changed.
@@ -213,9 +184,7 @@ methods:
           description: Id of the Dynamic Data Source.
           type: string
         - id: callback
-          description: >-
-            Function to remove from the registration. Must be the same it was
-            registered with.
+          description: Function to remove from the registration. Must be the same it was registered with.
           type: () =&gt; void
       return:
         type: void

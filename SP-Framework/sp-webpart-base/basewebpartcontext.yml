@@ -4,15 +4,14 @@ uid: '@microsoft/sp-webpart-base!BaseWebPartContext:class'
 package: '@microsoft/sp-webpart-base!'
 fullName: BaseWebPartContext
 summary: >-
-  Web part context object. This object contains the contextual services
-  available to a web part. e.g. a contextual instance to the http client.
+  Web part context object. This object contains the contextual services available to a web part. e.g. a contextual
+  instance to the http client.
 
 
   This base is to be extended by UI-specific WebPart's base.
 remarks: >-
-  The constructor for this class is marked as internal. Third-party code should
-  not call the constructor directly or create subclasses that extend the
-  `BaseWebPartContext` class.
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `BaseWebPartContext` class.
 isPreview: false
 isDeprecated: false
 type: class
@@ -23,15 +22,14 @@ properties:
     fullName: formFactor
     summary: Form factor of the web part.
     remarks: >-
-      Web parts may behave differently based on its form factor. E.g. a web part
-      rendering as full size may want to set up different margins that when
-      rendering in a canvas.
+      Web parts may behave differently based on its form factor. E.g. a web part rendering as full size may want to set
+      up different margins that when rendering in a canvas.
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'readonly formFactor: WebPartFormFactor;'
+      content: 'get formFactor(): WebPartFormFactor;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!WebPartFormFactor:enum" />'
+        type: '<xref uid="@microsoft/sp-webpart-base!WebPartFormFactor:type" />'
   - name: manifest
     uid: '@microsoft/sp-webpart-base!BaseWebPartContext#manifest:member'
     package: '@microsoft/sp-webpart-base!'
@@ -43,10 +41,7 @@ properties:
     syntax:
       content: 'readonly manifest: IClientSideWebPartManifestInstance<any>;'
       return:
-        type: >-
-          <xref
-          uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface"
-          />&lt;any&gt;
+        type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface" />&lt;any&gt;'
   - name: propertyPane
     uid: '@microsoft/sp-webpart-base!BaseWebPartContext#propertyPane:member'
     package: '@microsoft/sp-webpart-base!'
@@ -56,11 +51,9 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly propertyPane: IPropertyPaneAccessor;'
+      content: 'get propertyPane(): IPropertyPaneAccessor;'
       return:
-        type: >-
-          <xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface"
-          />
+        type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface" />'
   - name: webPartTag
     uid: '@microsoft/sp-webpart-base!BaseWebPartContext#webPartTag:member'
     package: '@microsoft/sp-webpart-base!'
@@ -70,7 +63,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly webPartTag: string;'
+      content: 'get webPartTag(): string;'
       return:
         type: string
 extends: '<xref uid="@microsoft/sp-component-base!BaseComponentContext:class" />'
