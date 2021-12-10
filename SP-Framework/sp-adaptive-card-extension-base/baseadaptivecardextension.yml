@@ -273,6 +273,40 @@ properties:
       return:
         type: string
 methods:
+  - name: getCachedState(state)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#getCachedState:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: getCachedState(state)
+    summary: This virtual method returns a subset of the state object that will be cached by the client.
+    remarks: 'If not overriden, this will return an empty object.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected getCachedState(state: TState): Partial<TState>;
+      parameters:
+        - id: state
+          description: A shallow clone of the AdaptiveCardExtension state object.
+          type: TState
+      return:
+        type: Partial&lt;TState&gt;
+        description: ''
+  - name: getCacheSettings()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#getCacheSettings:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: getCacheSettings()
+    summary: Override the default cache settings.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected getCacheSettings(): Partial<ICacheSettings>;
+      return:
+        type: 'Partial&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!ICacheSettings:interface" />&gt;'
+        description: ''
   - name: getPropertyPaneConfiguration()
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#getPropertyPaneConfiguration:member(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -431,6 +465,31 @@ methods:
       content: |-
         /** @virtual */
         onInit(): Promise<void>;
+      return:
+        type: Promise&lt;void&gt;
+        description: ''
+  - name: onInit(cachedLoadParameters)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onInit:member(2)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onInit(cachedLoadParameters)
+    summary: Lifecycle method called during initialization.
+    remarks: >-
+      Asynchronous data fetches should be started during this lifecycle. Rendering can either be dependent on the result
+      or, if resolved immediately, a fetching data state can be rendered.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onInit(cachedLoadParameters?: ICachedLoadParameters): Promise<void>;
+      parameters:
+        - id: cachedLoadParameters
+          description: >-
+            Parameters containing the cached state object (see
+            [BaseAdaptiveCardExtension.getCachedState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23getCachedState:member(1))<!--
+            -->), which can be used to rehydrate the AdaptiveCardExtension. If undefined, the AdaptiveCardExtension was
+            not cached or the cache expired.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICachedLoadParameters:interface" />'
       return:
         type: Promise&lt;void&gt;
         description: ''
