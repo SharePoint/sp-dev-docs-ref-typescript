@@ -226,6 +226,27 @@ methods:
       return:
         type: void
         description: ''
+  - name: onThemeChanged(theme)
+    uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#onThemeChanged:member(1)'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: onThemeChanged(theme)
+    summary: This API is called when a theme is initialized or changed on the page or for the current section.
+    remarks: >-
+      Developers sould not call render in overridden method. It can lead to unpredicted re-flow of the web part. render
+      will be called from the base class when needed.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        protected onThemeChanged(theme: IReadonlyTheme | undefined): void;
+      parameters:
+        - id: theme
+          description: New theme for the page or section
+          type: '<xref uid="@microsoft/sp-component-base!IReadonlyTheme:interface" /> | undefined'
+      return:
+        type: void
+        description: ''
   - name: render()
     uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#render:member(1)'
     package: '@microsoft/sp-webpart-base!'
