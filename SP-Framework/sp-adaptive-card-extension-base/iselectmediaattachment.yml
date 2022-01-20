@@ -5,6 +5,7 @@ package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: ISelectMediaAttachment
 summary: This object represents the data returned by the native media picker API.
 remarks: API under active development and not ready for use.
+example: []
 isPreview: true
 isDeprecated: false
 type: interface
@@ -15,18 +16,33 @@ properties:
     fullName: content
     summary: Content of the file represented as base64Strings
     remarks: ''
+    example: []
     isPreview: true
     isDeprecated: false
     syntax:
       content: 'content: string;'
       return:
         type: string
+  - name: error
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#error:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: error
+    summary: Error associated with attachment
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'error?: IAttachmentError;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface" />'
   - name: fileName
     uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#fileName:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: fileName
     summary: The names of the selected files.
     remarks: ''
+    example: []
     isPreview: true
     isDeprecated: false
     syntax:

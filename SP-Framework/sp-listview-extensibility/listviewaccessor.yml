@@ -7,22 +7,134 @@ summary: Provides access to a SharePoint ListView control.
 remarks: >-
   The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
   create subclasses that extend the `ListViewAccessor` class.
+example: []
 isPreview: false
 isDeprecated: false
 type: class
 properties:
+  - name: appliedFilters
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#appliedFilters:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: appliedFilters
+    summary: Filters applied to the list view.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        abstract get appliedFilters(): {
+                [fieldName: string]: IFilter;
+            } | undefined;
+      return:
+        type: |-
+          {
+                  [fieldName: string]: <xref uid="@microsoft/sp-listview-extensibility!IFilter:interface" />;
+              } | undefined
   - name: columns
     uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#columns:member'
     package: '@microsoft/sp-listview-extensibility!'
     fullName: columns
     summary: 'The columns in associated with this view, including hidden columns.'
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'abstract get columns(): ReadonlyArray<ColumnAccessor>;'
       return:
         type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!ColumnAccessor:class" />&gt;'
+  - name: folderInfo
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#folderInfo:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: folderInfo
+    summary: Folder information for the list view.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get folderInfo(): IFolderInfo | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-listview-extensibility!IFolderInfo:interface" /> | undefined'
+  - name: list
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#list:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: list
+    summary: Basic information about the list rendered by the list view.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get list(): IList | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-listview-extensibility!IList:interface" /> | undefined'
+  - name: rows
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#rows:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: rows
+    summary: Currently rendered rows in the list view.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get rows(): ReadonlyArray<RowAccessor>;'
+      return:
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!RowAccessor:class" />&gt;'
+  - name: selectedRows
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRows:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: selectedRows
+    summary: Selected rows in the list view.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get selectedRows(): ReadonlyArray<RowAccessor> | undefined;'
+      return:
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!RowAccessor:class" />&gt; | undefined'
+  - name: sortAscending
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#sortAscending:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: sortAscending
+    summary: Specifies whether the list view is sorted ascending or descending.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get sortAscending(): boolean | undefined;'
+      return:
+        type: boolean | undefined
+  - name: sortField
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#sortField:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: sortField
+    summary: Sort field name
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get sortField(): string | undefined;'
+      return:
+        type: string | undefined
+  - name: view
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#view:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: view
+    summary: Basic information about the view rendered by the list view.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'abstract get view(): IView | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-listview-extensibility!IView:interface" /> | undefined'
 methods:
   - name: tryGetColumnByName(internalName)
     uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#tryGetColumnByName:member(1)'
@@ -32,6 +144,7 @@ methods:
       Returns the list view column corresponding to the field with the specified internal name, or undefined if none is
       found.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -44,12 +157,28 @@ methods:
         type: '<xref uid="@microsoft/sp-listview-extensibility!ColumnAccessor:class" /> | undefined'
         description: ''
 events:
+  - name: listViewStateChangedEvent
+    uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#listViewStateChangedEvent:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: listViewStateChangedEvent
+    summary: Event that gets raised every time the list view state changes.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get listViewStateChangedEvent(): SPEvent<ListViewStateChangedEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs:class" />&gt;
   - name: selectedRowsChangedEvent
     uid: '@microsoft/sp-listview-extensibility!ListViewAccessor#selectedRowsChangedEvent:member'
     package: '@microsoft/sp-listview-extensibility!'
     fullName: selectedRowsChangedEvent
     summary: Event that gets raised every time the selected items in the list view change.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:

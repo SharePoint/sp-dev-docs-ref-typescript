@@ -11,6 +11,7 @@ remarks: >-
   root scope if the dependency is not found. Providing a default implementation ensures that new dependencies can be
   safely introduced without inadvertently breaking components that are loaded by an older host that does not provide the
   new dependency.
+example: []
 isPreview: false
 isDeprecated: false
 type: class
@@ -21,6 +22,7 @@ properties:
     fullName: defaultCreator
     summary: A callback function that constructs the default instance of this service.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -43,6 +45,7 @@ properties:
       was passed to ServiceKey.create(). This is because each call to ServiceKey.create() could potentially provide a
       different defaultCreator implementation, whereas one of the design goals of ServiceScope is that the order in
       which libraries are loaded should never affect the resulting tree of scopes.
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -61,6 +64,7 @@ properties:
 
       The system does not assume that this string is unique. Instead, the
       [ServiceKey.id](xref:@microsoft/sp-core-library!ServiceKey%23id:member) is used wherever a lookup key is needed.
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -78,6 +82,7 @@ methods:
     remarks: >-
       If you want to specify custom constructor parameters, use
       [ServiceKey.createCustom()](xref:@microsoft/sp-core-library!ServiceKey.createCustom:member(1)) instead.
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -104,6 +109,7 @@ methods:
     fullName: 'createCustom(name, defaultCreator)'
     summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
