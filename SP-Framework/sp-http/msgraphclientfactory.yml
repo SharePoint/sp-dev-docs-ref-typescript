@@ -36,13 +36,55 @@ methods:
     fullName: getClient()
     summary: >-
       Returns an instance of the MSGraphClient that communicates with the current tenant's configurable Service
-      Principal.
+      Principal. Returns version 1 by default.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: 'Use getClient(''1'') instead, which has the same implementation but specifies the version explicitly.'
+    syntax:
+      content: 'getClient(): Promise<MSGraphClient>;'
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
+        description: ''
+  - name: getClient(version)
+    uid: '@microsoft/sp-http!MSGraphClientFactory#getClient:member(2)'
+    package: '@microsoft/sp-http!'
+    fullName: getClient(version)
+    summary: |-
+      Returns an instance version 1 of the MSGraphClient communicates with the current tenant's configurable
+
+      Service Principal.
     remarks: ''
     example: []
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'getClient(): Promise<MSGraphClient>;'
+      content: 'getClient(version: ''1''): Promise<MSGraphClient>;'
+      parameters:
+        - id: version
+          description: ''
+          type: '''1'''
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
+        description: ''
+  - name: getClient(version)
+    uid: '@microsoft/sp-http!MSGraphClientFactory#getClient:member(3)'
+    package: '@microsoft/sp-http!'
+    fullName: getClient(version)
+    summary: >-
+      Returns an instance of version 3 the MSGraphClient V3 that communicates with the current tenant's configurable
+      Service Principal.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getClient(version: ''3''): Promise<MSGraphClientV3>;'
+      parameters:
+        - id: version
+          description: ''
+          type: '''3'''
       return:
         type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
         description: ''

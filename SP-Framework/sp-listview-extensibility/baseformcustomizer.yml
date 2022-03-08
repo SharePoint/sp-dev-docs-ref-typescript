@@ -1,0 +1,130 @@
+### YamlMime:TSType
+name: BaseFormCustomizer
+uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: BaseFormCustomizer
+summary: ''
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: context
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#context:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: context
+    summary: Use the context object to access common services and state associated with the component.
+    remarks: >-
+      Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
+      read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
+      the constructor), but child classes should redeclare it as readonly.
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly context: FormCustomizerContext;'
+      return:
+        type: '<xref uid="@microsoft/sp-listview-extensibility!default:class" />'
+  - name: displayMode
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#displayMode:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: displayMode
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get displayMode(): FormDisplayMode;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!FormDisplayMode:enum" />'
+  - name: domElement
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#domElement:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: domElement
+    summary: >-
+      This property is a pointer to the root DOM element of the form. This is a DIV element and contains the whole DOM
+      subtree of the form.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected get domElement(): HTMLElement;'
+      return:
+        type: HTMLElement
+methods:
+  - name: formClosed()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formClosed:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: formClosed()
+    summary: Call this method after the form has been closed/cancelled to inform the application that the form has been closed.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected formClosed(): void;'
+      return:
+        type: void
+        description: ''
+  - name: formSaved()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formSaved:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: formSaved()
+    summary: Call this method after the form has been saved to inform the application that the form has been saved.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected formSaved(): void;'
+      return:
+        type: void
+        description: ''
+  - name: onClose()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#onClose:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: onClose()
+    summary: Use this method to implement cancel logic for the form. formClosed should be called at the end of the method.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected abstract onClose(): void;'
+      return:
+        type: void
+        description: ''
+  - name: onSave()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#onSave:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: onSave()
+    summary: Use this method to implement save logic for the form. formSaved should be called at the end of the method.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected abstract onSave(): void;'
+      return:
+        type: void
+        description: ''
+  - name: render()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#render:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: render()
+    summary: >-
+      This API is called to render the form. There is no base implementation of this API and the form is required to
+      override this API.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected abstract render(): void;'
+      return:
+        type: void
+        description: ''
+extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />&lt;TProperties&gt; '
