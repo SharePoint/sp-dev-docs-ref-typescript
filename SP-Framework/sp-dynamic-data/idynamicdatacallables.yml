@@ -7,7 +7,7 @@ summary: >-
   Interface for components to implement in order to be dynamic data sources. This can be implemented as an object with
   state, or a set of loose functions that returns the data.
 remarks: ''
-example: []
+
 isPreview: false
 isDeprecated: false
 type: interface
@@ -23,7 +23,7 @@ methods:
 
       If this api is not defined or returns an empty array, then no consumer will be able to talk to this source.
     remarks: ''
-    example: []
+    
     isPreview: true
     isDeprecated: false
     syntax:
@@ -39,7 +39,7 @@ methods:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined.
     remarks: ''
-    example: []
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -57,7 +57,7 @@ methods:
     fullName: getPropertyDefinitions()
     summary: Returns all the property definitions that the DataSource will provide.
     remarks: ''
-    example: []
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -71,7 +71,7 @@ methods:
     fullName: getPropertyValue(propertyId)
     summary: 'Given a property id, returns the value of the property.'
     remarks: 'It is assumed that when this function returns an array, it is homogeneous.'
-    example: []
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -94,7 +94,7 @@ methods:
 
       Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
     remarks: ''
-    example: []
+    
     isPreview: true
     isDeprecated: false
     syntax:
