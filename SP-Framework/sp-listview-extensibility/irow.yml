@@ -1,0 +1,33 @@
+### YamlMime:TSType
+name: IRow
+uid: '@microsoft/sp-listview-extensibility!IRow:interface'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: IRow
+summary: Provides information about the list item's state rendered by the ListView.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: values
+    uid: '@microsoft/sp-listview-extensibility!IRow#values:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: values
+    summary: >-
+      A map of column values for the row. They key is the column internal name and the value is its corresponding value
+      in the row.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        readonly values: {
+                [columnInternalName: string]: Readonly<any>;
+            };
+      return:
+        type: |-
+          {
+                  [columnInternalName: string]: Readonly&lt;any&gt;;
+              }

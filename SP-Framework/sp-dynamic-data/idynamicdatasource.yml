@@ -7,6 +7,7 @@ summary: >-
   Dynamic Data Sources provide Dynamic Data to consumers. They offer metadata to identify the data sources and API to
   get the data.
 remarks: ''
+example: []
 isPreview: false
 isDeprecated: false
 type: interface
@@ -17,6 +18,7 @@ properties:
     fullName: id
     summary: Id of the Dynamic Data Source.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -29,6 +31,7 @@ properties:
     fullName: metadata
     summary: Metadata of the Dynamic Data Source.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -47,6 +50,7 @@ methods:
 
       If this api is not defined or returns an empty map, then no consumer will be able to talk to this source.
     remarks: ''
+    example: []
     isPreview: true
     isDeprecated: false
     syntax:
@@ -64,6 +68,7 @@ methods:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This API is deprecated. Please use the asynchronous version `getAsyncAnnotatedPropertyValue`'
@@ -84,6 +89,7 @@ methods:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -103,6 +109,7 @@ methods:
       Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
       component.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This API is deprecated. Please use the asynchronous version `getPropertyDefinitionsAsync`'
@@ -119,6 +126,7 @@ methods:
       Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
       component.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -136,6 +144,7 @@ methods:
       Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
       component.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This API is deprecated. Please use the asynchronous version `getAsyncPropertyValue`'
@@ -156,6 +165,7 @@ methods:
       Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
       component.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -178,6 +188,7 @@ methods:
 
       Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
     remarks: ''
+    example: []
     isPreview: true
     isDeprecated: false
     syntax:

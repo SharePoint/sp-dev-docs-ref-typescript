@@ -1,0 +1,118 @@
+### YamlMime:TSType
+name: IColumn
+uid: '@microsoft/sp-listview-extensibility!IColumn:interface'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: IColumn
+summary: Provides information about the state of a column in the list view
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: clientSideComponentId
+    uid: '@microsoft/sp-listview-extensibility!IColumn#clientSideComponentId:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: clientSideComponentId
+    summary: The unique identifier of the client-side component associated with the field.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly clientSideComponentId: Guid | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined'
+  - name: clientSideComponentProperties
+    uid: '@microsoft/sp-listview-extensibility!IColumn#clientSideComponentProperties:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: clientSideComponentProperties
+    summary: This property is only used when a `ClientSideComponentId` is specified. It is optional.
+    remarks: >-
+      If non-empty, the string must contain a JSON object with custom initialization properties whose format and meaning
+      are defined by the client-side component.
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly clientSideComponentProperties: string;'
+      return:
+        type: string
+  - name: displayName
+    uid: '@microsoft/sp-listview-extensibility!IColumn#displayName:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: displayName
+    summary: The display name of the field. This name is shown as column name in UI.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly displayName: string;'
+      return:
+        type: string
+  - name: fieldType
+    uid: '@microsoft/sp-listview-extensibility!IColumn#fieldType:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: fieldType
+    summary: The type of the field represented as a string
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly fieldType: string;'
+      return:
+        type: string
+  - name: id
+    uid: '@microsoft/sp-listview-extensibility!IColumn#id:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: id
+    summary: The GUID identifier for this field.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly id: Guid;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+  - name: internalName
+    uid: '@microsoft/sp-listview-extensibility!IColumn#internalName:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: internalName
+    summary: The internal name of the field. This name is usually used to find the field.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly internalName: string;'
+      return:
+        type: string
+  - name: isRequired
+    uid: '@microsoft/sp-listview-extensibility!IColumn#isRequired:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: isRequired
+    summary: Whether the field is required for each list item in the list
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly isRequired: boolean;'
+      return:
+        type: boolean
+  - name: isVisible
+    uid: '@microsoft/sp-listview-extensibility!IColumn#isVisible:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: isVisible
+    summary: Whether the column is visible in the view
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly isVisible: boolean;'
+      return:
+        type: boolean

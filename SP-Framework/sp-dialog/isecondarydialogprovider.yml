@@ -15,6 +15,7 @@ remarks: >-
 
   See [BaseDialog.secondaryDialogProvider](xref:@microsoft/sp-dialog!BaseDialog%23secondaryDialogProvider:member) for
   how to use this.
+example: []
 isPreview: false
 isDeprecated: false
 type: interface
@@ -27,6 +28,7 @@ methods:
       Similar to [Dialog.alert()](xref:@microsoft/sp-dialog!Dialog.alert:member(1))<!-- -->. The only difference is that
       the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -51,10 +53,11 @@ methods:
       Similar to [Dialog.prompt()](xref:@microsoft/sp-dialog!Dialog.prompt:member(1))<!-- -->. The only difference is
       that the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'prompt(message: string, options?: IPromptOptions): Promise<string>;'
+      content: 'prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;'
       parameters:
         - id: message
           description: ''
@@ -65,7 +68,7 @@ methods:
             [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for more information.
           type: '<xref uid="@microsoft/sp-dialog!IPromptOptions:interface" />'
       return:
-        type: Promise&lt;string&gt;
+        type: Promise&lt;string | undefined&gt;
         description: ''
   - name: 'show(dialog, options)'
     uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)'
@@ -76,6 +79,7 @@ methods:
       is passed in as parameter and the dialog is immediately shown if there are no other secondary dialogs. Otherwise,
       the promise rejects.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:

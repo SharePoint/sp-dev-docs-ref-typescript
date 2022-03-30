@@ -1,0 +1,45 @@
+### YamlMime:TSType
+name: ILocationErrorArguments
+uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ILocationErrorArguments
+summary: This object represents the error data that the Location action can throw.
+remarks: API under active development and not ready for use.
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: error
+    uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#error:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: error
+    summary: Error codes specific to the Get Location Error
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        error: {
+                code: 'InternalError' | 'PermissionDenied';
+            };
+      return:
+        type: |-
+          {
+                  code: 'InternalError' | 'PermissionDenied';
+              }
+  - name: type
+    uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#type:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: type
+    summary: Indicates this is a Viva Select Location button.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'type: ''VivaAction.GetLocation'';'
+      return:
+        type: '''VivaAction.GetLocation'''
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface" />, ''type''&gt; '
