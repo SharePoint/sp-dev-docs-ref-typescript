@@ -35,9 +35,9 @@ properties:
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'defaultPath: string | IPath;'
+      content: 'defaultPath: string | IIntegrityPath;'
       return:
-        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface" />'
+        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
   - name: paths
     uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -75,11 +75,24 @@ properties:
     syntax:
       content: |-
         paths?: {
-                [locale: string]: string | IPath;
+                [locale: string]: string | IIntegrityPath;
             };
       return:
         type: |-
           {
-                  [locale: string]: string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface" />;
+                  [locale: string]: string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />;
               }
-extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#type:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: type
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: ''localizedPath'';'
+      return:
+        type: '''localizedPath'''
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'

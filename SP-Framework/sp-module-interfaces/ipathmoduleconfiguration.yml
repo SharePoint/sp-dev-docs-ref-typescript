@@ -92,7 +92,20 @@ properties:
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'path: string | IPath;'
+      content: 'path: string | IIntegrityPath;'
       return:
-        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface" />'
-extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'
+        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#type:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: type
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: ''path'';'
+      return:
+        type: '''path'''
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'

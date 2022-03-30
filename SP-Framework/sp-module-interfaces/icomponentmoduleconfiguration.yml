@@ -32,9 +32,9 @@ properties:
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'failoverPath?: string | IPath;'
+      content: 'failoverPath?: string | IIntegrityPath;'
       return:
-        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface" />'
+        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
   - name: id
     uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -51,6 +51,19 @@ properties:
       content: 'id: string;'
       return:
         type: string
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#type:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: type
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: ''component'';'
+      return:
+        type: '''component'''
   - name: version
     uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -70,4 +83,4 @@ properties:
       content: 'version: string;'
       return:
         type: string
-extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'

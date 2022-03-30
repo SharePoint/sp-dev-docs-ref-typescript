@@ -57,7 +57,7 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'prompt(message: string, options?: IPromptOptions): Promise<string>;'
+      content: 'prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;'
       parameters:
         - id: message
           description: ''
@@ -68,7 +68,7 @@ methods:
             [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for more information.
           type: '<xref uid="@microsoft/sp-dialog!IPromptOptions:interface" />'
       return:
-        type: Promise&lt;string&gt;
+        type: Promise&lt;string | undefined&gt;
         description: ''
   - name: 'show(dialog, options)'
     uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)'

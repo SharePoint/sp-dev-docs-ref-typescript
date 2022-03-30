@@ -1,57 +1,13 @@
-### YamlMime:TSType
+### YamlMime:TSTypeAlias
 name: IModuleConfiguration
-uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:interface'
+uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:type'
 package: '@microsoft/sp-module-interfaces!'
 fullName: IModuleConfiguration
-summary: This is the base interface for a script module's definition.
+summary: ''
 remarks: ''
 example: []
 isPreview: true
 isDeprecated: false
-type: interface
-properties:
-  - name: shouldNotPreload
-    uid: '@microsoft/sp-module-interfaces!IModuleConfiguration#shouldNotPreload:member'
-    package: '@microsoft/sp-module-interfaces!'
-    fullName: shouldNotPreload
-    summary: 'If set to `true`<!-- -->, this module should not be preloaded when loading the component.'
-    remarks: >-
-      The most common case for setting this property to "true" is when a module is defined in a manifest, but is not
-      required for the module referenced in "entryModuleId" to load. Modules may be defined that are loaded
-      asynchronously, and these modules do not need to be preloaded. This field implicitly defaults to `false`<!-- -->.
-
-
-      Usage: Instructs the module loader to not preload this module.
-    example: []
-    isPreview: true
-    isDeprecated: false
-    syntax:
-      content: 'shouldNotPreload?: boolean;'
-      return:
-        type: boolean
-  - name: type
-    uid: '@microsoft/sp-module-interfaces!IModuleConfiguration#type:member'
-    package: '@microsoft/sp-module-interfaces!'
-    fullName: type
-    summary: >-
-      The type of the script block. `"component"` modules come from a component, `"path"` and `"localizedPath"` modules
-      must be available on the paths provided in the `"internalModuleBaseUrls"` field.
-    remarks: >-
-      Modules with the `"path"` type use the `IPathModuleConfiguration` interface.
-
-
-      Modules with the `"component"` type use the `IComponentModuleConfiguration` interface. Modules with the
-      "localizedPath" type use the `ILocalizedPathModuleConfiguration` interface.
-
-
-      Supported values: `"component"`<!-- -->, `"path"`<!-- -->, `"localizedPath"`
-
-
-      Example: `"localized"`
-    example: []
-    isPreview: true
-    isDeprecated: false
-    syntax:
-      content: 'type: ''component'' | ''path'' | ''localizedPath'';'
-      return:
-        type: '''component'' | ''path'' | ''localizedPath'''
+syntax: >-
+  export declare type IModuleConfiguration = IComponentModuleConfiguration | IPathModuleConfiguration |
+  ILocalizedPathModuleConfiguration;
