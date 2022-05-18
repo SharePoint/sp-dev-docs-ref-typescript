@@ -1,98 +1,146 @@
-### YamlMime:TSType
-name: ISecondaryDialogProvider
-uid: '@microsoft/sp-dialog!ISecondaryDialogProvider:interface'
-package: '@microsoft/sp-dialog!'
-fullName: ISecondaryDialogProvider
-summary: >-
-  This interface handles calls to show a secondary dialog. It's only available by calling this.secondaryManagerProvider
-  inside a dialog.
-remarks: >-
-  Secondary dialogs do not need to request permission from dialog manager, because the primary dialog already has
-  permission. Therefore, the secondary dialog will be immediately shown. This causes the primary dialog to hide until
-  the secondary dialog is closed. There can be only one secondary dialog at a time. Additional requests to show more
-  secondary dialogs are rejected.
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider:interface'
+    summary: >-
+      This interface handles calls to show a secondary dialog. It's only available by calling
+      this.secondaryManagerProvider inside a dialog.
+    remarks: >-
+      Secondary dialogs do not need to request permission from dialog manager, because the primary dialog already has
+      permission. Therefore, the secondary dialog will be immediately shown. This causes the primary dialog to hide
+      until the secondary dialog is closed. There can be only one secondary dialog at a time. Additional requests to
+      show more secondary dialogs are rejected.
 
 
-  See [BaseDialog.secondaryDialogProvider](xref:@microsoft/sp-dialog!BaseDialog%23secondaryDialogProvider:member) for
-  how to use this.
-
-isPreview: false
-isDeprecated: false
-type: interface
-methods:
-  - name: 'alert(message, options)'
-    uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#alert:member(1)'
+      See [BaseDialog.secondaryDialogProvider](xref:@microsoft/sp-dialog!BaseDialog%23secondaryDialogProvider:member)
+      for how to use this.
+    name: ISecondaryDialogProvider
+    fullName: ISecondaryDialogProvider
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-dialog!'
-    fullName: 'alert(message, options)'
+    children:
+      - '@microsoft/sp-dialog!ISecondaryDialogProvider#alert:member(1)'
+      - '@microsoft/sp-dialog!ISecondaryDialogProvider#prompt:member(1)'
+      - '@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)'
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#alert:member(1)'
     summary: >-
       Similar to [Dialog.alert()](xref:@microsoft/sp-dialog!Dialog.alert:member(1))<!-- -->. The only difference is that
       the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'alert(message, options)'
+    fullName: 'alert(message, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'alert(message: string, options?: IAlertOptions): Promise<void>;'
+      return:
+        type:
+          - '@microsoft/sp-dialog!ISecondaryDialogProvider#alert~0:complex'
+        description: ''
       parameters:
         - id: message
           description: ''
-          type: string
+          type:
+            - string
+          optional: false
         - id: options
           description: >-
             Dialog showing options. See [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for
             more information.
-          type: '<xref uid="@microsoft/sp-dialog!IAlertOptions:interface" />'
-      return:
-        type: Promise&lt;void&gt;
-        description: ''
-  - name: 'prompt(message, options)'
-    uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#prompt:member(1)'
-    package: '@microsoft/sp-dialog!'
-    fullName: 'prompt(message, options)'
+          type:
+            - '@microsoft/sp-dialog!IAlertOptions:interface'
+          optional: true
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#prompt:member(1)'
     summary: >-
       Similar to [Dialog.prompt()](xref:@microsoft/sp-dialog!Dialog.prompt:member(1))<!-- -->. The only difference is
       that the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'prompt(message, options)'
+    fullName: 'prompt(message, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;'
+      return:
+        type:
+          - '@microsoft/sp-dialog!ISecondaryDialogProvider#prompt~0:complex'
+        description: ''
       parameters:
         - id: message
           description: ''
-          type: string
+          type:
+            - string
+          optional: false
         - id: options
           description: >-
             Dialog showing options. The confirmOpen option will be ignored. See
             [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for more information.
-          type: '<xref uid="@microsoft/sp-dialog!IPromptOptions:interface" />'
-      return:
-        type: Promise&lt;string | undefined&gt;
-        description: ''
-  - name: 'show(dialog, options)'
-    uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)'
-    package: '@microsoft/sp-dialog!'
-    fullName: 'show(dialog, options)'
+          type:
+            - '@microsoft/sp-dialog!IPromptOptions:interface'
+          optional: true
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)'
     summary: >-
       Similar to [BaseDialog.show()](xref:@microsoft/sp-dialog!BaseDialog%23show:member(1))<!-- -->. The dialog to show
       is passed in as parameter and the dialog is immediately shown if there are no other secondary dialogs. Otherwise,
       the promise rejects.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'show(dialog, options)'
+    fullName: 'show(dialog, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'show(dialog: BaseDialog, options?: IDialogShowOptions): Promise<void>;'
+      return:
+        type:
+          - '@microsoft/sp-dialog!ISecondaryDialogProvider#show~0:complex'
+        description: ''
       parameters:
         - id: dialog
           description: ''
-          type: '<xref uid="@microsoft/sp-dialog!default:class" />'
+          type:
+            - '@microsoft/sp-dialog!default:class'
+          optional: false
         - id: options
           description: >-
             Dialog showing options. The confirmOpen option will be ignored. See
             [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for more information.
-          type: '<xref uid="@microsoft/sp-dialog!IDialogShowOptions:interface" />'
-      return:
-        type: Promise&lt;void&gt;
-        description: ''
+          type:
+            - '@microsoft/sp-dialog!IDialogShowOptions:interface'
+          optional: true
+references:
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#alert~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '@microsoft/sp-dialog!IAlertOptions:interface'
+    name: IAlertOptions
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#prompt~0:complex'
+    name: Promise<string | undefined>
+    fullName: Promise<string | undefined>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <string | undefined>
+        fullName: <string | undefined>
+  - uid: '@microsoft/sp-dialog!IPromptOptions:interface'
+    name: IPromptOptions
+  - uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#show~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '@microsoft/sp-dialog!default:class'
+    name: BaseDialog
+  - uid: '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    name: IDialogShowOptions

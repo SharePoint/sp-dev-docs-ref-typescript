@@ -1,33 +1,55 @@
-### YamlMime:TSType
-name: IRow
-uid: '@microsoft/sp-listview-extensibility!IRow:interface'
-package: '@microsoft/sp-listview-extensibility!'
-fullName: IRow
-summary: Provides information about the list item's state rendered by the ListView.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: values
-    uid: '@microsoft/sp-listview-extensibility!IRow#values:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-listview-extensibility!IRow:interface'
+    summary: Provides information about the list item's state rendered by the ListView.
+    name: IRow
+    fullName: IRow
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-listview-extensibility!'
-    fullName: values
+    children:
+      - '@microsoft/sp-listview-extensibility!IRow#values:member'
+  - uid: '@microsoft/sp-listview-extensibility!IRow#values:member'
     summary: >-
       A map of column values for the row. They key is the column internal name and the value is its corresponding value
       in the row.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: values
+    fullName: values
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         readonly values: {
                 [columnInternalName: string]: Readonly<any>;
             };
       return:
-        type: |-
+        type:
+          - '@microsoft/sp-listview-extensibility!IRow#values~0:complex'
+references:
+  - uid: '@microsoft/sp-listview-extensibility!IRow#values~0:complex'
+    name: |-
+      {
+              [columnInternalName: string]: Readonly<any>;
+          }
+    fullName: |-
+      {
+              [columnInternalName: string]: Readonly<any>;
+          }
+    spec.typeScript:
+      - name: |-
           {
-                  [columnInternalName: string]: Readonly&lt;any&gt;;
+                  [columnInternalName: string]: 
+        fullName: |-
+          {
+                  [columnInternalName: string]: 
+      - uid: '!Readonly:type'
+        name: Readonly
+        fullName: Readonly
+      - name: |-
+          <any>;
+              }
+        fullName: |-
+          <any>;
               }

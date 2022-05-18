@@ -1,77 +1,85 @@
-### YamlMime:TSType
-name: IFormCustomizerContext
-uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext:interface'
-package: '@microsoft/sp-listview-extensibility!'
-fullName: IFormCustomizerContext
-summary: FormCustomizerContext-specific properties.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: contentType
-    uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#contentType:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext:interface'
+    summary: FormCustomizerContext-specific properties.
+    name: IFormCustomizerContext
+    fullName: IFormCustomizerContext
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-listview-extensibility!'
-    fullName: contentType
+    children:
+      - '@microsoft/sp-listview-extensibility!IFormCustomizerContext#contentType:member'
+      - '@microsoft/sp-listview-extensibility!IFormCustomizerContext#domElement:member'
+      - '@microsoft/sp-listview-extensibility!IFormCustomizerContext#folderInfo:member'
+      - '@microsoft/sp-listview-extensibility!IFormCustomizerContext#itemId:member'
+      - '@microsoft/sp-listview-extensibility!IFormCustomizerContext#list:member'
+  - uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#contentType:member'
     summary: The content type associated with the form.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: contentType
+    fullName: contentType
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly contentType: IContentType;'
       return:
-        type: '<xref uid="@microsoft/sp-listview-extensibility!IContentType:interface" />'
-  - name: domElement
-    uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#domElement:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: domElement
+        type:
+          - '@microsoft/sp-listview-extensibility!IContentType:interface'
+  - uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#domElement:member'
     summary: The root DOM element of the form. This is a DIV element container for the custom form.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: domElement
+    fullName: domElement
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly domElement: HTMLElement;'
       return:
-        type: HTMLElement
-  - name: folderInfo
-    uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#folderInfo:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: folderInfo
+        type:
+          - '!HTMLElement:interface'
+  - uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#folderInfo:member'
     summary: The folder information where the item is located/should be created.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: folderInfo
+    fullName: folderInfo
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly folderInfo: IFolderInfo;'
       return:
-        type: '<xref uid="@microsoft/sp-listview-extensibility!IFolderInfo:interface" />'
-  - name: itemId
-    uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#itemId:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: itemId
+        type:
+          - '@microsoft/sp-listview-extensibility!IFolderInfo:interface'
+  - uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#itemId:member'
     summary: The item id of the item being edited or viewed.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: itemId
+    fullName: itemId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly itemId?: number;'
       return:
-        type: number
-  - name: list
-    uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#list:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: list
+        type:
+          - number
+  - uid: '@microsoft/sp-listview-extensibility!IFormCustomizerContext#list:member'
     summary: The list associated with the form.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: list
+    fullName: list
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly list: IList;'
       return:
-        type: '<xref uid="@microsoft/sp-listview-extensibility!IList:interface" />'
+        type:
+          - '@microsoft/sp-listview-extensibility!IList:interface'
+references:
+  - uid: '@microsoft/sp-listview-extensibility!IContentType:interface'
+    name: IContentType
+  - uid: '!HTMLElement:interface'
+    name: HTMLElement
+  - uid: '@microsoft/sp-listview-extensibility!IFolderInfo:interface'
+    name: IFolderInfo
+  - uid: '@microsoft/sp-listview-extensibility!IList:interface'
+    name: IList

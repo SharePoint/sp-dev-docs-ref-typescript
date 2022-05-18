@@ -1,42 +1,43 @@
-### YamlMime:TSType
-name: IDisposable
-uid: '@microsoft/sp-core-library!IDisposable:interface'
-package: '@microsoft/sp-core-library!'
-fullName: IDisposable
-summary: Implemented by an object that supports a disposal lifecycle.
-remarks: The dispose event allows an object to free any resources that it allocated before its lifecycle ends.
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: isDisposed
-    uid: '@microsoft/sp-core-library!IDisposable#isDisposed:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-core-library!IDisposable:interface'
+    summary: Implemented by an object that supports a disposal lifecycle.
+    remarks: The dispose event allows an object to free any resources that it allocated before its lifecycle ends.
+    name: IDisposable
+    fullName: IDisposable
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-core-library!'
-    fullName: isDisposed
+    children:
+      - '@microsoft/sp-core-library!IDisposable#dispose:member(1)'
+      - '@microsoft/sp-core-library!IDisposable#isDisposed:member'
+  - uid: '@microsoft/sp-core-library!IDisposable#dispose:member(1)'
+    summary: This method is called to permanently dispose the object.
+    remarks: 'After the object has been disposed, do not call its methods or access its properties.'
+    name: dispose()
+    fullName: dispose()
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type:
+          - void
+        description: ''
+  - uid: '@microsoft/sp-core-library!IDisposable#isDisposed:member'
     summary: >-
       Returns true if the dispose() method has been called. Once an object is disposed, it remains in this state
       permanently.
     remarks: 'After the object has been disposed, do not call its methods or access its properties.'
-    
-    isPreview: false
-    isDeprecated: false
+    name: isDisposed
+    fullName: isDisposed
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'isDisposed: boolean;'
       return:
-        type: boolean
-methods:
-  - name: dispose()
-    uid: '@microsoft/sp-core-library!IDisposable#dispose:member(1)'
-    package: '@microsoft/sp-core-library!'
-    fullName: dispose()
-    summary: This method is called to permanently dispose the object.
-    remarks: 'After the object has been disposed, do not call its methods or access its properties.'
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'dispose(): void;'
-      return:
-        type: void
-        description: ''
+        type:
+          - boolean

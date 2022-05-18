@@ -1,34 +1,62 @@
-### YamlMime:TSType
-name: BaseBasicCardView
-uid: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView:class'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: BaseBasicCardView
-summary: Base class for a Basic Card view.
-remarks: >-
-  The basic Card view displays the following: - Card title - Card icon - One primary text field - One button in the
-  `Medium` Card size, two buttons in the `Large` Card size
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: template
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView#template:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView:class'
+    summary: Base class for a Basic Card view.
+    remarks: >-
+      The basic Card view displays the following: - Card title - Card icon - One primary text field - One button in the
+      `Medium` Card size, two buttons in the `Large` Card size
+    name: BaseBasicCardView
+    fullName: BaseBasicCardView
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView~1:complex'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: template
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView#template:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView#template:member'
     summary: >-
       Returns the Adaptive Card template for the
       [BaseBasicCardView](xref:@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView:class)<!-- -->.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: template
+    fullName: template
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @sealed */
         get template(): ISPFxAdaptiveCard;
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
-extends: >-
-  <xref uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />&lt;TProperties, TState, <xref
-  uid="@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface" />&gt; 
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView~0:complex'
+    name: 'BaseCardView<TProperties, TState, IBasicCardParameters'
+    fullName: 'BaseCardView<TProperties, TState, IBasicCardParameters'
+    spec.typeScript:
+      - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
+        name: BaseCardView
+        fullName: BaseCardView
+      - name: '<TProperties, TState, '
+        fullName: '<TProperties, TState, '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface'
+        name: IBasicCardParameters
+        fullName: IBasicCardParameters
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView~1:complex'
+    name: 'BaseCardView<TProperties, TState, IBasicCardParameters'
+    fullName: 'BaseCardView<TProperties, TState, IBasicCardParameters'
+    spec.typeScript:
+      - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
+        name: BaseCardView
+        fullName: BaseCardView
+      - name: '<TProperties, TState, '
+        fullName: '<TProperties, TState, '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface'
+        name: IBasicCardParameters
+        fullName: IBasicCardParameters
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
+    name: ISPFxAdaptiveCard

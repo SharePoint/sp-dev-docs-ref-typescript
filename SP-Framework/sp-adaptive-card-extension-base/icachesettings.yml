@@ -1,53 +1,65 @@
-### YamlMime:TSType
-name: ICacheSettings
-uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ICacheSettings
-summary: ''
-remarks: ''
-
-isPreview: true
-isDeprecated: false
-type: interface
-properties:
-  - name: cachedCardView
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#cachedCardView:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings:interface'
+    isPreview: true
+    name: ICacheSettings
+    fullName: ICacheSettings
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: cachedCardView
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#cachedCardView:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#expiryTimeInSeconds:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#isEnabled:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#cachedCardView:member'
     summary: >-
       Returns the Card View used to generate the cached card. By default, the currently rendered Card View will be used
       to cache the card.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: cachedCardView
+    fullName: cachedCardView
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'cachedCardView?: () => BaseCardView;'
       return:
-        type: '() =&gt; <xref uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />'
-  - name: expiryTimeInSeconds
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#expiryTimeInSeconds:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: expiryTimeInSeconds
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#cachedCardView~0:complex'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#expiryTimeInSeconds:member'
     summary: 'Expiry time in seconds. Default: 86400 seconds (24 hours)'
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: expiryTimeInSeconds
+    fullName: expiryTimeInSeconds
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'expiryTimeInSeconds: number;'
       return:
-        type: number
-  - name: isEnabled
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#isEnabled:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: isEnabled
+        type:
+          - number
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#isEnabled:member'
     summary: 'Whether cache is enabled. Default: true'
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: isEnabled
+    fullName: isEnabled
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'isEnabled: boolean;'
       return:
-        type: boolean
+        type:
+          - boolean
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICacheSettings#cachedCardView~0:complex'
+    name: () => BaseCardView
+    fullName: () => BaseCardView
+    spec.typeScript:
+      - name: '() => '
+        fullName: '() => '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
+        name: BaseCardView
+        fullName: BaseCardView

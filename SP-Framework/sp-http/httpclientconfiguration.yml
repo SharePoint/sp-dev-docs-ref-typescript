@@ -1,87 +1,96 @@
-### YamlMime:TSType
-name: HttpClientConfiguration
-uid: '@microsoft/sp-http!HttpClientConfiguration:class'
-package: '@microsoft/sp-http!'
-fullName: HttpClientConfiguration
-summary: Configuration for HttpClient.
-remarks: >-
-  The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
-  HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the
-  predefined defaults from HttpClientConfigurations, however switches can also be changed via the
-  HttpClientConfiguration.overrideWith() method.
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: '(constructor)(flags, overrideFlags)'
-    uid: '@microsoft/sp-http!HttpClientConfiguration:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!HttpClientConfiguration:class'
+    summary: Configuration for HttpClient.
+    remarks: >-
+      The HttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
+      HttpClient class. Normally these switches are set (e.g. when calling HttpClient.fetch()) by providing one of the
+      predefined defaults from HttpClientConfigurations, however switches can also be changed via the
+      HttpClientConfiguration.overrideWith() method.
+    name: HttpClientConfiguration
+    fullName: HttpClientConfiguration
+    langs:
+      - typeScript
+    type: class
+    implements:
+      - '@microsoft/sp-http!IHttpClientConfiguration:interface'
     package: '@microsoft/sp-http!'
-    fullName: '(constructor)(flags, overrideFlags)'
+    children:
+      - '@microsoft/sp-http!HttpClientConfiguration:constructor(1)'
+      - '@microsoft/sp-http!HttpClientConfiguration#flags:member'
+      - '@microsoft/sp-http!HttpClientConfiguration#initializeFlags:member(1)'
+      - '@microsoft/sp-http!HttpClientConfiguration#overrideWith:member(1)'
+  - uid: '@microsoft/sp-http!HttpClientConfiguration:constructor(1)'
     summary: >-
       Constructs a new instance of HttpClientConfiguration with the specified flags. The default values will be used for
       any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(flags: IHttpClientConfiguration, overrideFlags?: IHttpClientConfiguration);'
       parameters:
         - id: flags
           description: ''
-          type: '<xref uid="@microsoft/sp-http!IHttpClientConfiguration:interface" />'
+          type:
+            - '@microsoft/sp-http!IHttpClientConfiguration:interface'
+          optional: false
         - id: overrideFlags
           description: ''
-          type: '<xref uid="@microsoft/sp-http!IHttpClientConfiguration:interface" />'
-properties:
-  - name: flags
-    uid: '@microsoft/sp-http!HttpClientConfiguration#flags:member'
-    package: '@microsoft/sp-http!'
+          type:
+            - '@microsoft/sp-http!IHttpClientConfiguration:interface'
+          optional: true
+  - uid: '@microsoft/sp-http!HttpClientConfiguration#flags:member'
+    name: flags
     fullName: flags
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'protected flags: IHttpClientConfiguration;'
       return:
-        type: '<xref uid="@microsoft/sp-http!IHttpClientConfiguration:interface" />'
-methods:
-  - name: initializeFlags()
-    uid: '@microsoft/sp-http!HttpClientConfiguration#initializeFlags:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: initializeFlags()
+        type:
+          - '@microsoft/sp-http!IHttpClientConfiguration:interface'
+  - uid: '@microsoft/sp-http!HttpClientConfiguration#initializeFlags:member(1)'
     summary: Child classes should override this method to initialize the flags object.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: initializeFlags()
+    fullName: initializeFlags()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: |-
         /** @virtual */
         protected initializeFlags(): void;
       return:
-        type: void
+        type:
+          - void
         description: ''
-  - name: overrideWith(sourceFlags)
-    uid: '@microsoft/sp-http!HttpClientConfiguration#overrideWith:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: overrideWith(sourceFlags)
+  - uid: '@microsoft/sp-http!HttpClientConfiguration#overrideWith:member(1)'
     summary: 'Child classes should override this method to construct the child class type, rather than the base class type.'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: overrideWith(sourceFlags)
+    fullName: overrideWith(sourceFlags)
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: |-
         /** @virtual */
         overrideWith(sourceFlags: IHttpClientConfiguration): HttpClientConfiguration;
+      return:
+        type:
+          - '@microsoft/sp-http!default:class'
+        description: ''
       parameters:
         - id: sourceFlags
           description: ''
-          type: '<xref uid="@microsoft/sp-http!IHttpClientConfiguration:interface" />'
-      return:
-        type: '<xref uid="@microsoft/sp-http!default:class" />'
-        description: ''
+          type:
+            - '@microsoft/sp-http!IHttpClientConfiguration:interface'
+          optional: false
+references:
+  - uid: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+    name: IHttpClientConfiguration
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientConfiguration

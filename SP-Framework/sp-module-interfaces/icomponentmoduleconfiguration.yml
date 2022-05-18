@@ -1,21 +1,26 @@
-### YamlMime:TSType
-name: IComponentModuleConfiguration
-uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface'
-package: '@microsoft/sp-module-interfaces!'
-fullName: IComponentModuleConfiguration
-summary: >-
-  This is the interface for a script module with the "component" type. Modules of this type will be provided via
-  manifests. In order for the dependency to be loaded, the manifest must be available on the site.
-remarks: ''
-
-isPreview: true
-isDeprecated: false
-type: interface
-properties:
-  - name: failoverPath
-    uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface'
+    summary: >-
+      This is the interface for a script module with the "component" type. Modules of this type will be provided via
+      manifests. In order for the dependency to be loaded, the manifest must be available on the site.
+    isPreview: true
+    name: IComponentModuleConfiguration
+    fullName: IComponentModuleConfiguration
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
+    inheritance:
+      - type: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
     package: '@microsoft/sp-module-interfaces!'
-    fullName: failoverPath
+    children:
+      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member'
+      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
+      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#type:member'
+      - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member'
+  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath:member'
     summary: A path to the framework-supplied component in case the framework fails to load the requested version.
     remarks: >-
       This must be either a fully-qualified URL, or a path under the paths specified in the `internalModuleBaseUrls`
@@ -28,46 +33,47 @@ properties:
 
 
       Example: `"https://code.jquery.com/jquery-2.2.4.min.js"`
-    
     isPreview: true
-    isDeprecated: false
+    name: failoverPath
+    fullName: failoverPath
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'failoverPath?: string | IIntegrityPath;'
       return:
-        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
-  - name: id
-    uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
-    package: '@microsoft/sp-module-interfaces!'
-    fullName: id
+        type:
+          - '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath~0:complex'
+  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#id:member'
     summary: The ID of the framework-supplied component to be loaded.
     remarks: |-
       Supported values: string representing a component's ID.
 
       Example: `"0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d"`
-    
     isPreview: true
-    isDeprecated: false
+    name: id
+    fullName: id
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'id: string;'
       return:
-        type: string
-  - name: type
-    uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#type:member'
-    package: '@microsoft/sp-module-interfaces!'
-    fullName: type
-    summary: ''
-    remarks: ''
-    
+        type:
+          - string
+  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#type:member'
     isPreview: true
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''component'';'
       return:
-        type: '''component'''
-  - name: version
-    uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member'
-    package: '@microsoft/sp-module-interfaces!'
-    fullName: version
+        type:
+          - '''component'''
+  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#version:member'
     summary: >-
       The version of the framework-supplied component to be loaded. For framework runtime component such as
       `@microsoft/sp-client-base`<!-- -->, it is recommended the version of the framework component the component was
@@ -76,11 +82,26 @@ properties:
       Supported values: string representing a [semantic version](http://semver.org)<!-- -->, or "latest".
 
       Example: `"2.2.4"`
-    
     isPreview: true
-    isDeprecated: false
+    name: version
+    fullName: version
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'version: string;'
       return:
-        type: string
-extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
+    name: IModuleConfigurationBase
+  - uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration#failoverPath~0:complex'
+    name: string | IIntegrityPath
+    fullName: string | IIntegrityPath
+    spec.typeScript:
+      - name: 'string | '
+        fullName: 'string | '
+      - uid: '@microsoft/sp-module-interfaces!IIntegrityPath:interface'
+        name: IIntegrityPath
+        fullName: IIntegrityPath

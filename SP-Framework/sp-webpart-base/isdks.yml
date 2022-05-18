@@ -1,29 +1,32 @@
-### YamlMime:TSType
-name: ISDKs
-uid: '@microsoft/sp-webpart-base!ISDKs:interface'
-package: '@microsoft/sp-webpart-base!'
-fullName: ISDKs
-summary: Conditional set of SDKs provided by SPFx dependent on the environment.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: microsoftTeams
-    uid: '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-webpart-base!ISDKs:interface'
+    summary: Conditional set of SDKs provided by SPFx dependent on the environment.
+    name: ISDKs
+    fullName: ISDKs
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-webpart-base!'
-    fullName: microsoftTeams
+    children:
+      - '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
+  - uid: '@microsoft/sp-webpart-base!ISDKs#microsoftTeams:member'
     summary: >-
       Contextual information about the current Microsoft Teams tab. This object will only be defined if a component is
       being hosted in Microsoft Teams.
     remarks: >-
       For more information, please see:
       [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
-    
-    isPreview: false
-    isDeprecated: false
+    name: microsoftTeams
+    fullName: microsoftTeams
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'microsoftTeams?: IMicrosoftTeams;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!IMicrosoftTeams:interface" />'
+        type:
+          - '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
+references:
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
+    name: IMicrosoftTeams

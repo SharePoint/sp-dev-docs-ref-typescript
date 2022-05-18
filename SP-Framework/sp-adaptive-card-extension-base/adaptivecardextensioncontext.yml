@@ -1,67 +1,107 @@
-### YamlMime:TSType
-name: AdaptiveCardExtensionContext
-uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext:class'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: AdaptiveCardExtensionContext
-summary: Adaptive Card Extension context object.
-remarks: >-
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `AdaptiveCardExtensionContext` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: deviceContext
-    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#deviceContext:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext:class'
+    summary: Adaptive Card Extension context object.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `AdaptiveCardExtensionContext` class.
+    name: AdaptiveCardExtensionContext
+    fullName: AdaptiveCardExtensionContext
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-component-base!BaseComponentContext:class'
+    inheritance:
+      - type: '@microsoft/sp-component-base!BaseComponentContext:class'
     package: '@microsoft/sp-adaptive-card-extension-base!'
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#deviceContext:member'
+      - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location:member'
+      - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#manifest:member'
+      - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#propertyPane:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#deviceContext:member'
+    name: deviceContext
     fullName: deviceContext
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get deviceContext(): DeviceContext;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!DeviceContext:type" />'
-  - name: location
-    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: location
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!DeviceContext:type'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location:member'
     summary: Provides a promise that gets current location of the device
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: location
+    fullName: location
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get location(): Promise<ILocation>;'
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!ILocation:interface" />&gt;'
-  - name: manifest
-    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#manifest:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: manifest
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location~0:complex'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#manifest:member'
     summary: 'See [BaseComponentContext.manifest](xref:@microsoft/sp-component-base!BaseComponentContext%23manifest:member)'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: manifest
+    fullName: manifest
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly manifest: IAdaptiveCardExtensionManifest<unknown>;'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest:interface" />&lt;unknown&gt;'
-  - name: propertyPane
-    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#propertyPane:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: propertyPane
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#manifest~0:complex'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#propertyPane:member'
     summary: 'See [IPropertyPaneAccessor](xref:@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface)'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: propertyPane
+    fullName: propertyPane
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get propertyPane(): IPropertyPaneAccessor | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface" /> | undefined'
-extends: '<xref uid="@microsoft/sp-component-base!BaseComponentContext:class" />'
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#propertyPane~0:complex'
+references:
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext
+  - uid: '@microsoft/sp-adaptive-card-extension-base!DeviceContext:type'
+    name: DeviceContext
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location~0:complex'
+    name: Promise<ILocation>
+    fullName: Promise<ILocation>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ILocation:interface'
+        name: ILocation
+        fullName: ILocation
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#manifest~0:complex'
+    name: IAdaptiveCardExtensionManifest<unknown>
+    fullName: IAdaptiveCardExtensionManifest<unknown>
+    spec.typeScript:
+      - uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest:interface'
+        name: IAdaptiveCardExtensionManifest
+        fullName: IAdaptiveCardExtensionManifest
+      - name: <unknown>
+        fullName: <unknown>
+  - uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#propertyPane~0:complex'
+    name: IPropertyPaneAccessor | undefined
+    fullName: IPropertyPaneAccessor | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface'
+        name: IPropertyPaneAccessor
+        fullName: IPropertyPaneAccessor
+      - name: ' | undefined'
+        fullName: ' | undefined'

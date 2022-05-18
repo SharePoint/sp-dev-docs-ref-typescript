@@ -1,77 +1,79 @@
-### YamlMime:TSType
-name: BaseCardView
-uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: BaseCardView
-summary: Primitive base class for Card views.
-remarks: |-
-  This class is marked as `@sealed`. Subclasses should not extend it.
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
+    summary: Primitive base class for Card views.
+    remarks: |-
+      This class is marked as `@sealed`. Subclasses should not extend it.
 
-  No third-party Card views should inherit from this class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: cardButtons
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons:member'
+      No third-party Card views should inherit from this class.
+    name: BaseCardView
+    fullName: BaseCardView
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: cardButtons
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons:member'
+      - '@microsoft/sp-adaptive-card-extension-base!BaseCardView#data:member'
+      - '@microsoft/sp-adaptive-card-extension-base!BaseCardView#isCacheEnabled:member'
+      - '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onCardSelection:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons:member'
     summary: The buttons displayed on the Card.
     remarks: >-
       Some Card view templates will restrict how many buttons can be displayed depending on various factors. See the
       documentation for the respective base Card View class for specific details.
-    
-    isPreview: false
-    isDeprecated: false
+    name: cardButtons
+    fullName: cardButtons
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @virtual */
         get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined;
       return:
-        type: >-
-          [<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | [<xref
-          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />, <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | undefined
-  - name: data
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#data:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: data
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons~0:complex'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#data:member'
     summary: The data used to render the Card view.
     remarks: >-
       The available data to display is dependent on the Card view template and its respective base Card view class. See
       the documentation for the Card View class for specific details.
-    
-    isPreview: false
-    isDeprecated: false
+    name: data
+    fullName: data
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'abstract get data(): TData;'
       return:
-        type: TData
-  - name: isCacheEnabled
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#isCacheEnabled:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: isCacheEnabled
+        type:
+          - TData
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#isCacheEnabled:member'
     summary: 'If true, this Card view will be cached and rendered at next load.'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: isCacheEnabled
+    fullName: isCacheEnabled
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @virtual */
         get isCacheEnabled(): boolean;
       return:
-        type: boolean
-  - name: onCardSelection
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onCardSelection:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: onCardSelection
+        type:
+          - boolean
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onCardSelection:member'
     summary: Action to invoke when the card is selected.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: onCardSelection
+    fullName: onCardSelection
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: >-
         /** @virtual */
@@ -79,10 +81,62 @@ properties:
         get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | ISelectMediaCardAction |
         IGetLocationCardAction | IShowLocationCardAction | undefined;
       return:
-        type: >-
-          <xref uid="@microsoft/sp-adaptive-card-extension-base!IQuickViewCardAction:interface" /> | <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!IExternalLinkCardAction:interface" /> | <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction:interface" /> | <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!IGetLocationCardAction:interface" /> | <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!IShowLocationCardAction:interface" /> | undefined
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState, TData&gt; '
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onCardSelection~0:complex'
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+    name: BaseView
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons~0:complex'
+    name: '[ICardButton] | [ICardButton, ICardButton] | undefined'
+    fullName: '[ICardButton] | [ICardButton, ICardButton] | undefined'
+    spec.typeScript:
+      - name: '['
+        fullName: '['
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
+        name: ICardButton
+        fullName: ICardButton
+      - name: '] | ['
+        fullName: '] | ['
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
+        name: ICardButton
+        fullName: ICardButton
+      - name: ', '
+        fullName: ', '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
+        name: ICardButton
+        fullName: ICardButton
+      - name: '] | undefined'
+        fullName: '] | undefined'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onCardSelection~0:complex'
+    name: >-
+      IQuickViewCardAction | IExternalLinkCardAction | ISelectMediaCardAction | IGetLocationCardAction |
+      IShowLocationCardAction | undefined
+    fullName: >-
+      IQuickViewCardAction | IExternalLinkCardAction | ISelectMediaCardAction | IGetLocationCardAction |
+      IShowLocationCardAction | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IQuickViewCardAction:interface'
+        name: IQuickViewCardAction
+        fullName: IQuickViewCardAction
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IExternalLinkCardAction:interface'
+        name: IExternalLinkCardAction
+        fullName: IExternalLinkCardAction
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction:interface'
+        name: ISelectMediaCardAction
+        fullName: ISelectMediaCardAction
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationCardAction:interface'
+        name: IGetLocationCardAction
+        fullName: IGetLocationCardAction
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationCardAction:interface'
+        name: IShowLocationCardAction
+        fullName: IShowLocationCardAction
+      - name: ' | undefined'
+        fullName: ' | undefined'

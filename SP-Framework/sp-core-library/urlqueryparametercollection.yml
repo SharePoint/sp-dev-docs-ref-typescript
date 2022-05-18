@@ -1,47 +1,47 @@
-### YamlMime:TSType
-name: UrlQueryParameterCollection
-uid: '@microsoft/sp-core-library!UrlQueryParameterCollection:class'
-package: '@microsoft/sp-core-library!'
-fullName: UrlQueryParameterCollection
-summary: Provides features for storing and retrieving URL query parameters.
-remarks: >-
-  The URL can be server-relative, and it can also be an empty or null string. The query parameters must start with "?"
-  to indicate the first query parameter and use "&amp;" for all subsequent parameters. The class also supports
-  fragments.
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-core-library!UrlQueryParameterCollection:class'
+    summary: Provides features for storing and retrieving URL query parameters.
+    remarks: >-
+      The URL can be server-relative, and it can also be an empty or null string. The query parameters must start with
+      "?" to indicate the first query parameter and use "&amp;" for all subsequent parameters. The class also supports
+      fragments.
 
 
-  Edge case behavior:
+      Edge case behavior:
 
 
-  Empty value (www.example.com/?test=) stores key and empty value No equals in queryParam (www.example.com/?test) stores
-  key and undefined value Empty queryParam (www.example.com/?&amp;debug=on) stores undefined key and value Query param
-  with only equals (www.example.com/?=&amp;debug=on stores empty string key and value
-
-isPreview: false
-isDeprecated: true
-customDeprecatedMessage: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
-type: class
-constructors:
-  - name: (constructor)(url)
-    uid: '@microsoft/sp-core-library!UrlQueryParameterCollection:constructor(1)'
+      Empty value (www.example.com/?test=) stores key and empty value No equals in queryParam (www.example.com/?test)
+      stores key and undefined value Empty queryParam (www.example.com/?&amp;debug=on) stores undefined key and value
+      Query param with only equals (www.example.com/?=&amp;debug=on stores empty string key and value
+    deprecated:
+      content: Use the URLSearchParams browser API instead. The SharePoint Framework includes a polyfill for older browsers.
+    name: UrlQueryParameterCollection
+    fullName: UrlQueryParameterCollection
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-core-library!'
-    fullName: (constructor)(url)
+    children:
+      - '@microsoft/sp-core-library!UrlQueryParameterCollection:constructor(1)'
+      - '@microsoft/sp-core-library!UrlQueryParameterCollection#getValue:member(1)'
+      - '@microsoft/sp-core-library!UrlQueryParameterCollection#getValues:member(1)'
+  - uid: '@microsoft/sp-core-library!UrlQueryParameterCollection:constructor(1)'
     summary: Constructs a new instance of the `UrlQueryParameterCollection` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: (constructor)(url)
+    fullName: (constructor)(url)
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(url: string);'
       parameters:
         - id: url
           description: ''
-          type: string
-methods:
-  - name: getValue(param)
-    uid: '@microsoft/sp-core-library!UrlQueryParameterCollection#getValue:member(1)'
-    package: '@microsoft/sp-core-library!'
-    fullName: getValue(param)
+          type:
+            - string
+          optional: false
+  - uid: '@microsoft/sp-core-library!UrlQueryParameterCollection#getValue:member(1)'
     summary: Returns the value of the first matching query parameter or undefined if the key doesn't exist.
     remarks: |-
       Examples:
@@ -55,22 +55,24 @@ methods:
         getValue('debug')  ---> 'false'
         getValue('lost')  ---> undefined
       ```
-    
-    isPreview: false
-    isDeprecated: false
+    name: getValue(param)
+    fullName: getValue(param)
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'getValue(param: string): string | undefined;'
+      return:
+        type:
+          - string | undefined
+        description: ''
       parameters:
         - id: param
           description: the case insensitive key for the desired query parameter value.
-          type: string
-      return:
-        type: string | undefined
-        description: ''
-  - name: getValues(param)
-    uid: '@microsoft/sp-core-library!UrlQueryParameterCollection#getValues:member(1)'
-    package: '@microsoft/sp-core-library!'
-    fullName: getValues(param)
+          type:
+            - string
+          optional: false
+  - uid: '@microsoft/sp-core-library!UrlQueryParameterCollection#getValues:member(1)'
     summary: Returns the values of all of the matching query parameters or undefined if the key doesn't exist.
     remarks: |-
       Examples:
@@ -84,15 +86,20 @@ methods:
         getValues('debug')  ---> ['false']
         getValues('lost')  ---> undefined
       ```
-    
-    isPreview: false
-    isDeprecated: false
+    name: getValues(param)
+    fullName: getValues(param)
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'getValues(param: string): (string | undefined)[] | undefined;'
+      return:
+        type:
+          - '(string | undefined)[] | undefined'
+        description: ''
       parameters:
         - id: param
           description: the case insensitive key for the desired query parameter value.
-          type: string
-      return:
-        type: '(string | undefined)[] | undefined'
-        description: ''
+          type:
+            - string
+          optional: false

@@ -1,33 +1,43 @@
-### YamlMime:TSType
-name: AadHttpClientResponse
-uid: '@microsoft/sp-http!AadHttpClientResponse:class'
-package: '@microsoft/sp-http!'
-fullName: AadHttpClientResponse
-summary: >-
-  The Response subclass returned by methods such as `AadHttpClient.fetch()`<!-- -->. Class that extends
-  HttpClientResponse adding additional functionality specific to the AadHttpClient.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: '(constructor)(response, tokenFetchRequestTime)'
-    uid: '@microsoft/sp-http!AadHttpClientResponse:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!AadHttpClientResponse:class'
+    summary: >-
+      The Response subclass returned by methods such as `AadHttpClient.fetch()`<!-- -->. Class that extends
+      HttpClientResponse adding additional functionality specific to the AadHttpClient.
+    name: AadHttpClientResponse
+    fullName: AadHttpClientResponse
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
     package: '@microsoft/sp-http!'
-    fullName: '(constructor)(response, tokenFetchRequestTime)'
+    children:
+      - '@microsoft/sp-http!AadHttpClientResponse:constructor(1)'
+  - uid: '@microsoft/sp-http!AadHttpClientResponse:constructor(1)'
     summary: Constructs a new instance of the `AadHttpClientResponse` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: '(constructor)(response, tokenFetchRequestTime)'
+    fullName: '(constructor)(response, tokenFetchRequestTime)'
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(response: Response, tokenFetchRequestTime: number);'
       parameters:
         - id: response
           description: ''
-          type: Response
+          type:
+            - '!Response:interface'
+          optional: false
         - id: tokenFetchRequestTime
           description: ''
-          type: number
-extends: '<xref uid="@microsoft/sp-http!default:class" />'
+          type:
+            - number
+          optional: false
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientResponse
+  - uid: '!Response:interface'
+    name: Response

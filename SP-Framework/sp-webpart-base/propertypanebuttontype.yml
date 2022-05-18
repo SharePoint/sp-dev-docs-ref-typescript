@@ -1,44 +1,88 @@
-### YamlMime:TSEnum
-name: PropertyPaneButtonType
-uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType:enum'
-package: '@microsoft/sp-webpart-base!'
-fullName: PropertyPaneButtonType
-summary: Enum for all the supported button types.
-remarks: ''
-
-isPreview: false
-isDeprecated: true
-customDeprecatedMessage: This is obsolete now. This enum has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it from there.
-fields:
-  - name: Command
-    uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Command:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType:enum'
+    summary: Enum for all the supported button types.
+    deprecated:
+      content: >-
+        This is obsolete now. This enum has been moved to `@microsoft/sp-property-pane`<!-- -->. Please consume it from
+        there.
+    name: PropertyPaneButtonType
+    fullName: PropertyPaneButtonType
+    langs:
+      - typeScript
+    type: enum
     package: '@microsoft/sp-webpart-base!'
+    children:
+      - '@microsoft/sp-webpart-base!PropertyPaneButtonType.Command:member'
+      - '@microsoft/sp-webpart-base!PropertyPaneButtonType.Compound:member'
+      - '@microsoft/sp-webpart-base!PropertyPaneButtonType.Hero:member'
+      - '@microsoft/sp-webpart-base!PropertyPaneButtonType.Icon:member'
+      - '@microsoft/sp-webpart-base!PropertyPaneButtonType.Normal:member'
+      - '@microsoft/sp-webpart-base!PropertyPaneButtonType.Primary:member'
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Command:member'
     summary: Optional actions.
-    value: '4'
-  - name: Compound
-    uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Compound:member'
-    package: '@microsoft/sp-webpart-base!'
+    remarks: >-
+      Typically used in a command bar at the top of a view, panel and inside an inline command bar. Examples: Command
+      bar at the top of OneDrive, Outlook, SharePoint. Inline command bar on the top of SharePoint web parts.
+    name: Command
+    fullName: Command
+    langs:
+      - typeScript
+    type: field
+    numericValue: '4'
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Compound:member'
     summary: Always used as a set with both Standard and Primary compound buttons.
-    value: '3'
-  - name: Hero
-    uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Hero:member'
-    package: '@microsoft/sp-webpart-base!'
+    remarks: >-
+      Typically used in a confirmation dialog. Examples: A confirmation dialog when a user discards a form or task with
+      a possible significant time investment such as an email or a complex form
+    name: Compound
+    fullName: Compound
+    langs:
+      - typeScript
+    type: field
+    numericValue: '3'
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Hero:member'
     summary: Hero button.
-    value: '2'
-  - name: Icon
-    uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Icon:member'
-    package: '@microsoft/sp-webpart-base!'
+    name: Hero
+    fullName: Hero
+    langs:
+      - typeScript
+    type: field
+    numericValue: '2'
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Icon:member'
     summary: >-
       Same usage as Command button, when real estate does not allow for icons + labels or as secondary actions within
       the command bar.
-    value: '5'
-  - name: Normal
-    uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Normal:member'
-    package: '@microsoft/sp-webpart-base!'
+    remarks: >-
+      Typically used in Command bar in small and medium responsive web breakpoints. Also used on objects. Examples:
+      OneDrive small and medium responsive web breakpoint Command Bars and view icons within the Command Bar. In
+      SharePoint and OneDrive, Cards with social actions and images which allow users to access the image picker. In
+      SharePoint, formatting experiences such as formatting a story within the Authoring experience. In Calendar, in the
+      bottom of an event creation Callout when clicking inside an empty time range.
+    name: Icon
+    fullName: Icon
+    langs:
+      - typeScript
+    type: field
+    numericValue: '5'
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Normal:member'
     summary: Optional completion action.
-    value: '0'
-  - name: Primary
-    uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Primary:member'
-    package: '@microsoft/sp-webpart-base!'
+    remarks: >-
+      Typically used at the end of a form or task when paired with the Primary button OR as a standalone button to undo
+      an action. Examples: "Done" button which closes a container but doesn't make a server call or an "Undo" button
+      when a user is uploading a file in OneDrive.
+    name: Normal
+    fullName: Normal
+    langs:
+      - typeScript
+    type: field
+    numericValue: '0'
+  - uid: '@microsoft/sp-webpart-base!PropertyPaneButtonType.Primary:member'
     summary: Preferred completion action when paired with a Standard button.
-    value: '1'
+    remarks: 'Typically used at the end of a task or form. Examples: "Create", "Save", "Send" which makes a server call.'
+    name: Primary
+    fullName: Primary
+    langs:
+      - typeScript
+    type: field
+    numericValue: '1'

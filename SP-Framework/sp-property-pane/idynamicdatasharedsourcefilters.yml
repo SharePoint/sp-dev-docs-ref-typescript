@@ -1,19 +1,17 @@
-### YamlMime:TSType
-name: IDynamicDataSharedSourceFilters
-uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
-package: '@microsoft/sp-property-pane!'
-fullName: IDynamicDataSharedSourceFilters
-summary: Property pane dynamic data source filters.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: componentId
-    uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters#componentId:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
+    summary: Property pane dynamic data source filters.
+    name: IDynamicDataSharedSourceFilters
+    fullName: IDynamicDataSharedSourceFilters
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-property-pane!'
-    fullName: componentId
+    children:
+      - '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters#componentId:member'
+      - '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters#sourceId:member'
+  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters#componentId:member'
     summary: |-
       Component Id.
 
@@ -29,17 +27,17 @@ properties:
 
       Example - If the document library web part component id is supplied, then the dynamic data sources dropdown only
       shows document library web parts on the page which are registered dynamic sources.
-    
-    isPreview: false
-    isDeprecated: false
+    name: componentId
+    fullName: componentId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'componentId?: Guid;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
-  - name: sourceId
-    uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters#sourceId:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: sourceId
+        type:
+          - '@microsoft/sp-core-library!Guid:class'
+  - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters#sourceId:member'
     summary: |-
       Source Id
 
@@ -55,10 +53,16 @@ properties:
 
 
       The source id for a web part will be of the form WebPart.<ComponentId>.<InstanceId>
-    
-    isPreview: false
-    isDeprecated: false
+    name: sourceId
+    fullName: sourceId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'sourceId?: string;'
       return:
-        type: string
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-core-library!Guid:class'
+    name: Guid

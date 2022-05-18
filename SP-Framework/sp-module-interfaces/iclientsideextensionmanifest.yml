@@ -1,28 +1,39 @@
-### YamlMime:TSType
-name: IClientSideExtensionManifest
-uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
-package: '@microsoft/sp-module-interfaces!'
-fullName: IClientSideExtensionManifest
-summary: This is the manifest for a client-side extension.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: extensionType
-    uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest#extensionType:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
+    summary: This is the manifest for a client-side extension.
+    name: IClientSideExtensionManifest
+    fullName: IClientSideExtensionManifest
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    inheritance:
+      - type: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+        inheritance:
+          - type: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
     package: '@microsoft/sp-module-interfaces!'
-    fullName: extensionType
+    children:
+      - '@microsoft/sp-module-interfaces!IClientSideExtensionManifest#extensionType:member'
+  - uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest#extensionType:member'
     summary: >-
       Specifies the type of client-side extension. Some extension types support additional manifest fields beyond
       SPClientSideExtensionManifest.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: extensionType
+    fullName: extensionType
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'extensionType: ExtensionType;'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!ExtensionType:type" />'
-extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'
+        type:
+          - '@microsoft/sp-module-interfaces!ExtensionType:type'
+references:
+  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+    name: IClientSideComponentManifest
+  - uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+    name: IClientSideManifestBase
+  - uid: '@microsoft/sp-module-interfaces!ExtensionType:type'
+    name: ExtensionType

@@ -1,64 +1,69 @@
-### YamlMime:TSType
-name: ICardButton
-uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ICardButton
-summary: A button to display on a Card View.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: action
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#action:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
+    summary: A button to display on a Card View.
+    name: ICardButton
+    fullName: ICardButton
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: action
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ICardButton#action:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ICardButton#id:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ICardButton#style:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ICardButton#title:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#action:member'
     summary: The type of the button.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: action
+    fullName: action
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'action: ICardAction;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardAction:type" />'
-  - name: id
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#id:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: id
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!ICardAction:type'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#id:member'
     summary: Unique Id of the button.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: id
+    fullName: id
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'id?: string;'
       return:
-        type: string
-  - name: style
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#style:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: style
+        type:
+          - string
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#style:member'
     summary: Controls the style of the button.
     remarks: The destructive Action style is not supported in Card views
-    
-    isPreview: false
-    isDeprecated: false
+    name: style
+    fullName: style
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'style?: ActionStyle;'
       return:
-        type: '<xref uid="adaptivecards!ActionStyle:class" />'
-  - name: title
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#title:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: title
+        type:
+          - 'adaptivecards!ActionStyle:class'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICardButton#title:member'
     summary: Text displayed on the button.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: title
+    fullName: title
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'title: string;'
       return:
-        type: string
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ICardAction:type'
+    name: ICardAction
+  - uid: 'adaptivecards!ActionStyle:class'
+    name: ActionStyle

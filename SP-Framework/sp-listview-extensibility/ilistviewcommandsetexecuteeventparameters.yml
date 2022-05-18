@@ -1,42 +1,56 @@
-### YamlMime:TSType
-name: IListViewCommandSetExecuteEventParameters
-uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters:interface'
-package: '@microsoft/sp-listview-extensibility!'
-fullName: IListViewCommandSetExecuteEventParameters
-summary: >-
-  Parameters for
-  [BaseListViewCommandSet.onExecute()](xref:@microsoft/sp-listview-extensibility!BaseListViewCommandSet%23onExecute:member(1))
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: itemId
-    uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#itemId:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters:interface'
+    summary: >-
+      Parameters for
+      [BaseListViewCommandSet.onExecute()](xref:@microsoft/sp-listview-extensibility!BaseListViewCommandSet%23onExecute:member(1))
+    name: IListViewCommandSetExecuteEventParameters
+    fullName: IListViewCommandSetExecuteEventParameters
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-listview-extensibility!'
-    fullName: itemId
+    children:
+      - '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#itemId:member'
+      - '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#selectedRows:member'
+  - uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#itemId:member'
     summary: >-
       The unique identifier for the command. This is specified as ICommandDefinition.commandId in the component
       manifest.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: itemId
+    fullName: itemId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly itemId: string;'
       return:
-        type: string
-  - name: selectedRows
-    uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#selectedRows:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: selectedRows
+        type:
+          - string
+  - uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#selectedRows:member'
     summary: 'The currently selected ListView rows, at the time when the event occurred.'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: selectedRows
+    fullName: selectedRows
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly selectedRows: ReadonlyArray<RowAccessor>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!RowAccessor:class" />&gt;'
+        type:
+          - '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#selectedRows~0:complex'
+references:
+  - uid: '@microsoft/sp-listview-extensibility!IListViewCommandSetExecuteEventParameters#selectedRows~0:complex'
+    name: ReadonlyArray<RowAccessor>
+    fullName: ReadonlyArray<RowAccessor>
+    spec.typeScript:
+      - uid: '!ReadonlyArray:interface'
+        name: ReadonlyArray
+        fullName: ReadonlyArray
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-listview-extensibility!RowAccessor:class'
+        name: RowAccessor
+        fullName: RowAccessor
+      - name: '>'
+        fullName: '>'

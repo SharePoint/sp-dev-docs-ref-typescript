@@ -1,34 +1,38 @@
-### YamlMime:TSType
-name: ISPHttpClientConfigurations
-uid: '@microsoft/sp-http!ISPHttpClientConfigurations:interface'
-package: '@microsoft/sp-http!'
-fullName: ISPHttpClientConfigurations
-summary: Standard configurations for SPHttpClient.
-remarks: >-
-  This interface provides standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class. In
-  general, clients should choose the latest available version number, which enables all the switches that are
-  recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be
-  introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: v1
-    uid: '@microsoft/sp-http!ISPHttpClientConfigurations#v1:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!ISPHttpClientConfigurations:interface'
+    summary: Standard configurations for SPHttpClient.
+    remarks: >-
+      This interface provides standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class.
+      In general, clients should choose the latest available version number, which enables all the switches that are
+      recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be
+      introduced, which ensures that existing code will continue to function the way it did at the time when it was
+      tested.)
+    name: ISPHttpClientConfigurations
+    fullName: ISPHttpClientConfigurations
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-http!'
-    fullName: v1
+    children:
+      - '@microsoft/sp-http!ISPHttpClientConfigurations#v1:member'
+  - uid: '@microsoft/sp-http!ISPHttpClientConfigurations#v1:member'
     summary: >-
       Version 1 enables these switches:
 
 
       consoleLogging = true; jsonRequest = true; jsonResponse = true; defaultSameOriginCredentials = true;
       defaultODataVersion = ODataVersion.v4; requestDigest = true
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: v1
+    fullName: v1
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly v1: SPHttpClientConfiguration;'
       return:
-        type: '<xref uid="@microsoft/sp-http!default:class" />'
+        type:
+          - '@microsoft/sp-http!default:class'
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: SPHttpClientConfiguration

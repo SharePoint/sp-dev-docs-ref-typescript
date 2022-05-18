@@ -1,53 +1,58 @@
-### YamlMime:TSType
-name: IAadHttpClientOptions
-uid: '@microsoft/sp-http!IAadHttpClientOptions:interface'
-package: '@microsoft/sp-http!'
-fullName: IAadHttpClientOptions
-summary: Interface for overriding the default behavior of AadHttpClient.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: configuration
-    uid: '@microsoft/sp-http!IAadHttpClientOptions#configuration:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions:interface'
+    summary: Interface for overriding the default behavior of AadHttpClient.
+    name: IAadHttpClientOptions
+    fullName: IAadHttpClientOptions
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-http!'
+    children:
+      - '@microsoft/sp-http!IAadHttpClientOptions#configuration:member'
+      - '@microsoft/sp-http!IAadHttpClientOptions#tokenProvider:member'
+      - '@microsoft/sp-http!IAadHttpClientOptions#useCachedToken:member'
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions#configuration:member'
+    deprecated:
+      content: '- AadHttpClient''s configuration cannot be altered'
+    name: configuration
     fullName: configuration
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: true
-    customDeprecatedMessage: '- AadHttpClient''s configuration cannot be altered'
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'configuration?: IAadTokenProviderConfiguration;'
       return:
-        type: '<xref uid="@microsoft/sp-http!IAadTokenProviderConfiguration:interface" />'
-  - name: tokenProvider
-    uid: '@microsoft/sp-http!IAadHttpClientOptions#tokenProvider:member'
-    package: '@microsoft/sp-http!'
+        type:
+          - '@microsoft/sp-http!IAadTokenProviderConfiguration:interface'
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions#tokenProvider:member'
+    deprecated:
+      content: '- AadHttpClient does not support a custom tokenProvider.'
+    name: tokenProvider
     fullName: tokenProvider
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: true
-    customDeprecatedMessage: '- AadHttpClient does not support a custom tokenProvider.'
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'tokenProvider?: IAadTokenProvider;'
       return:
-        type: '<xref uid="@microsoft/sp-http!IAadTokenProvider:interface" />'
-  - name: useCachedToken
-    uid: '@microsoft/sp-http!IAadHttpClientOptions#useCachedToken:member'
-    package: '@microsoft/sp-http!'
-    fullName: useCachedToken
+        type:
+          - '@microsoft/sp-http!IAadTokenProvider:interface'
+  - uid: '@microsoft/sp-http!IAadHttpClientOptions#useCachedToken:member'
     summary: Allows the developer to specify if cached tokens should be use for the current request.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: useCachedToken
+    fullName: useCachedToken
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'useCachedToken?: boolean;'
       return:
-        type: boolean
+        type:
+          - boolean
+references:
+  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration:interface'
+    name: IAadTokenProviderConfiguration
+  - uid: '@microsoft/sp-http!IAadTokenProvider:interface'
+    name: IAadTokenProvider

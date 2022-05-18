@@ -1,85 +1,85 @@
-### YamlMime:TSType
-name: DynamicDataReference
-uid: '@microsoft/sp-dynamic-data!DynamicDataReference:class'
-package: '@microsoft/sp-dynamic-data!'
-fullName: DynamicDataReference
-summary: >-
-  Class that contains the Dynamic Data reference. This includes the source, property, and property path (if applicable)
-  of Dynamic Data
-remarks: |-
-  The reference string is of the form `<sourceId>:<property>` or `<sourceId>:<property>:<propertyPath>`
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-dynamic-data!DynamicDataReference:class'
+    summary: >-
+      Class that contains the Dynamic Data reference. This includes the source, property, and property path (if
+      applicable) of Dynamic Data
+    remarks: |-
+      The reference string is of the form `<sourceId>:<property>` or `<sourceId>:<property>:<propertyPath>`
 
-  Examples of references are: `WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName`
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: (constructor)(reference)
-    uid: '@microsoft/sp-dynamic-data!DynamicDataReference:constructor(1)'
+      Examples of references are: `WebPart.<componentId>.<instanceId>:myComplexProperty:myArray[0].lastName`
+    name: DynamicDataReference
+    fullName: DynamicDataReference
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-dynamic-data!'
-    fullName: (constructor)(reference)
+    children:
+      - '@microsoft/sp-dynamic-data!DynamicDataReference:constructor(1)'
+      - '@microsoft/sp-dynamic-data!DynamicDataReference#property:member'
+      - '@microsoft/sp-dynamic-data!DynamicDataReference#propertyPath:member'
+      - '@microsoft/sp-dynamic-data!DynamicDataReference#reference:member'
+      - '@microsoft/sp-dynamic-data!DynamicDataReference#sourceId:member'
+  - uid: '@microsoft/sp-dynamic-data!DynamicDataReference:constructor(1)'
     summary: Constructs a new instance of the `DynamicDataReference` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: (constructor)(reference)
+    fullName: (constructor)(reference)
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(reference: string);'
       parameters:
         - id: reference
           description: ''
-          type: string
-properties:
-  - name: property
-    uid: '@microsoft/sp-dynamic-data!DynamicDataReference#property:member'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: property
+          type:
+            - string
+          optional: false
+  - uid: '@microsoft/sp-dynamic-data!DynamicDataReference#property:member'
     summary: Returns the referred property of the Dynamic Data.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: property
+    fullName: property
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get property(): string;'
       return:
-        type: string
-  - name: propertyPath
-    uid: '@microsoft/sp-dynamic-data!DynamicDataReference#propertyPath:member'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: propertyPath
+        type:
+          - string
+  - uid: '@microsoft/sp-dynamic-data!DynamicDataReference#propertyPath:member'
     summary: Returns the referred property path of the Dynamic Data. Returns undefined if there is no property path.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: propertyPath
+    fullName: propertyPath
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get propertyPath(): string | undefined;'
       return:
-        type: string | undefined
-  - name: reference
-    uid: '@microsoft/sp-dynamic-data!DynamicDataReference#reference:member'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: reference
+        type:
+          - string | undefined
+  - uid: '@microsoft/sp-dynamic-data!DynamicDataReference#reference:member'
     summary: Returns the full reference of the Dynamic Data object as a string.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: reference
+    fullName: reference
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get reference(): string;'
       return:
-        type: string
-  - name: sourceId
-    uid: '@microsoft/sp-dynamic-data!DynamicDataReference#sourceId:member'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: sourceId
+        type:
+          - string
+  - uid: '@microsoft/sp-dynamic-data!DynamicDataReference#sourceId:member'
     summary: Returns the referred id of the Dynamic Data Source.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: sourceId
+    fullName: sourceId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get sourceId(): string;'
       return:
-        type: string
+        type:
+          - string

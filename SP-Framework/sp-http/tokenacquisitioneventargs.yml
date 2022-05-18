@@ -1,58 +1,65 @@
-### YamlMime:TSType
-name: TokenAcquisitionEventArgs
-uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:class'
-package: '@microsoft/sp-http!'
-fullName: TokenAcquisitionEventArgs
-summary: Arguments for a token acquisition failure event.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: '(constructor)(message, redirectUrl)'
-    uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:class'
+    summary: Arguments for a token acquisition failure event.
+    name: TokenAcquisitionEventArgs
+    fullName: TokenAcquisitionEventArgs
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-core-library!SPEventArgs:class'
+    inheritance:
+      - type: '@microsoft/sp-core-library!SPEventArgs:class'
     package: '@microsoft/sp-http!'
-    fullName: '(constructor)(message, redirectUrl)'
+    children:
+      - '@microsoft/sp-http!TokenAcquisitionEventArgs:constructor(1)'
+      - '@microsoft/sp-http!TokenAcquisitionEventArgs#message:member'
+      - '@microsoft/sp-http!TokenAcquisitionEventArgs#redirectUrl:member'
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs:constructor(1)'
     summary: Constructs a new instance of the `TokenAcquisitionEventArgs` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: '(constructor)(message, redirectUrl)'
+    fullName: '(constructor)(message, redirectUrl)'
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(message: string, redirectUrl?: string);'
       parameters:
         - id: message
           description: ''
-          type: string
+          type:
+            - string
+          optional: false
         - id: redirectUrl
           description: ''
-          type: string
-properties:
-  - name: message
-    uid: '@microsoft/sp-http!TokenAcquisitionEventArgs#message:member'
-    package: '@microsoft/sp-http!'
-    fullName: message
+          type:
+            - string
+          optional: true
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs#message:member'
     summary: The message returned from ADAL fails to retrieve a token from Azure AD.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: message
+    fullName: message
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'message: string;'
       return:
-        type: string
-  - name: redirectUrl
-    uid: '@microsoft/sp-http!TokenAcquisitionEventArgs#redirectUrl:member'
-    package: '@microsoft/sp-http!'
-    fullName: redirectUrl
+        type:
+          - string
+  - uid: '@microsoft/sp-http!TokenAcquisitionEventArgs#redirectUrl:member'
     summary: The url of the page for the end user to perform Multi Factor Authentication
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: redirectUrl
+    fullName: redirectUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'redirectUrl?: string;'
       return:
-        type: string
-extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
+    name: SPEventArgs

@@ -1,19 +1,17 @@
-### YamlMime:TSType
-name: Dialog
-uid: '@microsoft/sp-dialog!Dialog:class'
-package: '@microsoft/sp-dialog!'
-fullName: Dialog
-summary: A static class for showing stock dialogs such as an alert or prompt.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: class
-methods:
-  - name: 'alert(message, options)'
-    uid: '@microsoft/sp-dialog!Dialog.alert:member(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-dialog!Dialog:class'
+    summary: A static class for showing stock dialogs such as an alert or prompt.
+    name: Dialog
+    fullName: Dialog
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-dialog!'
-    fullName: 'alert(message, options)'
+    children:
+      - '@microsoft/sp-dialog!Dialog.alert:member(1)'
+      - '@microsoft/sp-dialog!Dialog.prompt:member(1)'
+  - uid: '@microsoft/sp-dialog!Dialog.alert:member(1)'
     summary: >-
       Alerts a message to the user with a user-friendly interface. Calling this method sends a request to application to
       show the alert dialog.
@@ -21,25 +19,29 @@ methods:
       There might be a delay until the dialog is approved and shown by the application, for example, if there is another
       dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
       promise rejects if the application rejects the request for any reason.
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'alert(message, options)'
+    fullName: 'alert(message, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'static alert(message: string, options?: IAlertOptions): Promise<void>;'
+      return:
+        type:
+          - '@microsoft/sp-dialog!Dialog.alert~0:complex'
+        description: ''
       parameters:
         - id: message
           description: The message to alert
-          type: string
+          type:
+            - string
+          optional: false
         - id: options
           description: ''
-          type: '<xref uid="@microsoft/sp-dialog!IAlertOptions:interface" />'
-      return:
-        type: Promise&lt;void&gt;
-        description: ''
-  - name: 'prompt(message, options)'
-    uid: '@microsoft/sp-dialog!Dialog.prompt:member(1)'
-    package: '@microsoft/sp-dialog!'
-    fullName: 'prompt(message, options)'
+          type:
+            - '@microsoft/sp-dialog!IAlertOptions:interface'
+          optional: true
+  - uid: '@microsoft/sp-dialog!Dialog.prompt:member(1)'
     summary: >-
       Prompts the user for a string value with a user-friendly interface. Calling this method sends a request to
       application to show the dialog.
@@ -47,18 +49,48 @@ methods:
       There might be a delay until the dialog is approved and shown by the application, for example, if there is another
       dialog currently being shown. The returned promise resolves when the dialog is successfully shown and closed. The
       promise rejects if the application rejects the request for any reason.
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'prompt(message, options)'
+    fullName: 'prompt(message, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'static prompt(message: string, options?: IPromptOptions): Promise<string | undefined>;'
+      return:
+        type:
+          - '@microsoft/sp-dialog!Dialog.prompt~0:complex'
+        description: The input string or undefined if the dialog was canceled
       parameters:
         - id: message
           description: The message for prompt dialog
-          type: string
+          type:
+            - string
+          optional: false
         - id: options
           description: ''
-          type: '<xref uid="@microsoft/sp-dialog!IPromptOptions:interface" />'
-      return:
-        type: Promise&lt;string | undefined&gt;
-        description: The input string or undefined if the dialog was canceled
+          type:
+            - '@microsoft/sp-dialog!IPromptOptions:interface'
+          optional: true
+references:
+  - uid: '@microsoft/sp-dialog!Dialog.alert~0:complex'
+    name: Promise<void>
+    fullName: Promise<void>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <void>
+        fullName: <void>
+  - uid: '@microsoft/sp-dialog!IAlertOptions:interface'
+    name: IAlertOptions
+  - uid: '@microsoft/sp-dialog!Dialog.prompt~0:complex'
+    name: Promise<string | undefined>
+    fullName: Promise<string | undefined>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <string | undefined>
+        fullName: <string | undefined>
+  - uid: '@microsoft/sp-dialog!IPromptOptions:interface'
+    name: IPromptOptions

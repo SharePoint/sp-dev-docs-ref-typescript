@@ -1,19 +1,20 @@
-### YamlMime:TSType
-name: IComponentPropertyMetadata
-uid: '@microsoft/sp-component-base!IComponentPropertyMetadata:interface'
-package: '@microsoft/sp-component-base!'
-fullName: IComponentPropertyMetadata
-summary: This is the structure used for map values for component properties metadata.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: isHtmlString
-    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isHtmlString:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata:interface'
+    summary: This is the structure used for map values for component properties metadata.
+    name: IComponentPropertyMetadata
+    fullName: IComponentPropertyMetadata
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-component-base!'
-    fullName: isHtmlString
+    children:
+      - '@microsoft/sp-component-base!IComponentPropertyMetadata#isHtmlString:member'
+      - '@microsoft/sp-component-base!IComponentPropertyMetadata#isImageSource:member'
+      - '@microsoft/sp-component-base!IComponentPropertyMetadata#isLink:member'
+      - '@microsoft/sp-component-base!IComponentPropertyMetadata#isSearchablePlainText:member'
+      - '@microsoft/sp-component-base!IComponentPropertyMetadata#shouldNotPersist:member'
+  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isHtmlString:member'
     summary: Indicates whether the property should be serialized as HTML.
     remarks: >-
       This flag instructs framework to store the value as HTML, so that SharePoint can perform the following services on
@@ -35,47 +36,45 @@ properties:
       Only enable this flag for HTML content where these modifications are acceptable. If non-HTML content is provided,
       SharePoint framework might make modifications to convert it to HTML valid. For plain text content that simply
       needs to be exposed to the search index (without any rewriting), use the `isSearchablePlainText` flag instead.
-    
-    isPreview: false
-    isDeprecated: false
+    name: isHtmlString
+    fullName: isHtmlString
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'isHtmlString?: boolean;'
       return:
-        type: boolean
-  - name: isImageSource
-    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isImageSource:member'
-    package: '@microsoft/sp-component-base!'
-    fullName: isImageSource
+        type:
+          - boolean
+  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isImageSource:member'
     summary: >-
       Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
       services like link fix-up, search indexing, loading from CDN, etc.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: isImageSource
+    fullName: isImageSource
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'isImageSource?: boolean;'
       return:
-        type: boolean
-  - name: isLink
-    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isLink:member'
-    package: '@microsoft/sp-component-base!'
-    fullName: isLink
+        type:
+          - boolean
+  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isLink:member'
     summary: >-
       Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
       services like search indexing, link fix-up, loading from CDN, etc.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: isLink
+    fullName: isLink
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'isLink?: boolean;'
       return:
-        type: boolean
-  - name: isSearchablePlainText
-    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isSearchablePlainText:member'
-    package: '@microsoft/sp-component-base!'
-    fullName: isSearchablePlainText
+        type:
+          - boolean
+  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isSearchablePlainText:member'
     summary: Indicates if the property contains plain text that should be search-indexed by SharePoint.
     remarks: >-
       This flag instructs the framework to store the property in a representation that supports search indexing. The
@@ -85,17 +84,17 @@ properties:
 
 
       Security note: For security reasons, never assign a plain text string to `Element.innerHTML`<!-- -->.
-    
-    isPreview: false
-    isDeprecated: false
+    name: isSearchablePlainText
+    fullName: isSearchablePlainText
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'isSearchablePlainText?: boolean;'
       return:
-        type: boolean
-  - name: shouldNotPersist
-    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#shouldNotPersist:member'
-    package: '@microsoft/sp-component-base!'
-    fullName: shouldNotPersist
+        type:
+          - boolean
+  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#shouldNotPersist:member'
     summary: Indicates if the framework should persist the property on the server.
     remarks: >-
       Use this for properties that are only important in run-time, and do not need to persist on the server. This can
@@ -108,10 +107,13 @@ properties:
 
       Note that if the property path refers to a property that has a complex object as the value, the whole object will
       be removed from the persisted data.
-    
-    isPreview: false
-    isDeprecated: false
+    name: shouldNotPersist
+    fullName: shouldNotPersist
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'shouldNotPersist?: boolean;'
       return:
-        type: boolean
+        type:
+          - boolean

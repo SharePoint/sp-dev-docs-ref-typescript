@@ -1,111 +1,159 @@
-### YamlMime:TSType
-name: IDynamicDataCallables
-uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables:interface'
-package: '@microsoft/sp-dynamic-data!'
-fullName: IDynamicDataCallables
-summary: >-
-  Interface for components to implement in order to be dynamic data sources. This can be implemented as an object with
-  state, or a set of loose functions that returns the data.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-methods:
-  - name: allowedEvents()
-    uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#allowedEvents:member(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables:interface'
+    summary: >-
+      Interface for components to implement in order to be dynamic data sources. This can be implemented as an object
+      with state, or a set of loose functions that returns the data.
+    name: IDynamicDataCallables
+    fullName: IDynamicDataCallables
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-dynamic-data!'
-    fullName: allowedEvents()
+    children:
+      - '@microsoft/sp-dynamic-data!IDynamicDataCallables#allowedEvents:member(1)'
+      - '@microsoft/sp-dynamic-data!IDynamicDataCallables#getAnnotatedPropertyValue:member(1)'
+      - '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyDefinitions:member(1)'
+      - '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyValue:member(1)'
+      - '@microsoft/sp-dynamic-data!IDynamicDataCallables#sendEvent:member(1)'
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#allowedEvents:member(1)'
     summary: |-
       Returns list of allowed events on the dynamic data source.
 
       When this function returns a non-empty result, then source must define 'sendEvent' api.
 
       If this api is not defined or returns an empty array, then no consumer will be able to talk to this source.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: allowedEvents()
+    fullName: allowedEvents()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataEventDefinition:interface" />&gt;'
+        type:
+          - '@microsoft/sp-dynamic-data!IDynamicDataCallables#allowedEvents~0:complex'
         description: ''
-  - name: getAnnotatedPropertyValue(propertyId)
-    uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getAnnotatedPropertyValue:member(1)'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: getAnnotatedPropertyValue(propertyId)
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getAnnotatedPropertyValue:member(1)'
     summary: >-
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: getAnnotatedPropertyValue(propertyId)
+    fullName: getAnnotatedPropertyValue(propertyId)
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'getAnnotatedPropertyValue?(propertyId: string): IDynamicDataAnnotatedPropertyValue | undefined;'
+      return:
+        type:
+          - '@microsoft/sp-dynamic-data!IDynamicDataCallables#getAnnotatedPropertyValue~0:complex'
+        description: ''
       parameters:
         - id: propertyId
           description: One of the property ids exposed from the dynamic data source.
-          type: string
-      return:
-        type: '<xref uid="@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface" /> | undefined'
-        description: ''
-  - name: getPropertyDefinitions()
-    uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyDefinitions:member(1)'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: getPropertyDefinitions()
+          type:
+            - string
+          optional: false
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyDefinitions:member(1)'
     summary: Returns all the property definitions that the DataSource will provide.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: getPropertyDefinitions()
+    fullName: getPropertyDefinitions()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface" />&gt;'
+        type:
+          - '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyDefinitions~0:complex'
         description: ''
-  - name: getPropertyValue(propertyId)
-    uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyValue:member(1)'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: getPropertyValue(propertyId)
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyValue:member(1)'
     summary: 'Given a property id, returns the value of the property.'
     remarks: 'It is assumed that when this function returns an array, it is homogeneous.'
-    
-    isPreview: false
-    isDeprecated: false
+    name: getPropertyValue(propertyId)
+    fullName: getPropertyValue(propertyId)
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'getPropertyValue(propertyId: string): any;'
+      return:
+        type:
+          - any
+        description: ''
       parameters:
         - id: propertyId
           description: ''
-          type: string
-      return:
-        type: any
-        description: ''
-  - name: 'sendEvent(eventName, data)'
-    uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#sendEvent:member(1)'
-    package: '@microsoft/sp-dynamic-data!'
-    fullName: 'sendEvent(eventName, data)'
+          type:
+            - string
+          optional: false
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#sendEvent:member(1)'
     summary: >-
       If defined, enables the consumer to send data to the associated dynamic data source. Then source can act
       accordingly.
 
 
       Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: 'sendEvent(eventName, data)'
+    fullName: 'sendEvent(eventName, data)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'sendEvent?(eventName: string, data: any): void;'
+      return:
+        type:
+          - void
+        description: ''
       parameters:
         - id: eventName
           description: A case-sensitive string representing the name of the event.
-          type: string
+          type:
+            - string
+          optional: false
         - id: data
           description: Data to be sent to the dynamic data source.
-          type: any
-      return:
-        type: void
-        description: ''
+          type:
+            - any
+          optional: false
+references:
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#allowedEvents~0:complex'
+    name: ReadonlyArray<IDynamicDataEventDefinition>
+    fullName: ReadonlyArray<IDynamicDataEventDefinition>
+    spec.typeScript:
+      - uid: '!ReadonlyArray:interface'
+        name: ReadonlyArray
+        fullName: ReadonlyArray
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-dynamic-data!IDynamicDataEventDefinition:interface'
+        name: IDynamicDataEventDefinition
+        fullName: IDynamicDataEventDefinition
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getAnnotatedPropertyValue~0:complex'
+    name: IDynamicDataAnnotatedPropertyValue | undefined
+    fullName: IDynamicDataAnnotatedPropertyValue | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface'
+        name: IDynamicDataAnnotatedPropertyValue
+        fullName: IDynamicDataAnnotatedPropertyValue
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyDefinitions~0:complex'
+    name: ReadonlyArray<IDynamicDataPropertyDefinition>
+    fullName: ReadonlyArray<IDynamicDataPropertyDefinition>
+    spec.typeScript:
+      - uid: '!ReadonlyArray:interface'
+        name: ReadonlyArray
+        fullName: ReadonlyArray
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface'
+        name: IDynamicDataPropertyDefinition
+        fullName: IDynamicDataPropertyDefinition
+      - name: '>'
+        fullName: '>'

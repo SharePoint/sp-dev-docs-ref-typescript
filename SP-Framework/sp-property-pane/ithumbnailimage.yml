@@ -1,77 +1,94 @@
-### YamlMime:TSType
-name: IThumbnailImage
-uid: '@microsoft/sp-property-pane!IThumbnailImage:interface'
-package: '@microsoft/sp-property-pane!'
-fullName: IThumbnailImage
-summary: Options related to image thumbnail.
-remarks: ''
-
-isPreview: true
-isDeprecated: false
-type: interface
-properties:
-  - name: altText
-    uid: '@microsoft/sp-property-pane!IThumbnailImage#altText:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: altText
-    summary: Alt text for the image.
-    remarks: ''
-    
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage:interface'
+    summary: Options related to image thumbnail.
     isPreview: true
-    isDeprecated: false
+    name: IThumbnailImage
+    fullName: IThumbnailImage
+    langs:
+      - typeScript
+    type: interface
+    package: '@microsoft/sp-property-pane!'
+    children:
+      - '@microsoft/sp-property-pane!IThumbnailImage#altText:member'
+      - '@microsoft/sp-property-pane!IThumbnailImage#backupImageUrl:member'
+      - '@microsoft/sp-property-pane!IThumbnailImage#imageFit:member'
+      - '@microsoft/sp-property-pane!IThumbnailImage#imageUrl:member'
+      - '@microsoft/sp-property-pane!IThumbnailImage#type:member'
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage#altText:member'
+    summary: Alt text for the image.
+    isPreview: true
+    name: altText
+    fullName: altText
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'altText: string;'
       return:
-        type: string
-  - name: backupImageUrl
-    uid: '@microsoft/sp-property-pane!IThumbnailImage#backupImageUrl:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: backupImageUrl
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage#backupImageUrl:member'
     summary: Optional backup image URL if the original image URL fails to load.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: backupImageUrl
+    fullName: backupImageUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'backupImageUrl: string | undefined;'
       return:
-        type: string | undefined
-  - name: imageFit
-    uid: '@microsoft/sp-property-pane!IThumbnailImage#imageFit:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: imageFit
+        type:
+          - string | undefined
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage#imageFit:member'
     summary: How the image should fit.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: imageFit
+    fullName: imageFit
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'imageFit: ImageFit | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!ImageFit:enum" /> | undefined'
-  - name: imageUrl
-    uid: '@microsoft/sp-property-pane!IThumbnailImage#imageUrl:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: imageUrl
+        type:
+          - '@microsoft/sp-property-pane!IThumbnailImage#imageFit~0:complex'
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage#imageUrl:member'
     summary: URL pointing to the image.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: imageUrl
+    fullName: imageUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'imageUrl: string;'
       return:
-        type: string
-  - name: type
-    uid: '@microsoft/sp-property-pane!IThumbnailImage#type:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: type
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage#type:member'
     summary: Image type.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ThumbnailType.Image;'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!ThumbnailType.Image:member" />'
+        type:
+          - '@microsoft/sp-property-pane!ThumbnailType.Image:member'
+references:
+  - uid: '@microsoft/sp-property-pane!IThumbnailImage#imageFit~0:complex'
+    name: ImageFit | undefined
+    fullName: ImageFit | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-property-pane!ImageFit:enum'
+        name: ImageFit
+        fullName: ImageFit
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-property-pane!ThumbnailType.Image:member'
+    name: Image

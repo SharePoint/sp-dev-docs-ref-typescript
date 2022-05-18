@@ -1,156 +1,239 @@
-### YamlMime:TSType
-name: HttpClient
-uid: '@microsoft/sp-http!HttpClient:class'
-package: '@microsoft/sp-http!'
-fullName: HttpClient
-summary: HttpClient implements a basic set of features for performing REST operations against a generic service.
-remarks: 'For communicating with SharePoint, use the [SPHttpClient](xref:@microsoft/sp-http!SPHttpClient:class) class instead.'
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: (constructor)(serviceScope)
-    uid: '@microsoft/sp-http!HttpClient:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!HttpClient:class'
+    summary: HttpClient implements a basic set of features for performing REST operations against a generic service.
+    remarks: >-
+      For communicating with SharePoint, use the [SPHttpClient](xref:@microsoft/sp-http!SPHttpClient:class) class
+      instead.
+    name: HttpClient
+    fullName: HttpClient
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-http!'
-    fullName: (constructor)(serviceScope)
+    children:
+      - '@microsoft/sp-http!HttpClient:constructor(1)'
+      - '@microsoft/sp-http!HttpClient.configurations:member'
+      - '@microsoft/sp-http!HttpClient#fetch:member(1)'
+      - '@microsoft/sp-http!HttpClient#get:member(1)'
+      - '@microsoft/sp-http!HttpClient#post:member(1)'
+      - '@microsoft/sp-http!HttpClient.serviceKey:member'
+  - uid: '@microsoft/sp-http!HttpClient:constructor(1)'
     summary: Constructs a new instance of the `HttpClient` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: (constructor)(serviceScope)
+    fullName: (constructor)(serviceScope)
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
       parameters:
         - id: serviceScope
           description: ''
-          type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" />'
-properties:
-  - name: configurations
-    uid: '@microsoft/sp-http!HttpClient.configurations:member'
-    package: '@microsoft/sp-http!'
-    fullName: configurations
+          type:
+            - '@microsoft/sp-core-library!ServiceScope:class'
+          optional: false
+  - uid: '@microsoft/sp-http!HttpClient.configurations:member'
     summary: The standard predefined HttpClientConfiguration objects for use with the HttpClient class.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: configurations
+    fullName: configurations
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'static readonly configurations: IHttpClientConfigurations;'
       return:
-        type: '<xref uid="@microsoft/sp-http!IHttpClientConfigurations:interface" />'
-  - name: serviceKey
-    uid: '@microsoft/sp-http!HttpClient.serviceKey:member'
-    package: '@microsoft/sp-http!'
-    fullName: serviceKey
-    summary: The service key for HttpClient.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'static readonly serviceKey: ServiceKey<HttpClient>;'
-      return:
-        type: >-
-          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref uid="@microsoft/sp-http!default:class"
-          />&gt;
-methods:
-  - name: 'fetch(url, configuration, options)'
-    uid: '@microsoft/sp-http!HttpClient#fetch:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: 'fetch(url, configuration, options)'
+        type:
+          - '@microsoft/sp-http!IHttpClientConfigurations:interface'
+  - uid: '@microsoft/sp-http!HttpClient#fetch:member(1)'
     summary: Performs a REST service call.
     remarks: >-
       Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for
       HttpClient.fetch() are essentially the same as the WHATWG API standard that is documented here:
       https://fetch.spec.whatwg.org/
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'fetch(url, configuration, options)'
+    fullName: 'fetch(url, configuration, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: >-
         fetch(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions):
         Promise<HttpClientResponse>;
-      parameters:
-        - id: url
-          description: the URL to fetch
-          type: string
-        - id: configuration
-          description: >-
-            determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations
-          type: '<xref uid="@microsoft/sp-http!default:class" />'
-        - id: options
-          description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
+        type:
+          - '@microsoft/sp-http!HttpClient#fetch~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse%23ok:member) being false) for error status
           codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
           communication with the server.
-  - name: 'get(url, configuration, options)'
-    uid: '@microsoft/sp-http!HttpClient#get:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: 'get(url, configuration, options)'
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+          optional: false
+        - id: configuration
+          description: >-
+            determines the default behavior of HttpClient; normally this should be the latest version number from
+            HttpClientConfigurations
+          type:
+            - '@microsoft/sp-http!default:class'
+          optional: false
+        - id: options
+          description: additional options that affect the request
+          type:
+            - '@microsoft/sp-http!IHttpClientOptions:interface'
+          optional: false
+  - uid: '@microsoft/sp-http!HttpClient#get:member(1)'
     summary: 'Calls fetch(), but sets the method to "GET".'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'get(url, configuration, options)'
+    fullName: 'get(url, configuration, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: >-
         get(url: string, configuration: HttpClientConfiguration, options?: IHttpClientOptions):
         Promise<HttpClientResponse>;
-      parameters:
-        - id: url
-          description: the URL to fetch
-          type: string
-        - id: configuration
-          description: >-
-            determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations
-          type: '<xref uid="@microsoft/sp-http!default:class" />'
-        - id: options
-          description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
+        type:
+          - '@microsoft/sp-http!HttpClient#get~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse%23ok:member) being false) for error status
           codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
           communication with the server.
-  - name: 'post(url, configuration, options)'
-    uid: '@microsoft/sp-http!HttpClient#post:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: 'post(url, configuration, options)'
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+          optional: false
+        - id: configuration
+          description: >-
+            determines the default behavior of HttpClient; normally this should be the latest version number from
+            HttpClientConfigurations
+          type:
+            - '@microsoft/sp-http!default:class'
+          optional: false
+        - id: options
+          description: additional options that affect the request
+          type:
+            - '@microsoft/sp-http!IHttpClientOptions:interface'
+          optional: true
+  - uid: '@microsoft/sp-http!HttpClient#post:member(1)'
     summary: 'Calls fetch(), but sets the method to "POST".'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'post(url, configuration, options)'
+    fullName: 'post(url, configuration, options)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: >-
         post(url: string, configuration: HttpClientConfiguration, options: IHttpClientOptions):
         Promise<HttpClientResponse>;
-      parameters:
-        - id: url
-          description: the URL to fetch
-          type: string
-        - id: configuration
-          description: >-
-            determines the default behavior of HttpClient; normally this should be the latest version number from
-            HttpClientConfigurations
-          type: '<xref uid="@microsoft/sp-http!default:class" />'
-        - id: options
-          description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http!IHttpClientOptions:interface" />'
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http!default:class" />&gt;'
+        type:
+          - '@microsoft/sp-http!HttpClient#post~0:complex'
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http!HttpClientResponse%23ok:member) being false) for error status
           codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that prevent
           communication with the server.
+      parameters:
+        - id: url
+          description: the URL to fetch
+          type:
+            - string
+          optional: false
+        - id: configuration
+          description: >-
+            determines the default behavior of HttpClient; normally this should be the latest version number from
+            HttpClientConfigurations
+          type:
+            - '@microsoft/sp-http!default:class'
+          optional: false
+        - id: options
+          description: additional options that affect the request
+          type:
+            - '@microsoft/sp-http!IHttpClientOptions:interface'
+          optional: false
+  - uid: '@microsoft/sp-http!HttpClient.serviceKey:member'
+    summary: The service key for HttpClient.
+    name: serviceKey
+    fullName: serviceKey
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'static readonly serviceKey: ServiceKey<HttpClient>;'
+      return:
+        type:
+          - '@microsoft/sp-http!HttpClient.serviceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-core-library!ServiceScope:class'
+    name: ServiceScope
+  - uid: '@microsoft/sp-http!IHttpClientConfigurations:interface'
+    name: IHttpClientConfigurations
+  - uid: '@microsoft/sp-http!HttpClient#fetch~0:complex'
+    name: Promise<HttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: HttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientConfiguration
+  - uid: '@microsoft/sp-http!IHttpClientOptions:interface'
+    name: IHttpClientOptions
+  - uid: '@microsoft/sp-http!HttpClient#get~0:complex'
+    name: Promise<HttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: HttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!HttpClient#post~0:complex'
+    name: Promise<HttpClientResponse>
+    fullName: Promise<default>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: HttpClientResponse
+        fullName: default
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!HttpClient.serviceKey~0:complex'
+    name: ServiceKey<HttpClient>
+    fullName: ServiceKey<default>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-http!default:class'
+        name: HttpClient
+        fullName: default
+      - name: '>'
+        fullName: '>'

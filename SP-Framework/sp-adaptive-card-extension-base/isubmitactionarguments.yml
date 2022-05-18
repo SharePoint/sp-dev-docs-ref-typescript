@@ -1,42 +1,47 @@
-### YamlMime:TSType
-name: ISubmitActionArguments
-uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ISubmitActionArguments
-summary: >-
-  The object passed to
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a `Submit`
-  Action is executed.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: data
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments#data:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments:interface'
+    summary: >-
+      The object passed to
+      [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a
+      `Submit` Action is executed.
+    name: ISubmitActionArguments
+    fullName: ISubmitActionArguments
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: data
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments#data:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments#type:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments#data:member'
     summary: The data object defined in the Adaptive Card template
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: data
+    fullName: data
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'data: any;'
       return:
-        type: any
-  - name: type
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments#type:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: type
+        type:
+          - any
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments#type:member'
     summary: The type of Adaptive Card Action.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''Submit'';'
       return:
-        type: '''Submit'''
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />'
+        type:
+          - '''Submit'''
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
+    name: IBaseActionArguments

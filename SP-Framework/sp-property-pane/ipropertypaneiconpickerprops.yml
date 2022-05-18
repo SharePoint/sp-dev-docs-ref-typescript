@@ -1,144 +1,171 @@
-### YamlMime:TSType
-name: IPropertyPaneIconPickerProps
-uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps:interface'
-package: '@microsoft/sp-property-pane!'
-fullName: IPropertyPaneIconPickerProps
-summary: PropertyPaneIconPicker component props
-remarks: ''
-
-isPreview: true
-isDeprecated: false
-type: interface
-properties:
-  - name: callerName
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#callerName:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: callerName
-    summary: Optional name of consuming component for telemetry purposes.
-    remarks: ''
-    
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps:interface'
+    summary: PropertyPaneIconPicker component props
     isPreview: true
-    isDeprecated: false
+    name: IPropertyPaneIconPickerProps
+    fullName: IPropertyPaneIconPickerProps
+    langs:
+      - typeScript
+    type: interface
+    package: '@microsoft/sp-property-pane!'
+    children:
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#callerName:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customIconSet:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customSelectedIconName:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#onItemChanged:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#onItemDeleted:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#previewFullWidth:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#previewGrayBackground:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnail:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnailRendererIconClassName:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnailRendererWrapperClassName:member'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#callerName:member'
+    summary: Optional name of consuming component for telemetry purposes.
+    isPreview: true
+    name: callerName
+    fullName: callerName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'callerName?: string;'
       return:
-        type: string
-  - name: customIconSet
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customIconSet:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: customIconSet
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customIconSet:member'
     summary: >-
       The icon picker allows selection of Fabric MDL2 icons. This optional parameter allows the caller to override this
       with a custom selection of icons.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: customIconSet
+    fullName: customIconSet
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'customIconSet?: Map<string, JSX.Element>;'
       return:
-        type: 'Map&lt;string, <xref uid="@types/react!~__global.JSX.Element:interface" />&gt;'
-  - name: customSelectedIconName
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customSelectedIconName:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: customSelectedIconName
+        type:
+          - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customIconSet~0:complex'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customSelectedIconName:member'
     summary: 'When invoking with a custom icon set, this is the name of the currently selected icon.'
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: customSelectedIconName
+    fullName: customSelectedIconName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'customSelectedIconName?: string;'
       return:
-        type: string
-  - name: onItemChanged
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#onItemChanged:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: onItemChanged
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#onItemChanged:member'
     summary: Callback function for when an icon is selected.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: onItemChanged
+    fullName: onItemChanged
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'onItemChanged?: (iconName: string) => void;'
       return:
-        type: '(iconName: string) =&gt; void'
-  - name: onItemDeleted
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#onItemDeleted:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: onItemDeleted
+        type:
+          - '(iconName: string) => void'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#onItemDeleted:member'
     summary: Callback function for when the Delete button is clicked.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: onItemDeleted
+    fullName: onItemDeleted
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'onItemDeleted?: () => void;'
       return:
-        type: () =&gt; void
-  - name: previewFullWidth
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#previewFullWidth:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: previewFullWidth
+        type:
+          - () => void
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#previewFullWidth:member'
     summary: Whether to render the icon preview with full width or the default fixed aspect ratio.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: previewFullWidth
+    fullName: previewFullWidth
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'previewFullWidth?: boolean;'
       return:
-        type: boolean
-  - name: previewGrayBackground
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#previewGrayBackground:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: previewGrayBackground
+        type:
+          - boolean
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#previewGrayBackground:member'
     summary: Whether to render the icon with a gray background.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: previewGrayBackground
+    fullName: previewGrayBackground
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'previewGrayBackground?: boolean;'
       return:
-        type: boolean
-  - name: thumbnail
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnail:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: thumbnail
+        type:
+          - boolean
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnail:member'
     summary: Thumbnail metadata of the currently selected icon.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: thumbnail
+    fullName: thumbnail
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'thumbnail?: IThumbnail;'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!IThumbnail:type" />'
-  - name: thumbnailRendererIconClassName
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnailRendererIconClassName:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: thumbnailRendererIconClassName
+        type:
+          - '@microsoft/sp-property-pane!IThumbnail:type'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnailRendererIconClassName:member'
     summary: Optional CSS class name to apply to the icon preview.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: thumbnailRendererIconClassName
+    fullName: thumbnailRendererIconClassName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'thumbnailRendererIconClassName?: string;'
       return:
-        type: string
-  - name: thumbnailRendererWrapperClassName
-    uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnailRendererWrapperClassName:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: thumbnailRendererWrapperClassName
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#thumbnailRendererWrapperClassName:member'
     summary: Optional CSS class name to apply to the icon preview wrapper.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: thumbnailRendererWrapperClassName
+    fullName: thumbnailRendererWrapperClassName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'thumbnailRendererWrapperClassName?: string;'
       return:
-        type: string
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps#customIconSet~0:complex'
+    name: 'Map<string, JSX.Element>'
+    fullName: 'Map<string, __global.JSX.Element>'
+    spec.typeScript:
+      - uid: '!Map:interface'
+        name: Map
+        fullName: Map
+      - name: '<string, '
+        fullName: '<string, '
+      - uid: '@types/react!~__global.JSX.Element:interface'
+        name: JSX.Element
+        fullName: __global.JSX.Element
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-property-pane!IThumbnail:type'
+    name: IThumbnail

@@ -1,75 +1,95 @@
-### YamlMime:TSType
-name: BaseAdaptiveCardView
-uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: BaseAdaptiveCardView
-summary: Base class for an Adaptive Card view.
-remarks: Views used to render the Quick view must inherit from this class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: data
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#data:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class'
+    summary: Base class for an Adaptive Card view.
+    remarks: Views used to render the Quick view must inherit from this class.
+    name: BaseAdaptiveCardView
+    fullName: BaseAdaptiveCardView
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: data
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#data:member'
+      - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#externalLink:member'
+      - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#template:member'
+      - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#title:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#data:member'
     summary: The data used to render the Adaptive Card.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: data
+    fullName: data
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @virtual */
         get data(): TData;
       return:
-        type: TData
-  - name: externalLink
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#externalLink:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: externalLink
+        type:
+          - TData
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#externalLink:member'
     summary: An optional external link to be displayed in the navigation bar above the Adaptive Card.
     remarks: 'If this method is not overriden or returns undefined, no link will be displayed.'
-    
-    isPreview: false
-    isDeprecated: false
+    name: externalLink
+    fullName: externalLink
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @virtual */
         get externalLink(): IExternalLinkParameters | undefined;
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IExternalLinkParameters:interface" /> | undefined'
-  - name: template
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#template:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: template
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#externalLink~0:complex'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#template:member'
     summary: The Adaptive Card template rendered by the view.
     remarks: The format of the template must be valid Adaptive Card JSON.
-    
-    isPreview: false
-    isDeprecated: false
+    name: template
+    fullName: template
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @virtual */
         abstract get template(): ISPFxAdaptiveCard;
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
-  - name: title
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#title:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: title
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#title:member'
     summary: An optional title to be displayed in the navigation bar above the Adaptive Card.
     remarks: >-
       If not overriden, the title displayed will be
       [BaseAdaptiveCardExtension.title](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23title:member)
-    
-    isPreview: false
-    isDeprecated: false
+    name: title
+    fullName: title
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         /** @virtual */
         get title(): string;
       return:
-        type: string
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState, TData&gt; '
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+    name: BaseView
+  - uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#externalLink~0:complex'
+    name: IExternalLinkParameters | undefined
+    fullName: IExternalLinkParameters | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IExternalLinkParameters:interface'
+        name: IExternalLinkParameters
+        fullName: IExternalLinkParameters
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
+    name: ISPFxAdaptiveCard

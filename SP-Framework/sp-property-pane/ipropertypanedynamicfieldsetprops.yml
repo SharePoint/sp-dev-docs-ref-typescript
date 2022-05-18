@@ -1,52 +1,48 @@
-### YamlMime:TSType
-name: IPropertyPaneDynamicFieldSetProps
-uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
-package: '@microsoft/sp-property-pane!'
-fullName: IPropertyPaneDynamicFieldSetProps
-summary: PropertyPane DynamicFieldSet props.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: fields
-    uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#fields:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps:interface'
+    summary: PropertyPane DynamicFieldSet props.
+    name: IPropertyPaneDynamicFieldSetProps
+    fullName: IPropertyPaneDynamicFieldSetProps
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-property-pane!'
-    fullName: fields
+    children:
+      - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#fields:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#label:member'
+      - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#sharedConfiguration:member'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#fields:member'
     summary: List of property pane dynamic fields to be configured on the Dynamic Data Widget.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: fields
+    fullName: fields
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'fields: IPropertyPaneField<IPropertyPaneDynamicFieldProps>[];'
       return:
-        type: >-
-          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface" />&lt;<xref
-          uid="@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface" />&gt;[]
-  - name: label
-    uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#label:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: label
+        type:
+          - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#fields~0:complex'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#label:member'
     summary: 'User-friendly, localized label to identify the property.'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: label
+    fullName: label
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'label: string;'
       return:
-        type: string
-  - name: sharedConfiguration
-    uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#sharedConfiguration:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: sharedConfiguration
+        type:
+          - string
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#sharedConfiguration:member'
     summary: Configuration shared between all the entries of the set.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: sharedConfiguration
+    fullName: sharedConfiguration
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         sharedConfiguration?: {
@@ -55,9 +51,67 @@ properties:
                 property?: IDynamicDataSharedPropertyConfiguration;
             };
       return:
-        type: |-
+        type:
+          - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#sharedConfiguration~0:complex'
+references:
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#fields~0:complex'
+    name: 'IPropertyPaneField<IPropertyPaneDynamicFieldProps>[]'
+    fullName: 'IPropertyPaneField<IPropertyPaneDynamicFieldProps>[]'
+    spec.typeScript:
+      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
+        name: IPropertyPaneField
+        fullName: IPropertyPaneField
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldProps:interface'
+        name: IPropertyPaneDynamicFieldProps
+        fullName: IPropertyPaneDynamicFieldProps
+      - name: '>[]'
+        fullName: '>[]'
+  - uid: '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldSetProps#sharedConfiguration~0:complex'
+    name: |-
+      {
+              depth: DynamicDataSharedDepth;
+              source?: IDynamicDataSharedSourceConfiguration;
+              property?: IDynamicDataSharedPropertyConfiguration;
+          }
+    fullName: |-
+      {
+              depth: DynamicDataSharedDepth;
+              source?: IDynamicDataSharedSourceConfiguration;
+              property?: IDynamicDataSharedPropertyConfiguration;
+          }
+    spec.typeScript:
+      - name: |-
           {
-                  depth: <xref uid="@microsoft/sp-property-pane!DynamicDataSharedDepth:enum" />;
-                  source?: <xref uid="@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface" />;
-                  property?: <xref uid="@microsoft/sp-property-pane!IDynamicDataSharedPropertyConfiguration:interface" />;
+                  depth: 
+        fullName: |-
+          {
+                  depth: 
+      - uid: '@microsoft/sp-property-pane!DynamicDataSharedDepth:enum'
+        name: DynamicDataSharedDepth
+        fullName: DynamicDataSharedDepth
+      - name: |-
+          ;
+                  source?: 
+        fullName: |-
+          ;
+                  source?: 
+      - uid: '@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface'
+        name: IDynamicDataSharedSourceConfiguration
+        fullName: IDynamicDataSharedSourceConfiguration
+      - name: |-
+          ;
+                  property?: 
+        fullName: |-
+          ;
+                  property?: 
+      - uid: '@microsoft/sp-property-pane!IDynamicDataSharedPropertyConfiguration:interface'
+        name: IDynamicDataSharedPropertyConfiguration
+        fullName: IDynamicDataSharedPropertyConfiguration
+      - name: |-
+          ;
+              }
+        fullName: |-
+          ;
               }

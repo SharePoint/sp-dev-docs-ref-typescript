@@ -1,32 +1,38 @@
-### YamlMime:TSType
-name: QuickViewNavigator
-uid: '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: QuickViewNavigator
-summary: Manages a stack of Adaptive Card views for the Quick view.
-remarks: >-
-  The top of the stack is the currently rendered view.
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class'
+    summary: Manages a stack of Adaptive Card views for the Quick view.
+    remarks: >-
+      The top of the stack is the currently rendered view.
 
 
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `QuickViewNavigator` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-methods:
-  - name: close()
-    uid: '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator#close:member(1)'
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `QuickViewNavigator` class.
+    name: QuickViewNavigator
+    fullName: QuickViewNavigator
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: close()
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator#close:member(1)'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator#close:member(1)'
     summary: Closes the View.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: close()
+    fullName: close()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'close(): void;'
       return:
-        type: void
+        type:
+          - void
         description: ''
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class" />&lt;TView&gt; '
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
+    name: ViewNavigator

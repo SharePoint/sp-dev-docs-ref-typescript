@@ -1,58 +1,65 @@
-### YamlMime:TSType
-name: BeforeRedirectEventArgs
-uid: '@microsoft/sp-http!BeforeRedirectEventArgs:class'
-package: '@microsoft/sp-http!'
-fullName: BeforeRedirectEventArgs
-summary: Arguments for before redirecting for a full page authentication
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: '(constructor)(redirectUrl, cancel)'
-    uid: '@microsoft/sp-http!BeforeRedirectEventArgs:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!BeforeRedirectEventArgs:class'
+    summary: Arguments for before redirecting for a full page authentication
+    name: BeforeRedirectEventArgs
+    fullName: BeforeRedirectEventArgs
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-core-library!SPEventArgs:class'
+    inheritance:
+      - type: '@microsoft/sp-core-library!SPEventArgs:class'
     package: '@microsoft/sp-http!'
-    fullName: '(constructor)(redirectUrl, cancel)'
+    children:
+      - '@microsoft/sp-http!BeforeRedirectEventArgs:constructor(1)'
+      - '@microsoft/sp-http!BeforeRedirectEventArgs#cancel:member'
+      - '@microsoft/sp-http!BeforeRedirectEventArgs#redirectUrl:member'
+  - uid: '@microsoft/sp-http!BeforeRedirectEventArgs:constructor(1)'
     summary: Constructs a new instance of the `BeforeRedirectEventArgs` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: '(constructor)(redirectUrl, cancel)'
+    fullName: '(constructor)(redirectUrl, cancel)'
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(redirectUrl: string, cancel: () => void);'
       parameters:
         - id: redirectUrl
           description: ''
-          type: string
+          type:
+            - string
+          optional: false
         - id: cancel
           description: ''
-          type: () =&gt; void
-properties:
-  - name: cancel
-    uid: '@microsoft/sp-http!BeforeRedirectEventArgs#cancel:member'
-    package: '@microsoft/sp-http!'
-    fullName: cancel
+          type:
+            - () => void
+          optional: false
+  - uid: '@microsoft/sp-http!BeforeRedirectEventArgs#cancel:member'
     summary: Call this method if the redirect should be cancelled because it is being handled by code in the cancelling class.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: cancel
+    fullName: cancel
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'cancel: () => void;'
       return:
-        type: () =&gt; void
-  - name: redirectUrl
-    uid: '@microsoft/sp-http!BeforeRedirectEventArgs#redirectUrl:member'
-    package: '@microsoft/sp-http!'
-    fullName: redirectUrl
+        type:
+          - () => void
+  - uid: '@microsoft/sp-http!BeforeRedirectEventArgs#redirectUrl:member'
     summary: The url of the page to redirect to if automatic redirect is cancelled
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: redirectUrl
+    fullName: redirectUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'redirectUrl: string;'
       return:
-        type: string
-extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
+    name: SPEventArgs
