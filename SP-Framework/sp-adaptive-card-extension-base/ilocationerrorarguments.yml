@@ -1,45 +1,73 @@
-### YamlMime:TSType
-name: ILocationErrorArguments
-uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ILocationErrorArguments
-summary: This object represents the error data that the Location action can throw.
-remarks: API under active development and not ready for use.
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: error
-    uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#error:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments:interface'
+    summary: This object represents the error data that the Location action can throw.
+    remarks: API under active development and not ready for use.
+    name: ILocationErrorArguments
+    fullName: ILocationErrorArguments
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments~1:complex'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: error
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#error:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#type:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#error:member'
     summary: Error codes specific to the Get Location Error
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: error
+    fullName: error
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         error: {
                 code: 'InternalError' | 'PermissionDenied';
             };
       return:
-        type: |-
-          {
-                  code: 'InternalError' | 'PermissionDenied';
-              }
-  - name: type
-    uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#type:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: type
+        type:
+          - |-
+            {
+                    code: 'InternalError' | 'PermissionDenied';
+                }
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments#type:member'
     summary: Indicates this is a Viva Select Location button.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''VivaAction.GetLocation'';'
       return:
-        type: '''VivaAction.GetLocation'''
-extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface" />, ''type''&gt; '
+        type:
+          - '''VivaAction.GetLocation'''
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments~0:complex'
+    name: Omit<IBaseActionErrorArguments
+    fullName: Omit<IBaseActionErrorArguments
+    spec.typeScript:
+      - uid: '!Omit:type'
+        name: Omit
+        fullName: Omit
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+        name: IBaseActionErrorArguments
+        fullName: IBaseActionErrorArguments
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments~1:complex'
+    name: Omit<IBaseActionErrorArguments
+    fullName: Omit<IBaseActionErrorArguments
+    spec.typeScript:
+      - uid: '!Omit:type'
+        name: Omit
+        fullName: Omit
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+        name: IBaseActionErrorArguments
+        fullName: IBaseActionErrorArguments

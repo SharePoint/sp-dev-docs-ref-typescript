@@ -1,60 +1,70 @@
-### YamlMime:TSType
-name: ApplicationCustomizerContext
-uid: '@microsoft/sp-application-base!ApplicationCustomizerContext:class'
-package: '@microsoft/sp-application-base!'
-fullName: ApplicationCustomizerContext
-summary: >-
-  The component context for
-  [BaseApplicationCustomizer](xref:@microsoft/sp-application-base!BaseApplicationCustomizer:class)<!-- -->.
-remarks: >-
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `ApplicationCustomizerContext` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: application
-    uid: '@microsoft/sp-application-base!ApplicationCustomizerContext#application:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-application-base!ApplicationCustomizerContext:class'
+    summary: >-
+      The component context for
+      [BaseApplicationCustomizer](xref:@microsoft/sp-application-base!BaseApplicationCustomizer:class)<!-- -->.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `ApplicationCustomizerContext` class.
+    name: ApplicationCustomizerContext
+    fullName: ApplicationCustomizerContext
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-extension-base!ExtensionContext:class'
+    inheritance:
+      - type: '@microsoft/sp-extension-base!ExtensionContext:class'
+        inheritance:
+          - type: '@microsoft/sp-component-base!BaseComponentContext:class'
     package: '@microsoft/sp-application-base!'
-    fullName: application
+    children:
+      - '@microsoft/sp-application-base!ApplicationCustomizerContext#application:member'
+      - '@microsoft/sp-application-base!ApplicationCustomizerContext#dispose:member(1)'
+      - '@microsoft/sp-application-base!ApplicationCustomizerContext#placeholderProvider:member'
+  - uid: '@microsoft/sp-application-base!ApplicationCustomizerContext#application:member'
     summary: Provides access to the client-side application that is currently running.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: application
+    fullName: application
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get application(): ApplicationAccessor;'
       return:
-        type: '<xref uid="@microsoft/sp-application-base!default:class" />'
-  - name: placeholderProvider
-    uid: '@microsoft/sp-application-base!ApplicationCustomizerContext#placeholderProvider:member'
-    package: '@microsoft/sp-application-base!'
-    fullName: placeholderProvider
-    summary: Exposes a collection of content placeholders for use by third parties.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get placeholderProvider(): PlaceholderProvider;'
-      return:
-        type: '<xref uid="@microsoft/sp-application-base!default:class" />'
-methods:
-  - name: dispose()
-    uid: '@microsoft/sp-application-base!ApplicationCustomizerContext#dispose:member(1)'
-    package: '@microsoft/sp-application-base!'
+        type:
+          - '@microsoft/sp-application-base!default:class'
+  - uid: '@microsoft/sp-application-base!ApplicationCustomizerContext#dispose:member(1)'
+    name: dispose()
     fullName: dispose()
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: |-
         /** @override */
         dispose(): void;
       return:
-        type: void
+        type:
+          - void
         description: ''
-extends: '<xref uid="@microsoft/sp-extension-base!ExtensionContext:class" />'
+  - uid: '@microsoft/sp-application-base!ApplicationCustomizerContext#placeholderProvider:member'
+    summary: Exposes a collection of content placeholders for use by third parties.
+    name: placeholderProvider
+    fullName: placeholderProvider
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get placeholderProvider(): PlaceholderProvider;'
+      return:
+        type:
+          - '@microsoft/sp-application-base!default:class'
+references:
+  - uid: '@microsoft/sp-extension-base!ExtensionContext:class'
+    name: ExtensionContext
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext
+  - uid: '@microsoft/sp-application-base!default:class'
+    name: ApplicationAccessor

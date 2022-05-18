@@ -1,41 +1,55 @@
-### YamlMime:TSType
-name: ListViewCommandSetContext
-uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext:class'
-package: '@microsoft/sp-listview-extensibility!'
-fullName: ListViewCommandSetContext
-summary: This object provides contextual information for BaseListViewCommandSet.
-remarks: >-
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `ListViewCommandSetContext` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: listView
-    uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#listView:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext:class'
+    summary: This object provides contextual information for BaseListViewCommandSet.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `ListViewCommandSetContext` class.
+    name: ListViewCommandSetContext
+    fullName: ListViewCommandSetContext
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-extension-base!ExtensionContext:class'
+    inheritance:
+      - type: '@microsoft/sp-extension-base!ExtensionContext:class'
+        inheritance:
+          - type: '@microsoft/sp-component-base!BaseComponentContext:class'
     package: '@microsoft/sp-listview-extensibility!'
-    fullName: listView
+    children:
+      - '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#listView:member'
+      - '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#manifest:member'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#listView:member'
     summary: Provides access to the ListView control that the customizer will operate on.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: listView
+    fullName: listView
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get listView(): ListViewAccessor;'
       return:
-        type: '<xref uid="@microsoft/sp-listview-extensibility!~ListViewAccessor:class" />'
-  - name: manifest
-    uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#manifest:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: manifest
+        type:
+          - '@microsoft/sp-listview-extensibility!~ListViewAccessor:class'
+  - uid: '@microsoft/sp-listview-extensibility!ListViewCommandSetContext#manifest:member'
     summary: Manifest for the client-side component.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: manifest
+    fullName: manifest
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly manifest: ICommandSetExtensionManifest;'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface" />'
-extends: '<xref uid="@microsoft/sp-extension-base!ExtensionContext:class" />'
+        type:
+          - '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
+references:
+  - uid: '@microsoft/sp-extension-base!ExtensionContext:class'
+    name: ExtensionContext
+  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
+    name: BaseComponentContext
+  - uid: '@microsoft/sp-listview-extensibility!~ListViewAccessor:class'
+    name: ListViewAccessor
+  - uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
+    name: ICommandSetExtensionManifest

@@ -1,39 +1,47 @@
-### YamlMime:TSType
-name: IGetLocationAction
-uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: IGetLocationAction
-summary: Interface for Viva Get Location action
-remarks: API under active development and not ready for use.
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: parameters
-    uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction#parameters:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction:interface'
+    summary: Interface for Viva Get Location action
+    remarks: API under active development and not ready for use.
+    name: IGetLocationAction
+    fullName: IGetLocationAction
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - 'adaptivecards!IAction:interface'
+    inheritance:
+      - type: 'adaptivecards!IAction:interface'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: parameters
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction#parameters:member'
+      - '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction#type:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction#parameters:member'
     summary: Parameters that can be supplied with the Viva Get Location Action.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: parameters
+    fullName: parameters
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'parameters?: IGetLocationActionParameters;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IGetLocationActionParameters:interface" />'
-  - name: type
-    uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction#type:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: type
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionParameters:interface'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction#type:member'
     summary: Indicates this is a Viva Select Location button.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''VivaAction.GetLocation'';'
       return:
-        type: '''VivaAction.GetLocation'''
-extends: '<xref uid="adaptivecards!IAction:interface" />'
+        type:
+          - '''VivaAction.GetLocation'''
+references:
+  - uid: 'adaptivecards!IAction:interface'
+    name: IAction
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionParameters:interface'
+    name: IGetLocationActionParameters

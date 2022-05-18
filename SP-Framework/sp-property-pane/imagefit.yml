@@ -1,55 +1,86 @@
-### YamlMime:TSEnum
-name: ImageFit
-uid: '@microsoft/sp-property-pane!ImageFit:enum'
-package: '@microsoft/sp-property-pane!'
-fullName: ImageFit
-summary: The possible methods that can be used to fit the image.
-remarks: ''
-
-isPreview: true
-isDeprecated: false
-fields:
-  - name: center
-    uid: '@microsoft/sp-property-pane!ImageFit.center:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!ImageFit:enum'
+    summary: The possible methods that can be used to fit the image.
+    isPreview: true
+    name: ImageFit
+    fullName: ImageFit
+    langs:
+      - typeScript
+    type: enum
     package: '@microsoft/sp-property-pane!'
+    children:
+      - '@microsoft/sp-property-pane!ImageFit.center:member'
+      - '@microsoft/sp-property-pane!ImageFit.centerContain:member'
+      - '@microsoft/sp-property-pane!ImageFit.centerCover:member'
+      - '@microsoft/sp-property-pane!ImageFit.contain:member'
+      - '@microsoft/sp-property-pane!ImageFit.cover:member'
+      - '@microsoft/sp-property-pane!ImageFit.none:member'
+  - uid: '@microsoft/sp-property-pane!ImageFit.center:member'
     summary: The image is not scaled. The image is centered and cropped within the content box.
-    value: '0'
-  - name: centerContain
-    uid: '@microsoft/sp-property-pane!ImageFit.centerContain:member'
-    package: '@microsoft/sp-property-pane!'
+    isPreview: true
+    name: center
+    fullName: center
+    langs:
+      - typeScript
+    type: field
+    numericValue: '0'
+  - uid: '@microsoft/sp-property-pane!ImageFit.centerContain:member'
     summary: >-
       The image will be centered horizontally and vertically within the frame and maintains its aspect ratio. It will
       behave as ImageFit.center if the image's natural height and width is less than the Image frame's height and width,
       but if either natural height or width are larger than the frame it will behave as ImageFit.contain.
-    value: '5'
-  - name: centerCover
-    uid: '@microsoft/sp-property-pane!ImageFit.centerCover:member'
-    package: '@microsoft/sp-property-pane!'
+    isPreview: true
+    name: centerContain
+    fullName: centerContain
+    langs:
+      - typeScript
+    type: field
+    numericValue: '5'
+  - uid: '@microsoft/sp-property-pane!ImageFit.centerCover:member'
     summary: >-
       The image will be centered horizontally and vertically within the frame and maintains its aspect ratio. It will
       behave as ImageFit.center if the image's natural height or width is less than the Image frame's height or width,
       but if both natural height and width are larger than the frame it will behave as ImageFit.cover.
-    value: '4'
-  - name: contain
-    uid: '@microsoft/sp-property-pane!ImageFit.contain:member'
-    package: '@microsoft/sp-property-pane!'
+    isPreview: true
+    name: centerCover
+    fullName: centerCover
+    langs:
+      - typeScript
+    type: field
+    numericValue: '4'
+  - uid: '@microsoft/sp-property-pane!ImageFit.contain:member'
     summary: >-
       The image is scaled to maintain its aspect ratio while being fully contained within the frame. The image will be
       centered horizontally and vertically within the frame. The space in the top and bottom or in the sides of the
       frame will be empty depending on the difference in aspect ratio between the image and the frame.
-    value: '1'
-  - name: cover
-    uid: '@microsoft/sp-property-pane!ImageFit.cover:member'
-    package: '@microsoft/sp-property-pane!'
+    isPreview: true
+    name: contain
+    fullName: contain
+    langs:
+      - typeScript
+    type: field
+    numericValue: '1'
+  - uid: '@microsoft/sp-property-pane!ImageFit.cover:member'
     summary: >-
       The image is scaled to maintain its aspect ratio while filling the frame. Portions of the image will be cropped
       from the top and bottom, or the sides, depending on the difference in aspect ratio between the image and the
       frame.
-    value: '2'
-  - name: none
-    uid: '@microsoft/sp-property-pane!ImageFit.none:member'
-    package: '@microsoft/sp-property-pane!'
+    isPreview: true
+    name: cover
+    fullName: cover
+    langs:
+      - typeScript
+    type: field
+    numericValue: '2'
+  - uid: '@microsoft/sp-property-pane!ImageFit.none:member'
     summary: >-
       Neither the image nor the frame are scaled. If their sizes do not match, the image will either be cropped or the
       frame will have empty space.
-    value: '3'
+    isPreview: true
+    name: none
+    fullName: none
+    langs:
+      - typeScript
+    type: field
+    numericValue: '3'

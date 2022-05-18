@@ -1,189 +1,219 @@
-### YamlMime:TSType
-name: SPWeb
-uid: '@microsoft/sp-page-context!SPWeb:class'
-package: '@microsoft/sp-page-context!'
-fullName: SPWeb
-summary: >-
-  This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint site
-  ("SPWeb") that hosts the page.
-remarks: >-
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `SPWeb` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: absoluteUrl
-    uid: '@microsoft/sp-page-context!SPWeb#absoluteUrl:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-page-context!SPWeb:class'
+    summary: >-
+      This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
+      site ("SPWeb") that hosts the page.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `SPWeb` class.
+    name: SPWeb
+    fullName: SPWeb
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-page-context!'
-    fullName: absoluteUrl
+    children:
+      - '@microsoft/sp-page-context!SPWeb#absoluteUrl:member'
+      - '@microsoft/sp-page-context!SPWeb#description:member'
+      - '@microsoft/sp-page-context!SPWeb#firstDayOfWeek:member'
+      - '@microsoft/sp-page-context!SPWeb#id:member'
+      - '@microsoft/sp-page-context!SPWeb#isAppWeb:member'
+      - '@microsoft/sp-page-context!SPWeb#language:member'
+      - '@microsoft/sp-page-context!SPWeb#languageName:member'
+      - '@microsoft/sp-page-context!SPWeb#logoUrl:member'
+      - '@microsoft/sp-page-context!SPWeb#permissions:member'
+      - '@microsoft/sp-page-context!SPWeb#serverRelativeUrl:member'
+      - '@microsoft/sp-page-context!SPWeb#templateName:member'
+      - '@microsoft/sp-page-context!SPWeb#timeZoneInfo:member'
+      - '@microsoft/sp-page-context!SPWeb#title:member'
+  - uid: '@microsoft/sp-page-context!SPWeb#absoluteUrl:member'
     summary: 'Returns the absolute URL for this SPWeb. Example: `"https://example.com/sites/PubSite/SubWeb"`'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: absoluteUrl
+    fullName: absoluteUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly absoluteUrl: string;'
       return:
-        type: string
-  - name: description
-    uid: '@microsoft/sp-page-context!SPWeb#description:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: description
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#description:member'
     summary: Returns the description of the current SPWeb.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: description
+    fullName: description
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly description: string;'
       return:
-        type: string
-  - name: firstDayOfWeek
-    uid: '@microsoft/sp-page-context!SPWeb#firstDayOfWeek:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: firstDayOfWeek
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#firstDayOfWeek:member'
     summary: Returns the web's regional first day of week setting or undefined if it hasn't been set.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: firstDayOfWeek
+    fullName: firstDayOfWeek
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly firstDayOfWeek: SPDayOfWeek | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-page-context!SPDayOfWeek:type" /> | undefined'
-  - name: id
-    uid: '@microsoft/sp-page-context!SPWeb#id:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: id
+        type:
+          - '@microsoft/sp-page-context!SPWeb#firstDayOfWeek~0:complex'
+  - uid: '@microsoft/sp-page-context!SPWeb#id:member'
     summary: The GUID that identifies the SPWeb on the server.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: id
+    fullName: id
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly id: Guid;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
-  - name: isAppWeb
-    uid: '@microsoft/sp-page-context!SPWeb#isAppWeb:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: isAppWeb
+        type:
+          - '@microsoft/sp-core-library!Guid:class'
+  - uid: '@microsoft/sp-page-context!SPWeb#isAppWeb:member'
     summary: Returns true if this `SPWeb` the container web for an `SPApp`<!-- -->.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: isAppWeb
+    fullName: isAppWeb
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly isAppWeb: boolean;'
       return:
-        type: boolean
-  - name: language
-    uid: '@microsoft/sp-page-context!SPWeb#language:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: language
+        type:
+          - boolean
+  - uid: '@microsoft/sp-page-context!SPWeb#language:member'
     summary: Returns the locale identifier (LCID) for the default language of the website.
     remarks: 'Example: 1033 represents the locale identifier for en-US.'
-    
-    isPreview: false
-    isDeprecated: false
+    name: language
+    fullName: language
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly language: number;'
       return:
-        type: number
-  - name: languageName
-    uid: '@microsoft/sp-page-context!SPWeb#languageName:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: languageName
+        type:
+          - number
+  - uid: '@microsoft/sp-page-context!SPWeb#languageName:member'
     summary: Returns the language name for the default language of the website.
     remarks: 'Example: en-US represents the English language in the US locale.'
-    
-    isPreview: false
-    isDeprecated: false
+    name: languageName
+    fullName: languageName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly languageName: string;'
       return:
-        type: string
-  - name: logoUrl
-    uid: '@microsoft/sp-page-context!SPWeb#logoUrl:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: logoUrl
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#logoUrl:member'
     summary: Returns the absolute URL of the website logo.
     remarks: 'Example:` https://example.com/sites/PubSite/SubWeb/logo.jpg`'
-    
-    isPreview: false
-    isDeprecated: false
+    name: logoUrl
+    fullName: logoUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly logoUrl: string;'
       return:
-        type: string
-  - name: permissions
-    uid: '@microsoft/sp-page-context!SPWeb#permissions:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: permissions
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#permissions:member'
     summary: >-
       Return the SPPermission object that represents the set of permissions that the current user has for interacting
       with the web.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: permissions
+    fullName: permissions
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly permissions: SPPermission;'
       return:
-        type: '<xref uid="@microsoft/sp-page-context!default:class" />'
-  - name: serverRelativeUrl
-    uid: '@microsoft/sp-page-context!SPWeb#serverRelativeUrl:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: serverRelativeUrl
+        type:
+          - '@microsoft/sp-page-context!default:class'
+  - uid: '@microsoft/sp-page-context!SPWeb#serverRelativeUrl:member'
     summary: Returns the server-relative URL for this SPWeb.
     remarks: 'Example: `"/sites/PubSite/SubWeb"`'
-    
-    isPreview: false
-    isDeprecated: false
+    name: serverRelativeUrl
+    fullName: serverRelativeUrl
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly serverRelativeUrl: string;'
       return:
-        type: string
-  - name: templateName
-    uid: '@microsoft/sp-page-context!SPWeb#templateName:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: templateName
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#templateName:member'
     summary: >-
       Returns the string representing the numeric identifier for the site definition or site template that was used to
       create the site.
     remarks: 'Example: `"1"` represents the team site template when creating a new site on SharePoint.'
-    
-    isPreview: false
-    isDeprecated: false
+    name: templateName
+    fullName: templateName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly templateName: string;'
       return:
-        type: string
-  - name: timeZoneInfo
-    uid: '@microsoft/sp-page-context!SPWeb#timeZoneInfo:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: timeZoneInfo
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPWeb#timeZoneInfo:member'
     summary: Returns the web's regional timezone settings or undefined if they haven't been set.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: timeZoneInfo
+    fullName: timeZoneInfo
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly timeZoneInfo: SPTimeZone | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
-  - name: title
-    uid: '@microsoft/sp-page-context!SPWeb#title:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: title
+        type:
+          - '@microsoft/sp-page-context!SPWeb#timeZoneInfo~0:complex'
+  - uid: '@microsoft/sp-page-context!SPWeb#title:member'
     summary: Returns the title of the current SPWeb.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: title
+    fullName: title
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly title: string;'
       return:
-        type: string
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-page-context!SPWeb#firstDayOfWeek~0:complex'
+    name: SPDayOfWeek | undefined
+    fullName: SPDayOfWeek | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!SPDayOfWeek:type'
+        name: SPDayOfWeek
+        fullName: SPDayOfWeek
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-core-library!Guid:class'
+    name: Guid
+  - uid: '@microsoft/sp-page-context!default:class'
+    name: SPPermission
+  - uid: '@microsoft/sp-page-context!SPWeb#timeZoneInfo~0:complex'
+    name: SPTimeZone | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: SPTimeZone
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'

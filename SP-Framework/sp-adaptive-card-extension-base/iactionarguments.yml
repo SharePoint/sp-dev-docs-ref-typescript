@@ -1,19 +1,47 @@
-### YamlMime:TSTypeAlias
-name: IActionArguments
-uid: '@microsoft/sp-adaptive-card-extension-base!IActionArguments:type'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: IActionArguments
-summary: >-
-  The object passed to
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when an Adaptive
-  Card Action is executed.
-remarks: >-
-  Only `Submit`<!-- -->, `ShowCard`<!-- -->, 'Viva.SelectMedia', 'Viva.GetLocation' and 'Viva.ShowLocation; actions are
-  routed to the [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1))
-  handler.
-
-isPreview: false
-isDeprecated: false
-syntax: >-
-  export declare type IActionArguments = ISubmitActionArguments | IShowCardActionArguments | ISelectMediaActionArguments
-  | IGetLocationActionArguments;
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IActionArguments:type'
+    summary: >-
+      The object passed to
+      [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when an
+      Adaptive Card Action is executed.
+    remarks: >-
+      Only `Submit`<!-- -->, `ShowCard`<!-- -->, 'Viva.SelectMedia', 'Viva.GetLocation' and 'Viva.ShowLocation; actions
+      are routed to the
+      [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) handler.
+    name: IActionArguments
+    fullName: IActionArguments
+    langs:
+      - typeScript
+    type: typealias
+    syntax:
+      content: >-
+        export declare type IActionArguments = ISubmitActionArguments | IShowCardActionArguments |
+        ISelectMediaActionArguments | IGetLocationActionArguments;
+      return:
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!IActionArguments~0:complex'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IActionArguments~0:complex'
+    name: ISubmitActionArguments | IShowCardActionArguments | ISelectMediaActionArguments | IGetLocationActionArguments
+    fullName: ISubmitActionArguments | IShowCardActionArguments | ISelectMediaActionArguments | IGetLocationActionArguments
+    spec.typeScript:
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments:interface'
+        name: ISubmitActionArguments
+        fullName: ISubmitActionArguments
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IShowCardActionArguments:interface'
+        name: IShowCardActionArguments
+        fullName: IShowCardActionArguments
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments:interface'
+        name: ISelectMediaActionArguments
+        fullName: ISelectMediaActionArguments
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments:interface'
+        name: IGetLocationActionArguments
+        fullName: IGetLocationActionArguments

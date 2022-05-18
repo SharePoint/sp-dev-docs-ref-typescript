@@ -1,24 +1,29 @@
-### YamlMime:TSType
-name: ViewNavigator
-uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ViewNavigator
-summary: Manages a stack of views.
-remarks: The top of the stack represents the currently rendered view.
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: '(constructor)(_handleStackChangedCallback, _handleInitializeCallback)'
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
+    summary: Manages a stack of views.
+    remarks: The top of the stack represents the currently rendered view.
+    name: ViewNavigator
+    fullName: ViewNavigator
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: '(constructor)(_handleStackChangedCallback, _handleInitializeCallback)'
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:constructor(1)'
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#currentId:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#pop:member(1)'
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#push:member(1)'
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#register:member(1)'
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#replace:member(1)'
+      - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#size:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:constructor(1)'
     summary: Constructs a new instance of the `ViewNavigator` class
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: '(constructor)(_handleStackChangedCallback, _handleInitializeCallback)'
+    fullName: '(constructor)(_handleStackChangedCallback, _handleInitializeCallback)'
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: >-
         constructor(_handleStackChangedCallback: (skipUpdate: boolean) => void, _handleInitializeCallback: (view:
@@ -26,131 +31,155 @@ constructors:
       parameters:
         - id: _handleStackChangedCallback
           description: ''
-          type: '(skipUpdate: boolean) =&gt; void'
+          type:
+            - '(skipUpdate: boolean) => void'
+          optional: false
         - id: _handleInitializeCallback
           description: ''
-          type: '(view: <xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />) =&gt; void'
-properties:
-  - name: currentId
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#currentId:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: currentId
+          type:
+            - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator~0:complex'
+          optional: false
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#currentId:member'
     summary: Get the id of the currently rendered View from the top of the View stack
     remarks: 'If the stack is empty, this will return undefined'
-    
-    isPreview: false
-    isDeprecated: false
+    name: currentId
+    fullName: currentId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get currentId(): string | undefined;'
       return:
-        type: string | undefined
-  - name: size
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#size:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: size
-    summary: Current size of the View stack.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get size(): number;'
-      return:
-        type: number
-methods:
-  - name: pop(skipUpdate)
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#pop:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: pop(skipUpdate)
+        type:
+          - string | undefined
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#pop:member(1)'
     summary: >-
       If there is more than one View, pops the top View from the View stack.
 
 
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
       -->, which will also trigger a render.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: pop(skipUpdate)
+    fullName: pop(skipUpdate)
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'pop(skipUpdate?: boolean): void;'
+      return:
+        type:
+          - void
+        description: ''
       parameters:
         - id: skipUpdate
           description: Whether to skip the update (and re-render) after popping the current View.
-          type: boolean
-      return:
-        type: void
-        description: ''
-  - name: 'push(id, skipUpdate)'
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#push:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: 'push(id, skipUpdate)'
+          type:
+            - boolean
+          optional: true
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#push:member(1)'
     summary: >-
       Pushes a new view to the top of the view stack.
 
 
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
       -->, which will also trigger a render.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'push(id, skipUpdate)'
+    fullName: 'push(id, skipUpdate)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'push(id: string, skipUpdate?: boolean): void;'
+      return:
+        type:
+          - void
+        description: ''
       parameters:
         - id: id
           description: Unique identifier for the view.
-          type: string
+          type:
+            - string
+          optional: false
         - id: skipUpdate
           description: Whether to skip the update (and re-render) after pushing the new view.
-          type: boolean
-      return:
-        type: void
-        description: ''
-  - name: 'register(id, initializer)'
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#register:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: 'register(id, initializer)'
+          type:
+            - boolean
+          optional: true
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#register:member(1)'
     summary: Registers a new view.
     remarks: 'A View with a given `id` is only initialized once, and the instance is reused if it is pushed more than once'
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'register(id, initializer)'
+    fullName: 'register(id, initializer)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'register(id: string, initializer: () => TView): void;'
+      return:
+        type:
+          - void
+        description: ''
       parameters:
         - id: id
           description: Unique identifier for the view.
-          type: string
+          type:
+            - string
+          optional: false
         - id: initializer
           description: 'Function that returns a new view, which is only called if no view with the `id` already exists.'
-          type: () =&gt; TView
-      return:
-        type: void
-        description: ''
-  - name: 'replace(id, skipUpdate)'
-    uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#replace:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: 'replace(id, skipUpdate)'
+          type:
+            - () => TView
+          optional: false
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#replace:member(1)'
     summary: >-
       Replaces the top view with a new view.
 
 
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
       -->, which will also trigger a render.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: 'replace(id, skipUpdate)'
+    fullName: 'replace(id, skipUpdate)'
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'replace(id: string, skipUpdate?: boolean): void;'
+      return:
+        type:
+          - void
+        description: ''
       parameters:
         - id: id
           description: Unique identifier for the view.
-          type: string
+          type:
+            - string
+          optional: false
         - id: skipUpdate
           description: Whether to skip the update (and re-render) after replacing the current view.
-          type: boolean
+          type:
+            - boolean
+          optional: true
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator#size:member'
+    summary: Current size of the View stack.
+    name: size
+    fullName: size
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get size(): number;'
       return:
-        type: void
-        description: ''
+        type:
+          - number
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator~0:complex'
+    name: '(view: BaseView) => void'
+    fullName: '(view: BaseView) => void'
+    spec.typeScript:
+      - name: '(view: '
+        fullName: '(view: '
+      - uid: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+        name: BaseView
+        fullName: BaseView
+      - name: ) => void
+        fullName: ) => void

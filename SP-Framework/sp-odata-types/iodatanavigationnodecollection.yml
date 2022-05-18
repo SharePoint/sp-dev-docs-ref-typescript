@@ -1,40 +1,58 @@
-### YamlMime:TSType
-name: IODataNavigationNodeCollection
-uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection:interface'
-package: '@microsoft/sp-odata-types!'
-fullName: IODataNavigationNodeCollection
-summary: >-
-  Represents an OData Microsoft.SharePoint.Navigation.SPNavigation object.
-  [https://msdn.microsoft.com/en-us/library/office/ee557907.aspx](https://msdn.microsoft.com/en-us/library/office/ee557907.aspx)
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: quickLaunch
-    uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection#quickLaunch:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection:interface'
+    summary: >-
+      Represents an OData Microsoft.SharePoint.Navigation.SPNavigation object.
+      [https://msdn.microsoft.com/en-us/library/office/ee557907.aspx](https://msdn.microsoft.com/en-us/library/office/ee557907.aspx)
+    name: IODataNavigationNodeCollection
+    fullName: IODataNavigationNodeCollection
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-odata-types!'
-    fullName: quickLaunch
+    children:
+      - '@microsoft/sp-odata-types!IODataNavigationNodeCollection#quickLaunch:member'
+      - '@microsoft/sp-odata-types!IODataNavigationNodeCollection#topNav:member'
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection#quickLaunch:member'
     summary: Gets an SPNavigationNode object that contains the nodes in the Quick Launch area of the site.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: quickLaunch
+    fullName: quickLaunch
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'quickLaunch: IODataNavigationNode[];'
       return:
-        type: '<xref uid="@microsoft/sp-odata-types!IODataNavigationNode:interface" />[]'
-  - name: topNav
-    uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection#topNav:member'
-    package: '@microsoft/sp-odata-types!'
-    fullName: topNav
+        type:
+          - '@microsoft/sp-odata-types!IODataNavigationNodeCollection#quickLaunch~0:complex'
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection#topNav:member'
     summary: Gets an SPNavigationNode object that contains the nodes in the top link bar for the website.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: topNav
+    fullName: topNav
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'topNav: IODataNavigationNode[];'
       return:
-        type: '<xref uid="@microsoft/sp-odata-types!IODataNavigationNode:interface" />[]'
+        type:
+          - '@microsoft/sp-odata-types!IODataNavigationNodeCollection#topNav~0:complex'
+references:
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection#quickLaunch~0:complex'
+    name: 'IODataNavigationNode[]'
+    fullName: 'IODataNavigationNode[]'
+    spec.typeScript:
+      - uid: '@microsoft/sp-odata-types!IODataNavigationNode:interface'
+        name: IODataNavigationNode
+        fullName: IODataNavigationNode
+      - name: '[]'
+        fullName: '[]'
+  - uid: '@microsoft/sp-odata-types!IODataNavigationNodeCollection#topNav~0:complex'
+    name: 'IODataNavigationNode[]'
+    fullName: 'IODataNavigationNode[]'
+    spec.typeScript:
+      - uid: '@microsoft/sp-odata-types!IODataNavigationNode:interface'
+        name: IODataNavigationNode
+        fullName: IODataNavigationNode
+      - name: '[]'
+        fullName: '[]'

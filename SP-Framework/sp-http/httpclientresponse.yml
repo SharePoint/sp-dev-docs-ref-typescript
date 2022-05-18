@@ -1,208 +1,279 @@
-### YamlMime:TSType
-name: HttpClientResponse
-uid: '@microsoft/sp-http!HttpClientResponse:class'
-package: '@microsoft/sp-http!'
-fullName: HttpClientResponse
-summary: The Response subclass returned by methods such as HttpClient.fetch().
-remarks: >-
-  This is a placeholder. In the future, additional HttpClient-specific functionality may be added to this class.
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!HttpClientResponse:class'
+    summary: The Response subclass returned by methods such as HttpClient.fetch().
+    remarks: >-
+      This is a placeholder. In the future, additional HttpClient-specific functionality may be added to this class.
 
 
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `HttpClientResponse` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: bodyUsed
-    uid: '@microsoft/sp-http!HttpClientResponse#bodyUsed:member'
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `HttpClientResponse` class.
+    name: HttpClientResponse
+    fullName: HttpClientResponse
+    langs:
+      - typeScript
+    type: class
+    implements:
+      - '!Response:interface'
+      - '!Body:interface'
     package: '@microsoft/sp-http!'
-    fullName: bodyUsed
+    children:
+      - '@microsoft/sp-http!HttpClientResponse#arrayBuffer:member(1)'
+      - '@microsoft/sp-http!HttpClientResponse#blob:member(1)'
+      - '@microsoft/sp-http!HttpClientResponse#bodyUsed:member'
+      - '@microsoft/sp-http!HttpClientResponse#clone:member(1)'
+      - '@microsoft/sp-http!HttpClientResponse#formData:member(1)'
+      - '@microsoft/sp-http!HttpClientResponse#headers:member'
+      - '@microsoft/sp-http!HttpClientResponse#json:member(1)'
+      - '@microsoft/sp-http!HttpClientResponse#nativeResponse:member'
+      - '@microsoft/sp-http!HttpClientResponse#ok:member'
+      - '@microsoft/sp-http!HttpClientResponse#status:member'
+      - '@microsoft/sp-http!HttpClientResponse#statusText:member'
+      - '@microsoft/sp-http!HttpClientResponse#text:member(1)'
+      - '@microsoft/sp-http!HttpClientResponse#type:member'
+      - '@microsoft/sp-http!HttpClientResponse#url:member'
+  - uid: '@microsoft/sp-http!HttpClientResponse#arrayBuffer:member(1)'
     summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get bodyUsed(): boolean;'
-      return:
-        type: boolean
-  - name: headers
-    uid: '@microsoft/sp-http!HttpClientResponse#headers:member'
-    package: '@microsoft/sp-http!'
-    fullName: headers
-    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get headers(): Headers;'
-      return:
-        type: Headers
-  - name: nativeResponse
-    uid: '@microsoft/sp-http!HttpClientResponse#nativeResponse:member'
-    package: '@microsoft/sp-http!'
-    fullName: nativeResponse
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'protected nativeResponse: Response;'
-      return:
-        type: Response
-  - name: ok
-    uid: '@microsoft/sp-http!HttpClientResponse#ok:member'
-    package: '@microsoft/sp-http!'
-    fullName: ok
-    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get ok(): boolean;'
-      return:
-        type: boolean
-  - name: status
-    uid: '@microsoft/sp-http!HttpClientResponse#status:member'
-    package: '@microsoft/sp-http!'
-    fullName: status
-    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get status(): number;'
-      return:
-        type: number
-  - name: statusText
-    uid: '@microsoft/sp-http!HttpClientResponse#statusText:member'
-    package: '@microsoft/sp-http!'
-    fullName: statusText
-    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get statusText(): string;'
-      return:
-        type: string
-  - name: type
-    uid: '@microsoft/sp-http!HttpClientResponse#type:member'
-    package: '@microsoft/sp-http!'
-    fullName: type
-    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get type(): ResponseType;'
-      return:
-        type: ResponseType
-  - name: url
-    uid: '@microsoft/sp-http!HttpClientResponse#url:member'
-    package: '@microsoft/sp-http!'
-    fullName: url
-    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get url(): string;'
-      return:
-        type: string
-methods:
-  - name: arrayBuffer()
-    uid: '@microsoft/sp-http!HttpClientResponse#arrayBuffer:member(1)'
-    package: '@microsoft/sp-http!'
+    name: arrayBuffer()
     fullName: arrayBuffer()
-    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'arrayBuffer(): Promise<ArrayBuffer>;'
       return:
-        type: Promise&lt;ArrayBuffer&gt;
+        type:
+          - '@microsoft/sp-http!HttpClientResponse#arrayBuffer~0:complex'
         description: ''
-  - name: blob()
-    uid: '@microsoft/sp-http!HttpClientResponse#blob:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: blob()
+  - uid: '@microsoft/sp-http!HttpClientResponse#blob:member(1)'
     summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: blob()
+    fullName: blob()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'blob(): Promise<Blob>;'
       return:
-        type: Promise&lt;Blob&gt;
+        type:
+          - '@microsoft/sp-http!HttpClientResponse#blob~0:complex'
         description: ''
-  - name: clone()
-    uid: '@microsoft/sp-http!HttpClientResponse#clone:member(1)'
-    package: '@microsoft/sp-http!'
+  - uid: '@microsoft/sp-http!HttpClientResponse#bodyUsed:member'
+    summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
+    name: bodyUsed
+    fullName: bodyUsed
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get bodyUsed(): boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-http!HttpClientResponse#clone:member(1)'
+    name: clone()
     fullName: clone()
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: |-
         /** @virtual */
         clone(): HttpClientResponse;
       return:
-        type: '<xref uid="@microsoft/sp-http!default:class" />'
+        type:
+          - '@microsoft/sp-http!default:class'
         description: ''
-  - name: formData()
-    uid: '@microsoft/sp-http!HttpClientResponse#formData:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: formData()
+  - uid: '@microsoft/sp-http!HttpClientResponse#formData:member(1)'
     summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: formData()
+    fullName: formData()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'formData(): Promise<FormData>;'
       return:
-        type: Promise&lt;FormData&gt;
+        type:
+          - '@microsoft/sp-http!HttpClientResponse#formData~0:complex'
         description: ''
-  - name: json()
-    uid: '@microsoft/sp-http!HttpClientResponse#json:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: json()
+  - uid: '@microsoft/sp-http!HttpClientResponse#headers:member'
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
+    name: headers
+    fullName: headers
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get headers(): Headers;'
+      return:
+        type:
+          - '!Headers:interface'
+  - uid: '@microsoft/sp-http!HttpClientResponse#json:member(1)'
     summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: json()
+    fullName: json()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'json(): Promise<any>;'
       return:
-        type: Promise&lt;any&gt;
+        type:
+          - '@microsoft/sp-http!HttpClientResponse#json~0:complex'
         description: ''
-  - name: text()
-    uid: '@microsoft/sp-http!HttpClientResponse#text:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: text()
+  - uid: '@microsoft/sp-http!HttpClientResponse#nativeResponse:member'
+    name: nativeResponse
+    fullName: nativeResponse
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'protected nativeResponse: Response;'
+      return:
+        type:
+          - '!Response:interface'
+  - uid: '@microsoft/sp-http!HttpClientResponse#ok:member'
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
+    name: ok
+    fullName: ok
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get ok(): boolean;'
+      return:
+        type:
+          - boolean
+  - uid: '@microsoft/sp-http!HttpClientResponse#status:member'
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
+    name: status
+    fullName: status
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get status(): number;'
+      return:
+        type:
+          - number
+  - uid: '@microsoft/sp-http!HttpClientResponse#statusText:member'
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
+    name: statusText
+    fullName: statusText
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get statusText(): string;'
+      return:
+        type:
+          - string
+  - uid: '@microsoft/sp-http!HttpClientResponse#text:member(1)'
     summary: 'See documentation for the browser''s [Body](https://developer.mozilla.org/en-US/docs/Web/API/Body) API'
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: text()
+    fullName: text()
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: 'text(): Promise<string>;'
       return:
-        type: Promise&lt;string&gt;
+        type:
+          - '@microsoft/sp-http!HttpClientResponse#text~0:complex'
         description: ''
+  - uid: '@microsoft/sp-http!HttpClientResponse#type:member'
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get type(): ResponseType;'
+      return:
+        type:
+          - '!ResponseType:type'
+  - uid: '@microsoft/sp-http!HttpClientResponse#url:member'
+    summary: 'See documentation for the browser''s [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) API'
+    name: url
+    fullName: url
+    langs:
+      - typeScript
+    type: property
+    syntax:
+      content: 'get url(): string;'
+      return:
+        type:
+          - string
+references:
+  - uid: '!Response:interface'
+    name: Response
+  - uid: '!Body:interface'
+    name: Body
+  - uid: '@microsoft/sp-http!HttpClientResponse#arrayBuffer~0:complex'
+    name: Promise<ArrayBuffer>
+    fullName: Promise<ArrayBuffer>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '!ArrayBuffer:interface'
+        name: ArrayBuffer
+        fullName: ArrayBuffer
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!HttpClientResponse#blob~0:complex'
+    name: Promise<Blob>
+    fullName: Promise<Blob>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '!Blob:interface'
+        name: Blob
+        fullName: Blob
+      - name: '>'
+        fullName: '>'
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientResponse
+  - uid: '@microsoft/sp-http!HttpClientResponse#formData~0:complex'
+    name: Promise<FormData>
+    fullName: Promise<FormData>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <
+        fullName: <
+      - uid: '!FormData:interface'
+        name: FormData
+        fullName: FormData
+      - name: '>'
+        fullName: '>'
+  - uid: '!Headers:interface'
+    name: Headers
+  - uid: '@microsoft/sp-http!HttpClientResponse#json~0:complex'
+    name: Promise<any>
+    fullName: Promise<any>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <any>
+        fullName: <any>
+  - uid: '@microsoft/sp-http!HttpClientResponse#text~0:complex'
+    name: Promise<string>
+    fullName: Promise<string>
+    spec.typeScript:
+      - uid: '!Promise:interface'
+        name: Promise
+        fullName: Promise
+      - name: <string>
+        fullName: <string>
+  - uid: '!ResponseType:type'
+    name: ResponseType

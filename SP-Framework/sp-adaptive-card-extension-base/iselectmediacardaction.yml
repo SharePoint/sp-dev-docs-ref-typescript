@@ -1,38 +1,42 @@
-### YamlMime:TSType
-name: ISelectMediaCardAction
-uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ISelectMediaCardAction
-summary: Invoke an `VivaAction.SelectMedia` event.
-remarks: API under active development and not ready for use.
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: parameters
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction#parameters:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction:interface'
+    summary: Invoke an `VivaAction.SelectMedia` event.
+    remarks: API under active development and not ready for use.
+    name: ISelectMediaCardAction
+    fullName: ISelectMediaCardAction
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: parameters
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction#parameters:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction#type:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction#parameters:member'
     summary: Parameters for the Select Media Action
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: parameters
+    fullName: parameters
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'parameters: ISelectMediaActionParameters;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters:interface" />'
-  - name: type
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction#type:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: type
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters:interface'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction#type:member'
     summary: Indicates this is a Viva Select Media button.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''VivaAction.SelectMedia'';'
       return:
-        type: '''VivaAction.SelectMedia'''
+        type:
+          - '''VivaAction.SelectMedia'''
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters:interface'
+    name: ISelectMediaActionParameters

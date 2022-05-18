@@ -1,62 +1,63 @@
-### YamlMime:TSType
-name: IWebPartPropertiesMetadata
-uid: '@microsoft/sp-webpart-base!IWebPartPropertiesMetadata:interface'
-package: '@microsoft/sp-webpart-base!'
-fullName: IWebPartPropertiesMetadata
-summary: This structure is used to define metadata for web part properties as a map of string to `IWebPartPropertyMetadata`
-remarks: >-
-  The key should be a JSON path to the property in web part properties. The JSON path supports the following operators:
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-webpart-base!IWebPartPropertiesMetadata:interface'
+    summary: This structure is used to define metadata for web part properties as a map of string to `IWebPartPropertyMetadata`
+    remarks: >-
+      The key should be a JSON path to the property in web part properties. The JSON path supports the following
+      operators:
 
 
-  - Dot `.` for selecting object members, for example `person.name`
+      - Dot `.` for selecting object members, for example `person.name`
 
 
-  - Brackets `[]` for selecting array items, for example `person.photoURLs[0]`
+      - Brackets `[]` for selecting array items, for example `person.photoURLs[0]`
 
 
-  - Bracketed asterisk `[*]` for array elements wildcard, for example `person.websites[*]`<!-- -->.
+      - Bracketed asterisk `[*]` for array elements wildcard, for example `person.websites[*]`<!-- -->.
 
 
-  You can make combinations of these operators, for example `person.websites[*].url`
+      You can make combinations of these operators, for example `person.websites[*].url`
 
 
-  Important Note: Only one wildcard per path is supported.
+      Important Note: Only one wildcard per path is supported.
 
 
-  Example: Let's assume we have a web part with properties that have the following schema:
+      Example: Let's assume we have a web part with properties that have the following schema:
 
 
-  ```
+      ```
 
-  {
-    title: string;
-    person: {
-      name: string;
-      bio: string;
-      photoURLs: string[];
-      websites: { title: string; url: string; }[]
-    }
-  }
+      {
+        title: string;
+        person: {
+          name: string;
+          bio: string;
+          photoURLs: string[];
+          websites: { title: string; url: string; }[]
+        }
+      }
 
-  ```
+      ```
 
-  We can define the metadata for the desired properties as following:
+      We can define the metadata for the desired properties as following:
 
 
-  ```
+      ```
 
-  {
-   'person.bio': { isRichContent: true },
-   'person.photoURLs[*]': { isImageSource: true },
-   'person.websites[*].url': { isLink: true }
-  }
+      {
+       'person.bio': { isRichContent: true },
+       'person.photoURLs[*]': { isImageSource: true },
+       'person.websites[*].url': { isLink: true }
+      }
 
-  ```
+      ```
 
-  This will make SharePoint servers aware of the content of your properties and run services such as search indexing,
-  link fix-up, etc on the data. In case any of the values needs to update by these services, e.g link fix-up, the web
-  part property bag is automatically updated.
-
-isPreview: false
-isDeprecated: false
-type: interface
+      This will make SharePoint servers aware of the content of your properties and run services such as search
+      indexing, link fix-up, etc on the data. In case any of the values needs to update by these services, e.g link
+      fix-up, the web part property bag is automatically updated.
+    name: IWebPartPropertiesMetadata
+    fullName: IWebPartPropertiesMetadata
+    langs:
+      - typeScript
+    type: interface
+    package: '@microsoft/sp-webpart-base!'

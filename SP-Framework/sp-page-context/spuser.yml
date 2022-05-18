@@ -1,120 +1,144 @@
-### YamlMime:TSType
-name: SPUser
-uid: '@microsoft/sp-page-context!SPUser:class'
-package: '@microsoft/sp-page-context!'
-fullName: SPUser
-summary: >-
-  This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint user
-  that is accessing the page.
-remarks: >-
-  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-  create subclasses that extend the `SPUser` class.
-
-isPreview: false
-isDeprecated: false
-type: class
-properties:
-  - name: displayName
-    uid: '@microsoft/sp-page-context!SPUser#displayName:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-page-context!SPUser:class'
+    summary: >-
+      This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
+      user that is accessing the page.
+    remarks: >-
+      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+      create subclasses that extend the `SPUser` class.
+    name: SPUser
+    fullName: SPUser
+    langs:
+      - typeScript
+    type: class
     package: '@microsoft/sp-page-context!'
-    fullName: displayName
+    children:
+      - '@microsoft/sp-page-context!SPUser#displayName:member'
+      - '@microsoft/sp-page-context!SPUser#email:member'
+      - '@microsoft/sp-page-context!SPUser#firstDayOfWeek:member'
+      - '@microsoft/sp-page-context!SPUser#isAnonymousGuestUser:member'
+      - '@microsoft/sp-page-context!SPUser#isExternalGuestUser:member'
+      - '@microsoft/sp-page-context!SPUser#loginName:member'
+      - '@microsoft/sp-page-context!SPUser#preferUserTimeZone:member'
+      - '@microsoft/sp-page-context!SPUser#timeZoneInfo:member'
+  - uid: '@microsoft/sp-page-context!SPUser#displayName:member'
     summary: The display name for the current user.
     remarks: 'Example: `"John Doe"`'
-    
-    isPreview: false
-    isDeprecated: false
+    name: displayName
+    fullName: displayName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly displayName: string;'
       return:
-        type: string
-  - name: email
-    uid: '@microsoft/sp-page-context!SPUser#email:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: email
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPUser#email:member'
     summary: The email address for the current user.
     remarks: 'Example: `"example@contoso.com"`'
-    
-    isPreview: false
-    isDeprecated: false
+    name: email
+    fullName: email
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly email: string;'
       return:
-        type: string
-  - name: firstDayOfWeek
-    uid: '@microsoft/sp-page-context!SPUser#firstDayOfWeek:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: firstDayOfWeek
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPUser#firstDayOfWeek:member'
     summary: Returns the user's regional first day of week setting or undefined if it hasn't been set.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: firstDayOfWeek
+    fullName: firstDayOfWeek
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly firstDayOfWeek: SPDayOfWeek | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-page-context!SPDayOfWeek:type" /> | undefined'
-  - name: isAnonymousGuestUser
-    uid: '@microsoft/sp-page-context!SPUser#isAnonymousGuestUser:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: isAnonymousGuestUser
+        type:
+          - '@microsoft/sp-page-context!SPUser#firstDayOfWeek~0:complex'
+  - uid: '@microsoft/sp-page-context!SPUser#isAnonymousGuestUser:member'
     summary: Returns if the current user is an anonymous guest.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: isAnonymousGuestUser
+    fullName: isAnonymousGuestUser
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly isAnonymousGuestUser: boolean;'
       return:
-        type: boolean
-  - name: isExternalGuestUser
-    uid: '@microsoft/sp-page-context!SPUser#isExternalGuestUser:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: isExternalGuestUser
+        type:
+          - boolean
+  - uid: '@microsoft/sp-page-context!SPUser#isExternalGuestUser:member'
     summary: Returns true if the current user is an external guest.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: isExternalGuestUser
+    fullName: isExternalGuestUser
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly isExternalGuestUser: boolean;'
       return:
-        type: boolean
-  - name: loginName
-    uid: '@microsoft/sp-page-context!SPUser#loginName:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: loginName
+        type:
+          - boolean
+  - uid: '@microsoft/sp-page-context!SPUser#loginName:member'
     summary: The login name for current user.
     remarks: 'Example: on-premise user: `"domain\user"`<!-- -->, online user: `"user@domain.com"`'
-    
-    isPreview: false
-    isDeprecated: false
+    name: loginName
+    fullName: loginName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly loginName: string;'
       return:
-        type: string
-  - name: preferUserTimeZone
-    uid: '@microsoft/sp-page-context!SPUser#preferUserTimeZone:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: preferUserTimeZone
+        type:
+          - string
+  - uid: '@microsoft/sp-page-context!SPUser#preferUserTimeZone:member'
     summary: This boolean represents if a the user or web's time zone settings should be used to display the current time.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: preferUserTimeZone
+    fullName: preferUserTimeZone
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly preferUserTimeZone: boolean;'
       return:
-        type: boolean
-  - name: timeZoneInfo
-    uid: '@microsoft/sp-page-context!SPUser#timeZoneInfo:member'
-    package: '@microsoft/sp-page-context!'
-    fullName: timeZoneInfo
+        type:
+          - boolean
+  - uid: '@microsoft/sp-page-context!SPUser#timeZoneInfo:member'
     summary: Returns the user's regional timezone settings or undefined if they haven't been set.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: timeZoneInfo
+    fullName: timeZoneInfo
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly timeZoneInfo: SPTimeZone | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
+        type:
+          - '@microsoft/sp-page-context!SPUser#timeZoneInfo~0:complex'
+references:
+  - uid: '@microsoft/sp-page-context!SPUser#firstDayOfWeek~0:complex'
+    name: SPDayOfWeek | undefined
+    fullName: SPDayOfWeek | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!SPDayOfWeek:type'
+        name: SPDayOfWeek
+        fullName: SPDayOfWeek
+      - name: ' | undefined'
+        fullName: ' | undefined'
+  - uid: '@microsoft/sp-page-context!SPUser#timeZoneInfo~0:complex'
+    name: SPTimeZone | undefined
+    fullName: default | undefined
+    spec.typeScript:
+      - uid: '@microsoft/sp-page-context!default:class'
+        name: SPTimeZone
+        fullName: default
+      - name: ' | undefined'
+        fullName: ' | undefined'

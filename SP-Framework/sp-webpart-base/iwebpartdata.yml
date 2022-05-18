@@ -1,22 +1,28 @@
-### YamlMime:TSType
-name: IWebPartData
-uid: '@microsoft/sp-webpart-base!IWebPartData:interface'
-package: '@microsoft/sp-webpart-base!'
-fullName: IWebPartData
-summary: This structure represents the serialized state of a web part.
-remarks: >-
-  When the `serialize()` API is called on a web part, the output should be this structure. The structure of the
-  'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of
-  properties it wants to serialize.
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: dataVersion
-    uid: '@microsoft/sp-webpart-base!IWebPartData#dataVersion:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-webpart-base!IWebPartData:interface'
+    summary: This structure represents the serialized state of a web part.
+    remarks: >-
+      When the `serialize()` API is called on a web part, the output should be this structure. The structure of the
+      'properties' field is owned by the web part and is specific to the web part. Each web part can decide the set of
+      properties it wants to serialize.
+    name: IWebPartData
+    fullName: IWebPartData
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-webpart-base!'
-    fullName: dataVersion
+    children:
+      - '@microsoft/sp-webpart-base!IWebPartData#dataVersion:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#description:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#dynamicDataPaths:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#dynamicDataValues:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#id:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#instanceId:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#properties:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#serverProcessedContent:member'
+      - '@microsoft/sp-webpart-base!IWebPartData#title:member'
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#dataVersion:member'
     summary: Web part data version
     remarks: >-
       Note that data version is different from the version field in the manifest. The manifest version is used to
@@ -28,17 +34,17 @@ properties:
 
 
       Example: `"1.0"`
-    
-    isPreview: false
-    isDeprecated: false
+    name: dataVersion
+    fullName: dataVersion
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'dataVersion: string;'
       return:
-        type: string
-  - name: description
-    uid: '@microsoft/sp-webpart-base!IWebPartData#description:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: description
+        type:
+          - string
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#description:member'
     summary: Web part description
     remarks: |-
       Used to display the description of the web part.
@@ -46,17 +52,17 @@ properties:
       Supported values: string with the description.
 
       Example: `"Text"`
-    
-    isPreview: false
-    isDeprecated: false
+    name: description
+    fullName: description
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'description?: string;'
       return:
-        type: string
-  - name: dynamicDataPaths
-    uid: '@microsoft/sp-webpart-base!IWebPartData#dynamicDataPaths:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: dynamicDataPaths
+        type:
+          - string
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#dynamicDataPaths:member'
     summary: Paths for the dynamic data.
     remarks: >-
       This is used to reconstruct the dynamic data objects when deserializing the web part. The key is the path within
@@ -76,23 +82,24 @@ properties:
       }
 
       ```
-    
     isPreview: true
-    isDeprecated: false
+    name: dynamicDataPaths
+    fullName: dynamicDataPaths
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         dynamicDataPaths?: {
                 [path: string]: string;
             };
       return:
-        type: |-
-          {
-                  [path: string]: string;
-              }
-  - name: dynamicDataValues
-    uid: '@microsoft/sp-webpart-base!IWebPartData#dynamicDataValues:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: dynamicDataValues
+        type:
+          - |-
+            {
+                    [path: string]: string;
+                }
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#dynamicDataValues:member'
     summary: >-
       Static values for the dynamic data.This is used to reconstruct the dynamic data objects when deserializing the web
       part.
@@ -107,36 +114,37 @@ properties:
         'aBooleanProperty': true
       }
       ```
-    
     isPreview: true
-    isDeprecated: false
+    name: dynamicDataValues
+    fullName: dynamicDataValues
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         dynamicDataValues?: {
                 [path: string]: any;
             };
       return:
-        type: |-
-          {
-                  [path: string]: any;
-              }
-  - name: id
-    uid: '@microsoft/sp-webpart-base!IWebPartData#id:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: id
+        type:
+          - |-
+            {
+                    [path: string]: any;
+                }
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#id:member'
     summary: Universally unique web part Type id.
     remarks: 'Example: `"dbef608d-3ad5-4f8f-b139-d916f2f0a294"`'
-    
-    isPreview: false
-    isDeprecated: false
+    name: id
+    fullName: id
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'id: string;'
       return:
-        type: string
-  - name: instanceId
-    uid: '@microsoft/sp-webpart-base!IWebPartData#instanceId:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: instanceId
+        type:
+          - string
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#instanceId:member'
     summary: >-
       Universally unique instance id of the web part. A web part can have multiple instances on a page. This id is
       expected to be universally unique across time and page boundaries.
@@ -144,17 +152,17 @@ properties:
       supported values: a unique string. Could be GUID or other uniquely identifiable formats.
 
       example: `["dbef608d-3ad5-4f8f-b139-d916f2f0a294"]`
-    
-    isPreview: false
-    isDeprecated: false
+    name: instanceId
+    fullName: instanceId
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'instanceId: string;'
       return:
-        type: string
-  - name: properties
-    uid: '@microsoft/sp-webpart-base!IWebPartData#properties:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: properties
+        type:
+          - string
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#properties:member'
     summary: Web part specific properties. The individual web part owns the definition of these properties.
     remarks: >-
       Used by the web part to manage its internal metadata and config data. The framework code never touches these
@@ -165,30 +173,29 @@ properties:
 
 
       Example: `{ 'value': 'text value' }`
-    
-    isPreview: false
-    isDeprecated: false
+    name: properties
+    fullName: properties
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'properties?: any;'
       return:
-        type: any
-  - name: serverProcessedContent
-    uid: '@microsoft/sp-webpart-base!IWebPartData#serverProcessedContent:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: serverProcessedContent
+        type:
+          - any
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#serverProcessedContent:member'
     summary: The collections of data that can be processed by server side services like search index and link fixup
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: serverProcessedContent
+    fullName: serverProcessedContent
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'serverProcessedContent?: ISerializedServerProcessedData;'
       return:
-        type: '<xref uid="@microsoft/sp-component-base!ISerializedServerProcessedData:interface" />'
-  - name: title
-    uid: '@microsoft/sp-webpart-base!IWebPartData#title:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: title
+        type:
+          - '@microsoft/sp-component-base!ISerializedServerProcessedData:interface'
+  - uid: '@microsoft/sp-webpart-base!IWebPartData#title:member'
     summary: Web part title
     remarks: |-
       Used to display the name of the web part in the toolbox, web part gallery and the page.
@@ -196,10 +203,16 @@ properties:
       Supported values: string less than 100 characters
 
       Example: `"Text"`
-    
-    isPreview: false
-    isDeprecated: false
+    name: title
+    fullName: title
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'title: string;'
       return:
-        type: string
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-component-base!ISerializedServerProcessedData:interface'
+    name: ISerializedServerProcessedData

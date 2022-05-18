@@ -1,40 +1,52 @@
-### YamlMime:TSType
-name: IMicrosoftTeams
-uid: '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
-package: '@microsoft/sp-webpart-base!'
-fullName: IMicrosoftTeams
-summary: Provides access to the Teams SDK and Teams context. Only provided when the web part is loaded in Teams.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: context
-    uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#context:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams:interface'
+    summary: Provides access to the Teams SDK and Teams context. Only provided when the web part is loaded in Teams.
+    name: IMicrosoftTeams
+    fullName: IMicrosoftTeams
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-webpart-base!'
-    fullName: context
+    children:
+      - '@microsoft/sp-webpart-base!IMicrosoftTeams#context:member'
+      - '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs:member'
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#context:member'
     summary: Microsoft Teams' Context.
     remarks: >-
       For more information, please see:
       [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest)
-    
-    isPreview: false
-    isDeprecated: false
+    name: context
+    fullName: context
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'context: microsoftTeams.Context;'
       return:
-        type: microsoftTeams.Context
-  - name: teamsJs
-    uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs:member'
-    package: '@microsoft/sp-webpart-base!'
-    fullName: teamsJs
+        type:
+          - '!microsoftTeams.Context:interface'
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs:member'
     summary: Microsoft Teams SDK.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: teamsJs
+    fullName: teamsJs
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'teamsJs: typeof microsoftTeams;'
       return:
-        type: typeof microsoftTeams
+        type:
+          - '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs~0:complex'
+references:
+  - uid: '!microsoftTeams.Context:interface'
+    name: microsoftTeams.Context
+  - uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs~0:complex'
+    name: typeof microsoftTeams
+    fullName: typeof microsoftTeams
+    spec.typeScript:
+      - name: 'typeof '
+        fullName: 'typeof '
+      - uid: '!microsoftTeams:namespace'
+        name: microsoftTeams
+        fullName: microsoftTeams

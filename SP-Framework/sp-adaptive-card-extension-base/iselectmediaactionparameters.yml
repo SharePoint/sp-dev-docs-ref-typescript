@@ -1,64 +1,72 @@
-### YamlMime:TSType
-name: ISelectMediaActionParameters
-uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ISelectMediaActionParameters
-summary: Parameters that can be supplied with the Viva Select Media Action.
-remarks: API under active development and not ready for use.
-
-isPreview: true
-isDeprecated: false
-type: interface
-properties:
-  - name: allowMultipleCapture
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#allowMultipleCapture:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: allowMultipleCapture
-    summary: Allow multiple images to be selected.
-    remarks: ''
-    
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters:interface'
+    summary: Parameters that can be supplied with the Viva Select Media Action.
+    remarks: API under active development and not ready for use.
     isPreview: true
-    isDeprecated: false
+    name: ISelectMediaActionParameters
+    fullName: ISelectMediaActionParameters
+    langs:
+      - typeScript
+    type: interface
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#allowMultipleCapture:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#maxSizePerFile:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#mediaType:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#supportedFileFormats:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#allowMultipleCapture:member'
+    summary: Allow multiple images to be selected.
+    isPreview: true
+    name: allowMultipleCapture
+    fullName: allowMultipleCapture
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'allowMultipleCapture?: boolean;'
       return:
-        type: boolean
-  - name: maxSizePerFile
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#maxSizePerFile:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: maxSizePerFile
+        type:
+          - boolean
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#maxSizePerFile:member'
     summary: Max file size that can be uploaded.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: maxSizePerFile
+    fullName: maxSizePerFile
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'maxSizePerFile?: number;'
       return:
-        type: number
-  - name: mediaType
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#mediaType:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: mediaType
+        type:
+          - number
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#mediaType:member'
     summary: Specify the specific media type that should be selected
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: mediaType
+    fullName: mediaType
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'mediaType: MediaType;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!MediaType:enum" />'
-  - name: supportedFileFormats
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#supportedFileFormats:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: supportedFileFormats
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!MediaType:enum'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionParameters#supportedFileFormats:member'
     summary: File formats supported for upload.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: supportedFileFormats
+    fullName: supportedFileFormats
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'supportedFileFormats?: string[];'
       return:
-        type: 'string[]'
+        type:
+          - 'string[]'
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!MediaType:enum'
+    name: MediaType

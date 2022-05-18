@@ -1,53 +1,69 @@
-### YamlMime:TSType
-name: IPropertyPanePage
-uid: '@microsoft/sp-property-pane!IPropertyPanePage:interface'
-package: '@microsoft/sp-property-pane!'
-fullName: IPropertyPanePage
-summary: PropertyPanePage interface.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: displayGroupsAsAccordion
-    uid: '@microsoft/sp-property-pane!IPropertyPanePage#displayGroupsAsAccordion:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-property-pane!IPropertyPanePage:interface'
+    summary: PropertyPanePage interface.
+    name: IPropertyPanePage
+    fullName: IPropertyPanePage
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-property-pane!'
-    fullName: displayGroupsAsAccordion
+    children:
+      - '@microsoft/sp-property-pane!IPropertyPanePage#displayGroupsAsAccordion:member'
+      - '@microsoft/sp-property-pane!IPropertyPanePage#groups:member'
+      - '@microsoft/sp-property-pane!IPropertyPanePage#header:member'
+  - uid: '@microsoft/sp-property-pane!IPropertyPanePage#displayGroupsAsAccordion:member'
     summary: Indicates whether the groups on the PropertyPanePage are displayed as accordion or not.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: displayGroupsAsAccordion
+    fullName: displayGroupsAsAccordion
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'displayGroupsAsAccordion?: boolean;'
       return:
-        type: boolean
-  - name: groups
-    uid: '@microsoft/sp-property-pane!IPropertyPanePage#groups:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: groups
+        type:
+          - boolean
+  - uid: '@microsoft/sp-property-pane!IPropertyPanePage#groups:member'
     summary: List of groups to be displayed on the PropertyPane page.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: groups
+    fullName: groups
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'groups: (IPropertyPaneGroup | IPropertyPaneConditionalGroup)[];'
       return:
-        type: >-
-          (<xref uid="@microsoft/sp-property-pane!IPropertyPaneGroup:interface" /> | <xref
-          uid="@microsoft/sp-property-pane!IPropertyPaneConditionalGroup:interface" />)[]
-  - name: header
-    uid: '@microsoft/sp-property-pane!IPropertyPanePage#header:member'
-    package: '@microsoft/sp-property-pane!'
-    fullName: header
+        type:
+          - '@microsoft/sp-property-pane!IPropertyPanePage#groups~0:complex'
+  - uid: '@microsoft/sp-property-pane!IPropertyPanePage#header:member'
     summary: PropertyPane page header.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: header
+    fullName: header
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'header?: IPropertyPanePageHeader;'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!IPropertyPanePageHeader:interface" />'
+        type:
+          - '@microsoft/sp-property-pane!IPropertyPanePageHeader:interface'
+references:
+  - uid: '@microsoft/sp-property-pane!IPropertyPanePage#groups~0:complex'
+    name: '(IPropertyPaneGroup | IPropertyPaneConditionalGroup)[]'
+    fullName: '(IPropertyPaneGroup | IPropertyPaneConditionalGroup)[]'
+    spec.typeScript:
+      - name: (
+        fullName: (
+      - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
+        name: IPropertyPaneGroup
+        fullName: IPropertyPaneGroup
+      - name: ' | '
+        fullName: ' | '
+      - uid: '@microsoft/sp-property-pane!IPropertyPaneConditionalGroup:interface'
+        name: IPropertyPaneConditionalGroup
+        fullName: IPropertyPaneConditionalGroup
+      - name: ')[]'
+        fullName: ')[]'
+  - uid: '@microsoft/sp-property-pane!IPropertyPanePageHeader:interface'
+    name: IPropertyPanePageHeader

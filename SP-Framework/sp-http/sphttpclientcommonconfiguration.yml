@@ -1,53 +1,75 @@
-### YamlMime:TSType
-name: SPHttpClientCommonConfiguration
-uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:class'
-package: '@microsoft/sp-http!'
-fullName: SPHttpClientCommonConfiguration
-summary: Common base class for SPHttpClientConfiguration and SPHttpClientBatchConfiguration.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: class
-constructors:
-  - name: '(constructor)(flags, overrideFlags)'
-    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:constructor(1)'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:class'
+    summary: Common base class for SPHttpClientConfiguration and SPHttpClientBatchConfiguration.
+    name: SPHttpClientCommonConfiguration
+    fullName: SPHttpClientCommonConfiguration
+    langs:
+      - typeScript
+    type: class
+    extends:
+      - '@microsoft/sp-http!default:class'
+    inheritance:
+      - type: '@microsoft/sp-http!default:class'
+    implements:
+      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
     package: '@microsoft/sp-http!'
-    fullName: '(constructor)(flags, overrideFlags)'
+    children:
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration:constructor(1)'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#flags:member'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonRequest:member'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonResponse:member'
+      - '@microsoft/sp-http!SPHttpClientCommonConfiguration#overrideWith:member(1)'
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration:constructor(1)'
     summary: Constructs a new instance of SPHttpClientCommonConfiguration with the specified flags.
     remarks: >-
       The default values will be used for any flags that are missing or undefined. If overrideFlags is specified, it
       takes precedence over flags.
-    
-    isPreview: false
-    isDeprecated: false
+    name: '(constructor)(flags, overrideFlags)'
+    fullName: '(constructor)(flags, overrideFlags)'
+    langs:
+      - typeScript
+    type: constructor
     syntax:
       content: 'constructor(flags: ISPHttpClientCommonConfiguration, overrideFlags?: ISPHttpClientCommonConfiguration);'
       parameters:
         - id: flags
           description: ''
-          type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
+          type:
+            - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+          optional: false
         - id: overrideFlags
           description: ''
-          type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
-properties:
-  - name: flags
-    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#flags:member'
-    package: '@microsoft/sp-http!'
+          type:
+            - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+          optional: true
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#flags:member'
+    name: flags
     fullName: flags
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'protected flags: ISPHttpClientCommonConfiguration;'
       return:
-        type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
-  - name: jsonRequest
-    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonRequest:member'
-    package: '@microsoft/sp-http!'
-    fullName: jsonRequest
+        type:
+          - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)'
+    name: initializeFlags()
+    fullName: initializeFlags()
+    langs:
+      - typeScript
+    type: method
+    syntax:
+      content: |-
+        /** @override */
+        protected initializeFlags(): void;
+      return:
+        type:
+          - void
+        description: ''
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonRequest:member'
     summary: Automatically configure the "Content-Type" header for a JSON payload.
     remarks: >-
       When this switch is true:
@@ -61,17 +83,17 @@ properties:
 
 
       For OData 4.0, the value is 'application/json;charset=utf-8'.
-    
-    isPreview: false
-    isDeprecated: false
+    name: jsonRequest
+    fullName: jsonRequest
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get jsonRequest(): boolean;'
       return:
-        type: boolean
-  - name: jsonResponse
-    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonResponse:member'
-    package: '@microsoft/sp-http!'
-    fullName: jsonResponse
+        type:
+          - boolean
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#jsonResponse:member'
     summary: Automatically configure the "Accept" header for a JSON payload.
     remarks: |-
       When this switch is true:
@@ -81,48 +103,38 @@ properties:
       For OData 3.0, the value is 'application/json'.
 
       For OData 4.0, the value is 'application/json;odata.metadata=minimal'.
-    
-    isPreview: false
-    isDeprecated: false
+    name: jsonResponse
+    fullName: jsonResponse
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'get jsonResponse(): boolean;'
       return:
-        type: boolean
-methods:
-  - name: initializeFlags()
-    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#initializeFlags:member(1)'
-    package: '@microsoft/sp-http!'
-    fullName: initializeFlags()
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: |-
-        /** @override */
-        protected initializeFlags(): void;
-      return:
-        type: void
-        description: ''
-  - name: overrideWith(sourceFlags)
-    uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#overrideWith:member(1)'
-    package: '@microsoft/sp-http!'
+        type:
+          - boolean
+  - uid: '@microsoft/sp-http!SPHttpClientCommonConfiguration#overrideWith:member(1)'
+    name: overrideWith(sourceFlags)
     fullName: overrideWith(sourceFlags)
-    summary: ''
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    langs:
+      - typeScript
+    type: method
     syntax:
       content: |-
         /** @override */
         overrideWith(sourceFlags: ISPHttpClientCommonConfiguration): SPHttpClientCommonConfiguration;
+      return:
+        type:
+          - '@microsoft/sp-http!default:class'
+        description: ''
       parameters:
         - id: sourceFlags
           description: ''
-          type: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
-      return:
-        type: '<xref uid="@microsoft/sp-http!default:class" />'
-        description: ''
-extends: '<xref uid="@microsoft/sp-http!default:class" />'
+          type:
+            - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+          optional: false
+references:
+  - uid: '@microsoft/sp-http!default:class'
+    name: HttpClientConfiguration
+  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+    name: ISPHttpClientCommonConfiguration

@@ -1,51 +1,58 @@
-### YamlMime:TSType
-name: ISelectMediaAttachment
-uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ISelectMediaAttachment
-summary: This object represents the data returned by the native media picker API.
-remarks: API under active development and not ready for use.
-
-isPreview: true
-isDeprecated: false
-type: interface
-properties:
-  - name: content
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#content:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: content
-    summary: Content of the file represented as base64Strings
-    remarks: ''
-    
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface'
+    summary: This object represents the data returned by the native media picker API.
+    remarks: API under active development and not ready for use.
     isPreview: true
-    isDeprecated: false
+    name: ISelectMediaAttachment
+    fullName: ISelectMediaAttachment
+    langs:
+      - typeScript
+    type: interface
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#content:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#error:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#fileName:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#content:member'
+    summary: Content of the file represented as base64Strings
+    isPreview: true
+    name: content
+    fullName: content
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'content: string;'
       return:
-        type: string
-  - name: error
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#error:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: error
+        type:
+          - string
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#error:member'
     summary: Error associated with attachment
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: error
+    fullName: error
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'error?: IAttachmentError;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface" />'
-  - name: fileName
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#fileName:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: fileName
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment#fileName:member'
     summary: The names of the selected files.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: fileName
+    fullName: fileName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'fileName: string;'
       return:
-        type: string
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface'
+    name: IAttachmentError

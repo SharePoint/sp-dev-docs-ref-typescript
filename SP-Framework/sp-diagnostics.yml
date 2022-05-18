@@ -1,7 +1,39 @@
-### YamlMime:TSPackage
-uid: '@microsoft/sp-diagnostics!'
-name: '@microsoft/sp-diagnostics'
-type: package
-summary: >-
-  This package defines the internal diagnostics tools for the SharePoint Framework, including monitoring, trace, user
-  engagement and performance logging.
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-diagnostics!'
+    summary: >-
+      This package defines the internal diagnostics tools for the SharePoint Framework, including monitoring, trace,
+      user engagement and performance logging.
+    name: '@microsoft/sp-diagnostics'
+    fullName: '@microsoft/sp-diagnostics'
+    langs:
+      - typeScript
+    type: package
+    children:
+      - '@microsoft/sp-diagnostics!_logSourceServiceKey:var'
+  - uid: '@microsoft/sp-diagnostics!_logSourceServiceKey:var'
+    name: _logSourceServiceKey
+    fullName: _logSourceServiceKey
+    langs:
+      - typeScript
+    type: variable
+    syntax:
+      content: 'logSourceServiceKey: ServiceKey<LogSource>'
+      return:
+        type:
+          - '@microsoft/sp-diagnostics!_logSourceServiceKey~0:complex'
+references:
+  - uid: '@microsoft/sp-diagnostics!_logSourceServiceKey~0:complex'
+    name: ServiceKey<LogSource>
+    fullName: ServiceKey<default>
+    spec.typeScript:
+      - uid: '@microsoft/sp-core-library!ServiceKey:class'
+        name: ServiceKey
+        fullName: ServiceKey
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-diagnostics!default:class'
+        name: LogSource
+        fullName: default
+      - name: '>'
+        fullName: '>'

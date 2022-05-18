@@ -1,38 +1,47 @@
-### YamlMime:TSType
-name: IFilter
-uid: '@microsoft/sp-listview-extensibility!IFilter:interface'
-package: '@microsoft/sp-listview-extensibility!'
-fullName: IFilter
-summary: Provides information about the state of the filters applied to the ListView.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: fieldName
-    uid: '@microsoft/sp-listview-extensibility!IFilter#fieldName:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-listview-extensibility!IFilter:interface'
+    summary: Provides information about the state of the filters applied to the ListView.
+    name: IFilter
+    fullName: IFilter
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-listview-extensibility!'
-    fullName: fieldName
+    children:
+      - '@microsoft/sp-listview-extensibility!IFilter#fieldName:member'
+      - '@microsoft/sp-listview-extensibility!IFilter#values:member'
+  - uid: '@microsoft/sp-listview-extensibility!IFilter#fieldName:member'
     summary: Field name to filter on.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: fieldName
+    fullName: fieldName
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'readonly fieldName: string;'
       return:
-        type: string
-  - name: values
-    uid: '@microsoft/sp-listview-extensibility!IFilter#values:member'
-    package: '@microsoft/sp-listview-extensibility!'
-    fullName: values
+        type:
+          - string
+  - uid: '@microsoft/sp-listview-extensibility!IFilter#values:member'
     summary: Values to filter on.
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: values
+    fullName: values
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'values: ReadonlyArray<string>;'
       return:
-        type: ReadonlyArray&lt;string&gt;
+        type:
+          - '@microsoft/sp-listview-extensibility!IFilter#values~0:complex'
+references:
+  - uid: '@microsoft/sp-listview-extensibility!IFilter#values~0:complex'
+    name: ReadonlyArray<string>
+    fullName: ReadonlyArray<string>
+    spec.typeScript:
+      - uid: '!ReadonlyArray:interface'
+        name: ReadonlyArray
+        fullName: ReadonlyArray
+      - name: <string>
+        fullName: <string>

@@ -1,58 +1,98 @@
-### YamlMime:TSType
-name: ISelectMediaActionErrorArguments
-uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: ISelectMediaActionErrorArguments
-summary: This object represents the data returned by the native media picker API.
-remarks: API under active development and not ready for use.
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: error
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#error:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments:interface'
+    summary: This object represents the data returned by the native media picker API.
+    remarks: API under active development and not ready for use.
+    name: ISelectMediaActionErrorArguments
+    fullName: ISelectMediaActionErrorArguments
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments~0:complex'
+    inheritance:
+      - type: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments~1:complex'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: error
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#error:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#media:member'
+      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#type:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#error:member'
     summary: Error codes specific to the Select Media Action.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: error
+    fullName: error
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: |-
         error: {
                 code: 'FileSelectionFailed' | 'FilesSelectedAreIncompatible';
             };
       return:
-        type: |-
-          {
-                  code: 'FileSelectionFailed' | 'FilesSelectedAreIncompatible';
-              }
-  - name: media
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#media:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: media
+        type:
+          - |-
+            {
+                    code: 'FileSelectionFailed' | 'FilesSelectedAreIncompatible';
+                }
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#media:member'
     summary: media object returned media picker API
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: media
+    fullName: media
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'media: ISelectMediaAttachment[] | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface" />[] | undefined'
-  - name: type
-    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#type:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: type
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#media~0:complex'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#type:member'
     summary: The type of Adaptive Card Action.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''VivaAction.SelectMedia'';'
       return:
-        type: '''VivaAction.SelectMedia'''
-extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface" />, ''type''&gt; '
+        type:
+          - '''VivaAction.SelectMedia'''
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments~0:complex'
+    name: Omit<IBaseActionErrorArguments
+    fullName: Omit<IBaseActionErrorArguments
+    spec.typeScript:
+      - uid: '!Omit:type'
+        name: Omit
+        fullName: Omit
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+        name: IBaseActionErrorArguments
+        fullName: IBaseActionErrorArguments
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments~1:complex'
+    name: Omit<IBaseActionErrorArguments
+    fullName: Omit<IBaseActionErrorArguments
+    spec.typeScript:
+      - uid: '!Omit:type'
+        name: Omit
+        fullName: Omit
+      - name: <
+        fullName: <
+      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+        name: IBaseActionErrorArguments
+        fullName: IBaseActionErrorArguments
+  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments#media~0:complex'
+    name: 'ISelectMediaAttachment[] | undefined'
+    fullName: 'ISelectMediaAttachment[] | undefined'
+    spec.typeScript:
+      - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface'
+        name: ISelectMediaAttachment
+        fullName: ISelectMediaAttachment
+      - name: '[] | undefined'
+        fullName: '[] | undefined'

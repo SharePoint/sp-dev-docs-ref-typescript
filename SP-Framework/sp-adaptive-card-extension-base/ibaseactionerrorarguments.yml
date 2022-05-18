@@ -1,54 +1,59 @@
-### YamlMime:TSType
-name: IBaseActionErrorArguments
-uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
-package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: IBaseActionErrorArguments
-summary: >-
-  Base object passed to
-  [BaseView.onActionError()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onActionError:member(1)) when an
-  Adaptive Card OnActionError is executed.
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: error
-    uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#error:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+    summary: >-
+      Base object passed to
+      [BaseView.onActionError()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onActionError:member(1))
+      when an Adaptive Card OnActionError is executed.
+    name: IBaseActionErrorArguments
+    fullName: IBaseActionErrorArguments
+    langs:
+      - typeScript
+    type: interface
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: error
+    children:
+      - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#error:member'
+      - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#id:member'
+      - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#type:member'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#error:member'
     summary: The error thrown by the action
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: error
+    fullName: error
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'error: IActionError;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IActionError:type" />'
-  - name: id
-    uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#id:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: id
+        type:
+          - '@microsoft/sp-adaptive-card-extension-base!IActionError:type'
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#id:member'
     summary: The id specified in the Adaptive Card template
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: id
+    fullName: id
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'id?: string;'
       return:
-        type: string
-  - name: type
-    uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#type:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: type
+        type:
+          - string
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments#type:member'
     summary: The type of Adaptive Card Action thsat caused the error.
-    remarks: ''
-    
     isPreview: true
-    isDeprecated: false
+    name: type
+    fullName: type
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'type: ''Submit'' | ''ShowCard'' | ''VivaAction.SelectMedia'' | ''VivaAction.GetLocation'' | ''VivaAction.ShowLocation'';'
       return:
-        type: '''Submit'' | ''ShowCard'' | ''VivaAction.SelectMedia'' | ''VivaAction.GetLocation'' | ''VivaAction.ShowLocation'''
+        type:
+          - '''Submit'' | ''ShowCard'' | ''VivaAction.SelectMedia'' | ''VivaAction.GetLocation'' | ''VivaAction.ShowLocation'''
+references:
+  - uid: '@microsoft/sp-adaptive-card-extension-base!IActionError:type'
+    name: IActionError

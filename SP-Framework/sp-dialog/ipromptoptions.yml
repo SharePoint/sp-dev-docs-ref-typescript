@@ -1,26 +1,31 @@
-### YamlMime:TSType
-name: IPromptOptions
-uid: '@microsoft/sp-dialog!IPromptOptions:interface'
-package: '@microsoft/sp-dialog!'
-fullName: IPromptOptions
-summary: Options for showing a prompt dialog
-remarks: ''
-
-isPreview: false
-isDeprecated: false
-type: interface
-properties:
-  - name: defaultValue
-    uid: '@microsoft/sp-dialog!IPromptOptions#defaultValue:member'
+### YamlMime:UniversalReference
+items:
+  - uid: '@microsoft/sp-dialog!IPromptOptions:interface'
+    summary: Options for showing a prompt dialog
+    name: IPromptOptions
+    fullName: IPromptOptions
+    langs:
+      - typeScript
+    type: interface
+    extends:
+      - '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    inheritance:
+      - type: '@microsoft/sp-dialog!IDialogShowOptions:interface'
     package: '@microsoft/sp-dialog!'
-    fullName: defaultValue
+    children:
+      - '@microsoft/sp-dialog!IPromptOptions#defaultValue:member'
+  - uid: '@microsoft/sp-dialog!IPromptOptions#defaultValue:member'
     summary: The default value for the input text field of prompt dialog
-    remarks: ''
-    
-    isPreview: false
-    isDeprecated: false
+    name: defaultValue
+    fullName: defaultValue
+    langs:
+      - typeScript
+    type: property
     syntax:
       content: 'defaultValue?: string;'
       return:
-        type: string
-extends: '<xref uid="@microsoft/sp-dialog!IDialogShowOptions:interface" />'
+        type:
+          - string
+references:
+  - uid: '@microsoft/sp-dialog!IDialogShowOptions:interface'
+    name: IDialogShowOptions
