@@ -5,6 +5,7 @@ package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: ViewNavigator
 summary: Manages a stack of views.
 remarks: The top of the stack represents the currently rendered view.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -15,7 +16,8 @@ constructors:
     fullName: '(constructor)(_handleStackChangedCallback, _handleInitializeCallback)'
     summary: Constructs a new instance of the `ViewNavigator` class
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
@@ -35,7 +37,8 @@ properties:
     fullName: currentId
     summary: Get the id of the currently rendered View from the top of the View stack
     remarks: 'If the stack is empty, this will return undefined'
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get currentId(): string | undefined;'
@@ -47,7 +50,8 @@ properties:
     fullName: size
     summary: Current size of the View stack.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get size(): number;'
@@ -65,7 +69,8 @@ methods:
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
       -->, which will also trigger a render.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'pop(skipUpdate?: boolean): void;'
@@ -87,7 +92,8 @@ methods:
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
       -->, which will also trigger a render.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'push(id: string, skipUpdate?: boolean): void;'
@@ -107,7 +113,8 @@ methods:
     fullName: 'register(id, initializer)'
     summary: Registers a new view.
     remarks: 'A View with a given `id` is only initialized once, and the instance is reused if it is pushed more than once'
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'register(id: string, initializer: () => TView): void;'
@@ -132,7 +139,8 @@ methods:
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))<!--
       -->, which will also trigger a render.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'replace(id: string, skipUpdate?: boolean): void;'

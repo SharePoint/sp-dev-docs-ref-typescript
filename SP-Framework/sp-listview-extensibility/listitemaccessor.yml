@@ -18,6 +18,7 @@ remarks: >-
 
   The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
   create subclasses that extend the `ListItemAccessor` class.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -31,7 +32,8 @@ properties:
       The set of available fields depends on the editing context. For example, if a list view column is hidden, the
       corresponding field definition may not be loaded. Field customizers should not assume that a given field will be
       available, even if it is defined in the content type.
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'abstract get fields(): ReadonlyArray<SPField>;'
@@ -46,7 +48,8 @@ methods:
       Retrieves the current data value for the specified field. The value will be a primitive JavaScript object such as
       a string, number, etc.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'abstract getValue(field: SPField): any;'
@@ -65,7 +68,8 @@ methods:
       Retrieves the current data value for the field with the specified internal name. The value will be a primitive
       JavaScript object such as a string, number, etc.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'abstract getValueByName(internalName: string): any;'

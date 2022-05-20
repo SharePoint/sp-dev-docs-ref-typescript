@@ -8,6 +8,7 @@ remarks: >-
   The page context provides standard definitions for common SharePoint objects that need to be shared between the
   client-side application, web parts, and other components. Typically the data is fetched via REST queries when
   navigating to a new page, but it can also be preloaded by the web server, or filled from a custom application cache.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -18,7 +19,8 @@ constructors:
     fullName: (constructor)(serviceScope)
     summary: Constructs a new instance of the `PageContext` class
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
@@ -35,7 +37,8 @@ properties:
       Contextual information for communicating with Azure Active Directory. If the current page doesn't have an
       associated Azure Active Directory tenant, this property will be undefined.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get aadInfo(): AzureActiveDirectoryInfo | undefined;'
@@ -49,7 +52,8 @@ properties:
       It provides culture info for the current user of the application. This class is primarily used with the
       `PageContext` class.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get cultureInfo(): CultureInfo;'
@@ -61,7 +65,8 @@ properties:
     fullName: isInitialized
     summary: Returns whether the `PageContext` has been initialized.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get isInitialized(): boolean;'
@@ -83,7 +88,8 @@ properties:
       NOTE: If certain functionality is exposed in the `legacyPageContext` but does not seem to have a proper TypeScript
       API, please file an issue on GitHub. The intention is that no modern application should need to rely on the
       `legacyPageContext` object.
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get legacyPageContext(): any;'
@@ -97,7 +103,8 @@ properties:
       Contextual information for the SharePoint list that is hosting the page. If there is no list associated to the
       current page, this property will be undefined.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get list(): SPList | undefined;'
@@ -111,7 +118,8 @@ properties:
       Contextual information for the SharePoint list item that is hosting the page. If there is no list item associated
       to the current page, this property will be undefined.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get listItem(): SPListItem | undefined;'
@@ -123,7 +131,8 @@ properties:
     fullName: serviceKey
     summary: The service key for PageContext.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'static readonly serviceKey: ServiceKey<PageContext>;'
@@ -137,7 +146,8 @@ properties:
     fullName: site
     summary: Contextual information for the SharePoint site collection ("SPSite") that is hosting the page.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get site(): SPSite;'
@@ -151,7 +161,8 @@ properties:
       It provides contextual information for the SharePoint user that is accessing the page. This class is primarily
       used with the `PageContext` class.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get user(): SPUser;'
@@ -163,7 +174,8 @@ properties:
     fullName: web
     summary: Contextual information for the SharePoint site ("SPWeb") that is hosting the page.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get web(): SPWeb;'

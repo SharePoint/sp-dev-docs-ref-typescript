@@ -7,6 +7,7 @@ summary: >-
   Used by ICommandSetExtensionManifest, this defines a command to be displayed by a UI surface such as a menu, tool bar,
   etc.
 remarks: ''
+
 isPreview: false
 isDeprecated: false
 type: interface
@@ -19,7 +20,8 @@ properties:
       Custom accessibility text for the browser's "aria-label" attribute. If omitted, the title property will be used by
       default. Example: "Show information. Press ENTER to select."
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'ariaLabel?: ILocalizedString;'
@@ -38,7 +40,8 @@ properties:
       manifest. The icon file will be copied to the deployment folder like an asset, and the output manifest's
       iconImageUrl will be replaced with a URL relative to the URL used to load all other assets (the
       loaderConfig.internalModuleBaseUrls property).
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'iconImageUrl?: string;'
@@ -50,7 +53,8 @@ properties:
     fullName: title
     summary: 'A short label to be displayed by the associated button, menu item, etc. Example: "Show information"'
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'title: ILocalizedString;'
@@ -62,7 +66,8 @@ properties:
     fullName: type
     summary: Type of the item. Currently only "command" is allowed.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'type: ''command'';'

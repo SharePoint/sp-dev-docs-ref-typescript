@@ -14,6 +14,7 @@ remarks: >-
   The ApplicationAccessor class enables extensibility components such as extensions and web parts to interact with the
   currently running application. It acts as a proxy for the real application object (the BaseApplication subclass), to
   ensure that extensibility components only rely on interactions that would be portable across all applications.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -30,7 +31,8 @@ constructors:
       context, for example
       [BaseApplicationCustomizer.context](xref:@microsoft/sp-application-base!BaseApplicationCustomizer%23context:member)<!--
       -->.
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
@@ -47,7 +49,8 @@ events:
     remarks: >-
       This event fires after the top-level [PageContext](xref:@microsoft/sp-page-context!PageContext:class) has
       navigated to a new page.
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get navigatedEvent(): SPEvent<SPEventArgs>;'

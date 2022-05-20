@@ -7,6 +7,7 @@ summary: >-
   The Dynamic Data Provider allows components to consume Dynamic Data. It allows components to request Dynamic Data
   sources and register/unregister to those.
 remarks: ''
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -17,7 +18,8 @@ properties:
     fullName: isDisposed
     summary: Returns true if the Dynamic Data Provider is disposed.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'get isDisposed(): boolean;'
@@ -30,7 +32,8 @@ methods:
     fullName: dispose()
     summary: Disposes the Dynamic Data Provider.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'dispose(): void;'
@@ -43,7 +46,8 @@ methods:
     fullName: getAvailableSources()
     summary: Returns a list with all available Dynamic Data Sources.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'getAvailableSources(): ReadonlyArray<IDynamicDataSource>;'
@@ -56,7 +60,8 @@ methods:
     fullName: registerAvailableSourcesChanged(callback)
     summary: Registers a callback to an event that raises when the list of available Dynamic Data Sources is updated.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'registerAvailableSourcesChanged(callback: () => void): void;'
@@ -73,7 +78,8 @@ methods:
     fullName: 'registerPropertyChanged(sourceId, propertyId, callback)'
     summary: Registers a callback for updates when a property is changed in a Dynamic Data source.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'registerPropertyChanged(sourceId: string, propertyId: string, callback: () => void): void;'
@@ -98,7 +104,8 @@ methods:
       Registers a callback for updates when a Dynamic Data source is changed. This happens when any property is updated
       within the source.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'registerSourceChanged(sourceId: string, callback: () => void): void;'
@@ -118,7 +125,8 @@ methods:
     fullName: tryGetSource(id)
     summary: 'Returns a Dynamic Data Source, by its id. If the source is not present, it returns undefined.'
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'tryGetSource(id: string): IDynamicDataSource | undefined;'
@@ -135,7 +143,8 @@ methods:
     fullName: unregisterAvailableSourcesChanged(callback)
     summary: Unregisters a callback to an event that raises when the list of available Dynamic Data Sources is updated.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'unregisterAvailableSourcesChanged(callback: () => void): void;'
@@ -152,7 +161,8 @@ methods:
     fullName: 'unregisterPropertyChanged(sourceId, propertyId, callback)'
     summary: Unregisters a callback for updates when a property is changed in a Dynamic Data source.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'unregisterPropertyChanged(sourceId: string, propertyId: string, callback: () => void): void;'
@@ -175,7 +185,8 @@ methods:
     fullName: 'unregisterSourceChanged(sourceId, callback)'
     summary: Unregisters a callback for updates when a Dynamic Data source is changed.
     remarks: ''
-        isPreview: false
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'unregisterSourceChanged(sourceId: string, callback: () => void): void;'
