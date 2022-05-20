@@ -19,6 +19,7 @@ remarks: >-
   updated implementation. The render() API is the only API that is mandatory to be implemented/overridden by a web part.
   All other life cycle APIs have a base implementation and can be overridden based on the needs of the web part. Please
   refer to the documentation of the individual APIs to make the right decision.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -32,6 +33,7 @@ constructors:
       It is highly recommended that the web part use the `onInit()` API to perform any web part specific initialization.
       Most of the web part features like this.context and `this.properties` are not available to be used before the the
       `onInit()` part of the web part loading lifecycle.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -52,6 +54,7 @@ properties:
       returns false, the web part should not open popup on initial render. Some web parts that open popups during render
       are the document embed web part that pops up the file picker on initial render, embedded video web part that pops
       up the PropertyPane on initial render.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -67,6 +70,7 @@ properties:
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
       the constructor), but child classes should redeclare it as readonly.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -81,6 +85,7 @@ properties:
       This property is a pointer to the root DOM element of the web part. This is a DIV element and contains the whole
       DOM subtree of the web part.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -98,6 +103,7 @@ properties:
 
 
       The default value is false.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -114,6 +120,7 @@ properties:
       This property indicates whether the web part was rendered from the persisted data (serialized state from the last
       time that the web part was saved) or not.
     remarks: 'Example: When web part is added for the first time using toolbox then the value is false.'
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -128,6 +135,7 @@ properties:
       This property indicates whether the web part has been rendered once or not. After the first time rendering, the
       value of this property is always true until a full re-render of the web part happens.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -142,6 +150,7 @@ properties:
     remarks: >-
       Web parts should utilize this property to perform operations such as any conditional styling of components based
       on the initial available width for the web part.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -155,6 +164,7 @@ methods:
     fullName: clearError()
     summary: This API should be used to clear the error message from the web part display area.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -172,6 +182,7 @@ methods:
     remarks: >-
       Web parts should utilize this method to perform operations such as potentially re-rendering components based on
       the new available width for the web part.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -194,6 +205,11 @@ methods:
       The default implementation of this API calls the web part render method to re-render the web part with the new
       display mode. If a web part developer does not want a full re-render to happen on display mode change, they can
       override this API and perform specific updates to the web part DOM to switch its display mode.
+
+
+      If the web part is initialized or re-initialized when switching to a different display mode then this lifecycle
+      method is not called. Example: SharePoint Site Page.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -217,6 +233,7 @@ methods:
       resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios
       like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
       transitioned out.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -234,6 +251,7 @@ methods:
     remarks: >-
       Developers sould not call render in overridden method. It can lead to unpredicted re-flow of the web part. render
       will be called from the base class when needed.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -255,6 +273,7 @@ methods:
       This API is called to render the web part. There is no base implementation of this API and the web part is
       required to override this API.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -272,6 +291,7 @@ methods:
       initiates the IFrame rendering in the `render()` API but the actual rendering is complete only after the iframe
       loading completes.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -291,6 +311,7 @@ methods:
       This API should be used to render an error message in the web part display area. Also logs the error message using
       the trace logger.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -302,4 +323,4 @@ methods:
       return:
         type: void
         description: ''
-extends: '<xref uid="@microsoft/sp-webpart-base!default:class" />&lt;TProperties&gt; '
+extends: '<xref uid="@microsoft/sp-webpart-base!default:class" />'

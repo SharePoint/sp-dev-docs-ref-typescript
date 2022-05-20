@@ -12,6 +12,7 @@ remarks: >-
   controlled by this class by implementing the render method, the framework can decide when to show the dialog and how
   to render the overlay and modal. The application on the page can also have control on allowing dialogs to show. Refer
   to the documentation of the individual methods and properties to learn more about how to extend and use this class.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -46,6 +47,7 @@ constructors:
           // If you need to refresh the cache (or fetch data) for rendering, do it in onBeforeOpen()
         }
       ```
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -63,6 +65,7 @@ properties:
     remarks: >-
       See [BaseDialog.render()](xref:@microsoft/sp-dialog!BaseDialog%23render:member(1)) for more information on
       rendering.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -77,6 +80,7 @@ properties:
     remarks: >-
       This happens when the dialog goes behind a secondary dialog. Note that this is different from closed, because the
       dialog still has the permission to show and will eventually unhide. This returns false if the dialog is closed.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -91,6 +95,7 @@ properties:
       If the dialog is visually open. This returns true during onBeforeOpen() because there is a visual component. It
       returns false when the dialog is hidden.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -103,6 +108,7 @@ properties:
     fullName: isSecondary
     summary: If the dialog is a secondary dialog. This means that there is another dialog hidden behind this dialog.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -120,6 +126,7 @@ properties:
       Secondary dialogs do not have to wait for permission and will immediately be shown or rejected. All calls to show
       a secondary dialog reject while there is already a secondary dialog showing. This property may be undefined if a
       secondary dialog is not available i.e. the current dialog is secondary itself or the dialog is not active.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -135,6 +142,7 @@ methods:
     remarks: >-
       This will void the permission to show for this dialog. Every dialog should have a mechanism to eventually close to
       avoid blocking the user interface. If called on an inactive dialog it will abort the request to show.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -152,6 +160,7 @@ methods:
       the dialog may be revived again for a new lifecycle using show() method, this is considered a whole new lifecycle
       that should reallocate its own resources. If there are any resources that you would like to keep for multiple
       lifecycles, consider allocating it outside the dialog object and passing its reference to the dialog constructor.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -167,6 +176,7 @@ methods:
       This method is called before the render method and can be overridden to make preparations for rendering. The
       loading indicator is displayed during the lifetime of this method. virtual
     remarks: All resource allocations in onBeforeOpen() should be properly disposed in `onAfterClose()` to a avoid memory leak.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -193,6 +203,7 @@ methods:
       you choose to do your initialization or other costly operations inside render method, make sure to have a friendly
       UI so the user is informed about the state of your dialog. Otherwise, an empty element is shown to the user which
       is a bad user experience practice.
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -206,6 +217,7 @@ methods:
     fullName: show(options)
     summary: Request the framework to show this dialog.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:

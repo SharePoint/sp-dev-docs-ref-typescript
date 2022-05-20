@@ -8,7 +8,8 @@ summary: >-
   [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a Get
   location Action is executed.
 remarks: API under active development and not ready for use.
-isPreview: true
+
+isPreview: false
 isDeprecated: false
 type: interface
 properties:
@@ -18,7 +19,8 @@ properties:
     fullName: location
     summary: 'Coordinates of the location. In case of erroneous situation, location object will be undefined.'
     remarks: ''
-    isPreview: true
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'location?: ILocation;'
@@ -30,10 +32,11 @@ properties:
     fullName: type
     summary: The type of Adaptive Card Action.
     remarks: ''
-    isPreview: true
+    
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'type: ''VivaAction.GetLocation'';'
       return:
         type: '''VivaAction.GetLocation'''
-extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />, ''type''&gt; '
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />'

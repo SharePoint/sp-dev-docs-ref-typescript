@@ -7,6 +7,7 @@ summary: >-
   This is the interface for a script module with the "path" type. Modules of this type must be provided by the component
   developer.
 remarks: ''
+
 isPreview: true
 isDeprecated: false
 type: interface
@@ -30,6 +31,7 @@ properties:
 
 
       Example: `["jquery"]`
+    
     isPreview: true
     isDeprecated: false
     syntax:
@@ -57,6 +59,7 @@ properties:
 
 
       Example: `"$"`
+    
     isPreview: true
     isDeprecated: false
     syntax:
@@ -85,10 +88,24 @@ properties:
 
 
       Example: `"master_2015-04-20/my-application.bundle_1928f8a0.js"`
+    
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'path: string | IPath;'
+      content: 'path: string | IIntegrityPath;'
       return:
-        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IPath:interface" />'
-extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:interface" />'
+        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#type:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: type
+    summary: ''
+    remarks: ''
+    
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: ''path'';'
+      return:
+        type: '''path'''
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'

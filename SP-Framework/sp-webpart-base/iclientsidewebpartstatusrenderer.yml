@@ -7,6 +7,7 @@ summary: >-
   Interface to be implemented by a component that should display the loading indicator and error messages for a web
   part.
 remarks: ''
+
 isPreview: false
 isDeprecated: false
 type: interface
@@ -17,6 +18,7 @@ methods:
     fullName: clearError(domElement)
     summary: Clear the webpart error message.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -34,6 +36,7 @@ methods:
     fullName: clearLoadingIndicator(domElement)
     summary: Clear the loading indicator.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -45,16 +48,19 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
+  - name: 'displayLoadingIndicator(domElement, loadingMessage, timeout, clearDomElementCallback)'
     uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#displayLoadingIndicator:member(1)'
     package: '@microsoft/sp-webpart-base!'
-    fullName: 'displayLoadingIndicator(domElement, loadingMessage, timeout)'
+    fullName: 'displayLoadingIndicator(domElement, loadingMessage, timeout, clearDomElementCallback)'
     summary: Display a loading spinner.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'displayLoadingIndicator(domElement: Element, loadingMessage: string, timeout?: number): void;'
+      content: >-
+        displayLoadingIndicator(domElement: Element, loadingMessage: string, timeout?: number, clearDomElementCallback?:
+        ClearDomElementCallback): void;
       parameters:
         - id: domElement
           description: the web part container div.
@@ -65,19 +71,27 @@ methods:
         - id: timeout
           description: timeout to render the loading indicator. Default is 1500ms.
           type: number
+        - id: clearDomElementCallback
+          description: >-
+            Callback to clear the dom node before rendering the indicator. Standard DOM API will be used after the
+            callback.
+          type: '<xref uid="@microsoft/sp-webpart-base!ClearDomElementCallback:type" />'
       return:
         type: void
         description: ''
-  - name: 'renderError(domElement, error)'
+  - name: 'renderError(domElement, error, clearDomElementCallback)'
     uid: '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer#renderError:member(1)'
     package: '@microsoft/sp-webpart-base!'
-    fullName: 'renderError(domElement, error)'
+    fullName: 'renderError(domElement, error, clearDomElementCallback)'
     summary: Render the provided error message in the webpart container div.
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'renderError(domElement: HTMLElement, error: Error | string): void;'
+      content: >-
+        renderError(domElement: HTMLElement, error: Error | string, clearDomElementCallback?: ClearDomElementCallback):
+        void;
       parameters:
         - id: domElement
           description: the web part container div.
@@ -85,6 +99,11 @@ methods:
         - id: error
           description: the error message.
           type: Error | string
+        - id: clearDomElementCallback
+          description: >-
+            Callback to clear the dom node before rendering the error element. Standard DOM API will be used after the
+            callback.
+          type: '<xref uid="@microsoft/sp-webpart-base!ClearDomElementCallback:type" />'
       return:
         type: void
         description: ''

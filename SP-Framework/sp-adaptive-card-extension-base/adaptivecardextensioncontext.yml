@@ -7,6 +7,7 @@ summary: Adaptive Card Extension context object.
 remarks: >-
   The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
   create subclasses that extend the `AdaptiveCardExtensionContext` class.
+
 isPreview: false
 isDeprecated: false
 type: class
@@ -17,18 +18,33 @@ properties:
     fullName: deviceContext
     summary: ''
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'get deviceContext(): DeviceContext;'
       return:
         type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!DeviceContext:type" />'
+  - name: location
+    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: location
+    summary: Provides a promise that gets current location of the device
+    remarks: ''
+    
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get location(): Promise<ILocation>;'
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!ILocation:interface" />&gt;'
   - name: manifest
     uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#manifest:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: manifest
     summary: 'See [BaseComponentContext.manifest](xref:@microsoft/sp-component-base!BaseComponentContext%23manifest:member)'
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -41,6 +57,7 @@ properties:
     fullName: propertyPane
     summary: 'See [IPropertyPaneAccessor](xref:@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface)'
     remarks: ''
+    
     isPreview: false
     isDeprecated: false
     syntax:

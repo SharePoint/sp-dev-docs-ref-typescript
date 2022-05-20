@@ -5,7 +5,29 @@ package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: ISPFxAdaptiveCard
 summary: SPFx Adaptive Card Extension schema for Adaptive Cards.
 remarks: ''
+
 isPreview: false
 isDeprecated: false
 type: interface
-extends: '<xref uid="adaptivecards!IAdaptiveCard:interface" />'
+properties:
+  - name: actions
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard#actions:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: actions
+    summary: Types of actions being exposed
+    remarks: ''
+    
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        actions?: (ISubmitAction | IOpenUrlAction | IShowCardAction | ISelectMediaAction | IGetLocationAction |
+        IShowLocationAction)[];
+      return:
+        type: >-
+          (<xref uid="adaptivecards!ISubmitAction:interface" /> | <xref uid="adaptivecards!IOpenUrlAction:interface" />
+          | <xref uid="adaptivecards!IShowCardAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IGetLocationAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface" />)[]
+extends: 'Omit&lt;<xref uid="adaptivecards!IAdaptiveCard:interface" />'

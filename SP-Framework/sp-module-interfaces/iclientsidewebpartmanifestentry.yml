@@ -8,6 +8,7 @@ summary: >-
   instance of the Web Part will need a copy of these properties. Organization admins and content authors can modify
   these properties on a need basis.
 remarks: ''
+
 isPreview: false
 isDeprecated: false
 type: interface
@@ -35,6 +36,7 @@ properties:
 
 
       Example: `"1.0"`
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -67,10 +69,11 @@ properties:
                {
                  "default": "A tool for displaying neat information.",
                  "en-us": "A tool for displaying neat information.",
-                 "fr-fr": "Un outil d’affichage des informations soignées.",
+                 "fr-fr": "Un outil d'affichage des informations soignées.",
                  "zh": "用於顯示整潔資訊的工具。"
                }
       ```
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -93,6 +96,7 @@ properties:
 
 
       Example: `"https://contoso.akamaihd.net/files/myWebpartIcon.png"`
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -107,6 +111,7 @@ properties:
       The group name in web part picker to contain the web part in the classic page. If no value is provided, then the
       web part will be displayed in the Miscellaneous group.
     remarks: 'Example: `{ "default": "Media and Content" }`'
+    
     isPreview: true
     isDeprecated: false
     syntax:
@@ -125,6 +130,7 @@ properties:
       Supported values: the GUID from PredefinedGroup list
 
       Example: `"cf066440-0614-43d6-98ae-0b31cf14c7c3"`
+    
     isPreview: true
     isDeprecated: false
     syntax:
@@ -144,7 +150,7 @@ properties:
       field does not have a value, this field must have a value. This value can be an absolute URL (e.g.
       `"http://example.com/icons/my-icon.png"`<!-- -->) or a relative file path (e.g. `"./icons/my-icon.png"`<!-- -->).
       In the latter case, the path will be resolved relative to the folder containing the input manifest. The icon file
-      will be copied to the deployment folder like an asset, and the output manifest’s iconImageUrl will be replaced
+      will be copied to the deployment folder like an asset, and the output manifest's iconImageUrl will be replaced
       with a URL relative to the URL used to load all other assets (the loaderConfig.internalModuleBaseUrls property).
 
 
@@ -152,6 +158,7 @@ properties:
 
 
       Example: `"https://contoso.akamaihd.net/files/myWebpartIcon.png"`
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -176,6 +183,7 @@ properties:
 
 
       Example: "graph"
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -200,6 +208,7 @@ properties:
 
 
       Example: `{"imageSource": "https://contoso.akamaihd.net/files/contosoLogo.jpg", "captionText": "Contoso logo"}"`
+    
     isPreview: false
     isDeprecated: false
     syntax:
@@ -214,6 +223,7 @@ properties:
       This field is used to tag a web part with keywords that are different from the web part group name. Tags can be
       used for categorization and searching of web parts. For example, in the web part toolbox.
     remarks: 'Example `[{ "default": "image" }, { "default": "media" }, { "default": "picture" }, ...]`'
+    
     isPreview: true
     isDeprecated: false
     syntax:
@@ -249,6 +259,7 @@ properties:
                  "zh": "我的 web 部件"
                }
       ```
+    
     isPreview: false
     isDeprecated: false
     syntax:
