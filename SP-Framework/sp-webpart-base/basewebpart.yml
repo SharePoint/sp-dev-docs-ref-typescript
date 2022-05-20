@@ -7,7 +7,6 @@ summary: >-
   This abstract class implements the UI-agnostic base functionality for a client-side web part. The purpose is to allow
   a common core between 2D and MR WebParts.
 remarks: ''
-example: []
 isPreview: false
 isDeprecated: false
 type: class
@@ -21,8 +20,7 @@ constructors:
       It is highly recommended that the web part use the OnInit API to perform any web part specific initialization.
       Most of the web part features like this.context and this.properties are not available to be used before the the
       onInit part of the web part loading lifecycle.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: constructor();
@@ -36,8 +34,7 @@ properties:
       returns that default title in the manifest. Web parts that want to provide more descriptive title containing
       contextual information need to override this API. virtual
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get accessibleTitle(): string;'
@@ -52,8 +49,7 @@ properties:
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
       the constructor), but child classes should redeclare it as readonly.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'readonly context: BaseWebPartContext;'
@@ -67,8 +63,7 @@ properties:
       The value of this property is stored in the serialized data of the web part to allow developers to manage
       versioning of their web part. The default version is 1.0
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get dataVersion(): Version;'
@@ -80,8 +75,7 @@ properties:
     fullName: description
     summary: Description of the WebPart
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get description(): string;'
@@ -103,8 +97,7 @@ properties:
 
       NonReactive implies that the configuration changes are transmitted to the web part only after "Apply" PropertyPane
       button is clicked.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get disableReactivePropertyChanges(): boolean;'
@@ -116,8 +109,7 @@ properties:
     fullName: displayMode
     summary: This property is the current display mode of the web part.
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'get displayMode(): DisplayMode;'
@@ -132,8 +124,7 @@ properties:
       that want to provide a valid preview image url need to override this API. The preview image url can be used to
       create a preview of the web part or of the page on which the web part is present. virtual
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'get previewImageUrl(): string | undefined;'
@@ -145,8 +136,7 @@ properties:
     fullName: properties
     summary: This property is the pointer to the custom property bag of the web part.
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get properties(): TProperties;'
@@ -162,8 +152,7 @@ properties:
     remarks: >-
       See [IWebPartPropertiesMetadata](xref:@microsoft/sp-webpart-base!IWebPartPropertiesMetadata:interface) for more
       information about how to define metadata
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get propertiesMetadata(): IWebPartPropertiesMetadata | undefined;'
@@ -175,8 +164,7 @@ properties:
     fullName: title
     summary: Title of the WebPart
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get title(): string;'
@@ -198,8 +186,7 @@ methods:
 
       See IPropertyPane and other PropertyPane integration wiki documentation for more details. virtual
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
@@ -222,8 +209,7 @@ methods:
 
       'PropertyPaneConfigurationComplete' event can be raised to clean up any pending resources including
       'loadPropertyPaneResources' promise.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: |-
@@ -249,8 +235,7 @@ methods:
       by an older version of the web part that supported a different schema of the property bag, resulting the
       deserialized object to be incosistent with the current schema of the property bag. The developer can use
       `onAfterDeserialize` to check the dataVersion and fix the property bag.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): TProperties;'
@@ -278,8 +263,7 @@ methods:
       This API is invoked after the changes made on the PropertyPane are applied when the PropertyPane is used in
       Non-Reactive mode. This API is not invoked when the PropertyPane is used in Reactive mode. virtual
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onAfterPropertyPaneChangesApplied(): void;'
@@ -298,8 +282,7 @@ methods:
       some of that state, it needs to override this API and update the web part property bag to the latest state. If a
       web part updates the property bag with invalid property values, those will get persisted. So that should be
       avoided. The web part property bag should always contain valid property values.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onBeforeSerialize(): void;'
@@ -319,8 +302,7 @@ methods:
 
       If the web part is initialized or re-initialized when switching to a different display mode then this lifecycle
       method is not called. Example: SharePoint Site Page.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onDisplayModeChanged(oldDisplayMode: DisplayMode): void;'
@@ -341,8 +323,7 @@ methods:
       resources (i.e. DOM elements) that the web part is holding onto. This API is expected to be called in scenarios
       like page navigation i.e. the host is transitioning from one page to another and disposes the page that is being
       transitioned out.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onDispose(): void;'
@@ -358,8 +339,7 @@ methods:
       This API should be overridden to perform long running operations e.g. data fetching from a remote service before
       the initial rendering of the web part. The loading indicator is displayed during the lifetime of this method. This
       API is called only once during the lifecycle of a web part.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onInit(): Promise<void>;'
@@ -381,8 +361,7 @@ methods:
       - When user clicks the 'Apply' button before the CONFIGURATION\_COMPLETE\_TIMEOUT elapses.
 
       - When the user switches web parts then the current web part gets this event.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onPropertyPaneConfigurationComplete(): void;'
@@ -400,8 +379,7 @@ methods:
       - When the PropertyPane is opened.
 
       - When the user switches web parts then the new web part gets this event.
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onPropertyPaneConfigurationStart(): void;'
@@ -416,8 +394,7 @@ methods:
       This API is invoked after updating the new value of the property in the property bag when the PropertyPane is
       being used in Reactive mode. virtual
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void;'
@@ -443,8 +420,7 @@ methods:
     fullName: onPropertyPaneRendered()
     summary: This API is invoked when the PropertyPane is rendered. virtual
     remarks: ''
-    example: []
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected onPropertyPaneRendered(): void;'
