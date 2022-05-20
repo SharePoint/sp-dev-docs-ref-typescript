@@ -1,60 +1,39 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs:class'
-    summary: Arguments for the list view state changed event.
-    name: ListViewStateChangedEventArgs
-    fullName: ListViewStateChangedEventArgs
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-core-library!SPEventArgs:class'
-    inheritance:
-      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+### YamlMime:TSType
+name: ListViewStateChangedEventArgs
+uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: ListViewStateChangedEventArgs
+summary: Arguments for the list view state changed event.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: prevState
+    uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#prevState:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#prevState:member'
-      - '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#stateChanges:member'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#prevState:member'
-    summary: Previous state of the ListView.
-    name: prevState
     fullName: prevState
-    langs:
-      - typeScript
-    type: property
+    summary: Previous state of the ListView.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'prevState: Readonly<IListViewAccessorState>;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#prevState~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#stateChanges:member'
-    summary: Changes that were made to the ListView state.
-    name: stateChanges
+        type: 'Readonly&lt;<xref uid="@microsoft/sp-listview-extensibility!IListViewAccessorState:interface" />&gt;'
+  - name: stateChanges
+    uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#stateChanges:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: stateChanges
-    langs:
-      - typeScript
-    type: property
+    summary: Changes that were made to the ListView state.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'stateChanges: ListViewAccessorStateChanges;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!ListViewAccessorStateChanges:enum'
-references:
-  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
-    name: SPEventArgs
-  - uid: '@microsoft/sp-listview-extensibility!ListViewStateChangedEventArgs#prevState~0:complex'
-    name: Readonly<IListViewAccessorState>
-    fullName: Readonly<IListViewAccessorState>
-    spec.typeScript:
-      - uid: '!Readonly:type'
-        name: Readonly
-        fullName: Readonly
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState:interface'
-        name: IListViewAccessorState
-        fullName: IListViewAccessorState
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-listview-extensibility!ListViewAccessorStateChanges:enum'
-    name: ListViewAccessorStateChanges
+        type: '<xref uid="@microsoft/sp-listview-extensibility!ListViewAccessorStateChanges:enum" />'
+extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'

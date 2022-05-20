@@ -1,134 +1,118 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer:class'
-    summary: >-
-      This is the base class that third parties should extend when implementing a client-side extension that provides a
-      custom list form (display, new, edit) for a SharePoint list.
-    name: BaseFormCustomizer
-    fullName: BaseFormCustomizer
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-extension-base!BaseExtension:class'
-    inheritance:
-      - type: '@microsoft/sp-extension-base!BaseExtension:class'
-        inheritance:
-          - type: '@microsoft/sp-component-base!BaseComponent:class'
+### YamlMime:TSType
+name: BaseFormCustomizer
+uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: BaseFormCustomizer
+summary: >-
+  This is the base class that third parties should extend when implementing a client-side extension that provides a
+  custom list form (display, new, edit) for a SharePoint list.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: context
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#context:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#context:member'
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#displayMode:member'
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#dispose:member(1)'
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#domElement:member'
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formClosed:member(1)'
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formSaved:member(1)'
-      - '@microsoft/sp-listview-extensibility!BaseFormCustomizer#render:member(1)'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#context:member'
+    fullName: context
     summary: Use the context object to access common services and state associated with the component.
     remarks: >-
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
       the constructor), but child classes should redeclare it as readonly.
-    name: context
-    fullName: context
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly context: FormCustomizerContext;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!default:class'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#displayMode:member'
-    summary: 'Display mode of the form: Edit, Display or New.'
-    name: displayMode
+        type: '<xref uid="@microsoft/sp-listview-extensibility!default:class" />'
+  - name: displayMode
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#displayMode:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: displayMode
-    langs:
-      - typeScript
-    type: property
+    summary: 'Display mode of the form: Edit, Display or New.'
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected get displayMode(): FormDisplayMode;'
       return:
-        type:
-          - '@microsoft/sp-core-library!FormDisplayMode:enum'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#dispose:member(1)'
-    summary: Disposes the component.
-    remarks: 'Please, do not override this method. Override the `onDispose` method instead.'
-    name: dispose()
-    fullName: dispose()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'dispose(): void;'
-      return:
-        type:
-          - void
-        description: ''
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#domElement:member'
+        type: '<xref uid="@microsoft/sp-core-library!FormDisplayMode:enum" />'
+  - name: domElement
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#domElement:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: domElement
     summary: >-
       This property is a pointer to the root DOM element of the form. This is a DIV element and contains the whole DOM
       subtree of the form.
-    name: domElement
-    fullName: domElement
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected get domElement(): HTMLElement;'
       return:
-        type:
-          - '!HTMLElement:interface'
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formClosed:member(1)'
-    summary: Call this method after the form has been closed/cancelled to inform the application that the form has been closed.
-    name: formClosed()
+        type: HTMLElement
+methods:
+  - name: dispose()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#dispose:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: dispose()
+    summary: Disposes the component.
+    remarks: 'Please, do not override this method. Override the `onDispose` method instead.'
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type: void
+        description: ''
+  - name: formClosed()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formClosed:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: formClosed()
-    langs:
-      - typeScript
-    type: method
+    summary: Call this method after the form has been closed/cancelled to inform the application that the form has been closed.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected formClosed(): void;'
       return:
-        type:
-          - void
+        type: void
         description: ''
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formSaved:member(1)'
-    summary: Call this method after the form has been saved to inform the application that the form has been saved.
-    name: formSaved()
+  - name: formSaved()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#formSaved:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: formSaved()
-    langs:
-      - typeScript
-    type: method
+    summary: Call this method after the form has been saved to inform the application that the form has been saved.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected formSaved(): void;'
       return:
-        type:
-          - void
+        type: void
         description: ''
-  - uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#render:member(1)'
+  - name: render()
+    uid: '@microsoft/sp-listview-extensibility!BaseFormCustomizer#render:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: render()
     summary: >-
       This API is called to render the form. There is no base implementation of this API and the form is required to
       override this API.
-    name: render()
-    fullName: render()
-    langs:
-      - typeScript
-    type: method
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'protected abstract render(): void;'
       return:
-        type:
-          - void
+        type: void
         description: ''
-references:
-  - uid: '@microsoft/sp-extension-base!BaseExtension:class'
-    name: BaseExtension
-  - uid: '@microsoft/sp-component-base!BaseComponent:class'
-    name: BaseComponent
-  - uid: '@microsoft/sp-listview-extensibility!default:class'
-    name: FormCustomizerContext
-  - uid: '@microsoft/sp-core-library!FormDisplayMode:enum'
-    name: FormDisplayMode
-  - uid: '!HTMLElement:interface'
-    name: HTMLElement
+extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />'

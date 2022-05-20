@@ -1,18 +1,19 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!Text_2:class'
-    summary: Operations for working with strings that contain text.
-    remarks: 'The utilities provided by this class are intended to be simple, small, and very broadly applicable.'
-    name: Text_2
-    fullName: Text_2
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: Text_2
+uid: '@microsoft/sp-core-library!Text_2:class'
+package: '@microsoft/sp-core-library!'
+fullName: Text_2
+summary: Operations for working with strings that contain text.
+remarks: 'The utilities provided by this class are intended to be simple, small, and very broadly applicable.'
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+methods:
+  - name: 'format(s, values)'
+    uid: '@microsoft/sp-core-library!Text_2.format:member(1)'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!Text_2.format:member(1)'
-      - '@microsoft/sp-core-library!Text_2.replaceAll:member(1)'
-  - uid: '@microsoft/sp-core-library!Text_2.format:member(1)'
+    fullName: 'format(s, values)'
     summary: Format a string by substituting parameters.
     remarks: >-
       This function replaces template parameters such as `"{0}"` or `"{1}"` with the corresponding argument. If the
@@ -24,55 +25,42 @@ items:
 
 
       `Text.format("hello {0}!", "world")` will return `"hello world!"`
-    name: 'format(s, values)'
-    fullName: 'format(s, values)'
-    langs:
-      - typeScript
-    type: method
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static format(s: string, ...values: unknown[]): string;'
-      return:
-        type:
-          - string
-        description: ''
       parameters:
         - id: s
           description: ''
-          type:
-            - string
-          optional: false
+          type: string
         - id: values
           description: ''
-          type:
-            - 'unknown[]'
-          optional: false
-  - uid: '@microsoft/sp-core-library!Text_2.replaceAll:member(1)'
+          type: 'unknown[]'
+      return:
+        type: string
+        description: ''
+  - name: 'replaceAll(input, searchValue, replaceValue)'
+    uid: '@microsoft/sp-core-library!Text_2.replaceAll:member(1)'
+    package: '@microsoft/sp-core-library!'
+    fullName: 'replaceAll(input, searchValue, replaceValue)'
     summary: 'Returns the input string, with all instances of `searchValue` replaced by `replaceValue`<!-- -->.'
     remarks: 'Note that JavaScript''s `string.replace()` only replaces the first match, unless a global RegExp is provided.'
-    name: 'replaceAll(input, searchValue, replaceValue)'
-    fullName: 'replaceAll(input, searchValue, replaceValue)'
-    langs:
-      - typeScript
-    type: method
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'static replaceAll(input: string, searchValue: string, replaceValue: string): string;'
-      return:
-        type:
-          - string
-        description: ''
       parameters:
         - id: input
           description: The string to be modified
-          type:
-            - string
-          optional: false
+          type: string
         - id: searchValue
           description: The value to search for
-          type:
-            - string
-          optional: false
+          type: string
         - id: replaceValue
           description: The replacement text
-          type:
-            - string
-          optional: false
+          type: string
+      return:
+        type: string
+        description: ''

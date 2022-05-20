@@ -1,33 +1,33 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
-    summary: >-
-      This is a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class) contract for generating pseudorandom
-      random numbers.
-    remarks: >-
-      This interface abstracts the functionality of the system Math.random() API for usage with a
-      [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)<!-- -->. For example, a unit test might replace
-      the default [RandomNumberGenerator](xref:@microsoft/sp-core-library!RandomNumberGenerator:class) service with a
-      mock implementation that always returns the same sequence of random numbers, in order to ensure that test failures
-      are always repeatable.
-    name: IRandomNumberGenerator
-    fullName: IRandomNumberGenerator
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IRandomNumberGenerator
+uid: '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
+package: '@microsoft/sp-core-library!'
+fullName: IRandomNumberGenerator
+summary: >-
+  This is a [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class) contract for generating pseudorandom
+  random numbers.
+remarks: >-
+  This interface abstracts the functionality of the system Math.random() API for usage with a
+  [ServiceScope](xref:@microsoft/sp-core-library!ServiceScope:class)<!-- -->. For example, a unit test might replace the
+  default [RandomNumberGenerator](xref:@microsoft/sp-core-library!RandomNumberGenerator:class) service with a mock
+  implementation that always returns the same sequence of random numbers, in order to ensure that test failures are
+  always repeatable.
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+methods:
+  - name: generate()
+    uid: '@microsoft/sp-core-library!IRandomNumberGenerator#generate:member(1)'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!IRandomNumberGenerator#generate:member(1)'
-  - uid: '@microsoft/sp-core-library!IRandomNumberGenerator#generate:member(1)'
-    summary: 'Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().'
-    name: generate()
     fullName: generate()
-    langs:
-      - typeScript
-    type: method
+    summary: 'Returns a pseudorandom number between 0 (inclusive) and 1 (exclusive), following the contract of Math.random().'
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'generate(): number;'
       return:
-        type:
-          - number
+        type: number
         description: ''

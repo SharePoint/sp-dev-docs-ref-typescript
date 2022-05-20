@@ -1,18 +1,19 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
-    summary: This is the base interface for a script module's definition.
-    isPreview: true
-    name: IModuleConfigurationBase
-    fullName: IModuleConfigurationBase
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IModuleConfigurationBase
+uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IModuleConfigurationBase
+summary: This is the base interface for a script module's definition.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: shouldNotPreload
+    uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase#shouldNotPreload:member'
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IModuleConfigurationBase#shouldNotPreload:member'
-      - '@microsoft/sp-module-interfaces!IModuleConfigurationBase#type:member'
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase#shouldNotPreload:member'
+    fullName: shouldNotPreload
     summary: 'If set to `true`<!-- -->, this module should not be preloaded when loading the component.'
     remarks: >-
       The most common case for setting this property to "true" is when a module is defined in a manifest, but is not
@@ -21,18 +22,17 @@ items:
 
 
       Usage: Instructs the module loader to not preload this module.
+    example: []
     isPreview: true
-    name: shouldNotPreload
-    fullName: shouldNotPreload
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'shouldNotPreload?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase#type:member'
+        type: boolean
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase#type:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: type
     summary: >-
       The type of the script block. `"component"` modules come from a component, `"path"` and `"localizedPath"` modules
       must be available on the paths provided in the `"internalModuleBaseUrls"` field.
@@ -48,14 +48,10 @@ items:
 
 
       Example: `"localized"`
+    example: []
     isPreview: true
-    name: type
-    fullName: type
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'type: ''component'' | ''path'' | ''localizedPath'';'
       return:
-        type:
-          - '''component'' | ''path'' | ''localizedPath'''
+        type: '''component'' | ''path'' | ''localizedPath'''

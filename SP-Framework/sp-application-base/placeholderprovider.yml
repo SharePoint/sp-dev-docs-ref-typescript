@@ -1,92 +1,78 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider:class'
-    summary: >-
-      Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party
-      components to render custom content into designated regions on the page.
-    remarks: >-
-      Placeholders are designated regions on the page, identified by one of the predefined
-      [PlaceholderName](xref:@microsoft/sp-application-base!PlaceholderName:enum) constants. Different applications and
-      pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with
-      the page, for example via in-place navigation. Third-party components should not assume that a given placeholder
-      will always be available.
+### YamlMime:TSType
+name: PlaceholderProvider
+uid: '@microsoft/sp-application-base!PlaceholderProvider:class'
+package: '@microsoft/sp-application-base!'
+fullName: PlaceholderProvider
+summary: >-
+  Allows third-party components to discover and use SharePoint placeholders. Placeholders enable third-party components
+  to render custom content into designated regions on the page.
+remarks: >-
+  Placeholders are designated regions on the page, identified by one of the predefined
+  [PlaceholderName](xref:@microsoft/sp-application-base!PlaceholderName:enum) constants. Different applications and
+  pages might support different placeholder names. Placeholders can appear and disappear as the user interacts with the
+  page, for example via in-place navigation. Third-party components should not assume that a given placeholder will
+  always be available.
 
 
-      Use
-      [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider%23tryCreateContent:member(1))
-      to test whether a placeholder is available and add content to it. Use the
-      [PlaceholderProvider.changedEvent](xref:@microsoft/sp-application-base!PlaceholderProvider%23changedEvent:member)
-      event to discover when new placeholders appear.
+  Use
+  [PlaceholderProvider.tryCreateContent()](xref:@microsoft/sp-application-base!PlaceholderProvider%23tryCreateContent:member(1))
+  to test whether a placeholder is available and add content to it. Use the
+  [PlaceholderProvider.changedEvent](xref:@microsoft/sp-application-base!PlaceholderProvider%23changedEvent:member)
+  event to discover when new placeholders appear.
 
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `PlaceholderProvider` class.
-    name: PlaceholderProvider
-    fullName: PlaceholderProvider
-    langs:
-      - typeScript
-    type: class
-    implements:
-      - '@microsoft/sp-core-library!IDisposable:interface'
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `PlaceholderProvider` class.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: isDisposed
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#isDisposed:member'
     package: '@microsoft/sp-application-base!'
-    children:
-      - '@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member'
-      - '@microsoft/sp-application-base!PlaceholderProvider#dispose:member(1)'
-      - '@microsoft/sp-application-base!PlaceholderProvider#isDisposed:member'
-      - '@microsoft/sp-application-base!PlaceholderProvider#placeholderNames:member'
-      - '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1)'
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member'
-    summary: This event is raised when the list of currently available placeholders is changed.
-    remarks: >-
-      The application can change its list of available placeholders at any time. This means that the existing
-      placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
-      they appear.
-    name: changedEvent
-    fullName: changedEvent
-    langs:
-      - typeScript
-    type: event
-    syntax:
-      content: 'get changedEvent(): SPEvent<SPEventArgs>;'
-      return:
-        type:
-          - '@microsoft/sp-application-base!PlaceholderProvider#changedEvent~0:complex'
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#dispose:member(1)'
-    name: dispose()
-    fullName: dispose()
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'dispose(): void;'
-      return:
-        type:
-          - void
-        description: ''
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#isDisposed:member'
-    name: isDisposed
     fullName: isDisposed
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'get isDisposed(): boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#placeholderNames:member'
-    summary: Returns the names of the currently available placeholders.
-    name: placeholderNames
+        type: boolean
+  - name: placeholderNames
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#placeholderNames:member'
+    package: '@microsoft/sp-application-base!'
     fullName: placeholderNames
-    langs:
-      - typeScript
-    type: property
+    summary: Returns the names of the currently available placeholders.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'get placeholderNames(): ReadonlyArray<PlaceholderName>;'
       return:
-        type:
-          - '@microsoft/sp-application-base!PlaceholderProvider#placeholderNames~0:complex'
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1)'
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-application-base!~PlaceholderName:enum" />&gt;'
+methods:
+  - name: dispose()
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#dispose:member(1)'
+    package: '@microsoft/sp-application-base!'
+    fullName: dispose()
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'dispose(): void;'
+      return:
+        type: void
+        description: ''
+  - name: 'tryCreateContent(name, options)'
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1)'
+    package: '@microsoft/sp-application-base!'
+    fullName: 'tryCreateContent(name, options)'
     summary: >-
       Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created,
       which allows the caller to render custom content inside the placeholder.
@@ -94,71 +80,39 @@ items:
       The host application makes no guarantees about the availability of a given placeholder. In situations where an
       expected placeholder is not available, the third-party extension must handle it gracefully, e.g. by not rendering
       anything, or by choosing an alternative placeholder.
-    name: 'tryCreateContent(name, options)'
-    fullName: 'tryCreateContent(name, options)'
-    langs:
-      - typeScript
-    type: method
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
         tryCreateContent(name: PlaceholderName, options?: IPlaceholderCreateContentOptions): PlaceholderContent |
         undefined;
-      return:
-        type:
-          - '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent~0:complex'
-        description: 'A new PlaceholderContent object, or undefined if the requested placeholder does not exist.'
       parameters:
         - id: name
           description: The requested placeholder
-          type:
-            - '@microsoft/sp-application-base!~PlaceholderName:enum'
-          optional: false
+          type: '<xref uid="@microsoft/sp-application-base!~PlaceholderName:enum" />'
         - id: options
           description: 'Additional options, for example to detect when the placeholder is disposed.'
-          type:
-            - '@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface'
-          optional: true
-references:
-  - uid: '@microsoft/sp-core-library!IDisposable:interface'
-    name: IDisposable
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#changedEvent~0:complex'
-    name: SPEvent<SPEventArgs>
-    fullName: SPEvent<SPEventArgs>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!SPEvent:class'
-        name: SPEvent
-        fullName: SPEvent
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-core-library!SPEventArgs:class'
-        name: SPEventArgs
-        fullName: SPEventArgs
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#placeholderNames~0:complex'
-    name: ReadonlyArray<PlaceholderName>
-    fullName: ReadonlyArray<PlaceholderName>
-    spec.typeScript:
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-application-base!~PlaceholderName:enum'
-        name: PlaceholderName
-        fullName: PlaceholderName
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent~0:complex'
-    name: PlaceholderContent | undefined
-    fullName: default | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-application-base!default:class'
-        name: PlaceholderContent
-        fullName: default
-      - name: ' | undefined'
-        fullName: ' | undefined'
-  - uid: '@microsoft/sp-application-base!~PlaceholderName:enum'
-    name: PlaceholderName
-  - uid: '@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface'
-    name: IPlaceholderCreateContentOptions
+          type: '<xref uid="@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-application-base!default:class" /> | undefined'
+        description: 'A new PlaceholderContent object, or undefined if the requested placeholder does not exist.'
+events:
+  - name: changedEvent
+    uid: '@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: changedEvent
+    summary: This event is raised when the list of currently available placeholders is changed.
+    remarks: >-
+      The application can change its list of available placeholders at any time. This means that the existing
+      placeholders may get disposed or new placeholders may be added. Use this event to discover new placeholders when
+      they appear.
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get changedEvent(): SPEvent<SPEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-core-library!SPEventArgs:class" />&gt;

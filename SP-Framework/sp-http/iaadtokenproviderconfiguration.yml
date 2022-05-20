@@ -1,127 +1,126 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration:interface'
-    summary: Required strings for constructing an AadTokenProvider.
-    name: IAadTokenProviderConfiguration
-    fullName: IAadTokenProviderConfiguration
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IAadTokenProviderConfiguration
+uid: '@microsoft/sp-http!IAadTokenProviderConfiguration:interface'
+package: '@microsoft/sp-http!'
+fullName: IAadTokenProviderConfiguration
+summary: Required strings for constructing an AadTokenProvider.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: aadInstanceUrl
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadInstanceUrl:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#aadInstanceUrl:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#aadSessionId:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#aadTenantId:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#aadUserId:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#redirectUri:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#servicePrincipalId:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#userEmail:member'
-      - '@microsoft/sp-http!IAadTokenProviderConfiguration#userPrincipalName:member'
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadInstanceUrl:member'
-    summary: The sign in page used to authenticate with Azure Active Directory. Trailing slashes are forbidden.
-    name: aadInstanceUrl
     fullName: aadInstanceUrl
-    langs:
-      - typeScript
-    type: property
+    summary: The sign in page used to authenticate with Azure Active Directory. Trailing slashes are forbidden.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'aadInstanceUrl: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadSessionId:member'
-    summary: The current Azure Active Directory's session id.
-    isPreview: true
-    name: aadSessionId
+        type: string
+  - name: aadSessionId
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadSessionId:member'
+    package: '@microsoft/sp-http!'
     fullName: aadSessionId
-    langs:
-      - typeScript
-    type: property
+    summary: The current Azure Active Directory's session id.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'aadSessionId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadTenantId:member'
-    summary: The Azure Active Directory's tenant id.
-    name: aadTenantId
+        type: string
+  - name: aadTenantId
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadTenantId:member'
+    package: '@microsoft/sp-http!'
     fullName: aadTenantId
-    langs:
-      - typeScript
-    type: property
+    summary: The Azure Active Directory's tenant id.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'aadTenantId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadUserId:member'
+        type: string
+  - name: aadUserId
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#aadUserId:member'
+    package: '@microsoft/sp-http!'
+    fullName: aadUserId
     summary: >-
       The user's Azure Active Directory id. This will be used to ensure that a valid cached token is for the current
       user.
-    name: aadUserId
-    fullName: aadUserId
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'aadUserId?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#redirectUri:member'
+        type: string
+  - name: redirectUri
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#redirectUri:member'
+    package: '@microsoft/sp-http!'
+    fullName: redirectUri
     summary: >-
       The page used to retrieve tokens from Azure Active Directory. This url must be listed in the developer's
       application redirect uris.
-    name: redirectUri
-    fullName: redirectUri
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'redirectUri: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#servicePrincipalId:member'
-    summary: The client ID of the developer's Azure Active Directory application.
-    name: servicePrincipalId
+        type: string
+  - name: servicePrincipalId
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#servicePrincipalId:member'
+    package: '@microsoft/sp-http!'
     fullName: servicePrincipalId
-    langs:
-      - typeScript
-    type: property
+    summary: The client ID of the developer's Azure Active Directory application.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'servicePrincipalId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#userEmail:member'
+        type: string
+  - name: userEmail
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#userEmail:member'
+    package: '@microsoft/sp-http!'
+    fullName: userEmail
     summary: >-
       The user's email address. This will be used to ensure that the current user's identity is used for fetching auth
       tokens.
-    deprecated:
-      content: This parameter will be ignored. Use userPrincipalName instead
-    name: userEmail
-    fullName: userEmail
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: This parameter will be ignored. Use userPrincipalName instead
     syntax:
       content: 'userEmail?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#userPrincipalName:member'
+        type: string
+  - name: userPrincipalName
+    uid: '@microsoft/sp-http!IAadTokenProviderConfiguration#userPrincipalName:member'
+    package: '@microsoft/sp-http!'
+    fullName: userPrincipalName
     summary: >-
       The user's principal name. This will be used to ensure that the current user's identity is used for fetching auth
       tokens. This parameter will avoid the "Request is ambiguous: multiple user identities are avaliable for the
       current request" error.
-    name: userPrincipalName
-    fullName: userPrincipalName
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'userPrincipalName?: string;'
       return:
-        type:
-          - string
+        type: string

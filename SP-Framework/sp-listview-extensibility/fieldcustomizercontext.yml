@@ -1,68 +1,47 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext:class'
-    summary: This object provides contextual information for BaseFieldCustomizer.
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `FieldCustomizerContext` class.
-    name: FieldCustomizerContext
-    fullName: FieldCustomizerContext
-    langs:
-      - typeScript
-    type: class
-    extends:
-      - '@microsoft/sp-extension-base!ExtensionContext:class'
-    inheritance:
-      - type: '@microsoft/sp-extension-base!ExtensionContext:class'
-        inheritance:
-          - type: '@microsoft/sp-component-base!BaseComponentContext:class'
+### YamlMime:TSType
+name: FieldCustomizerContext
+uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: FieldCustomizerContext
+summary: This object provides contextual information for BaseFieldCustomizer.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `FieldCustomizerContext` class.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: field
+    uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member'
-      - '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)'
-  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#field:member'
-    summary: Provides access to the SharePoint field that the customizer will operate on.
-    name: field
     fullName: field
-    langs:
-      - typeScript
-    type: property
+    summary: Provides access to the SharePoint field that the customizer will operate on.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'get field(): SPField;'
       return:
-        type:
-          - '@microsoft/sp-page-context!SPField:class'
-  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)'
+        type: '<xref uid="@microsoft/sp-page-context!SPField:class" />'
+methods:
+  - name: tryGetListView()
+    uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView:member(1)'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: tryGetListView()
     summary: >-
       If the field customizer is bounded to the SharePoint list view, this provides access to the list view specific
       functionality; otherwise the value is undefined.
     remarks: >-
       Although the SharePoint list view is the main usage scenario, field customizers can be used by other user
       interface surfaces. For example, in the future SharePoint may support field customizers on a display/edit form.
-    name: tryGetListView()
-    fullName: tryGetListView()
-    langs:
-      - typeScript
-    type: method
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'tryGetListView(): ListViewAccessor | undefined;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView~0:complex'
+        type: '<xref uid="@microsoft/sp-listview-extensibility!~ListViewAccessor:class" /> | undefined'
         description: 'the SharePoint list view, or undefined if there is none.'
-references:
-  - uid: '@microsoft/sp-extension-base!ExtensionContext:class'
-    name: ExtensionContext
-  - uid: '@microsoft/sp-component-base!BaseComponentContext:class'
-    name: BaseComponentContext
-  - uid: '@microsoft/sp-page-context!SPField:class'
-    name: SPField
-  - uid: '@microsoft/sp-listview-extensibility!FieldCustomizerContext#tryGetListView~0:complex'
-    name: ListViewAccessor | undefined
-    fullName: ListViewAccessor | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-listview-extensibility!~ListViewAccessor:class'
-        name: ListViewAccessor
-        fullName: ListViewAccessor
-      - name: ' | undefined'
-        fullName: ' | undefined'
+extends: '<xref uid="@microsoft/sp-extension-base!ExtensionContext:class" />'

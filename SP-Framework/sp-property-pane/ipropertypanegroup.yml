@@ -1,80 +1,68 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
-    summary: PropertyPane group. Group is part of the PropertyPanePage.
-    name: IPropertyPaneGroup
-    fullName: IPropertyPaneGroup
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IPropertyPaneGroup
+uid: '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
+package: '@microsoft/sp-property-pane!'
+fullName: IPropertyPaneGroup
+summary: PropertyPane group. Group is part of the PropertyPanePage.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: groupFields
+    uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#groupFields:member'
     package: '@microsoft/sp-property-pane!'
-    children:
-      - '@microsoft/sp-property-pane!IPropertyPaneGroup#groupFields:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneGroup#groupName:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneGroup#isCollapsed:member'
-      - '@microsoft/sp-property-pane!IPropertyPaneGroup#isGroupNameHidden:member'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#groupFields:member'
-    summary: List of PropertyPane fields.
-    name: groupFields
     fullName: groupFields
-    langs:
-      - typeScript
-    type: property
+    summary: List of PropertyPane fields.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'groupFields: IPropertyPaneField<any>[];'
       return:
-        type:
-          - '@microsoft/sp-property-pane!IPropertyPaneGroup#groupFields~0:complex'
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#groupName:member'
+        type: '<xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface" />&lt;any&gt;[]'
+  - name: groupName
+    uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#groupName:member'
+    package: '@microsoft/sp-property-pane!'
+    fullName: groupName
     summary: Display name for the group.
     remarks: >-
       For performance reasons, it's highly recommended to keep this name unique within the property pane page. If left
       empty, the group header will not render (not recommended for accordions).
-    name: groupName
-    fullName: groupName
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'groupName?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#isCollapsed:member'
+        type: string
+  - name: isCollapsed
+    uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#isCollapsed:member'
+    package: '@microsoft/sp-property-pane!'
+    fullName: isCollapsed
     summary: Indicates whether the PropertyPane group is collapsed or not.
     remarks: The default value is false.
-    name: isCollapsed
-    fullName: isCollapsed
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'isCollapsed?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#isGroupNameHidden:member'
+        type: boolean
+  - name: isGroupNameHidden
+    uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#isGroupNameHidden:member'
+    package: '@microsoft/sp-property-pane!'
+    fullName: isGroupNameHidden
     summary: Indicates whether group name should be hidden.
     remarks: >-
       The default value is false. Use this option to skip the rendering of group name to avoid empty group header being
       displayed.
-    name: isGroupNameHidden
-    fullName: isGroupNameHidden
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'isGroupNameHidden?: boolean;'
       return:
-        type:
-          - boolean
-references:
-  - uid: '@microsoft/sp-property-pane!IPropertyPaneGroup#groupFields~0:complex'
-    name: 'IPropertyPaneField<any>[]'
-    fullName: 'IPropertyPaneField<any>[]'
-    spec.typeScript:
-      - uid: '@microsoft/sp-property-pane!IPropertyPaneField:interface'
-        name: IPropertyPaneField
-        fullName: IPropertyPaneField
-      - name: '<any>[]'
-        fullName: '<any>[]'
+        type: boolean

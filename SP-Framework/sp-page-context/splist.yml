@@ -1,78 +1,72 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-page-context!SPList:class'
-    summary: >-
-      This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
-      list that hosts the page.
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `SPList` class.
-    name: SPList
-    fullName: SPList
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: SPList
+uid: '@microsoft/sp-page-context!SPList:class'
+package: '@microsoft/sp-page-context!'
+fullName: SPList
+summary: >-
+  This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint list
+  that hosts the page.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `SPList` class.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: id
+    uid: '@microsoft/sp-page-context!SPList#id:member'
     package: '@microsoft/sp-page-context!'
-    children:
-      - '@microsoft/sp-page-context!SPList#id:member'
-      - '@microsoft/sp-page-context!SPList#permissions:member'
-      - '@microsoft/sp-page-context!SPList#serverRelativeUrl:member'
-      - '@microsoft/sp-page-context!SPList#title:member'
-  - uid: '@microsoft/sp-page-context!SPList#id:member'
+    fullName: id
     summary: >-
       The GUID that identifies the SPList on the server. This property could be undefined if the information isn't
       available.
-    name: id
-    fullName: id
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly id: Guid;'
       return:
-        type:
-          - '@microsoft/sp-core-library!Guid:class'
-  - uid: '@microsoft/sp-page-context!SPList#permissions:member'
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+  - name: permissions
+    uid: '@microsoft/sp-page-context!SPList#permissions:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: permissions
     summary: >-
       Return the SPPermission object that represents the set of permissions that the current user has for interacting
       with the list.
-    name: permissions
-    fullName: permissions
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly permissions: SPPermission;'
       return:
-        type:
-          - '@microsoft/sp-page-context!default:class'
-  - uid: '@microsoft/sp-page-context!SPList#serverRelativeUrl:member'
+        type: '<xref uid="@microsoft/sp-page-context!default:class" />'
+  - name: serverRelativeUrl
+    uid: '@microsoft/sp-page-context!SPList#serverRelativeUrl:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: serverRelativeUrl
     summary: Returns the server-relative URL for this `SPList`<!-- -->.
     remarks: 'Example: "/sites/PubSite"'
-    name: serverRelativeUrl
-    fullName: serverRelativeUrl
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly serverRelativeUrl: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPList#title:member'
-    summary: Returns the title for this `SPList`<!-- -->.
-    name: title
+        type: string
+  - name: title
+    uid: '@microsoft/sp-page-context!SPList#title:member'
+    package: '@microsoft/sp-page-context!'
     fullName: title
-    langs:
-      - typeScript
-    type: property
+    summary: Returns the title for this `SPList`<!-- -->.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly title: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-core-library!Guid:class'
-    name: Guid
-  - uid: '@microsoft/sp-page-context!default:class'
-    name: SPPermission
+        type: string

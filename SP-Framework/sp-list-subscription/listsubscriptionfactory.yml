@@ -1,90 +1,66 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory:class'
-    summary: >-
-      Creates and manages subscriptions to list resources. Registers callbacks provided by the developer with the
-      subscription to handle subscription events.
-    name: ListSubscriptionFactory
-    fullName: ListSubscriptionFactory
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: ListSubscriptionFactory
+uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory:class'
+package: '@microsoft/sp-list-subscription!'
+fullName: ListSubscriptionFactory
+summary: >-
+  Creates and manages subscriptions to list resources. Registers callbacks provided by the developer with the
+  subscription to handle subscription events.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)(component)
+    uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory:constructor(1)'
     package: '@microsoft/sp-list-subscription!'
-    children:
-      - '@microsoft/sp-list-subscription!ListSubscriptionFactory:constructor(1)'
-      - '@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription:member(1)'
-      - '@microsoft/sp-list-subscription!ListSubscriptionFactory#deleteSubscription:member(1)'
-  - uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory:constructor(1)'
-    summary: Constructs a new instance of the `ListSubscriptionFactory` class
-    name: (constructor)(component)
     fullName: (constructor)(component)
-    langs:
-      - typeScript
-    type: constructor
+    summary: Constructs a new instance of the `ListSubscriptionFactory` class
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'constructor(component: BaseComponent);'
       parameters:
         - id: component
           description: ''
-          type:
-            - '@microsoft/sp-component-base!BaseComponent:class'
-          optional: false
-  - uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription:member(1)'
-    summary: Creates a connection to the list specified by the site id and list id.
-    name: createSubscription(settings)
+          type: '<xref uid="@microsoft/sp-component-base!BaseComponent:class" />'
+methods:
+  - name: createSubscription(settings)
+    uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription:member(1)'
+    package: '@microsoft/sp-list-subscription!'
     fullName: createSubscription(settings)
-    langs:
-      - typeScript
-    type: method
+    summary: Creates a connection to the list specified by the site id and list id.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'createSubscription(settings: ICreateSubscriptionSettings): Promise<IListSubscription>;'
-      return:
-        type:
-          - '@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription~0:complex'
-        description: Promise of the subscription to the list.
       parameters:
         - id: settings
           description: The various parameters
-          type:
-            - '@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface'
-          optional: false
-  - uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#deleteSubscription:member(1)'
-    summary: Deletes the subscription's connection to the resource.
-    name: deleteSubscription(subscription)
+          type: '<xref uid="@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface" />'
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-list-subscription!IListSubscription:interface" />&gt;'
+        description: Promise of the subscription to the list.
+  - name: deleteSubscription(subscription)
+    uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#deleteSubscription:member(1)'
+    package: '@microsoft/sp-list-subscription!'
     fullName: deleteSubscription(subscription)
-    langs:
-      - typeScript
-    type: method
+    summary: Deletes the subscription's connection to the resource.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'deleteSubscription(subscription: IListSubscription): void;'
-      return:
-        type:
-          - void
-        description: ''
       parameters:
         - id: subscription
           description: The subscription to delete.
-          type:
-            - '@microsoft/sp-list-subscription!IListSubscription:interface'
-          optional: false
-references:
-  - uid: '@microsoft/sp-component-base!BaseComponent:class'
-    name: BaseComponent
-  - uid: '@microsoft/sp-list-subscription!ListSubscriptionFactory#createSubscription~0:complex'
-    name: Promise<IListSubscription>
-    fullName: Promise<IListSubscription>
-    spec.typeScript:
-      - uid: '!Promise:interface'
-        name: Promise
-        fullName: Promise
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-list-subscription!IListSubscription:interface'
-        name: IListSubscription
-        fullName: IListSubscription
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-list-subscription!ICreateSubscriptionSettings:interface'
-    name: ICreateSubscriptionSettings
-  - uid: '@microsoft/sp-list-subscription!IListSubscription:interface'
-    name: IListSubscription
+          type: '<xref uid="@microsoft/sp-list-subscription!IListSubscription:interface" />'
+      return:
+        type: void
+        description: ''

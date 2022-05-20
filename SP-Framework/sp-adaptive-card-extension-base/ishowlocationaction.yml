@@ -1,47 +1,39 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface'
-    summary: Interface for Viva Show Location action
-    remarks: API under active development and not ready for use.
-    name: IShowLocationAction
-    fullName: IShowLocationAction
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - 'adaptivecards!IAction:interface'
-    inheritance:
-      - type: 'adaptivecards!IAction:interface'
+### YamlMime:TSType
+name: IShowLocationAction
+uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IShowLocationAction
+summary: Interface for Viva Show Location action
+remarks: API under active development and not ready for use.
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: parameters
+    uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction#parameters:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    children:
-      - '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction#parameters:member'
-      - '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction#type:member'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction#parameters:member'
-    summary: Parameters that can be supplied with the Viva Show Location Action.
-    name: parameters
     fullName: parameters
-    langs:
-      - typeScript
-    type: property
+    summary: Parameters that can be supplied with the Viva Show Location Action.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'parameters?: IShowLocationActionParameters;'
       return:
-        type:
-          - '@microsoft/sp-adaptive-card-extension-base!IShowLocationActionParameters:interface'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction#type:member'
-    summary: Indicates this is a Viva show Location button.
-    name: type
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IShowLocationActionParameters:interface" />'
+  - name: type
+    uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction#type:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: type
-    langs:
-      - typeScript
-    type: property
+    summary: Indicates this is a Viva show Location button.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'type: ''VivaAction.ShowLocation'';'
       return:
-        type:
-          - '''VivaAction.ShowLocation'''
-references:
-  - uid: 'adaptivecards!IAction:interface'
-    name: IAction
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationActionParameters:interface'
-    name: IShowLocationActionParameters
+        type: '''VivaAction.ShowLocation'''
+extends: '<xref uid="adaptivecards!IAction:interface" />'

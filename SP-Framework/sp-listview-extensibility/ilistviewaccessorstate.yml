@@ -1,205 +1,135 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState:interface'
-    summary: Provides information about the state of the ListView.
-    name: IListViewAccessorState
-    fullName: IListViewAccessorState
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IListViewAccessorState
+uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState:interface'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: IListViewAccessorState
+summary: Provides information about the state of the ListView.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: appliedFilters
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#appliedFilters:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#appliedFilters:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#columns:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#folderInfo:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#list:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#rows:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#selectedRows:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#sortAscending:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#sortField:member'
-      - '@microsoft/sp-listview-extensibility!IListViewAccessorState#view:member'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#appliedFilters:member'
-    summary: Applied filters information.
-    name: appliedFilters
     fullName: appliedFilters
-    langs:
-      - typeScript
-    type: property
+    summary: Applied filters information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: |-
         readonly appliedFilters?: {
                 [fieldName: string]: IFilter;
             };
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IListViewAccessorState#appliedFilters~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#columns:member'
-    summary: Columns information.
-    name: columns
+        type: |-
+          {
+                  [fieldName: string]: <xref uid="@microsoft/sp-listview-extensibility!IFilter:interface" />;
+              }
+  - name: columns
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#columns:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: columns
-    langs:
-      - typeScript
-    type: property
+    summary: Columns information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly columns: ReadonlyArray<IColumn>;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IListViewAccessorState#columns~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#folderInfo:member'
-    summary: Current folder information.
-    name: folderInfo
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!IColumn:interface" />&gt;'
+  - name: folderInfo
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#folderInfo:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: folderInfo
-    langs:
-      - typeScript
-    type: property
+    summary: Current folder information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly folderInfo?: IFolderInfo;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IFolderInfo:interface'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#list:member'
-    summary: List information.
-    name: list
+        type: '<xref uid="@microsoft/sp-listview-extensibility!IFolderInfo:interface" />'
+  - name: list
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#list:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: list
-    langs:
-      - typeScript
-    type: property
+    summary: List information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly list?: IList;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IList:interface'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#rows:member'
-    summary: Rows information.
-    name: rows
+        type: '<xref uid="@microsoft/sp-listview-extensibility!IList:interface" />'
+  - name: rows
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#rows:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: rows
-    langs:
-      - typeScript
-    type: property
+    summary: Rows information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly rows: ReadonlyArray<IRow>;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IListViewAccessorState#rows~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#selectedRows:member'
-    summary: Selected rows information.
-    name: selectedRows
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!IRow:interface" />&gt;'
+  - name: selectedRows
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#selectedRows:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: selectedRows
-    langs:
-      - typeScript
-    type: property
+    summary: Selected rows information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly selectedRows?: ReadonlyArray<IRow>;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IListViewAccessorState#selectedRows~0:complex'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#sortAscending:member'
-    summary: Sort direction.
-    name: sortAscending
+        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-listview-extensibility!IRow:interface" />&gt;'
+  - name: sortAscending
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#sortAscending:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: sortAscending
-    langs:
-      - typeScript
-    type: property
+    summary: Sort direction.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly sortAscending?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#sortField:member'
-    summary: Sort field name.
-    name: sortField
+        type: boolean
+  - name: sortField
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#sortField:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: sortField
-    langs:
-      - typeScript
-    type: property
+    summary: Sort field name.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly sortField?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#view:member'
-    summary: View information.
-    name: view
+        type: string
+  - name: view
+    uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#view:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: view
-    langs:
-      - typeScript
-    type: property
+    summary: View information.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly view?: IView;'
       return:
-        type:
-          - '@microsoft/sp-listview-extensibility!IView:interface'
-references:
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#appliedFilters~0:complex'
-    name: |-
-      {
-              [fieldName: string]: IFilter;
-          }
-    fullName: |-
-      {
-              [fieldName: string]: IFilter;
-          }
-    spec.typeScript:
-      - name: |-
-          {
-                  [fieldName: string]: 
-        fullName: |-
-          {
-                  [fieldName: string]: 
-      - uid: '@microsoft/sp-listview-extensibility!IFilter:interface'
-        name: IFilter
-        fullName: IFilter
-      - name: |-
-          ;
-              }
-        fullName: |-
-          ;
-              }
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#columns~0:complex'
-    name: ReadonlyArray<IColumn>
-    fullName: ReadonlyArray<IColumn>
-    spec.typeScript:
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-listview-extensibility!IColumn:interface'
-        name: IColumn
-        fullName: IColumn
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-listview-extensibility!IFolderInfo:interface'
-    name: IFolderInfo
-  - uid: '@microsoft/sp-listview-extensibility!IList:interface'
-    name: IList
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#rows~0:complex'
-    name: ReadonlyArray<IRow>
-    fullName: ReadonlyArray<IRow>
-    spec.typeScript:
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-listview-extensibility!IRow:interface'
-        name: IRow
-        fullName: IRow
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-listview-extensibility!IListViewAccessorState#selectedRows~0:complex'
-    name: ReadonlyArray<IRow>
-    fullName: ReadonlyArray<IRow>
-    spec.typeScript:
-      - uid: '!ReadonlyArray:interface'
-        name: ReadonlyArray
-        fullName: ReadonlyArray
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-listview-extensibility!IRow:interface'
-        name: IRow
-        fullName: IRow
-      - name: '>'
-        fullName: '>'
-  - uid: '@microsoft/sp-listview-extensibility!IView:interface'
-    name: IView
+        type: '<xref uid="@microsoft/sp-listview-extensibility!IView:interface" />'

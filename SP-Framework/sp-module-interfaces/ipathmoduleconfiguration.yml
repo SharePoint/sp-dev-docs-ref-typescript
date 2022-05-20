@@ -1,26 +1,21 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration:interface'
-    summary: >-
-      This is the interface for a script module with the "path" type. Modules of this type must be provided by the
-      component developer.
-    isPreview: true
-    name: IPathModuleConfiguration
-    fullName: IPathModuleConfiguration
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
-    inheritance:
-      - type: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
+### YamlMime:TSType
+name: IPathModuleConfiguration
+uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IPathModuleConfiguration
+summary: >-
+  This is the interface for a script module with the "path" type. Modules of this type must be provided by the component
+  developer.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: globalDependencies
+    uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalDependencies:member'
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalDependencies:member'
-      - '@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalName:member'
-      - '@microsoft/sp-module-interfaces!IPathModuleConfiguration#path:member'
-      - '@microsoft/sp-module-interfaces!IPathModuleConfiguration#type:member'
-  - uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalDependencies:member'
+    fullName: globalDependencies
     summary: >-
       For non-AMD/module-pattern scripts that have dependencies (for example, jQuery plugins), the module loader will
       ensure that those dependencies are already loaded.
@@ -36,18 +31,17 @@ items:
 
 
       Example: `["jquery"]`
+    example: []
     isPreview: true
-    name: globalDependencies
-    fullName: globalDependencies
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'globalDependencies?: string[];'
       return:
-        type:
-          - 'string[]'
-  - uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalName:member'
+        type: 'string[]'
+  - name: globalName
+    uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#globalName:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: globalName
     summary: >-
       If this property is specified, this module is considered non-AMD and the module loader will not expect "define" or
       "require" to be called.
@@ -65,18 +59,17 @@ items:
 
 
       Example: `"$"`
+    example: []
     isPreview: true
-    name: globalName
-    fullName: globalName
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'globalName?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#path:member'
+        type: string
+  - name: path
+    uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#path:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: path
     summary: >-
       A path to this module's javascript resource either as a fully-qualified URL or as a path under the paths provided
       in the `internalModuleBaseUrls` field.
@@ -95,38 +88,24 @@ items:
 
 
       Example: `"master_2015-04-20/my-application.bundle_1928f8a0.js"`
+    example: []
     isPreview: true
-    name: path
-    fullName: path
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'path: string | IIntegrityPath;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IPathModuleConfiguration#path~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#type:member'
-    isPreview: true
-    name: type
+        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#type:member'
+    package: '@microsoft/sp-module-interfaces!'
     fullName: type
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'type: ''path'';'
       return:
-        type:
-          - '''path'''
-references:
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
-    name: IModuleConfigurationBase
-  - uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration#path~0:complex'
-    name: string | IIntegrityPath
-    fullName: string | IIntegrityPath
-    spec.typeScript:
-      - name: 'string | '
-        fullName: 'string | '
-      - uid: '@microsoft/sp-module-interfaces!IIntegrityPath:interface'
-        name: IIntegrityPath
-        fullName: IIntegrityPath
+        type: '''path'''
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'

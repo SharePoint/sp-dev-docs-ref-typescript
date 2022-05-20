@@ -1,22 +1,21 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
-    summary: >-
-      This interface describes how a client-side component is to be loaded and initialized by a SharePoint client
-      framework. It contains all data for loading an entrypoint script and its dependency scripts.
-    isPreview: true
-    name: IClientSideComponentLoaderConfiguration
-    fullName: IClientSideComponentLoaderConfiguration
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IClientSideComponentLoaderConfiguration
+uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IClientSideComponentLoaderConfiguration
+summary: >-
+  This interface describes how a client-side component is to be loaded and initialized by a SharePoint client framework.
+  It contains all data for loading an entrypoint script and its dependency scripts.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: entryModuleId
+    uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member'
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member'
-      - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#entryModuleId:member'
+    fullName: entryModuleId
     summary: This is the ID of one of the entries in the "scriptResources" dictionary.
     remarks: >-
       The loader will download and evaluate the script resource referenced in this field, resolve all dependencies
@@ -29,18 +28,17 @@ items:
 
 
       Example: `"myApplication.bundle"`
+    example: []
     isPreview: true
-    name: entryModuleId
-    fullName: entryModuleId
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'entryModuleId: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member'
+        type: string
+  - name: exportName
+    uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#exportName:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: exportName
     summary: The module referenced by the "entryModuleId" field may export an object with several fields.
     remarks: >-
       This value optionally references the name of a field on the object exported by the module referenced by the
@@ -61,18 +59,17 @@ items:
 
 
       Example: `mySpWebpart`
+    example: []
     isPreview: true
-    name: exportName
-    fullName: exportName
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'exportName?: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member'
+        type: string
+  - name: internalModuleBaseUrls
+    uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#internalModuleBaseUrls:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: internalModuleBaseUrls
     summary: >-
       This is an array of fully-qualified paths to be prepended to each of the script resource paths with the "internal"
       or "localized" type. If one fails to load, the loader will attempt to load from the next until there are no base
@@ -98,18 +95,17 @@ items:
 
 
       Example: `[ "https://contoso.akamaihd.net/files/", "https://contoso.msecnd.net/files/" ]`
+    example: []
     isPreview: true
-    name: internalModuleBaseUrls
-    fullName: internalModuleBaseUrls
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'internalModuleBaseUrls: string[];'
       return:
-        type:
-          - 'string[]'
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member'
+        type: 'string[]'
+  - name: scriptResources
+    uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: scriptResources
     summary: >-
       This is a dictionary of named script resources. `path` and `localizedPath` modules may reference each other and
       `manifest` modules are expected to be provided by the framework runtime. The resource named in the `entryModuleId`
@@ -151,43 +147,16 @@ items:
          }
        }
       ```
+    example: []
     isPreview: true
-    name: scriptResources
-    fullName: scriptResources
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: |-
         scriptResources: {
                 [name: string]: IModuleConfiguration;
             };
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources~0:complex'
-references:
-  - uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration#scriptResources~0:complex'
-    name: |-
-      {
-              [name: string]: IModuleConfiguration;
-          }
-    fullName: |-
-      {
-              [name: string]: IModuleConfiguration;
-          }
-    spec.typeScript:
-      - name: |-
+        type: |-
           {
-                  [name: string]: 
-        fullName: |-
-          {
-                  [name: string]: 
-      - uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:type'
-        name: IModuleConfiguration
-        fullName: IModuleConfiguration
-      - name: |-
-          ;
-              }
-        fullName: |-
-          ;
+                  [name: string]: <xref uid="@microsoft/sp-module-interfaces!IModuleConfiguration:type" />;
               }

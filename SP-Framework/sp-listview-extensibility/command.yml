@@ -1,81 +1,81 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!Command:class'
-    summary: Represents a command belonging to a command set.
-    remarks: >-
-      The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons,
-      context menu items, etc. These commands are initially defined in the extension's manifest file. At runtime, the
-      corresponding Command object can be obtained by calling
-      [BaseListViewCommandSet.tryGetCommand()](xref:@microsoft/sp-listview-extensibility!BaseListViewCommandSet%23tryGetCommand:member(1))<!--
-      -->. The command's appearance can be customized by assigning its properties, for example to hide a command that is
-      not contextually relevant, or to pluralize the title based on the number of selected items.
-    name: Command
-    fullName: Command
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: Command
+uid: '@microsoft/sp-listview-extensibility!Command:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: Command
+summary: Represents a command belonging to a command set.
+remarks: >-
+  The BaseListViewCommandSet extension type exposes generalized commands that may be displayed as tool bar buttons,
+  context menu items, etc. These commands are initially defined in the extension's manifest file. At runtime, the
+  corresponding Command object can be obtained by calling
+  [BaseListViewCommandSet.tryGetCommand()](xref:@microsoft/sp-listview-extensibility!BaseListViewCommandSet%23tryGetCommand:member(1))<!--
+  -->. The command's appearance can be customized by assigning its properties, for example to hide a command that is not
+  contextually relevant, or to pluralize the title based on the number of selected items.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: ariaLabel
+    uid: '@microsoft/sp-listview-extensibility!Command#ariaLabel:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!Command#ariaLabel:member'
-      - '@microsoft/sp-listview-extensibility!Command#disabled:member'
-      - '@microsoft/sp-listview-extensibility!Command#iconImageUrl:member'
-      - '@microsoft/sp-listview-extensibility!Command#id:member'
-      - '@microsoft/sp-listview-extensibility!Command#title:member'
-      - '@microsoft/sp-listview-extensibility!Command#visible:member'
-  - uid: '@microsoft/sp-listview-extensibility!Command#ariaLabel:member'
+    fullName: ariaLabel
     summary: >-
       Custom accessibility text for the browser's "aria-label" attribute. If omitted, the title property will be used by
       default. Example: "Show information. Press ENTER to select."
-    name: ariaLabel
-    fullName: ariaLabel
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'ariaLabel: string | undefined;'
       return:
-        type:
-          - string | undefined
-  - uid: '@microsoft/sp-listview-extensibility!Command#disabled:member'
-    summary: Whether the command is currently disabled.
-    name: disabled
+        type: string | undefined
+  - name: disabled
+    uid: '@microsoft/sp-listview-extensibility!Command#disabled:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: disabled
-    langs:
-      - typeScript
-    type: property
+    summary: Whether the command is currently disabled.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'disabled: boolean | undefined;'
       return:
-        type:
-          - boolean | undefined
-  - uid: '@microsoft/sp-listview-extensibility!Command#iconImageUrl:member'
+        type: boolean | undefined
+  - name: iconImageUrl
+    uid: '@microsoft/sp-listview-extensibility!Command#iconImageUrl:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: iconImageUrl
     summary: >-
       An optional URL for an image to be displayed next to the command. The requirements for this image are defined by
       the type of extension; some extension types may not display the image at all.
     remarks: This must be a absolute URL.
-    name: iconImageUrl
-    fullName: iconImageUrl
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'iconImageUrl: string | undefined;'
       return:
-        type:
-          - string | undefined
-  - uid: '@microsoft/sp-listview-extensibility!Command#id:member'
-    summary: Id of the command.
-    name: id
+        type: string | undefined
+  - name: id
+    uid: '@microsoft/sp-listview-extensibility!Command#id:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: id
-    langs:
-      - typeScript
-    type: property
+    summary: Id of the command.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'id: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-listview-extensibility!Command#title:member'
+        type: string
+  - name: title
+    uid: '@microsoft/sp-listview-extensibility!Command#title:member'
+    package: '@microsoft/sp-listview-extensibility!'
+    fullName: title
     summary: 'A short label to be displayed by the associated button, menu item, etc.'
     remarks: >-
       Example: "Show information"
@@ -85,25 +85,23 @@ items:
       toggling between “Schedule” and “Unschedule”. Developers are discouraged from assigning a title that radically
       alters the meaning of the command, because administrators should be able to examine the extension manifest to
       understand which commands are being implemented by a given extension.
-    name: title
-    fullName: title
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'title: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-listview-extensibility!Command#visible:member'
-    summary: True if the command is visible.
-    name: visible
+        type: string
+  - name: visible
+    uid: '@microsoft/sp-listview-extensibility!Command#visible:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: visible
-    langs:
-      - typeScript
-    type: property
+    summary: True if the command is visible.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'visible: boolean;'
       return:
-        type:
-          - boolean
+        type: boolean

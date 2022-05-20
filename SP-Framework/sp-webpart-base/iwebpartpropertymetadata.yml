@@ -1,20 +1,19 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata:interface'
-    summary: This is the structure used for map values in `IWebPartPropertiesMetadata`
-    name: IWebPartPropertyMetadata
-    fullName: IWebPartPropertyMetadata
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-component-base!IComponentPropertyMetadata:interface'
-    inheritance:
-      - type: '@microsoft/sp-component-base!IComponentPropertyMetadata:interface'
+### YamlMime:TSType
+name: IWebPartPropertyMetadata
+uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata:interface'
+package: '@microsoft/sp-webpart-base!'
+fullName: IWebPartPropertyMetadata
+summary: This is the structure used for map values in `IWebPartPropertiesMetadata`
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: dynamicPropertyType
+    uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#dynamicPropertyType:member'
     package: '@microsoft/sp-webpart-base!'
-    children:
-      - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#dynamicPropertyType:member'
-  - uid: '@microsoft/sp-webpart-base!IWebPartPropertyMetadata#dynamicPropertyType:member'
+    fullName: dynamicPropertyType
     summary: 'If specified, indicates that the property is a dynamic property and the type of the dynamic property.'
     remarks: >-
       If a web part has properties that are dynamically configurable, then use this flag to declare the property as a
@@ -30,16 +29,11 @@ items:
 
 
       Note: Web parts should be able to type cast the resultant value from the `tryGetValue` to suit their needs.
-    name: dynamicPropertyType
-    fullName: dynamicPropertyType
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'dynamicPropertyType?: ''boolean'' | ''number'' | ''string'' | ''array'' | ''object'';'
       return:
-        type:
-          - '''boolean'' | ''number'' | ''string'' | ''array'' | ''object'''
-references:
-  - uid: '@microsoft/sp-component-base!IComponentPropertyMetadata:interface'
-    name: IComponentPropertyMetadata
+        type: '''boolean'' | ''number'' | ''string'' | ''array'' | ''object'''
+extends: '<xref uid="@microsoft/sp-component-base!IComponentPropertyMetadata:interface" />'

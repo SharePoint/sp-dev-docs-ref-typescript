@@ -1,50 +1,51 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks:interface'
-    summary: The callbacks that can be triggered by a subscription event.
-    name: ISubscriptionCallbacks
-    fullName: ISubscriptionCallbacks
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: ISubscriptionCallbacks
+uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks:interface'
+package: '@microsoft/sp-list-subscription!'
+fullName: ISubscriptionCallbacks
+summary: The callbacks that can be triggered by a subscription event.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: connect
+    uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks#connect:member'
     package: '@microsoft/sp-list-subscription!'
-    children:
-      - '@microsoft/sp-list-subscription!ISubscriptionCallbacks#connect:member'
-      - '@microsoft/sp-list-subscription!ISubscriptionCallbacks#disconnect:member'
-      - '@microsoft/sp-list-subscription!ISubscriptionCallbacks#notification:member'
-  - uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks#connect:member'
-    summary: The callback to invoke when a connection has been made to the list.
-    name: connect
     fullName: connect
-    langs:
-      - typeScript
-    type: property
+    summary: The callback to invoke when a connection has been made to the list.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'connect?: () => void;'
       return:
-        type:
-          - () => void
-  - uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks#disconnect:member'
-    summary: The callback to invoke when the subscription is disconnected from the list.
-    name: disconnect
+        type: () =&gt; void
+  - name: disconnect
+    uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks#disconnect:member'
+    package: '@microsoft/sp-list-subscription!'
     fullName: disconnect
-    langs:
-      - typeScript
-    type: property
+    summary: The callback to invoke when the subscription is disconnected from the list.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'disconnect?: (reason: string) => void;'
       return:
-        type:
-          - '(reason: string) => void'
-  - uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks#notification:member'
-    summary: The callback to invoke when a change occurs in the list.
-    name: notification
+        type: '(reason: string) =&gt; void'
+  - name: notification
+    uid: '@microsoft/sp-list-subscription!ISubscriptionCallbacks#notification:member'
+    package: '@microsoft/sp-list-subscription!'
     fullName: notification
-    langs:
-      - typeScript
-    type: property
+    summary: The callback to invoke when a change occurs in the list.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'notification: () => void;'
       return:
-        type:
-          - () => void
+        type: () =&gt; void

@@ -1,176 +1,161 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-page-context!SPSite:class'
-    summary: >-
-      This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint
-      site collection ("SPSite") that hosts the page.
-    remarks: >-
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `SPSite` class.
-    name: SPSite
-    fullName: SPSite
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: SPSite
+uid: '@microsoft/sp-page-context!SPSite:class'
+package: '@microsoft/sp-page-context!'
+fullName: SPSite
+summary: >-
+  This class is primarily used with the `PageContext` class. It provides contextual information for the SharePoint site
+  collection ("SPSite") that hosts the page.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `SPSite` class.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: absoluteUrl
+    uid: '@microsoft/sp-page-context!SPSite#absoluteUrl:member'
     package: '@microsoft/sp-page-context!'
-    children:
-      - '@microsoft/sp-page-context!SPSite#absoluteUrl:member'
-      - '@microsoft/sp-page-context!SPSite#cdnPrefix:member'
-      - '@microsoft/sp-page-context!SPSite#classification:member'
-      - '@microsoft/sp-page-context!SPSite#correlationId:member'
-      - '@microsoft/sp-page-context!SPSite#group:member'
-      - '@microsoft/sp-page-context!SPSite#id:member'
-      - '@microsoft/sp-page-context!SPSite#isNoScriptEnabled:member'
-      - '@microsoft/sp-page-context!SPSite#recycleBinItemCount:member'
-      - '@microsoft/sp-page-context!SPSite#serverRelativeUrl:member'
-      - '@microsoft/sp-page-context!SPSite#serverRequestPath:member'
-      - '@microsoft/sp-page-context!SPSite#sitePagesEnabled:member'
-  - uid: '@microsoft/sp-page-context!SPSite#absoluteUrl:member'
+    fullName: absoluteUrl
     summary: Returns the absolute URL for this SPSite.
     remarks: 'Example: "https://example.com/sites/PubSite"'
-    name: absoluteUrl
-    fullName: absoluteUrl
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly absoluteUrl: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPSite#cdnPrefix:member'
-    summary: Returns the prefix of the application's specified cdn or an empty string if there isn't one.
-    name: cdnPrefix
+        type: string
+  - name: cdnPrefix
+    uid: '@microsoft/sp-page-context!SPSite#cdnPrefix:member'
+    package: '@microsoft/sp-page-context!'
     fullName: cdnPrefix
-    langs:
-      - typeScript
-    type: property
+    summary: Returns the prefix of the application's specified cdn or an empty string if there isn't one.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly cdnPrefix: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPSite#classification:member'
-    summary: Returns the classification of the site.
-    name: classification
+        type: string
+  - name: classification
+    uid: '@microsoft/sp-page-context!SPSite#classification:member'
+    package: '@microsoft/sp-page-context!'
     fullName: classification
-    langs:
-      - typeScript
-    type: property
+    summary: Returns the classification of the site.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly classification: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPSite#correlationId:member'
-    summary: Returns the correlation id to the current server request.
-    name: correlationId
+        type: string
+  - name: correlationId
+    uid: '@microsoft/sp-page-context!SPSite#correlationId:member'
+    package: '@microsoft/sp-page-context!'
     fullName: correlationId
-    langs:
-      - typeScript
-    type: property
+    summary: Returns the correlation id to the current server request.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly correlationId: Guid;'
       return:
-        type:
-          - '@microsoft/sp-core-library!Guid:class'
-  - uid: '@microsoft/sp-page-context!SPSite#group:member'
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+  - name: group
+    uid: '@microsoft/sp-page-context!SPSite#group:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: group
     summary: >-
       Contextual information about the O365 Group associated with this site. If there is no O365Group associated with
       the current site, this property will be undefined.
-    name: group
-    fullName: group
-    langs:
-      - typeScript
-    type: property
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly group: O365GroupAssociation | undefined;'
       return:
-        type:
-          - '@microsoft/sp-page-context!SPSite#group~0:complex'
-  - uid: '@microsoft/sp-page-context!SPSite#id:member'
-    summary: The GUID that identifies the SPSite on the server.
-    name: id
+        type: '<xref uid="@microsoft/sp-page-context!default:class" /> | undefined'
+  - name: id
+    uid: '@microsoft/sp-page-context!SPSite#id:member'
+    package: '@microsoft/sp-page-context!'
     fullName: id
-    langs:
-      - typeScript
-    type: property
+    summary: The GUID that identifies the SPSite on the server.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly id: Guid;'
       return:
-        type:
-          - '@microsoft/sp-core-library!Guid:class'
-  - uid: '@microsoft/sp-page-context!SPSite#isNoScriptEnabled:member'
-    summary: Returns true if isNoScript has been enabled on the SPSite.
-    name: isNoScriptEnabled
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+  - name: isNoScriptEnabled
+    uid: '@microsoft/sp-page-context!SPSite#isNoScriptEnabled:member'
+    package: '@microsoft/sp-page-context!'
     fullName: isNoScriptEnabled
-    langs:
-      - typeScript
-    type: property
+    summary: Returns true if isNoScript has been enabled on the SPSite.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly isNoScriptEnabled: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-page-context!SPSite#recycleBinItemCount:member'
-    summary: The amount of items in the recycle bin.
-    name: recycleBinItemCount
+        type: boolean
+  - name: recycleBinItemCount
+    uid: '@microsoft/sp-page-context!SPSite#recycleBinItemCount:member'
+    package: '@microsoft/sp-page-context!'
     fullName: recycleBinItemCount
-    langs:
-      - typeScript
-    type: property
+    summary: The amount of items in the recycle bin.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly recycleBinItemCount: number;'
       return:
-        type:
-          - number
-  - uid: '@microsoft/sp-page-context!SPSite#serverRelativeUrl:member'
+        type: number
+  - name: serverRelativeUrl
+    uid: '@microsoft/sp-page-context!SPSite#serverRelativeUrl:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: serverRelativeUrl
     summary: Returns the server-relative URL for this SPSite.
     remarks: 'Example: "/sites/PubSite"'
-    name: serverRelativeUrl
-    fullName: serverRelativeUrl
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly serverRelativeUrl: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPSite#serverRequestPath:member'
+        type: string
+  - name: serverRequestPath
+    uid: '@microsoft/sp-page-context!SPSite#serverRequestPath:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: serverRequestPath
     summary: Returns serverRelativeUrl of the original request.
     remarks: 'Example: "/teams/SPClientTest/SitePages/Home.aspx"'
-    name: serverRequestPath
-    fullName: serverRequestPath
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly serverRequestPath: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-page-context!SPSite#sitePagesEnabled:member'
-    summary: Returns true if SitePages are enabled on this SPSite.
-    name: sitePagesEnabled
+        type: string
+  - name: sitePagesEnabled
+    uid: '@microsoft/sp-page-context!SPSite#sitePagesEnabled:member'
+    package: '@microsoft/sp-page-context!'
     fullName: sitePagesEnabled
-    langs:
-      - typeScript
-    type: property
+    summary: Returns true if SitePages are enabled on this SPSite.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly sitePagesEnabled: boolean;'
       return:
-        type:
-          - boolean
-references:
-  - uid: '@microsoft/sp-core-library!Guid:class'
-    name: Guid
-  - uid: '@microsoft/sp-page-context!SPSite#group~0:complex'
-    name: O365GroupAssociation | undefined
-    fullName: default | undefined
-    spec.typeScript:
-      - uid: '@microsoft/sp-page-context!default:class'
-        name: O365GroupAssociation
-        fullName: default
-      - name: ' | undefined'
-        fullName: ' | undefined'
+        type: boolean

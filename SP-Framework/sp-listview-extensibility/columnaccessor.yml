@@ -1,50 +1,47 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
-    summary: 'Provides access to a ListView column, which is the visual presentation of a field.'
-    remarks: >-
-      A SharePoint "field" (SPField) defines the data storage for a property of a list item. (If the list item
-      represents a document, then the field is sometimes called a "property".)
+### YamlMime:TSType
+name: ColumnAccessor
+uid: '@microsoft/sp-listview-extensibility!ColumnAccessor:class'
+package: '@microsoft/sp-listview-extensibility!'
+fullName: ColumnAccessor
+summary: 'Provides access to a ListView column, which is the visual presentation of a field.'
+remarks: >-
+  A SharePoint "field" (SPField) defines the data storage for a property of a list item. (If the list item represents a
+  document, then the field is sometimes called a "property".)
 
 
-      A "column" is the visual presentation of a field, when displayed by the ListView.
+  A "column" is the visual presentation of a field, when displayed by the ListView.
 
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `ColumnAccessor` class.
-    name: ColumnAccessor
-    fullName: ColumnAccessor
-    langs:
-      - typeScript
-    type: class
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `ColumnAccessor` class.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: field
+    uid: '@microsoft/sp-listview-extensibility!ColumnAccessor#field:member'
     package: '@microsoft/sp-listview-extensibility!'
-    children:
-      - '@microsoft/sp-listview-extensibility!ColumnAccessor#field:member'
-      - '@microsoft/sp-listview-extensibility!ColumnAccessor#visible:member'
-  - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor#field:member'
-    summary: The server-side definition of the field. This property is read-only.
-    name: field
     fullName: field
-    langs:
-      - typeScript
-    type: property
+    summary: The server-side definition of the field. This property is read-only.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'abstract get field(): SPField;'
       return:
-        type:
-          - '@microsoft/sp-page-context!SPField:class'
-  - uid: '@microsoft/sp-listview-extensibility!ColumnAccessor#visible:member'
-    summary: Whether to show this column in the list view. This property is read-only.
-    name: visible
+        type: '<xref uid="@microsoft/sp-page-context!SPField:class" />'
+  - name: visible
+    uid: '@microsoft/sp-listview-extensibility!ColumnAccessor#visible:member'
+    package: '@microsoft/sp-listview-extensibility!'
     fullName: visible
-    langs:
-      - typeScript
-    type: property
+    summary: Whether to show this column in the list view. This property is read-only.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'abstract get visible(): boolean;'
       return:
-        type:
-          - boolean
-references:
-  - uid: '@microsoft/sp-page-context!SPField:class'
-    name: SPField
+        type: boolean

@@ -1,44 +1,39 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!IBeforeRedirectEventArgs:interface'
-    summary: Represents arguments used before redirecting event.
-    name: IBeforeRedirectEventArgs
-    fullName: IBeforeRedirectEventArgs
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-core-library!SPEventArgs:class'
-    inheritance:
-      - type: '@microsoft/sp-core-library!SPEventArgs:class'
+### YamlMime:TSType
+name: IBeforeRedirectEventArgs
+uid: '@microsoft/sp-http!IBeforeRedirectEventArgs:interface'
+package: '@microsoft/sp-http!'
+fullName: IBeforeRedirectEventArgs
+summary: Represents arguments used before redirecting event.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: cancel
+    uid: '@microsoft/sp-http!IBeforeRedirectEventArgs#cancel:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!IBeforeRedirectEventArgs#cancel:member'
-      - '@microsoft/sp-http!IBeforeRedirectEventArgs#redirectUrl:member'
-  - uid: '@microsoft/sp-http!IBeforeRedirectEventArgs#cancel:member'
-    summary: Call this method if the redirect should be cancelled because it is being handled by code in the cancelling class.
-    name: cancel
     fullName: cancel
-    langs:
-      - typeScript
-    type: property
+    summary: Call this method if the redirect should be cancelled because it is being handled by code in the cancelling class.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'cancel: () => void;'
       return:
-        type:
-          - () => void
-  - uid: '@microsoft/sp-http!IBeforeRedirectEventArgs#redirectUrl:member'
-    summary: The url of the page to redirect to if automatic redirect is cancelled
-    name: redirectUrl
+        type: () =&gt; void
+  - name: redirectUrl
+    uid: '@microsoft/sp-http!IBeforeRedirectEventArgs#redirectUrl:member'
+    package: '@microsoft/sp-http!'
     fullName: redirectUrl
-    langs:
-      - typeScript
-    type: property
+    summary: The url of the page to redirect to if automatic redirect is cancelled
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'redirectUrl: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-core-library!SPEventArgs:class'
-    name: SPEventArgs
+        type: string
+extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'

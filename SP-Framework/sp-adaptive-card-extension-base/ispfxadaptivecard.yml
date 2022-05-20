@@ -1,95 +1,33 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
-    summary: SPFx Adaptive Card Extension schema for Adaptive Cards.
-    name: ISPFxAdaptiveCard
-    fullName: ISPFxAdaptiveCard
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard~0:complex'
-    inheritance:
-      - type: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard~1:complex'
+### YamlMime:TSType
+name: ISPFxAdaptiveCard
+uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ISPFxAdaptiveCard
+summary: SPFx Adaptive Card Extension schema for Adaptive Cards.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: actions
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard#actions:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    children:
-      - '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard#actions:member'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard#actions:member'
-    summary: Types of actions being exposed
-    name: actions
     fullName: actions
-    langs:
-      - typeScript
-    type: property
+    summary: Types of actions being exposed
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: >-
         actions?: (ISubmitAction | IOpenUrlAction | IShowCardAction | ISelectMediaAction | IGetLocationAction |
         IShowLocationAction)[];
       return:
-        type:
-          - '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard#actions~0:complex'
-references:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard~0:complex'
-    name: Omit<IAdaptiveCard
-    fullName: Omit<IAdaptiveCard
-    spec.typeScript:
-      - uid: '!Omit:type'
-        name: Omit
-        fullName: Omit
-      - name: <
-        fullName: <
-      - uid: 'adaptivecards!IAdaptiveCard:interface'
-        name: IAdaptiveCard
-        fullName: IAdaptiveCard
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard~1:complex'
-    name: Omit<IAdaptiveCard
-    fullName: Omit<IAdaptiveCard
-    spec.typeScript:
-      - uid: '!Omit:type'
-        name: Omit
-        fullName: Omit
-      - name: <
-        fullName: <
-      - uid: 'adaptivecards!IAdaptiveCard:interface'
-        name: IAdaptiveCard
-        fullName: IAdaptiveCard
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard#actions~0:complex'
-    name: >-
-      (ISubmitAction | IOpenUrlAction | IShowCardAction | ISelectMediaAction | IGetLocationAction |
-      IShowLocationAction)[]
-    fullName: >-
-      (ISubmitAction | IOpenUrlAction | IShowCardAction | ISelectMediaAction | IGetLocationAction |
-      IShowLocationAction)[]
-    spec.typeScript:
-      - name: (
-        fullName: (
-      - uid: 'adaptivecards!ISubmitAction:interface'
-        name: ISubmitAction
-        fullName: ISubmitAction
-      - name: ' | '
-        fullName: ' | '
-      - uid: 'adaptivecards!IOpenUrlAction:interface'
-        name: IOpenUrlAction
-        fullName: IOpenUrlAction
-      - name: ' | '
-        fullName: ' | '
-      - uid: 'adaptivecards!IShowCardAction:interface'
-        name: IShowCardAction
-        fullName: IShowCardAction
-      - name: ' | '
-        fullName: ' | '
-      - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAction:interface'
-        name: ISelectMediaAction
-        fullName: ISelectMediaAction
-      - name: ' | '
-        fullName: ' | '
-      - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationAction:interface'
-        name: IGetLocationAction
-        fullName: IGetLocationAction
-      - name: ' | '
-        fullName: ' | '
-      - uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface'
-        name: IShowLocationAction
-        fullName: IShowLocationAction
-      - name: ')[]'
-        fullName: ')[]'
+        type: >-
+          (<xref uid="adaptivecards!ISubmitAction:interface" /> | <xref uid="adaptivecards!IOpenUrlAction:interface" />
+          | <xref uid="adaptivecards!IShowCardAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IGetLocationAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface" />)[]
+extends: 'Omit&lt;<xref uid="adaptivecards!IAdaptiveCard:interface" />'

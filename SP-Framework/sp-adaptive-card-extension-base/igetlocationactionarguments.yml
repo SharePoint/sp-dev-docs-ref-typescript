@@ -1,72 +1,42 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments:interface'
-    summary: >-
-      The object passed to
-      [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a Get
-      location Action is executed.
-    remarks: API under active development and not ready for use.
-    name: IGetLocationActionArguments
-    fullName: IGetLocationActionArguments
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments~0:complex'
-    inheritance:
-      - type: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments~1:complex'
+### YamlMime:TSType
+name: IGetLocationActionArguments
+uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IGetLocationActionArguments
+summary: >-
+  The object passed to
+  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a Get
+  location Action is executed.
+remarks: API under active development and not ready for use.
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: location
+    uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#location:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    children:
-      - '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#location:member'
-      - '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#type:member'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#location:member'
-    summary: 'Coordinates of the location. In case of erroneous situation, location object will be undefined.'
-    name: location
     fullName: location
-    langs:
-      - typeScript
-    type: property
+    summary: 'Coordinates of the location. In case of erroneous situation, location object will be undefined.'
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'location?: ILocation;'
       return:
-        type:
-          - '@microsoft/sp-adaptive-card-extension-base!ILocation:interface'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#type:member'
-    summary: The type of Adaptive Card Action.
-    name: type
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ILocation:interface" />'
+  - name: type
+    uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments#type:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: type
-    langs:
-      - typeScript
-    type: property
+    summary: The type of Adaptive Card Action.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'type: ''VivaAction.GetLocation'';'
       return:
-        type:
-          - '''VivaAction.GetLocation'''
-references:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments~0:complex'
-    name: Omit<IBaseActionArguments
-    fullName: Omit<IBaseActionArguments
-    spec.typeScript:
-      - uid: '!Omit:type'
-        name: Omit
-        fullName: Omit
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
-        name: IBaseActionArguments
-        fullName: IBaseActionArguments
-  - uid: '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionArguments~1:complex'
-    name: Omit<IBaseActionArguments
-    fullName: Omit<IBaseActionArguments
-    spec.typeScript:
-      - uid: '!Omit:type'
-        name: Omit
-        fullName: Omit
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
-        name: IBaseActionArguments
-        fullName: IBaseActionArguments
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ILocation:interface'
-    name: ILocation
+        type: '''VivaAction.GetLocation'''
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />'

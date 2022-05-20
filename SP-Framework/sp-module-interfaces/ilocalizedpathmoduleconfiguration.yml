@@ -1,27 +1,22 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface'
-    summary: This is the interface for a script module with the "localizedPath" type.
-    remarks: >-
-      Modules of this type must be provided by the component developer. These script resources are similar to those of
-      the "path" type, but they may be present at a number of different paths, to be selected by the user's locale.
-      Paths in this module type are loaded exactly the same way as "internal" modules are.
-    isPreview: true
-    name: ILocalizedPathModuleConfiguration
-    fullName: ILocalizedPathModuleConfiguration
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
-    inheritance:
-      - type: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
+### YamlMime:TSType
+name: ILocalizedPathModuleConfiguration
+uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: ILocalizedPathModuleConfiguration
+summary: This is the interface for a script module with the "localizedPath" type.
+remarks: >-
+  Modules of this type must be provided by the component developer. These script resources are similar to those of the
+  "path" type, but they may be present at a number of different paths, to be selected by the user's locale. Paths in
+  this module type are loaded exactly the same way as "internal" modules are.
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: defaultPath
+    uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member'
     package: '@microsoft/sp-module-interfaces!'
-    children:
-      - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member'
-      - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member'
-      - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#type:member'
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath:member'
+    fullName: defaultPath
     summary: >-
       A path to this module's default locale javascript resource either as a fully-qualified URL or as a path under the
       paths provided in the "internalModuleBaseUrls" field.
@@ -36,18 +31,17 @@ items:
 
 
       Example: `"master_2015-04-20/my-application_strings_default_af378e0d.js"`
+    example: []
     isPreview: true
-    name: defaultPath
-    fullName: defaultPath
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: 'defaultPath: string | IIntegrityPath;'
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member'
+        type: 'string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />'
+  - name: paths
+    uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: paths
     summary: >-
       This is a dictionary of locale keys (in the `"ll-cc"` format) to paths to this module's locale javascript resource
       either as a fully-qualified URL or as a path under the paths provided in the `"internalModuleBaseUrls"` field.
@@ -75,66 +69,30 @@ items:
          "fr-fr": "master_2015-04-20/my-application_strings_fr-fr_138af7e4.js"
        }
       ```
+    example: []
     isPreview: true
-    name: paths
-    fullName: paths
-    langs:
-      - typeScript
-    type: property
+    isDeprecated: false
     syntax:
       content: |-
         paths?: {
                 [locale: string]: string | IIntegrityPath;
             };
       return:
-        type:
-          - '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths~0:complex'
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#type:member'
-    isPreview: true
-    name: type
+        type: |-
+          {
+                  [locale: string]: string | <xref uid="@microsoft/sp-module-interfaces!IIntegrityPath:interface" />;
+              }
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#type:member'
+    package: '@microsoft/sp-module-interfaces!'
     fullName: type
-    langs:
-      - typeScript
-    type: property
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'type: ''localizedPath'';'
       return:
-        type:
-          - '''localizedPath'''
-references:
-  - uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
-    name: IModuleConfigurationBase
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#defaultPath~0:complex'
-    name: string | IIntegrityPath
-    fullName: string | IIntegrityPath
-    spec.typeScript:
-      - name: 'string | '
-        fullName: 'string | '
-      - uid: '@microsoft/sp-module-interfaces!IIntegrityPath:interface'
-        name: IIntegrityPath
-        fullName: IIntegrityPath
-  - uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration#paths~0:complex'
-    name: |-
-      {
-              [locale: string]: string | IIntegrityPath;
-          }
-    fullName: |-
-      {
-              [locale: string]: string | IIntegrityPath;
-          }
-    spec.typeScript:
-      - name: |-
-          {
-                  [locale: string]: string | 
-        fullName: |-
-          {
-                  [locale: string]: string | 
-      - uid: '@microsoft/sp-module-interfaces!IIntegrityPath:interface'
-        name: IIntegrityPath
-        fullName: IIntegrityPath
-      - name: |-
-          ;
-              }
-        fullName: |-
-          ;
-              }
+        type: '''localizedPath'''
+extends: '<xref uid="@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface" />'

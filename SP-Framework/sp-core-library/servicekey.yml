@@ -1,99 +1,38 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-core-library!ServiceKey:class'
-    summary: >-
-      The ServiceKey is a lookup key that is used when calling
-      [ServiceScope.consume()](xref:@microsoft/sp-core-library!ServiceScope%23consume:member(1)) to fetch a dependency.
-    remarks: >-
-      Every service key also provides a default implementation of the dependency, which will be automatically created in
-      the root scope if the dependency is not found. Providing a default implementation ensures that new dependencies
-      can be safely introduced without inadvertently breaking components that are loaded by an older host that does not
-      provide the new dependency.
-    name: ServiceKey
-    fullName: ServiceKey
-    langs:
-      - typeScript
-    type: class
+### YamlMime:TSType
+name: ServiceKey
+uid: '@microsoft/sp-core-library!ServiceKey:class'
+package: '@microsoft/sp-core-library!'
+fullName: ServiceKey
+summary: >-
+  The ServiceKey is a lookup key that is used when calling
+  [ServiceScope.consume()](xref:@microsoft/sp-core-library!ServiceScope%23consume:member(1)) to fetch a dependency.
+remarks: >-
+  Every service key also provides a default implementation of the dependency, which will be automatically created in the
+  root scope if the dependency is not found. Providing a default implementation ensures that new dependencies can be
+  safely introduced without inadvertently breaking components that are loaded by an older host that does not provide the
+  new dependency.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: defaultCreator
+    uid: '@microsoft/sp-core-library!ServiceKey#defaultCreator:member'
     package: '@microsoft/sp-core-library!'
-    children:
-      - '@microsoft/sp-core-library!ServiceKey.create:member(1)'
-      - '@microsoft/sp-core-library!ServiceKey.createCustom:member(1)'
-      - '@microsoft/sp-core-library!ServiceKey#defaultCreator:member'
-      - '@microsoft/sp-core-library!ServiceKey#id:member'
-      - '@microsoft/sp-core-library!ServiceKey#name:member'
-  - uid: '@microsoft/sp-core-library!ServiceKey.create:member(1)'
-    summary: >-
-      Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that accepts
-      the standard constructor parameter.
-    remarks: >-
-      If you want to specify custom constructor parameters, use
-      [ServiceKey.createCustom()](xref:@microsoft/sp-core-library!ServiceKey.createCustom:member(1)) instead.
-    name: 'create(name, serviceClass)'
-    fullName: 'create(name, serviceClass)'
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: |-
-        static create<TKey>(name: string, serviceClass: {
-                new (serviceScope: ServiceScope): TKey;
-            }): ServiceKey<TKey>;
-      return:
-        type:
-          - '@microsoft/sp-core-library!ServiceKey.create~0:complex'
-        description: the newly created ServiceKey
-      parameters:
-        - id: name
-          description: A name such as "my-package.IMyService" which should be unique across packages.
-          type:
-            - string
-          optional: false
-        - id: serviceClass
-          description: the TypeScript class that implements the service.
-          type:
-            - '@microsoft/sp-core-library!ServiceKey.create~1:complex'
-          optional: false
-      typeParameters:
-        - id: TKey
-  - uid: '@microsoft/sp-core-library!ServiceKey.createCustom:member(1)'
-    summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
-    name: 'createCustom(name, defaultCreator)'
-    fullName: 'createCustom(name, defaultCreator)'
-    langs:
-      - typeScript
-    type: method
-    syntax:
-      content: 'static createCustom<TKey>(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;'
-      return:
-        type:
-          - '@microsoft/sp-core-library!ServiceKey.createCustom~0:complex'
-        description: the newly created service key
-      parameters:
-        - id: name
-          description: A name such as "my-package.IMyService" which should be unique across packages.
-          type:
-            - string
-          optional: false
-        - id: defaultCreator
-          description: a callback that returns an object that implements the T interface
-          type:
-            - '@microsoft/sp-core-library!ServiceKey.createCustom~1:complex'
-          optional: false
-      typeParameters:
-        - id: TKey
-  - uid: '@microsoft/sp-core-library!ServiceKey#defaultCreator:member'
-    summary: A callback function that constructs the default instance of this service.
-    name: defaultCreator
     fullName: defaultCreator
-    langs:
-      - typeScript
-    type: property
+    summary: A callback function that constructs the default instance of this service.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly defaultCreator: ServiceCreator<T>;'
       return:
-        type:
-          - '@microsoft/sp-core-library!ServiceKey#defaultCreator~0:complex'
-  - uid: '@microsoft/sp-core-library!ServiceKey#id:member'
+        type: '<xref uid="@microsoft/sp-core-library!ServiceCreator:type" />&lt;T&gt;'
+  - name: id
+    uid: '@microsoft/sp-core-library!ServiceKey#id:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: id
     summary: A unique identifier for this service key.
     remarks: >-
       This identifier is an automatically generated string that will be unique for the lifetime of the page. Callers
@@ -106,17 +45,17 @@ items:
       was passed to ServiceKey.create(). This is because each call to ServiceKey.create() could potentially provide a
       different defaultCreator implementation, whereas one of the design goals of ServiceScope is that the order in
       which libraries are loaded should never affect the resulting tree of scopes.
-    name: id
-    fullName: id
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly id: string;'
       return:
-        type:
-          - string
-  - uid: '@microsoft/sp-core-library!ServiceKey#name:member'
+        type: string
+  - name: name
+    uid: '@microsoft/sp-core-library!ServiceKey#name:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: name
     summary: The name of the service.
     remarks: >-
       This name is used for logging and diagnostic purposes only. To make it unique, the recommended convention is the
@@ -125,75 +64,63 @@ items:
 
       The system does not assume that this string is unique. Instead, the
       [ServiceKey.id](xref:@microsoft/sp-core-library!ServiceKey%23id:member) is used wherever a lookup key is needed.
-    name: name
-    fullName: name
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'readonly name: string;'
       return:
-        type:
-          - string
-references:
-  - uid: '@microsoft/sp-core-library!ServiceKey.create~0:complex'
-    name: ServiceKey<TKey>
-    fullName: default<TKey>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!default:class'
-        name: ServiceKey
-        fullName: default
-      - name: <TKey>
-        fullName: <TKey>
-  - uid: '@microsoft/sp-core-library!ServiceKey.create~1:complex'
-    name: |-
-      {
-              new (serviceScope: ServiceScope): TKey;
-          }
-    fullName: |-
-      {
-              new (serviceScope: default): TKey;
-          }
-    spec.typeScript:
-      - name: |-
-          {
-                  new (serviceScope: 
-        fullName: |-
-          {
-                  new (serviceScope: 
-      - uid: '@microsoft/sp-core-library!default:class'
-        name: ServiceScope
-        fullName: default
-      - name: |-
-          ): TKey;
-              }
-        fullName: |-
-          ): TKey;
-              }
-  - uid: '@microsoft/sp-core-library!ServiceKey.createCustom~0:complex'
-    name: ServiceKey<TKey>
-    fullName: default<TKey>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!default:class'
-        name: ServiceKey
-        fullName: default
-      - name: <TKey>
-        fullName: <TKey>
-  - uid: '@microsoft/sp-core-library!ServiceKey.createCustom~1:complex'
-    name: ServiceCreator<TKey>
-    fullName: ServiceCreator<TKey>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!ServiceCreator:type'
-        name: ServiceCreator
-        fullName: ServiceCreator
-      - name: <TKey>
-        fullName: <TKey>
-  - uid: '@microsoft/sp-core-library!ServiceKey#defaultCreator~0:complex'
-    name: ServiceCreator<T>
-    fullName: ServiceCreator<T>
-    spec.typeScript:
-      - uid: '@microsoft/sp-core-library!ServiceCreator:type'
-        name: ServiceCreator
-        fullName: ServiceCreator
-      - name: <T>
-        fullName: <T>
+        type: string
+methods:
+  - name: 'create(name, serviceClass)'
+    uid: '@microsoft/sp-core-library!ServiceKey.create:member(1)'
+    package: '@microsoft/sp-core-library!'
+    fullName: 'create(name, serviceClass)'
+    summary: >-
+      Constructs a new ServiceKey whose default implementation will be a new instance of a TypeScript class that accepts
+      the standard constructor parameter.
+    remarks: >-
+      If you want to specify custom constructor parameters, use
+      [ServiceKey.createCustom()](xref:@microsoft/sp-core-library!ServiceKey.createCustom:member(1)) instead.
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        static create<TKey>(name: string, serviceClass: {
+                new (serviceScope: ServiceScope): TKey;
+            }): ServiceKey<TKey>;
+      parameters:
+        - id: name
+          description: A name such as "my-package.IMyService" which should be unique across packages.
+          type: string
+        - id: serviceClass
+          description: the TypeScript class that implements the service.
+          type: |-
+            {
+                    new (serviceScope: <xref uid="@microsoft/sp-core-library!default:class" />): TKey;
+                }
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />&lt;TKey&gt;'
+        description: the newly created ServiceKey
+  - name: 'createCustom(name, defaultCreator)'
+    uid: '@microsoft/sp-core-library!ServiceKey.createCustom:member(1)'
+    package: '@microsoft/sp-core-library!'
+    fullName: 'createCustom(name, defaultCreator)'
+    summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'static createCustom<TKey>(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;'
+      parameters:
+        - id: name
+          description: A name such as "my-package.IMyService" which should be unique across packages.
+          type: string
+        - id: defaultCreator
+          description: a callback that returns an object that implements the T interface
+          type: '<xref uid="@microsoft/sp-core-library!ServiceCreator:type" />&lt;TKey&gt;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!default:class" />&lt;TKey&gt;'
+        description: the newly created service key

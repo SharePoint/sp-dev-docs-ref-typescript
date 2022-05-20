@@ -1,95 +1,55 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments:interface'
-    summary: >-
-      The object passed to
-      [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a
-      `SelectMedia` Action is executed.
-    remarks: API under active development and not ready for use.
-    name: ISelectMediaActionArguments
-    fullName: ISelectMediaActionArguments
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments~0:complex'
-    inheritance:
-      - type: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments~1:complex'
+### YamlMime:TSType
+name: ISelectMediaActionArguments
+uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ISelectMediaActionArguments
+summary: >-
+  The object passed to
+  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when a
+  `SelectMedia` Action is executed.
+remarks: API under active development and not ready for use.
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: data
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#data:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    children:
-      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#data:member'
-      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#media:member'
-      - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#type:member'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#data:member'
-    summary: Submit Action data that is passed to internal action handler to ensure forms do not clear.
-    isPreview: true
-    name: data
     fullName: data
-    langs:
-      - typeScript
-    type: property
+    summary: Submit Action data that is passed to internal action handler to ensure forms do not clear.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'data: any;'
       return:
-        type:
-          - any
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#media:member'
-    summary: media object returned media picker API
-    isPreview: true
-    name: media
+        type: any
+  - name: media
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#media:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: media
-    langs:
-      - typeScript
-    type: property
+    summary: media object returned media picker API
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'media: ISelectMediaAttachment[];'
       return:
-        type:
-          - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#media~0:complex'
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#type:member'
-    summary: The type of Adaptive Card Action.
-    isPreview: true
-    name: type
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface" />[]'
+  - name: type
+    uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#type:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: type
-    langs:
-      - typeScript
-    type: property
+    summary: The type of Adaptive Card Action.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
     syntax:
       content: 'type: ''VivaAction.SelectMedia'';'
       return:
-        type:
-          - '''VivaAction.SelectMedia'''
-references:
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments~0:complex'
-    name: Omit<IBaseActionArguments
-    fullName: Omit<IBaseActionArguments
-    spec.typeScript:
-      - uid: '!Omit:type'
-        name: Omit
-        fullName: Omit
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
-        name: IBaseActionArguments
-        fullName: IBaseActionArguments
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments~1:complex'
-    name: Omit<IBaseActionArguments
-    fullName: Omit<IBaseActionArguments
-    spec.typeScript:
-      - uid: '!Omit:type'
-        name: Omit
-        fullName: Omit
-      - name: <
-        fullName: <
-      - uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
-        name: IBaseActionArguments
-        fullName: IBaseActionArguments
-  - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments#media~0:complex'
-    name: 'ISelectMediaAttachment[]'
-    fullName: 'ISelectMediaAttachment[]'
-    spec.typeScript:
-      - uid: '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAttachment:interface'
-        name: ISelectMediaAttachment
-        fullName: ISelectMediaAttachment
-      - name: '[]'
-        fullName: '[]'
+        type: '''VivaAction.SelectMedia'''
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface" />'

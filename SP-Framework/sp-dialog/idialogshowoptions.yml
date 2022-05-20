@@ -1,16 +1,19 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-dialog!IDialogShowOptions:interface'
-    summary: Options for showing a dialog
-    name: IDialogShowOptions
-    fullName: IDialogShowOptions
-    langs:
-      - typeScript
-    type: interface
+### YamlMime:TSType
+name: IDialogShowOptions
+uid: '@microsoft/sp-dialog!IDialogShowOptions:interface'
+package: '@microsoft/sp-dialog!'
+fullName: IDialogShowOptions
+summary: Options for showing a dialog
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: confirmOpen
+    uid: '@microsoft/sp-dialog!IDialogShowOptions#confirmOpen:member'
     package: '@microsoft/sp-dialog!'
-    children:
-      - '@microsoft/sp-dialog!IDialogShowOptions#confirmOpen:member'
-  - uid: '@microsoft/sp-dialog!IDialogShowOptions#confirmOpen:member'
+    fullName: confirmOpen
     summary: A callback that is invoked immediately before the dialog receives focus.
     remarks: >-
       Provide this callback if there is a case when you want to abort showing the dialog before it's approved by the
@@ -18,13 +21,10 @@ items:
       requesting the dialog is disposed and you don't want to show the dialog anymore. It is important to keep this
       callback lightweight so the framework can resolve it quickly and the user interface does not have to wait a long
       time for it.
-    name: confirmOpen
-    fullName: confirmOpen
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'confirmOpen?: () => boolean;'
       return:
-        type:
-          - () => boolean
+        type: () =&gt; boolean

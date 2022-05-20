@@ -1,21 +1,19 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
-    summary: Flags interface for SPHttpClientCommonConfiguration
-    name: ISPHttpClientCommonConfiguration
-    fullName: ISPHttpClientCommonConfiguration
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-http!IHttpClientConfiguration:interface'
-    inheritance:
-      - type: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+### YamlMime:TSType
+name: ISPHttpClientCommonConfiguration
+uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
+package: '@microsoft/sp-http!'
+fullName: ISPHttpClientCommonConfiguration
+summary: Flags interface for SPHttpClientCommonConfiguration
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: jsonRequest
+    uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonRequest:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonRequest:member'
-      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonResponse:member'
-  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonRequest:member'
+    fullName: jsonRequest
     summary: Automatically configure the "Content-Type" header for a JSON payload.
     remarks: >-
       When this switch is true:
@@ -29,17 +27,17 @@ items:
 
 
       For OData 4.0, the value is 'application/json;charset=utf-8'.
-    name: jsonRequest
-    fullName: jsonRequest
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'jsonRequest?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonResponse:member'
+        type: boolean
+  - name: jsonResponse
+    uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration#jsonResponse:member'
+    package: '@microsoft/sp-http!'
+    fullName: jsonResponse
     summary: Automatically configure the "Accept" header for a JSON payload.
     remarks: |-
       When this switch is true:
@@ -49,16 +47,11 @@ items:
       For OData 3.0, the value is 'application/json'.
 
       For OData 4.0, the value is 'application/json;odata.metadata=minimal'.
-    name: jsonResponse
-    fullName: jsonResponse
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'jsonResponse?: boolean;'
       return:
-        type:
-          - boolean
-references:
-  - uid: '@microsoft/sp-http!IHttpClientConfiguration:interface'
-    name: IHttpClientConfiguration
+        type: boolean
+extends: '<xref uid="@microsoft/sp-http!IHttpClientConfiguration:interface" />'

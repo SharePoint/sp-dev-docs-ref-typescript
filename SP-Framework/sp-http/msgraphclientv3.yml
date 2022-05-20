@@ -1,29 +1,31 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!MSGraphClientV3:class'
-    summary: MSGraphClient is used to perform REST calls against Microsoft Graph.
-    remarks: >-
-      The Microsoft Graph JavaScript client library is a lightweight wrapper around the Microsoft Graph API. This class
-      allows developers to start making REST calls to MSGraph without needing to initialize the the MSGraph client
-      library. If a custom configuration is desired, the MSGraphClient api function needs to be provided with that
-      custom configuration for every request.
+### YamlMime:TSType
+name: MSGraphClientV3
+uid: '@microsoft/sp-http!MSGraphClientV3:class'
+package: '@microsoft/sp-http!'
+fullName: MSGraphClientV3
+summary: MSGraphClient is used to perform REST calls against Microsoft Graph.
+remarks: >-
+  The Microsoft Graph JavaScript client library is a lightweight wrapper around the Microsoft Graph API. This class
+  allows developers to start making REST calls to MSGraph without needing to initialize the the MSGraph client library.
+  If a custom configuration is desired, the MSGraphClient api function needs to be provided with that custom
+  configuration for every request.
 
 
-      For more information:
-      [https://github.com/microsoftgraph/msgraph-sdk-javascript](https://github.com/microsoftgraph/msgraph-sdk-javascript)
+  For more information:
+  [https://github.com/microsoftgraph/msgraph-sdk-javascript](https://github.com/microsoftgraph/msgraph-sdk-javascript)
 
 
-      The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
-      create subclasses that extend the `MSGraphClientV3` class.
-    name: MSGraphClientV3
-    fullName: MSGraphClientV3
-    langs:
-      - typeScript
-    type: class
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `MSGraphClientV3` class.
+example: []
+isPreview: false
+isDeprecated: false
+type: class
+methods:
+  - name: api(path)
+    uid: '@microsoft/sp-http!MSGraphClientV3#api:member(1)'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!MSGraphClientV3#api:member(1)'
-  - uid: '@microsoft/sp-http!MSGraphClientV3#api:member(1)'
+    fullName: api(path)
     summary: All calls to Microsoft Graph are chained together starting with the api function.
     remarks: >-
       Path supports the following formats: \* me \* /me \* https://graph.microsoft.com/v1.0/me \*
@@ -32,23 +34,15 @@ items:
 
       The authProvider and baseUrl option should not be used, as they have already been provided by the framework. See
       the official documentation here: https://github.com/microsoftgraph/msgraph-sdk-javascript
-    name: api(path)
-    fullName: api(path)
-    langs:
-      - typeScript
-    type: method
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'api(path: string): GraphRequest;'
-      return:
-        type:
-          - '@microsoft/microsoft-graph-client!GraphRequest:class'
-        description: ''
       parameters:
         - id: path
           description: The path for the request to MSGraph.
-          type:
-            - string
-          optional: false
-references:
-  - uid: '@microsoft/microsoft-graph-client!GraphRequest:class'
-    name: GraphRequest
+          type: string
+      return:
+        type: '<xref uid="@microsoft/microsoft-graph-client!GraphRequest:class" />'
+        description: ''

@@ -1,24 +1,19 @@
-### YamlMime:UniversalReference
-items:
-  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
-    summary: Flags interface for SPHttpClientConfiguration.
-    name: ISPHttpClientConfiguration
-    fullName: ISPHttpClientConfiguration
-    langs:
-      - typeScript
-    type: interface
-    extends:
-      - '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
-    inheritance:
-      - type: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
-        inheritance:
-          - type: '@microsoft/sp-http!IHttpClientConfiguration:interface'
+### YamlMime:TSType
+name: ISPHttpClientConfiguration
+uid: '@microsoft/sp-http!ISPHttpClientConfiguration:interface'
+package: '@microsoft/sp-http!'
+fullName: ISPHttpClientConfiguration
+summary: Flags interface for SPHttpClientConfiguration.
+remarks: ''
+example: []
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: defaultODataVersion
+    uid: '@microsoft/sp-http!ISPHttpClientConfiguration#defaultODataVersion:member'
     package: '@microsoft/sp-http!'
-    children:
-      - '@microsoft/sp-http!ISPHttpClientConfiguration#defaultODataVersion:member'
-      - '@microsoft/sp-http!ISPHttpClientConfiguration#defaultSameOriginCredentials:member'
-      - '@microsoft/sp-http!ISPHttpClientConfiguration#requestDigest:member'
-  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration#defaultODataVersion:member'
+    fullName: defaultODataVersion
     summary: Automatically configure the "OData-Version" header.
     remarks: >-
       When this switch is specified (i.e. not undefined): If the "OData-Version" header was not explicitly added for the
@@ -27,17 +22,17 @@ items:
 
       NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases.
       The recommended version is 4.0.
-    name: defaultODataVersion
-    fullName: defaultODataVersion
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'defaultODataVersion?: ODataVersion;'
       return:
-        type:
-          - '@microsoft/sp-http!default:class'
-  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration#defaultSameOriginCredentials:member'
+        type: '<xref uid="@microsoft/sp-http!default:class" />'
+  - name: defaultSameOriginCredentials
+    uid: '@microsoft/sp-http!ISPHttpClientConfiguration#defaultSameOriginCredentials:member'
+    package: '@microsoft/sp-http!'
+    fullName: defaultSameOriginCredentials
     summary: Automatically configure the RequestInit.credentials.
     remarks: >-
       When this switch is true:
@@ -48,17 +43,17 @@ items:
 
 
       For more information, see the spec: https://fetch.spec.whatwg.org/\#cors-protocol-and-credentials
-    name: defaultSameOriginCredentials
-    fullName: defaultSameOriginCredentials
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'defaultSameOriginCredentials?: boolean;'
       return:
-        type:
-          - boolean
-  - uid: '@microsoft/sp-http!ISPHttpClientConfiguration#requestDigest:member'
+        type: boolean
+  - name: requestDigest
+    uid: '@microsoft/sp-http!ISPHttpClientConfiguration#requestDigest:member'
+    package: '@microsoft/sp-http!'
+    fullName: requestDigest
     summary: Automatically provide an "X-RequestDigest" header for authentication.
     remarks: >-
       When this switch is true:
@@ -67,20 +62,11 @@ items:
       If the "X-RequestDigest" header was not explicitly added for the request, then SPHttpClient will add it if the
       request is a write operation (i.e. an HTTP method other than "GET", "HEAD", or "OPTIONS"). The request digest is
       managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed.
-    name: requestDigest
-    fullName: requestDigest
-    langs:
-      - typeScript
-    type: property
+    example: []
+    isPreview: false
+    isDeprecated: false
     syntax:
       content: 'requestDigest?: boolean;'
       return:
-        type:
-          - boolean
-references:
-  - uid: '@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface'
-    name: ISPHttpClientCommonConfiguration
-  - uid: '@microsoft/sp-http!IHttpClientConfiguration:interface'
-    name: IHttpClientConfiguration
-  - uid: '@microsoft/sp-http!default:class'
-    name: ODataVersion
+        type: boolean
+extends: '<xref uid="@microsoft/sp-http!ISPHttpClientCommonConfiguration:interface" />'
