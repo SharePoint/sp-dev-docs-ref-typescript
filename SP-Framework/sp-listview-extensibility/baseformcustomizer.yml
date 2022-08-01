@@ -20,7 +20,7 @@ properties:
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
       the constructor), but child classes should redeclare it as readonly.
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'readonly context: FormCustomizerContext;'
@@ -32,7 +32,7 @@ properties:
     fullName: displayMode
     summary: 'Display mode of the form: Edit, Display or New.'
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get displayMode(): FormDisplayMode;'
@@ -46,7 +46,7 @@ properties:
       This property is a pointer to the root DOM element of the form. This is a DIV element and contains the whole DOM
       subtree of the form.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get domElement(): HTMLElement;'
@@ -59,7 +59,7 @@ methods:
     fullName: dispose()
     summary: Disposes the component.
     remarks: 'Please, do not override this method. Override the `onDispose` method instead.'
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'dispose(): void;'
@@ -72,7 +72,7 @@ methods:
     fullName: formClosed()
     summary: Call this method after the form has been closed/cancelled to inform the application that the form has been closed.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected formClosed(): void;'
@@ -85,7 +85,7 @@ methods:
     fullName: formSaved()
     summary: Call this method after the form has been saved to inform the application that the form has been saved.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected formSaved(): void;'
@@ -100,7 +100,7 @@ methods:
       This API is called to render the form. There is no base implementation of this API and the form is required to
       override this API.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected abstract render(): void;'

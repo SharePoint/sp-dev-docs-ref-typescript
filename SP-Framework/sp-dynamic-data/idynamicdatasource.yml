@@ -17,7 +17,7 @@ properties:
     fullName: id
     summary: Id of the Dynamic Data Source.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'id: string;'
@@ -29,7 +29,7 @@ properties:
     fullName: metadata
     summary: Metadata of the Dynamic Data Source.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'metadata: IDynamicDataSourceMetadata;'
@@ -47,7 +47,7 @@ methods:
 
       If this api is not defined or returns an empty map, then no consumer will be able to talk to this source.
     remarks: ''
-    isPreview: true
+        isPreview: true
     isDeprecated: false
     syntax:
       content: 'allowedEventsAsync?(): Promise<ReadonlyArray<IDynamicDataEventDefinition>>;'
@@ -64,7 +64,7 @@ methods:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This API is deprecated. Please use the asynchronous version `getAsyncAnnotatedPropertyValue`'
     syntax:
@@ -84,7 +84,7 @@ methods:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' as the sample value and metadata would be undefined.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'getAnnotatedPropertyValueAsync(propertyId: string): Promise<IDynamicDataAnnotatedPropertyValue>;'
@@ -103,7 +103,7 @@ methods:
       Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
       component.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This API is deprecated. Please use the asynchronous version `getPropertyDefinitionsAsync`'
     syntax:
@@ -119,7 +119,7 @@ methods:
       Returns all the property definitions for dynamic data. This needs to be overriden by the implementation of the
       component.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'getPropertyDefinitionsAsync(): Promise<ReadonlyArray<IDynamicDataPropertyDefinition>>;'
@@ -136,7 +136,7 @@ methods:
       Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
       component.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This API is deprecated. Please use the asynchronous version `getAsyncPropertyValue`'
     syntax:
@@ -156,7 +156,7 @@ methods:
       Given a property id, returns the value of the property. This needs to be overriden by the implementation of the
       component.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'getPropertyValueAsync(propertyId: string): Promise<any>;'
@@ -178,7 +178,7 @@ methods:
 
       Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
     remarks: ''
-    isPreview: true
+        isPreview: true
     isDeprecated: false
     syntax:
       content: 'sendEvent?(eventName: string, data: any): void;'

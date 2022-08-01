@@ -35,7 +35,7 @@ methods:
       The same object can add multiple event handlers to the same event. Since BaseComponent implements the
       ISPEventObserver interface, a web part or extension can pass itself as the observer. This will cause the event
       handler to be automatically unsubscribed when the web part or extension is disposed.
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'add(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;'
@@ -58,7 +58,7 @@ methods:
     fullName: 'remove(observer, eventHandler)'
     summary: Unregisters a callback that was registered using add().
     remarks: 'If the event handler has already been removed, or if it was never added, then this method has no effect.'
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'remove(observer: ISPEventObserver, eventHandler: (eventArgs: TEventArgs) => void): void;'

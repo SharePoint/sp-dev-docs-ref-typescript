@@ -23,7 +23,7 @@ constructors:
     fullName: (constructor)(serviceScope)
     summary: Constructs a new instance of the `DigestCache` class
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'constructor(serviceScope: ServiceScope);'
@@ -38,7 +38,7 @@ properties:
     fullName: serviceKey
     summary: The service key for IDigestCache.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'static readonly serviceKey: ServiceKey<IDigestCache>;'
@@ -56,7 +56,7 @@ methods:
       automatically issue a REST request to fetch the digest when necessary; however, in advanced scenarios
       addDigestToCache() can be used to avoid the overhead of the REST call.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'addDigestToCache(webUrl: string, digestValue: string, expirationTimestamp: number): void;'
@@ -84,7 +84,7 @@ methods:
     fullName: clearAllDigests()
     summary: Clears all values from the cache.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'clearAllDigests(): void;'
@@ -99,7 +99,7 @@ methods:
       Clears the cached digest for the specified SPWeb URL. This operation is useful e.g. if an error indicates that a
       digest was invalidated prior to its expiration time.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'clearDigest(webUrl: string): boolean;'
@@ -119,7 +119,7 @@ methods:
       fulfilled immediately. Otherwise, the promise will be pending and resolve after an HTTP request obtains the
       digest, which will be added to the cache.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'fetchDigest(webUrl: string): Promise<string>;'

@@ -22,7 +22,7 @@ methods:
 
       If this api is not defined or returns an empty array, then no consumer will be able to talk to this source.
     remarks: ''
-    isPreview: true
+        isPreview: true
     isDeprecated: false
     syntax:
       content: 'allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;'
@@ -37,7 +37,7 @@ methods:
       Given a property id, returns its annotated value. If the source doesn't supply the annotated value, then it falls
       back to whatever 'getPropertyValue' returns as the sample value and metadata would be undefined.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'getAnnotatedPropertyValue?(propertyId: string): IDynamicDataAnnotatedPropertyValue | undefined;'
@@ -54,7 +54,7 @@ methods:
     fullName: getPropertyDefinitions()
     summary: Returns all the property definitions that the DataSource will provide.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;'
@@ -67,7 +67,7 @@ methods:
     fullName: getPropertyValue(propertyId)
     summary: 'Given a property id, returns the value of the property.'
     remarks: 'It is assumed that when this function returns an array, it is homogeneous.'
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'getPropertyValue(propertyId: string): any;'
@@ -89,7 +89,7 @@ methods:
 
       Invoking this api throws an error when the passed in 'eventName' is not one of the allowed events on the source.
     remarks: ''
-    isPreview: true
+        isPreview: true
     isDeprecated: false
     syntax:
       content: 'sendEvent?(eventName: string, data: any): void;'

@@ -21,7 +21,7 @@ properties:
     fullName: defaultCreator
     summary: A callback function that constructs the default instance of this service.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'readonly defaultCreator: ServiceCreator<T>;'
@@ -43,7 +43,7 @@ properties:
       was passed to ServiceKey.create(). This is because each call to ServiceKey.create() could potentially provide a
       different defaultCreator implementation, whereas one of the design goals of ServiceScope is that the order in
       which libraries are loaded should never affect the resulting tree of scopes.
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'readonly id: string;'
@@ -61,7 +61,7 @@ properties:
 
       The system does not assume that this string is unique. Instead, the
       [ServiceKey.id](xref:@microsoft/sp-core-library!ServiceKey%23id:member) is used wherever a lookup key is needed.
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'readonly name: string;'
@@ -78,7 +78,7 @@ methods:
     remarks: >-
       If you want to specify custom constructor parameters, use
       [ServiceKey.createCustom()](xref:@microsoft/sp-core-library!ServiceKey.createCustom:member(1)) instead.
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: |-
@@ -104,7 +104,7 @@ methods:
     fullName: 'createCustom(name, defaultCreator)'
     summary: Constructs a new ServiceKey whose default implementation will be obtained by invoking the specified callback.
     remarks: ''
-    isPreview: false
+        isPreview: false
     isDeprecated: false
     syntax:
       content: 'static createCustom<TKey>(name: string, defaultCreator: ServiceCreator<TKey>): ServiceKey<TKey>;'
