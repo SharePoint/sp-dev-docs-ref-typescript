@@ -110,14 +110,16 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'register(id: string, initializer: () => TView): void;'
+      content: 'register(id: string, initializer: () => TView | Promise<TView>): void;'
       parameters:
         - id: id
           description: Unique identifier for the view.
           type: string
         - id: initializer
-          description: 'Function that returns a new view, which is only called if no view with the `id` already exists.'
-          type: () =&gt; TView
+          description: >-
+            Function that returns a new view - or a promise to a new view - which is only called if no view with the
+            `id` already exists.
+          type: () =&gt; TView | Promise&lt;TView&gt;
       return:
         type: void
         description: ''
