@@ -266,10 +266,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: renderCompleted(error)
+  - name: 'renderCompleted(error, didUpdate)'
     uid: '@microsoft/sp-webpart-base!BaseClientSideWebPart#renderCompleted:member(1)'
     package: '@microsoft/sp-webpart-base!'
-    fullName: renderCompleted(error)
+    fullName: 'renderCompleted(error, didUpdate)'
     summary: >-
       This API should be called by web parts that perform Async rendering. Those web part are required to override the
       isRenderAsync API and return true. One such example is web parts that render content in an IFrame. The web part
@@ -279,11 +279,14 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'protected renderCompleted(error?: Error): void;'
+      content: 'protected renderCompleted(error?: Error, didUpdate?: boolean): void;'
       parameters:
         - id: error
-          description: ''
+          description: error object indicating async render has completed with an error
           type: Error
+        - id: didUpdate
+          description: used to override end performance time with sync render time
+          type: boolean
       return:
         type: void
         description: ''
