@@ -134,6 +134,23 @@ properties:
         protected get iconProperty(): string;
       return:
         type: string
+  - name: isRenderAsync
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#isRenderAsync:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: isRenderAsync
+    summary: Indicates whether the ACE is rendering in async mode.
+    remarks: >-
+      If the ACE overrides this field to return true, then it needs to call renderCompleted API after the ACE finishes
+      initializing.
+
+
+      The default value is false.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'protected get isRenderAsync(): boolean;'
+      return:
+        type: boolean
   - name: isVisible
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#isVisible:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -575,6 +592,28 @@ methods:
         protected renderCard(): string | undefined;
       return:
         type: string | undefined
+        description: ''
+  - name: renderCompleted(didUpdate)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#renderCompleted:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: renderCompleted(didUpdate)
+    summary: >-
+      Lifecycle method that signifies ACE has finished loading. When this API is called, performance data will be
+      generated. Depending on `didUpdate` parameter, end marker for the rendering lifecycle can change. If an ACE
+      received LKG data and does NOT need to update, render is completed when LKG is used. If an ACE received LKG data
+      and DOES need to update, render is completed when new render arguments are used. If an ACE does not receive LKG
+      data, render is completed when new render arguments are used.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'renderCompleted(didUpdate: boolean): void;'
+      parameters:
+        - id: didUpdate
+          description: boolean value indicating if ACE has updated.
+          type: boolean
+      return:
+        type: void
         description: ''
   - name: setState(newState)
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#setState:member(1)'

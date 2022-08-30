@@ -1,0 +1,46 @@
+### YamlMime:TSType
+name: ITopActions
+uid: '@microsoft/sp-top-actions!ITopActions:interface'
+package: '@microsoft/sp-top-actions!'
+fullName: ITopActions
+summary: >-
+  The configurations used to define a webpart's top actions. For consistency between the Property Pane and the
+  CanvasTopAction, top action configurations are based on IPropertyPaneField data structure.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: topActions
+    uid: '@microsoft/sp-top-actions!ITopActions#topActions:member'
+    package: '@microsoft/sp-top-actions!'
+    fullName: topActions
+    summary: List of PropertyPane top actions
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'readonly topActions: ActionConfiguration[];'
+      return:
+        type: '<xref uid="@microsoft/sp-top-actions!ActionConfiguration:type" />[]'
+methods:
+  - name: 'onExecute(actionName, newValue)'
+    uid: '@microsoft/sp-top-actions!ITopActions#onExecute:member(1)'
+    package: '@microsoft/sp-top-actions!'
+    fullName: 'onExecute(actionName, newValue)'
+    summary: Fired once the top action configuration state has changed for the specified property path
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'onExecute(actionName: string, newValue: any): void;'
+      parameters:
+        - id: actionName
+          description: the specified property path that has been altered
+          type: string
+        - id: newValue
+          description: the new value for the specified actionName
+          type: any
+      return:
+        type: void
+        description: ''
