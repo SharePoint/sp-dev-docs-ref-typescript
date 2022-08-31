@@ -13,8 +13,8 @@ The SharePoint Framework object model is built in TypeScript. Use this section t
 
 ## See also
 
-- [Overview of SharePoint Framework](https://docs.microsoft.com/sharepoint/dev/spfx/sharepoint-framework-overview)
-- [Getting started with SharePoint Framework web parts](https://docs.microsoft.com/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part)
-- [Getting started with SharePoint Framework Extensions](https://docs.microsoft.com/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension)
-- [Overview of Viva Connections Extensibility](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections)
-- [Build for Microsoft Teams using SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
+- [Overview of SharePoint Framework](/sharepoint/dev/spfx/sharepoint-framework-overview)
+- [Getting started with SharePoint Framework web parts](/sharepoint/dev/spfx/web-parts/get-started/build-a-hello-world-web-part)
+- [Getting started with SharePoint Framework Extensions](/sharepoint/dev/spfx/extensions/get-started/build-a-hello-world-extension)
+- [Overview of Viva Connections Extensibility](/sharepoint/dev/spfx/viva/overview-viva-connections)
+- [Build for Microsoft Teams using SharePoint Framework](/sharepoint/dev/spfx/build-for-teams-overview)
