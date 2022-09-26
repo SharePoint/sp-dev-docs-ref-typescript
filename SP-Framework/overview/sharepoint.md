@@ -1,7 +1,7 @@
 ---
 title: SharePoint Framework TypeScript Reference
 description: The SharePoint Framework object model is built in TypeScript. 
-ms.date: 11/9/2021
+ms.date: 06/21/2022
 ms.prod: sharepoint
 ---
 
