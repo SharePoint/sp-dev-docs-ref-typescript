@@ -1,0 +1,120 @@
+### YamlMime:TSType
+name: AadTokenProvider
+uid: '@microsoft/sp-http-base!AadTokenProvider:class'
+package: '@microsoft/sp-http-base!'
+fullName: AadTokenProvider
+summary: >-
+  This class allows a developer to obtain OAuth2 tokens from Azure AD.
+
+
+  OAuth2 tokens are used to authenticate the user from the SharePoint page to other services such as PowerBI, Sway,
+  Exchange, Yammer, etc.
+remarks: >-
+  This class is marked as `@sealed`. Subclasses should not extend it.
+
+
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `AadTokenProvider` class.
+isPreview: false
+isDeprecated: false
+type: class
+methods:
+  - name: '_getTokenData(resourceEndpoint, useCachedToken)'
+    uid: '@microsoft/sp-http-base!AadTokenProvider#_getTokenData:member(2)'
+    package: '@microsoft/sp-http-base!'
+    fullName: '_getTokenData(resourceEndpoint, useCachedToken)'
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: '_getTokenData(resourceEndpoint: string, useCachedToken?: boolean): Promise<ITokenData>;'
+      parameters:
+        - id: resourceEndpoint
+          description: ''
+          type: string
+        - id: useCachedToken
+          description: ''
+          type: boolean
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!_ITokenData:interface" />&gt;'
+        description: ''
+  - name: '_getTokenInternal(resourceEndpoint, configuration, useCachedToken)'
+    uid: '@microsoft/sp-http-base!AadTokenProvider#_getTokenInternal:member(2)'
+    package: '@microsoft/sp-http-base!'
+    fullName: '_getTokenInternal(resourceEndpoint, configuration, useCachedToken)'
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        _getTokenInternal(resourceEndpoint: string, configuration: IAadTokenProviderConfiguration, useCachedToken?:
+        boolean): Promise<string>;
+      parameters:
+        - id: resourceEndpoint
+          description: ''
+          type: string
+        - id: configuration
+          description: ''
+          type: '<xref uid="@microsoft/sp-http-base!IAadTokenProviderConfiguration:interface" />'
+        - id: useCachedToken
+          description: ''
+          type: boolean
+      return:
+        type: Promise&lt;string&gt;
+        description: ''
+  - name: 'getToken(resourceEndpoint, useCachedToken)'
+    uid: '@microsoft/sp-http-base!AadTokenProvider#getToken:member(2)'
+    package: '@microsoft/sp-http-base!'
+    fullName: 'getToken(resourceEndpoint, useCachedToken)'
+    summary: |-
+      Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
+
+      The OAuth2 token should not be cached by the caller since it is already cached by the method itself.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getToken(resourceEndpoint: string, useCachedToken?: boolean): Promise<string>;'
+      parameters:
+        - id: resourceEndpoint
+          description: the resource for which the token should be obtained
+          type: string
+        - id: useCachedToken
+          description: >-
+            Allows the developer to specify if cached tokens should be returned. An example of a resourceEndpoint would
+            be https://graph.microsoft.com
+          type: boolean
+      return:
+        type: Promise&lt;string&gt;
+        description: A promise that will be fullfiled with the token or that will reject with an error message
+events:
+  - name: onBeforeRedirectEvent
+    uid: '@microsoft/sp-http-base!AadTokenProvider#onBeforeRedirectEvent:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: onBeforeRedirectEvent
+    summary: Notifies the developer before a full page redirect occurs.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly onBeforeRedirectEvent: SPEvent<BeforeRedirectEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-http-base!BeforeRedirectEventArgs:class" />&gt;
+  - name: tokenAcquisitionEvent
+    uid: '@microsoft/sp-http-base!AadTokenProvider#tokenAcquisitionEvent:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: tokenAcquisitionEvent
+    summary: Notifies the developer when Token Acquisition requires user action.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get tokenAcquisitionEvent(): SPEvent<TokenAcquisitionEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-http-base!TokenAcquisitionEventArgs:class" />&gt;

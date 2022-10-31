@@ -1,0 +1,71 @@
+### YamlMime:TSType
+name: MSGraphClientFactory
+uid: '@microsoft/sp-http-msgraph!MSGraphClientFactory:class'
+package: '@microsoft/sp-http-msgraph!'
+fullName: MSGraphClientFactory
+summary: >-
+  Returns a preinitialized version of the MSGraphClient. For more information:
+  [https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-msgraph)
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `MSGraphClientFactory` class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: serviceKey
+    uid: '@microsoft/sp-http-msgraph!MSGraphClientFactory.serviceKey:member'
+    package: '@microsoft/sp-http-msgraph!'
+    fullName: serviceKey
+    summary: The service key for MSGraphClientFactory.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'static readonly serviceKey: ServiceKey<MSGraphClientFactory>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
+          uid="@microsoft/sp-http-msgraph!MSGraphClientFactory:class" />&gt;
+methods:
+  - name: getClient(version)
+    uid: '@microsoft/sp-http-msgraph!MSGraphClientFactory#getClient:member(2)'
+    package: '@microsoft/sp-http-msgraph!'
+    fullName: getClient(version)
+    summary: >-
+      Returns an instance of version 3 the MSGraphClient V3 that communicates with the current tenant's configurable
+      Service Principal.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getClient(version: ''3''): Promise<MSGraphClientV3>;'
+      parameters:
+        - id: version
+          description: ''
+          type: '''3'''
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http-msgraph!MSGraphClientV3:class" />&gt;'
+        description: ''
+  - name: 'getClientWithMiddleware(version, options)'
+    uid: '@microsoft/sp-http-msgraph!MSGraphClientFactory#getClientWithMiddleware:member(1)'
+    package: '@microsoft/sp-http-msgraph!'
+    fullName: 'getClientWithMiddleware(version, options)'
+    summary: >-
+      Returns an instance of the MSGraphClient that communicates with the current tenant's configurable Service
+      Pricipal. Allows to specify custom middleware options.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getClientWithMiddleware(version: ''3'', options: ClientOptions): Promise<MSGraphClientV3>;'
+      parameters:
+        - id: version
+          description: The version of the Graph API to use. 3.
+          type: '''3'''
+        - id: options
+          description: Client options for the Graph API.
+          type: '<xref uid="@microsoft/microsoft-graph-client!ClientOptions:interface" />'
+      return:
+        type: 'Promise&lt;<xref uid="@microsoft/sp-http-msgraph!MSGraphClientV3:class" />&gt;'
+        description: ''

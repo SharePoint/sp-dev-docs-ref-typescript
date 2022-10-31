@@ -1,0 +1,139 @@
+### YamlMime:TSType
+name: SPHttpClientConfiguration
+uid: '@microsoft/sp-http-base!SPHttpClientConfiguration:class'
+package: '@microsoft/sp-http-base!'
+fullName: SPHttpClientConfiguration
+summary: 'Configuration for [SPHttpClient](xref:@microsoft/sp-http-base!SPHttpClient:class)<!-- -->.'
+remarks: >-
+  The SPHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
+  SPHttpClient class. Normally these switches are set (e.g. when calling SPHttpClient.fetch()) by providing one of the
+  predefined defaults from SPHttpClientConfigurations, however switches can also be changed via the
+  SPHttpClientConfiguration.overrideWith() method.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: '(constructor)(flags, overrideFlags)'
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration:constructor(1)'
+    package: '@microsoft/sp-http-base!'
+    fullName: '(constructor)(flags, overrideFlags)'
+    summary: >-
+      Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used
+      for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'constructor(flags: ISPHttpClientConfiguration, overrideFlags?: ISPHttpClientConfiguration);'
+      parameters:
+        - id: flags
+          description: ''
+          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+        - id: overrideFlags
+          description: ''
+          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+properties:
+  - name: defaultODataVersion
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#defaultODataVersion:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: defaultODataVersion
+    summary: Automatically configure the "OData-Version" header.
+    remarks: >-
+      When this switch is specified (i.e. not undefined): If the "OData-Version" header was not explicitly added for the
+      request, then SPHttpClient will add the header to specify the version indicated by defaultODataVersion.
+
+
+      NOTE: Without an 'OData-Version' header, the SharePoint server currently defaults to Version 3.0 in most cases.
+      The recommended version is 4.0.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get defaultODataVersion(): ODataVersion;'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!ODataVersion:class" />'
+  - name: defaultSameOriginCredentials
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#defaultSameOriginCredentials:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: defaultSameOriginCredentials
+    summary: Automatically configure the RequestInit.credentials.
+    remarks: >-
+      When this switch is true:
+
+
+      If RequestInit.credentials is not explicitly specified for the request, then SPHttpClient will assign it to be
+      "same-origin". Without this switch, different web browsers may apply different defaults.
+
+
+      For more information, see the spec: https://fetch.spec.whatwg.org/\#cors-protocol-and-credentials
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get defaultSameOriginCredentials(): boolean;'
+      return:
+        type: boolean
+  - name: flags
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#flags:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: flags
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'protected flags: ISPHttpClientConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+  - name: requestDigest
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#requestDigest:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: requestDigest
+    summary: Automatically provide an "X-RequestDigest" header for authentication.
+    remarks: >-
+      When this switch is true:
+
+
+      If the "X-RequestDigest" header was not explicitly added for the request, then SPHttpClient will add it if the
+      request is a write operation (i.e. an HTTP method other than "GET", "HEAD", or "OPTIONS"). The request digest is
+      managed by the DigestCache service. In the case of a cache miss, an additional network request may be performed.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get requestDigest(): boolean;'
+      return:
+        type: boolean
+methods:
+  - name: initializeFlags()
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#initializeFlags:member(1)'
+    package: '@microsoft/sp-http-base!'
+    fullName: initializeFlags()
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @override */
+        protected initializeFlags(): void;
+      return:
+        type: void
+        description: ''
+  - name: overrideWith(sourceFlags)
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#overrideWith:member(1)'
+    package: '@microsoft/sp-http-base!'
+    fullName: overrideWith(sourceFlags)
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @override */
+        overrideWith(sourceFlags: ISPHttpClientConfiguration): SPHttpClientConfiguration;
+      parameters:
+        - id: sourceFlags
+          description: ''
+          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!SPHttpClientConfiguration:class" />'
+        description: ''
+extends: '<xref uid="@microsoft/sp-http-base!SPHttpClientCommonConfiguration:class" />'

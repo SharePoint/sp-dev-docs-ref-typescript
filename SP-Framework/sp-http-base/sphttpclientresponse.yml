@@ -1,0 +1,61 @@
+### YamlMime:TSType
+name: SPHttpClientResponse
+uid: '@microsoft/sp-http-base!SPHttpClientResponse:class'
+package: '@microsoft/sp-http-base!'
+fullName: SPHttpClientResponse
+summary: The Response subclass returned by methods such as SPHttpClient.fetch().
+remarks: |-
+  This class is marked as `@sealed`. Subclasses should not extend it.
+
+  This is a placeholder. In the future, additional SPHttpClient-specific functionality may be added to this class.
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)(response)
+    uid: '@microsoft/sp-http-base!SPHttpClientResponse:constructor(1)'
+    package: '@microsoft/sp-http-base!'
+    fullName: (constructor)(response)
+    summary: Constructs a new instance of the `SPHttpClientResponse` class
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'constructor(response: Response);'
+      parameters:
+        - id: response
+          description: ''
+          type: Response
+properties:
+  - name: correlationId
+    uid: '@microsoft/sp-http-base!SPHttpClientResponse#correlationId:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: correlationId
+    summary: Returns the SharePoint correlation ID.
+    remarks: >-
+      The correlation ID is a Guid that can be used to associate log events that are part of the same overall operation,
+      but may originate from different services or components. SharePoint REST operations return the server's
+      correlation ID as the "sprequestguid" header.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get correlationId(): Guid | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined'
+methods:
+  - name: clone()
+    uid: '@microsoft/sp-http-base!SPHttpClientResponse#clone:member(1)'
+    package: '@microsoft/sp-http-base!'
+    fullName: clone()
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @override */
+        clone(): SPHttpClientResponse;
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />'
+        description: ''
+extends: '<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />'

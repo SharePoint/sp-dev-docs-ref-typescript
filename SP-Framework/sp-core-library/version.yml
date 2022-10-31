@@ -83,10 +83,10 @@ methods:
       parameters:
         - id: v1
           description: The first version class for comparison
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
         - id: v2
           description: The second version class for comparison
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
       return:
         type: number
         description: >-
@@ -113,7 +113,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
       return:
         type: boolean
         description: A boolean indicating if this version is equal to the input parameter
@@ -137,7 +137,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
       return:
         type: boolean
         description: A boolean indicating if this version is greater than the input parameter
@@ -179,7 +179,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
       return:
         type: boolean
         description: A boolean indicating if this version is less than the input parameter
@@ -198,7 +198,7 @@ methods:
           description: A version string
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+        type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
         description: a new Version object
   - name: satisfies(compareWith)
     uid: '@microsoft/sp-core-library!Version#satisfies:member(1)'
@@ -233,7 +233,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
       return:
         type: boolean
         description: A boolean indicating if this version is compatible with the input parameter
@@ -269,5 +269,5 @@ methods:
           description: A version string
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!default:class" /> | undefined'
+        type: '<xref uid="@microsoft/sp-core-library!Version:class" /> | undefined'
         description: 'The Version object, or undefined if the string could not be parsed.'

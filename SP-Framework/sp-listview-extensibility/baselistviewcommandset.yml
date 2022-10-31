@@ -30,7 +30,7 @@ properties:
     syntax:
       content: 'readonly context: ListViewCommandSetContext;'
       return:
-        type: '<xref uid="@microsoft/sp-listview-extensibility!default:class" />'
+        type: '<xref uid="@microsoft/sp-listview-extensibility!ListViewCommandSetContext:class" />'
 methods:
   - name: onExecute(event)
     uid: '@microsoft/sp-listview-extensibility!BaseListViewCommandSet#onExecute:member(1)'
@@ -97,6 +97,6 @@ methods:
           description: Id of the command
           type: string
       return:
-        type: '<xref uid="@microsoft/sp-listview-extensibility!default:class" />'
+        type: '<xref uid="@microsoft/sp-listview-extensibility!Command:class" />'
         description: ''
-extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />'
+extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />&lt;TProperties&gt;'

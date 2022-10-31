@@ -16,13 +16,14 @@ properties:
     summary: Microsoft Teams' Context.
     remarks: >-
       For more information, please see:
-      [https://learn.microsoft.com/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest](https://learn.microsoft.com/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest)
+      [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/microsoftteams.context?view=msteams-client-js-latest)
     isPreview: false
-    isDeprecated: false
+    isDeprecated: true
+    customDeprecatedMessage: This property is deprecated. Use the `teamsJs.app.getContext()` method instead.
     syntax:
       content: 'context: microsoftTeams.Context;'
       return:
-        type: 'microsoftTeams.<xref uid="@microsoft/teams-js!Context:interface" />'
+        type: '<xref uid="@microsoft/teams-js!Context:interface" />'
   - name: teamsJs
     uid: '@microsoft/sp-webpart-base!IMicrosoftTeams#teamsJs:member'
     package: '@microsoft/sp-webpart-base!'
@@ -34,4 +35,4 @@ properties:
     syntax:
       content: 'teamsJs: typeof microsoftTeams;'
       return:
-        type: typeof microsoftTeams
+        type: typeof @microsoft/sp-webpart-base!~microsoftTeams
