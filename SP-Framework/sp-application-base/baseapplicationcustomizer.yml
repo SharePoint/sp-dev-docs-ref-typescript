@@ -16,6 +16,20 @@ isPreview: false
 isDeprecated: false
 type: class
 properties:
+  - name: _dynamicDataSourceId
+    uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#_dynamicDataSourceId:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: _dynamicDataSourceId
+    summary: >-
+      Override BaseComponent.\_dynamicDataSourceId to exclude instance id. Application Customizer's instance id changes
+      per session.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get _dynamicDataSourceId(): string;'
+      return:
+        type: string
   - name: context
     uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#context:member'
     package: '@microsoft/sp-application-base!'
@@ -27,7 +41,7 @@ properties:
     syntax:
       content: 'protected readonly context: ApplicationCustomizerContext;'
       return:
-        type: '<xref uid="@microsoft/sp-application-base!default:class" />'
+        type: '<xref uid="@microsoft/sp-application-base!ApplicationCustomizerContext:class" />'
 methods:
   - name: dispose()
     uid: '@microsoft/sp-application-base!BaseApplicationCustomizer#dispose:member(1)'
@@ -59,8 +73,8 @@ methods:
       parameters:
         - id: placeholderProvider
           description: ''
-          type: '<xref uid="@microsoft/sp-application-base!default:class" />'
+          type: '<xref uid="@microsoft/sp-application-base!PlaceholderProvider:class" />'
       return:
         type: void
         description: ''
-extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />'
+extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />&lt;TProperties&gt;'

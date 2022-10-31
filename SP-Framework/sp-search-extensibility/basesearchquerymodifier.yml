@@ -10,7 +10,7 @@ summary: >-
 
   In the component manifest, the "extensionType" should be set to "SearchQueryModifier".
 remarks: ''
-isPreview: true
+isPreview: false
 isDeprecated: false
 type: class
 properties:
@@ -23,12 +23,12 @@ properties:
       Child classes are expected to override this field by redeclaring it with a specialized type. It is meant to be a
       read-only property; the type cannot be declared as read-only in the base class (because it is initialized outside
       the constructor), but child classes should redeclare it as readonly.
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected readonly context: SearchQueryModifierContext;'
       return:
-        type: '<xref uid="@microsoft/sp-search-extensibility!default:class" />'
+        type: '<xref uid="@microsoft/sp-search-extensibility!SearchQueryModifierContext:class" />'
   - name: timeout
     uid: '@microsoft/sp-search-extensibility!BaseSearchQueryModifier#timeout:member'
     package: '@microsoft/sp-search-extensibility!'
@@ -37,7 +37,7 @@ properties:
       Timeout for the search query modifier in milliseconds. If the execution takes longer than the timeout, the
       original query will be used instead of the modified one.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: |-
@@ -52,7 +52,7 @@ methods:
     fullName: 'modifySearchQuery(query, scenario)'
     summary: Returns a modified search query.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: |-
@@ -68,4 +68,4 @@ methods:
       return:
         type: 'Promise&lt;<xref uid="@microsoft/sp-search-extensibility!IQuery:interface" />&gt;'
         description: Modified query.
-extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />'
+extends: '<xref uid="@microsoft/sp-extension-base!BaseExtension:class" />&lt;TProperties&gt;'

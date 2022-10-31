@@ -1,0 +1,49 @@
+### YamlMime:TSType
+name: IAadHttpClientOptions
+uid: '@microsoft/sp-http-base!IAadHttpClientOptions:interface'
+package: '@microsoft/sp-http-base!'
+fullName: IAadHttpClientOptions
+summary: Interface for overriding the default behavior of AadHttpClient.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: configuration
+    uid: '@microsoft/sp-http-base!IAadHttpClientOptions#configuration:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: configuration
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: '- AadHttpClient''s configuration cannot be altered'
+    syntax:
+      content: 'configuration?: IAadTokenProviderConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!IAadTokenProviderConfiguration:interface" />'
+  - name: tokenProvider
+    uid: '@microsoft/sp-http-base!IAadHttpClientOptions#tokenProvider:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: tokenProvider
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: '- AadHttpClient does not support a custom tokenProvider.'
+    syntax:
+      content: 'tokenProvider?: IAadTokenProvider;'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!IAadTokenProvider:interface" />'
+  - name: useCachedToken
+    uid: '@microsoft/sp-http-base!IAadHttpClientOptions#useCachedToken:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: useCachedToken
+    summary: Allows the developer to specify if cached tokens should be use for the current request.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'useCachedToken?: boolean;'
+      return:
+        type: boolean
