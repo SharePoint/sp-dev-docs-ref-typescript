@@ -26,7 +26,7 @@ properties:
     syntax:
       content: 'static readonly empty: Guid;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
 methods:
   - name: equals(guid)
     uid: '@microsoft/sp-core-library!Guid#equals:member(1)'
@@ -41,7 +41,7 @@ methods:
       parameters:
         - id: guid
           description: ''
-          type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+          type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
       return:
         type: boolean
         description: True if this instance and the specified Guid object represent the same value.
@@ -81,7 +81,7 @@ methods:
           description: ''
           type: '<xref uid="@microsoft/sp-core-library!IRandomNumberGenerator:interface" />'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
         description: A new unique Guid object
   - name: parse(guidString)
     uid: '@microsoft/sp-core-library!Guid.parse:member(1)'
@@ -107,7 +107,7 @@ methods:
           description: ''
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!default:class" />'
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
         description: A valid Guid object
   - name: toString()
     uid: '@microsoft/sp-core-library!Guid#toString:member(1)'
@@ -151,5 +151,5 @@ methods:
           description: The input string.
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!default:class" /> | undefined'
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined'
         description: 'The Guid object, or undefined if the string could not be parsed.'

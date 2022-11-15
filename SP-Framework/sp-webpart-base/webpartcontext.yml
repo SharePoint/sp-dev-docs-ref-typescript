@@ -34,14 +34,14 @@ properties:
       being hosted in Microsoft Teams.
     remarks: >-
       For more information, please see:
-      [https://learn.microsoft.com/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://learn.microsoft.com/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
+      [https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest)
     isPreview: false
     isDeprecated: true
     customDeprecatedMessage: '- This function has been deprecated'
     syntax:
       content: 'get microsoftTeams(): typeof microsoftTeams | undefined;'
       return:
-        type: typeof microsoftTeams | undefined
+        type: typeof @microsoft/sp-webpart-base!~microsoftTeams | undefined
   - name: sdks
     uid: '@microsoft/sp-webpart-base!WebPartContext#sdks:member'
     package: '@microsoft/sp-webpart-base!'
@@ -65,7 +65,7 @@ properties:
     syntax:
       content: 'get statusRenderer(): IClientSideWebPartStatusRenderer;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!default:interface" />'
+        type: '<xref uid="@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer:interface" />'
   - name: widthCacheKey
     uid: '@microsoft/sp-webpart-base!WebPartContext#widthCacheKey:member'
     package: '@microsoft/sp-webpart-base!'
@@ -80,4 +80,4 @@ properties:
       content: 'get widthCacheKey(): string | undefined;'
       return:
         type: string | undefined
-extends: '<xref uid="@microsoft/sp-webpart-base!default:class" />'
+extends: '<xref uid="@microsoft/sp-webpart-base!BaseWebPartContext:class" />'
