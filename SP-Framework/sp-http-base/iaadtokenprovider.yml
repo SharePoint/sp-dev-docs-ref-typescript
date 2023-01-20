@@ -17,10 +17,10 @@ isPreview: false
 isDeprecated: false
 type: interface
 methods:
-  - name: 'getToken(resourceEndpoint, useCachedToken)'
-    uid: '@microsoft/sp-http-base!IAadTokenProvider#getToken:member(2)'
+  - name: 'getToken(resourceEndpoint, options)'
+    uid: '@microsoft/sp-http-base!IAadTokenProvider#getToken:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'getToken(resourceEndpoint, useCachedToken)'
+    fullName: 'getToken(resourceEndpoint, options)'
     summary: |-
       Fetches the AAD OAuth2 token for a resource if the user that's currently logged in has access to that resource.
 
@@ -31,17 +31,37 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'getToken(resourceEndpoint: string, useCachedToken?: boolean): Promise<string>;'
+      content: 'getToken(resourceEndpoint: string, options?: IGetTokenOptions): Promise<string>;'
       parameters:
         - id: resourceEndpoint
           description: the resource for which the token should be obtained
           type: string
-        - id: useCachedToken
-          description: Allows the developer to specify if cached tokens should be returned.
-          type: boolean
+        - id: options
+          description: ''
+          type: '<xref uid="@microsoft/sp-http-base!IGetTokenOptions:interface" />'
       return:
         type: Promise&lt;string&gt;
         description: A promise that will be fullfiled with the token or that will reject with an error message
+  - name: 'getToken(resourceEndpoint, useCachedToken)'
+    uid: '@microsoft/sp-http-base!IAadTokenProvider#getToken:member(2)'
+    package: '@microsoft/sp-http-base!'
+    fullName: 'getToken(resourceEndpoint, useCachedToken)'
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'getToken(resourceEndpoint: string, useCachedToken?: boolean): Promise<string>;'
+      parameters:
+        - id: resourceEndpoint
+          description: ''
+          type: string
+        - id: useCachedToken
+          description: ''
+          type: boolean
+      return:
+        type: Promise&lt;string&gt;
+        description: ''
 events:
   - name: onBeforeRedirectEvent
     uid: '@microsoft/sp-http-base!IAadTokenProvider#onBeforeRedirectEvent:member'
@@ -57,6 +77,20 @@ events:
         type: >-
           <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
           uid="@microsoft/sp-http-base!IBeforeRedirectEventArgs:interface" />&gt;
+  - name: popupEvent
+    uid: '@microsoft/sp-http-base!IAadTokenProvider#popupEvent:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: popupEvent
+    summary: Notifies the developer before a full page redirect occurs.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly popupEvent: SPEvent<IPopupEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-http-base!IPopupEventArgs:interface" />&gt;
   - name: tokenAcquisitionEvent
     uid: '@microsoft/sp-http-base!IAadTokenProvider#tokenAcquisitionEvent:member'
     package: '@microsoft/sp-http-base!'
