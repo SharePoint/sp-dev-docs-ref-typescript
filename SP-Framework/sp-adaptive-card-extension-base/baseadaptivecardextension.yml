@@ -529,6 +529,34 @@ methods:
       return:
         type: Promise&lt;void&gt;
         description: ''
+  - name: onNotificationReceived(notificationArguments)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onNotificationReceived:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onNotificationReceived(notificationArguments)
+    summary: Lifecycle method called when a notification is received for this Adaptive Card Extension.
+    remarks: >-
+      Only one Adaptive Card Extension can handle a notification event. If the event is handled, then propagation is
+      finished.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        /** @virtual */
+
+        onNotificationReceived(notificationArguments: Readonly<INotificationArguments<{}>>): INotificationResponse |
+        undefined;
+      parameters:
+        - id: notificationArguments
+          description: >-
+            The
+            [INotificationArguments](xref:@microsoft/sp-adaptive-card-extension-base!INotificationArguments:interface)
+            for the current notification event.
+          type: >-
+            Readonly&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!INotificationArguments:interface"
+            />&lt;{}&gt;&gt;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!INotificationResponse:interface" /> | undefined'
+        description: A registered quick view id to open or undefined.
   - name: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onPropertyPaneFieldChanged:member(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
