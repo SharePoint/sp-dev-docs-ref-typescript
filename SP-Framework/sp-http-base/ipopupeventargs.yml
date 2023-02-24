@@ -1,0 +1,48 @@
+### YamlMime:TSType
+name: IPopupEventArgs
+uid: '@microsoft/sp-http-base!IPopupEventArgs:interface'
+package: '@microsoft/sp-http-base!'
+fullName: IPopupEventArgs
+summary: Represents arguments used before popup event.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: cancel
+    uid: '@microsoft/sp-http-base!IPopupEventArgs#cancel:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: cancel
+    summary: A handler should call this immediately when handling the event to signal that it will not permit a popup.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'cancel: (error: Error) => void;'
+      return:
+        type: '(error: Error) =&gt; void'
+  - name: requestPopup
+    uid: '@microsoft/sp-http-base!IPopupEventArgs#requestPopup:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: requestPopup
+    summary: A handler should call this immediately when handling the event to signal that it intends to show a popup.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'requestPopup: () => void;'
+      return:
+        type: () =&gt; void
+  - name: showPopup
+    uid: '@microsoft/sp-http-base!IPopupEventArgs#showPopup:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: showPopup
+    summary: 'A handler should call this when ready, to indicate that the login flow should now continue and launch the popup.'
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'showPopup: () => void;'
+      return:
+        type: () =&gt; void
+extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'
