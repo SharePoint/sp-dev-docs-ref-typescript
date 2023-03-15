@@ -3,11 +3,9 @@ name: ITopActions
 uid: '@microsoft/sp-top-actions!ITopActions:interface'
 package: '@microsoft/sp-top-actions!'
 fullName: ITopActions
-summary: >-
-  The configurations used to define a webpart's top actions. For consistency between the Property Pane and the
-  CanvasTopAction, top action configurations are based on IPropertyPaneField data structure.
+summary: The configurations used to define a webpart's top actions.
 remarks: ''
-isPreview: true
+isPreview: false
 isDeprecated: false
 type: interface
 properties:
@@ -15,31 +13,31 @@ properties:
     uid: '@microsoft/sp-top-actions!ITopActions#topActions:member'
     package: '@microsoft/sp-top-actions!'
     fullName: topActions
-    summary: List of PropertyPane top actions
+    summary: List of top actions configurations
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
-      content: 'readonly topActions: ActionConfiguration[];'
+      content: 'readonly topActions: ITopActionsField[];'
       return:
-        type: '<xref uid="@microsoft/sp-top-actions!ActionConfiguration:type" />[]'
+        type: '<xref uid="@microsoft/sp-top-actions!ITopActionsField:interface" />[]'
 methods:
-  - name: 'onExecute(actionName, newValue)'
+  - name: 'onExecute(actionName, updatedValue)'
     uid: '@microsoft/sp-top-actions!ITopActions#onExecute:member(1)'
     package: '@microsoft/sp-top-actions!'
-    fullName: 'onExecute(actionName, newValue)'
-    summary: Fired once the top action configuration state has changed for the specified property path
+    fullName: 'onExecute(actionName, updatedValue)'
+    summary: Triggered once the top action configuration state has been executed for the specified property path
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
-      content: 'onExecute(actionName: string, newValue: any): void;'
+      content: 'onExecute(actionName: string, updatedValue: any): void;'
       parameters:
         - id: actionName
           description: the specified property path that has been altered
           type: string
-        - id: newValue
-          description: the new value for the specified actionName
+        - id: updatedValue
+          description: the updated value passed by top actions for the specified actionName
           type: any
       return:
         type: void
