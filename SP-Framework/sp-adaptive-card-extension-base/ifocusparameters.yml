@@ -1,0 +1,42 @@
+### YamlMime:TSType
+name: IFocusParameters
+uid: '@microsoft/sp-adaptive-card-extension-base!IFocusParameters:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IFocusParameters
+summary: >-
+  Interface to give third party developers the capability to determine which element should recieve focus, when, and how
+  often content should be read.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: ariaLive
+    uid: '@microsoft/sp-adaptive-card-extension-base!IFocusParameters#ariaLive:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: ariaLive
+    summary: >-
+      Sets the accessibility reading of the contents within the focus target. Polite - Content in the target's subtree
+      is read when the user is idle. Assertive - Disrupts any announcement in favor of the changed contents within the
+      target's subtree. Off - The screen reader will not read contents within the target's subtree.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'ariaLive?: ''polite'' | ''assertive'' | ''off'';'
+      return:
+        type: '''polite'' | ''assertive'' | ''off'''
+  - name: focusTarget
+    uid: '@microsoft/sp-adaptive-card-extension-base!IFocusParameters#focusTarget:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: focusTarget
+    summary: >-
+      Sets the default focus on the DOM. Developers pass in the id of a unique element that is to attain focus within a
+      quick view. If the `focusTarget` is not defined then the root element is selected.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'focusTarget: string | undefined;'
+      return:
+        type: string | undefined
