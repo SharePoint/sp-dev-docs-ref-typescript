@@ -280,9 +280,9 @@ properties:
     fullName: state
     summary: Gets the custom state of the Adaptive Card Extension.
     remarks: >-
-      If this property is not initialized,
+      This property should not be directly updated. Please use
       [BaseAdaptiveCardExtension.setState()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23setState:member(1))
-      cannot be called.
+      to update the state after initialization.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -435,6 +435,29 @@ methods:
         - id: prevProperties
           description: The Adaptive Card Extension properties before the update.
           type: TProperties
+      return:
+        type: void
+        description: ''
+  - name: onBeforeAction(action)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#onBeforeAction:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onBeforeAction(action)
+    summary: >-
+      Lifecycle method called before Action is passed to
+      [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1))<!-- -->.
+    remarks: This method is not intended to be used to cancel the action or to change the flow.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onBeforeAction(action: IOnBeforeActionArguments): void;
+      parameters:
+        - id: action
+          description: >-
+            [IOnBeforeActionArguments](xref:@microsoft/sp-adaptive-card-extension-base!IOnBeforeActionArguments:type)
+            for the current action.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IOnBeforeActionArguments:type" />'
       return:
         type: void
         description: ''

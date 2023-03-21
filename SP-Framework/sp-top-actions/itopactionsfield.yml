@@ -1,0 +1,71 @@
+### YamlMime:TSType
+name: ITopActionsField
+uid: '@microsoft/sp-top-actions!ITopActionsField:interface'
+package: '@microsoft/sp-top-actions!'
+fullName: ITopActionsField
+summary: Configuration used for a single Top Action command.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: properties
+    uid: '@microsoft/sp-top-actions!ITopActionsField#properties:member'
+    package: '@microsoft/sp-top-actions!'
+    fullName: properties
+    summary: Strongly typed properties object. Specific to each field type.
+    remarks: 'Example: Dropdown has ITopActionsChoiceGroupProps, Button has ITopActionsButtonProps props.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly properties: TProperties;'
+      return:
+        type: TProperties
+  - name: shouldFocus
+    uid: '@microsoft/sp-top-actions!ITopActionsField#shouldFocus:member'
+    package: '@microsoft/sp-top-actions!'
+    fullName: shouldFocus
+    summary: Whether this control should be focused.
+    remarks: The default value is false.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly shouldFocus?: boolean;'
+      return:
+        type: boolean
+  - name: targetProperty
+    uid: '@microsoft/sp-top-actions!ITopActionsField#targetProperty:member'
+    package: '@microsoft/sp-top-actions!'
+    fullName: targetProperty
+    summary: Target property from the web part's property bag.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly targetProperty: string;'
+      return:
+        type: string
+  - name: title
+    uid: '@microsoft/sp-top-actions!ITopActionsField#title:member'
+    package: '@microsoft/sp-top-actions!'
+    fullName: title
+    summary: Display name for the action which can be used in a tooltip or aria-label.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly title?: string;'
+      return:
+        type: string
+  - name: type
+    uid: '@microsoft/sp-top-actions!ITopActionsField#type:member'
+    package: '@microsoft/sp-top-actions!'
+    fullName: type
+    summary: Type of the top actions field.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly type: TopActionsFieldType;'
+      return:
+        type: '<xref uid="@microsoft/sp-top-actions!TopActionsFieldType:enum" />'
