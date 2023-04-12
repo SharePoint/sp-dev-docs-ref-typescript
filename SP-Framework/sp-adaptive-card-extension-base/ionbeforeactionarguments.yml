@@ -8,14 +8,12 @@ summary: >-
   [BaseAdaptiveCardExtension.onBeforeAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23onBeforeAction:member(1))
   when an Adaptive Card Action is executed.
 remarks: >-
-  Besides `IExternalLinkAction`<!-- -->, and `IQuickViewActionArguments` other actions will be passed to
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) as type
-  [IActionArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionArguments:type) after
-  [BaseAdaptiveCardExtension.onBeforeAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23onBeforeAction:member(1))<!--
-  -->.
+  [IActionArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionArguments:type) will be passed to
+  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) after
+  [BaseAdaptiveCardExtension.onBeforeAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23onBeforeAction:member(1))
+  is called.
 isPreview: false
 isDeprecated: false
 syntax: >-
-  export declare type IOnBeforeActionArguments = ISubmitActionArguments | IShowCardActionArguments |
-  IExternalLinkActionArguments | IQuickViewActionArguments | ISelectMediaActionArguments | IGetLocationActionArguments |
-  IShowLocationCardAction;
+  export declare type IOnBeforeActionArguments = IActionArguments | IQuickViewActionArguments |
+  IExternalLinkActionArguments | IShowLocationCardAction;
