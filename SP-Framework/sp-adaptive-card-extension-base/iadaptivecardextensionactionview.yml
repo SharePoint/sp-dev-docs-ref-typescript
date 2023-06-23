@@ -1,0 +1,36 @@
+### YamlMime:TSType
+name: IAdaptiveCardExtensionActionView
+uid: '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IAdaptiveCardExtensionActionView
+summary: The interface describes members for views that can handle AC actions.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: onAction
+    uid: '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView#onAction:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onAction
+    summary: Action handler for Adaptive Card Extension Actions.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'onAction: (action: IActionArguments) => void;'
+      return:
+        type: '(action: <xref uid="@microsoft/sp-adaptive-card-extension-base!IActionArguments:type" />) =&gt; void'
+  - name: onActionError
+    uid: '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView#onActionError:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onActionError
+    summary: Error handler for Adaptive Card Extension Actions.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'onActionError: (error: IActionErrorArguments) => void;'
+      return:
+        type: '(error: <xref uid="@microsoft/sp-adaptive-card-extension-base!IActionErrorArguments:type" />) =&gt; void'
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />'

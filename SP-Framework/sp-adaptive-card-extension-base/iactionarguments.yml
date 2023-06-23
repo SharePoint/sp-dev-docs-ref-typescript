@@ -5,13 +5,15 @@ package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: IActionArguments
 summary: >-
   The object passed to
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when an Adaptive
-  Card Action is executed.
+  [IAdaptiveCardExtensionActionView.onAction](xref:@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView%23onAction:member)
+  when an Adaptive Card Action is executed.
 remarks: >-
-  Only `Submit`<!-- -->, `ShowCard`<!-- -->, 'Viva.SelectMedia', and 'Viva.GetLocation'; actions are routed to the
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) handler.
+  Only `Submit`<!-- -->, `ShowCard`<!-- -->, `Execute`<!-- -->, 'Viva.SelectMedia', and 'Viva.GetLocation'; actions are
+  routed to the
+  [IAdaptiveCardExtensionActionView.onAction](xref:@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView%23onAction:member)
+  handler.
 isPreview: false
 isDeprecated: false
 syntax: >-
   export declare type IActionArguments = ISubmitActionArguments | IShowCardActionArguments | ISelectMediaActionArguments
-  | IGetLocationActionArguments;
+  | IGetLocationActionArguments | IExecuteActionArguments;

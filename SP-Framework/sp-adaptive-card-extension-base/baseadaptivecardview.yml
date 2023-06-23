@@ -3,82 +3,14 @@ name: BaseAdaptiveCardView
 uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class'
 package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: BaseAdaptiveCardView
-summary: Base class for an Adaptive Card view.
+summary: Base class for an Adaptive Card quick view.
 remarks: Views used to render the Quick view must inherit from this class.
 isPreview: false
-isDeprecated: false
+isDeprecated: true
+customDeprecatedMessage: >-
+  use [BaseAdaptiveCardQuickView](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardQuickView:class)
+  instead
 type: class
-properties:
-  - name: data
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#data:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: data
-    summary: The data used to render the Adaptive Card.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: |-
-        /** @virtual */
-        get data(): TData;
-      return:
-        type: TData
-  - name: externalLink
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#externalLink:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: externalLink
-    summary: An optional external link to be displayed in the navigation bar above the Adaptive Card.
-    remarks: 'If this method is not overriden or returns undefined, no link will be displayed.'
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: |-
-        /** @virtual */
-        get externalLink(): IExternalLinkParameters | undefined;
-      return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IExternalLinkParameters:interface" /> | undefined'
-  - name: focusParameters
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#focusParameters:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: focusParameters
-    summary: An optional focus element to set focus when the view is rendered for accessibility purposes.
-    remarks: 'If not overriden, the focus element defaulted to the first actionable element of the quick view.'
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: |-
-        /** @virtual */
-        get focusParameters(): IFocusParameters | undefined;
-      return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IFocusParameters:interface" /> | undefined'
-  - name: template
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#template:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: template
-    summary: The Adaptive Card template rendered by the view.
-    remarks: The format of the template must be valid Adaptive Card JSON.
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: |-
-        /** @virtual */
-        abstract get template(): ISPFxAdaptiveCard;
-      return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
-  - name: title
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView#title:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: title
-    summary: An optional title to be displayed in the navigation bar above the Adaptive Card.
-    remarks: >-
-      If not overriden, the title displayed will be
-      [BaseAdaptiveCardExtension.title](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23title:member)
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: |-
-        /** @virtual */
-        get title(): string;
-      return:
-        type: string
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState, TData&gt;'
+extends: >-
+  <xref uid="@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardQuickView:class" />&lt;TProperties, TState,
+  TData&gt;
