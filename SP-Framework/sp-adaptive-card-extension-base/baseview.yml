@@ -24,26 +24,11 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'get cardNavigator(): ViewNavigator<BaseCardView<TProperties, TState>>;'
+      content: 'get cardNavigator(): IViewNavigator<BaseCardView<TProperties, TState>>;'
       return:
         type: >-
-          <xref uid="@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class" />&lt;<xref
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!IViewNavigator:interface" />&lt;<xref
           uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />&lt;TProperties, TState&gt;&gt;
-  - name: cardSize
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#cardSize:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: cardSize
-    summary: >-
-      See
-      [BaseAdaptiveCardExtension.cardSize](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23cardSize:member)<!--
-      -->.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'get cardSize(): CardSize;'
-      return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!CardSize:type" />'
   - name: context
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#context:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -59,18 +44,6 @@ properties:
       content: 'get context(): AdaptiveCardExtensionContext;'
       return:
         type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext:class" />'
-  - name: data
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#data:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: data
-    summary: The data used to render the View.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'abstract get data(): TData | undefined;'
-      return:
-        type: TData | undefined
   - name: properties
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#properties:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -98,11 +71,12 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'get quickViewNavigator(): QuickViewNavigator<BaseAdaptiveCardView<TProperties, TState>>;'
+      content: 'get quickViewNavigator(): IQuickViewNavigator<BaseAdaptiveCardQuickView<TProperties, TState>>;'
       return:
         type: >-
-          <xref uid="@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class" />&lt;<xref
-          uid="@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class" />&lt;TProperties, TState&gt;&gt;
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!IQuickViewNavigator:interface" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardQuickView:class" />&lt;TProperties,
+          TState&gt;&gt;
   - name: state
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#state:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -118,57 +92,7 @@ properties:
       content: 'get state(): Readonly<TState>;'
       return:
         type: Readonly&lt;TState&gt;
-  - name: template
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#template:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: template
-    summary: The Adaptive Card template used to render the view.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'abstract get template(): ISPFxAdaptiveCard;'
-      return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
 methods:
-  - name: onAction(action)
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#onAction:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: onAction(action)
-    summary: Action handler for Adaptive Card Actions.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'onAction(action: IActionArguments): void;'
-      parameters:
-        - id: action
-          description: >-
-            The [IActionArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionArguments:type) for the
-            current event.
-          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IActionArguments:type" />'
-      return:
-        type: void
-        description: ''
-  - name: onActionError(error)
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#onActionError:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: onActionError(error)
-    summary: Error handler for Adaptive Card Actions.
-    remarks: ''
-    isPreview: true
-    isDeprecated: false
-    syntax:
-      content: 'onActionError(error: IActionErrorArguments): void;'
-      parameters:
-        - id: error
-          description: >-
-            The [IActionErrorArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionErrorArguments:type) for
-            the current event.
-          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IActionErrorArguments:type" />'
-      return:
-        type: void
-        description: ''
   - name: setState(newState)
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#setState:member(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -186,26 +110,6 @@ methods:
         - id: newState
           description: ''
           type: Partial&lt;TState&gt;
-      return:
-        type: void
-        description: ''
-  - name: setVisibility(isVisible)
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseView#setVisibility:member(1)'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: setVisibility(isVisible)
-    summary: >-
-      Sets visibility to false and rerenders the card. See
-      [BaseAdaptiveCardExtension.isVisible](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23isVisible:member)<!--
-      -->.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'setVisibility(isVisible: boolean): void;'
-      parameters:
-        - id: isVisible
-          description: ''
-          type: boolean
       return:
         type: void
         description: ''

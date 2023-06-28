@@ -9,6 +9,18 @@ isPreview: false
 isDeprecated: false
 type: interface
 properties:
+  - name: authenticationScheme
+    uid: '@microsoft/sp-http-base!IGetTokenOptions#authenticationScheme:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: authenticationScheme
+    summary: Indicates whether acquire a Bearer or PoP By defalut authenticationScheme is Bearer.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'authenticationScheme?: IAuthenticationScheme;'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!IAuthenticationScheme:enum" />'
   - name: claims
     uid: '@microsoft/sp-http-base!IGetTokenOptions#claims:member'
     package: '@microsoft/sp-http-base!'
@@ -19,6 +31,30 @@ properties:
     isDeprecated: false
     syntax:
       content: 'claims?: string;'
+      return:
+        type: string
+  - name: resourceRequestMethod
+    uid: '@microsoft/sp-http-base!IGetTokenOptions#resourceRequestMethod:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: resourceRequestMethod
+    summary: The all-caps name of the HTTP method of the request
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'resourceRequestMethod?: string;'
+      return:
+        type: string
+  - name: shrClaims
+    uid: '@microsoft/sp-http-base!IGetTokenOptions#shrClaims:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: shrClaims
+    summary: A stringified JSON object containing custom client claims
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'shrClaims?: string;'
       return:
         type: string
   - name: useCachedToken

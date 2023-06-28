@@ -1,0 +1,40 @@
+### YamlMime:TSType
+name: IBasicTextCardViewConfiguration
+uid: '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IBasicTextCardViewConfiguration
+summary: Configuration for a Basic Card view.
+remarks: >-
+  The basic Card view displays the following: - Card title - Card icon - One primary text field - One button in the
+  `Medium` Card size, two buttons in the `Large` Card size, or text input in the footer
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: footer
+    uid: '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration#footer:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: footer
+    summary: Footer area components.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'footer: GenericCardViewFooterConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!GenericCardViewFooterConfiguration:type" />'
+  - name: header
+    uid: '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration#header:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: header
+    summary: Header area components.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'header: ICardTextConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextConfiguration:interface" />'
+extends: >-
+  Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface" />, 'image' |
+  'body'&gt;

@@ -6,24 +6,39 @@ summary: SharePoint Framwork Adaptive Card Extensions
 classes:
   - '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension:class'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardQuickView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseComponentsCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseImageCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BasePrimaryTextCardView:class'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseQuickView:class'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
   - '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class'
   - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
 typeAliases:
+  - '@microsoft/sp-adaptive-card-extension-base!CardComponentConfiguration:type'
+  - '@microsoft/sp-adaptive-card-extension-base!CardComponentName:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardSize:type'
+  - '@microsoft/sp-adaptive-card-extension-base!ComponentsCardViewParameters:type'
   - '@microsoft/sp-adaptive-card-extension-base!DeviceContext:type'
+  - '@microsoft/sp-adaptive-card-extension-base!GenericCardViewFooterConfiguration:type'
+  - '@microsoft/sp-adaptive-card-extension-base!GenericCardViewFooterParameters:type'
   - '@microsoft/sp-adaptive-card-extension-base!IActionArguments:type'
   - '@microsoft/sp-adaptive-card-extension-base!IActionError:type'
   - '@microsoft/sp-adaptive-card-extension-base!IActionErrorArguments:type'
+  - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionIcon:type'
   - '@microsoft/sp-adaptive-card-extension-base!ICardAction:type'
   - '@microsoft/sp-adaptive-card-extension-base!IOnBeforeActionArguments:type'
   - '@microsoft/sp-adaptive-card-extension-base!RenderType:type'
+  - '@microsoft/sp-adaptive-card-extension-base!TextInputCardViewActionsFooterConfiguration:type'
+  - '@microsoft/sp-adaptive-card-extension-base!TextInputCardViewActionsFooterParameters:type'
 interfaces:
+  - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionDataView:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionImage:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertiesMetadata:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertyMetadata:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface'
@@ -31,10 +46,33 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseCardParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICachedLoadParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICacheSettings:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardBarConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardBarParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardButtonBaseParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardButtonConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardButtonParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxTitleButtonParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchFooterConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchFooterParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputIconButtonParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputTitleButtonParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardViewParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IConfirmationDialog:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IExecuteActionArguments:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IExecuteCardAction:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IExecuteCardParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IExternalLinkActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IExternalLinkCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IExternalLinkParameters:interface'
@@ -44,14 +82,19 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IGetLocationActionParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IGetLocationCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IImageCardParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IImageCardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ILocation:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!INotificationArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!INotificationResponse:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IQuickViewActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IQuickViewCardAction:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IQuickViewNavigator:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IQuickViewParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaActionErrorArguments:interface'
@@ -66,5 +109,113 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!ISubmitActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ISubmitCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ISubmitCardParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ITextCardViewParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ITextInputCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ITextInputCardViewParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ITextInputImageCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IViewNavigator:interface'
 enums:
   - '@microsoft/sp-adaptive-card-extension-base!MediaType:enum'
+functions:
+  - name: BasicCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BasicCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a Basic Card View.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'export declare function BasicCardView(configuration: IBasicTextCardViewConfiguration): ITextCardViewParameters;'
+      parameters:
+        - id: configuration
+          description: basic card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextCardViewParameters:interface" />'
+        description: ''
+  - name: ImageCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!ImageCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create an Image Card View.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'export declare function ImageCardView(configuration: IImageCardViewConfiguration): ITextCardViewParameters;'
+      parameters:
+        - id: configuration
+          description: image card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IImageCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextCardViewParameters:interface" />'
+        description: ''
+  - name: PrimaryTextCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!PrimaryTextCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a Primary Text Card View.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function PrimaryTextCardView(configuration: IPrimaryTextCardViewConfiguration):
+        ITextCardViewParameters;
+      parameters:
+        - id: configuration
+          description: primary text card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextCardViewParameters:interface" />'
+        description: ''
+  - name: SearchCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!SearchCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a Search Card View.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'export declare function SearchCardView(configuration: ISearchCardViewConfiguration): ISearchCardViewParameters;'
+      parameters:
+        - id: configuration
+          description: search card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISearchCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISearchCardViewParameters:interface" />'
+        description: ''
+  - name: TextInputCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!TextInputCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create an Text Input Card View.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function TextInputCardView(configuration: ITextInputCardViewConfiguration):
+        ITextInputCardViewParameters;
+      parameters:
+        - id: configuration
+          description: text input card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextInputCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextInputCardViewParameters:interface" />'
+        description: ''
+  - name: TextInputImageCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!TextInputImageCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create an Text Input with Image Card View.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function TextInputImageCardView(configuration: ITextInputImageCardViewConfiguration):
+        ITextInputCardViewParameters;
+      parameters:
+        - id: configuration
+          description: text input with image card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextInputImageCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextInputCardViewParameters:interface" />'
+        description: ''

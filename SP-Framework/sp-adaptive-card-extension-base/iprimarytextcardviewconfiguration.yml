@@ -1,0 +1,50 @@
+### YamlMime:TSType
+name: IPrimaryTextCardViewConfiguration
+uid: '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IPrimaryTextCardViewConfiguration
+summary: Configuration for a Primary Text Card view.
+remarks: >-
+  The Primary Text Card view displays the following: - Card Title - Card Icon - One primary text field - One description
+  text field - One buttons in the `Medium` Card size, up to two buttons in `Large` Card size
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: body
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration#body:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: body
+    summary: Body area components.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'body: ICardTextConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextConfiguration:interface" />'
+  - name: footer
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration#footer:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: footer
+    summary: Footer area components.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'footer: GenericCardViewFooterConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!GenericCardViewFooterConfiguration:type" />'
+  - name: header
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration#header:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: header
+    summary: Header area components.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'header: ICardTextConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextConfiguration:interface" />'
+extends: 'Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface" />, ''image''&gt;'

@@ -12,39 +12,21 @@ isPreview: false
 isDeprecated: false
 type: class
 properties:
-  - name: cardButtons
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardButtons:member'
+  - name: cardSize
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#cardSize:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: cardButtons
-    summary: The buttons displayed on the Card.
-    remarks: >-
-      Some Card view templates will restrict how many buttons can be displayed depending on various factors. See the
-      documentation for the respective base Card View class for specific details.
+    fullName: cardSize
+    summary: >-
+      See
+      [BaseAdaptiveCardExtension.cardSize](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23cardSize:member)<!--
+      -->.
+    remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: |-
-        /** @virtual */
-        get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined;
+      content: 'get cardSize(): CardSize;'
       return:
-        type: >-
-          [<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | [<xref
-          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />, <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | undefined
-  - name: data
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#data:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: data
-    summary: The data used to render the Card view.
-    remarks: >-
-      The available data to display is dependent on the Card view template and its respective base Card view class. See
-      the documentation for the Card View class for specific details.
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'abstract get data(): TData;'
-      return:
-        type: TData
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!CardSize:type" />'
   - name: isCacheEnabled
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#isCacheEnabled:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -72,12 +54,76 @@ properties:
         /** @virtual */
 
         get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | ISelectMediaCardAction |
-        IGetLocationCardAction | IShowLocationCardAction | undefined;
+        IGetLocationCardAction | IShowLocationCardAction | IExecuteCardAction | undefined;
       return:
         type: >-
           <xref uid="@microsoft/sp-adaptive-card-extension-base!IQuickViewCardAction:interface" /> | <xref
           uid="@microsoft/sp-adaptive-card-extension-base!IExternalLinkCardAction:interface" /> | <xref
           uid="@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction:interface" /> | <xref
           uid="@microsoft/sp-adaptive-card-extension-base!IGetLocationCardAction:interface" /> | <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!IShowLocationCardAction:interface" /> | undefined
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState, TData&gt;'
+          uid="@microsoft/sp-adaptive-card-extension-base!IShowLocationCardAction:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IExecuteCardAction:interface" /> | undefined
+methods:
+  - name: onAction(action)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onAction:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onAction(action)
+    summary: Action handler for Adaptive Card Actions.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onAction(action: IActionArguments): void;
+      parameters:
+        - id: action
+          description: >-
+            The [IActionArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionArguments:type) for the
+            current event.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IActionArguments:type" />'
+      return:
+        type: void
+        description: ''
+  - name: onActionError(error)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#onActionError:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: onActionError(error)
+    summary: Error handler for Adaptive Card Actions.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        onActionError(error: IActionErrorArguments): void;
+      parameters:
+        - id: error
+          description: >-
+            The [IActionErrorArguments](xref:@microsoft/sp-adaptive-card-extension-base!IActionErrorArguments:type) for
+            the current event.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IActionErrorArguments:type" />'
+      return:
+        type: void
+        description: ''
+  - name: setVisibility(isVisible)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView#setVisibility:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: setVisibility(isVisible)
+    summary: >-
+      Sets visibility to false and rerenders the card. See
+      [BaseAdaptiveCardExtension.isVisible](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23isVisible:member)<!--
+      -->.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'setVisibility(isVisible: boolean): void;'
+      parameters:
+        - id: isVisible
+          description: ''
+          type: boolean
+      return:
+        type: void
+        description: ''
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState&gt;'

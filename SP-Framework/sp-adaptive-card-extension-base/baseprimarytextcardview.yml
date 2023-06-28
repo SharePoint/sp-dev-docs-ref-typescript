@@ -6,7 +6,7 @@ fullName: BasePrimaryTextCardView
 summary: Base class for a Primary Text Card view.
 remarks: >-
   The Primary Text Card view displays the following: - Card Title - Card Icon - One primary text field - One description
-  text field - Zero buttons in the `Medium` Card size, up to two buttons in `Large` Card size
+  text field - One buttons in the `Medium` Card size, up to two buttons in `Large` Card size
 isPreview: false
 isDeprecated: false
 type: class
@@ -20,7 +20,8 @@ properties:
       [BasePrimaryTextCardView](xref:@microsoft/sp-adaptive-card-extension-base!BasePrimaryTextCardView:class)<!-- -->.
     remarks: ''
     isPreview: false
-    isDeprecated: false
+    isDeprecated: true
+    customDeprecatedMessage: template property is deprecated for card views.
     syntax:
       content: |-
         /** @sealed */
@@ -28,5 +29,5 @@ properties:
       return:
         type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
 extends: >-
-  <xref uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />&lt;TProperties, TState, <xref
+  <xref uid="@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView:class" />&lt;TProperties, TState, <xref
   uid="@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardParameters:interface" />&gt;

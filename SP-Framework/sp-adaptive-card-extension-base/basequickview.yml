@@ -1,0 +1,42 @@
+### YamlMime:TSType
+name: BaseQuickView
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseQuickView:class'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: BaseQuickView
+summary: Base class for an Adaptive Card view.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: externalLink
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseQuickView#externalLink:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: externalLink
+    summary: An optional external link to be displayed in the navigation bar above the Adaptive Card.
+    remarks: 'If this method is not overriden or returns undefined, no link will be displayed.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get externalLink(): IExternalLinkParameters | undefined;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IExternalLinkParameters:interface" /> | undefined'
+  - name: title
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseQuickView#title:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: title
+    summary: An optional title to be displayed in the navigation bar above the Adaptive Card.
+    remarks: >-
+      If not overriden, the title displayed will be
+      [BaseAdaptiveCardExtension.title](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23title:member)
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get title(): string;
+      return:
+        type: string
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseView:class" />&lt;TProperties, TState&gt;'
