@@ -1,0 +1,61 @@
+### YamlMime:TSType
+name: BaseTemplateCardView
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView:class'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: BaseTemplateCardView
+summary: Primitive base class for template-based Card views.
+remarks: |-
+  This class is marked as `@sealed`. Subclasses should not extend it.
+
+  No third-party Card views should inherit from this class.
+isPreview: false
+isDeprecated: false
+type: class
+properties:
+  - name: cardButtons
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView#cardButtons:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardButtons
+    summary: The buttons displayed on the Card.
+    remarks: >-
+      Some Card view templates will restrict how many buttons can be displayed depending on various factors. See the
+      documentation for the respective base Card View class for specific details.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined;
+      return:
+        type: >-
+          [<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | [<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />, <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ICardButton:interface" />] | undefined
+  - name: data
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView#data:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: data
+    summary: The data used to render the Card view.
+    remarks: >-
+      The available data to display is dependent on the Card view template and its respective base Card view class. See
+      the documentation for the Card View class for specific details.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'abstract get data(): TData;'
+      return:
+        type: TData
+  - name: template
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView#template:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: template
+    summary: The Adaptive Card template used to render the view.
+    remarks: ''
+    isPreview: false
+    isDeprecated: true
+    customDeprecatedMessage: template property is deprecated for card views.
+    syntax:
+      content: 'abstract get template(): ISPFxAdaptiveCard;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface" />'
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseCardView:class" />&lt;TProperties, TState&gt;'

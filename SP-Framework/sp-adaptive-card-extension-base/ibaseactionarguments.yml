@@ -5,11 +5,12 @@ package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: IBaseActionArguments
 summary: >-
   Base object passed to
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) when an Adaptive
-  Card Action is executed.
+  [IAdaptiveCardExtensionActionView.onAction](xref:@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView%23onAction:member)
+  when an Adaptive Card Action is executed.
 remarks: >-
   Only `Submit` and `ShowCard` actions are routed to the
-  [BaseView.onAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseView%23onAction:member(1)) handler.
+  [IAdaptiveCardExtensionActionView.onAction](xref:@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView%23onAction:member)
+  handler.
 isPreview: false
 isDeprecated: false
 type: interface
@@ -35,6 +36,6 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'type: ''Submit'' | ''ShowCard'';'
+      content: 'type: ''Submit'' | ''ShowCard'' | ''Execute'';'
       return:
-        type: '''Submit'' | ''ShowCard'''
+        type: '''Submit'' | ''ShowCard'' | ''Execute'''
