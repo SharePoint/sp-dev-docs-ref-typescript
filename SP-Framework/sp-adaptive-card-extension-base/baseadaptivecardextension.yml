@@ -231,12 +231,11 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'get quickViewNavigator(): IQuickViewNavigator<BaseAdaptiveCardQuickView<TProperties, TState>>;'
+      content: 'get quickViewNavigator(): IQuickViewNavigator<BaseQuickView<TProperties, TState>>;'
       return:
         type: >-
           <xref uid="@microsoft/sp-adaptive-card-extension-base!IQuickViewNavigator:interface" />&lt;<xref
-          uid="@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardQuickView:class" />&lt;TProperties,
-          TState&gt;&gt;
+          uid="@microsoft/sp-adaptive-card-extension-base!BaseQuickView:class" />&lt;TProperties, TState&gt;&gt;
   - name: renderedFromPersistedData
     uid: '@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension#renderedFromPersistedData:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -684,7 +683,7 @@ methods:
       content: 'setState(newState?: Partial<TState>): void;'
       parameters:
         - id: newState
-          description: ''
+          description: The new state to set.
           type: Partial&lt;TState&gt;
       return:
         type: void
