@@ -38,7 +38,9 @@ properties:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: defaultValue
     summary: Default value to display.
-    remarks: ''
+    remarks: >-
+      Provide this if the searchbox should be an uncontrolled component which tracks its current state internally;
+      otherwise, use value.
     isPreview: true
     isDeprecated: false
     syntax:
@@ -57,18 +59,18 @@ properties:
       content: 'disabled?: boolean;'
       return:
         type: boolean
-  - name: id
-    uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters#id:member'
+  - name: onChange
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters#onChange:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: id
-    summary: Unique Id of the search box.
+    fullName: onChange
+    summary: Callback function for when the search query text has changed.
     remarks: ''
     isPreview: true
     isDeprecated: false
     syntax:
-      content: 'id?: string;'
+      content: 'onChange?: (newValue?: string) => void;'
       return:
-        type: string
+        type: '(newValue?: string) =&gt; void'
   - name: placeholder
     uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters#placeholder:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -93,4 +95,20 @@ properties:
       content: 'readOnly?: boolean;'
       return:
         type: boolean
-extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface" />'
+  - name: value
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters#value:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: value
+    summary: Current value of the search box.
+    remarks: >-
+      Provide this if the search box is a controlled component where you are maintaining its current state. Use empty
+      string as initial value if needed.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'value?: string;'
+      return:
+        type: string
+extends: >-
+  <xref uid="@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface" />&lt;<xref
+  uid="@microsoft/sp-adaptive-card-extension-base!CardSearchBoxEventNames:type" />&gt;
