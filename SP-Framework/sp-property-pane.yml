@@ -33,6 +33,7 @@ interfaces:
   - '@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneField:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneGroup:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneHeadingProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneIconPickerProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneLabelProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneLinkProps:interface'
@@ -49,6 +50,7 @@ typeAliases:
   - '@microsoft/sp-property-pane!ImageFit:type'
   - '@microsoft/sp-property-pane!IPropertyPaneDynamicFieldFilters:type'
   - '@microsoft/sp-property-pane!IThumbnail:type'
+  - '@microsoft/sp-property-pane!PropertyPaneHeadingLevel:type'
   - '@microsoft/sp-property-pane!ThumbnailType:type'
 functions:
   - name: 'PropertyPaneButton(targetProperty, properties)'
@@ -241,6 +243,29 @@ functions:
         type: >-
           <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-property-pane!IPropertyPaneDynamicTextFieldProps:interface" />&gt;
+        description: ''
+  - name: 'PropertyPaneHeading(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneHeading:function(1)'
+    package: '@microsoft/sp-property-pane!'
+    summary: Helper method to create a heading on the PropertyPane. Temporary solution while waiting for redesign
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function PropertyPaneHeading(targetProperty: string, properties: IPropertyPaneHeadingProps):
+        IPropertyPaneField<IPropertyPaneHeadingProps>;
+      parameters:
+        - id: targetProperty
+          description: Target property the label is associated to.
+          type: string
+        - id: properties
+          description: Strongly typed Label properties.
+          type: '<xref uid="@microsoft/sp-property-pane!IPropertyPaneHeadingProps:interface" />'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface" />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneHeadingProps:interface" />&gt;
         description: ''
   - name: PropertyPaneHorizontalRule()
     uid: '@microsoft/sp-property-pane!PropertyPaneHorizontalRule:function(1)'
