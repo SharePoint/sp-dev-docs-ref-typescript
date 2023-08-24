@@ -56,20 +56,20 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!ICardBarConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardBarParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
-  - '@microsoft/sp-adaptive-card-extension-base!ICardButtonBaseParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardButtonBase:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardButtonConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardButtonParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxButton:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters:interface'
-  - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxTitleButtonParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchFooterConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchFooterParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardTextConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputConfiguration:interface'
-  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputIconButtonParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputIconButton:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputParameters:interface'
-  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputTitleButtonParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardTextInputTitleButton:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardTextParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardViewParameters:interface'
@@ -127,7 +127,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a Basic Card View.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'export declare function BasicCardView(configuration: IBasicTextCardViewConfiguration): ITextCardViewParameters;'
@@ -143,7 +143,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create an Image Card View.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'export declare function ImageCardView(configuration: IImageCardViewConfiguration): ITextCardViewParameters;'
@@ -159,7 +159,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a Primary Text Card View.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
@@ -177,7 +177,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a Search Card View.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'export declare function SearchCardView(configuration: ISearchCardViewConfiguration): ISearchCardViewParameters;'
@@ -193,7 +193,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create an Text Input Card View.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
@@ -211,7 +211,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create an Text Input with Image Card View.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-

@@ -4,8 +4,10 @@ uid: '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewParameters:inter
 package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: ISearchCardViewParameters
 summary: The parameters for the search card view.
-remarks: ''
-isPreview: true
+remarks: >-
+  The Search Text Card view displays the following: - Card Title - Card Icon - One primary text field - One search box -
+  Search box footer
+isPreview: false
 isDeprecated: false
 type: interface
 properties:
@@ -13,9 +15,9 @@ properties:
     uid: '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewParameters#body:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: body
-    summary: Body area components.
+    summary: Body area components. Contains a single search box.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'body: [ICardSearchBoxParameters];'
@@ -27,7 +29,7 @@ properties:
     fullName: cardViewType
     summary: Card View type
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'cardViewType: ''search'';'
@@ -37,9 +39,9 @@ properties:
     uid: '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewParameters#footer:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: footer
-    summary: Footer area components.
+    summary: Footer area components. Contains a single search footer.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'footer: [ICardSearchFooterParameters] | undefined;'
@@ -49,9 +51,9 @@ properties:
     uid: '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewParameters#header:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: header
-    summary: Header area components.
+    summary: Header area components. Contains a single text field.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'header: [ICardTextParameters];'
