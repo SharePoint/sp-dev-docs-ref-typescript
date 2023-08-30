@@ -5,7 +5,7 @@ package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: ICardTextInputParameters
 summary: Text input component parameters.
 remarks: ''
-isPreview: true
+isPreview: false
 isDeprecated: false
 type: interface
 properties:
@@ -15,7 +15,7 @@ properties:
     fullName: ariaLabel
     summary: Aria label for the text field.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'ariaLabel?: string;'
@@ -27,21 +27,21 @@ properties:
     fullName: button
     summary: Optional button to display.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
-      content: 'button?: ICardTextInputIconButtonParameters | ICardTextInputTitleButtonParameters;'
+      content: 'button?: ICardTextInputIconButton | ICardTextInputTitleButton;'
       return:
         type: >-
-          <xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextInputIconButtonParameters:interface" /> | <xref
-          uid="@microsoft/sp-adaptive-card-extension-base!ICardTextInputTitleButtonParameters:interface" />
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextInputIconButton:interface" /> | <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ICardTextInputTitleButton:interface" />
   - name: componentName
     uid: '@microsoft/sp-adaptive-card-extension-base!ICardTextInputParameters#componentName:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: componentName
     summary: Unique component name.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'componentName: ''textInput'';'
@@ -55,7 +55,7 @@ properties:
     remarks: >-
       Provide this if the input should be an uncontrolled component which tracks its current state internally;
       otherwise, use value.
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'defaultValue?: string;'
@@ -67,7 +67,7 @@ properties:
     fullName: iconAfter
     summary: 'Properties for an optional icon, displayed in the right end of the text input.'
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'iconAfter?: IAdaptiveCardExtensionIcon;'
@@ -79,7 +79,7 @@ properties:
     fullName: iconBefore
     summary: 'Properties for an optional icon, displayed in the left end of the text input.'
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'iconBefore?: IAdaptiveCardExtensionIcon;'
@@ -91,7 +91,7 @@ properties:
     fullName: onChange
     summary: Text change event handler.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'onChange?: (newValue?: string) => void;'
@@ -103,7 +103,7 @@ properties:
     fullName: placeholder
     summary: Placeholder text to display.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'placeholder?: string;'
@@ -117,7 +117,7 @@ properties:
     remarks: >-
       Provide this if the input is a controlled component where you are maintaining its current state. Use empty string
       as initial value if needed.
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'value?: string;'
