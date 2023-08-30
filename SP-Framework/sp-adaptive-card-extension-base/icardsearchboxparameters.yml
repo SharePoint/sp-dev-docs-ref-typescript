@@ -3,9 +3,9 @@ name: ICardSearchBoxParameters
 uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters:interface'
 package: '@microsoft/sp-adaptive-card-extension-base!'
 fullName: ICardSearchBoxParameters
-summary: Search box component parameters.
+summary: Search box component parameters. Represents a search box rendered in the card view.
 remarks: ''
-isPreview: true
+isPreview: false
 isDeprecated: false
 type: interface
 properties:
@@ -15,19 +15,19 @@ properties:
     fullName: button
     summary: Button displayed on the search box.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
-      content: 'button: ICardSearchBoxTitleButtonParameters;'
+      content: 'button: ICardSearchBoxButton;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxTitleButtonParameters:interface" />'
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxButton:interface" />'
   - name: componentName
     uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters#componentName:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: componentName
     summary: Unique component name.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'componentName: ''searchBox'';'
@@ -41,7 +41,7 @@ properties:
     remarks: >-
       Provide this if the searchbox should be an uncontrolled component which tracks its current state internally;
       otherwise, use value.
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'defaultValue?: string;'
@@ -53,7 +53,7 @@ properties:
     fullName: onChange
     summary: Callback function for when the search query text has changed.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'onChange?: (newValue?: string) => void;'
@@ -65,7 +65,7 @@ properties:
     fullName: placeholder
     summary: Placeholder text to display.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'placeholder?: string;'
@@ -79,7 +79,7 @@ properties:
     remarks: >-
       Provide this if the search box is a controlled component where you are maintaining its current state. Use empty
       string as initial value if needed.
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'value?: string;'
