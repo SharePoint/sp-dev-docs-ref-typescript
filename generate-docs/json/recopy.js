@@ -1,5 +1,15 @@
 @echo off "after _stateus_complete"
 `"build.js"
+.gitignore
+log/
+obj/
+_site/
+.optemp/
+_themes*/
+_repo.*/
+_dependentPackages/
+
+.openpublishing.buildcore.ps1
 copy /y ..\..\..\sp-client\spfx-core\decorators\temp\*.api.json .
 copy /y ..\..\..\sp-client\spfx-core\sp-application-base\temp\*.api.json .
 copy /y ..\..\..\sp-client\spfx-core\sp-component-base\temp\*.api.json .
