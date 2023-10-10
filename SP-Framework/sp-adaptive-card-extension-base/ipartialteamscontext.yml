@@ -1,0 +1,29 @@
+### YamlMime:TSType
+name: IPartialTeamsContext
+uid: '@microsoft/sp-adaptive-card-extension-base!IPartialTeamsContext:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IPartialTeamsContext
+summary: Partial teams context
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: app
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPartialTeamsContext#app:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: app
+    summary: Properties about the current session for your app
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        app: {
+                appInfo: Pick<microsoftTeams.app.AppInfo, 'theme'>;
+            };
+      return:
+        type: |-
+          {
+                  appInfo: Pick&lt;<xref uid="@microsoft/teams-js!app.AppInfo:interface" />, 'theme'&gt;;
+              }
