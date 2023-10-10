@@ -23,18 +23,6 @@ properties:
       content: 'get deviceContext(): DeviceContext;'
       return:
         type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!DeviceContext:type" />'
-  - name: hostContext
-    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#hostContext:member'
-    package: '@microsoft/sp-adaptive-card-extension-base!'
-    fullName: hostContext
-    summary: Provides a hostContext that gets current context of device
-    remarks: ''
-    isPreview: true
-    isDeprecated: false
-    syntax:
-      content: 'get hostContext(): IHostContext | undefined;'
-      return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IHostContext:interface" /> | undefined'
   - name: location
     uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#location:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -71,4 +59,18 @@ properties:
       content: 'get propertyPane(): IPropertyPaneAccessor | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneAccessor:interface" /> | undefined'
+  - name: sdks
+    uid: '@microsoft/sp-adaptive-card-extension-base!AdaptiveCardExtensionContext#sdks:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: sdks
+    summary: >-
+      Provides a sdk that gets current context of device. See
+      [IPartialSDKs](xref:@microsoft/sp-adaptive-card-extension-base!IPartialSDKs:interface)
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get sdks(): IPartialSDKs | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IPartialSDKs:interface" /> | undefined'
 extends: '<xref uid="@microsoft/sp-component-base!BaseComponentContext:class" />'
