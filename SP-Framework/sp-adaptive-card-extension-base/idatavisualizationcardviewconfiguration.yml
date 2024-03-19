@@ -1,0 +1,40 @@
+### YamlMime:TSType
+name: IDataVisualizationCardViewConfiguration
+uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewConfiguration:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IDataVisualizationCardViewConfiguration
+summary: Configuration for a DataVisualization card view.
+remarks: >-
+  The DataVisualization Card view displays the following: - Card Title - Card Icon - One or zero primary text field -
+  One or zero secondary text fied - One chart - Up to one button in `Large` Card size
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: footer
+    uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewConfiguration#footer:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: footer
+    summary: Footer area components.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'footer?: ICardButtonConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardButtonConfiguration:interface" />'
+  - name: header
+    uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewConfiguration#header:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: header
+    summary: Header area components.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'header?: ICardTextConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextConfiguration:interface" />'
+extends: >-
+  Omit&lt;<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface" />, 'image' | 'header'
+  | 'footer'&gt;

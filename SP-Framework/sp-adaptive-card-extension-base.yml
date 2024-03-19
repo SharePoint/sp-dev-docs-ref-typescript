@@ -22,6 +22,7 @@ typeAliases:
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentConfiguration:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentEventNames:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentName:type'
+  - '@microsoft/sp-adaptive-card-extension-base!CardDataVisualizationKind:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardSearchBoxEventNames:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardSize:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardTextInputEventNames:type'
@@ -36,7 +37,10 @@ typeAliases:
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionIcon:type'
   - '@microsoft/sp-adaptive-card-extension-base!ICardAction:type'
   - '@microsoft/sp-adaptive-card-extension-base!IOnBeforeActionArguments:type'
+  - '@microsoft/sp-adaptive-card-extension-base!LineChartData:type'
+  - '@microsoft/sp-adaptive-card-extension-base!MaxThreeTuple:type'
   - '@microsoft/sp-adaptive-card-extension-base!RenderType:type'
+  - '@microsoft/sp-adaptive-card-extension-base!SupportedLineChartDataTypes:type'
 interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IActionError:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionActionView:interface'
@@ -45,9 +49,12 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertiesMetadata:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertyMetadata:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IAxis:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseCardParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IBaseSeries:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICachedLoadParameters:interface'
@@ -59,6 +66,8 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!ICardButtonConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardButtonParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardLineChartConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardLineChartParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxButton:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters:interface'
@@ -72,7 +81,11 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!ICardTextParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardViewParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICartesianChartParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IConfirmationDialog:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IDataPoint:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IExecuteActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IExecuteCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IExecuteCardParameters:interface'
@@ -86,6 +99,8 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IGetLocationCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IImageCardParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IImageCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ILineChartCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ILineChartSeries:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ILocation:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ILocationErrorArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!INotificationArguments:interface'
@@ -155,6 +170,46 @@ functions:
           type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IImageCardViewConfiguration:interface" />'
       return:
         type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ITextCardViewParameters:interface" />'
+        description: ''
+  - name: LineChartCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!LineChartCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a line chart card view with numeric data.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function LineChartCardView(configuration: ILineChartCardViewConfiguration<number>):
+        IDataVisualizationCardViewParameters;
+      parameters:
+        - id: configuration
+          description: ''
+          type: >-
+            <xref uid="@microsoft/sp-adaptive-card-extension-base!ILineChartCardViewConfiguration:interface"
+            />&lt;number&gt;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
+        description: ''
+  - name: LineChartCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!LineChartCardView:function(2)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a line chart card view with date data.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function LineChartCardView(configuration: ILineChartCardViewConfiguration<Date>):
+        IDataVisualizationCardViewParameters;
+      parameters:
+        - id: configuration
+          description: ''
+          type: >-
+            <xref uid="@microsoft/sp-adaptive-card-extension-base!ILineChartCardViewConfiguration:interface"
+            />&lt;Date&gt;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
         description: ''
   - name: PrimaryTextCardView(configuration)
     uid: '@microsoft/sp-adaptive-card-extension-base!PrimaryTextCardView:function(1)'

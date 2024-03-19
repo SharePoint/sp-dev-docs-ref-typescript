@@ -1,0 +1,14 @@
+### YamlMime:TSTypeAlias
+name: _RecursivelyExtractFromSet
+uid: '@microsoft/sp-core-library!_RecursivelyExtractFromSet:type'
+package: '@microsoft/sp-core-library!'
+fullName: _RecursivelyExtractFromSet
+summary: Utility type to recursively evaluate if `Type` is within `Set`<!-- -->.
+remarks: >-
+  Use [ExtractFromSet](xref:@microsoft/sp-core-library!ExtractFromSet:type)<!-- -->. This type is not meant to be used
+  by itself.
+isPreview: false
+isDeprecated: false
+syntax: >-
+  export declare type _RecursivelyExtractFromSet<Set extends unknown[], Current extends unknown[], Type> =
+  _IsNever<Type> extends true ? never : _UniqueFromSet<Set, Current, _NextValue<Set, Current>, Type>;

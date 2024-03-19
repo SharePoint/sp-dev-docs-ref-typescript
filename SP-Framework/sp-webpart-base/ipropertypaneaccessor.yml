@@ -5,7 +5,7 @@ package: '@microsoft/sp-webpart-base!'
 fullName: IPropertyPaneAccessor
 summary: >-
   Web part context property pane accessor interface. Provides some most commonly used operations to access the property
-  pane.
+  pane and content panel.
 remarks: ''
 isPreview: false
 isDeprecated: false
@@ -15,7 +15,7 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#close:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: close()
-    summary: This API should be used to close the PropertyPane to help configure the web part.
+    summary: This API should be used to close the PropertyPane or Content Panel to help configure the web part.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -24,12 +24,27 @@ methods:
       return:
         type: void
         description: ''
+  - name: isContentPanelOpen()
+    uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isContentPanelOpen:member(1)'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: isContentPanelOpen()
+    summary: Returns true if the ContentPanel is open.
+    remarks: 'Returns true if the Content Panel is open, regardless if the Content Panel is rendering the property pane.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'isContentPanelOpen(): boolean;'
+      return:
+        type: boolean
+        description: ''
   - name: isPropertyPaneOpen()
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isPropertyPaneOpen:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: isPropertyPaneOpen()
     summary: Returns true if the PropertyPane is open.
-    remarks: ''
+    remarks: >-
+      This is true whenever the Property Pane is open whether it is hosted in the Content Panel or traditional Property
+      Pane UI.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -37,14 +52,33 @@ methods:
       return:
         type: boolean
         description: ''
+  - name: isPropertyPaneOpen(instanceId)
+    uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isPropertyPaneOpen:member(2)'
+    package: '@microsoft/sp-webpart-base!'
+    fullName: isPropertyPaneOpen(instanceId)
+    summary: >-
+      Returns true if the Content Panel is open and the specified instanceId is supported in the content panel. OR
+      Returns true if the Property panel is open and the specified instanceId is supported in the properties pane.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'isPropertyPaneOpen(instanceId?: string): boolean;'
+      parameters:
+        - id: instanceId
+          description: ''
+          type: string
+      return:
+        type: boolean
+        description: ''
   - name: isRenderedByWebPart()
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#isRenderedByWebPart:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: isRenderedByWebPart()
-    summary: Indicates whether the PropertyPane was initially opened by the web part.
+    summary: Indicates whether the PropertyPane/Content Panel was initially opened by the web part.
     remarks: >-
       For example, if the web part calls this.context.propertyPane.open() then the property would be true, whereas if
-      the property pane was opened by the host, then the value will be false.
+      the configuration was opened by the host, then the value will be false.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -56,7 +90,7 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#open:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: open()
-    summary: This API should be used to open the PropertyPane to help configure the web part.
+    summary: This API should be used to open the PropertyPane or Content Panel to help configure the web part.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -69,7 +103,9 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#openDetails:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: openDetails(context)
-    summary: This API should be used to open the Details PropertyPane to help configure the items in the web part.
+    summary: >-
+      This API should be used to open the Details PropertyPane/Content Panel to help configure the items in the web
+      part.
     remarks: 'This API is mainly used for configuring Details, which is different from configuring the web part itself.'
     isPreview: false
     isDeprecated: false
@@ -77,7 +113,7 @@ methods:
       content: 'openDetails(context?: any): void;'
       parameters:
         - id: context
-          description: Add additional context for property pane
+          description: Add additional context for property pane or content panel
           type: any
       return:
         type: void
@@ -86,7 +122,7 @@ methods:
     uid: '@microsoft/sp-webpart-base!IPropertyPaneAccessor#refresh:member(1)'
     package: '@microsoft/sp-webpart-base!'
     fullName: refresh()
-    summary: This API should be used to invoke the PropertyPane to help configure the web part.
+    summary: This API should be used to invoke the PropertyPane or Content Panel to help configure the web part.
     remarks: >-
       This operation only works when the PropertyPane is already open for the currently active web part. If the
       PropertyPane is opened for another web part, calling the refresh API will have no impact.
