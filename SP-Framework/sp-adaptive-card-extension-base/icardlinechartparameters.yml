@@ -1,0 +1,38 @@
+### YamlMime:TSType
+name: ICardLineChartParameters
+uid: '@microsoft/sp-adaptive-card-extension-base!ICardLineChartParameters:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ICardLineChartParameters
+summary: Parameters for a line chart.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: dataVisualizationKind
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardLineChartParameters#dataVisualizationKind:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: dataVisualizationKind
+    summary: Line chart
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'dataVisualizationKind: ''line'';'
+      return:
+        type: '''line'''
+  - name: series
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardLineChartParameters#series:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: series
+    summary: Series to display.
+    remarks: Can be a single series or multiple (upto 3) series.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'series: MaxThreeTuple<ILineChartSeries<T>>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!MaxThreeTuple:type" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!ILineChartSeries:interface" />&lt;T&gt;&gt;
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICartesianChartParameters:interface" />&lt;T&gt;'

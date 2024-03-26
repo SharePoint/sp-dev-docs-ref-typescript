@@ -37,6 +37,8 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!CardComponentEventNames:type'
           - name: CardComponentName
             uid: '@microsoft/sp-adaptive-card-extension-base!CardComponentName:type'
+          - name: CardDataVisualizationKind
+            uid: '@microsoft/sp-adaptive-card-extension-base!CardDataVisualizationKind:type'
           - name: CardSearchBoxEventNames
             uid: '@microsoft/sp-adaptive-card-extension-base!CardSearchBoxEventNames:type'
           - name: CardSize
@@ -75,12 +77,18 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertyMetadata:interface'
           - name: IAttachmentError
             uid: '@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface'
+          - name: IAxis
+            uid: '@microsoft/sp-adaptive-card-extension-base!IAxis:interface'
           - name: IBaseActionArguments
             uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
           - name: IBaseActionErrorArguments
             uid: '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
+          - name: IBaseCardDataVisualizationParameters
+            uid: '@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface'
           - name: IBaseCardParameters
             uid: '@microsoft/sp-adaptive-card-extension-base!IBaseCardParameters:interface'
+          - name: IBaseSeries
+            uid: '@microsoft/sp-adaptive-card-extension-base!IBaseSeries:interface'
           - name: IBasicCardParameters
             uid: '@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface'
           - name: IBasicTextCardViewConfiguration
@@ -105,6 +113,10 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!ICardButtonParameters:interface'
           - name: ICardComponentParameters
             uid: '@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface'
+          - name: ICardLineChartConfiguration
+            uid: '@microsoft/sp-adaptive-card-extension-base!ICardLineChartConfiguration:interface'
+          - name: ICardLineChartParameters
+            uid: '@microsoft/sp-adaptive-card-extension-base!ICardLineChartParameters:interface'
           - name: ICardSearchBoxButton
             uid: '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxButton:interface'
           - name: ICardSearchBoxConfiguration
@@ -131,8 +143,16 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!ICardViewConfiguration:interface'
           - name: ICardViewParameters
             uid: '@microsoft/sp-adaptive-card-extension-base!ICardViewParameters:interface'
+          - name: ICartesianChartParameters
+            uid: '@microsoft/sp-adaptive-card-extension-base!ICartesianChartParameters:interface'
           - name: IConfirmationDialog
             uid: '@microsoft/sp-adaptive-card-extension-base!IConfirmationDialog:interface'
+          - name: IDataPoint
+            uid: '@microsoft/sp-adaptive-card-extension-base!IDataPoint:interface'
+          - name: IDataVisualizationCardViewConfiguration
+            uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewConfiguration:interface'
+          - name: IDataVisualizationCardViewParameters
+            uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface'
           - name: IExecuteActionArguments
             uid: '@microsoft/sp-adaptive-card-extension-base!IExecuteActionArguments:interface'
           - name: IExecuteCardAction
@@ -159,6 +179,10 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!IImageCardParameters:interface'
           - name: IImageCardViewConfiguration
             uid: '@microsoft/sp-adaptive-card-extension-base!IImageCardViewConfiguration:interface'
+          - name: ILineChartCardViewConfiguration
+            uid: '@microsoft/sp-adaptive-card-extension-base!ILineChartCardViewConfiguration:interface'
+          - name: ILineChartSeries
+            uid: '@microsoft/sp-adaptive-card-extension-base!ILineChartSeries:interface'
           - name: ILocation
             uid: '@microsoft/sp-adaptive-card-extension-base!ILocation:interface'
           - name: ILocationErrorArguments
@@ -231,12 +255,18 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!ITextInputImageCardViewConfiguration:interface'
           - name: IViewNavigator
             uid: '@microsoft/sp-adaptive-card-extension-base!IViewNavigator:interface'
+          - name: LineChartData
+            uid: '@microsoft/sp-adaptive-card-extension-base!LineChartData:type'
+          - name: MaxThreeTuple
+            uid: '@microsoft/sp-adaptive-card-extension-base!MaxThreeTuple:type'
           - name: MediaType
             uid: '@microsoft/sp-adaptive-card-extension-base!MediaType:enum'
           - name: QuickViewNavigator
             uid: '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class'
           - name: RenderType
             uid: '@microsoft/sp-adaptive-card-extension-base!RenderType:type'
+          - name: SupportedLineChartDataTypes
+            uid: '@microsoft/sp-adaptive-card-extension-base!SupportedLineChartDataTypes:type'
           - name: ViewNavigator
             uid: '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
       - name: sp-application-base
@@ -288,12 +318,28 @@ items:
       - name: sp-core-library
         uid: '@microsoft/sp-core-library!'
         items:
+          - name: _ContinueRecursivelyExtractFromSet
+            uid: '@microsoft/sp-core-library!_ContinueRecursivelyExtractFromSet:type'
+          - name: _IsNever
+            uid: '@microsoft/sp-core-library!_IsNever:type'
+          - name: _NextValue
+            uid: '@microsoft/sp-core-library!_NextValue:type'
+          - name: _RecursivelyExtractFromSet
+            uid: '@microsoft/sp-core-library!_RecursivelyExtractFromSet:type'
+          - name: _Stop
+            uid: '@microsoft/sp-core-library!_Stop:type'
+          - name: _UniqueCondition
+            uid: '@microsoft/sp-core-library!_UniqueCondition:type'
+          - name: _UniqueFromSet
+            uid: '@microsoft/sp-core-library!_UniqueFromSet:type'
           - name: DisplayMode
             uid: '@microsoft/sp-core-library!DisplayMode:enum'
           - name: Environment
             uid: '@microsoft/sp-core-library!Environment:class'
           - name: EnvironmentType
             uid: '@microsoft/sp-core-library!EnvironmentType:enum'
+          - name: ExtractFromSet
+            uid: '@microsoft/sp-core-library!ExtractFromSet:type'
           - name: FormDisplayMode
             uid: '@microsoft/sp-core-library!FormDisplayMode:enum'
           - name: Guid
@@ -574,55 +620,6 @@ items:
             uid: '@microsoft/sp-lodash-subset!Cancelable:type'
           - name: ThrottleSettings
             uid: '@microsoft/sp-lodash-subset!ThrottleSettings:type'
-      - name: sp-module-interfaces
-        uid: '@microsoft/sp-module-interfaces!'
-        items:
-          - name: ComponentType
-            uid: '@microsoft/sp-module-interfaces!ComponentType:type'
-          - name: ExtensionType
-            uid: '@microsoft/sp-module-interfaces!ExtensionType:type'
-          - name: IAdaptiveCardExtensionManifest
-            uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest:interface'
-          - name: IAdaptiveCardExtensionManifestEntry
-            uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifestEntry:interface'
-          - name: IClientSideAssemblyManifest
-            uid: '@microsoft/sp-module-interfaces!IClientSideAssemblyManifest:interface'
-          - name: IClientSideComponentLoaderConfiguration
-            uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
-          - name: IClientSideComponentManifest
-            uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
-          - name: IClientSideExtensionManifest
-            uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
-          - name: IClientSideLibraryManifest
-            uid: '@microsoft/sp-module-interfaces!IClientSideLibraryManifest:interface'
-          - name: IClientSideManifestBase
-            uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
-          - name: IClientSideWebPartManifest
-            uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest:interface'
-          - name: IClientSideWebPartManifestEntry
-            uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface'
-          - name: IClientSideWebPartManifestInstance
-            uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface'
-          - name: ICommandDefinition
-            uid: '@microsoft/sp-module-interfaces!ICommandDefinition:interface'
-          - name: ICommandSetExtensionManifest
-            uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
-          - name: IComponentModuleConfiguration
-            uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface'
-          - name: IIntegrityPath
-            uid: '@microsoft/sp-module-interfaces!IIntegrityPath:interface'
-          - name: ILocalizedPathModuleConfiguration
-            uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface'
-          - name: ILocalizedString
-            uid: '@microsoft/sp-module-interfaces!ILocalizedString:interface'
-          - name: IModuleConfiguration
-            uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:type'
-          - name: IModuleConfigurationBase
-            uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
-          - name: IPathModuleConfiguration
-            uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration:interface'
-          - name: PredefinedGroup
-            uid: '@microsoft/sp-module-interfaces!PredefinedGroup:enum'
       - name: sp-odata-types
         uid: '@microsoft/sp-odata-types!'
         items:

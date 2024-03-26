@@ -1,0 +1,15 @@
+### YamlMime:TSTypeAlias
+name: _UniqueFromSet
+uid: '@microsoft/sp-core-library!_UniqueFromSet:type'
+package: '@microsoft/sp-core-library!'
+fullName: _UniqueFromSet
+summary: Utility type to recursively evaluate if `Type` is within `Set`<!-- -->.
+remarks: >-
+  `Current` is used to track the recursion, which is why `CurrentValue` is added to `Current` after
+  [\_UniqueCondition](xref:@microsoft/sp-core-library!_UniqueCondition:type) is evaluated.
+isPreview: false
+isDeprecated: false
+syntax: >-
+  export declare type _UniqueFromSet<Set extends unknown[], Current extends unknown[], CurrentValue, Type> =
+  _UniqueCondition<Type, CurrentValue> extends true ? CurrentValue : _ContinueRecursivelyExtractFromSet<Set,
+  [CurrentValue, ...Current], Type>;

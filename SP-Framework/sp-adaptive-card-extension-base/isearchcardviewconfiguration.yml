@@ -6,7 +6,7 @@ fullName: ISearchCardViewConfiguration
 summary: Configuration for a Search Card view.
 remarks: >-
   The Search Text Card view displays the following: - Card Title - Card Icon - One primary text field - One search box -
-  Search box footer
+  Optional search box footer
 isPreview: false
 isDeprecated: false
 type: interface
@@ -32,9 +32,9 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'footer: ICardSearchFooterConfiguration;'
+      content: 'footer: ICardSearchFooterConfiguration | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardSearchFooterConfiguration:interface" />'
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardSearchFooterConfiguration:interface" /> | undefined'
   - name: header
     uid: '@microsoft/sp-adaptive-card-extension-base!ISearchCardViewConfiguration#header:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'

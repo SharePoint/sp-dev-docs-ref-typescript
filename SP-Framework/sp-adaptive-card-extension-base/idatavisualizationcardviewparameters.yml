@@ -1,0 +1,63 @@
+### YamlMime:TSType
+name: IDataVisualizationCardViewParameters
+uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IDataVisualizationCardViewParameters
+summary: The parameters for the DataVisualization card view.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: body
+    uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters#body:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: body
+    summary: Body area components.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'body: [IBaseCardDataVisualizationParameters] | [ICardTextParameters, IBaseCardDataVisualizationParameters];'
+      return:
+        type: >-
+          [<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface" />] |
+          [<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextParameters:interface" />, <xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface" />]
+  - name: cardViewType
+    uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters#cardViewType:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: cardViewType
+    summary: Card View type
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'cardViewType: ''dataVisualization'';'
+      return:
+        type: '''dataVisualization'''
+  - name: footer
+    uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters#footer:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: footer
+    summary: Footer area components.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'footer: [ICardButtonParameters] | undefined;'
+      return:
+        type: '[<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardButtonParameters:interface" />] | undefined'
+  - name: header
+    uid: '@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters#header:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: header
+    summary: Header area components.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'header: [ICardTextParameters] | undefined;'
+      return:
+        type: '[<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardTextParameters:interface" />] | undefined'
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICardViewParameters:interface" />'
