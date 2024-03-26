@@ -1,0 +1,38 @@
+### YamlMime:TSType
+name: IAxis
+uid: '@microsoft/sp-adaptive-card-extension-base!IAxis:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IAxis
+summary: Represents the parameters for an axis on a chart.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: formatter
+    uid: '@microsoft/sp-adaptive-card-extension-base!IAxis#formatter:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: formatter
+    summary: A function that formats the labels for the data points on the axis.
+    remarks: 'If no formatter is provided, a default formatter will be used.'
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'formatter?: (value: T) => string;'
+      return:
+        type: '(value: T) =&gt; string'
+  - name: labelValues
+    uid: '@microsoft/sp-adaptive-card-extension-base!IAxis#labelValues:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: labelValues
+    summary: An array of reference points to be represented as ticks on the axis.
+    remarks: >-
+      The number of data points is limited to ensure optimal display quality. The limit depends on the size of the card:
+      - Large Card: 2 to 6 data points for the x-axis - Medium Card: 2 to 3 data points for the x-axis - 2 to 4 data
+      points for the y-axis
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'labelValues?: T[];'
+      return:
+        type: 'T[]'

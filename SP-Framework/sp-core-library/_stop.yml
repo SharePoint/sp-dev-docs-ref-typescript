@@ -1,0 +1,12 @@
+### YamlMime:TSTypeAlias
+name: _Stop
+uid: '@microsoft/sp-core-library!_Stop:type'
+package: '@microsoft/sp-core-library!'
+fullName: _Stop
+summary: Utility type to evaluate if a recursive conditional evaluation should stop.
+remarks: 'If `Set` and `Current` are the same length, then all values have been recursed upon.'
+isPreview: false
+isDeprecated: false
+syntax: >-
+  export declare type _Stop<Set extends unknown[], Current extends unknown[]> = Set['length'] extends Current['length']
+  ? true : false;
