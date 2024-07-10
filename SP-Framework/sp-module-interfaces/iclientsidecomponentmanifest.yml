@@ -103,8 +103,10 @@ properties:
     package: '@microsoft/sp-module-interfaces!'
     fullName: requiresCustomScript
     summary: >-
-      If true, the component can only be installed on sites where Custom Script is enabled. This should be set to true
-      if the component allows authors to execute arbitrary scripts on the page.
+      If true, the component behaves as following on sites where custom scripts are not allowed to run:
+      - when the component is a web part, it is not available in the web part picker
+      - every instance of the component that was added to the page while custom scripts were allowed to run, will no longer surface in those pages. Author are still able to remove those components while editing the page 
+   
     remarks: >-
       Defaults to false. See
       https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
