@@ -8,5 +8,5 @@ remarks: 'If `Set` and `Current` are the same length, then all values have been 
 isPreview: false
 isDeprecated: false
 syntax: >-
-  export declare type _Stop<Set extends unknown[], Current extends unknown[]> = Set['length'] extends Current['length']
-  ? true : false;
+  export type _Stop<Set extends unknown[], Current extends unknown[]> = Set['length'] extends Current['length'] ? true :
+  false;
