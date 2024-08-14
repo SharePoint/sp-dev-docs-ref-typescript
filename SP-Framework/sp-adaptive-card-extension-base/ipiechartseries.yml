@@ -1,0 +1,30 @@
+### YamlMime:TSType
+name: IPieChartSeries
+uid: '@microsoft/sp-adaptive-card-extension-base!IPieChartSeries:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IPieChartSeries
+summary: Series for a pie chart.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: data
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPieChartSeries#data:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: data
+    summary: Data for the series.
+    remarks: >-
+      Any number of data points can be provided. However, the number of categories shown will be as follows based on the
+      layout of the card: - Top 10 categories for large cards with just the data visualization component. - Top 8
+      categories for medium cards or cards with 2 out of the three elements (header, description, footer). - Top 6
+      categories for cards with either header or description or footer along with the data visualization component.
+
+
+      If the number of categories exceeds the limit, the excess categories will be grouped under 'Others'.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'data: IPieDataPoint[];'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IPieDataPoint:interface" />[]'

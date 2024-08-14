@@ -1,0 +1,39 @@
+### YamlMime:TSType
+name: IBarChartSeries
+uid: '@microsoft/sp-adaptive-card-extension-base!IBarChartSeries:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IBarChartSeries
+summary: Series for a bar chart.
+remarks: >-
+  The number of points rendered on the x-axis is predefined: - Large Chart: Limited to five points (displayed when a
+  card view contains no more than three components). - Medium Chart: Limited to three points for a single series and two
+  points for multiple series.
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: color
+    uid: '@microsoft/sp-adaptive-card-extension-base!IBarChartSeries#color:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: color
+    summary: Color of the series.
+    remarks: 'If not provided, a color will be automatically assigned.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'color?: string;'
+      return:
+        type: string
+  - name: data
+    uid: '@microsoft/sp-adaptive-card-extension-base!IBarChartSeries#data:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: data
+    summary: Data for the series.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'data: IDataPoint<T>[];'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataPoint:interface" />&lt;T&gt;[]'
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseSeries:interface" />'

@@ -1,0 +1,48 @@
+### YamlMime:TSType
+name: ICardPieChartParameters
+uid: '@microsoft/sp-adaptive-card-extension-base!ICardPieChartParameters:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ICardPieChartParameters
+summary: Parameters for a pie chart.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: dataVisualizationKind
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardPieChartParameters#dataVisualizationKind:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: dataVisualizationKind
+    summary: Pie chart
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'dataVisualizationKind: ''pie'';'
+      return:
+        type: '''pie'''
+  - name: isDonut
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardPieChartParameters#isDonut:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: isDonut
+    summary: Flag to indicate if the pie chart should be rendered as a donut chart.
+    remarks: false by default. Renders as a donut chart if true.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'isDonut?: boolean;'
+      return:
+        type: boolean
+  - name: series
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardPieChartParameters#series:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: series
+    summary: Series to display.
+    remarks: Should be a single series.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'series: [IPieChartSeries];'
+      return:
+        type: '[<xref uid="@microsoft/sp-adaptive-card-extension-base!IPieChartSeries:interface" />]'
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface" />'
