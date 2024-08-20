@@ -13,5 +13,5 @@ remarks: >-
 isPreview: false
 isDeprecated: false
 syntax: >-
-  export declare type _ContinueRecursivelyExtractFromSet<Set extends unknown[], Current extends unknown[], Type> =
-  _Stop<Set, Current> extends true ? never : _RecursivelyExtractFromSet<Set, Current, Type>;
+  export type _ContinueRecursivelyExtractFromSet<Set extends unknown[], Current extends unknown[], Type> = _Stop<Set,
+  Current> extends true ? never : _RecursivelyExtractFromSet<Set, Current, Type>;
