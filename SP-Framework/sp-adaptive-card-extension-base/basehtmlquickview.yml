@@ -1,0 +1,74 @@
+### YamlMime:TSType
+name: BaseHTMLQuickView
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView:class'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: BaseHTMLQuickView
+summary: Base class for a HTML Quick view.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: class
+properties:
+  - name: domElement
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#domElement:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: domElement
+    summary: DOM Element will be undefined in the constructor and after the quick view is disposed.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'protected get domElement(): HTMLDivElement;'
+      return:
+        type: HTMLDivElement
+methods:
+  - name: dispose()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#dispose:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: dispose()
+    summary: >-
+      This method is invoked when HTML Quick View's DOM element is removed from the Document. It will trigger when quick
+      view modal is closed, or navigating between quick views.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        dispose(): void;
+      return:
+        type: void
+        description: ''
+  - name: render()
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#render:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: render()
+    summary: This API is called to render the HTML quick view. It will be invoked when opening this view.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        /** @virtual */
+        abstract render(): void;
+      return:
+        type: void
+        description: ''
+  - name: setState(newState)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#setState:member(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: setState(newState)
+    summary: Update the state of the Adaptive Card Extension.
+    remarks: '- This method will not trigger a re-render and only update the ACE with the new state.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'setState(newState?: Partial<TState> | undefined): void;'
+      parameters:
+        - id: newState
+          description: The new state to set.
+          type: Partial&lt;TState&gt; | undefined
+      return:
+        type: void
+        description: ''
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!BaseQuickView:class" />&lt;TProperties, TState&gt;'

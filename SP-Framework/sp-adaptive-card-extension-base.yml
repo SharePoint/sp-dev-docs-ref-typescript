@@ -11,6 +11,7 @@ classes:
   - '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseComponentsCardView:class'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseImageCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BasePrimaryTextCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseQuickView:class'
@@ -19,6 +20,7 @@ classes:
   - '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class'
   - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
 typeAliases:
+  - '@microsoft/sp-adaptive-card-extension-base!BarChartData:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentConfiguration:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentEventNames:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentName:type'
@@ -40,6 +42,7 @@ typeAliases:
   - '@microsoft/sp-adaptive-card-extension-base!LineChartData:type'
   - '@microsoft/sp-adaptive-card-extension-base!MaxThreeTuple:type'
   - '@microsoft/sp-adaptive-card-extension-base!RenderType:type'
+  - '@microsoft/sp-adaptive-card-extension-base!SupportedBarChartDataTypes:type'
   - '@microsoft/sp-adaptive-card-extension-base!SupportedLineChartDataTypes:type'
 interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IActionError:interface'
@@ -50,6 +53,8 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IAdaptiveCardExtensionPropertyMetadata:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAttachmentError:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IAxis:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IBarChartCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IBarChartSeries:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface'
@@ -59,6 +64,8 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICachedLoadParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICacheSettings:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardBarChartConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardBarChartParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardBarConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardBarParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardButton:interface'
@@ -68,6 +75,8 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!ICardComponentParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardLineChartConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardLineChartParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardPieChartConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!ICardPieChartParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxButton:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ICardSearchBoxParameters:interface'
@@ -109,6 +118,9 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IPartialSDKs:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IPartialTeamsContext:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IPartialTeamsJs:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IPieChartCardViewConfiguration:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IPieChartSeries:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IPieDataPoint:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IPrimaryTextCardViewConfiguration:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IQuickViewActionArguments:interface'
@@ -139,6 +151,66 @@ interfaces:
 enums:
   - '@microsoft/sp-adaptive-card-extension-base!MediaType:enum'
 functions:
+  - name: BarChartCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BarChartCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a bar chart card view with numeric data.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function BarChartCardView(configuration: IBarChartCardViewConfiguration<number>):
+        IDataVisualizationCardViewParameters;
+      parameters:
+        - id: configuration
+          description: ''
+          type: >-
+            <xref uid="@microsoft/sp-adaptive-card-extension-base!IBarChartCardViewConfiguration:interface"
+            />&lt;number&gt;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
+        description: ''
+  - name: BarChartCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BarChartCardView:function(2)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a bar chart card view with string data.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function BarChartCardView(configuration: IBarChartCardViewConfiguration<string>):
+        IDataVisualizationCardViewParameters;
+      parameters:
+        - id: configuration
+          description: ''
+          type: >-
+            <xref uid="@microsoft/sp-adaptive-card-extension-base!IBarChartCardViewConfiguration:interface"
+            />&lt;string&gt;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
+        description: ''
+  - name: BarChartCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!BarChartCardView:function(3)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a bar chart card view with date data.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function BarChartCardView(configuration: IBarChartCardViewConfiguration<Date>):
+        IDataVisualizationCardViewParameters;
+      parameters:
+        - id: configuration
+          description: ''
+          type: >-
+            <xref uid="@microsoft/sp-adaptive-card-extension-base!IBarChartCardViewConfiguration:interface"
+            />&lt;Date&gt;
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
+        description: ''
   - name: BasicCardView(configuration)
     uid: '@microsoft/sp-adaptive-card-extension-base!BasicCardView:function(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
@@ -211,6 +283,24 @@ functions:
       return:
         type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
         description: ''
+  - name: PieChartCardView(configuration)
+    uid: '@microsoft/sp-adaptive-card-extension-base!PieChartCardView:function(1)'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    summary: Helper method to create a pie chart card view
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function PieChartCardView(configuration: IPieChartCardViewConfiguration):
+        IDataVisualizationCardViewParameters;
+      parameters:
+        - id: configuration
+          description: pie chart card view configuration.
+          type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IPieChartCardViewConfiguration:interface" />'
+      return:
+        type: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataVisualizationCardViewParameters:interface" />'
+        description: pie chart card view parameters.
   - name: PrimaryTextCardView(configuration)
     uid: '@microsoft/sp-adaptive-card-extension-base!PrimaryTextCardView:function(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'

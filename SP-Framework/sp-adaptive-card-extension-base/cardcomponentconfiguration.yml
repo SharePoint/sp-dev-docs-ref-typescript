@@ -8,5 +8,5 @@ remarks: component configuration is the subset of component parameters that are 
 isPreview: false
 isDeprecated: false
 syntax: >-
-  export declare type CardComponentConfiguration<T extends ICardComponentParameters = ICardComponentParameters, K
-  extends keyof T | '' = ''> = Omit<T, K>;
+  export type CardComponentConfiguration<T extends ICardComponentParameters = ICardComponentParameters, K extends keyof
+  T | '' = ''> = Omit<T, K>;

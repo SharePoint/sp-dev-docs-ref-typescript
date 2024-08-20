@@ -1,0 +1,38 @@
+### YamlMime:TSType
+name: IPieDataPoint
+uid: '@microsoft/sp-adaptive-card-extension-base!IPieDataPoint:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IPieDataPoint
+summary: Data point for Pie data visualization components.
+remarks: The category is to ge given as x in IDataPoint and the value as y in IDataPoint
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: color
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPieDataPoint#color:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: color
+    summary: 'Individual color of the data point. Example: ''red'', ''\#FF0000'', ''rgba(255, 0, 0, 1)'''
+    remarks: 'If not provided, a color will be automatically assigned.'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'color?: string;'
+      return:
+        type: string
+  - name: showLabel
+    uid: '@microsoft/sp-adaptive-card-extension-base!IPieDataPoint#showLabel:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: showLabel
+    summary: Flag to toggle visibility of the label for the data point.
+    remarks: >-
+      The above numbers indicate the maximum number of labels that will be shown for the respective card layouts. If the
+      provided number of labels exceeds the limit, the excess labels will be hidden.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'showLabel?: boolean;'
+      return:
+        type: boolean
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!IDataPoint:interface" />&lt;string&gt;'

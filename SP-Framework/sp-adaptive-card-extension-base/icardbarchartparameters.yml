@@ -1,0 +1,50 @@
+### YamlMime:TSType
+name: ICardBarChartParameters
+uid: '@microsoft/sp-adaptive-card-extension-base!ICardBarChartParameters:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: ICardBarChartParameters
+summary: Parameters for a bar chart.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: dataVisualizationKind
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardBarChartParameters#dataVisualizationKind:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: dataVisualizationKind
+    summary: Bar chart
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'dataVisualizationKind: ''bar'';'
+      return:
+        type: '''bar'''
+  - name: series
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardBarChartParameters#series:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: series
+    summary: Series to display.
+    remarks: Can be a single series or multiple (upto 3) series.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'series: MaxThreeTuple<IBarChartSeries<T>>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-adaptive-card-extension-base!MaxThreeTuple:type" />&lt;<xref
+          uid="@microsoft/sp-adaptive-card-extension-base!IBarChartSeries:interface" />&lt;T&gt;&gt;
+  - name: showDataLabels
+    uid: '@microsoft/sp-adaptive-card-extension-base!ICardBarChartParameters#showDataLabels:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: showDataLabels
+    summary: Flag to indicate if data labels need to be shown or not.
+    remarks: Default value is false
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'showDataLabels?: boolean;'
+      return:
+        type: boolean
+extends: '<xref uid="@microsoft/sp-adaptive-card-extension-base!ICartesianChartParameters:interface" />&lt;T&gt;'
