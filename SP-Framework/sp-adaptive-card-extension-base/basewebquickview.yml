@@ -1,21 +1,21 @@
 ### YamlMime:TSType
-name: BaseHTMLQuickView
-uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView:class'
+name: BaseWebQuickView
+uid: '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView:class'
 package: '@microsoft/sp-adaptive-card-extension-base!'
-fullName: BaseHTMLQuickView
-summary: Base class for a HTML Quick view.
+fullName: BaseWebQuickView
+summary: Base class for a Web Quick view.
 remarks: ''
-isPreview: true
+isPreview: false
 isDeprecated: false
 type: class
 properties:
   - name: domElement
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#domElement:member'
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView#domElement:member'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: domElement
-    summary: DOM Element will be undefined in the constructor and after the quick view is disposed.
-    remarks: ''
-    isPreview: true
+    summary: Reference to the DOM element that hosts this quick view.
+    remarks: '- DOM element will be undefined in the constructor and after the quick view is disposed.'
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'protected get domElement(): HTMLDivElement;'
@@ -23,14 +23,14 @@ properties:
         type: HTMLDivElement
 methods:
   - name: dispose()
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#dispose:member(1)'
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView#dispose:member(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: dispose()
-    summary: >-
-      This method is invoked when HTML Quick View's DOM element is removed from the Document. It will trigger when quick
-      view modal is closed, or navigating between quick views.
-    remarks: ''
-    isPreview: true
+    summary: Disposes the quick view.
+    remarks: >-
+      - This method is invoked when HTML Quick View's DOM element is removed from the Document. It will trigger when
+      quick view modal is closed, or navigating between quick views.
+    isPreview: false
     isDeprecated: false
     syntax:
       content: |-
@@ -40,12 +40,12 @@ methods:
         type: void
         description: ''
   - name: render()
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#render:member(1)'
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView#render:member(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: render()
     summary: This API is called to render the HTML quick view. It will be invoked when opening this view.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: |-
@@ -55,12 +55,12 @@ methods:
         type: void
         description: ''
   - name: setState(newState)
-    uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView#setState:member(1)'
+    uid: '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView#setState:member(1)'
     package: '@microsoft/sp-adaptive-card-extension-base!'
     fullName: setState(newState)
     summary: Update the state of the Adaptive Card Extension.
     remarks: '- This method will not trigger a re-render and only update the ACE with the new state.'
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'setState(newState?: Partial<TState> | undefined): void;'

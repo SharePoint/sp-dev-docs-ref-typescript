@@ -1,0 +1,31 @@
+### YamlMime:TSType
+name: IBaseOnBeforeActionArguments
+uid: '@microsoft/sp-adaptive-card-extension-base!IBaseOnBeforeActionArguments:interface'
+package: '@microsoft/sp-adaptive-card-extension-base!'
+fullName: IBaseOnBeforeActionArguments
+summary: >-
+  Base object passed to
+  [BaseAdaptiveCardExtension.onBeforeAction()](xref:@microsoft/sp-adaptive-card-extension-base!BaseAdaptiveCardExtension%23onBeforeAction:member(1))<!--
+  -->.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: id
+    uid: '@microsoft/sp-adaptive-card-extension-base!IBaseOnBeforeActionArguments#id:member'
+    package: '@microsoft/sp-adaptive-card-extension-base!'
+    fullName: id
+    summary: The id specified in the card view action or Adaptive Card template
+    remarks: >-
+      This ID is automatically set to -
+      [ICardButtonBase.id](xref:@microsoft/sp-adaptive-card-extension-base!ICardButtonBase%23id:member) if an action is
+      triggered by card view button -
+      [CARD\_VIEW\_SELECT\_ACTION\_ID](xref:@microsoft/sp-adaptive-card-extension-base!CARD_VIEW_SELECT_ACTION_ID:var)
+      if an action is triggered by card view select action - Action id if an action is triggered by Quick View
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'id?: string;'
+      return:
+        type: string

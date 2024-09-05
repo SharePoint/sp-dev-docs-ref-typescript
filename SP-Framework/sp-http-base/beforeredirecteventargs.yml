@@ -9,16 +9,18 @@ isPreview: false
 isDeprecated: false
 type: class
 constructors:
-  - name: '(constructor)(redirectUrl, cancel)'
+  - name: '(constructor)(redirectUrl, cancel, configuration)'
     uid: '@microsoft/sp-http-base!BeforeRedirectEventArgs:constructor(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: '(constructor)(redirectUrl, cancel)'
+    fullName: '(constructor)(redirectUrl, cancel, configuration)'
     summary: Constructs a new instance of the `BeforeRedirectEventArgs` class
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'constructor(redirectUrl: string, cancel: () => void);'
+      content: >-
+        constructor(redirectUrl: string, cancel: () => void, configuration?: IAadTokenProviderConfiguration |
+        undefined);
       parameters:
         - id: redirectUrl
           description: ''
@@ -26,6 +28,9 @@ constructors:
         - id: cancel
           description: ''
           type: () =&gt; void
+        - id: configuration
+          description: ''
+          type: '<xref uid="@microsoft/sp-http-base!IAadTokenProviderConfiguration:interface" /> | undefined'
 properties:
   - name: cancel
     uid: '@microsoft/sp-http-base!BeforeRedirectEventArgs#cancel:member'
@@ -39,6 +44,18 @@ properties:
       content: 'cancel: () => void;'
       return:
         type: () =&gt; void
+  - name: configuration
+    uid: '@microsoft/sp-http-base!BeforeRedirectEventArgs#configuration:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: configuration
+    summary: The id of the instance generating the event.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'configuration?: IAadTokenProviderConfiguration;'
+      return:
+        type: '<xref uid="@microsoft/sp-http-base!IAadTokenProviderConfiguration:interface" />'
   - name: redirectUrl
     uid: '@microsoft/sp-http-base!BeforeRedirectEventArgs#redirectUrl:member'
     package: '@microsoft/sp-http-base!'
