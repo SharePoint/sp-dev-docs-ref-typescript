@@ -11,16 +11,17 @@ classes:
   - '@microsoft/sp-adaptive-card-extension-base!BaseBasicCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseComponentsCardView:class'
-  - '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseImageCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BasePrimaryTextCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseQuickView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView:class'
   - '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView:class'
   - '@microsoft/sp-adaptive-card-extension-base!QuickViewNavigator:class'
   - '@microsoft/sp-adaptive-card-extension-base!ViewNavigator:class'
 typeAliases:
   - '@microsoft/sp-adaptive-card-extension-base!BarChartData:type'
+  - '@microsoft/sp-adaptive-card-extension-base!BaseOnBeforeActionArguments:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentConfiguration:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentEventNames:type'
   - '@microsoft/sp-adaptive-card-extension-base!CardComponentName:type'
@@ -59,6 +60,7 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!IBaseActionErrorArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseCardParameters:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IBaseOnBeforeActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBaseSeries:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBasicCardParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IBasicTextCardViewConfiguration:interface'
@@ -137,6 +139,7 @@ interfaces:
   - '@microsoft/sp-adaptive-card-extension-base!ISelectMediaCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IShowCardActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface'
+  - '@microsoft/sp-adaptive-card-extension-base!IShowLocationActionArguments:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IShowLocationActionParameters:interface'
   - '@microsoft/sp-adaptive-card-extension-base!IShowLocationCardAction:interface'
   - '@microsoft/sp-adaptive-card-extension-base!ISPFxAdaptiveCard:interface'
@@ -156,7 +159,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a bar chart card view with numeric data.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
@@ -176,7 +179,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a bar chart card view with string data.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
@@ -196,7 +199,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a bar chart card view with date data.
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
@@ -288,7 +291,7 @@ functions:
     package: '@microsoft/sp-adaptive-card-extension-base!'
     summary: Helper method to create a pie chart card view
     remarks: ''
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: >-
