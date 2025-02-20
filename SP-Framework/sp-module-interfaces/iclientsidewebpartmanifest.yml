@@ -42,6 +42,31 @@ properties:
       content: 'disabledOnClassicSharepoint?: boolean;'
       return:
         type: boolean
+  - name: flexibleLayoutSizing
+    uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#flexibleLayoutSizing:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: flexibleLayoutSizing
+    summary: >-
+      Definition: Defines the default sizing of webpart in flexible sections, as well as if it supports dynamic
+      resizing. Example:
+
+
+      ```
+
+      flexibleLayoutSizing: {
+          supportsDynamicResizing: false,
+          defaultColumnWidth: 22,
+          defaultRowHeight: 21
+      }
+
+      ```
+    remarks: Ensure this remains up to date with IFlexibleControlSizingData in FlexibleControl.types.ts
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'flexibleLayoutSizing?: IFlexibleLayoutSizing;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!IFlexibleLayoutSizing:interface" />'
   - name: hiddenFromToolbox
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#hiddenFromToolbox:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -72,6 +97,26 @@ properties:
       content: 'imagePreviewUrl?: string;'
       return:
         type: string
+  - name: jsonSchema
+    uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#jsonSchema:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: jsonSchema
+    summary: >-
+      Optional JSON schema definition of the web part's properties. If provided, the schema will be provide additional
+      validation for the type safety of the web part's persisted format.
+    remarks: Current support JSON Schema draft v4+ schemas
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: |-
+        jsonSchema?: {
+                [key: string]: unknown;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: unknown;
+              }
   - name: preconfiguredEntries
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#preconfiguredEntries:member'
     package: '@microsoft/sp-module-interfaces!'

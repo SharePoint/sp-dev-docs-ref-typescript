@@ -1,0 +1,69 @@
+### YamlMime:TSType
+name: IServiceKey
+uid: '@microsoft/sp-core-library!IServiceKey:interface'
+package: '@microsoft/sp-core-library!'
+fullName: IServiceKey
+summary: >-
+  The ServiceKey is a lookup key that is used when calling
+  [ServiceScope.consume()](xref:@microsoft/sp-core-library!ServiceScope%23consume:member(1)) to fetch a dependency.
+remarks: >-
+  Every service key also provides a default implementation of the dependency, which will be automatically created in the
+  root scope if the dependency is not found. Providing a default implementation ensures that new dependencies can be
+  safely introduced without inadvertently breaking components that are loaded by an older host that does not provide the
+  new dependency.
+isPreview: false
+isDeprecated: false
+type: interface
+properties:
+  - name: defaultCreator
+    uid: '@microsoft/sp-core-library!IServiceKey#defaultCreator:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: defaultCreator
+    summary: A callback function that constructs the default instance of this service.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly defaultCreator: ServiceCreator<T>;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!ServiceCreator:type" />&lt;T&gt;'
+  - name: id
+    uid: '@microsoft/sp-core-library!IServiceKey#id:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: id
+    summary: A unique identifier for this service key.
+    remarks: >-
+      This identifier is an automatically generated string that will be unique for the lifetime of the page. Callers
+      should not make assumptions about the formatting of this string. It is currently based on a global counter, but
+      this may change in the future.
+
+
+      The ServiceScope uses this identifier internally as a dictionary key for finding services. The ServiceKey is meant
+      to be unique, even if multiple instances of the same library are loaded on the same page, even if the same name
+      was passed to ServiceKey.create(). This is because each call to ServiceKey.create() could potentially provide a
+      different defaultCreator implementation, whereas one of the design goals of ServiceScope is that the order in
+      which libraries are loaded should never affect the resulting tree of scopes.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly id: string;'
+      return:
+        type: string
+  - name: name
+    uid: '@microsoft/sp-core-library!IServiceKey#name:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: name
+    summary: The name of the service.
+    remarks: >-
+      This name is used for logging and diagnostic purposes only. To make it unique, the recommended convention is the
+      package name, followed by a period, followed by the class or interface name.
+
+
+      The system does not assume that this string is unique. Instead, the
+      [ServiceKey.id](xref:@microsoft/sp-core-library!ServiceKey%23id:member) is used wherever a lookup key is needed.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'readonly name: string;'
+      return:
+        type: string

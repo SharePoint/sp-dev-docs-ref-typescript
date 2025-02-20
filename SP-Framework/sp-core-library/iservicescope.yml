@@ -1,8 +1,8 @@
 ### YamlMime:TSType
-name: ServiceScope
-uid: '@microsoft/sp-core-library!ServiceScope:class'
+name: IServiceScope
+uid: '@microsoft/sp-core-library!IServiceScope:interface'
 package: '@microsoft/sp-core-library!'
-fullName: ServiceScope
+fullName: IServiceScope
 summary: The service locator pattern used by the SharePoint Framework.
 remarks: >-
   ServiceScope provides a formalized way for components to register and consume dependencies ("services"), and to enable
@@ -45,25 +45,10 @@ remarks: >-
   it's best to always call consume() inside a callback from serviceScope.whenFinished().
 isPreview: false
 isDeprecated: false
-type: class
-constructors:
-  - name: (constructor)(parent)
-    uid: '@microsoft/sp-core-library!ServiceScope:constructor(1)'
-    package: '@microsoft/sp-core-library!'
-    fullName: (constructor)(parent)
-    summary: Constructs a new instance of the `ServiceScope` class
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'protected constructor(parent: ServiceScope | undefined);'
-      parameters:
-        - id: parent
-          description: ''
-          type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" /> | undefined'
+type: interface
 methods:
   - name: consume(serviceKey)
-    uid: '@microsoft/sp-core-library!ServiceScope#consume:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#consume:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: consume(serviceKey)
     summary: Consumes a service from the service scope.
@@ -83,7 +68,7 @@ methods:
         type: T
         description: the service instance
   - name: 'createAndProvide(serviceKey, simpleServiceClass)'
-    uid: '@microsoft/sp-core-library!ServiceScope#createAndProvide:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#createAndProvide:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: 'createAndProvide(serviceKey, simpleServiceClass)'
     summary: >-
@@ -93,19 +78,25 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'createAndProvide<T>(serviceKey: IServiceKey<T>, simpleServiceClass: ServiceClass<T>): T;'
+      content: |-
+        createAndProvide<T>(serviceKey: IServiceKey<T>, simpleServiceClass: {
+                new (serviceScope: IServiceScope): T;
+            }): T;
       parameters:
         - id: serviceKey
           description: the key that can be used later to consume the service
           type: '<xref uid="@microsoft/sp-core-library!IServiceKey:interface" />&lt;T&gt;'
         - id: simpleServiceClass
           description: the TypeScript class to be constructed
-          type: '<xref uid="@microsoft/sp-core-library!ServiceClass:type" />&lt;T&gt;'
+          type: |-
+            {
+                    new (serviceScope: <xref uid="@microsoft/sp-core-library!IServiceScope:interface" />): T;
+                }
       return:
         type: T
         description: a newly constructed instance of simpleServiceClass
   - name: createDefaultAndProvide(serviceKey)
-    uid: '@microsoft/sp-core-library!ServiceScope#createDefaultAndProvide:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#createDefaultAndProvide:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: createDefaultAndProvide(serviceKey)
     summary: >-
@@ -124,7 +115,7 @@ methods:
         type: T
         description: a service instance that was constructed using ServiceKey.defaultCreator
   - name: finish()
-    uid: '@microsoft/sp-core-library!ServiceScope#finish:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#finish:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: finish()
     summary: Completes the initialization sequence for a service scope.
@@ -146,7 +137,7 @@ methods:
         type: void
         description: ''
   - name: getParent()
-    uid: '@microsoft/sp-core-library!ServiceScope#getParent:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#getParent:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: getParent()
     summary: 'Returns the parent of the current ServiceScope, or undefined if this is a root scope.'
@@ -154,12 +145,12 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'getParent(): ServiceScope | undefined;'
+      content: 'getParent(): IServiceScope | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" /> | undefined'
+        type: '<xref uid="@microsoft/sp-core-library!IServiceScope:interface" /> | undefined'
         description: the parent service scope
   - name: 'provide(serviceKey, service)'
-    uid: '@microsoft/sp-core-library!ServiceScope#provide:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#provide:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: 'provide(serviceKey, service)'
     summary: Add a new service to a service scope.
@@ -182,7 +173,7 @@ methods:
         type: T
         description: the same object that was passed as the "service" parameter
   - name: startNewChild()
-    uid: '@microsoft/sp-core-library!ServiceScope#startNewChild:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#startNewChild:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: startNewChild()
     summary: Constructs a new ServiceScope that is a child of the current scope.
@@ -192,27 +183,12 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'startNewChild(): ServiceScope;'
+      content: 'startNewChild(): IServiceScope;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" />'
-        description: the newly created root ServiceScope
-  - name: startNewRoot()
-    uid: '@microsoft/sp-core-library!ServiceScope.startNewRoot:member(1)'
-    package: '@microsoft/sp-core-library!'
-    fullName: startNewRoot()
-    summary: >-
-      Create a new root-level ServiceScope. Only root-level scopes have the ability to autocreate default
-      implementations of ServiceKeys.
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'static startNewRoot(): ServiceScope;'
-      return:
-        type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" />'
+        type: '<xref uid="@microsoft/sp-core-library!IServiceScope:interface" />'
         description: the newly created root ServiceScope
   - name: whenFinished(callback)
-    uid: '@microsoft/sp-core-library!ServiceScope#whenFinished:member(1)'
+    uid: '@microsoft/sp-core-library!IServiceScope#whenFinished:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: whenFinished(callback)
     summary: >-

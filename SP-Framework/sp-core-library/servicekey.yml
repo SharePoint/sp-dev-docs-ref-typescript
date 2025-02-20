@@ -102,20 +102,14 @@ methods:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: |-
-        static create<TKey>(name: string, serviceClass: {
-                new (serviceScope: ServiceScope): TKey;
-            }): ServiceKey<TKey>;
+      content: 'static create<TKey>(name: string, serviceClass: ServiceClass<TKey>): ServiceKey<TKey>;'
       parameters:
         - id: name
           description: A name such as "my-package.IMyService" which should be unique across packages.
           type: string
         - id: serviceClass
           description: the TypeScript class that implements the service.
-          type: |-
-            {
-                    new (serviceScope: <xref uid="@microsoft/sp-core-library!ServiceScope:class" />): TKey;
-                }
+          type: '<xref uid="@microsoft/sp-core-library!ServiceClass:type" />&lt;TKey&gt;'
       return:
         type: '<xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;TKey&gt;'
         description: the newly created ServiceKey
