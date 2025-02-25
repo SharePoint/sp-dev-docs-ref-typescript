@@ -23,10 +23,10 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!BaseCardView:class'
           - name: BaseComponentsCardView
             uid: '@microsoft/sp-adaptive-card-extension-base!BaseComponentsCardView:class'
-          - name: BaseHTMLQuickView
-            uid: '@microsoft/sp-adaptive-card-extension-base!BaseHTMLQuickView:class'
           - name: BaseImageCardView
             uid: '@microsoft/sp-adaptive-card-extension-base!BaseImageCardView:class'
+          - name: BaseOnBeforeActionArguments
+            uid: '@microsoft/sp-adaptive-card-extension-base!BaseOnBeforeActionArguments:type'
           - name: BasePrimaryTextCardView
             uid: '@microsoft/sp-adaptive-card-extension-base!BasePrimaryTextCardView:class'
           - name: BaseQuickView
@@ -35,6 +35,8 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!BaseTemplateCardView:class'
           - name: BaseView
             uid: '@microsoft/sp-adaptive-card-extension-base!BaseView:class'
+          - name: BaseWebQuickView
+            uid: '@microsoft/sp-adaptive-card-extension-base!BaseWebQuickView:class'
           - name: CardComponentConfiguration
             uid: '@microsoft/sp-adaptive-card-extension-base!CardComponentConfiguration:type'
           - name: CardComponentEventNames
@@ -95,6 +97,8 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!IBaseCardDataVisualizationParameters:interface'
           - name: IBaseCardParameters
             uid: '@microsoft/sp-adaptive-card-extension-base!IBaseCardParameters:interface'
+          - name: IBaseOnBeforeActionArguments
+            uid: '@microsoft/sp-adaptive-card-extension-base!IBaseOnBeforeActionArguments:interface'
           - name: IBaseSeries
             uid: '@microsoft/sp-adaptive-card-extension-base!IBaseSeries:interface'
           - name: IBasicCardParameters
@@ -255,6 +259,8 @@ items:
             uid: '@microsoft/sp-adaptive-card-extension-base!IShowCardActionArguments:interface'
           - name: IShowLocationAction
             uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationAction:interface'
+          - name: IShowLocationActionArguments
+            uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationActionArguments:interface'
           - name: IShowLocationActionParameters
             uid: '@microsoft/sp-adaptive-card-extension-base!IShowLocationActionParameters:interface'
           - name: IShowLocationCardAction
@@ -358,6 +364,8 @@ items:
             uid: '@microsoft/sp-core-library!_UniqueFromSet:type'
           - name: DisplayMode
             uid: '@microsoft/sp-core-library!DisplayMode:enum'
+          - name: EnsureExtends
+            uid: '@microsoft/sp-core-library!EnsureExtends:type'
           - name: Environment
             uid: '@microsoft/sp-core-library!Environment:class'
           - name: EnvironmentType
@@ -374,14 +382,26 @@ items:
             uid: '@microsoft/sp-core-library!IRandomNumberGenerator:interface'
           - name: IServiceCollection
             uid: '@microsoft/sp-core-library!IServiceCollection:interface'
+          - name: IServiceKey
+            uid: '@microsoft/sp-core-library!IServiceKey:interface'
+          - name: IServiceScope
+            uid: '@microsoft/sp-core-library!IServiceScope:interface'
           - name: ISPEventObserver
             uid: '@microsoft/sp-core-library!ISPEventObserver:interface'
+          - name: IsStringUnion
+            uid: '@microsoft/sp-core-library!IsStringUnion:type'
+          - name: IsUnion
+            uid: '@microsoft/sp-core-library!IsUnion:type'
           - name: ITimeProvider
             uid: '@microsoft/sp-core-library!ITimeProvider:interface'
           - name: Log
             uid: '@microsoft/sp-core-library!Log:class'
           - name: RandomNumberGenerator
             uid: '@microsoft/sp-core-library!RandomNumberGenerator:class'
+          - name: ServiceClass
+            uid: '@microsoft/sp-core-library!ServiceClass:type'
+          - name: ServiceClassConstructor
+            uid: '@microsoft/sp-core-library!ServiceClassConstructor:type'
           - name: ServiceCreator
             uid: '@microsoft/sp-core-library!ServiceCreator:type'
           - name: ServiceKey
@@ -394,10 +414,14 @@ items:
             uid: '@microsoft/sp-core-library!SPEvent:class'
           - name: SPEventArgs
             uid: '@microsoft/sp-core-library!SPEventArgs:class'
+          - name: StringUnion
+            uid: '@microsoft/sp-core-library!StringUnion:type'
           - name: Text_2
             uid: '@microsoft/sp-core-library!Text_2:class'
           - name: TimeProvider
             uid: '@microsoft/sp-core-library!TimeProvider:class'
+          - name: UnionToIntersection
+            uid: '@microsoft/sp-core-library!UnionToIntersection:type'
           - name: UrlQueryParameterCollection
             uid: '@microsoft/sp-core-library!UrlQueryParameterCollection:class'
           - name: Validate
@@ -644,6 +668,57 @@ items:
             uid: '@microsoft/sp-lodash-subset!Cancelable:type'
           - name: ThrottleSettings
             uid: '@microsoft/sp-lodash-subset!ThrottleSettings:type'
+      - name: sp-module-interfaces
+        uid: '@microsoft/sp-module-interfaces!'
+        items:
+          - name: ComponentType
+            uid: '@microsoft/sp-module-interfaces!ComponentType:type'
+          - name: ExtensionType
+            uid: '@microsoft/sp-module-interfaces!ExtensionType:type'
+          - name: IAdaptiveCardExtensionManifest
+            uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifest:interface'
+          - name: IAdaptiveCardExtensionManifestEntry
+            uid: '@microsoft/sp-module-interfaces!IAdaptiveCardExtensionManifestEntry:interface'
+          - name: IClientSideAssemblyManifest
+            uid: '@microsoft/sp-module-interfaces!IClientSideAssemblyManifest:interface'
+          - name: IClientSideComponentLoaderConfiguration
+            uid: '@microsoft/sp-module-interfaces!IClientSideComponentLoaderConfiguration:interface'
+          - name: IClientSideComponentManifest
+            uid: '@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface'
+          - name: IClientSideExtensionManifest
+            uid: '@microsoft/sp-module-interfaces!IClientSideExtensionManifest:interface'
+          - name: IClientSideLibraryManifest
+            uid: '@microsoft/sp-module-interfaces!IClientSideLibraryManifest:interface'
+          - name: IClientSideManifestBase
+            uid: '@microsoft/sp-module-interfaces!IClientSideManifestBase:interface'
+          - name: IClientSideWebPartManifest
+            uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest:interface'
+          - name: IClientSideWebPartManifestEntry
+            uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface'
+          - name: IClientSideWebPartManifestInstance
+            uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifestInstance:interface'
+          - name: ICommandDefinition
+            uid: '@microsoft/sp-module-interfaces!ICommandDefinition:interface'
+          - name: ICommandSetExtensionManifest
+            uid: '@microsoft/sp-module-interfaces!ICommandSetExtensionManifest:interface'
+          - name: IComponentModuleConfiguration
+            uid: '@microsoft/sp-module-interfaces!IComponentModuleConfiguration:interface'
+          - name: IFlexibleLayoutSizing
+            uid: '@microsoft/sp-module-interfaces!IFlexibleLayoutSizing:interface'
+          - name: IIntegrityPath
+            uid: '@microsoft/sp-module-interfaces!IIntegrityPath:interface'
+          - name: ILocalizedPathModuleConfiguration
+            uid: '@microsoft/sp-module-interfaces!ILocalizedPathModuleConfiguration:interface'
+          - name: ILocalizedString
+            uid: '@microsoft/sp-module-interfaces!ILocalizedString:interface'
+          - name: IModuleConfiguration
+            uid: '@microsoft/sp-module-interfaces!IModuleConfiguration:type'
+          - name: IModuleConfigurationBase
+            uid: '@microsoft/sp-module-interfaces!IModuleConfigurationBase:interface'
+          - name: IPathModuleConfiguration
+            uid: '@microsoft/sp-module-interfaces!IPathModuleConfiguration:interface'
+          - name: PredefinedGroup
+            uid: '@microsoft/sp-module-interfaces!PredefinedGroup:enum'
       - name: sp-odata-types
         uid: '@microsoft/sp-odata-types!'
         items:
@@ -785,6 +860,8 @@ items:
             uid: '@microsoft/sp-property-pane!IThumbnailIconSizeImage:interface'
           - name: IThumbnailImage
             uid: '@microsoft/sp-property-pane!IThumbnailImage:interface'
+          - name: PagesType
+            uid: '@microsoft/sp-property-pane!PagesType:enum'
           - name: PopupWindowPosition
             uid: '@microsoft/sp-property-pane!PopupWindowPosition:enum'
           - name: PropertyPaneButtonType

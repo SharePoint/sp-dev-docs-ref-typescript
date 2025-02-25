@@ -1,0 +1,15 @@
+### YamlMime:TSTypeAlias
+name: ServiceClass
+uid: '@microsoft/sp-core-library!ServiceClass:type'
+package: '@microsoft/sp-core-library!'
+fullName: ServiceClass
+summary: This is a type definition for the Service.
+remarks: ''
+isPreview: false
+isDeprecated: false
+syntax: |-
+  export type ServiceClass<T> = {
+      new (serviceScope: IServiceScope): T;
+  } | {
+      new (serviceScope: ServiceScope): T;
+  };
