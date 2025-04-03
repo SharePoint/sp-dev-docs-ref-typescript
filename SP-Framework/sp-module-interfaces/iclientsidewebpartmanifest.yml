@@ -42,6 +42,24 @@ properties:
       content: 'disabledOnClassicSharepoint?: boolean;'
       return:
         type: boolean
+  - name: experimentalData
+    uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#experimentalData:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: experimentalData
+    summary: An untyped property bag for experimental flags not ready for production.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        experimentalData?: {
+                [key: string]: any;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: any;
+              }
   - name: flexibleLayoutSizing
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#flexibleLayoutSizing:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -61,7 +79,7 @@ properties:
 
       ```
     remarks: Ensure this remains up to date with IFlexibleControlSizingData in FlexibleControl.types.ts
-    isPreview: true
+    isPreview: false
     isDeprecated: false
     syntax:
       content: 'flexibleLayoutSizing?: IFlexibleLayoutSizing;'
@@ -162,6 +180,20 @@ properties:
       content: 'preconfiguredEntries: IClientSideWebPartManifestEntry<TProperties>[];'
       return:
         type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface" />&lt;TProperties&gt;[]'
+  - name: requiredCapabilities
+    uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#requiredCapabilities:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: requiredCapabilities
+    summary: >-
+      The set of capabilities this web part requires from the host page in order to be usable. If the host does not
+      support one of the required capabilities, the web part will not be visible in the toolbox.
+    remarks: 'Example `{ "BingMapKey": true, "AuthModel": ["OpenIDConnect"] }`'
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'requiredCapabilities?: ICapabilityCollection;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ICapabilityCollection:interface" />'
   - name: supportedHosts
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -226,6 +258,24 @@ properties:
     isDeprecated: false
     syntax:
       content: 'supportsThemeVariants?: boolean;'
+      return:
+        type: boolean
+  - name: useFallbackWhenPropertiesUpdatedExternally
+    uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#useFallbackWhenPropertiesUpdatedExternally:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: useFallbackWhenPropertiesUpdatedExternally
+    summary: >-
+      Definition: - If true, the web part will be disposed and reloaded when the web part data is updated by an external
+      source. - If false, the web part data will be deserialized and the properties of the web part will be updated,
+      onAfterPropertiesUpdatedExternally will be executed. - If undefined, web parts developed with SPFx version below
+      1.9 will default to true and web parts developed with a SPFx version 1.9 or greater will default to false.
+    remarks: >-
+      By default, onAfterPropertiesUpdatedExternally will re-render the web part. If your web part requires specialized
+      logic, then it is recommended to override onAfterPropertiesUpdatedExternally.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'useFallbackWhenPropertiesUpdatedExternally?: boolean;'
       return:
         type: boolean
 extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'

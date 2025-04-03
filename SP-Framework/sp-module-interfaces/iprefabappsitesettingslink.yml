@@ -1,0 +1,51 @@
+### YamlMime:TSType
+name: IPrefabAppSiteSettingsLink
+uid: '@microsoft/sp-module-interfaces!IPrefabAppSiteSettingsLink:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IPrefabAppSiteSettingsLink
+summary: Represents an item that should be rendered in the suite nav site settings menu.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: text
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppSiteSettingsLink#text:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: text
+    summary: >-
+      Text of the link represented as a dictionary of locale keys to title values. This value will be displayed to the
+      user in the suite nav site settings menu.
+    remarks: |-
+      This text should be used in the suite nav site settings menu.
+
+      Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.
+
+      Example: `"My App Settings"`
+
+      ```
+               {
+                 "default": "My App Settings",
+                 "en-us": "My App Settings",
+                 "fr-fr": "Mes paramètres d'application",
+                 "zh": "我的應用程式設定"
+               }
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'text: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+  - name: viewId
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppSiteSettingsLink#viewId:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: viewId
+    summary: The unique identifier of the route to be rendered when the settings link is selected.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'viewId: string;'
+      return:
+        type: string

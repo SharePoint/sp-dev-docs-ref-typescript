@@ -1,0 +1,132 @@
+### YamlMime:TSType
+name: IPrefabAppManifest
+uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IPrefabAppManifest
+summary: This is the manifest for a PREFAB application.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: actions
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#actions:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: actions
+    summary: Site Script actions.
+    remarks: >-
+      - See https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json for a list of
+      actions. - The `onInstall` actions will be run when the app is installed on a site. - The `onDemand` actions will
+      not run automatically, but can be referenced by an App developer.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'actions?: Record<string, PrefabAppSiteScript>;'
+      return:
+        type: 'Record&lt;string, <xref uid="@microsoft/sp-module-interfaces!PrefabAppSiteScript:type" />&gt;'
+  - name: appInstallationTypes
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#appInstallationTypes:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: appInstallationTypes
+    summary: 'Describes how the PREFAB app can be installed: NewSite or ExistingSite. If omitted the app supports both.'
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'appInstallationTypes?: Array<''NewSite'' | ''ExistingSite''>;'
+      return:
+        type: Array&lt;'NewSite' | 'ExistingSite'&gt;
+  - name: description
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#description:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: description
+    summary: >-
+      Description of the application represented as a dictionary of locale keys to description values. This value will
+      be displayed to the user in the (page creation) interface.
+    remarks: |-
+      Supported values: a dictionary of locale keys to strings. Should always have a 'default' key.
+
+      Examples:
+
+      ```
+      "An application for searching for things."
+      ```
+      or
+
+      ```
+               {
+                 "default": "An application for searching for things.",
+                 "en-us": "An application for searching for things.",
+                 "fr-fr": "Une demande pour la recherche de choses.",
+                 "zh": "申請尋找的東西。"
+               }
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'description: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+  - name: isConfigured
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#isConfigured:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: isConfigured
+    summary: Specifies if there is a FCR (Finish Run Configuration) available for the app. True if no FCE is available.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'isConfigured: boolean;'
+      return:
+        type: boolean
+  - name: siteSettingsLinks
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#siteSettingsLinks:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: siteSettingsLinks
+    summary: Links to be rendered in the suite nav site settings menu for the PREFAB App.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'siteSettingsLinks?: IPrefabAppSiteSettingsLink[];'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!IPrefabAppSiteSettingsLink:interface" />[]'
+  - name: title
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#title:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: title
+    summary: >-
+      Title of the application as a dictionary of locale keys to title values. This value will be displayed to the user
+      in the (page creation) interface.
+    remarks: |-
+      Supported values: a dictionary of locale keys to strings. Should always have a 'default' key.
+
+      Example: `"My Application"`
+
+      ```
+               {
+                 "default": "My Application"
+                 "en-us": "My Application",
+                 "fr-fr": "Ma demande",
+                 "zh": "我的應用程式"
+               }
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'title: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+  - name: toolboxEntries
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppManifest#toolboxEntries:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: toolboxEntries
+    summary: Toolbox entries for the PREFAB app.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'toolboxEntries?: IPrefabAppToolboxEntry[];'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry:interface" />[]'
+extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'

@@ -9,6 +9,47 @@ isPreview: false
 isDeprecated: false
 type: interface
 properties:
+  - name: customMetadata
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#customMetadata:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: customMetadata
+    summary: Additional custom metadata associated with the original metadata.
+    remarks: >-
+      This can be used to supply additional related metadata information. For example, image metadata along with a URL
+      could be provided.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        customMetadata?: {
+                [key: string]: string;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: string;
+              }
+  - name: isComponentDependency
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isComponentDependency:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: isComponentDependency
+    summary: >-
+      Indicates that property value is components id, required to be loaded before this component can render or
+      initialize.
+    remarks: >-
+      The component should use this property to declare dynamic runtime component dependencies, which are required only
+      for specific states of the property. The framework will ensure that this component is preloaded for the component.
+
+
+      For example, the user can select one of the multiple layouts available for a web part or component during edit
+      mode. This will optimize the bundle to avoid embedding code for all layout code; instead, the framework will load
+      the required layout selectively at runtime.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'isComponentDependency?: boolean;'
+      return:
+        type: boolean
   - name: isHtmlString
     uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isHtmlString:member'
     package: '@microsoft/sp-component-base!'

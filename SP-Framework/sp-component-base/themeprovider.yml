@@ -11,16 +11,16 @@ isPreview: false
 isDeprecated: false
 type: class
 constructors:
-  - name: '(constructor)(serviceScope, theme)'
+  - name: '(constructor)(serviceScope, theme, themeV2)'
     uid: '@microsoft/sp-component-base!ThemeProvider:constructor(1)'
     package: '@microsoft/sp-component-base!'
-    fullName: '(constructor)(serviceScope, theme)'
+    fullName: '(constructor)(serviceScope, theme, themeV2)'
     summary: Construct a new instance of the ThemeProvider class.
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'constructor(serviceScope: ServiceScope, theme?: ITheme);'
+      content: 'constructor(serviceScope: ServiceScope, theme?: ITheme, themeV2?: Theme);'
       parameters:
         - id: serviceScope
           description: The current service scope.
@@ -28,6 +28,9 @@ constructors:
         - id: theme
           description: Theme to provide.
           type: '<xref uid="@microsoft/sp-component-base!ITheme:interface" />'
+        - id: themeV2
+          description: ''
+          type: '<xref uid="@fluentui/tokens!Theme:type" />'
 properties:
   - name: serviceKey
     uid: '@microsoft/sp-component-base!ThemeProvider.serviceKey:member'
@@ -56,6 +59,19 @@ methods:
       content: 'tryGetTheme(): IReadonlyTheme | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-component-base!IReadonlyTheme:interface" /> | undefined'
+        description: ''
+  - name: tryGetThemeV2()
+    uid: '@microsoft/sp-component-base!ThemeProvider#tryGetThemeV2:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: tryGetThemeV2()
+    summary: ''
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'tryGetThemeV2(): Theme | undefined;'
+      return:
+        type: '<xref uid="@fluentui/tokens!Theme:type" /> | undefined'
         description: ''
 events:
   - name: themeChangedEvent

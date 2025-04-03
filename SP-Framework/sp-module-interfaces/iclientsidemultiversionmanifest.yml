@@ -1,0 +1,55 @@
+### YamlMime:TSType
+name: IClientSideMultiVersionManifest
+uid: '@microsoft/sp-module-interfaces!IClientSideMultiVersionManifest:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IClientSideMultiVersionManifest
+summary: Multi-version manifests are defined by this interface.
+remarks: >-
+  The schema of this manifest is owned and versioned by Microsoft. Following rules should be followed while changing
+  this schema. This set of rules can also be called the "manifest upgrade rules".
+
+
+  - For minor changes, new properties can be added to this schema in a backwards-compatible way. i.e. the code that
+  processes the manifest should be able to handle the absence of those new properties.
+
+
+  - Try to model your changes as minor SemVer increments. Major version changes should be avoided because they impose a
+  migration cost on developers.
+
+
+  - The 'manifestVersion' should be bumped for all small or big changes.
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: versions
+    uid: '@microsoft/sp-module-interfaces!IClientSideMultiVersionManifest#versions:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: versions
+    summary: >-
+      A mapping of version numbers to manifests. This field is used to roll all versions of a component together into a
+      single manifest.
+    remarks: |-
+      Supported values: Mapping of version strings to manifest bodies
+
+      Example:
+
+      ```
+       {
+         "1.0.0": ...manifest,
+         "2.0.0": ...manifest
+       }
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        versions: {
+                [versionNumber: string]: TManifest;
+            };
+      return:
+        type: |-
+          {
+                  [versionNumber: string]: TManifest;
+              }
+extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideManifestBase:interface" />'

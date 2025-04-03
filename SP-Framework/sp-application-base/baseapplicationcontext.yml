@@ -1,0 +1,90 @@
+### YamlMime:TSType
+name: BaseApplicationContext
+uid: '@microsoft/sp-application-base!BaseApplicationContext:class'
+package: '@microsoft/sp-application-base!'
+fullName: BaseApplicationContext
+summary: Context object for a client-side applications.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `BaseApplicationContext` class.
+isPreview: true
+isDeprecated: false
+type: class
+properties:
+  - name: chrome
+    uid: '@microsoft/sp-application-base!BaseApplicationContext#chrome:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: chrome
+    summary: The application page chrome
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get chrome(): _ISPPageChrome | undefined;'
+      return:
+        type: '<xref uid="@ms/sp-page-chrome!default:interface" /> | undefined'
+  - name: loadType
+    uid: '@microsoft/sp-application-base!BaseApplicationContext#loadType:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: loadType
+    summary: The application load type
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get loadType(): ApplicationLoadType;'
+      return:
+        type: '<xref uid="@microsoft/sp-application-base!_ApplicationLoadType:enum" />'
+  - name: navigator
+    uid: '@microsoft/sp-application-base!BaseApplicationContext#navigator:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: navigator
+    summary: The application navigator
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get navigator(): Navigator | undefined;'
+      return:
+        type: '<xref uid="@microsoft/sp-application-base!_Navigator:class" /> | undefined'
+  - name: prefetchedDataEvent
+    uid: '@microsoft/sp-application-base!BaseApplicationContext#prefetchedDataEvent:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: prefetchedDataEvent
+    summary: An event that gets fired when the application prefetched data is available.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get prefetchedDataEvent(): SPEvent<PrefetchedDataEventArgs>;'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-core-library!SPEvent:class" />&lt;<xref
+          uid="@microsoft/sp-application-base!_PrefetchedDataEventArgs:class" />&gt;
+  - name: preloadedData
+    uid: '@microsoft/sp-application-base!BaseApplicationContext#preloadedData:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: preloadedData
+    summary: The preloaded data used by SPFx
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get preloadedData(): _IPreloadedData;'
+      return:
+        type: '<xref uid="@microsoft/sp-loader!_IPreloadedData:interface" />'
+  - name: suiteNavManager
+    uid: '@microsoft/sp-application-base!BaseApplicationContext#suiteNavManager:member'
+    package: '@microsoft/sp-application-base!'
+    fullName: suiteNavManager
+    summary: The SuiteNav manager
+    remarks: >-
+      The SuiteNav manager is defined only after the application starts rendering. Chromeless application do not have a
+      SuiteNav manager. Applications that disable the suiteNav do not have a SuiteNav manager.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get suiteNavManager(): ISuiteNavManager | undefined;'
+      return:
+        type: '<xref uid="@ms/sp-suite-nav!ISuiteNavManager:interface" /> | undefined'
+extends: '<xref uid="@microsoft/sp-component-base!BaseComponentContext:class" />'

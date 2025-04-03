@@ -9,6 +9,84 @@ isPreview: false
 isDeprecated: false
 type: interface
 properties:
+  - name: componentDependencies
+    uid: '@microsoft/sp-component-base!ISerializedServerProcessedData#componentDependencies:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: componentDependencies
+    summary: A key-value map where keys are string identifiers and values are component ids.
+    remarks: >-
+      SharePoint servers might decide to use this hint to preload the script for corresponding components for
+      performance boost.
+
+
+      Example:
+
+
+      ```
+
+      {
+        'layoutComponent': 'abfccb4d-fcbc-4720-8bcc-6183ce66c391',
+        'dataComponent': 'f0baf432-de3f-4f0f-8444-d1280b2f8cc5'
+      }
+
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        componentDependencies?: {
+                [key: string]: string;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: string;
+              }
+  - name: customMetadata
+    uid: '@microsoft/sp-component-base!ISerializedServerProcessedData#customMetadata:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: customMetadata
+    summary: A key-value map where keys are string identifier and values are object of custom key-value pair
+    remarks: >-
+      SharePoint servers might treat custom medata values in context of the other properties like imageSources. E.g.
+      When the key of imageSources and customMetadata is same, custom metadata can be used to expand information of
+      image data.
+
+
+      Example:
+
+
+      ```
+
+      ISerializedServerProcessedData {
+        imageSources: {
+         'myImage1': 'http://res.contoso.com/path/to/file',
+         'myImage2': 'https://res.contoso.com/someName.jpg'
+        },
+
+        customMetadata: {
+          'myImage1': {'height': '100', 'width': '100'}
+          'myImage2': {'height': '400', 'width': '600'}
+        }
+      }
+
+      ```
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        customMetadata?: {
+                [key: string]: {
+                    [key: string]: {};
+                };
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: {
+                      [key: string]: {};
+                  };
+              }
   - name: htmlStrings
     uid: '@microsoft/sp-component-base!ISerializedServerProcessedData#htmlStrings:member'
     package: '@microsoft/sp-component-base!'
