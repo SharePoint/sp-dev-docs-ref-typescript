@@ -43,7 +43,6 @@ remarks: >-
   worrying about infinite loops. (Circular dependencies are best avoided, however this is difficult to guarantee when
   working with components that were contributed by various third parties without any coordination.) To avoid mistakes,
   it's best to always call consume() inside a callback from serviceScope.whenFinished().
-example: []
 isPreview: false
 isDeprecated: false
 type: interface
@@ -57,7 +56,6 @@ methods:
       Components should call this function to "consume" a dependency, i.e. look up the serviceKey and return the
       registered service instance. If the instance cannot be found, then a default instance will be automatically
       created and registered with the root ServiceScope.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -77,7 +75,6 @@ methods:
       This is a shorthand function that is equivalent to constructing a new instance of the simpleServiceClass, then
       registering it by calling ServiceScope.provide().
     remarks: ''
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -106,7 +103,6 @@ methods:
       This is a shorthand function that constructs the default implementation of the specified serviceKey, and then
       registers it by calling ServiceScope.provide().
     remarks: ''
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -133,7 +129,6 @@ methods:
       inheritance) before Scope2.provide() is called with A2, then a subsequent call to Scope2.consume() might return a
       different result than the previous call. This nondeterminism could cause unpredictable results that are difficult
       to diagnose.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -147,7 +142,6 @@ methods:
     fullName: getParent()
     summary: 'Returns the parent of the current ServiceScope, or undefined if this is a root scope.'
     remarks: ''
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -164,7 +158,6 @@ methods:
       ServiceScope.provide() is used to register an implementation of the given serviceKey for the current scope, and an
       implementation of a given rootServiceKey for the root scope. It may only be used when the ServiceScope is in an
       "unfinished" state, i.e. before finish() has been called.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -187,7 +180,6 @@ methods:
     remarks: >-
       The service scopes form a tree structure, such that when consuming a service, if the key is not explicitly
       provided by a child scope, the parent hierarchy will be consulted.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -212,7 +204,6 @@ methods:
       NOTE: This is not an asynchronous callback. ServiceScope initialization is typically inexpensive and short lived.
       However, the control flow often threads through numerous constructors and base classes, which can be simplified
       using whenFinished().
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:

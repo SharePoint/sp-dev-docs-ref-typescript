@@ -12,7 +12,6 @@ remarks: >-
   some required properties in the manifest and some optional properties. Optional properties need to be provided only if
   the Web Part needs the specific functionality. An invalid manifest could lead to issues with Web Part loading and
   functionality problems.
-example: []
 isPreview: false
 isDeprecated: false
 type: interface
@@ -23,7 +22,6 @@ properties:
     fullName: canUpdateConfiguration
     summary: Indicates whether the web part uses the property pane to update the configuration of the web part.
     remarks: Default value is `true` if the property is not explicitly defined.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -38,7 +36,6 @@ properties:
     remarks: >-
       Certain web parts may not be required on or apply to SharePoint classic pages. This flag helps control that. If
       this flag is true, the web part will not appear in the classic page web part gallery.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -51,7 +48,6 @@ properties:
     fullName: experimentalData
     summary: An untyped property bag for experimental flags not ready for production.
     remarks: ''
-    example: []
     isPreview: true
     isDeprecated: false
     syntax:
@@ -83,7 +79,6 @@ properties:
 
       ```
     remarks: Ensure this remains up to date with IFlexibleControlSizingData in FlexibleControl.types.ts
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -99,7 +94,6 @@ properties:
       Usage: Use this flag if it is not appropriate to display a web part in the modern toolbox. This property is not
       used in Classic SharePoint. By default, all web parts are enabled to be displayed in the toolbox. Such web parts
       can be provisioned on pages though API or be added to the page in a pre configured way.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -115,7 +109,6 @@ properties:
       Usage: Use this string to specify that a preview image should be used instead of a preview rendering of the web
       part. This can either be a absolute url or a relative URL which will be resolved based on the internal base module
       url
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -130,7 +123,6 @@ properties:
       Optional JSON schema definition of the web part's properties. If provided, the schema will be provide additional
       validation for the type safety of the web part's persisted format.
     remarks: Current support JSON Schema draft v4+ schemas
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -182,7 +174,6 @@ properties:
            }
          }]
       ```
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -197,7 +188,6 @@ properties:
       The set of capabilities this web part requires from the host page in order to be usable. If the host does not
       support one of the required capabilities, the web part will not be visible in the toolbox.
     remarks: 'Example `{ "BingMapKey": true, "AuthModel": ["OpenIDConnect"] }`'
-    example: []
     isPreview: true
     isDeprecated: false
     syntax:
@@ -215,7 +205,6 @@ properties:
       SharePointWebPart is added the solution will be available when adding webparts to a page. If TeamsTab,
       TeamsPersonalApp, or TeamsMeetingApp is added the solution will be available when using teams. TeamsMeetingApp
       cannot be used with TeamsTab or TeamsPersonalTab.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -233,7 +222,6 @@ properties:
       Usage: Use this flag if a web part supports full bleed experience and has been tested as such. In this context,
       full bleed is a term used to denote that the web part takes the whole width of the containing page. Full bleed
       experiences require special treatment and testing. By default no web parts support full bleed experiences.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -250,7 +238,6 @@ properties:
     remarks: >-
       Usage: Use this flag if a web part will render an iframe with a page from the same SharePoint tenant (domain) and
       will be hosted as a Teams application (supportedHosts contains any of Teams hosts).
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -267,7 +254,6 @@ properties:
       variants, web parts must have the capability to render correctly in the context of a theme variant. A web part may
       or may not need to be updated to support theme variants, but should always be tested before enabling this flag. By
       default no web parts support theme variants.
-    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -286,7 +272,6 @@ properties:
     remarks: >-
       By default, onAfterPropertiesUpdatedExternally will re-render the web part. If your web part requires specialized
       logic, then it is recommended to override onAfterPropertiesUpdatedExternally.
-    example: []
     isPreview: true
     isDeprecated: false
     syntax:
