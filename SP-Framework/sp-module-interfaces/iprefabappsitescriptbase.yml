@@ -1,0 +1,40 @@
+### YamlMime:TSType
+name: IPrefabAppSiteScriptBase
+uid: '@microsoft/sp-module-interfaces!IPrefabAppSiteScriptBase:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IPrefabAppSiteScriptBase
+summary: Base definition for Site Script.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: actions
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppSiteScriptBase#actions:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: actions
+    summary: Actions to run as part of the Site Script.
+    remarks: >-
+      - See https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json for a list of
+      actions.
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'actions: ISiteScriptActionBase[];'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ISiteScriptActionBase:interface" />[]'
+  - name: type
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppSiteScriptBase#type:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: type
+    summary: The type of the Site Script.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'type: SiteScriptType;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!SiteScriptType:type" />'

@@ -7,20 +7,22 @@ summary: >-
   The ThemeProvider class provides the capability to get different themes from the Framework. Themes can be provided in
   different contexts, e.g. Canvas sections may provide a variant of the global theme in some contexts.
 remarks: ''
+example: []
 isPreview: false
 isDeprecated: false
 type: class
 constructors:
-  - name: '(constructor)(serviceScope, theme)'
+  - name: '(constructor)(serviceScope, theme, themeV2)'
     uid: '@microsoft/sp-component-base!ThemeProvider:constructor(1)'
     package: '@microsoft/sp-component-base!'
-    fullName: '(constructor)(serviceScope, theme)'
+    fullName: '(constructor)(serviceScope, theme, themeV2)'
     summary: Construct a new instance of the ThemeProvider class.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'constructor(serviceScope: ServiceScope, theme?: ITheme);'
+      content: 'constructor(serviceScope: ServiceScope, theme?: ITheme, themeV2?: Theme);'
       parameters:
         - id: serviceScope
           description: The current service scope.
@@ -28,6 +30,9 @@ constructors:
         - id: theme
           description: Theme to provide.
           type: '<xref uid="@microsoft/sp-component-base!ITheme:interface" />'
+        - id: themeV2
+          description: ''
+          type: '<xref uid="@fluentui/tokens!Theme:type" />'
 properties:
   - name: serviceKey
     uid: '@microsoft/sp-component-base!ThemeProvider.serviceKey:member'
@@ -35,6 +40,7 @@ properties:
     fullName: serviceKey
     summary: The service key for ThemeProvider.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -50,12 +56,27 @@ methods:
     fullName: tryGetTheme()
     summary: 'If set, get the current scoped theme.'
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'tryGetTheme(): IReadonlyTheme | undefined;'
       return:
         type: '<xref uid="@microsoft/sp-component-base!IReadonlyTheme:interface" /> | undefined'
+        description: ''
+  - name: tryGetThemeV2()
+    uid: '@microsoft/sp-component-base!ThemeProvider#tryGetThemeV2:member(1)'
+    package: '@microsoft/sp-component-base!'
+    fullName: tryGetThemeV2()
+    summary: ''
+    remarks: ''
+    example: []
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'tryGetThemeV2(): Theme | undefined;'
+      return:
+        type: '<xref uid="@fluentui/tokens!Theme:type" /> | undefined'
         description: ''
 events:
   - name: themeChangedEvent
@@ -64,6 +85,7 @@ events:
     fullName: themeChangedEvent
     summary: Raised when the theme changes with the new theme as an argument.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:

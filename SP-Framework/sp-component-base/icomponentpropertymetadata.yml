@@ -5,10 +5,54 @@ package: '@microsoft/sp-component-base!'
 fullName: IComponentPropertyMetadata
 summary: This is the structure used for map values for component properties metadata.
 remarks: ''
+example: []
 isPreview: false
 isDeprecated: false
 type: interface
 properties:
+  - name: customMetadata
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#customMetadata:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: customMetadata
+    summary: Additional custom metadata associated with the original metadata.
+    remarks: >-
+      This can be used to supply additional related metadata information. For example, image metadata along with a URL
+      could be provided.
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        customMetadata?: {
+                [key: string]: string;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: string;
+              }
+  - name: isComponentDependency
+    uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isComponentDependency:member'
+    package: '@microsoft/sp-component-base!'
+    fullName: isComponentDependency
+    summary: >-
+      Indicates that property value is components id, required to be loaded before this component can render or
+      initialize.
+    remarks: >-
+      The component should use this property to declare dynamic runtime component dependencies, which are required only
+      for specific states of the property. The framework will ensure that this component is preloaded for the component.
+
+
+      For example, the user can select one of the multiple layouts available for a web part or component during edit
+      mode. This will optimize the bundle to avoid embedding code for all layout code; instead, the framework will load
+      the required layout selectively at runtime.
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'isComponentDependency?: boolean;'
+      return:
+        type: boolean
   - name: isHtmlString
     uid: '@microsoft/sp-component-base!IComponentPropertyMetadata#isHtmlString:member'
     package: '@microsoft/sp-component-base!'
@@ -34,6 +78,7 @@ properties:
       Only enable this flag for HTML content where these modifications are acceptable. If non-HTML content is provided,
       SharePoint framework might make modifications to convert it to HTML valid. For plain text content that simply
       needs to be exposed to the search index (without any rewriting), use the `isSearchablePlainText` flag instead.
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -48,6 +93,7 @@ properties:
       Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
       services like link fix-up, search indexing, loading from CDN, etc.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -62,6 +108,7 @@ properties:
       Indicates if the property contains a link. This allows SharePoint server to treat the value as such and perform
       services like search indexing, link fix-up, loading from CDN, etc.
     remarks: ''
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -81,6 +128,7 @@ properties:
 
 
       Security note: For security reasons, never assign a plain text string to `Element.innerHTML`<!-- -->.
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:
@@ -103,6 +151,7 @@ properties:
 
       Note that if the property path refers to a property that has a complex object as the value, the whole object will
       be removed from the persisted data.
+    example: []
     isPreview: false
     isDeprecated: false
     syntax:

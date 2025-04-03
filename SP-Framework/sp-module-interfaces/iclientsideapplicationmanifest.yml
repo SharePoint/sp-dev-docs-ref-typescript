@@ -1,0 +1,85 @@
+### YamlMime:TSType
+name: IClientSideApplicationManifest
+uid: '@microsoft/sp-module-interfaces!IClientSideApplicationManifest:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IClientSideApplicationManifest
+summary: This is the manifest for a client-side application.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: description
+    uid: '@microsoft/sp-module-interfaces!IClientSideApplicationManifest#description:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: description
+    summary: >-
+      Description of the application represented as a dictionary of locale keys to description values. This value will
+      be displayed to the user in the (page creation) interface.
+    remarks: |-
+      Supported values: a dictionary of locale keys to strings. Should always have a 'default' key.
+
+      Examples:
+
+      ```
+      "An application for searching for things."
+      ```
+      or
+
+      ```
+               {
+                 "default": "An application for searching for things.",
+                 "en-us": "An application for searching for things.",
+                 "fr-fr": "Une demande pour la recherche de choses.",
+                 "zh": "申請尋找的東西。"
+               }
+      ```
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'description: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+  - name: preloadOptions
+    uid: '@microsoft/sp-module-interfaces!IClientSideApplicationManifest#preloadOptions:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: preloadOptions
+    summary: Represents flags to preload information in host aspx page.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'preloadOptions: IPreloadOptions;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!IPreloadOptions:interface" />'
+  - name: title
+    uid: '@microsoft/sp-module-interfaces!IClientSideApplicationManifest#title:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: title
+    summary: >-
+      Title of the application as a dictionary of locale keys to title values. This value will be displayed to the user
+      in the (page creation) interface.
+    remarks: |-
+      Supported values: a dictionary of locale keys to strings. Should always have a 'default' key.
+
+      Example: `"My Application"`
+
+      ```
+               {
+                 "default": "My Application"
+                 "en-us": "My Application",
+                 "fr-fr": "Ma demande",
+                 "zh": "我的應用程式"
+               }
+      ```
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'title: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'

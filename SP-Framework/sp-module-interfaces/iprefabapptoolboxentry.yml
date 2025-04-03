@@ -1,0 +1,141 @@
+### YamlMime:TSType
+name: IPrefabAppToolboxEntry
+uid: '@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IPrefabAppToolboxEntry
+summary: >-
+  This interface specifies the set of that can be provided by a PREFAB developer if the application should be available
+  in the modern SharePoint toolbox.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: description
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry#description:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: description
+    summary: >-
+      Description of the PREFAB entry represented as a dictionary of locale keys to description values. This value will
+      be displayed to the user in the toolbox. This description should be used in the Toolbox tooltip and other display
+      areas.
+    remarks: |-
+      Usage: display the description of the PREFAB route in the toolbox tooltip, and the page.
+
+      Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.
+
+      Example: `"A tool for displaying neat information."`
+
+      ```
+               {
+                 "default": "A tool for displaying neat information.",
+                 "en-us": "A tool for displaying neat information.",
+                 "fr-fr": "Un outil d'affichage des informations soignées.",
+                 "zh": "用於顯示整潔資訊的工具。"
+               }
+      ```
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'description: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+  - name: iconImageUrl
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry#iconImageUrl:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: iconImageUrl
+    summary: >-
+      The icon for the PREFAB app, to be displayed in the toolbox, represented as image URL. The image at the URL must
+      be exactly 40x28 px (SPPPLAT VSO\#218660 to fix the size of the icon image).
+    remarks: >-
+      If the
+      [IPrefabAppToolboxEntry.officeFabricIconFontName](xref:@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry%23officeFabricIconFontName:member)
+      field does not have a value, this field must have a value. This value can be an absolute URL (e.g.
+      `"http://example.com/icons/my-icon.png"`<!-- -->) or a relative file path (e.g. `"./icons/my-icon.png"`<!-- -->).
+      In the latter case, the path will be resolved relative to the folder containing the input manifest. The icon file
+      will be copied to the deployment folder like an asset, and the output manifest's iconImageUrl will be replaced
+      with a URL relative to the URL used to load all other assets (the loaderConfig.internalModuleBaseUrls property).
+
+
+      Supported values: Any absolute URL.
+
+
+      Example: `"https://contoso.akamaihd.net/files/myPREFABIcon.png"`
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'iconImageUrl?: string;'
+      return:
+        type: string
+  - name: officeFabricIconFontName
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry#officeFabricIconFontName:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: officeFabricIconFontName
+    summary: >-
+      The icon for the PREFAB entry, to be displayed in the toolbox, represented as a character name in the Office 365
+      icon font file.
+    remarks: >-
+      The icon font is specified here: [https://aka.ms/uifabric-icons](https://aka.ms/uifabric-icons) If this field has
+      a value, the
+      [IPrefabAppToolboxEntry.iconImageUrl](xref:@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry%23iconImageUrl:member)
+      field will be ignored.
+
+
+      Supported values: Any character name in the Office 365 Icon Font.
+
+
+      Example: "graph"
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'officeFabricIconFontName?: string;'
+      return:
+        type: string
+  - name: title
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry#title:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: title
+    summary: >-
+      Title of the PREFAB entry represented as a single a dictionary of locale keys to title values. This value will be
+      displayed to the user in the toolbox.
+    remarks: |-
+      This title should be used in the Toolbox and other display areas.
+
+      Usage: display the name of the PREFAB route in the toolbox, and the page.
+
+      Supported values: a dictionary of locale keys to strings. Should always have a `'default'` key.
+
+      Example: `"My PREFAB App"`
+
+      ```
+               {
+                 "default": "My PREFAB App"
+                 "en-us": "My PREFAB App",
+                 "fr-fr": "My PREFAB App",
+                 "zh": "我的 PREFAB 應用程式"
+               }
+      ```
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'title: ILocalizedString;'
+      return:
+        type: '<xref uid="@microsoft/sp-module-interfaces!ILocalizedString:interface" />'
+  - name: viewId
+    uid: '@microsoft/sp-module-interfaces!IPrefabAppToolboxEntry#viewId:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: viewId
+    summary: The unique identifier of the route to be rendered if the entry is added to the page.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'viewId: string;'
+      return:
+        type: string

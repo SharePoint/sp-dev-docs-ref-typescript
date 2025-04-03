@@ -1,0 +1,44 @@
+### YamlMime:TSType
+name: ICapabilityCollection
+uid: '@microsoft/sp-module-interfaces!ICapabilityCollection:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: ICapabilityCollection
+summary: >-
+  The capability collection for the web part. It defines which capabilities are required for the web part. If the host
+  does not support one of the required capabilities, the web part will not be visible in the toolbox.
+remarks: ''
+example: []
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: AuthenticationModel
+    uid: '@microsoft/sp-module-interfaces!ICapabilityCollection#AuthenticationModel:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: AuthenticationModel
+    summary: >-
+      An array indicates the web part requires any of following authentication models to be available in the site. The
+      authentication model can be used to connect to Microsoft Graph, O365 connecter, etc.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'AuthenticationModel?: Array<''OpenIDConnect'' | ''Federated''>;'
+      return:
+        type: Array&lt;'OpenIDConnect' | 'Federated'&gt;
+  - name: BingMapsKey
+    uid: '@microsoft/sp-module-interfaces!ICapabilityCollection#BingMapsKey:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: BingMapsKey
+    summary: >-
+      A boolean flag indicates if the web part requires the Bing maps key to be available in the site. The Bing maps
+      credential key can be used to show the Bing maps control according to a provided coordinate.
+    remarks: ''
+    example: []
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'BingMapsKey?: boolean;'
+      return:
+        type: boolean
