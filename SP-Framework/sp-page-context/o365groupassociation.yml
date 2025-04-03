@@ -1,0 +1,39 @@
+### YamlMime:TSType
+name: O365GroupAssociation
+uid: '@microsoft/sp-page-context!O365GroupAssociation:class'
+package: '@microsoft/sp-page-context!'
+fullName: O365GroupAssociation
+summary: >-
+  This class is primarily used with the `PageContext` class. If the site is associated with an O365 group, this object
+  provides contextual information about the group.
+remarks: >-
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `O365GroupAssociation` class.
+isPreview: true
+isDeprecated: false
+type: class
+properties:
+  - name: id
+    uid: '@microsoft/sp-page-context!O365GroupAssociation#id:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: id
+    summary: The GUID associated with the site's O365 Group.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'readonly id: Guid;'
+      return:
+        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+  - name: type
+    uid: '@microsoft/sp-page-context!O365GroupAssociation#type:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: type
+    summary: This enum identifies if the associated O365 Group private or public or unknown.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'readonly type: O365GroupAssociationType;'
+      return:
+        type: '<xref uid="@microsoft/sp-page-context!O365GroupAssociationType:enum" />'

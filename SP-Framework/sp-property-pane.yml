@@ -16,6 +16,7 @@ interfaces:
   - '@microsoft/sp-property-pane!IDynamicDataSharedSourceConfiguration:interface'
   - '@microsoft/sp-property-pane!IDynamicDataSharedSourceFilters:interface'
   - '@microsoft/sp-property-pane!IGuidSet:interface'
+  - '@microsoft/sp-property-pane!ILifeCycleEventCallback:interface'
   - '@microsoft/sp-property-pane!IPopupWindowProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneButtonProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneCheckboxProps:interface'
@@ -41,6 +42,7 @@ interfaces:
   - '@microsoft/sp-property-pane!IPropertyPanePage:interface'
   - '@microsoft/sp-property-pane!IPropertyPanePageHeader:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface'
+  - '@microsoft/sp-property-pane!IPropertyPaneSpinButtonProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneTextFieldProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneThumbnailPickerProps:interface'
   - '@microsoft/sp-property-pane!IPropertyPaneToggleProps:interface'
@@ -371,6 +373,29 @@ functions:
         type: >-
           <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-property-pane!IPropertyPaneSliderProps:interface" />&gt;
+        description: ''
+  - name: 'PropertyPaneSpinButton(targetProperty, properties)'
+    uid: '@microsoft/sp-property-pane!PropertyPaneSpinButton:function(1)'
+    package: '@microsoft/sp-property-pane!'
+    summary: Helper method to create a SpinButton on the property pane.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: >-
+        export declare function PropertyPaneSpinButton(targetProperty: string, properties:
+        IPropertyPaneSpinButtonProps): IPropertyPaneField<IPropertyPaneSpinButtonProps>;
+      parameters:
+        - id: targetProperty
+          description: Target property the spin button is associated to.
+          type: string
+        - id: properties
+          description: Strongly typed spin button properties.
+          type: '<xref uid="@microsoft/sp-property-pane!IPropertyPaneSpinButtonProps:interface" />'
+      return:
+        type: >-
+          <xref uid="@microsoft/sp-property-pane!IPropertyPaneField:interface" />&lt;<xref
+          uid="@microsoft/sp-property-pane!IPropertyPaneSpinButtonProps:interface" />&gt;
         description: ''
   - name: 'PropertyPaneTextField(targetProperty, properties)'
     uid: '@microsoft/sp-property-pane!PropertyPaneTextField:function(1)'

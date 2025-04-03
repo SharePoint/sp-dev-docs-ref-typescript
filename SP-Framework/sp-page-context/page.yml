@@ -1,0 +1,37 @@
+### YamlMime:TSType
+name: Page
+uid: '@microsoft/sp-page-context!Page:class'
+package: '@microsoft/sp-page-context!'
+fullName: Page
+summary: Exposes information that is associated with the SharePoint web page that is currently being displayed.
+remarks: >-
+  The Page object provides access to information that is scoped to the current SharePoint web page, but not stored with
+  the underlying SPListItem. Note that the
+  [PageContext.listItem](xref:@microsoft/sp-page-context!PageContext%23listItem:member) may be undefined for pages that
+  are not based on a SharePoint list, whereas the PageContext.page will never be undefined.
+
+
+  The concept of a "page" is subjective and defined by the router for a particular client-side application.
+
+
+  The constructor for this class is marked as internal. Third-party code should not call the constructor directly or
+  create subclasses that extend the `Page` class.
+isPreview: true
+isDeprecated: false
+type: class
+properties:
+  - name: socialBarEnabled
+    uid: '@microsoft/sp-page-context!Page#socialBarEnabled:member'
+    package: '@microsoft/sp-page-context!'
+    fullName: socialBarEnabled
+    summary: Returns true if the Social Bar is enabled.
+    remarks: >-
+      The Social Bar will appear on all modern SharePoint pages with the exception of the home page of a site. It will
+      give users the ability to like a page, see the number of views, likes, and comments on a page, and see the people
+      who have liked a page.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'readonly socialBarEnabled: boolean;'
+      return:
+        type: boolean

@@ -1,0 +1,87 @@
+### YamlMime:TSType
+name: SPError
+uid: '@microsoft/sp-core-library!SPError:class'
+package: '@microsoft/sp-core-library!'
+fullName: SPError
+summary: >-
+  The purpose of this class is to help make the SharePoint framework errors more robust. On top of the base Error class
+  functionality, this class adds the concept of error codes. The error code could be a non-localized immutable string or
+  an error number. All the SharePoint framework code is expected to use this class for raising errors.
+
+
+  References:
+
+
+  [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+
+
+  [http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript](http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript)
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: class
+constructors:
+  - name: '(constructor)(errorCode, message, logProperties)'
+    uid: '@microsoft/sp-core-library!SPError:constructor(1)'
+    package: '@microsoft/sp-core-library!'
+    fullName: '(constructor)(errorCode, message, logProperties)'
+    summary: Constructor for the SPError class.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        constructor(errorCode: string, message: string, logProperties?: {
+                [key: string]: any;
+            });
+      parameters:
+        - id: errorCode
+          description: a numeric or string error code.
+          type: string
+        - id: message
+          description: detailed error message.
+          type: string
+        - id: logProperties
+          description: (optional) additional data that can be used to troubleshoot rare to repro bugs.
+          type: |-
+            {
+                    [key: string]: any;
+                }
+properties:
+  - name: category
+    uid: '@microsoft/sp-core-library!SPError#category:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: category
+    summary: Error category.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get category(): string;'
+      return:
+        type: string
+  - name: id
+    uid: '@microsoft/sp-core-library!SPError#id:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: id
+    summary: Error id. e.g. Value of the enum.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'get id(): number;'
+      return:
+        type: number
+  - name: innerError
+    uid: '@microsoft/sp-core-library!SPError#innerError:member'
+    package: '@microsoft/sp-core-library!'
+    fullName: innerError
+    summary: Inner error.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'innerError: Error | undefined;'
+      return:
+        type: Error | undefined
+extends: Error

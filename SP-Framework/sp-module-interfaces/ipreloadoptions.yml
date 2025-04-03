@@ -1,0 +1,169 @@
+### YamlMime:TSType
+name: IPreloadOptions
+uid: '@microsoft/sp-module-interfaces!IPreloadOptions:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IPreloadOptions
+summary: ''
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: preloadListItemProperties
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#preloadListItemProperties:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: preloadListItemProperties
+    summary: This specifies what to fetch from a SharePoint list item Properties property.
+    remarks: >-
+      For example, if you want to include `MyProperty1` and `MyProperty2` from item `Properties` property, the
+      `preloadListItemProperties` would look like `"[MyProperty1,MyProperty2]"`<!-- -->.
+
+
+      The main reason not to pass `"$expand=Properties&select=Properties/MyProperty1,Properties/MyProperty2"` to
+      `PreloadListItemQueryOption` is to avoid multiple extra SQL roundtrips.
+
+
+      SharePoint list item Properties property is a hashtable to store additional information of the item without modify
+      list schema. For more infomation about item Properties property see the following link:
+
+
+      [https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splistitem.properties.aspx](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splistitem.properties.aspx)
+
+
+      If the specified name doesn't exist in the item Properties property, it will not return the value.
+
+
+      Supported values: array of property names.
+
+
+      Example: `["DefaultCanvasContentVersion"]`
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'preloadListItemProperties?: string[];'
+      return:
+        type: 'string[]'
+  - name: preloadListItemQueryOption
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#preloadListItemQueryOption:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: preloadListItemQueryOption
+    summary: >-
+      This specifies an optional OData query expression with the syntax that would be used in the URL query parameter
+      for a REST API call that fetches a SharePoint list item.
+    remarks: >-
+      This property enables the application to tailor the way the preload object will be serialized. For example, if you
+      want to include the custom fields MyField1 and MyField2 and expand the Folder property, the
+      preloadListItemQueryOption would look like this `"$select=MyField1,MyField2&$expand=Folder"`
+
+
+      Supported values: A query following the [CAML
+      standard](https://docs.microsoft.com/en-us/sharepoint/dev/schema/collaborative-application-markup-language-caml-schemas)
+
+
+      Example: `"$select=MyField1,MyField2&$expand=Folder"`
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'preloadListItemQueryOption?: string;'
+      return:
+        type: string
+  - name: preloadListItemQueryOptionOverride
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#preloadListItemQueryOptionOverride:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: preloadListItemQueryOptionOverride
+    summary: >-
+      This specifies an optional OData query expression with the syntax that would be used in the URL query parameter
+      for a REST API call that fetches a SharePoint list item.
+    remarks: >-
+      This property enables the application to tailor the way the preload object will be serialized. For example, if you
+      want to include the custom fields `MyField1` and `MyField2` and expand the `Folder` property, the
+      `preloadListItemQueryOption` would look like this `"$select=MyField1,MyField2&$expand=Folder"`
+
+
+      This currently provides a way to override the value of `preloadListItemQueryOption` Later we would like to have
+      `preloadListItemQueryOption` and `preloadListItemQueryOptionFallback` with fallback being the one that is known
+      and working and `preloadListItemQueryOption` would be the override, but we should discuss the exact names when we
+      make the change.
+
+
+      Supported values: A query following the [CAML
+      standard](https://docs.microsoft.com/en-us/sharepoint/dev/schema/collaborative-application-markup-language-caml-schemas)
+
+
+      Example: `"$select=MyField1,MyField2&$expand=Folder"`
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'preloadListItemQueryOptionOverride?: string;'
+      return:
+        type: string
+  - name: shouldPreloadItem
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#shouldPreloadItem:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: shouldPreloadItem
+    summary: Determines whether or not to preload the SharePoint list item object.
+    remarks: >-
+      A value indicating whether or not to preload the list item object when loading the application page. If not
+      present, defaults to false.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'shouldPreloadItem?: boolean;'
+      return:
+        type: boolean
+  - name: shouldPreloadList
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#shouldPreloadList:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: shouldPreloadList
+    summary: Determines whether or not to preload the SharePointlist object.
+    remarks: >-
+      A value indicating whether or not to preload the list object when loading the application page. If not present,
+      defaults to false.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'shouldPreloadList?: boolean;'
+      return:
+        type: boolean
+  - name: shouldPreloadQuickLaunch
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#shouldPreloadQuickLaunch:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: shouldPreloadQuickLaunch
+    summary: Determines whether or not to preload the quick launch navigation menu items.
+    remarks: >-
+      A value indicating whether or not to preload the quick launch navigation menu items when loading the application
+      page. If not present, defaults to false.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'shouldPreloadQuickLaunch?: boolean;'
+      return:
+        type: boolean
+  - name: shouldPreloadUser
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#shouldPreloadUser:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: shouldPreloadUser
+    summary: Determines whether or not to preload the user object.
+    remarks: >-
+      A value indicating whether or not to preload the user object when loading the application page. If not present,
+      defaults to false.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'shouldPreloadUser?: boolean;'
+      return:
+        type: boolean
+  - name: shouldPreloadWeb
+    uid: '@microsoft/sp-module-interfaces!IPreloadOptions#shouldPreloadWeb:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: shouldPreloadWeb
+    summary: Determines whether or not to preload the web object.
+    remarks: >-
+      A value indicating whether or not to preload the web object when loading the application page. If not present,
+      defaults to false.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'shouldPreloadWeb?: boolean;'
+      return:
+        type: boolean
