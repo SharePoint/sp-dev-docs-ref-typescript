@@ -7,4 +7,4 @@ summary: Helper type to extract a string union from a type.
 remarks: ''
 isPreview: false
 isDeprecated: false
-syntax: 'export type StringUnion<T> = [T] extends [string] ? string extends T ? never : T : never;'
+syntax: 'export type StringUnion<T> = IsStringUnion<T> extends true ? T : never;'

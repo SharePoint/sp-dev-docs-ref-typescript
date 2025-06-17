@@ -9,18 +9,16 @@ isPreview: false
 isDeprecated: false
 type: class
 constructors:
-  - name: '(constructor)(cancel, requestPopup, showPopup, resource, options)'
+  - name: '(constructor)(cancel, requestPopup, showPopup)'
     uid: '@microsoft/sp-http-base!PopupEventArgs:constructor(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: '(constructor)(cancel, requestPopup, showPopup, resource, options)'
+    fullName: '(constructor)(cancel, requestPopup, showPopup)'
     summary: Constructs a new instance of the `PopupEventArgs` class
     remarks: ''
     isPreview: false
     isDeprecated: false
     syntax:
-      content: >-
-        constructor(cancel: (error?: Error) => void, requestPopup: () => void, showPopup: () => Promise<void> | void,
-        resource: string, options: IGetTokenDataOptions);
+      content: 'constructor(cancel: (error?: Error) => void, requestPopup: () => void, showPopup: () => void);'
       parameters:
         - id: cancel
           description: ''
@@ -30,13 +28,7 @@ constructors:
           type: () =&gt; void
         - id: showPopup
           description: ''
-          type: () =&gt; Promise&lt;void&gt; | void
-        - id: resource
-          description: ''
-          type: string
-        - id: options
-          description: ''
-          type: '<xref uid="@microsoft/sp-http-base!~IGetTokenDataOptions:interface" />'
+          type: () =&gt; void
 properties:
   - name: cancel
     uid: '@microsoft/sp-http-base!PopupEventArgs#cancel:member'
@@ -50,18 +42,6 @@ properties:
       content: 'cancel: (error?: Error) => void;'
       return:
         type: '(error?: Error) =&gt; void'
-  - name: options
-    uid: '@microsoft/sp-http-base!PopupEventArgs#options:member'
-    package: '@microsoft/sp-http-base!'
-    fullName: options
-    summary: ''
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'options: IGetTokenDataOptions;'
-      return:
-        type: '<xref uid="@microsoft/sp-http-base!~IGetTokenDataOptions:interface" />'
   - name: requestPopup
     uid: '@microsoft/sp-http-base!PopupEventArgs#requestPopup:member'
     package: '@microsoft/sp-http-base!'
@@ -74,18 +54,6 @@ properties:
       content: 'requestPopup: () => void;'
       return:
         type: () =&gt; void
-  - name: resource
-    uid: '@microsoft/sp-http-base!PopupEventArgs#resource:member'
-    package: '@microsoft/sp-http-base!'
-    fullName: resource
-    summary: ''
-    remarks: ''
-    isPreview: false
-    isDeprecated: false
-    syntax:
-      content: 'resource: string;'
-      return:
-        type: string
   - name: showPopup
     uid: '@microsoft/sp-http-base!PopupEventArgs#showPopup:member'
     package: '@microsoft/sp-http-base!'
@@ -95,7 +63,7 @@ properties:
     isPreview: false
     isDeprecated: false
     syntax:
-      content: 'showPopup: () => Promise<void> | void;'
+      content: 'showPopup: () => void;'
       return:
-        type: () =&gt; Promise&lt;void&gt; | void
+        type: () =&gt; void
 extends: '<xref uid="@microsoft/sp-core-library!SPEventArgs:class" />'
