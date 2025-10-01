@@ -50,7 +50,7 @@ properties:
     syntax:
       content: 'get placeholderNames(): ReadonlyArray<PlaceholderName>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-application-base!PlaceholderName:enum" />&gt;'
+        type: ReadonlyArray&lt;<xref uid="@microsoft/sp-application-base!PlaceholderName:enum" />&gt;
 methods:
   - name: dispose()
     uid: '@microsoft/sp-application-base!PlaceholderProvider#dispose:member(1)'
@@ -65,10 +65,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'tryCreateContent(name, options)'
+  - name: tryCreateContent(name, options)
     uid: '@microsoft/sp-application-base!PlaceholderProvider#tryCreateContent:member(1)'
     package: '@microsoft/sp-application-base!'
-    fullName: 'tryCreateContent(name, options)'
+    fullName: tryCreateContent(name, options)
     summary: >-
       Tests whether the page contains the specified placeholder. If so, a new PlaceholderContent object is created,
       which allows the caller to render custom content inside the placeholder.
@@ -85,13 +85,13 @@ methods:
       parameters:
         - id: name
           description: The requested placeholder
-          type: '<xref uid="@microsoft/sp-application-base!PlaceholderName:enum" />'
+          type: <xref uid="@microsoft/sp-application-base!PlaceholderName:enum" />
         - id: options
-          description: 'Additional options, for example to detect when the placeholder is disposed.'
-          type: '<xref uid="@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface" />'
+          description: Additional options, for example to detect when the placeholder is disposed.
+          type: <xref uid="@microsoft/sp-application-base!IPlaceholderCreateContentOptions:interface" />
       return:
-        type: '<xref uid="@microsoft/sp-application-base!PlaceholderContent:class" /> | undefined'
-        description: 'A new PlaceholderContent object, or undefined if the requested placeholder does not exist.'
+        type: <xref uid="@microsoft/sp-application-base!PlaceholderContent:class" /> | undefined
+        description: A new PlaceholderContent object, or undefined if the requested placeholder does not exist.
 events:
   - name: changedEvent
     uid: '@microsoft/sp-application-base!PlaceholderProvider#changedEvent:member'

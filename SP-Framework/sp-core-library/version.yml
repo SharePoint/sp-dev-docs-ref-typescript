@@ -3,7 +3,7 @@ name: Version
 uid: '@microsoft/sp-core-library!Version:class'
 package: '@microsoft/sp-core-library!'
 fullName: Version
-summary: 'Represents a version number with two, three, or four parts.'
+summary: Represents a version number with two, three, or four parts.
 remarks: >-
   This class represents versions that follow the string format of `MAJOR.MINOR[.PATCH[.REVISION]]` where the MAJOR,
   MINOR, PATCH and REVISION parts are integers. PATCH and REVISION are optional. Leading zero digits are allowed, but
@@ -45,7 +45,7 @@ properties:
     uid: '@microsoft/sp-core-library!Version#patch:member'
     package: '@microsoft/sp-core-library!'
     fullName: patch
-    summary: 'The third number in the version string, or undefined if unspecified.'
+    summary: The third number in the version string, or undefined if unspecified.
     remarks: >-
       Typically a change in the patch version number indicates a small fix that does not affect the compatibility
       contract for the library. For a .NET System.Version object, this is referred to as the "build" number.
@@ -59,7 +59,7 @@ properties:
     uid: '@microsoft/sp-core-library!Version#revision:member'
     package: '@microsoft/sp-core-library!'
     fullName: revision
-    summary: 'The fourth number in the version string, or undefined if unspecified.'
+    summary: The fourth number in the version string, or undefined if unspecified.
     remarks: >-
       This number is not part of the Semantic Versioning (SemVer) standard used in JavaScript, but it is used by .NET
       version numbers.
@@ -70,10 +70,10 @@ properties:
       return:
         type: number | undefined
 methods:
-  - name: 'compare(v1, v2)'
+  - name: compare(v1, v2)
     uid: '@microsoft/sp-core-library!Version.compare:member(1)'
     package: '@microsoft/sp-core-library!'
-    fullName: 'compare(v1, v2)'
+    fullName: compare(v1, v2)
     summary: Compares two Version objects to determine which version is newer.
     remarks: ''
     isPreview: false
@@ -83,10 +83,10 @@ methods:
       parameters:
         - id: v1
           description: The first version class for comparison
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
         - id: v2
           description: The second version class for comparison
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
       return:
         type: number
         description: >-
@@ -105,7 +105,6 @@ methods:
       2.0.1 equals 2.0.0 -> false;
       3.0   equals 3.0.0 -> true;
       04.01 equals 4.1   -> true
-      ```
     isPreview: false
     isDeprecated: false
     syntax:
@@ -113,7 +112,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
       return:
         type: boolean
         description: A boolean indicating if this version is equal to the input parameter
@@ -129,7 +128,6 @@ methods:
       1.0.0 greaterThan 0.0.9 -> true;
       2.0   greaterThan 2.0.0 -> false;
       3.0.1 greaterThan 3.0   -> true
-      ```
     isPreview: false
     isDeprecated: false
     syntax:
@@ -137,7 +135,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
       return:
         type: boolean
         description: A boolean indicating if this version is greater than the input parameter
@@ -171,7 +169,6 @@ methods:
       2.0   lessThan 2.0.0 -> false;
       3.0   lessThan 3.0.1 -> true;
       04.01 lessThan 4.1   -> false
-      ```
     isPreview: false
     isDeprecated: false
     syntax:
@@ -179,7 +176,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
       return:
         type: boolean
         description: A boolean indicating if this version is less than the input parameter
@@ -198,7 +195,7 @@ methods:
           description: A version string
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+        type: <xref uid="@microsoft/sp-core-library!Version:class" />
         description: a new Version object
   - name: satisfies(compareWith)
     uid: '@microsoft/sp-core-library!Version#satisfies:member(1)'
@@ -224,8 +221,6 @@ methods:
       2.0.0 satisfies 1.0.0 -> false;
 
       1.0.0 satisfies 1.1.0 -> false
-
-      ```
     isPreview: false
     isDeprecated: false
     syntax:
@@ -233,7 +228,7 @@ methods:
       parameters:
         - id: compareWith
           description: The version to compare with
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
       return:
         type: boolean
         description: A boolean indicating if this version is compatible with the input parameter
@@ -269,5 +264,5 @@ methods:
           description: A version string
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Version:class" /> | undefined'
-        description: 'The Version object, or undefined if the string could not be parsed.'
+        type: <xref uid="@microsoft/sp-core-library!Version:class" /> | undefined
+        description: The Version object, or undefined if the string could not be parsed.

@@ -1,0 +1,53 @@
+### YamlMime:TSType
+name: BeforeFullPageRedirectEventArgs
+uid: '@microsoft/sp-http-base!BeforeFullPageRedirectEventArgs:class'
+package: '@microsoft/sp-http-base!'
+fullName: BeforeFullPageRedirectEventArgs
+summary: Arguments for a full page redirect event if interaction is required during the login flow.
+remarks: ''
+isPreview: false
+isDeprecated: false
+type: class
+constructors:
+  - name: (constructor)(redirectUrl, cancel)
+    uid: '@microsoft/sp-http-base!BeforeFullPageRedirectEventArgs:constructor(1)'
+    package: '@microsoft/sp-http-base!'
+    fullName: (constructor)(redirectUrl, cancel)
+    summary: Constructs a new instance of the `BeforeFullPageRedirectEventArgs` class
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'constructor(redirectUrl: string, cancel: () => void);'
+      parameters:
+        - id: redirectUrl
+          description: ''
+          type: string
+        - id: cancel
+          description: ''
+          type: () =&gt; void
+properties:
+  - name: cancel
+    uid: '@microsoft/sp-http-base!BeforeFullPageRedirectEventArgs#cancel:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: cancel
+    summary: Call this method if the redirect should be cancelled because it is being handled by code in the cancelling class.
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'cancel: () => void;'
+      return:
+        type: () =&gt; void
+  - name: redirectUrl
+    uid: '@microsoft/sp-http-base!BeforeFullPageRedirectEventArgs#redirectUrl:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: redirectUrl
+    summary: The url of the page to redirect to if automatic redirect is cancelled and you want the entire window redirected
+    remarks: ''
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'redirectUrl: string;'
+      return:
+        type: string

@@ -44,8 +44,6 @@ constructors:
           this._cache = cacheReference; // This is okay. Keeping a reference to my internal cache.
           this._cache.refresh(); // This is bad practice.
           // If you need to refresh the cache (or fetch data) for rendering, do it in onBeforeOpen()
-        }
-      ```
     isPreview: false
     isDeprecated: false
     syntax:
@@ -53,7 +51,7 @@ constructors:
       parameters:
         - id: config
           description: the dialog configuration that affects how the dialog is displayed \*
-          type: '<xref uid="@microsoft/sp-dialog!IDialogConfiguration:interface" />'
+          type: <xref uid="@microsoft/sp-dialog!IDialogConfiguration:interface" />
 properties:
   - name: domElement
     uid: '@microsoft/sp-dialog!BaseDialog#domElement:member'
@@ -125,7 +123,7 @@ properties:
     syntax:
       content: 'get secondaryDialogProvider(): ISecondaryDialogProvider | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-dialog!ISecondaryDialogProvider:interface" /> | undefined'
+        type: <xref uid="@microsoft/sp-dialog!ISecondaryDialogProvider:interface" /> | undefined
 methods:
   - name: close()
     uid: '@microsoft/sp-dialog!BaseDialog#close:member(1)'
@@ -141,7 +139,7 @@ methods:
       content: 'close(): Promise<void>;'
       return:
         type: Promise&lt;void&gt;
-        description: 'A promise that resolves when the dialog is visually closed, or if it was already closed'
+        description: A promise that resolves when the dialog is visually closed, or if it was already closed
   - name: onAfterClose()
     uid: '@microsoft/sp-dialog!BaseDialog#onAfterClose:member(1)'
     package: '@microsoft/sp-dialog!'
@@ -215,7 +213,7 @@ methods:
           description: >-
             Dialog showing options. See [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for
             more information.
-          type: '<xref uid="@microsoft/sp-dialog!IDialogShowOptions:interface" />'
+          type: <xref uid="@microsoft/sp-dialog!IDialogShowOptions:interface" />
       return:
         type: Promise&lt;void&gt;
         description: >-

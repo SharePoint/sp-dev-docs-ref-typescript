@@ -54,7 +54,7 @@ properties:
     syntax:
       content: 'readonly context: BaseWebPartContext;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!BaseWebPartContext:class" />'
+        type: <xref uid="@microsoft/sp-webpart-base!BaseWebPartContext:class" />
   - name: dataVersion
     uid: '@microsoft/sp-webpart-base!BaseWebPart#dataVersion:member'
     package: '@microsoft/sp-webpart-base!'
@@ -68,7 +68,7 @@ properties:
     syntax:
       content: 'protected get dataVersion(): Version;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+        type: <xref uid="@microsoft/sp-core-library!Version:class" />
   - name: description
     uid: '@microsoft/sp-webpart-base!BaseWebPart#description:member'
     package: '@microsoft/sp-webpart-base!'
@@ -114,7 +114,7 @@ properties:
     syntax:
       content: 'get displayMode(): DisplayMode;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!DisplayMode:enum" />'
+        type: <xref uid="@microsoft/sp-core-library!DisplayMode:enum" />
   - name: previewImageUrl
     uid: '@microsoft/sp-webpart-base!BaseWebPart#previewImageUrl:member'
     package: '@microsoft/sp-webpart-base!'
@@ -157,7 +157,7 @@ properties:
     syntax:
       content: 'protected get propertiesMetadata(): IWebPartPropertiesMetadata | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!IWebPartPropertiesMetadata:interface" /> | undefined'
+        type: <xref uid="@microsoft/sp-webpart-base!IWebPartPropertiesMetadata:interface" /> | undefined
   - name: title
     uid: '@microsoft/sp-webpart-base!BaseWebPart#title:member'
     package: '@microsoft/sp-webpart-base!'
@@ -191,7 +191,7 @@ methods:
     syntax:
       content: 'protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneConfiguration:interface" />'
+        type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneConfiguration:interface" />
         description: ''
   - name: getTopActionsConfiguration()
     uid: '@microsoft/sp-webpart-base!BaseWebPart#getTopActionsConfiguration:member(1)'
@@ -204,7 +204,7 @@ methods:
     syntax:
       content: 'getTopActionsConfiguration(): ITopActions | undefined;'
       return:
-        type: '<xref uid="@microsoft/sp-top-actions!ITopActions:interface" /> | undefined'
+        type: <xref uid="@microsoft/sp-top-actions!ITopActions:interface" /> | undefined
         description: ''
   - name: loadPropertyPaneResources()
     uid: '@microsoft/sp-webpart-base!BaseWebPart#loadPropertyPaneResources:member(1)'
@@ -231,10 +231,10 @@ methods:
       return:
         type: Promise&lt;void&gt;
         description: ''
-  - name: 'onAfterDeserialize(deserializedObject, dataVersion)'
+  - name: onAfterDeserialize(deserializedObject, dataVersion)
     uid: '@microsoft/sp-webpart-base!BaseWebPart#onAfterDeserialize:member(1)'
     package: '@microsoft/sp-webpart-base!'
-    fullName: 'onAfterDeserialize(deserializedObject, dataVersion)'
+    fullName: onAfterDeserialize(deserializedObject, dataVersion)
     summary: >-
       This API is called after the web part is deserialized to an object, right before the property bag is populated.
       virtual
@@ -264,7 +264,7 @@ methods:
             The data version of the stored data being deserialized. You can use this value to determine if the data was
             serialized by an older web part. Web parts can define their data version by overriding the dataVersion
             property.
-          type: '<xref uid="@microsoft/sp-core-library!Version:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Version:class" />
       return:
         type: TProperties
         description: The property bag of the web part
@@ -322,7 +322,7 @@ methods:
       parameters:
         - id: oldDisplayMode
           description: The old display mode.
-          type: '<xref uid="@microsoft/sp-core-library!DisplayMode:enum" />'
+          type: <xref uid="@microsoft/sp-core-library!DisplayMode:enum" />
       return:
         type: void
         description: ''
@@ -399,10 +399,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
+  - name: onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)
     uid: '@microsoft/sp-webpart-base!BaseWebPart#onPropertyPaneFieldChanged:member(1)'
     package: '@microsoft/sp-webpart-base!'
-    fullName: 'onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)'
+    fullName: onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)
     summary: >-
       This API is invoked after updating the new value of the property in the property bag when the PropertyPane is
       being used in Reactive mode. virtual
@@ -440,4 +440,4 @@ methods:
       return:
         type: void
         description: ''
-extends: '<xref uid="@microsoft/sp-component-base!BaseComponent:class" />'
+extends: <xref uid="@microsoft/sp-component-base!BaseComponent:class" />

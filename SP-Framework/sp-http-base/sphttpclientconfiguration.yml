@@ -3,7 +3,7 @@ name: SPHttpClientConfiguration
 uid: '@microsoft/sp-http-base!SPHttpClientConfiguration:class'
 package: '@microsoft/sp-http-base!'
 fullName: SPHttpClientConfiguration
-summary: 'Configuration for [SPHttpClient](xref:@microsoft/sp-http-base!SPHttpClient:class)<!-- -->.'
+summary: Configuration for [SPHttpClient](xref:@microsoft/sp-http-base!SPHttpClient:class)<!-- -->.
 remarks: >-
   The SPHttpClientConfiguration object provides a set of switches for enabling/disabling various features of the
   SPHttpClient class. Normally these switches are set (e.g. when calling SPHttpClient.fetch()) by providing one of the
@@ -13,10 +13,10 @@ isPreview: false
 isDeprecated: false
 type: class
 constructors:
-  - name: '(constructor)(flags, overrideFlags)'
+  - name: (constructor)(flags, overrideFlags)
     uid: '@microsoft/sp-http-base!SPHttpClientConfiguration:constructor(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: '(constructor)(flags, overrideFlags)'
+    fullName: (constructor)(flags, overrideFlags)
     summary: >-
       Constructs a new instance of SPHttpClientConfiguration with the specified flags. The default values will be used
       for any flags that are missing or undefined. If overrideFlags is specified, it takes precedence over flags.
@@ -28,10 +28,10 @@ constructors:
       parameters:
         - id: flags
           description: ''
-          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />
         - id: overrideFlags
           description: ''
-          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />
 properties:
   - name: defaultODataVersion
     uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#defaultODataVersion:member'
@@ -50,7 +50,7 @@ properties:
     syntax:
       content: 'get defaultODataVersion(): ODataVersion;'
       return:
-        type: '<xref uid="@microsoft/sp-http-base!ODataVersion:class" />'
+        type: <xref uid="@microsoft/sp-http-base!ODataVersion:class" />
   - name: defaultSameOriginCredentials
     uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#defaultSameOriginCredentials:member'
     package: '@microsoft/sp-http-base!'
@@ -82,7 +82,7 @@ properties:
     syntax:
       content: 'protected flags: ISPHttpClientConfiguration;'
       return:
-        type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+        type: <xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />
   - name: requestDigest
     uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#requestDigest:member'
     package: '@microsoft/sp-http-base!'
@@ -99,6 +99,20 @@ properties:
     isDeprecated: false
     syntax:
       content: 'get requestDigest(): boolean;'
+      return:
+        type: boolean
+  - name: usePopupForCookieRefresh
+    uid: '@microsoft/sp-http-base!SPHttpClientConfiguration#usePopupForCookieRefresh:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: usePopupForCookieRefresh
+    summary: Handle cookie refresh with a popup dialog
+    remarks: >-
+      When this switch is true popup auth will be used for handling a cookie refresh. This means the caller must handle
+      the popup events. If it is undefined or false full page redirect will be defaulted to.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'get usePopupForCookieRefresh(): boolean;'
       return:
         type: boolean
 methods:
@@ -132,8 +146,8 @@ methods:
       parameters:
         - id: sourceFlags
           description: ''
-          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!ISPHttpClientConfiguration:interface" />
       return:
-        type: '<xref uid="@microsoft/sp-http-base!SPHttpClientConfiguration:class" />'
+        type: <xref uid="@microsoft/sp-http-base!SPHttpClientConfiguration:class" />
         description: ''
-extends: '<xref uid="@microsoft/sp-http-base!SPHttpClientCommonConfiguration:class" />'
+extends: <xref uid="@microsoft/sp-http-base!SPHttpClientCommonConfiguration:class" />
