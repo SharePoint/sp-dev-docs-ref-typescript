@@ -24,7 +24,7 @@ constructors:
       parameters:
         - id: serviceScope
           description: ''
-          type: '<xref uid="@microsoft/sp-core-library!ServiceScope:class" />'
+          type: <xref uid="@microsoft/sp-core-library!ServiceScope:class" />
 properties:
   - name: configurations
     uid: '@microsoft/sp-http-base!HttpClient.configurations:member'
@@ -37,7 +37,7 @@ properties:
     syntax:
       content: 'static readonly configurations: IHttpClientConfigurations;'
       return:
-        type: '<xref uid="@microsoft/sp-http-base!IHttpClientConfigurations:interface" />'
+        type: <xref uid="@microsoft/sp-http-base!IHttpClientConfigurations:interface" />
   - name: serviceKey
     uid: '@microsoft/sp-http-base!HttpClient.serviceKey:member'
     package: '@microsoft/sp-http-base!'
@@ -53,10 +53,10 @@ properties:
           <xref uid="@microsoft/sp-core-library!ServiceKey:class" />&lt;<xref
           uid="@microsoft/sp-http-base!HttpClient:class" />&gt;
 methods:
-  - name: 'fetch(url, configuration, options)'
+  - name: fetch(url, configuration, options)
     uid: '@microsoft/sp-http-base!HttpClient#fetch:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'fetch(url, configuration, options)'
+    fullName: fetch(url, configuration, options)
     summary: Performs a REST service call.
     remarks: >-
       Although the SPHttpClient subclass adds additional enhancements, the parameters and semantics for
@@ -76,22 +76,22 @@ methods:
           description: >-
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
-          type: '<xref uid="@microsoft/sp-http-base!HttpClientConfiguration:class" />'
+          type: <xref uid="@microsoft/sp-http-base!HttpClientConfiguration:class" />
         - id: options
           description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http-base!IHttpClientOptions:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!IHttpClientOptions:interface" />
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http-base!HttpClientResponse%23ok:member) being false) for error
           status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that
           prevent communication with the server.
-  - name: 'get(url, configuration, options)'
+  - name: get(url, configuration, options)
     uid: '@microsoft/sp-http-base!HttpClient#get:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'get(url, configuration, options)'
-    summary: 'Calls fetch(), but sets the method to "GET".'
+    fullName: get(url, configuration, options)
+    summary: Calls fetch(), but sets the method to "GET".
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -107,22 +107,22 @@ methods:
           description: >-
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
-          type: '<xref uid="@microsoft/sp-http-base!HttpClientConfiguration:class" />'
+          type: <xref uid="@microsoft/sp-http-base!HttpClientConfiguration:class" />
         - id: options
           description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http-base!IHttpClientOptions:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!IHttpClientOptions:interface" />
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http-base!HttpClientResponse%23ok:member) being false) for error
           status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that
           prevent communication with the server.
-  - name: 'post(url, configuration, options)'
+  - name: post(url, configuration, options)
     uid: '@microsoft/sp-http-base!HttpClient#post:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'post(url, configuration, options)'
-    summary: 'Calls fetch(), but sets the method to "POST".'
+    fullName: post(url, configuration, options)
+    summary: Calls fetch(), but sets the method to "POST".
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -138,12 +138,12 @@ methods:
           description: >-
             determines the default behavior of HttpClient; normally this should be the latest version number from
             HttpClientConfigurations
-          type: '<xref uid="@microsoft/sp-http-base!HttpClientConfiguration:class" />'
+          type: <xref uid="@microsoft/sp-http-base!HttpClientConfiguration:class" />
         - id: options
           description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http-base!IHttpClientOptions:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!IHttpClientOptions:interface" />
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!HttpClientResponse:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http-base!HttpClientResponse%23ok:member) being false) for error

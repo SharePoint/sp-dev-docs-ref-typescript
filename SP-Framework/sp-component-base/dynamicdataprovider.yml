@@ -48,7 +48,7 @@ methods:
     syntax:
       content: 'getAvailableSources(): ReadonlyArray<IDynamicDataSource>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" />&gt;'
+        type: ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" />&gt;
         description: Read-only array with all available sources.
   - name: registerAvailableSourcesChanged(callback)
     uid: '@microsoft/sp-component-base!DynamicDataProvider#registerAvailableSourcesChanged:member(1)'
@@ -67,10 +67,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'registerPropertyChanged(sourceId, propertyId, callback)'
+  - name: registerPropertyChanged(sourceId, propertyId, callback)
     uid: '@microsoft/sp-component-base!DynamicDataProvider#registerPropertyChanged:member(1)'
     package: '@microsoft/sp-component-base!'
-    fullName: 'registerPropertyChanged(sourceId, propertyId, callback)'
+    fullName: registerPropertyChanged(sourceId, propertyId, callback)
     summary: Registers a callback for updates when a property is changed in a Dynamic Data source.
     remarks: ''
     isPreview: false
@@ -90,10 +90,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'registerSourceChanged(sourceId, callback)'
+  - name: registerSourceChanged(sourceId, callback)
     uid: '@microsoft/sp-component-base!DynamicDataProvider#registerSourceChanged:member(1)'
     package: '@microsoft/sp-component-base!'
-    fullName: 'registerSourceChanged(sourceId, callback)'
+    fullName: registerSourceChanged(sourceId, callback)
     summary: >-
       Registers a callback for updates when a Dynamic Data source is changed. This happens when any property is updated
       within the source.
@@ -116,7 +116,7 @@ methods:
     uid: '@microsoft/sp-component-base!DynamicDataProvider#tryGetSource:member(1)'
     package: '@microsoft/sp-component-base!'
     fullName: tryGetSource(id)
-    summary: 'Returns a Dynamic Data Source, by its id. If the source is not present, it returns undefined.'
+    summary: Returns a Dynamic Data Source, by its id. If the source is not present, it returns undefined.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -127,7 +127,7 @@ methods:
           description: Id of the Dynamic Data Source.
           type: string
       return:
-        type: '<xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" /> | undefined'
+        type: <xref uid="@microsoft/sp-dynamic-data!IDynamicDataSource:interface" /> | undefined
         description: ''
   - name: unregisterAvailableSourcesChanged(callback)
     uid: '@microsoft/sp-component-base!DynamicDataProvider#unregisterAvailableSourcesChanged:member(1)'
@@ -146,10 +146,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'unregisterPropertyChanged(sourceId, propertyId, callback)'
+  - name: unregisterPropertyChanged(sourceId, propertyId, callback)
     uid: '@microsoft/sp-component-base!DynamicDataProvider#unregisterPropertyChanged:member(1)'
     package: '@microsoft/sp-component-base!'
-    fullName: 'unregisterPropertyChanged(sourceId, propertyId, callback)'
+    fullName: unregisterPropertyChanged(sourceId, propertyId, callback)
     summary: Unregisters a callback for updates when a property is changed in a Dynamic Data source.
     remarks: ''
     isPreview: false
@@ -169,10 +169,10 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'unregisterSourceChanged(sourceId, callback)'
+  - name: unregisterSourceChanged(sourceId, callback)
     uid: '@microsoft/sp-component-base!DynamicDataProvider#unregisterSourceChanged:member(1)'
     package: '@microsoft/sp-component-base!'
-    fullName: 'unregisterSourceChanged(sourceId, callback)'
+    fullName: unregisterSourceChanged(sourceId, callback)
     summary: Unregisters a callback for updates when a Dynamic Data source is changed.
     remarks: ''
     isPreview: false

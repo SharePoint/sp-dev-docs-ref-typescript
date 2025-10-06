@@ -3,7 +3,7 @@ name: Guid
 uid: '@microsoft/sp-core-library!Guid:class'
 package: '@microsoft/sp-core-library!'
 fullName: Guid
-summary: 'This class represents a globally unique identifier, as described by IETF RFC 4122.'
+summary: This class represents a globally unique identifier, as described by IETF RFC 4122.
 remarks: >-
   The input string is normalized and validated, which provides important guarantees that simplify other code that works
   with the GUID. This class also provides basic support for generating a pseudo-random GUID; however, be aware that the
@@ -26,7 +26,7 @@ properties:
     syntax:
       content: 'static readonly empty: Guid;'
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+        type: <xref uid="@microsoft/sp-core-library!Guid:class" />
 methods:
   - name: equals(guid)
     uid: '@microsoft/sp-core-library!Guid#equals:member(1)'
@@ -41,7 +41,7 @@ methods:
       parameters:
         - id: guid
           description: ''
-          type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+          type: <xref uid="@microsoft/sp-core-library!Guid:class" />
       return:
         type: boolean
         description: True if this instance and the specified Guid object represent the same value.
@@ -63,7 +63,7 @@ methods:
           type: string | undefined | null
       return:
         type: boolean
-        description: 'true, if the Guid is valid.'
+        description: true, if the Guid is valid.
   - name: newGuid(randomNumberGenerator)
     uid: '@microsoft/sp-core-library!Guid.newGuid:member(1)'
     package: '@microsoft/sp-core-library!'
@@ -79,15 +79,15 @@ methods:
       parameters:
         - id: randomNumberGenerator
           description: ''
-          type: '<xref uid="@microsoft/sp-core-library!IRandomNumberGenerator:interface" />'
+          type: <xref uid="@microsoft/sp-core-library!IRandomNumberGenerator:interface" />
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+        type: <xref uid="@microsoft/sp-core-library!Guid:class" />
         description: A new unique Guid object
   - name: parse(guidString)
     uid: '@microsoft/sp-core-library!Guid.parse:member(1)'
     package: '@microsoft/sp-core-library!'
     fullName: parse(guidString)
-    summary: 'Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.'
+    summary: Parses the input string to construct a new Guid object. If the string cannot be parsed, then an error is thrown.
     remarks: |-
       Example syntaxes accepted by this function:
 
@@ -107,7 +107,7 @@ methods:
           description: The input string.
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Guid:class" />'
+        type: <xref uid="@microsoft/sp-core-library!Guid:class" />
         description: A valid Guid object
   - name: toString()
     uid: '@microsoft/sp-core-library!Guid#toString:member(1)'
@@ -151,5 +151,5 @@ methods:
           description: The input string.
           type: string | undefined | null
       return:
-        type: '<xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined'
-        description: 'The Guid object, or undefined if the string could not be parsed.'
+        type: <xref uid="@microsoft/sp-core-library!Guid:class" /> | undefined
+        description: The Guid object, or undefined if the string could not be parsed.

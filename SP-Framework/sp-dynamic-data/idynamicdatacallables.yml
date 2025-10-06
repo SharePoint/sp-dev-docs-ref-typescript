@@ -27,7 +27,7 @@ methods:
     syntax:
       content: 'allowedEvents?(): ReadonlyArray<IDynamicDataEventDefinition>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataEventDefinition:interface" />&gt;'
+        type: ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataEventDefinition:interface" />&gt;
         description: ''
   - name: getAnnotatedPropertyValue(propertyId)
     uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getAnnotatedPropertyValue:member(1)'
@@ -46,7 +46,7 @@ methods:
           description: One of the property ids exposed from the dynamic data source.
           type: string
       return:
-        type: '<xref uid="@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface" /> | undefined'
+        type: <xref uid="@microsoft/sp-dynamic-data!IDynamicDataAnnotatedPropertyValue:interface" /> | undefined
         description: ''
   - name: getPropertyDefinitions()
     uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyDefinitions:member(1)'
@@ -59,14 +59,14 @@ methods:
     syntax:
       content: 'getPropertyDefinitions(): ReadonlyArray<IDynamicDataPropertyDefinition>;'
       return:
-        type: 'ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface" />&gt;'
+        type: ReadonlyArray&lt;<xref uid="@microsoft/sp-dynamic-data!IDynamicDataPropertyDefinition:interface" />&gt;
         description: ''
   - name: getPropertyValue(propertyId)
     uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#getPropertyValue:member(1)'
     package: '@microsoft/sp-dynamic-data!'
     fullName: getPropertyValue(propertyId)
-    summary: 'Given a property id, returns the value of the property.'
-    remarks: 'It is assumed that when this function returns an array, it is homogeneous.'
+    summary: Given a property id, returns the value of the property.
+    remarks: It is assumed that when this function returns an array, it is homogeneous.
     isPreview: false
     isDeprecated: false
     syntax:
@@ -78,10 +78,10 @@ methods:
       return:
         type: any
         description: ''
-  - name: 'sendEvent(eventName, data)'
+  - name: sendEvent(eventName, data)
     uid: '@microsoft/sp-dynamic-data!IDynamicDataCallables#sendEvent:member(1)'
     package: '@microsoft/sp-dynamic-data!'
-    fullName: 'sendEvent(eventName, data)'
+    fullName: sendEvent(eventName, data)
     summary: >-
       If defined, enables the consumer to send data to the associated dynamic data source. Then source can act
       accordingly.

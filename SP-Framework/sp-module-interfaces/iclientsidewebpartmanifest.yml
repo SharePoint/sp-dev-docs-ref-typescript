@@ -16,6 +16,22 @@ isPreview: false
 isDeprecated: false
 type: interface
 properties:
+  - name: aiProperties
+    uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#aiProperties:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: aiProperties
+    summary: >-
+      Optional AI properties for the web part including the structure of AI properties and the mapping between AI
+      properties and the web part property bag. If provided, AI scenarios like LLM agent in SharePoint Pages will be
+      able to interact with the web part. For example, Creating a web part, modifying existing web part, better
+      understanding of the web part's data structure, etc.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'aiProperties?: IAIProperties;'
+      return:
+        type: <xref uid="@microsoft/sp-module-interfaces!IAIProperties:interface" />
   - name: canUpdateConfiguration
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#canUpdateConfiguration:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -32,7 +48,7 @@ properties:
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#disabledOnClassicSharepoint:member'
     package: '@microsoft/sp-module-interfaces!'
     fullName: disabledOnClassicSharepoint
-    summary: 'If true, this web part is disabled on SharePoint classic pages'
+    summary: If true, this web part is disabled on SharePoint classic pages
     remarks: >-
       Certain web parts may not be required on or apply to SharePoint classic pages. This flag helps control that. If
       this flag is true, the web part will not appear in the classic page web part gallery.
@@ -84,12 +100,12 @@ properties:
     syntax:
       content: 'flexibleLayoutSizing?: IFlexibleLayoutSizing;'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!IFlexibleLayoutSizing:interface" />'
+        type: <xref uid="@microsoft/sp-module-interfaces!IFlexibleLayoutSizing:interface" />
   - name: hiddenFromToolbox
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#hiddenFromToolbox:member'
     package: '@microsoft/sp-module-interfaces!'
     fullName: hiddenFromToolbox
-    summary: 'If true, this web part should not be displayed in the modern SharePoint toolbox.'
+    summary: If true, this web part should not be displayed in the modern SharePoint toolbox.
     remarks: >-
       Usage: Use this flag if it is not appropriate to display a web part in the modern toolbox. This property is not
       used in Classic SharePoint. By default, all web parts are enabled to be displayed in the toolbox. Such web parts
@@ -171,15 +187,12 @@ properties:
            properties: {
              imageSource: "https://contoso.akamaihd.net/files/mountRainier.jpg",
              captionText: "Mount Rainier"
-           }
-         }]
-      ```
     isPreview: false
     isDeprecated: false
     syntax:
       content: 'preconfiguredEntries: IClientSideWebPartManifestEntry<TProperties>[];'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface" />&lt;TProperties&gt;[]'
+        type: <xref uid="@microsoft/sp-module-interfaces!IClientSideWebPartManifestEntry:interface" />&lt;TProperties&gt;[]
   - name: requiredCapabilities
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#requiredCapabilities:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -193,7 +206,7 @@ properties:
     syntax:
       content: 'requiredCapabilities?: ICapabilityCollection;'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!ICapabilityCollection:interface" />'
+        type: <xref uid="@microsoft/sp-module-interfaces!ICapabilityCollection:interface" />
   - name: supportedHosts
     uid: '@microsoft/sp-module-interfaces!IClientSideWebPartManifest#supportedHosts:member'
     package: '@microsoft/sp-module-interfaces!'
@@ -278,4 +291,4 @@ properties:
       content: 'useFallbackWhenPropertiesUpdatedExternally?: boolean;'
       return:
         type: boolean
-extends: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'
+extends: <xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />
