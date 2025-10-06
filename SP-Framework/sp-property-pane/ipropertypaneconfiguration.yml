@@ -36,7 +36,7 @@ properties:
     syntax:
       content: 'debounceProperties?: IPropertyPaneDebounceProperty[];'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!IPropertyPaneDebounceProperty:interface" />[]'
+        type: <xref uid="@microsoft/sp-property-pane!IPropertyPaneDebounceProperty:interface" />[]
   - name: disableAudiencePicker
     uid: '@microsoft/sp-property-pane!IPropertyPaneConfiguration#disableAudiencePicker:member'
     package: '@microsoft/sp-property-pane!'
@@ -59,6 +59,21 @@ properties:
     isDeprecated: false
     syntax:
       content: 'disableFocusTrap?: boolean;'
+      return:
+        type: boolean
+  - name: disableVisibilityGroup
+    uid: '@microsoft/sp-property-pane!IPropertyPaneConfiguration#disableVisibilityGroup:member'
+    package: '@microsoft/sp-property-pane!'
+    fullName: disableVisibilityGroup
+    summary: Whether or not to show the "Visibility" group in the property pane.
+    remarks: >-
+      This property was created since this group should only be available for overall web part configuration, not
+      individual items within web parts (e.g., links in quick links). Note: This group is available to 1p/3p web parts,
+      so we may consider releasing this api for more 3p control.
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: 'disableVisibilityGroup?: boolean;'
       return:
         type: boolean
   - name: loadingIndicatorDelayTime
@@ -84,19 +99,19 @@ properties:
     syntax:
       content: 'pages: IPropertyPanePage[];'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!IPropertyPanePage:interface" />[]'
+        type: <xref uid="@microsoft/sp-property-pane!IPropertyPanePage:interface" />[]
   - name: pagesType
     uid: '@microsoft/sp-property-pane!IPropertyPaneConfiguration#pagesType:member'
     package: '@microsoft/sp-property-pane!'
     fullName: pagesType
-    summary: 'Type of pages to be displayed on the PropertyPane. By default, it works as ''Pages'' for multi pages property pane.'
+    summary: Type of pages to be displayed on the PropertyPane. By default, it works as 'Pages' for multi pages property pane.
     remarks: ''
     isPreview: true
     isDeprecated: false
     syntax:
       content: 'pagesType?: PagesType;'
       return:
-        type: '<xref uid="@microsoft/sp-property-pane!PagesType:enum" />'
+        type: <xref uid="@microsoft/sp-property-pane!PagesType:enum" />
   - name: showLoadingIndicator
     uid: '@microsoft/sp-property-pane!IPropertyPaneConfiguration#showLoadingIndicator:member'
     package: '@microsoft/sp-property-pane!'

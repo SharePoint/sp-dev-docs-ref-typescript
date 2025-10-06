@@ -1,0 +1,50 @@
+### YamlMime:TSType
+name: IAIProperties
+uid: '@microsoft/sp-module-interfaces!IAIProperties:interface'
+package: '@microsoft/sp-module-interfaces!'
+fullName: IAIProperties
+summary: >-
+  Defines the AI properties for the web part, including their structure and the mapping to the web part's property bag.
+  When provided, AI scenarios such as an LLM agent in SharePoint Pages can interact with the web part, e.g., creating
+  it, modifying it, or understanding its data structure.
+remarks: ''
+isPreview: true
+isDeprecated: false
+type: interface
+properties:
+  - name: mapping
+    uid: '@microsoft/sp-module-interfaces!IAIProperties#mapping:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: mapping
+    summary: The mapping of AI properties to existing property bag.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        mapping: {
+                [key: string]: unknown;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: unknown;
+              }
+  - name: structure
+    uid: '@microsoft/sp-module-interfaces!IAIProperties#structure:member'
+    package: '@microsoft/sp-module-interfaces!'
+    fullName: structure
+    summary: The structure of AI properties for the web part.
+    remarks: ''
+    isPreview: true
+    isDeprecated: false
+    syntax:
+      content: |-
+        structure: {
+                [key: string]: unknown;
+            };
+      return:
+        type: |-
+          {
+                  [key: string]: unknown;
+              }

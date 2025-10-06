@@ -16,6 +16,7 @@ enums:
   - '@microsoft/sp-webpart-base!WebPartFormFactor:enum'
   - '@microsoft/sp-webpart-base!WebPartIsolationLevel:enum'
 interfaces:
+  - '@microsoft/sp-webpart-base!IAgentsSDK:interface'
   - '@microsoft/sp-webpart-base!IClientSideWebPartStatusRenderer:interface'
   - '@microsoft/sp-webpart-base!IDynamicDataSharedPropertyConfiguration:interface'
   - '@microsoft/sp-webpart-base!IDynamicDataSharedPropertyFilters:interface'
@@ -56,7 +57,7 @@ interfaces:
   - '@microsoft/sp-webpart-base!IWebPartPropertiesMetadata:interface'
   - '@microsoft/sp-webpart-base!IWebPartPropertyMetadata:interface'
 functions:
-  - name: 'PropertyPaneButton(targetProperty, properties)'
+  - name: PropertyPaneButton(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneButton:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Button on the PropertyPane.
@@ -76,13 +77,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Button properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneButtonProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneButtonProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneButtonProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneCheckbox(targetProperty, properties)'
+  - name: PropertyPaneCheckbox(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneCheckbox:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Checkbox on the PropertyPane.
@@ -102,13 +103,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Checkbox properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneCheckboxProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneCheckboxProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneCheckboxProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneChoiceGroup(targetProperty, properties)'
+  - name: PropertyPaneChoiceGroup(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneChoiceGroup:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Choice Group on the PropertyPane.
@@ -128,7 +129,7 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Choice Group properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneChoiceGroupProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneChoiceGroupProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
@@ -151,13 +152,13 @@ functions:
       parameters:
         - id: properties
           description: Strongly typed Custom field properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneCustomFieldProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneCustomFieldProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneCustomFieldProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneDropdown(targetProperty, properties)'
+  - name: PropertyPaneDropdown(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneDropdown:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Dropdown on the PropertyPane.
@@ -177,13 +178,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Dropdown properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneDropdownProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneDropdownProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneDropdownProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneDynamicField(targetProperty, properties)'
+  - name: PropertyPaneDynamicField(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneDynamicField:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Dynamic Data widget on the PropertyPane for a dynamic field.
@@ -203,7 +204,7 @@ functions:
           type: string
         - id: properties
           description: ''
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
@@ -234,13 +235,13 @@ functions:
             Contains entries and options, described as below: entries - A set of entries to be configured by the widget.
             Each entry includes the target property and, optionally, the label to show. options - Options enabling
             customized values for callback, filters etc., for the given set of dynamic fields.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldSetProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldSetProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicFieldSetProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneDynamicTextField(targetProperty, properties)'
+  - name: PropertyPaneDynamicTextField(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneDynamicTextField:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Dynamic TextField on the PropertyPane.
@@ -260,7 +261,7 @@ functions:
           type: string
         - id: properties
           description: Properties of the PropertyPaneDynamicTextField.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicTextFieldProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneDynamicTextFieldProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
@@ -279,9 +280,9 @@ functions:
     syntax:
       content: 'export declare function PropertyPaneHorizontalRule(): IPropertyPaneField<void>;'
       return:
-        type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;void&gt;'
+        type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;void&gt;
         description: ''
-  - name: 'PropertyPaneLabel(targetProperty, properties)'
+  - name: PropertyPaneLabel(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneLabel:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Label on the PropertyPane.
@@ -301,13 +302,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Label properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneLabelProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneLabelProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneLabelProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneLink(targetProperty, properties)'
+  - name: PropertyPaneLink(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneLink:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Link on the PropertyPane.
@@ -327,13 +328,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Link properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneLinkProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneLinkProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneLinkProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneSlider(targetProperty, properties)'
+  - name: PropertyPaneSlider(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneSlider:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Slider on the PropertyPane.
@@ -353,13 +354,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Slider properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneSliderProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneSliderProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneSliderProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneTextField(targetProperty, properties)'
+  - name: PropertyPaneTextField(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneTextField:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a TextField on the PropertyPane.
@@ -379,13 +380,13 @@ functions:
           type: string
         - id: properties
           description: Strongly typed TextField properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneTextFieldProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneTextFieldProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref
           uid="@microsoft/sp-webpart-base!IPropertyPaneTextFieldProps:interface" />&gt;
         description: ''
-  - name: 'PropertyPaneToggle(targetProperty, properties)'
+  - name: PropertyPaneToggle(targetProperty, properties)
     uid: '@microsoft/sp-webpart-base!PropertyPaneToggle:function(1)'
     package: '@microsoft/sp-webpart-base!'
     summary: Helper method to create a Toggle on the PropertyPane.
@@ -405,7 +406,7 @@ functions:
           type: string
         - id: properties
           description: Strongly typed Toggle properties.
-          type: '<xref uid="@microsoft/sp-webpart-base!IPropertyPaneToggleProps:interface" />'
+          type: <xref uid="@microsoft/sp-webpart-base!IPropertyPaneToggleProps:interface" />
       return:
         type: >-
           <xref uid="@microsoft/sp-webpart-base!IPropertyPaneField:interface" />&lt;<xref

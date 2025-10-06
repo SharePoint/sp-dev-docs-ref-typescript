@@ -19,10 +19,10 @@ isPreview: false
 isDeprecated: false
 type: interface
 methods:
-  - name: 'alert(message, options)'
+  - name: alert(message, options)
     uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#alert:member(1)'
     package: '@microsoft/sp-dialog!'
-    fullName: 'alert(message, options)'
+    fullName: alert(message, options)
     summary: >-
       Similar to [Dialog.alert()](xref:@microsoft/sp-dialog!Dialog.alert:member(1))<!-- -->. The only difference is that
       the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
@@ -39,14 +39,14 @@ methods:
           description: >-
             Dialog showing options. See [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for
             more information.
-          type: '<xref uid="@microsoft/sp-dialog!IAlertOptions:interface" />'
+          type: <xref uid="@microsoft/sp-dialog!IAlertOptions:interface" />
       return:
         type: Promise&lt;void&gt;
         description: ''
-  - name: 'prompt(message, options)'
+  - name: prompt(message, options)
     uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#prompt:member(1)'
     package: '@microsoft/sp-dialog!'
-    fullName: 'prompt(message, options)'
+    fullName: prompt(message, options)
     summary: >-
       Similar to [Dialog.prompt()](xref:@microsoft/sp-dialog!Dialog.prompt:member(1))<!-- -->. The only difference is
       that the dialog is immediately shown if there are no other secondary dialogs. Otherwise, the promise rejects.
@@ -63,14 +63,14 @@ methods:
           description: >-
             Dialog showing options. The confirmOpen option will be ignored. See
             [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for more information.
-          type: '<xref uid="@microsoft/sp-dialog!IPromptOptions:interface" />'
+          type: <xref uid="@microsoft/sp-dialog!IPromptOptions:interface" />
       return:
         type: Promise&lt;string | undefined&gt;
         description: ''
-  - name: 'show(dialog, options)'
+  - name: show(dialog, options)
     uid: '@microsoft/sp-dialog!ISecondaryDialogProvider#show:member(1)'
     package: '@microsoft/sp-dialog!'
-    fullName: 'show(dialog, options)'
+    fullName: show(dialog, options)
     summary: >-
       Similar to [BaseDialog.show()](xref:@microsoft/sp-dialog!BaseDialog%23show:member(1))<!-- -->. The dialog to show
       is passed in as parameter and the dialog is immediately shown if there are no other secondary dialogs. Otherwise,
@@ -83,12 +83,12 @@ methods:
       parameters:
         - id: dialog
           description: ''
-          type: '<xref uid="@microsoft/sp-dialog!BaseDialog:class" />'
+          type: <xref uid="@microsoft/sp-dialog!BaseDialog:class" />
         - id: options
           description: >-
             Dialog showing options. The confirmOpen option will be ignored. See
             [IDialogShowOptions](xref:@microsoft/sp-dialog!IDialogShowOptions:interface) for more information.
-          type: '<xref uid="@microsoft/sp-dialog!IDialogShowOptions:interface" />'
+          type: <xref uid="@microsoft/sp-dialog!IDialogShowOptions:interface" />
       return:
         type: Promise&lt;void&gt;
         description: ''

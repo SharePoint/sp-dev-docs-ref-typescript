@@ -30,7 +30,7 @@ properties:
     syntax:
       content: 'static readonly configurations: ISPHttpClientBatchConfigurations;'
       return:
-        type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientBatchConfigurations:interface" />'
+        type: <xref uid="@microsoft/sp-http-base!ISPHttpClientBatchConfigurations:interface" />
 methods:
   - name: execute()
     uid: '@microsoft/sp-http-base!SPHttpClientBatch#execute:member(1)'
@@ -43,12 +43,12 @@ methods:
     syntax:
       content: 'execute(): Promise<SPHttpClientBatch>;'
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientBatch:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientBatch:class" />&gt;
         description: ''
-  - name: 'fetch(url, configuration, options)'
+  - name: fetch(url, configuration, options)
     uid: '@microsoft/sp-http-base!SPHttpClientBatch#fetch:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'fetch(url, configuration, options)'
+    fullName: fetch(url, configuration, options)
     summary: >-
       Queues a new request, and returns a promise that can be used to access the server response (after execute() has
       completed).
@@ -81,22 +81,22 @@ methods:
           description: >-
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
-          type: '<xref uid="@microsoft/sp-http-base!SPHttpClientBatchConfiguration:class" />'
+          type: <xref uid="@microsoft/sp-http-base!SPHttpClientBatchConfiguration:class" />
         - id: options
           description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientBatchOptions:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!ISPHttpClientBatchOptions:interface" />
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http-base!HttpClientResponse%23ok:member) being false) for error
           status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that
           prevent communication with the server.
-  - name: 'get(url, configuration, options)'
+  - name: get(url, configuration, options)
     uid: '@microsoft/sp-http-base!SPHttpClientBatch#get:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'get(url, configuration, options)'
-    summary: 'Calls fetch(), but sets the method to ''GET''.'
+    fullName: get(url, configuration, options)
+    summary: Calls fetch(), but sets the method to 'GET'.
     remarks: ''
     isPreview: true
     isDeprecated: false
@@ -112,22 +112,22 @@ methods:
           description: >-
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
-          type: '<xref uid="@microsoft/sp-http-base!SPHttpClientBatchConfiguration:class" />'
+          type: <xref uid="@microsoft/sp-http-base!SPHttpClientBatchConfiguration:class" />
         - id: options
           description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientBatchOptions:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!ISPHttpClientBatchOptions:interface" />
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http-base!HttpClientResponse%23ok:member) being false) for error
           status codes such as HTTP 404 or 500. The promise will only reject for network failures or other errors that
           prevent communication with the server.
-  - name: 'post(url, configuration, options)'
+  - name: post(url, configuration, options)
     uid: '@microsoft/sp-http-base!SPHttpClientBatch#post:member(1)'
     package: '@microsoft/sp-http-base!'
-    fullName: 'post(url, configuration, options)'
-    summary: 'Calls fetch(), but sets the method to ''POST''.'
+    fullName: post(url, configuration, options)
+    summary: Calls fetch(), but sets the method to 'POST'.
     remarks: ''
     isPreview: true
     isDeprecated: false
@@ -143,12 +143,12 @@ methods:
           description: >-
             determines the default behavior of this request; normally this should be the latest version number from
             SPHttpClientBatchConfigurations
-          type: '<xref uid="@microsoft/sp-http-base!SPHttpClientBatchConfiguration:class" />'
+          type: <xref uid="@microsoft/sp-http-base!SPHttpClientBatchConfiguration:class" />
         - id: options
           description: additional options that affect the request
-          type: '<xref uid="@microsoft/sp-http-base!ISPHttpClientBatchOptions:interface" />'
+          type: <xref uid="@microsoft/sp-http-base!ISPHttpClientBatchOptions:interface" />
       return:
-        type: 'Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />&gt;'
+        type: Promise&lt;<xref uid="@microsoft/sp-http-base!SPHttpClientResponse:class" />&gt;
         description: >-
           A promise with behavior similar to WHATWG fetch(). This promise will resolve normally (with
           [HttpClientResponse.ok](xref:@microsoft/sp-http-base!HttpClientResponse%23ok:member) being false) for error

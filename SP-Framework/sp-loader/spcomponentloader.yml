@@ -21,7 +21,7 @@ methods:
     syntax:
       content: 'static getManifests(): IClientSideComponentManifest[];'
       return:
-        type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />[]'
+        type: <xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />[]
         description: ''
   - name: loadComponent(manifest)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadComponent:member(1)'
@@ -36,15 +36,15 @@ methods:
       parameters:
         - id: manifest
           description: Manifest of the module to load.
-          type: '<xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />'
+          type: <xref uid="@microsoft/sp-module-interfaces!IClientSideComponentManifest:interface" />
       return:
         type: Promise&lt;TComponent&gt;
         description: A promise containing the loaded module.
-  - name: 'loadComponentById(id, version)'
+  - name: loadComponentById(id, version)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadComponentById:member(1)'
     package: '@microsoft/sp-loader!'
-    fullName: 'loadComponentById(id, version)'
-    summary: 'Resolve a component id and version, and load it.'
+    fullName: loadComponentById(id, version)
+    summary: Resolve a component id and version, and load it.
     remarks: ''
     isPreview: false
     isDeprecated: false
@@ -79,11 +79,11 @@ methods:
       return:
         type: void
         description: ''
-  - name: 'loadScript(url, options)'
+  - name: loadScript(url, options)
     uid: '@microsoft/sp-loader!SPComponentLoader.loadScript:member(1)'
     package: '@microsoft/sp-loader!'
-    fullName: 'loadScript(url, options)'
-    summary: 'Given a URL, load a script.'
+    fullName: loadScript(url, options)
+    summary: Given a URL, load a script.
     remarks: >-
       If a script with a global variable is being loaded, the global variable already exists, and the script fails to
       load (because of a syntax error, for example), the original global variable may be returned and an error may not
@@ -100,7 +100,7 @@ methods:
           description: >-
             globalExportsName: If the script isn't an AMD module and loads a global member on the page, specify the
             global member's name.
-          type: '<xref uid="@microsoft/sp-loader!ILoadScriptOptions:interface" />'
+          type: <xref uid="@microsoft/sp-loader!ILoadScriptOptions:interface" />
       return:
         type: Promise&lt;TModule&gt;
         description: A promise containing the loaded module.

@@ -51,4 +51,18 @@ properties:
       content: 'jsonResponse?: boolean;'
       return:
         type: boolean
-extends: '<xref uid="@microsoft/sp-http-base!IHttpClientConfiguration:interface" />'
+  - name: usePopupForCookieRefresh
+    uid: '@microsoft/sp-http-base!ISPHttpClientCommonConfiguration#usePopupForCookieRefresh:member'
+    package: '@microsoft/sp-http-base!'
+    fullName: usePopupForCookieRefresh
+    summary: Handle cookie refresh with a popup dialog
+    remarks: >-
+      When this switch is true popup auth will be used for handling a cookie refresh. This means the caller must handle
+      the popup events. If it is undefined or false full page redirect will be defaulted to.
+    isPreview: false
+    isDeprecated: false
+    syntax:
+      content: 'usePopupForCookieRefresh?: boolean;'
+      return:
+        type: boolean
+extends: <xref uid="@microsoft/sp-http-base!IHttpClientConfiguration:interface" />
